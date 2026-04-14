@@ -1,9 +1,197 @@
-<!DOCTYPE html>
-                           | <html>
-                           | <head>
-                           |   <title>Career Kuch Hatke</title>
-                           | </head>
-                           | <body>
-                           |   <h1>Coming Soon</h1>
-                           | </body>
-                           | </html>
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Career Kuch Hatke - Discover Your Dream Career</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Career Kuch Hatke - A unique platform for career guidance and development."
+    />
+    <meta
+      name="keywords"
+      content="Career, Guidance, Development, Unique, Platform"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="container">
+        <h2 class="logo">Career Kuch Hatke</h2>
+        <ul class="nav-menu">
+          <li><a href="index.html" class="explore">Home</a></li>
+          <li><a href="explore.html">Explore</a></li>
+          <li><a href="quiz.html">Quiz</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+    <section class="page-header">
+      <div class="container">
+        <h1>Explore Hatke Careers</h1>
+        <p>
+          25 unconventional careers across 5 categories. Your dream job might be
+          here.
+        </p>
+      </div>
+    </section>
+    <section class="filters">
+      <div class="container">
+        <button class="filter-btn active" data-filter="all">All Careers</button>
+        <button class="filter-btn" data-filter="creative">🎨 Creative</button>
+        <button class="filter-btn" data-filter="tech">💻 Tech</button>
+        <button class="filter-btn" data-filter="science">🔬 Science</button>
+        <button class="filter-btn" data-filter="business">💰 Business</button>
+        <button class="filter-btn" data-filter="unique">🎭 Unique</button>
+      </div>
+    </section>
+    <section class="careers">
+      <div class="container">
+        <div class="career-grid">
+          <!-- Card 1: Food Stylist (Creative) -->
+          <div class="career-card" data-category="creative">
+            <div class="card-header">
+              <span class="category-badge creative">
+                <span class="emoji">🎨</span> CREATIVE
+              </span>
+            </div>
+            <h3>Food Stylist</h3>
+            <p class="tagline">
+              Makes food look so good you want to eat your screen
+            </p>
+            <a href="career-detail.html?career=food-stylist" class="card-btn"
+              >Know More →</a
+            >
+          </div>
+          <!-- Card 2: Ethical Hacker (Tech) -->
+          <div class="career-card" data-category="tech">
+            <div class="card-header">
+              <span class="category-badge tech">
+                <span class="emoji">💻</span> TECH
+              </span>
+            </div>
+            <h3>Ethical Hacker</h3>
+            <p class="tagline">
+              Gets paid to break into company systems. Legally.
+            </p>
+            <a href="career-detail.html?career=ethical-hacker" class="card-btn"
+              >Know More →</a
+            >
+          </div>
+          <!-- Card 3: Forensic Scientist (Science) -->
+          <div class="career-card" data-category="science">
+            <div class="card-header">
+              <span class="category-badge science">
+                <span class="emoji">🔬</span> SCIENCE
+              </span>
+            </div>
+            <h3>Forensic Scientist</h3>
+            <p class="tagline">
+              Solves real crimes with microscopes instead of guns
+            </p>
+            <a
+              href="career-detail.html?career=forensic-scientist"
+              class="card-btn"
+              >Know More →</a
+            >
+          </div>
+          <!-- Card 4: Social Media Manager (Business) -->
+          <div class="career-card" data-category="business">
+            <div class="card-header">
+              <span class="category-badge business">
+                <span class="emoji">💰 </span> BUSINESS
+              </span>
+            </div>
+            <h3>Social Media Manager</h3>
+            <p class="tagline">
+              They get paid to be witty on Twitter while you do it for free—yes,
+              you should be jealous
+            </p>
+            <a
+              href="career-detail.html?career=social-media-manager"
+              class="card-btn"
+              >Know More →</a
+            >
+          </div>
+          <!-- Card 5: Adventure Sports Instructor(Unique) -->
+          <div class="career-card" data-category="unique">
+            <div class="card-header">
+              <span class="category-badge unique">
+                <span class="emoji">🎭</span> UNIQUE
+              </span>
+            </div>
+            <h3>Adventure Sports Instructor</h3>
+            <p class="tagline">
+              Turning mountains, rivers, and sky into a classroom for adrenaline
+            </p>
+            <a
+              href="career-detail.html?career=adventure-sports-instructor"
+              class="card-btn"
+              >Know More →</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>Career Kuch Hatke</h3>
+          <p>Your Dream Career Exists. You Just Haven't Found It Yet.</p>
+        </div>
+        <div class="footer-section">
+          <h4>Quick Links:</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="explore.html">Explore</a></li>
+            <li><a href="quiz.html">Quiz</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Categories:</h4>
+          <ul>
+            <li><a href="explore.html#creative">CREATIVE</a></li>
+            <li><a href="explore.html#technical">TECH</a></li>
+            <li><a href="explore.html#science">SCIENCE</a></li>
+            <li><a href="explore.html#business">BUSINESS</a></li>
+            <li><a href="explore.html#unique">UNIQUE</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Connect:</h4>
+          <div class="emoji">📧</div>
+          <a href="contact.html">Contact Us</a>
+        </div>
+        <div class="footer-section">
+          <div class="emoji">📱</div>
+          <a href="#">Instagram (Coming Soon)</a>
+        </div>
+        <div class="footer-section">
+          <div class="emoji">💼</div>
+          <a href="#">LinkedIn (Coming Soon)</a>
+        </div>
+        <div class="footer-section">
+          <div class="emoji">🐦</div>
+          <a href="#">Twitter (Coming Soon)</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <h4>Credits:</h4>
+        <p>Built with<span class="emoji">❤️</span>by Sneha_Prajapati</p>
+        <p>FYBSc Computer Science</p>
+        <p>
+          Vidyavardhini Annasaheb Vartak College of Arts, Kedarnath Malhotra
+          College of Commerce, E. S. Andrades College of Science
+        </p>
+        <p>
+          © 2025 Career Kuch Hatke A student project for creating career
+          awareness
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>
