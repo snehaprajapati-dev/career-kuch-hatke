@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <title>Career Kuch Hatke - Discover Your Dream Career</title>
+    <title>Explore Careers - Career Kuch Hatke</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
@@ -19,8 +19,8 @@
       <div class="container">
         <h2 class="logo">Career Kuch Hatke</h2>
         <ul class="nav-menu">
-          <li><a href="index.html" class="explore">Home</a></li>
-          <li><a href="explore.html">Explore</a></li>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="explore.html" class="active">Explore</a></li>
           <li><a href="quiz.html">Quiz</a></li>
           <li><a href="about.html">About</a></li>
           <li><a href="contact.html">Contact</a></li>
@@ -38,17 +38,30 @@
     </section>
     <section class="filters">
       <div class="container">
-        <button class="filter-btn active" data-filter="all">All Careers</button>
-        <button class="filter-btn" data-filter="creative">🎨 Creative</button>
-        <button class="filter-btn" data-filter="tech">💻 Tech</button>
-        <button class="filter-btn" data-filter="science">🔬 Science</button>
-        <button class="filter-btn" data-filter="business">💰 Business</button>
-        <button class="filter-btn" data-filter="unique">🎭 Unique</button>
+        <div class="search-box">
+          <input
+            type="text"
+            id="career-search"
+            placeholder="Search careers..."
+          />
+        </div>
+        <p class="results-count">Showing <span id="count">25</span> careers</p>
+        <div class="filter-buttons">
+          <button class="filter-btn active" data-filter="all">
+            All Careers
+          </button>
+          <button class="filter-btn" data-filter="creative">🎨 Creative</button>
+          <button class="filter-btn" data-filter="tech">💻 Tech</button>
+          <button class="filter-btn" data-filter="science">🔬 Science</button>
+          <button class="filter-btn" data-filter="business">💰 Business</button>
+          <button class="filter-btn" data-filter="unique">🎭 Unique</button>
+        </div>
       </div>
     </section>
     <section class="careers">
       <div class="container">
         <div class="career-grid">
+          <!-- CREATIVE CAREERS -->
           <!-- Card 1: Food Stylist (Creative) -->
           <div class="career-card" data-category="creative">
             <div class="card-header">
@@ -60,7 +73,92 @@
             <p class="tagline">
               Makes food look so good you want to eat your screen
             </p>
+            <p class="salary">₹3-12 LPA</p>
             <a href="career-detail.html?career=food-stylist" class="card-btn"
+              >Know More →</a
+            >
+          </div>
+          <!-- Card 2: UX/UI Designer (Creative) -->
+          <div class="career-card" data-category="creative">
+            <div class="card-header">
+              <span class="category-badge creative">
+                <span class="emoji">🎨</span> CREATIVE
+              </span>
+            </div>
+            <h3>UX/UI Designer</h3>
+            <p class="tagline">
+              Why some apps feel easy? Someone designed that feeling
+            </p>
+            <p class="salary">₹3-15 LPA</p>
+            <a href="career-detail.html?career=ux-ui-designer" class="card-btn"
+              >Know More →</a
+            >
+          </div>
+          <!-- Card 3: Voice Over Artist (Creative) -->
+          <div class="career-card" data-category="creative">
+            <div class="card-header">
+              <span class="category-badge creative">
+                <span class="emoji">🎨</span> CREATIVE
+              </span>
+            </div>
+            <h3>Voice Over Artist</h3>
+            <p class="tagline">
+              The voice behind every cartoon, ad, and audiobook you've ever
+              heard
+            </p>
+            <p class="salary">₹2-20 LPA</p>
+            <a
+              href="career-detail.html?career=voice-over-artist"
+              class="card-btn"
+              >Know More →</a
+            >
+          </div>
+          <!-- Card 4: Ethical Fashion Designer (Creative) -->
+          <div class="career-card" data-category="creative">
+            <div class="card-header">
+              <span class="category-badge creative">
+                <span class="emoji">🎨</span> CREATIVE
+              </span>
+            </div>
+            <h3>Ethical Fashion Designer</h3>
+            <p class="tagline">Making clothes not just fashion but emotion</p>
+            <p class="salary">₹3-15 LPA</p>
+            <a
+              href="career-detail.html?career=ethical-fashion-designer"
+              class="card-btn"
+              >Know More →</a
+            >
+          </div>
+          <!-- Card 5: Animator (Creative) -->
+          <div class="career-card" data-category="creative">
+            <div class="card-header">
+              <span class="category-badge creative">
+                <span class="emoji">🎨</span> CREATIVE
+              </span>
+            </div>
+            <h3>Animator</h3>
+            <p class="tagline">
+              Bringing stories to life with movement and magic
+            </p>
+            <p class="salary">₹3-12 LPA</p>
+            <a href="career-detail.html?career=animator" class="card-btn"
+              >Know More →</a
+            >
+          </div>
+          <!-- TECH CAREERS -->
+          <!-- Card 1: Drone Pilot (Tech) -->
+          <div class="career-card" data-category="tech">
+            <div class="card-header">
+              <span class="category-badge tech">
+                <span class="emoji">💻</span> TECH
+              </span>
+            </div>
+            <h3>Drone Pilot</h3>
+            <p class="tagline">
+              Commanding the skies to film, farm, and deliver from above
+            </p>
+            <p class="salary">₹3-10 LPA</p>
+            <a href="career-detail.html?career=drone-pilot" class="card-btn"
               >Know More →</a
             >
           </div>
@@ -75,7 +173,100 @@
             <p class="tagline">
               Gets paid to break into company systems. Legally.
             </p>
+            <p class="salary">₹4-50 LPA</p>
             <a href="career-detail.html?career=ethical-hacker" class="card-btn"
+              >Know More →</a
+            >
+          </div>
+          <!-- Card 3: AI Prompt Engineer (Tech) -->
+          <div class="career-card" data-category="tech">
+            <div class="card-header">
+              <span class="category-badge tech">
+                <span class="emoji">💻</span> TECH
+              </span>
+            </div>
+            <h3>AI Prompt Engineer</h3>
+            <p class="tagline">
+              They're professional robot whisperers—basically getting paid to
+              argue with ChatGPT until it behaves.
+            </p>
+            <p class="salary">₹6-25 LPA</p>
+            <a
+              href="career-detail.html?career=ai-prompt-engineer"
+              class="card-btn"
+              >Know More →</a
+            >
+          </div>
+          <!-- Card 4: Data Storyteller (Tech) -->
+          <div class="career-card" data-category="tech">
+            <div class="card-header">
+              <span class="category-badge tech">
+                <span class="emoji">💻</span> TECH
+              </span>
+            </div>
+            <h3>Data Storyteller</h3>
+            <p class="tagline">
+              Turns boring spreadsheets into stories people actually want to
+              read
+            </p>
+            <p class="salary">₹4-18 LPA</p>
+            <a
+              href="career-detail.html?career=data-storyteller"
+              class="card-btn"
+              >Know More →</a
+            >
+          </div>
+          <!-- Card 5: Game Developer (Tech) -->
+          <div class="career-card" data-category="tech">
+            <div class="card-header">
+              <span class="category-badge tech">
+                <span class="emoji">💻</span> TECH
+              </span>
+            </div>
+            <h3>Game Developer</h3>
+            <p class="tagline">
+              Builds the virtual worlds millions escape into every night
+            </p>
+            <p class="salary">₹3-20 LPA</p>
+            <a href="career-detail.html?career=game-developer" class="card-btn"
+              >Know More →</a
+            >
+          </div>
+          <!-- SCIENCE CAREERS -->
+          <!-- Card 1: Restoration Architect (Science) -->
+          <div class="career-card" data-category="science">
+            <div class="card-header">
+              <span class="category-badge science">
+                <span class="emoji">🔬</span> SCIENCE
+              </span>
+            </div>
+            <h3>Restoration Architect</h3>
+            <p class="tagline">
+              Healing centuries-old history while keeping every original scar
+              intact.
+            </p>
+            <p class="salary">₹4-15 LPA</p>
+            <a
+              href="career-detail.html?career=restoration-architect"
+              class="card-btn"
+              >Know More →</a
+            >
+          </div>
+          <!-- Card 2:  Wildlife Photographer (Science) -->
+          <div class="career-card" data-category="science">
+            <div class="card-header">
+              <span class="category-badge science">
+                <span class="emoji">🔬</span> SCIENCE
+              </span>
+            </div>
+            <h3>Wildlife Photographer</h3>
+            <p class="tagline">
+              Lives in jungles for weeks just for that ONE perfect shot
+            </p>
+            <p class="salary">₹3-20 LPA</p>
+            <a
+              href="career-detail.html?career=wildlife-photographer"
+              class="card-btn"
               >Know More →</a
             >
           </div>
@@ -90,9 +281,95 @@
             <p class="tagline">
               Solves real crimes with microscopes instead of guns
             </p>
+            <p class="salary">₹3-12 LPA</p>
             <a
               href="career-detail.html?career=forensic-scientist"
               class="card-btn"
+              >Know More →</a
+            >
+          </div>
+          <!-- Card 4: Oceanographer (Science) -->
+          <div class="career-card" data-category="science">
+            <div class="card-header">
+              <span class="category-badge science">
+                <span class="emoji">🔬</span> SCIENCE
+              </span>
+            </div>
+            <h3>Oceanographer</h3>
+            <p class="tagline">
+              80% of the ocean is unexplored. They explore that 80%.
+            </p>
+            <p class="salary">₹4-15 LPA</p>
+            <a href="career-detail.html?career=oceanographer" class="card-btn"
+              >Know More →</a
+            >
+          </div>
+          <!-- Card 5: Food Scientist (Science) -->
+          <div class="career-card" data-category="science">
+            <div class="card-header">
+              <span class="category-badge science">
+                <span class="emoji">🔬</span> SCIENCE
+              </span>
+            </div>
+            <h3>Food Scientist</h3>
+            <p class="tagline">
+              The reason Maggi tastes like Maggi and not like cardboard
+            </p>
+            <p class="salary">₹3-10 LPA</p>
+            <a href="career-detail.html?career=food-scientist" class="card-btn"
+              >Know More →</a
+            >
+          </div>
+          <!-- BUSINESS CAREERS -->
+          <!-- Card 1: Sports Agent (Business) -->
+          <div class="career-card" data-category="business">
+            <div class="card-header">
+              <span class="category-badge business">
+                <span class="emoji">💰</span> BUSINESS
+              </span>
+            </div>
+            <h3>Sports Agent</h3>
+            <p class="tagline">
+              The person who turns a player's talent into crore-level contracts
+            </p>
+            <p class="salary">₹5-25 LPA</p>
+            <a href="career-detail.html?career=sports-agent" class="card-btn"
+              >Know More →</a
+            >
+          </div>
+          <!-- Card 2: Fragrance Designer (Business) -->
+          <div class="career-card" data-category="business">
+            <div class="card-header">
+              <span class="category-badge business">
+                <span class="emoji">💰</span> BUSINESS
+              </span>
+            </div>
+            <h3>Fragrance Designer</h3>
+            <p class="tagline">
+              They literally bottle emotions—creating smells that didn't exist
+              until they imagined them.
+            </p>
+            <p class="salary">₹4-18 LPA</p>
+            <a
+              href="career-detail.html?career=fragrance-designer"
+              class="card-btn"
+              >Know More →</a
+            >
+          </div>
+          <!-- Card 3: Event manager (Business) -->
+          <div class="career-card" data-category="business">
+            <div class="card-header">
+              <span class="category-badge business">
+                <span class="emoji">💰</span> BUSINESS
+              </span>
+            </div>
+            <h3>Event Manager</h3>
+            <p class="tagline">
+              The person who turns chaos into concerts, weddings, and IPL
+              ceremonies
+            </p>
+            <p class="salary">₹3-15 LPA</p>
+            <a href="career-detail.html?career=event-manager" class="card-btn"
               >Know More →</a
             >
           </div>
@@ -108,9 +385,101 @@
               They get paid to be witty on Twitter while you do it for free—yes,
               you should be jealous
             </p>
+            <p class="salary">₹2.5-10 LPA</p>
             <a
               href="career-detail.html?career=social-media-manager"
               class="card-btn"
+              >Know More →</a
+            >
+          </div>
+          <!-- Card 5: Ethical investment advisor (Business) -->
+          <div class="career-card" data-category="business">
+            <div class="card-header">
+              <span class="category-badge business">
+                <span class="emoji">💰</span> BUSINESS
+              </span>
+            </div>
+            <h3>Ethical Investment Advisor</h3>
+            <p class="tagline">
+              Grows your money by investing only in companies that don't harm
+              the planet
+            </p>
+            <p class="salary">₹5-20 LPA</p>
+            <a
+              href="career-detail.html?career=ethical-investment-advisor"
+              class="card-btn"
+              >Know More →</a
+            >
+          </div>
+          <!-- UNIQUE CAREERS -->
+          <!-- Card 1: Podcast Producer(Unique) -->
+          <div class="career-card" data-category="unique">
+            <div class="card-header">
+              <span class="category-badge unique">
+                <span class="emoji">🎭</span> UNIQUE
+              </span>
+            </div>
+            <h3>Podcast Producer</h3>
+            <p class="tagline">
+              Weaving raw conversations into polished audio stories you can’t
+              stop listening to.
+            </p>
+            <p class="salary">₹3-12 LPA</p>
+            <a
+              href="career-detail.html?career=podcast-producer"
+              class="card-btn"
+              >Know More →</a
+            >
+          </div>
+          <!-- Card 2: Museum Curator(Unique) -->
+          <div class="career-card" data-category="unique">
+            <div class="card-header">
+              <span class="category-badge unique">
+                <span class="emoji">🎭</span> UNIQUE
+              </span>
+            </div>
+            <h3>Museum Curator</h3>
+            <p class="tagline">
+              Choosing which fragments of the past get to speak to millions
+              today.
+            </p>
+            <p class="salary">₹3-10 LPA</p>
+            <a href="career-detail.html?career=museum-curator" class="card-btn"
+              >Know More →</a
+            >
+          </div>
+          <!-- Card 3: Sign Language Interpreter(Unique) -->
+          <div class="career-card" data-category="unique">
+            <div class="card-header">
+              <span class="category-badge unique">
+                <span class="emoji">🎭</span> UNIQUE
+              </span>
+            </div>
+            <h3>Sign Language Interpreter</h3>
+            <p class="tagline">
+              They translate silence into understanding—giving voice to
+              conversations that never make a sound.
+            </p>
+            <p class="salary">₹2-12 LPA</p>
+            <a
+              href="career-detail.html?career=sign-language-interpreter"
+              class="card-btn"
+              >Know More →</a
+            >
+          </div>
+          <!-- Card 4: Pet therapist(Unique) -->
+          <div class="career-card" data-category="unique">
+            <div class="card-header">
+              <span class="category-badge unique">
+                <span class="emoji">🎭</span> UNIQUE
+              </span>
+            </div>
+            <h3>Pet Therapist</h3>
+            <p class="tagline">
+              A psychologist whose patients bark, purr, and can't talk back
+            </p>
+            <p class="salary">₹2-8 LPA</p>
+            <a href="career-detail.html?career=pet-therapist" class="card-btn"
               >Know More →</a
             >
           </div>
@@ -125,6 +494,7 @@
             <p class="tagline">
               Turning mountains, rivers, and sky into a classroom for adrenaline
             </p>
+            <p class="salary">₹2-10 LPA</p>
             <a
               href="career-detail.html?career=adventure-sports-instructor"
               class="card-btn"
@@ -134,7 +504,9 @@
         </div>
       </div>
     </section>
-
+    <div class="back-to-top">
+      <a href="">↑ Back to Top</a>
+    </div>
     <footer class="footer">
       <div class="footer-content">
         <div class="footer-section">
