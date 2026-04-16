@@ -1,9 +1,200 @@
-<!DOCTYPE html>
-                           | <html>
-                           | <head>
-                           |   <title>Career Kuch Hatke</title>
-                           | </head>
-                           | <body>
-                           |   <h1>Coming Soon</h1>
-                           | </body>
-                           | </html>
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Contact Us - Career Kuch Hatke</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!-- NAVBAR -->
+    <nav class="navbar">
+      <div class="container">
+        <h2 class="logo">Career Kuch Hatke</h2>
+        <ul class="nav-menu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="explore.html">Explore</a></li>
+          <li><a href="quiz.html">Quiz</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html" class="active">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- PAGE HEADER -->
+    <section class="page-header">
+      <div class="container">
+        <h1>Contact Us</h1>
+        <p>
+          Got a question? Found a bug? Want to suggest a career we haven't
+          covered yet? We're all ears. Career Kuch Hatke is built by a student,
+          for students — and your feedback helps make it better. Drop us a
+          message below and we'll get back to you as soon as possible.
+        </p>
+      </div>
+    </section>
+
+    <!-- CONTACT FORM SECTION -->
+    <section class="contact-form-section">
+      <div class="container">
+        <h2>Send Us a Message</h2>
+
+        <form
+          action="php/contact-process.php"
+          method="POST"
+          class="contact-form"
+        >
+          <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required />
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required />
+          </div>
+
+          <div class="form-group">
+            <label for="telephone">Telephone:</label>
+            <input type="tel" id="telephone" name="telephone" />
+          </div>
+
+          <div class="form-group">
+            <label for="subject">Subject:</label>
+            <input type="text" id="subject" name="subject" required />
+          </div>
+
+          <div class="form-group">
+            <label for="i_am">I am a:</label>
+            <select id="i_am" name="i_am" required>
+              <option value="" disabled selected>Select...</option>
+              <option value="student">Student</option>
+              <option value="parent">Parent</option>
+              <option value="educator">Educator</option>
+              <option value="career_counselor">Career Counselor</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+          </div>
+
+          <div class="form-group">
+            <button type="submit" class="btn">Send Message</button>
+          </div>
+        </form>
+
+        <!-- Success message (hidden initially) -->
+        <div class="success-message" id="contact-success" style="display: none">
+          <p>
+            <span class="emoji">✅</span> Thank You! Your message has been
+            received. We'll get back to you within 24-48 hours.
+          </p>
+          <p>
+            Meanwhile, why not
+            <a href="explore.html">Explore Careers →</a> or
+            <a href="quiz.html">Take the Quiz →</a>?
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SUGGEST CAREER SECTION -->
+    <section class="suggest-career-section">
+      <div class="container">
+        <h2><span class="emoji">💡</span> Suggest a Career</h2>
+        <p>Know an unconventional career we should add? Tell us about it!</p>
+
+        <form
+          action="php/suggestion-process.php"
+          method="POST"
+          class="suggestion-form"
+        >
+          <div class="form-group">
+            <label for="career-name">Career Name:</label>
+            <input type="text" id="career-name" name="career-name" required />
+          </div>
+
+          <div class="form-group">
+            <label for="career-why">Why it's hatke:</label>
+            <textarea
+              id="career-why"
+              name="career-why"
+              rows="3"
+              required
+            ></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="suggester-name">Your Name (optional):</label>
+            <input type="text" id="suggester-name" name="suggester-name" />
+          </div>
+
+          <div class="form-group">
+            <button type="submit" class="btn">Submit Suggestion</button>
+          </div>
+        </form>
+
+        <!-- Success message (hidden initially) -->
+        <div
+          class="success-message"
+          id="suggestion-success"
+          style="display: none"
+        >
+          <p>
+            <span class="emoji">✅</span> Awesome Suggestion! Thank you for
+            helping us grow Career Kuch Hatke. We'll review your suggestion and
+            add it soon.
+          </p>
+          <p>Want to explore more? <a href="index.html">Go to Homepage →</a></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>Career Kuch Hatke</h3>
+          <p>Your Dream Career Exists. You Just Haven't Found It Yet.</p>
+        </div>
+        <div class="footer-section">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="explore.html">Explore</a></li>
+            <li><a href="quiz.html">Quiz</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Categories</h4>
+          <ul>
+            <li><a href="explore.html#creative">Creative</a></li>
+            <li><a href="explore.html#tech">Tech</a></li>
+            <li><a href="explore.html#science">Science</a></li>
+            <li><a href="explore.html#business">Business</a></li>
+            <li><a href="explore.html#unique">Unique</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Connect</h4>
+          <p>
+            <span class="emoji">📧</span> <a href="contact.html">Contact Us</a>
+          </p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>Built with <span class="emoji">❤️</span> by Sneha Prajapati</p>
+        <p>FYBSc Computer Science | Vidyavardhini College</p>
+        <p>
+          © 2025 Career Kuch Hatke. A student project for creating career
+          awareness.
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>
