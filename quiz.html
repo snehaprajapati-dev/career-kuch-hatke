@@ -1,9 +1,504 @@
-<!DOCTYPE html>
-                           | <html>
-                           | <head>
-                           |   <title>Career Kuch Hatke</title>
-                           | </head>
-                           | <body>
-                           |   <h1>Coming Soon</h1>
-                           | </body>
-                           | </html>
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Career Quiz - Career Kuch Hatke</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Take our personality quiz to discover unconventional careers that match your interests."
+    />
+    <meta
+      name="keywords"
+      content="Career Quiz, Personality Test, Career Discovery, Career Guidance"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!-- NAVBAR -->
+    <nav class="navbar">
+      <div class="container">
+        <h2 class="logo">Career Kuch Hatke</h2>
+        <ul class="nav-menu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="explore.html">Explore</a></li>
+          <li><a href="quiz.html" class="active">Quiz</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <section class="page-header">
+      <div class="container">
+        <h1>Find Your Hatke Career</h1>
+        <p>
+          Take our 2-minute personality quiz and discover which careers match
+          your interests and strengths.
+        </p>
+      </div>
+    </section>
+
+    <section class="quiz-container">
+      <div class="container">
+        <!-- Progress Bar -->
+        <div class="progress-bar">
+          <div class="progress-fill" id="progress"></div>
+        </div>
+        <p class="progress-text">Question <span id="current">1</span> of 8</p>
+
+        <!-- Question 1 -->
+        <div class="question" id="question-1">
+          <h2>It's Sunday afternoon. What are you most likely doing?</h2>
+          <div class="options">
+            <label>
+              <input
+                type="radio"
+                name="q1"
+                value="creative"
+                data-category="creative"
+              />
+              <span>Sketching, editing photos, or designing something</span>
+            </label>
+            <label>
+              <input type="radio" name="q1" value="tech" data-category="tech" />
+              <span>Learning a new coding language or fixing a gadget </span>
+            </label>
+            <label>
+              <input
+                type="radio"
+                name="q1"
+                value="science"
+                data-category="science"
+              />
+              <span>Watching a nature documentary or doing experiments </span>
+            </label>
+            <label>
+              <input
+                type="radio"
+                name="q1"
+                value="business"
+                data-category="business"
+              />
+              <span
+                >Reading about business ideas or following startup news
+              </span>
+            </label>
+            <label>
+              <input
+                type="radio"
+                name="q1"
+                value="unique"
+                data-category="unique"
+              />
+              <span>Planning a trek or trying a new adventure activity </span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Question 2 (hidden initially) -->
+        <div class="question" id="question-2" style="display: none">
+          <h2>Your school fest needs help. Which team do you join?</h2>
+          <div class="options">
+            <label>
+              <input
+                type="radio"
+                name="q2"
+                value="creative"
+                data-category="creative"
+              />
+              <span> Design & Decoration (posters, stage setup) </span>
+            </label>
+            <label>
+              <input type="radio" name="q2" value="tech" data-category="tech" />
+              <span>Tech & Website (building the fest website/app)</span>
+            </label>
+            <label>
+              <input
+                type="radio"
+                name="q2"
+                value="science"
+                data-category="science"
+              />
+              <span> Science Exhibition (setting up experiments & demos)</span>
+            </label>
+            <label>
+              <input
+                type="radio"
+                name="q2"
+                value="business"
+                data-category="business"
+              />
+              <span>Sponsorship & Marketing (getting brands on board)</span>
+            </label>
+            <label>
+              <input
+                type="radio"
+                name="q2"
+                value="unique"
+                data-category="unique"
+              />
+              <span>Events & Coordination (managing everything live)</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Question 3 (hidden initially) -->
+        <div class="question" id="question-3" style="display: none">
+          <h2>You get ₹10,000 as a gift. What do you do?</h2>
+          <div class="options">
+            <label>
+              <input
+                type="radio"
+                name="q3"
+                value="creative"
+                data-category="creative"
+              />
+              <span> Buy art supplies, a camera, or design tools </span>
+            </label>
+            <label>
+              <input type="radio" name="q3" value="tech" data-category="tech" />
+              <span> Buy a course on coding, AI, or a new tech gadget </span>
+            </label>
+            <label>
+              <input
+                type="radio"
+                name="q3"
+                value="science"
+                data-category="science"
+              />
+              <span> Buy science kits, telescopes, or biology models </span>
+            </label>
+            <label>
+              <input
+                type="radio"
+                name="q3"
+                value="business"
+                data-category="business"
+              />
+              <span>Invest it or use it to start a small side business </span>
+            </label>
+            <label>
+              <input
+                type="radio"
+                name="q3"
+                value="unique"
+                data-category="unique"
+              />
+              <span>Book a trekking trip or adventure sports experience</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Question 4 (hidden initially) -->
+        <div class="question" id="question-4" style="display: none">
+          <h2>Which superpower would you choose?</h2>
+          <div class="options">
+            <label>
+              <input
+                type="radio"
+                name="q4"
+                value="creative"
+                data-category="creative"
+              />
+              <span> Ability to bring any imagination to visual life </span>
+            </label>
+            <label>
+              <input type="radio" name="q4" value="tech" data-category="tech" />
+              <span>
+                Ability to hack/control any technology with your mind
+              </span>
+            </label>
+            <label>
+              <input
+                type="radio"
+                name="q4"
+                value="science"
+                data-category="science"
+              />
+              <span>
+                Ability to talk to animals or understand nature deeply
+              </span>
+            </label>
+            <label>
+              <input
+                type="radio"
+                name="q4"
+                value="business"
+                data-category="business"
+              />
+              <span
+                >Ability to predict market trends and business outcomes
+              </span>
+            </label>
+            <label>
+              <input
+                type="radio"
+                name="q4"
+                value="unique"
+                data-category="unique"
+              />
+              <span>Ability to teleport anywhere instantly</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Question 5 (hidden initially) -->
+        <div class="question" id="question-5" style="display: none">
+          <h2>Your phone suddenly stops working. What's your reaction?</h2>
+          <div class="options">
+            <label>
+              <input
+                type="radio"
+                name="q5"
+                value="creative"
+                data-category="creative"
+              />
+              <span> "Ugh, I can't edit my photos or post on Instagram!" </span>
+            </label>
+            <label>
+              <input type="radio" name="q5" value="tech" data-category="tech" />
+              <span> "Let me try to fix it myself or google the error" </span>
+            </label>
+            <label>
+              <input
+                type="radio"
+                name="q5"
+                value="science"
+                data-category="science"
+              />
+              <span>
+                "I wonder what's broken inside... maybe the battery?"
+              </span>
+            </label>
+            <label>
+              <input
+                type="radio"
+                name="q5"
+                value="business"
+                data-category="business"
+              />
+              <span> "How much will repair cost vs buying a new one?" </span>
+            </label>
+            <label>
+              <input
+                type="radio"
+                name="q5"
+                value="unique"
+                data-category="unique"
+              />
+              <span
+                >"Finally! Now I can go outside and do something real"
+              </span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Question 6 (hidden initially) -->
+        <div class="question" id="question-6" style="display: none">
+          <h2>Pick the YouTube video you'd most likely click on:</h2>
+          <div class="options">
+            <label>
+              <input
+                type="radio"
+                name="q6"
+                value="creative"
+                data-category="creative"
+              />
+              <span> "How I designed this logo in 10 minutes" </span>
+            </label>
+            <label>
+              <input type="radio" name="q6" value="tech" data-category="tech" />
+              <span> "I built an AI chatbot from scratch" </span>
+            </label>
+            <label>
+              <input
+                type="radio"
+                name="q6"
+                value="science"
+                data-category="science"
+              />
+              <span> "What happens when you put Coke in a plant?" </span>
+            </label>
+            <label>
+              <input
+                type="radio"
+                name="q6"
+                value="business"
+                data-category="business"
+              />
+              <span> "How this 19-year-old earns ₹2 lakh/month" </span>
+            </label>
+            <label>
+              <input
+                type="radio"
+                name="q6"
+                value="unique"
+                data-category="unique"
+              />
+              <span>"I survived 24 hours in the Amazon rainforest" </span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Question 7 (hidden initially) -->
+        <div class="question" id="question-7" style="display: none">
+          <h2>Your friends describe you as someone who...</h2>
+          <div class="options">
+            <label>
+              <input
+                type="radio"
+                name="q7"
+                value="creative"
+                data-category="creative"
+              />
+              <span> Has a great eye for colors, style, and aesthetics </span>
+            </label>
+            <label>
+              <input type="radio" name="q7" value="tech" data-category="tech" />
+              <span> Always knows how to fix tech problems </span>
+            </label>
+            <label>
+              <input
+                type="radio"
+                name="q7"
+                value="science"
+                data-category="science"
+              />
+              <span> Asks 'why' and 'how' about everything </span>
+            </label>
+            <label>
+              <input
+                type="radio"
+                name="q7"
+                value="business"
+                data-category="business"
+              />
+              <span> Thinks about money and opportunities smartly </span>
+            </label>
+            <label>
+              <input
+                type="radio"
+                name="q7"
+                value="unique"
+                data-category="unique"
+              />
+              <span> Is always up for trying something new and bold </span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Question 8 (hidden initially) -->
+        <div class="question" id="question-8" style="display: none">
+          <h2>What kind of workspace excites you most?</h2>
+          <div class="options">
+            <label>
+              <input
+                type="radio"
+                name="q8"
+                value="creative"
+                data-category="creative"
+              />
+              <span> A studio with paints, design tools, and mood boards </span>
+            </label>
+            <label>
+              <input type="radio" name="q8" value="tech" data-category="tech" />
+              <span> A desk with multiple monitors and cool gadgets </span>
+            </label>
+            <label>
+              <input
+                type="radio"
+                name="q8"
+                value="science"
+                data-category="science"
+              />
+              <span> A lab with microscopes, chemicals, and experiments </span>
+            </label>
+            <label>
+              <input
+                type="radio"
+                name="q8"
+                value="business"
+                data-category="business"
+              />
+              <span>
+                A modern office with meetings, deals, and strategy talks
+              </span>
+            </label>
+            <label>
+              <input
+                type="radio"
+                name="q8"
+                value="unique"
+                data-category="unique"
+              />
+              <span>
+                No fixed workspace — mountains, events, different places
+              </span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Navigation Buttons -->
+        <div class="quiz-nav">
+          <button id="prev-btn" style="display: none">← Back</button>
+          <button id="next-btn">Next →</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Result Section (hidden initially) -->
+    <section class="quiz-result" id="result" style="display: none">
+      <div class="container">
+        <h2>Your Result</h2>
+        <div id="result-content">
+          <!-- JS will fill this -->
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>Career Kuch Hatke</h3>
+          <p>Your Dream Career Exists. You Just Haven't Found It Yet.</p>
+        </div>
+        <div class="footer-section">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="explore.html">Explore</a></li>
+            <li><a href="quiz.html">Quiz</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Categories</h4>
+          <ul>
+            <li><a href="explore.html#creative">Creative</a></li>
+            <li><a href="explore.html#tech">Tech</a></li>
+            <li><a href="explore.html#science">Science</a></li>
+            <li><a href="explore.html#business">Business</a></li>
+            <li><a href="explore.html#unique">Unique</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Connect</h4>
+          <p>
+            <span class="emoji">📧</span> <a href="contact.html">Contact Us</a>
+          </p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>Built with <span class="emoji">❤️</span> by Sneha Prajapati</p>
+        <p>FYBSc Computer Science | Vidyavardhini College</p>
+        <p>
+          © 2025 Career Kuch Hatke. A student project for creating career
+          awareness.
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>
