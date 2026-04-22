@@ -1,1 +1,458 @@
-/* Career Kuch Hatke Styles */
+/* ============================================
+   CAREER KUCH HATKE - STYLESHEET
+   ============================================ */
+
+/* COLOR PALETTE */
+:root {
+  /* Main Colors */
+  --primary: #672a3f;      /* Deep burgundy */
+  --secondary: #2b4743;    /* Deep teal */
+  --accent: #dda83f;       /* Gold */
+  
+  /* Backgrounds */
+  --bg-light: #f2e9e1;     /* Cream */
+  --bg-white: #ffffff;     /* White */
+  --bg-dark: #15302d;      /* Dark teal */
+  
+  /* Text */
+  --text-dark: #000000;    /* Black */
+  --text-gray: #a6a6a6;    /* Gray */
+  
+  /* Supporting */
+  --pink-light: #ffd3db;   /* Light pink */
+  --coral: #da7073;        /* Coral */
+}
+
+/* RESET & BASE STYLES */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Tenor Sans', sans-serif;
+  color: var(--text-gray);
+  background-color: var(--bg-light);
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Montserrat Alternates', sans-serif;
+  font-weight: 700;
+  color: var(--text-dark);
+  line-height: 1.2;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+/* CONTAINER */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ============================================
+   NAVBAR
+   ============================================ */
+
+.navbar {
+  background-color: var(--bg-white);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  padding: 1rem 0;
+}
+
+.navbar .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  color: var(--primary);
+  font-size: 1.5rem;
+  font-weight: 800;
+}
+
+.nav-menu {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-menu li a {
+  color: var(--text-dark);
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav-menu li a:hover {
+  color: var(--primary);
+}
+
+.nav-menu li a.active {
+  color: var(--primary);
+  font-weight: 600;
+  border-bottom: 2px solid var(--primary);
+  padding-bottom: 0.2rem;
+}
+
+/* ============================================
+   HERO SECTION
+   ============================================ */
+
+.hero {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+  color: var(--bg-white);
+  padding: 6rem 0;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: var(--bg-white);
+}
+
+.hero h2 {
+  font-size: 1.8rem;
+  font-weight: 400;
+  margin-bottom: 1.5rem;
+  opacity: 0.9;
+  color: var(--bg-white);
+}
+
+.hero p {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  opacity: 0.85;
+  color: var(--bg-white);
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 0.8rem 2rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+  border: none;
+  font-size: 1rem;
+  font-family: 'Montserrat Alternates', sans-serif;
+}
+
+.btn-primary {
+  background-color: var(--accent);
+  color: var(--text-dark);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  background-color: var(--bg-white);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--bg-white);
+  border: 2px solid var(--bg-white);
+}
+
+.btn-secondary:hover {
+  background-color: var(--bg-white);
+  color: var(--primary);
+}
+
+/* ============================================
+   STATS SECTION
+   ============================================ */
+
+.stats {
+  padding: 4rem 0;
+  background-color: var(--bg-white);
+}
+
+.stats h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  color: var(--text-dark);
+}
+
+.stat-boxes {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.stat-box {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: var(--bg-white);
+  padding: 2.5rem 2rem;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+
+.stat-box:hover {
+  transform: translateY(-5px);
+}
+
+.stat-box h3 {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+  color: var(--accent);
+}
+
+.stat-box p {
+  font-size: 1rem;
+  opacity: 0.9;
+  color: var(--bg-white);
+}
+
+/* ============================================
+   CATEGORIES SECTION
+   ============================================ */
+
+.categories {
+  padding: 4rem 0;
+  background-color: var(--bg-light);
+}
+
+.categories h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  color: var(--text-dark);
+}
+
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);  /* 5 equal columns */
+  gap: 1.5rem;
+}
+
+.category-card {
+  background-color: var(--bg-white);
+  padding: 2rem 1.5rem;
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;  /* Smooth animation */
+  border: 2px solid transparent;
+}
+
+.category-card:hover {
+  transform: translateY(-10px);  /* Lifts up */
+  box-shadow: 0 10px 30px rgba(221, 168, 63, 0.4);  /* Golden glow */
+  border-color: var(--accent);  /* Gold border appears */
+}
+
+.category-card .emoji {
+  font-size: 3rem;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.category-card h3 {
+  font-size: 1.2rem;
+  color: var(--primary);
+  margin-bottom: 0.5rem;
+}
+
+.category-card p {
+  font-size: 0.9rem;
+  color: var(--text-gray);
+  margin-bottom: 1rem;
+}
+
+.category-card a {
+  color: var(--accent);
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+.category-card a:hover {
+  color: var(--primary);
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+
+.footer {
+  background-color: var(--bg-dark);
+  color: var(--bg-white);
+  padding: 3rem 0 0 0;
+}
+
+/* Centered intro section */
+.footer-intro {
+  text-align: center;
+  margin-bottom: 3rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-intro h3 {
+  color: var(--accent);
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.footer-intro p {
+  color: var(--bg-white);
+  opacity: 0.9;
+  font-size: 1rem;
+}
+
+/* 3-column grid */
+.footer-columns {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);  /* 3 equal columns */
+  gap: 3rem;
+  padding-bottom: 2rem;
+}
+
+.footer-section h4 {
+  color: var(--accent);
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+.footer-section ul {
+  list-style: none;
+}
+
+.footer-section li {
+  margin-bottom: 0.5rem;
+}
+
+.footer-section p {
+  color: var(--bg-white);
+  opacity: 0.8;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.footer-section a {
+  color: var(--bg-white);
+  opacity: 0.8;
+  transition: all 0.3s;
+}
+
+.footer-section a:hover {
+  color: var(--accent);
+  opacity: 1;
+  padding-left: 5px;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding: 1.5rem 0;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-top: 1px solid var(--accent);
+}
+
+.footer-bottom p {
+  color: var(--bg-white);
+  font-size: 0.9rem;
+  margin-bottom: 0.3rem;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .footer-columns {
+    grid-template-columns: 1fr;  /* Stack on mobile */
+    gap: 2rem;
+  }
+}/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+
+/* Tablet and below */
+@media (max-width: 768px) {
+  
+  /* Footer stacks on mobile */
+  .footer-content {
+    grid-template-columns: 1fr;  /* 1 column instead of 4 */
+    gap: 2rem;
+  }
+  
+  /* Category cards 2 per row on tablet */
+  .category-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  /* Stat boxes stack */
+  .stat-boxes {
+    grid-template-columns: 1fr;
+  }
+  
+  /* Hero text smaller */
+  .hero h1 {
+    font-size: 2rem;
+  }
+  
+  .hero h2 {
+    font-size: 1.3rem;
+  }
+  
+}
+
+/* Mobile only */
+@media (max-width: 480px) {
+  
+  /* Category cards 1 per row on phone */
+  .category-grid {
+    grid-template-columns: 1fr;
+  }
+    
+}
+
+/* ============================================
+   QUIZ CTA SECTION
+   ============================================ */
+
+.quiz-cta {
+  /* Should this stand out? What background color? */
+  /* How much padding? */
+}
+
+.quiz-cta h2 {
+  /* Center it? */
+  /* What size? */
+  /* What color? */
+}
+
+.quiz-cta p {
+  /* Center it? */
+  /* Max width so text doesn't stretch? */
+}
+
+.quiz-cta .btn {
+  /* How to center the button? */
+  /* (Hint: display: block + margin: 0 auto) */
+}
+
+.quiz-cta .note {
+  /* Smaller text? */
+  /* Different color? */
+}
