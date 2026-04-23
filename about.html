@@ -22,17 +22,25 @@
 </head>
   <body>
     <nav class="navbar">
-      <div class="container">
-        <h2 class="logo">Career Kuch Hatke</h2>
-        <ul class="nav-menu">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="explore.html">Explore</a></li>
-          <li><a href="quiz.html">Quiz</a></li>
-          <li><a href="about.html" class="active">About</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </div>
-    </nav>
+  <div class="container">
+    <h2 class="logo">Career Kuch Hatke</h2>
+    
+    <!-- ADD THIS: Hamburger button -->
+    <button class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    
+    <ul class="nav-menu" id="navMenu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="explore.html">Explore</a></li>
+      <li><a href="quiz.html">Quiz</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+</nav>
     <section class="about-hero">
       <div class="container">
         <h2>The Career Crisis Nobody Talks About</h2>
@@ -216,7 +224,7 @@
       </div>
     </section>
     <footer class="footer">
-  <div class="footer-content">
+  <div class="container">
     
     <!-- FIRST: Centered intro (OUTSIDE the grid) -->
     <div class="footer-intro">
@@ -266,5 +274,6 @@
     <p>© 2025 Career Kuch Hatke. A student project for creating career awareness.</p>
   </div>
 </footer>
+<script src="js/script.js"></script>
   </body>
 </html>
