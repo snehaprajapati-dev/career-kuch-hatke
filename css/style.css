@@ -24,6 +24,23 @@
 }
 
 /* RESET & BASE STYLES */
+
+/* Add this at the TOP of your CSS, in the * reset section */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  overflow-x: hidden;  /* ← Prevents horizontal scroll */
+}
+
+img {
+  max-width: 100%;  /* Images never overflow container */
+  height: auto;
+}
 * {
   margin: 0;
   padding: 0;
@@ -57,7 +74,8 @@ ul {
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 20px;  /* ← Padding prevents content touching screen edges */
+  width: 100%;  /* ← Add this */
 }
 
 /* ============================================
@@ -105,6 +123,143 @@ ul {
   font-weight: 600;
   border-bottom: 2px solid var(--primary);
   padding-bottom: 0.2rem;
+}
+
+/* Update your navbar CSS */
+
+.navbar .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;  /* ← ADD THIS - allows items to wrap */
+}
+
+.nav-menu {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;  /* ← ADD THIS - menu wraps on small screens */
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 0.5rem 0;
+  }
+  
+  .logo {
+    font-size: 1.2rem;  /* Smaller logo on mobile */
+  }
+  
+  .nav-menu {
+    gap: 1rem;  /* Reduce gap on mobile */
+    font-size: 0.9rem;  /* Smaller text */
+  }
+  
+  .nav-menu li a {
+    padding: 0.5rem;  /* Add padding to make links easier to tap */
+  }
+}
+
+/* Find this existing rule and ADD flex-wrap */
+.navbar .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;  /* ← ADD */
+}
+
+.nav-menu {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;  /* ← ADD */
+}
+
+/* ADD this entire media query if you don't have it */
+@media (max-width: 768px) {
+  .logo {
+    font-size: 1.2rem;
+  }
+  
+  .nav-menu {
+    gap: 1rem;
+    font-size: 0.9rem;
+  }
+  
+  .nav-menu li a {
+    padding: 0.5rem;
+  }
+
+  /* Hamburger menu (hidden on desktop) */
+.hamburger {
+  display: none;  /* Hidden by default */
+  flex-direction: column;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 1001;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background-color: var(--primary);
+  margin: 3px 0;
+  transition: all 0.3s;
+  border-radius: 3px;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  
+  /* Show hamburger on mobile */
+  .hamburger {
+    display: flex;
+  }
+  
+  /* Hide menu by default on mobile */
+  .nav-menu {
+    position: fixed;
+    left: -100%;  /* Slide off screen */
+    top: 60px;
+    flex-direction: column;
+    background-color: var(--bg-white);
+    width: 100%;
+    text-align: center;
+    transition: left 0.3s ease;
+    box-shadow: 0 10px 27px rgba(0, 0, 0, 0.1);
+    padding: 2rem 0;
+    gap: 0;
+  }
+  
+  .nav-menu li {
+    margin: 0;
+    border-bottom: 1px solid var(--bg-light);
+  }
+  
+  .nav-menu li a {
+    display: block;
+    padding: 1rem;
+  }
+  
+  /* When menu is active (JavaScript adds this class) */
+  .nav-menu.active {
+    left: 0;  /* Slide into view */
+  }
+  
+  /* Hamburger animation when active */
+  .hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+  
+  .hamburger.active span:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -6px);
+  }
+}
 }
 
 /* ============================================
@@ -326,7 +481,7 @@ ul {
 /* 3-column grid */
 .footer-columns {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);  /* 3 equal columns */
+  grid-template-columns: repeat(3, 1fr);
   gap: 3rem;
   padding-bottom: 2rem;
 }
@@ -335,20 +490,24 @@ ul {
   color: var(--accent);
   margin-bottom: 1rem;
   font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 .footer-section ul {
   list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 .footer-section li {
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.7rem;
 }
 
 .footer-section p {
   color: var(--bg-white);
   opacity: 0.8;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.7rem;
   font-size: 0.9rem;
 }
 
@@ -356,6 +515,7 @@ ul {
   color: var(--bg-white);
   opacity: 0.8;
   transition: all 0.3s;
+  text-decoration: none;
 }
 
 .footer-section a:hover {
@@ -367,7 +527,7 @@ ul {
 .footer-bottom {
   text-align: center;
   padding: 1.5rem 0;
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: rgba(0, 0, 0, 0.3);
   border-top: 1px solid var(--accent);
 }
 
@@ -377,13 +537,32 @@ ul {
   margin-bottom: 0.3rem;
 }
 
+.footer-columns {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4rem;  /* Increased gap */
+  padding-bottom: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-section a:hover {
+  color: var(--accent);
+  opacity: 1;
+  /* Removed padding-left shift */
+}
 /* Mobile responsive */
 @media (max-width: 768px) {
   .footer-columns {
-    grid-template-columns: 1fr;  /* Stack on mobile */
+    grid-template-columns: 1fr;
     gap: 2rem;
   }
-}/* ============================================
+  
+  .footer-intro h3 {
+    font-size: 1.5rem;
+  }
+}
+/* ============================================
    RESPONSIVE DESIGN
    ============================================ */
 
@@ -432,27 +611,257 @@ ul {
    ============================================ */
 
 .quiz-cta {
-  /* Should this stand out? What background color? */
-  /* How much padding? */
+  background-color: var(--accent);  /* GOLD background - totally unique! */
+  padding: 4rem 2rem;
+  text-align: center;
+  box-shadow: inset 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .quiz-cta h2 {
-  /* Center it? */
-  /* What size? */
-  /* What color? */
+  font-size: 2.2rem;
+  color: var(--text-dark);  /* Dark text on gold */
+  margin-bottom: 1rem;
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.3);
 }
 
 .quiz-cta p {
-  /* Center it? */
-  /* Max width so text doesn't stretch? */
+  font-size: 1.1rem;
+  color: var(--text-dark);
+  max-width: 600px;
+  margin: 0 auto 2rem auto;
+  line-height: 1.6;
 }
 
 .quiz-cta .btn {
-  /* How to center the button? */
-  /* (Hint: display: block + margin: 0 auto) */
+  background-color: var(--primary);  /* Burgundy button */
+  color: var(--bg-white);
+  padding: 1rem 2.5rem;
+  font-size: 1.1rem;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.3s;
+  display: inline-block;
+  margin-bottom: 1rem;
+  border: 2px solid var(--primary);
+}
+
+.quiz-cta .btn:hover {
+  background-color: var(--bg-white);
+  color: var(--primary);
+  transform: scale(1.05);
 }
 
 .quiz-cta .note {
-  /* Smaller text? */
-  /* Different color? */
+  font-size: 0.9rem;
+  color: var(--text-dark);
+  opacity: 0.8;
+  font-style: italic;
+}
+
+/* ============================================
+   ABOUT PAGE
+   ============================================ */
+
+/* Hero section */
+.about-hero {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+  color: var(--bg-white);
+  padding: 5rem 2rem;
+  text-align: center;
+}
+
+.about-hero h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: var(--bg-white);
+}
+
+.about-hero h3 {
+  font-size: 1.5rem;
+  color: var(--accent);
+  margin: 2rem 0 1rem 0;
+}
+
+.about-hero p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  max-width: 800px;
+  margin: 0 auto 1.5rem auto;
+  opacity: 0.95;
+}
+
+/* Solution section */
+.solution {
+  padding: 4rem 2rem;
+  background-color: var(--bg-white);
+}
+
+.solution h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: var(--primary);
+}
+
+.solution p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  max-width: 800px;
+  margin: 0 auto 2rem auto;
+  color: var(--text-gray);
+}
+
+.solution ul {
+  max-width: 800px;
+  margin: 0 auto;
+  list-style: none;
+  padding: 0;
+}
+
+.solution li {
+  padding: 1rem 1rem 1rem 3rem;
+  margin-bottom: 1rem;
+  background-color: var(--bg-light);
+  border-left: 4px solid var(--accent);
+  border-radius: 8px;
+  position: relative;
+}
+
+.solution li .emoji {
+  position: absolute;
+  left: 1rem;
+  font-size: 1.2rem;
+}
+
+/* My Story section (MOST IMPORTANT) */
+.my-story {
+  padding: 5rem 2rem;
+  background-color: var(--bg-light);
+}
+
+.my-story h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: var(--primary);
+}
+
+.my-story h3 {
+  text-align: center;
+  font-size: 1.3rem;
+  font-weight: 500;
+  margin-bottom: 3rem;
+  color: var(--text-gray);
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.my-story p {
+  font-size: 1.1rem;
+  line-height: 2;
+  max-width: 800px;
+  margin: 0 auto 2rem auto;
+  color: var(--text-gray);
+  text-align: justify;
+}
+
+.my-story h4 {
+  text-align: right;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-top: 3rem;
+  color: var(--primary);
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  font-style: italic;
+}
+
+/* Future Vision */
+.future-vision {
+  padding: 4rem 2rem;
+  background-color: var(--bg-white);
+}
+
+.future-vision h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: var(--primary);
+}
+
+.future-vision p {
+  font-size: 1.1rem;
+  max-width: 800px;
+  margin: 0 auto 2rem auto;
+  color: var(--text-gray);
+  text-align: center;
+}
+
+.future-vision ul {
+  max-width: 800px;
+  margin: 0 auto;
+  list-style: none;
+}
+
+.future-vision li {
+  padding: 1rem 1rem 1rem 3rem;
+  margin-bottom: 1rem;
+  background-color: var(--bg-light);
+  border-left: 4px solid var(--secondary);
+  border-radius: 8px;
+  position: relative;
+  font-size: 1.05rem;
+}
+
+.future-vision li .emoji {
+  position: absolute;
+  left: 1rem;
+  font-size: 1.2rem;
+}
+
+/* Call to Action */
+.call-to-action {
+  padding: 4rem 2rem;
+  background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%);
+  text-align: center;
+  color: var(--bg-white);
+}
+
+.call-to-action h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  color: var(--bg-white);
+}
+
+.call-to-action p {
+  font-size: 1.1rem;
+  max-width: 700px;
+  margin: 0 auto 2rem auto;
+  line-height: 1.8;
+  opacity: 0.95;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+.cta-buttons .btn {
+  background-color: var(--accent);
+  color: var(--text-dark);
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.3s;
+}
+
+.cta-buttons .btn:hover {
+  background-color: var(--bg-white);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
 }

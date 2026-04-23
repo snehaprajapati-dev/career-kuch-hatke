@@ -19,17 +19,25 @@
   <body>
     <!-- NAVBAR -->
     <nav class="navbar">
-      <div class="container">
-        <h2 class="logo">Career Kuch Hatke</h2>
-        <ul class="nav-menu">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="explore.html">Explore</a></li>
-          <li><a href="quiz.html">Quiz</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="contact.html" class="active">Contact</a></li>
-        </ul>
-      </div>
-    </nav>
+  <div class="container">
+    <h2 class="logo">Career Kuch Hatke</h2>
+    
+    <!-- ADD THIS: Hamburger button -->
+    <button class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    
+    <ul class="nav-menu" id="navMenu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="explore.html">Explore</a></li>
+      <li><a href="quiz.html">Quiz</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+</nav>
 
     <!-- PAGE HEADER -->
     <section class="page-header">
@@ -165,7 +173,7 @@
 
     <!-- FOOTER -->
     <footer class="footer">
-      <div class="footer-content">
+      <div class="container">
         <div class="footer-intro">
       <h3>Career Kuch Hatke</h3>
       <p>Your Dream Career Exists. You Just Haven't Found It Yet.</p>
@@ -197,6 +205,9 @@
       <div class="footer-section">
         <h4>Connect</h4>
         <p><span class="emoji">📧</span> <a href="contact.html">Contact Us</a></p>
+         <p><span class="emoji">📱</span> <a href="#">Instagram (Coming Soon)</a></p>
+        <p><span class="emoji">💼</span> <a href="#">LinkedIn (Coming Soon)</a></p>
+        <p><span class="emoji">🐦</span> <a href="#">Twitter (Coming Soon)</a></p>
       </div>
       
     </div>
@@ -210,5 +221,6 @@
         </p>
       </div>
     </footer>
+    <script src="js/script.js"></script>
   </body>
 </html>
