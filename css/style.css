@@ -81,7 +81,7 @@ ul {
 /* ============================================
    NAVBAR
    ============================================ */
-
+/* /* Base Navbar Styles */
 .navbar {
   background-color: var(--bg-white);
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
@@ -95,6 +95,9 @@ ul {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
 }
 
 .logo {
@@ -103,12 +106,15 @@ ul {
   font-weight: 800;
 }
 
+/* Desktop Menu */
 .nav-menu {
   display: flex;
   gap: 2rem;
+  list-style: none;
 }
 
 .nav-menu li a {
+  text-decoration: none;
   color: var(--text-dark);
   font-weight: 500;
   transition: color 0.3s;
@@ -125,73 +131,9 @@ ul {
   padding-bottom: 0.2rem;
 }
 
-/* Update your navbar CSS */
-
-.navbar .container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;  /* ← ADD THIS - allows items to wrap */
-}
-
-.nav-menu {
-  display: flex;
-  gap: 2rem;
-  flex-wrap: wrap;  /* ← ADD THIS - menu wraps on small screens */
-}
-
-/* Mobile adjustments */
-@media (max-width: 768px) {
-  .navbar {
-    padding: 0.5rem 0;
-  }
-  
-  .logo {
-    font-size: 1.2rem;  /* Smaller logo on mobile */
-  }
-  
-  .nav-menu {
-    gap: 1rem;  /* Reduce gap on mobile */
-    font-size: 0.9rem;  /* Smaller text */
-  }
-  
-  .nav-menu li a {
-    padding: 0.5rem;  /* Add padding to make links easier to tap */
-  }
-}
-
-/* Find this existing rule and ADD flex-wrap */
-.navbar .container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;  /* ← ADD */
-}
-
-.nav-menu {
-  display: flex;
-  gap: 2rem;
-  flex-wrap: wrap;  /* ← ADD */
-}
-
-/* ADD this entire media query if you don't have it */
-@media (max-width: 768px) {
-  .logo {
-    font-size: 1.2rem;
-  }
-  
-  .nav-menu {
-    gap: 1rem;
-    font-size: 0.9rem;
-  }
-  
-  .nav-menu li a {
-    padding: 0.5rem;
-  }
-
-  /* Hamburger menu (hidden on desktop) */
+/* Hamburger Hidden on Desktop */
 .hamburger {
-  display: none;  /* Hidden by default */
+  display: none;
   flex-direction: column;
   background: transparent;
   border: none;
@@ -209,57 +151,77 @@ ul {
   border-radius: 3px;
 }
 
-/* Mobile styles */
+/* MOBILE & LANDSCAPE STYLES */
 @media (max-width: 768px) {
-  
-  /* Show hamburger on mobile */
-  .hamburger {
-    display: flex;
+  .navbar {
+    padding: 0.7rem 0;
   }
-  
-  /* Hide menu by default on mobile */
+
+  .hamburger {
+    display: flex; /* Show hamburger */
+  }
+
   .nav-menu {
     position: fixed;
-    left: -100%;  /* Slide off screen */
-    top: 60px;
+    left: -100%; /* Hidden by default */
+    top: 60px;   /* Adjusted for mobile navbar height */
+    
+    /* FIX: Force vertical layout for landscape */
     flex-direction: column;
+    flex-wrap: nowrap; 
+    
     background-color: var(--bg-white);
     width: 100%;
-    text-align: center;
+    
+    /* FIX: Make internal menu scrollable */
+    height: calc(100vh - 60px); 
+    overflow-y: auto; 
+    
     transition: left 0.3s ease;
     box-shadow: 0 10px 27px rgba(0, 0, 0, 0.1);
-    padding: 2rem 0;
+    padding: 1rem 0 3rem 0; 
     gap: 0;
+    z-index: 999;
   }
-  
+
+  /* Show menu when active */
+  .nav-menu.active {
+    left: 0;
+  }
+
   .nav-menu li {
-    margin: 0;
+    width: 100%;
     border-bottom: 1px solid var(--bg-light);
+    text-align: center;
   }
-  
+
   .nav-menu li a {
     display: block;
-    padding: 1rem;
+    padding: 1.2rem;
+    font-size: 1.1rem;
   }
-  
-  /* When menu is active (JavaScript adds this class) */
-  .nav-menu.active {
-    left: 0;  /* Slide into view */
+
+  /* Preserve your active state in mobile */
+  .nav-menu li a.active {
+    border-bottom: none; 
+    background-color: rgba(var(--primary-rgb), 0.1); /* Optional: highlight row */
   }
-  
-  /* Hamburger animation when active */
+
+  /* Hamburger Animation */
   .hamburger.active span:nth-child(1) {
     transform: rotate(45deg) translate(5px, 5px);
   }
-  
   .hamburger.active span:nth-child(2) {
     opacity: 0;
   }
-  
   .hamburger.active span:nth-child(3) {
     transform: rotate(-45deg) translate(7px, -6px);
   }
 }
+
+/* Prevent body scroll when menu open */
+body.menu-open {
+  overflow: hidden;
 }
 
 /* ============================================
@@ -568,6 +530,93 @@ ul {
 
 /* Tablet and below */
 @media (max-width: 768px) {
+
+  /* Mobile responsive - ADD TO EXISTING @media (max-width: 768px) */
+@media (max-width: 768px) {
+  
+  /* Reduce all heading sizes on mobile */
+  h1 {
+    font-size: 2rem !important;
+  }
+  
+  h2 {
+    font-size: 1.8rem !important;
+  }
+  
+  h3 {
+    font-size: 1.3rem !important;
+  }
+  
+  p {
+    font-size: 1rem !important;
+  }
+  
+  /* Reduce padding on all sections */
+  .hero,
+  .about-hero,
+  .my-story,
+  .solution,
+  .future-vision,
+  .call-to-action,
+  .quiz-cta {
+    padding: 3rem 1.5rem !important;
+  }
+  
+  /* Container padding */
+  .container {
+    padding: 0 15px;
+  }
+  
+  /* Buttons */
+  .btn {
+    padding: 0.8rem 1.5rem !important;
+    font-size: 1rem !important;
+  }
+  
+  /* Navigation menu already handled by hamburger */
+  
+  /* Footer columns stack */
+  .footer-columns {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  /* Category cards 2 per row on tablet, 1 on mobile */
+  .category-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  /* Stat boxes stack */
+  .stat-boxes {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+
+/* Very small phones */
+@media (max-width: 480px) {
+  
+  h1 {
+    font-size: 1.8rem !important;
+  }
+  
+  h2 {
+    font-size: 1.5rem !important;
+  }
+  
+  /* Category cards 1 per row */
+  .category-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  /* Buttons full width on tiny screens */
+  .btn {
+    display: block;
+    width: 100%;
+    max-width: 300px;
+    margin: 0.5rem auto;
+  }
+}
   
   /* Footer stacks on mobile */
   .footer-content {
@@ -611,17 +660,17 @@ ul {
    ============================================ */
 
 .quiz-cta {
-  background-color: var(--accent);  /* GOLD background - totally unique! */
+  background: linear-gradient(135deg, #dda83f 0%, #f2e9e1 100%);  /* Gold fading to cream */
   padding: 4rem 2rem;
   text-align: center;
-  box-shadow: inset 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-top: 3px solid var(--primary);
+  border-bottom: 3px solid var(--primary);
 }
 
 .quiz-cta h2 {
   font-size: 2.2rem;
-  color: var(--text-dark);  /* Dark text on gold */
+  color: var(--primary);
   margin-bottom: 1rem;
-  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.3);
 }
 
 .quiz-cta p {
@@ -633,7 +682,7 @@ ul {
 }
 
 .quiz-cta .btn {
-  background-color: var(--primary);  /* Burgundy button */
+  background-color: var(--primary);
   color: var(--bg-white);
   padding: 1rem 2.5rem;
   font-size: 1.1rem;
@@ -654,7 +703,7 @@ ul {
 .quiz-cta .note {
   font-size: 0.9rem;
   color: var(--text-dark);
-  opacity: 0.8;
+  opacity: 0.7;
   font-style: italic;
 }
 
@@ -711,6 +760,15 @@ ul {
   color: var(--text-gray);
 }
 
+.stats-note {
+  text-align: center;
+  max-width: 800px;
+  margin: 2rem auto 0 auto;
+  font-size: 1rem;
+  line-height: 1.8;
+  color: var(--text-gray);
+}
+
 .solution ul {
   max-width: 800px;
   margin: 0 auto;
@@ -734,6 +792,16 @@ ul {
 }
 
 /* My Story section (MOST IMPORTANT) */
+
+.story-intro {
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: 500;
+  max-width: 700px;
+  margin: 0 auto 3rem auto;
+  color: var(--text-gray);
+  font-style: italic;
+}
 .my-story {
   padding: 5rem 2rem;
   background-color: var(--bg-light);
@@ -766,7 +834,7 @@ ul {
   text-align: justify;
 }
 
-.my-story h4 {
+  .my-story h4 {
   text-align: right;
   font-size: 1rem;
   font-weight: 600;
@@ -776,7 +844,35 @@ ul {
   margin-left: auto;
   margin-right: auto;
   font-style: italic;
+  line-height: 1.8;  /* ADD THIS - gives breathing room */
 }
+
+.story-highlight {
+  background-color: var(--bg-white);
+  padding: 1.5rem;
+  border-left: 4px solid var(--accent);
+  border-radius: 8px;
+  font-size: 1.15rem;
+  font-weight: 500;
+  margin: 2rem auto;
+  max-width: 800px;
+}
+
+.story-closing {
+  font-size: 1.15rem;
+  font-style: italic;
+  color: var(--primary);
+  max-width: 800px;
+  margin: 2rem auto;
+}
+/* Mobile adjustment for signature */
+@media (max-width: 768px) {
+  .my-story h4 {
+    text-align: center;  /* Center on mobile */
+    font-size: 0.9rem;
+  }
+}
+
 
 /* Future Vision */
 .future-vision {
