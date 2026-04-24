@@ -9,35 +9,38 @@
       content="Get in touch with Career Kuch Hatke. Send us your feedback or suggest new careers to feature."
     />
     <link rel="stylesheet" href="css/style.css" />
-<!-- Add this to <head> of ALL your HTML pages -->
+    <!-- Add this to <head> of ALL your HTML pages -->
 
-<!-- Google Fonts -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@400;500;600;700;800&family=Tenor+Sans&display=swap" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@400;500;600;700;800&family=Tenor+Sans&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <!-- NAVBAR -->
     <nav class="navbar">
-  <div class="container">
-    <h2 class="logo">Career Kuch Hatke</h2>
-    
-    <!-- ADD THIS: Hamburger button -->
-    <button class="hamburger" id="hamburger">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-    
-    <ul class="nav-menu" id="navMenu">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="explore.html">Explore</a></li>
-      <li><a href="quiz.html">Quiz</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-  </div>
-</nav>
+      <div class="container">
+        <h2 class="logo">Career Kuch Hatke</h2>
+
+        <!-- ADD THIS: Hamburger button -->
+        <button class="hamburger" id="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <ul class="nav-menu" id="navMenu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="explore.html">Explore</a></li>
+          <li><a href="quiz.html">Quiz</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
 
     <!-- PAGE HEADER -->
     <section class="page-header">
@@ -55,7 +58,7 @@
     <!-- CONTACT FORM SECTION -->
     <section class="contact-form-section">
       <div class="container">
-        <h2>Send Us a Message</h2>
+        <h2 class="form-msg">Send Us a Message</h2>
 
         <form
           action="php/contact-process.php"
@@ -100,7 +103,9 @@
           </div>
 
           <div class="form-group">
-            <button type="submit" class="btn">Send Message</button>
+            <button type="submit" class="btn btn-secondary">
+              Send Message
+            </button>
           </div>
         </form>
 
@@ -122,8 +127,10 @@
     <!-- SUGGEST CAREER SECTION -->
     <section class="suggest-career-section">
       <div class="container">
-        <h2><span class="emoji">💡</span> Suggest a Career</h2>
-        <p>Know an unconventional career we should add? Tell us about it!</p>
+        <h2 class="form-msg"><span class="emoji">💡</span> Suggest a Career</h2>
+        <p class="form-msg-p">
+          Know an unconventional career we should add? Tell us about it!
+        </p>
 
         <form
           action="php/suggestion-process.php"
@@ -151,7 +158,9 @@
           </div>
 
           <div class="form-group">
-            <button type="submit" class="btn">Submit Suggestion</button>
+            <button type="submit" class="btn btn-secondary">
+              Submit Suggestion
+            </button>
           </div>
         </form>
 
@@ -175,42 +184,52 @@
     <footer class="footer">
       <div class="container">
         <div class="footer-intro">
-      <h3>Career Kuch Hatke</h3>
-      <p>Your Dream Career Exists. You Just Haven't Found It Yet.</p>
-    </div>
-         <div class="footer-columns">
-      
-      <div class="footer-section">
-        <h4>Quick Links</h4>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="explore.html">Explore</a></li>
-          <li><a href="quiz.html">Quiz</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </div>
+          <h3>Career Kuch Hatke</h3>
+          <p>Your Dream Career Exists. You Just Haven't Found It Yet.</p>
+        </div>
+        <div class="footer-columns">
+          <div class="footer-section">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="explore.html">Explore</a></li>
+              <li><a href="quiz.html">Quiz</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
 
-      <div class="footer-section">
-        <h4>Categories</h4>
-        <ul>
-          <li><a href="explore.html#creative">Creative</a></li>
-          <li><a href="explore.html#tech">Tech</a></li>
-          <li><a href="explore.html#science">Science</a></li>
-          <li><a href="explore.html#business">Business</a></li>
-          <li><a href="explore.html#unique">Unique</a></li>
-        </ul>
-      </div>
+          <div class="footer-section">
+            <h4>Categories</h4>
+            <ul>
+              <li><a href="explore.html#creative">Creative</a></li>
+              <li><a href="explore.html#tech">Tech</a></li>
+              <li><a href="explore.html#science">Science</a></li>
+              <li><a href="explore.html#business">Business</a></li>
+              <li><a href="explore.html#unique">Unique</a></li>
+            </ul>
+          </div>
 
-      <div class="footer-section">
-        <h4>Connect</h4>
-        <p><span class="emoji">📧</span> <a href="contact.html">Contact Us</a></p>
-         <p><span class="emoji">📱</span> <a href="#">Instagram (Coming Soon)</a></p>
-        <p><span class="emoji">💼</span> <a href="#">LinkedIn (Coming Soon)</a></p>
-        <p><span class="emoji">🐦</span> <a href="#">Twitter (Coming Soon)</a></p>
-      </div>
-      
-    </div>
+          <div class="footer-section">
+            <h4>Connect</h4>
+            <p>
+              <span class="emoji">📧</span>
+              <a href="contact.html">Contact Us</a>
+            </p>
+            <p>
+              <span class="emoji">📱</span>
+              <a href="#">Instagram (Coming Soon)</a>
+            </p>
+            <p>
+              <span class="emoji">💼</span>
+              <a href="#">LinkedIn (Coming Soon)</a>
+            </p>
+            <p>
+              <span class="emoji">🐦</span>
+              <a href="#">Twitter (Coming Soon)</a>
+            </p>
+          </div>
+        </div>
       </div>
       <div class="footer-bottom">
         <p>Built with <span class="emoji">❤️</span> by Sneha Prajapati</p>
