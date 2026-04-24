@@ -25,7 +25,6 @@
 
 /* RESET & BASE STYLES */
 
-/* Add this at the TOP of your CSS, in the * reset section */
 
 * {
   margin: 0;
@@ -960,4 +959,156 @@ body.menu-open {
   background-color: var(--bg-white);
   transform: translateY(-3px);
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* ============================================
+   CONTACT PAGE SPECIFIC STYLES
+   ============================================ */
+
+/* 1. Page Header (The top part with the title) */
+.page-header {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+  color: var(--bg-white);
+  padding: 5rem 0;
+  text-align: center;
+}
+
+.page-header h1 {
+  font-size: 3rem;
+  color: var(--accent); /* Gold title */
+  margin-bottom: 1rem;
+}
+
+.page-header p {
+  max-width: 800px;
+  margin: 0 auto;
+  color: var(--bg-white);
+  opacity: 0.9;
+  font-size: 1.1rem;
+}
+
+/* 2. Form Section Containers */
+.contact-form-section, 
+.suggest-career-section {
+  padding: 5rem 0;
+}
+
+.suggest-career-section {
+  background-color: var(--bg-white); /* White background for the second form */
+}
+
+/* 3. The Form Boxes */
+.contact-form, 
+.suggestion-form {
+  max-width: 700px; /* Limits how wide the form gets on desktop */
+  margin: 0 auto;   /* Centers the form */
+  background-color: var(--secondary);
+  padding: 2.5rem;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  border: 3px solid var(--pink-light);
+}
+
+/* 4. Form Groups (Label + Input pair) */
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block; /* Puts label on its own line */
+  font-family: 'Montserrat Alternates', sans-serif;
+  font-weight: 600;
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+}
+
+/* 5. Inputs, Selects, and Textareas */
+.form-group input, 
+.form-group select, 
+.form-group textarea {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-family: 'Tenor Sans', sans-serif;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+/* The Focus State: When you click into a box */
+.form-group input:focus, 
+.form-group select:focus, 
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--accent); /* Border turns gold */
+  background-color: #fffdfa;   /* Subtle tint change */
+}
+
+/* 6. Success Messages */
+.success-message {
+  max-width: 700px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background-color: #d4edda; /* Light green background */
+  color: #155724;            /* Dark green text */
+  border-radius: 8px;
+  text-align: center;
+  border: 1px solid #c3e6cb;
+}
+
+.success-message a {
+  color: var(--primary);
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+.form-msg{
+   text-align: center;
+   font-size: 2rem;
+   color: var(--accent);
+   margin-bottom: 2rem;
+}
+
+.form-msg-p{
+   text-align: center;
+   font-size: 1.1rem;
+   color: var(--text-gray);
+   max-width: 600px;
+   margin: 0 auto 2rem auto;
+   line-height: 1.6;
+}
+/* ============================================
+   RESPONSIVE (Mobile)
+   ============================================ */
+@media (max-width: 768px) {
+  .page-header h1 {
+    font-size: 2.2rem;
+  }
+  
+  .contact-form, 
+  .suggestion-form {
+    padding: 1.5rem;
+  }
+}
+
+.contact-form .btn, 
+.suggestion-form .btn {
+  background-color: var(--primary);
+  color: var(--bg-white);
+  width: 40%; 
+  padding: 1rem;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease; /* Required for smooth hover */
+}
+
+/* THE HOVER: Changes color and lifts the button slightly */
+.contact-form .btn:hover, 
+.suggestion-form .btn:hover {
+  background-color: var(--accent); /* Changes Burgundy to Gold */
+  color: var(--primary);          /* Changes Text to Burgundy */
+  transform: translateY(-3px);     /* Moves button up slightly */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Adds a soft shadow */
 }
