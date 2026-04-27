@@ -19,32 +19,49 @@
    10. QUIZ PAGE (coming)
    11. CAREER DETAIL PAGE (coming)
    12. Responsive Breakpoints
-   /* ============================================
-   1. CSS VARIABLES
+   
+   ============================================ *//* ============================================
+   CAREER KUCH HATKE - STYLESHEET
    ============================================ */
+
+/* COLOR PALETTE */
 :root {
   /* Main Colors */
-  --primary: #672a3f;
-  --secondary: #2b4743;
-  --accent: #dda83f;
+  --primary: #672a3f;      /* Deep burgundy */
+  --secondary: #2b4743;    /* Deep teal */
+  --accent: #dda83f;       /* Gold */
   
   /* Backgrounds */
-  --bg-light: #f2e9e1;
-  --bg-white: #ffffff;
-  --bg-dark: #15302d;
+  --bg-light: #f2e9e1;     /* Cream */
+  --bg-white: #ffffff;     /* White */
+  --bg-dark: #15302d;      /* Dark teal */
   
   /* Text */
-  --text-dark: #000000;
-  --text-gray: #a6a6a6;
+  --text-dark: #000000;    /* Black */
+  --text-gray: #828080;    /* Gray */
   
   /* Supporting */
-  --pink-light: #ffd3db;
-  --coral: #da7073;
+  --pink-light: #ffd3db;   /* Light pink */
+  --coral: #da7073;        /* Coral */
 }
 
-/* ============================================
-   2. RESET & BASE STYLES
-   ============================================ */
+/* RESET & BASE STYLES */
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  overflow-x: hidden;  /* ← Prevents horizontal scroll */
+}
+
+img {
+  max-width: 100%;  /* Images never overflow container */
+  height: auto;
+}
 * {
   margin: 0;
   padding: 0;
@@ -56,7 +73,6 @@ body {
   color: var(--text-gray);
   background-color: var(--bg-light);
   line-height: 1.6;
-  overflow-x: hidden;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -75,67 +91,19 @@ ul {
   list-style: none;
 }
 
-img {
-  max-width: 100%;
-  height: auto;
-}
-
-/* ============================================
-   3. REUSABLE COMPONENTS
-   ============================================ */
-
-/* Container */
+/* CONTAINER */
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 20px;
-  width: 100%;
-}
-
-/* Buttons */
-.btn {
-  padding: 0.8rem 2rem;
-  border-radius: 8px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s;
-  border: none;
-  font-size: 1rem;
-  font-family: 'Montserrat Alternates', sans-serif;
-  display: inline-block;
-}
-
-.btn-primary {
-  background-color: var(--accent);
-  color: var(--text-dark);
-}
-
-.btn-primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-  background-color: var(--bg-white);
-}
-
-.btn-secondary {
-  background-color: transparent;
-  color: var(--bg-white);
-  border: 2px solid var(--bg-white);
-}
-
-.btn-secondary:hover {
-  background-color: var(--bg-white);
-  color: var(--primary);
-}
-
-/* Emoji Helper */
-.emoji {
-  font-style: normal;
+  padding: 0 20px;  /* ← Padding prevents content touching screen edges */
+  width: 100%;  /* ← Add this */
 }
 
 /* ============================================
-   4. NAVIGATION BAR
+   NAVBAR
    ============================================ */
 
+/* Base Navbar Styles */
 .navbar {
   background-color: var(--bg-white);
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
@@ -149,6 +117,9 @@ img {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
 }
 
 .logo {
@@ -202,101 +173,109 @@ img {
   border-radius: 3px;
 }
 
-/* Mobile Navbar - See Responsive Section Below */
-
 /* ============================================
-   5. FOOTER
+   MOBILE NAVBAR STYLES
    ============================================ */
 
-.footer {
-  background-color: var(--bg-dark);
-  color: var(--bg-white);
-  padding: 3rem 0 0 0;
+@media (max-width: 768px) {
+  .navbar {
+    padding: 0.7rem 0;
+  }
+
+  /* Show hamburger on mobile */
+  .hamburger {
+    display: flex;
+  }
+
+  /* Mobile Menu Dropdown */
+  .nav-menu {
+    position: fixed;
+    left: -100%;
+    top: 60px;
+    
+    background-color: var(--bg-white);
+    
+    flex-direction: column !important;
+    flex-wrap: nowrap !important;
+    
+    width: 100%;
+    max-height: calc(100vh - 60px);
+    overflow-y: auto;
+    
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    
+    transition: left 0.3s ease;
+    padding: 0;
+    gap: 0;
+    z-index: 999;
+    border-top: 2px solid var(--pink-light);
+    
+    /* ✅ FIX: Center align all items */
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  /* Show menu when active */
+  .nav-menu.active {
+    left: 0;
+  }
+
+  /* Menu Items */
+  .nav-menu li {
+    width: 100%;
+    border-bottom: 1px solid var(--bg-light);
+    background-color: var(--bg-white);
+    text-align: center; /* ✅ FIX: Center text */
+  }
+
+  .nav-menu li a {
+    display: block;
+    padding: 1.2rem 1.5rem;
+    font-size: 1.1rem;
+    width: 100%;
+    background-color: var(--bg-white);
+    color: var(--text-dark);
+    text-align: center; /* ✅ FIX: Center link text */
+    transition: all 0.3s ease;
+  }
+
+  /* ✅ FIX: Active page gets primary color */
+  .nav-menu li a.active {
+    border-bottom: none;
+    border-left: 4px solid var(--primary);
+    background-color: var(--bg-light);
+    color: var(--primary); /* ✅ Primary color text */
+    font-weight: 700; /* ✅ Bold for emphasis */
+  }
+
+  /* Hover effect */
+  .nav-menu li a:hover {
+    background-color: var(--bg-light);
+    color: var(--primary); /* ✅ Primary color on hover */
+  }
+
+  /* Hamburger Animation */
+  .hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+  
+  .hamburger.active span:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -6px);
+  }
 }
 
-.footer-intro {
-  text-align: center;
-  margin-bottom: 3rem;
-  padding-bottom: 2rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+/* Prevent body scroll when menu open */
+body.menu-open {
+  overflow: hidden;
 }
-
-.footer-intro h3 {
-  color: var(--accent);
-  font-size: 1.8rem;
-  margin-bottom: 0.5rem;
-}
-
-.footer-intro p {
-  color: var(--bg-white);
-  opacity: 0.9;
-  font-size: 1rem;
-}
-
-.footer-columns {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 4rem;
-  padding-bottom: 2rem;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.footer-section h4 {
-  color: var(--accent);
-  margin-bottom: 1rem;
-  font-size: 1.1rem;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-}
-
-.footer-section ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.footer-section li {
-  margin-bottom: 0.7rem;
-}
-
-.footer-section p {
-  color: var(--bg-white);
-  opacity: 0.8;
-  margin-bottom: 0.7rem;
-  font-size: 0.9rem;
-}
-
-.footer-section a {
-  color: var(--bg-white);
-  opacity: 0.8;
-  transition: all 0.3s;
-  text-decoration: none;
-}
-
-.footer-section a:hover {
-  color: var(--accent);
-  opacity: 1;
-}
-
-.footer-bottom {
-  text-align: center;
-  padding: 1.5rem 0;
-  background-color: rgba(0, 0, 0, 0.3);
-  border-top: 1px solid var(--accent);
-}
-
-.footer-bottom p {
-  color: var(--bg-white);
-  font-size: 0.9rem;
-  margin-bottom: 0.3rem;
-}
-
 /* ============================================
-   6. HOME PAGE
+   HERO SECTION
    ============================================ */
 
-/* Hero Section */
 .hero {
   background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
   color: var(--bg-white);
@@ -332,7 +311,43 @@ img {
   flex-wrap: wrap;
 }
 
-/* Stats Section */
+.btn {
+  padding: 0.8rem 2rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+  border: none;
+  font-size: 1rem;
+  font-family: 'Montserrat Alternates', sans-serif;
+}
+
+.btn-primary {
+  background-color: var(--accent);
+  color: var(--text-dark);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  background-color: var(--bg-white);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--bg-white);
+  border: 2px solid var(--bg-white);
+}
+
+.btn-secondary:hover {
+  background-color: var(--bg-white);
+  color: var(--primary);
+}
+
+/* ============================================
+   STATS SECTION
+   ============================================ */
+
 .stats {
   padding: 4rem 0;
   background-color: var(--bg-white);
@@ -377,7 +392,10 @@ img {
   color: var(--bg-white);
 }
 
-/* Categories Section */
+/* ============================================
+   CATEGORIES SECTION
+   ============================================ */
+
 .categories {
   padding: 4rem 0;
   background-color: var(--bg-light);
@@ -392,7 +410,7 @@ img {
 
 .category-grid {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(5, 1fr);  /* 5 equal columns */
   gap: 1.5rem;
 }
 
@@ -402,14 +420,14 @@ img {
   border-radius: 16px;
   text-align: center;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
+  transition: all 0.3s ease;  /* Smooth animation */
   border: 2px solid transparent;
 }
 
 .category-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 10px 30px rgba(221, 168, 63, 0.4);
-  border-color: var(--accent);
+  transform: translateY(-10px);  /* Lifts up */
+  box-shadow: 0 10px 30px rgba(221, 168, 63, 0.4);  /* Golden glow */
+  border-color: var(--accent);  /* Gold border appears */
 }
 
 .category-card .emoji {
@@ -440,9 +458,257 @@ img {
   color: var(--primary);
 }
 
-/* Quiz CTA Section */
+/* ============================================
+   FOOTER
+   ============================================ */
+
+.footer {
+  background-color: var(--bg-dark);
+  color: var(--bg-white);
+  padding: 3rem 0 0 0;
+}
+
+/* Centered intro section */
+.footer-intro {
+  text-align: center;
+  margin-bottom: 3rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-intro h3 {
+  color: var(--accent);
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.footer-intro p {
+  color: var(--bg-white);
+  opacity: 0.9;
+  font-size: 1rem;
+}
+
+/* 3-column grid */
+.footer-columns {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+  padding-bottom: 2rem;
+}
+
+.footer-section h4 {
+  color: var(--accent);
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-section li {
+  margin-bottom: 0.7rem;
+}
+
+.footer-section p {
+  color: var(--bg-white);
+  opacity: 0.8;
+  margin-bottom: 0.7rem;
+  font-size: 0.9rem;
+}
+
+.footer-section a {
+  color: var(--bg-white);
+  opacity: 0.8;
+  transition: all 0.3s;
+  text-decoration: none;
+}
+
+.footer-section a:hover {
+  color: var(--accent);
+  opacity: 1;
+  padding-left: 5px;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding: 1.5rem 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-top: 1px solid var(--accent);
+}
+
+.footer-bottom p {
+  color: var(--bg-white);
+  font-size: 0.9rem;
+  margin-bottom: 0.3rem;
+}
+
+.footer-columns {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4rem;  /* Increased gap */
+  padding-bottom: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-section a:hover {
+  color: var(--accent);
+  opacity: 1;
+  /* Removed padding-left shift */
+}
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .footer-columns {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .footer-intro h3 {
+    font-size: 1.5rem;
+  }
+}
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+
+/* Tablet and below */
+@media (max-width: 768px) {
+
+  /* Mobile responsive - ADD TO EXISTING @media (max-width: 768px) */
+@media (max-width: 768px) {
+  
+  /* Reduce all heading sizes on mobile */
+  h1 {
+    font-size: 2rem !important;
+  }
+  
+  h2 {
+    font-size: 1.8rem !important;
+  }
+  
+  h3 {
+    font-size: 1.3rem !important;
+  }
+  
+  p {
+    font-size: 1rem !important;
+  }
+  
+  /* Reduce padding on all sections */
+  .hero,
+  .about-hero,
+  .my-story,
+  .solution,
+  .future-vision,
+  .call-to-action,
+  .quiz-cta {
+    padding: 3rem 1.5rem !important;
+  }
+  
+  /* Container padding */
+  .container {
+    padding: 0 15px;
+  }
+  
+  /* Buttons */
+  .btn {
+    padding: 0.8rem 1.5rem !important;
+    font-size: 1rem !important;
+  }
+  
+  /* Navigation menu already handled by hamburger */
+  
+  /* Footer columns stack */
+  .footer-columns {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  /* Category cards 2 per row on tablet, 1 on mobile */
+  .category-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  /* Stat boxes stack */
+  .stat-boxes {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+
+/* Very small phones */
+@media (max-width: 480px) {
+  
+  h1 {
+    font-size: 1.8rem !important;
+  }
+  
+  h2 {
+    font-size: 1.5rem !important;
+  }
+  
+  /* Category cards 1 per row */
+  .category-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  /* Buttons full width on tiny screens */
+  .btn {
+    display: block;
+    width: 100%;
+    max-width: 300px;
+    margin: 0.5rem auto;
+  }
+}
+  
+  /* Footer stacks on mobile */
+  .footer-content {
+    grid-template-columns: 1fr;  /* 1 column instead of 4 */
+    gap: 2rem;
+  }
+  
+  /* Category cards 2 per row on tablet */
+  .category-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  /* Stat boxes stack */
+  .stat-boxes {
+    grid-template-columns: 1fr;
+  }
+  
+  /* Hero text smaller */
+  .hero h1 {
+    font-size: 2rem;
+  }
+  
+  .hero h2 {
+    font-size: 1.3rem;
+  }
+  
+}
+
+/* Mobile only */
+@media (max-width: 480px) {
+  
+  /* Category cards 1 per row on phone */
+  .category-grid {
+    grid-template-columns: 1fr;
+  }
+    
+}
+
+/* ============================================
+   QUIZ CTA SECTION
+   ============================================ */
+
 .quiz-cta {
-  background: linear-gradient(135deg, #dda83f 0%, #f2e9e1 100%);
+  background: linear-gradient(135deg, #dda83f 0%, #f2e9e1 100%);  /* Gold fading to cream */
   padding: 4rem 2rem;
   text-align: center;
   border-top: 3px solid var(--primary);
@@ -488,10 +754,6 @@ img {
   opacity: 0.7;
   font-style: italic;
 }
-
-/* ============================================
-   7. ABOUT PAGE
-   ============================================ */
 
 /* ============================================
    ABOUT PAGE
@@ -748,12 +1010,11 @@ img {
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
 }
 
-
 /* ============================================
-   8. CONTACT PAGE
+   CONTACT PAGE STYLES
    ============================================ */
 
-/* Page Header */
+/* 1. PAGE HEADER */
 .page-header {
   background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
   color: var(--bg-white);
@@ -763,9 +1024,9 @@ img {
 
 .page-header h1 {
   font-size: 3rem;
-  color: var(--accent);
+  color: var(--accent); /* Gold title */
   margin-bottom: 1rem;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Adds depth */
 }
 
 .page-header p {
@@ -777,21 +1038,21 @@ img {
   line-height: 1.8;
 }
 
-/* Form Sections */
+/* 2. FORM SECTIONS */
 .contact-form-section, 
 .suggest-career-section {
   padding: 5rem 0;
 }
 
 .contact-form-section {
-  background-color: var(--bg-light);
+  background-color: var(--bg-light); /* Cream background */
 }
 
 .suggest-career-section {
-  background-color: var(--bg-white);
+  background-color: var(--bg-white); /* White background */
 }
 
-/* Section Headings */
+/* 3. SECTION HEADINGS */
 .form-msg {
   text-align: center;
   font-size: 2.5rem;
@@ -809,7 +1070,7 @@ img {
   line-height: 1.8;
 }
 
-/* Form Containers */
+/* 4. FORM CONTAINERS */
 .contact-form, 
 .suggestion-form {
   max-width: 700px;
@@ -824,11 +1085,11 @@ img {
 
 .contact-form:hover,
 .suggestion-form:hover {
-  transform: translateY(-5px);
+  transform: translateY(-5px); /* Slight lift on hover */
   box-shadow: 0 15px 50px rgba(0, 0, 0, 0.12);
 }
 
-/* Form Groups */
+/* 5. FORM GROUPS */
 .form-group {
   margin-bottom: 1.8rem;
 }
@@ -842,12 +1103,14 @@ img {
   font-size: 1rem;
 }
 
+/* Required field indicator */
 .form-group label::after {
   content: " *";
   color: var(--coral);
   font-weight: bold;
 }
 
+/* Optional fields - remove asterisk */
 .form-group label[for="telephone"]::after,
 .form-group label[for="suggester-name"]::after {
   content: " (optional)";
@@ -856,7 +1119,7 @@ img {
   font-size: 0.85rem;
 }
 
-/* Input Fields */
+/* 6. INPUT FIELDS */
 .form-group input, 
 .form-group select, 
 .form-group textarea {
@@ -871,15 +1134,17 @@ img {
   color: var(--text-dark);
 }
 
+/* Placeholder styling */
 .form-group input::placeholder,
 .form-group textarea::placeholder {
   color: var(--text-gray);
   opacity: 0.6;
 }
 
+/* Select dropdown styling */
 .form-group select {
   cursor: pointer;
-  appearance: none;
+  appearance: none; /* Remove default arrow */
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23672a3f' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: right 1rem center;
@@ -893,23 +1158,36 @@ img {
   color: var(--text-dark);
 }
 
+/* Textarea specific */
 .form-group textarea {
-  resize: vertical;
+  resize: vertical; /* Allow vertical resize only */
   min-height: 120px;
   line-height: 1.6;
 }
 
-/* Focus States */
+/* 7. FOCUS STATES */
 .form-group input:focus, 
 .form-group select:focus, 
 .form-group textarea:focus {
   outline: none;
   border-color: var(--accent);
   background-color: var(--bg-white);
-  box-shadow: 0 0 0 4px rgba(221, 168, 63, 0.15);
+  box-shadow: 0 0 0 4px rgba(221, 168, 63, 0.15); /* Gold glow */
 }
 
-/* Submit Buttons */
+/* 8. VALIDATION STATES */
+.form-group input:invalid:not(:placeholder-shown),
+.form-group select:invalid:not(:placeholder-shown),
+.form-group textarea:invalid:not(:placeholder-shown) {
+  border-color: var(--coral);
+}
+
+.form-group input:valid:not(:placeholder-shown),
+.form-group textarea:valid:not(:placeholder-shown) {
+  border-color: #28a745; /* Green for valid */
+}
+
+/* 9. SUBMIT BUTTONS */
 .form-group:last-child {
   text-align: center;
   margin-top: 2.5rem;
@@ -943,7 +1221,12 @@ img {
   box-shadow: 0 8px 25px rgba(103, 42, 63, 0.4);
 }
 
-/* Success Messages */
+.contact-form .btn:active,
+.suggestion-form .btn:active {
+  transform: translateY(-1px); /* Slight press effect */
+}
+
+/* 10. SUCCESS MESSAGES */
 .success-message {
   max-width: 700px;
   margin: 2rem auto;
@@ -954,13 +1237,30 @@ img {
   text-align: center;
   border: 2px solid #28a745;
   box-shadow: 0 5px 20px rgba(40, 167, 69, 0.2);
-  display: none;
+  animation: slideDown 0.5s ease;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .success-message .emoji {
   font-size: 2.5rem;
   display: block;
   margin-bottom: 1rem;
+  animation: bounce 0.6s ease;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
 }
 
 .success-message p {
@@ -980,180 +1280,70 @@ img {
   color: var(--accent);
 }
 
-/* ============================================
-   9. EXPLORE PAGE
-   ============================================ */
+/* 11. FORM ICONS (Optional Enhancement) */
+.form-group {
+  position: relative;
+}
 
-/* Add Explore page styles here when ready */
+/* Add icon space for future enhancement */
+.form-group.has-icon input,
+.form-group.has-icon select,
+.form-group.has-icon textarea {
+  padding-left: 2.8rem;
+}
 
-/* ============================================
-   10. QUIZ PAGE
-   ============================================ */
-
-/* Add Quiz page styles here when ready */
-
-/* ============================================
-   11. CAREER DETAIL PAGE
-   ============================================ */
-
-/* Add Career Detail page styles here when ready */
-
-/* ============================================
-   12. RESPONSIVE BREAKPOINTS
-   ============================================ */
-
-/* Tablet and Below (768px) */
+/* 12. MOBILE RESPONSIVE */
 @media (max-width: 768px) {
   
-  /* Navbar Mobile */
-  .navbar {
-    padding: 0.7rem 0;
-  }
-
-  .hamburger {
-    display: flex;
-  }
-
-  .nav-menu {
-    position: fixed;
-    left: -100%;
-    top: 60px;
-    background-color: var(--bg-white);
-    flex-direction: column !important;
-    flex-wrap: nowrap !important;
-    width: 100%;
-    max-height: calc(100vh - 60px);
-    overflow-y: auto;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-    transition: left 0.3s ease;
-    padding: 0;
-    gap: 0;
-    z-index: 999;
-    border-top: 2px solid var(--pink-light);
-    align-items: center;
-    justify-content: flex-start;
-  }
-
-  .nav-menu.active {
-    left: 0;
-  }
-
-  .nav-menu li {
-    width: 100%;
-    border-bottom: 1px solid var(--bg-light);
-    background-color: var(--bg-white);
-    text-align: center;
-  }
-
-  .nav-menu li a {
-    display: block;
-    padding: 1.2rem 1.5rem;
-    font-size: 1.1rem;
-    width: 100%;
-    background-color: var(--bg-white);
-    color: var(--text-dark);
-    text-align: center;
-    transition: all 0.3s ease;
-  }
-
-  .nav-menu li a.active {
-    border-bottom: none;
-    border-left: 4px solid var(--primary);
-    background-color: var(--bg-light);
-    color: var(--primary);
-    font-weight: 700;
-  }
-
-  .nav-menu li a:hover {
-    background-color: var(--bg-light);
-    color: var(--primary);
-  }
-
-  .hamburger.active span:nth-child(1) {
-    transform: rotate(45deg) translate(5px, 5px);
+  /* Page header */
+  .page-header {
+    padding: 3rem 1.5rem;
   }
   
-  .hamburger.active span:nth-child(2) {
-    opacity: 0;
+  .page-header h1 {
+    font-size: 2.2rem;
   }
   
-  .hamburger.active span:nth-child(3) {
-    transform: rotate(-45deg) translate(7px, -6px);
-  }
-
-  /* Footer Mobile */
-  .footer-columns {
-    grid-template-columns: 1fr;
-    gap: 2rem;
+  .page-header p {
+    font-size: 1rem;
   }
   
-  .footer-intro h3 {
-    font-size: 1.5rem;
-  }
-
-  /* Category Grid Mobile */
-  .category-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  
-  /* Stat Boxes Mobile */
-  .stat-boxes {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-  }
-
-  /* Typography Mobile */
-  h1 {
-    font-size: 2rem !important;
-  }
-  
-  h2 {
-    font-size: 1.8rem !important;
-  }
-  
-  h3 {
-    font-size: 1.3rem !important;
-  }
-  
-  p {
-    font-size: 1rem !important;
-  }
-  
-  /* Sections Mobile */
-  .hero,
-  .page-header,
+  /* Form sections */
   .contact-form-section,
   .suggest-career-section {
-    padding: 3rem 1.5rem !important;
+    padding: 3rem 1rem;
   }
   
-  /* Container Mobile */
-  .container {
-    padding: 0 15px;
+  /* Section headings */
+  .form-msg {
+    font-size: 2rem;
   }
   
-  /* Buttons Mobile */
-  .btn {
-    padding: 0.8rem 1.5rem !important;
-    font-size: 1rem !important;
+  .form-msg-p {
+    font-size: 1rem;
+    padding: 0 1rem;
   }
-
-  /* Contact Forms Mobile */
+  
+  /* Form containers */
   .contact-form, 
   .suggestion-form {
     padding: 2rem 1.5rem;
     border-width: 2px;
   }
-
-  .form-msg {
-    font-size: 2rem;
+  
+  /* Form elements */
+  .form-group {
+    margin-bottom: 1.5rem;
   }
-
-  .form-msg-p {
+  
+  .form-group input, 
+  .form-group select, 
+  .form-group textarea {
+    padding: 0.9rem 1rem;
     font-size: 1rem;
-    padding: 0 1rem;
   }
-
+  
+  /* Buttons full width on mobile */
   .contact-form .btn, 
   .suggestion-form .btn {
     width: 100%;
@@ -1161,42 +1351,30 @@ img {
     padding: 1rem;
     font-size: 1rem;
   }
-
+  
+  /* Success message */
   .success-message {
     margin: 1.5rem 1rem;
     padding: 1.5rem;
   }
 }
 
-/* Small Phones (480px) */
-@media (max-width: 480px) {
+/* 13. TABLET RESPONSIVE */
+@media (min-width: 769px) and (max-width: 1024px) {
   
-  h1 {
-    font-size: 1.8rem !important;
+  .page-header h1 {
+    font-size: 2.5rem;
   }
   
-  h2 {
-    font-size: 1.5rem !important;
-  }
-  
-  .category-grid {
-    grid-template-columns: 1fr;
-  }
-  
-  .btn {
-    display: block;
-    width: 100%;
-    max-width: 300px;
-    margin: 0.5rem auto;
+  .contact-form, 
+  .suggestion-form {
+    max-width: 600px;
   }
 }
 
-/* Prevent body scroll when menu open */
-body.menu-open {
-  overflow: hidden;
-}
+/* 14. ACCESSIBILITY IMPROVEMENTS */
 
-/* Accessibility */
+/* Keyboard navigation focus */
 .form-group input:focus-visible,
 .form-group select:focus-visible,
 .form-group textarea:focus-visible,
@@ -1205,6 +1383,7 @@ body.menu-open {
   outline-offset: 2px;
 }
 
+/* High contrast mode support */
 @media (prefers-contrast: high) {
   .form-group input,
   .form-group select,
@@ -1213,16 +1392,17 @@ body.menu-open {
   }
 }
 
+/* Reduced motion support */
 @media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
+  .contact-form,
+  .suggestion-form,
+  .btn,
+  .success-message {
+    transition: none;
+    animation: none;
   }
 }
 
 /* ============================================
-   END OF STYLESHEET
+   END OF CONTACT PAGE STYLES
    ============================================ */
