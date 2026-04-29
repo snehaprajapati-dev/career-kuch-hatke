@@ -1,54 +1,34 @@
 /* ============================================
    CAREER KUCH HATKE - MAIN STYLESHEET
-   ============================================
-   
-   📋 TABLE OF CONTENTS:
-   ─────────────────────────────────────────
-   1. CSS Variables (Colors, Fonts)
-   2. Reset & Base Styles
-   3. Reusable Components
-      - Container
-      - Buttons
-      - Emoji styles
-   4. Navigation Bar
-   5. Footer
-   6. HOME PAGE
-   7. ABOUT PAGE  
-   8. CONTACT PAGE
-   9. EXPLORE PAGE (coming)
-   10. QUIZ PAGE (coming)
-   11. CAREER DETAIL PAGE (coming)
-   12. Responsive Breakpoints
-   /* ============================================
-   1. CSS VARIABLES
    ============================================ */
+
 :root {
-  /* Main Colors */
   --primary: #672a3f;
   --secondary: #2b4743;
   --accent: #dda83f;
-  
-  /* Backgrounds */
   --bg-light: #f2e9e1;
   --bg-white: #ffffff;
   --bg-dark: #15302d;
-  
-  /* Text */
   --text-dark: #000000;
-  --text-gray: #a6a6a6;
-  
-  /* Supporting */
+  --text-gray: #878787;
   --pink-light: #ffd3db;
   --coral: #da7073;
 }
 
 /* ============================================
-   2. RESET & BASE STYLES
+   RESET & BASE
    ============================================ */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+html {
+  overflow-x: hidden;
+  width: 100%;
+  scroll-behavior: smooth;
+  height: 100%;
 }
 
 body {
@@ -57,6 +37,10 @@ body {
   background-color: var(--bg-light);
   line-height: 1.6;
   overflow-x: hidden;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -75,16 +59,20 @@ ul {
   list-style: none;
 }
 
-img {
+img, video, iframe {
   max-width: 100%;
   height: auto;
+  display: block;
+}
+
+main {
+  flex: 1;
 }
 
 /* ============================================
-   3. REUSABLE COMPONENTS
+   REUSABLE COMPONENTS
    ============================================ */
 
-/* Container */
 .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -92,7 +80,6 @@ img {
   width: 100%;
 }
 
-/* Buttons */
 .btn {
   padding: 0.8rem 2rem;
   border-radius: 8px;
@@ -127,22 +114,24 @@ img {
   color: var(--primary);
 }
 
-/* Emoji Helper */
 .emoji {
   font-style: normal;
 }
 
 /* ============================================
-   4. NAVIGATION BAR
+   NAVIGATION - STICKY FIXED
    ============================================ */
 
 .navbar {
   background-color: var(--bg-white);
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
   z-index: 1000;
   padding: 1rem 0;
+  width: 100%;
 }
 
 .navbar .container {
@@ -155,9 +144,9 @@ img {
   color: var(--primary);
   font-size: 1.5rem;
   font-weight: 800;
+  z-index: 1001;
 }
 
-/* Desktop Menu */
 .nav-menu {
   display: flex;
   gap: 2rem;
@@ -182,7 +171,6 @@ img {
   padding-bottom: 0.2rem;
 }
 
-/* Hamburger Button */
 .hamburger {
   display: none;
   flex-direction: column;
@@ -191,6 +179,7 @@ img {
   cursor: pointer;
   padding: 0;
   z-index: 1001;
+  position: relative;
 }
 
 .hamburger span {
@@ -202,16 +191,34 @@ img {
   border-radius: 3px;
 }
 
-/* Mobile Navbar - See Responsive Section Below */
+/* Add padding to body content so it's not hidden under navbar */
+body > *:first-child:not(.navbar) {
+  margin-top: 70px;
+}
+
+.hero,
+.page-header,
+.about-hero {
+  margin-top: 0 !important;
+}
 
 /* ============================================
-   5. FOOTER
+   FOOTER
    ============================================ */
 
 .footer {
   background-color: var(--bg-dark);
   color: var(--bg-white);
   padding: 3rem 0 0 0;
+  width: 100%;
+  margin-top: auto;
+}
+
+.footer .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  width: 100%;
 }
 
 .footer-intro {
@@ -284,6 +291,7 @@ img {
   padding: 1.5rem 0;
   background-color: rgba(0, 0, 0, 0.3);
   border-top: 1px solid var(--accent);
+  width: 100%;
 }
 
 .footer-bottom p {
@@ -293,10 +301,9 @@ img {
 }
 
 /* ============================================
-   6. HOME PAGE
+   HOME PAGE
    ============================================ */
 
-/* Hero Section */
 .hero {
   background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
   color: var(--bg-white);
@@ -332,7 +339,6 @@ img {
   flex-wrap: wrap;
 }
 
-/* Stats Section */
 .stats {
   padding: 4rem 0;
   background-color: var(--bg-white);
@@ -377,7 +383,6 @@ img {
   color: var(--bg-white);
 }
 
-/* Categories Section */
 .categories {
   padding: 4rem 0;
   background-color: var(--bg-light);
@@ -395,6 +400,8 @@ img {
   grid-template-columns: repeat(5, 1fr);
   gap: 1.5rem;
 }
+
+
 
 .category-card {
   background-color: var(--bg-white);
@@ -440,7 +447,6 @@ img {
   color: var(--primary);
 }
 
-/* Quiz CTA Section */
 .quiz-cta {
   background: linear-gradient(135deg, #dda83f 0%, #f2e9e1 100%);
   padding: 4rem 2rem;
@@ -490,14 +496,9 @@ img {
 }
 
 /* ============================================
-   7. ABOUT PAGE
-   ============================================ */
-
-/* ============================================
    ABOUT PAGE
    ============================================ */
 
-/* Hero section */
 .about-hero {
   background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
   color: var(--bg-white);
@@ -525,7 +526,6 @@ img {
   opacity: 0.95;
 }
 
-/* Solution section */
 .solution {
   padding: 4rem 2rem;
   background-color: var(--bg-white);
@@ -577,8 +577,6 @@ img {
   font-size: 1.2rem;
 }
 
-/* My Story section (MOST IMPORTANT) */
-
 .story-intro {
   text-align: center;
   font-size: 1.2rem;
@@ -588,6 +586,7 @@ img {
   color: var(--text-gray);
   font-style: italic;
 }
+
 .my-story {
   padding: 5rem 2rem;
   background-color: var(--bg-light);
@@ -620,7 +619,7 @@ img {
   text-align: justify;
 }
 
-  .my-story h4 {
+.my-story h4 {
   text-align: right;
   font-size: 1rem;
   font-weight: 600;
@@ -630,7 +629,7 @@ img {
   margin-left: auto;
   margin-right: auto;
   font-style: italic;
-  line-height: 1.8;  /* ADD THIS - gives breathing room */
+  line-height: 1.8;
 }
 
 .story-highlight {
@@ -651,16 +650,7 @@ img {
   max-width: 800px;
   margin: 2rem auto;
 }
-/* Mobile adjustment for signature */
-@media (max-width: 768px) {
-  .my-story h4 {
-    text-align: center;  /* Center on mobile */
-    font-size: 0.9rem;
-  }
-}
 
-
-/* Future Vision */
 .future-vision {
   padding: 4rem 2rem;
   background-color: var(--bg-white);
@@ -703,7 +693,6 @@ img {
   font-size: 1.2rem;
 }
 
-/* Call to Action */
 .call-to-action {
   padding: 4rem 2rem;
   background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%);
@@ -748,12 +737,10 @@ img {
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
 }
 
-
 /* ============================================
-   8. CONTACT PAGE
+   CONTACT PAGE
    ============================================ */
 
-/* Page Header */
 .page-header {
   background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
   color: var(--bg-white);
@@ -777,7 +764,13 @@ img {
   line-height: 1.8;
 }
 
-/* Form Sections */
+.page-header .tagline {
+  display: block;
+  margin-top: 0.5rem;
+  font-size: 1rem;
+  opacity: 0.85;
+}
+
 .contact-form-section, 
 .suggest-career-section {
   padding: 5rem 0;
@@ -791,7 +784,6 @@ img {
   background-color: var(--bg-white);
 }
 
-/* Section Headings */
 .form-msg {
   text-align: center;
   font-size: 2.5rem;
@@ -809,7 +801,6 @@ img {
   line-height: 1.8;
 }
 
-/* Form Containers */
 .contact-form, 
 .suggestion-form {
   max-width: 700px;
@@ -828,7 +819,6 @@ img {
   box-shadow: 0 15px 50px rgba(0, 0, 0, 0.12);
 }
 
-/* Form Groups */
 .form-group {
   margin-bottom: 1.8rem;
 }
@@ -856,7 +846,6 @@ img {
   font-size: 0.85rem;
 }
 
-/* Input Fields */
 .form-group input, 
 .form-group select, 
 .form-group textarea {
@@ -899,7 +888,6 @@ img {
   line-height: 1.6;
 }
 
-/* Focus States */
 .form-group input:focus, 
 .form-group select:focus, 
 .form-group textarea:focus {
@@ -909,7 +897,6 @@ img {
   box-shadow: 0 0 0 4px rgba(221, 168, 63, 0.15);
 }
 
-/* Submit Buttons */
 .form-group:last-child {
   text-align: center;
   margin-top: 2.5rem;
@@ -943,7 +930,6 @@ img {
   box-shadow: 0 8px 25px rgba(103, 42, 63, 0.4);
 }
 
-/* Success Messages */
 .success-message {
   max-width: 700px;
   margin: 2rem auto;
@@ -981,31 +967,366 @@ img {
 }
 
 /* ============================================
-   9. EXPLORE PAGE
+   EXPLORE PAGE
    ============================================ */
 
-/* Add Explore page styles here when ready */
+.filters {
+  background-color: var(--bg-light);
+  padding: 3rem 0;
+  text-align: center;
+}
 
+.search-box {
+  margin-bottom: 1.5rem;
+}
+
+.search-box input {
+  width: 100%;
+  max-width: 500px;
+  padding: 1rem 1.5rem;
+  border: 2px solid var(--primary);
+  border-radius: 50px;
+  font-family: 'Tenor Sans', sans-serif;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background-color: var(--bg-white);
+}
+
+.search-box input:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 4px rgba(221, 168, 63, 0.15);
+}
+
+.search-box input::placeholder {
+  color: var(--text-gray);
+  opacity: 0.6;
+}
+
+.results-count {
+  color: var(--text-gray);
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+  font-weight: 500;
+}
+
+.results-count span {
+  color: var(--primary);
+  font-weight: 700;
+}
+
+.filter-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  padding: 0.8rem 1.8rem;
+  border-radius: 50px;
+  font-family: 'Montserrat Alternates', sans-serif;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+  background-color: var(--bg-white);
+  color: var(--text-dark);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.filter-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+button.filter-btn[data-filter="all"] {
+  background-color: rgba(221, 168, 63, 0.15) !important;
+  border-color: var(--accent) !important;
+  color: #b8860b !important;
+}
+
+button.filter-btn[data-filter="all"]:hover {
+  background-color: rgba(221, 168, 63, 0.3) !important;
+}
+
+button.filter-btn[data-filter="all"].active {
+  background: linear-gradient(135deg, var(--accent) 0%, #f0c050 100%) !important;
+  color: var(--text-dark) !important;
+  border-color: var(--accent) !important;
+  box-shadow: 0 4px 15px rgba(221, 168, 63, 0.4) !important;
+  font-weight: 700 !important;
+}
+
+button.filter-btn[data-filter="creative"] {
+  background-color: rgba(221, 168, 63, 0.15) !important;
+  border-color: var(--accent) !important;
+  color: #b8860b !important;
+}
+
+button.filter-btn[data-filter="creative"]:hover {
+  background-color: rgba(221, 168, 63, 0.3) !important;
+}
+
+button.filter-btn[data-filter="creative"].active {
+  background: linear-gradient(135deg, var(--accent) 0%, #f0c050 100%) !important;
+  color: var(--text-dark) !important;
+  border-color: var(--accent) !important;
+  box-shadow: 0 4px 15px rgba(221, 168, 63, 0.4) !important;
+  font-weight: 700 !important;
+}
+
+button.filter-btn[data-filter="tech"] {
+  background-color: rgba(43, 71, 67, 0.15) !important;
+  border-color: var(--secondary) !important;
+  color: var(--secondary) !important;
+}
+
+button.filter-btn[data-filter="tech"]:hover {
+  background-color: rgba(43, 71, 67, 0.25) !important;
+}
+
+button.filter-btn[data-filter="tech"].active {
+  background: linear-gradient(135deg, var(--secondary) 0%, #3d6860 100%) !important;
+  color: var(--bg-white) !important;
+  border-color: var(--secondary) !important;
+  box-shadow: 0 4px 15px rgba(43, 71, 67, 0.4) !important;
+  font-weight: 700 !important;
+}
+
+button.filter-btn[data-filter="science"] {
+  background-color: rgba(103, 42, 63, 0.15) !important;
+  border-color: var(--primary) !important;
+  color: var(--primary) !important;
+}
+
+button.filter-btn[data-filter="science"]:hover {
+  background-color: rgba(103, 42, 63, 0.25) !important;
+}
+
+button.filter-btn[data-filter="science"].active {
+  background: linear-gradient(135deg, var(--primary) 0%, #8a3a55 100%) !important;
+  color: var(--bg-white) !important;
+  border-color: var(--primary) !important;
+  box-shadow: 0 4px 15px rgba(103, 42, 63, 0.4) !important;
+  font-weight: 700 !important;
+}
+
+button.filter-btn[data-filter="business"] {
+  background-color: rgba(218, 112, 115, 0.15) !important;
+  border-color: var(--coral) !important;
+  color: var(--coral) !important;
+}
+
+button.filter-btn[data-filter="business"]:hover {
+  background-color: rgba(218, 112, 115, 0.25) !important;
+}
+
+button.filter-btn[data-filter="business"].active {
+  background: linear-gradient(135deg, var(--coral) 0%, #e58a8c 100%) !important;
+  color: var(--bg-white) !important;
+  border-color: var(--coral) !important;
+  box-shadow: 0 4px 15px rgba(218, 112, 115, 0.4) !important;
+  font-weight: 700 !important;
+}
+
+button.filter-btn[data-filter="unique"] {
+  background-color: rgba(255, 211, 219, 0.4) !important;
+  border-color: #d946a6 !important;
+  color: #d946a6 !important;
+}
+
+button.filter-btn[data-filter="unique"]:hover {
+  background-color: rgba(255, 211, 219, 0.6) !important;
+}
+
+button.filter-btn[data-filter="unique"].active {
+  background: linear-gradient(135deg, #d946a6 0%, #e968b9 100%) !important;
+  color: var(--bg-white) !important;
+  border-color: #d946a6 !important;
+  box-shadow: 0 4px 15px rgba(217, 70, 166, 0.4) !important;
+  font-weight: 700 !important;
+}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   CAREERS SECTION - FINAL FIX
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   CAREERS SECTION - FIXED
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+
+.careers {
+  background-color: rgba(255, 211, 219, 0.2);
+  padding: 5rem 0;
+}
+
+.careers .container {
+  padding: 0 20px;
+}
+
+/* Desktop: 3 equal columns */
+
+
+.career-card {
+  background-color: var(--bg-white);
+  padding: 2rem;
+  border-radius: 16px;
+  border: 3px solid var(--pink-light);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+}
+
+.career-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(221, 168, 63, 0.3);
+  border-color: var(--accent);
+  z-index: 10;
+}
+
+.card-header {
+  margin-bottom: 1rem;
+}
+
+.category-badge {
+  display: inline-block;
+  padding: 0.4rem 1rem;
+  border-radius: 50px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  font-family: 'Montserrat Alternates', sans-serif;
+}
+
+.category-badge.creative {
+  background-color: rgba(221, 168, 63, 0.15);
+  color: #b8860b;
+  border: 1px solid var(--accent);
+}
+
+.category-badge.tech {
+  background-color: rgba(43, 71, 67, 0.15);
+  color: var(--secondary);
+  border: 1px solid var(--secondary);
+}
+
+.category-badge.science {
+  background-color: rgba(103, 42, 63, 0.15);
+  color: var(--primary);
+  border: 1px solid var(--primary);
+}
+
+.category-badge.business {
+  background-color: rgba(218, 112, 115, 0.15);
+  color: var(--coral);
+  border: 1px solid var(--coral);
+}
+
+.category-badge.unique {
+  background-color: rgba(255, 211, 219, 0.3);
+  color: #d946a6;
+  border: 1px solid var(--pink-light);
+}
+
+.career-card h3 {
+  font-size: 1.5rem;
+  color: var(--primary);
+  margin-bottom: 0.8rem;
+  line-height: 1.3;
+  word-wrap: break-word;
+}
+
+.career-card .tagline {
+  color: var(--text-gray);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 1.2rem;
+  font-style: italic;
+  flex-grow: 1;
+  word-wrap: break-word;
+}
+
+.career-card .salary {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 1.2rem;
+  font-family: 'Montserrat Alternates', sans-serif;
+}
+
+.card-btn {
+  display: block;
+  text-align: center;
+  padding: 0.9rem 1.5rem;
+  background: linear-gradient(135deg, var(--accent) 0%, #f0c050 100%);
+  color: var(--text-dark);
+  font-weight: 700;
+  font-family: 'Montserrat Alternates', sans-serif;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 10px rgba(221, 168, 63, 0.3);
+}
+
+.card-btn:hover {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+  color: var(--bg-white);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(103, 42, 63, 0.4);
+}
+
+.career-card.hidden {
+  display: none;
+}
 /* ============================================
-   10. QUIZ PAGE
+   RESPONSIVE
    ============================================ */
 
-/* Add Quiz page styles here when ready */
+/* Large Tablet (1024px - 769px) */
+@media (max-width: 1024px) and (min-width: 769px) {
+  
+  .category-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+  
+  .category-grid .category-card:nth-last-child(2):nth-child(3n + 1) {
+    grid-column: 2 / 3;
+  }
+  
+  .category-grid .category-card:nth-last-child(2):nth-child(3n + 1) ~ .category-card:last-child {
+    grid-column: 3 / 4;
+  }
+  
+  .career-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+  
+  .stat-boxes {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .filter-btn {
+    padding: 0.5rem 0.9rem !important;
+    font-size: 0.8rem !important;
+  }
+  
+  .filter-buttons {
+    gap: 0.5rem !important;
+  }
+}
 
-/* ============================================
-   11. CAREER DETAIL PAGE
-   ============================================ */
-
-/* Add Career Detail page styles here when ready */
-
-/* ============================================
-   12. RESPONSIVE BREAKPOINTS
-   ============================================ */
-
-/* Tablet and Below (768px) */
+/* Tablet & Mobile (768px and below) */
 @media (max-width: 768px) {
   
-  /* Navbar Mobile */
+  /* MOBILE NAVBAR */
   .navbar {
     padding: 0.7rem 0;
   }
@@ -1017,16 +1338,17 @@ img {
   .nav-menu {
     position: fixed;
     left: -100%;
-    top: 60px;
+    top: 0;
     background-color: var(--bg-white);
     flex-direction: column !important;
     flex-wrap: nowrap !important;
-    width: 100%;
-    max-height: calc(100vh - 60px);
+    width: 100vw;
+    height: 100vh;
     overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
     transition: left 0.3s ease;
-    padding: 0;
+    padding: 80px 0 2rem 0;
     gap: 0;
     z-index: 999;
     border-top: 2px solid var(--pink-light);
@@ -1080,29 +1402,8 @@ img {
   .hamburger.active span:nth-child(3) {
     transform: rotate(-45deg) translate(7px, -6px);
   }
-
-  /* Footer Mobile */
-  .footer-columns {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-  }
   
-  .footer-intro h3 {
-    font-size: 1.5rem;
-  }
-
-  /* Category Grid Mobile */
-  .category-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  
-  /* Stat Boxes Mobile */
-  .stat-boxes {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-  }
-
-  /* Typography Mobile */
+  /* TYPOGRAPHY */
   h1 {
     font-size: 2rem !important;
   }
@@ -1119,41 +1420,110 @@ img {
     font-size: 1rem !important;
   }
   
-  /* Sections Mobile */
-  .hero,
-  .page-header,
-  .contact-form-section,
-  .suggest-career-section {
-    padding: 3rem 1.5rem !important;
-  }
-  
-  /* Container Mobile */
   .container {
     padding: 0 15px;
   }
   
-  /* Buttons Mobile */
   .btn {
     padding: 0.8rem 1.5rem !important;
     font-size: 1rem !important;
   }
-
-  /* Contact Forms Mobile */
+  
+  .hero,
+  .page-header,
+  .contact-form-section,
+  .suggest-career-section,
+  .filters,
+  .careers,
+  .about-hero,
+  .my-story,
+  .solution,
+  .future-vision,
+  .call-to-action {
+    padding: 3rem 1.5rem !important;
+  }
+  
+  /* HOME PAGE */
+  .category-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+  
+  .category-grid .category-card:last-child:nth-child(odd) {
+    grid-column: 1 / 3;
+    max-width: 350px;
+    margin: 0 auto;
+  }
+  
+  .stat-boxes {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  /* EXPLORE PAGE */
+  .filters {
+    padding: 2rem 0;
+  }
+  
+  .search-box input {
+    padding: 0.9rem 1.2rem;
+    font-size: 0.95rem;
+  }
+  
+  .filter-buttons {
+    gap: 0.7rem;
+  }
+  
+  .filter-btn {
+    padding: 0.6rem 1rem !important;
+    font-size: 0.85rem !important;
+  }
+  
+ /* ✅ FIX: Center last card when odd number (25 cards) */
+.career-grid .career-card:last-child:nth-child(odd) {
+  grid-column: 1 / 3;
+  max-width: 350px;
+  margin: 0 auto;
+}
+  
+  .career-grid .career-card:last-child:nth-child(odd) {
+    grid-column: 1 / 3;
+    max-width: 350px;
+    margin: 0 auto;
+  }
+  
+  .career-card {
+    padding: 1.5rem;
+  }
+  
+  .career-card h3 {
+    font-size: 1.2rem;
+  }
+  
+  .career-card .tagline {
+    font-size: 0.9rem;
+  }
+  
+  .career-card .salary {
+    font-size: 1rem;
+  }
+  
+  /* CONTACT PAGE */
   .contact-form, 
   .suggestion-form {
     padding: 2rem 1.5rem;
     border-width: 2px;
   }
-
+  
   .form-msg {
     font-size: 2rem;
   }
-
+  
   .form-msg-p {
     font-size: 1rem;
     padding: 0 1rem;
   }
-
+  
   .contact-form .btn, 
   .suggestion-form .btn {
     width: 100%;
@@ -1161,14 +1531,49 @@ img {
     padding: 1rem;
     font-size: 1rem;
   }
-
+  
   .success-message {
     margin: 1.5rem 1rem;
     padding: 1.5rem;
   }
+  
+  /* ABOUT PAGE */
+  .my-story h4 {
+    text-align: center;
+    font-size: 0.9rem;
+  }
+  
+  /* FOOTER */
+  .footer {
+    padding: 2rem 0 0 0;
+  }
+  
+  .footer-columns {
+    grid-template-columns: 1fr !important;
+    gap: 2rem;
+    padding: 0 1rem;
+  }
+  
+  .footer-intro {
+    padding: 0 1rem 2rem 1rem;
+  }
+  
+  .footer-intro h3 {
+    font-size: 1.5rem;
+  }
+  
+  .footer-bottom {
+    padding: 1.5rem 1rem;
+    width: 100%;
+  }
+  
+  .footer-bottom p {
+    font-size: 0.85rem;
+    padding: 0 0.5rem;
+  }
 }
 
-/* Small Phones (480px) */
+/* Mobile (480px and below) */
 @media (max-width: 480px) {
   
   h1 {
@@ -1179,21 +1584,109 @@ img {
     font-size: 1.5rem !important;
   }
   
-  .category-grid {
-    grid-template-columns: 1fr;
-  }
-  
   .btn {
     display: block;
     width: 100%;
     max-width: 300px;
     margin: 0.5rem auto;
   }
+  
+  .category-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .category-grid .category-card:last-child {
+    grid-column: 1 / 2;
+    max-width: 100%;
+    margin: 0;
+  }
+  
+  @media (max-width: 480px) {
+  
+  h1 {
+    font-size: 1.8rem !important;
+  }
+  
+  h2 {
+    font-size: 1.5rem !important;
+  }
+  
+  /* ✅ CAREERS: 1 COLUMN ON PHONE */
+  .career-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem;
+  }
+  
+  /* ✅ RESET LAST CARD */
+  .career-grid .career-card:last-child {
+    grid-column: 1 / 2 !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+  }
+  
+  .career-card {
+    padding: 1.5rem;
+  }
+  
+  .career-card h3 {
+    font-size: 1.2rem;
+  }
+}
+  
+  .career-grid .career-card:last-child {
+    grid-column: 1 / 2;
+    max-width: 100%;
+    margin: 0;
+  }
+  
+  .career-card h3 {
+    font-size: 1.2rem;
+  }
+  
+  .filter-buttons {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .filter-btn {
+    width: 100% !important;
+    max-width: 300px !important;
+    margin: 0 auto !important;
+  }
 }
 
-/* Prevent body scroll when menu open */
+/* Extra Small (360px and below) */
+@media (max-width: 360px) {
+  
+  h1 {
+    font-size: 1.5rem !important;
+  }
+  
+  h2 {
+    font-size: 1.3rem !important;
+  }
+  
+  .container {
+    padding: 0 10px;
+  }
+  
+  .hero,
+  .page-header {
+    padding: 2rem 1rem !important;
+  }
+  
+  .category-card,
+  .career-card {
+    padding: 1.2rem;
+  }
+}
+
+/* Prevent scroll when menu open */
 body.menu-open {
   overflow: hidden;
+  position: fixed;
+  width: 100%;
+  height: 100vh;
 }
 
 /* Accessibility */
@@ -1223,6 +1716,4 @@ body.menu-open {
   }
 }
 
-/* ============================================
-   END OF STYLESHEET
-   ============================================ */
+/* END OF STYLESHEET */
