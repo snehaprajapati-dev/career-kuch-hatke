@@ -41,6 +41,7 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  padding-top: 0;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -191,7 +192,6 @@ main {
   border-radius: 3px;
 }
 
-/* Add padding to body content so it's not hidden under navbar */
 body > *:first-child:not(.navbar) {
   margin-top: 70px;
 }
@@ -300,12 +300,8 @@ body > *:first-child:not(.navbar) {
   margin-bottom: 0.3rem;
 }
 
-
-
-
-
 /* ============================================
-   PAGE HEADER (Used on Explore, Quiz, etc.)
+   PAGE HEADER (Explore, Quiz, Contact, etc.)
    ============================================ */
 
 .page-header {
@@ -315,6 +311,8 @@ body > *:first-child:not(.navbar) {
   text-align: center;
   margin-top: 0 !important;
   width: 100%;
+  position: relative;
+  overflow: hidden;
 }
 
 .page-header .container {
@@ -348,7 +346,7 @@ body > *:first-child:not(.navbar) {
   opacity: 0.85;
 }
 
-/* Breadcrumb Navigation inside Page Header */
+/* Breadcrumb Navigation */
 .breadcrumb-nav {
   text-align: center;
   margin-bottom: 1.5rem;
@@ -379,10 +377,9 @@ body > *:first-child:not(.navbar) {
 }
 
 /* ============================================
-   RESPONSIVE
+   RESPONSIVE - DESKTOP/LAPTOP
    ============================================ */
 
-/* Large Laptop/Desktop */
 @media (max-width: 1100px) and (min-width: 769px) {
   .category-grid {
     grid-template-columns: repeat(5, 1fr);
@@ -395,10 +392,13 @@ body > *:first-child:not(.navbar) {
   }
 }
 
-/* Tablet (768px and below) */
+/* ============================================
+   RESPONSIVE - TABLET (768px and below)
+   ============================================ */
+
 @media (max-width: 768px) {
   
-  /* MOBILE NAVBAR */
+  /* ━━━ MOBILE NAVBAR ━━━ */
   .navbar {
     padding: 0.7rem 0;
   }
@@ -463,9 +463,11 @@ body > *:first-child:not(.navbar) {
     transform: rotate(-45deg) translate(7px, -6px);
   }
   
-  /* PAGE HEADER MOBILE */
-  .page-header {
-    padding: 3rem 1.5rem !important;
+  /* ━━━ PAGE HEADERS ━━━ */
+  .page-header,
+  .about-hero {
+    padding-top: 6rem !important;
+    padding-bottom: 3rem !important;
   }
   
   .page-header h1 {
@@ -476,60 +478,39 @@ body > *:first-child:not(.navbar) {
     font-size: 1rem !important;
   }
   
-  @media (max-width: 768px) {
-  
-  /* ... existing mobile navbar styles ... */
-  
-  /* ✅ FIX: Breadcrumbs going under fixed navbar - ALL PAGES */
-  .page-header,
-  .about-hero,
-  section:first-of-type {
-    padding-top: 6rem !important; /* Space for fixed navbar */
-    padding-bottom: 3rem !important;
-    margin-top: 0 !important;
-  }
-  
-  /* Specifically target breadcrumb containers */
   .breadcrumb-nav {
-    margin-top: 0 !important;
-    padding-top: 0 !important;
+    font-size: 0.9rem;
+    padding-bottom: 0.8rem;
+    margin-bottom: 1rem;
   }
   
-  /* ... rest of mobile styles ... */
-}
-
-@media (max-width: 480px) {
+  /* ━━━ TYPOGRAPHY ━━━ */
+  h1 { font-size: 2rem !important; }
+  h2 { font-size: 1.8rem !important; }
+  h3 { font-size: 1.3rem !important; }
+  p { font-size: 1rem !important; }
   
-  /* ... existing styles ... */
+  .container { padding: 0 1.5rem; }
+  .btn { padding: 0.8rem 1.5rem !important; }
   
-  /* ✅ Smaller screens */
-  .page-header,
-  .about-hero,
-  section:first-of-type {
-    padding-top: 5rem !important;
-    padding-bottom: 2rem !important;
-  }
-
-  @media (max-width: 768px) {
-  
-  /* ... existing mobile styles ... */
-  
-  /* ✅ HOME PAGE: Category cards fix */
+  /* ━━━ HOME PAGE ━━━ */
   .categories {
     padding: 3rem 0 !important;
-    overflow-x: hidden; /* Prevent horizontal scroll */
+    overflow-x: hidden;
   }
   
   .categories .container {
-    padding: 0 1rem; /* Add side padding */
+    padding: 0 1.5rem;
+    max-width: 100%;
     overflow-x: hidden;
   }
   
   .category-grid {
     grid-template-columns: repeat(2, 1fr) !important;
     gap: 1.5rem;
-    padding: 0; /* Remove any extra padding */
-    width: 100%; /* Ensure it stays within bounds */
+    width: 100%;
+    max-width: 100%;
+    padding: 0;
   }
   
   .category-grid .category-card:last-child:nth-child(odd) {
@@ -540,14 +521,18 @@ body > *:first-child:not(.navbar) {
   
   .category-card {
     padding: 1.5rem;
-    width: 100%; /* ✅ Prevent overflow */
-    max-width: 100%; /* ✅ Stay within bounds */
-    box-sizing: border-box; /* ✅ Include padding in width calculation */
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .category-card .emoji {
+    font-size: 2.5rem;
   }
   
   .category-card h3 {
     font-size: 1.1rem;
-    word-break: break-word; /* ✅ Prevent long words from breaking layout */
+    word-break: break-word;
   }
   
   .category-card p {
@@ -555,37 +540,12 @@ body > *:first-child:not(.navbar) {
     word-break: break-word;
   }
   
-  /* ... rest of mobile styles ... */
-}
-}
-  
-  /* TYPOGRAPHY */
-  h1 { font-size: 2rem !important; }
-  h2 { font-size: 1.8rem !important; }
-  h3 { font-size: 1.3rem !important; }
-  p { font-size: 1rem !important; }
-  
-  .container { padding: 0 15px; }
-  .btn { padding: 0.8rem 1.5rem !important; }
-  
-  /* HOME PAGE */
-  .category-grid {
-    grid-template-columns: repeat(2, 1fr) !important;
-    gap: 1.5rem;
-  }
-  
-  .category-grid .category-card:last-child:nth-child(odd) {
-    grid-column: 1 / 3;
-    max-width: 350px;
-    margin: 0 auto;
-  }
-  
   .stat-boxes {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr !important;
     gap: 1.5rem;
   }
   
-  /* EXPLORE PAGE */
+  /* ━━━ EXPLORE PAGE ━━━ */
   .filters {
     padding: 2rem 0;
   }
@@ -608,9 +568,11 @@ body > *:first-child:not(.navbar) {
   
   .career-card {
     padding: 1.5rem;
+    width: 100%;
+    max-width: 100%;
   }
   
-  /* QUIZ PAGE */
+  /* ━━━ QUIZ PAGE ━━━ */
   .quiz-container {
     padding: 2rem 0;
   }
@@ -623,17 +585,44 @@ body > *:first-child:not(.navbar) {
     flex-direction: column;
   }
   
-  /* FOOTER */
+  /* ━━━ ABOUT PAGE ━━━ */
+  .stats {
+    padding: 3rem 1.5rem 1.5rem 1.5rem !important;
+  }
+  
+  .stats-note {
+    margin: 1.5rem auto 0 auto;
+    padding: 0 1rem;
+  }
+  
+  .solution {
+    padding: 1.5rem 1.5rem 3rem 1.5rem !important;
+  }
+  
+  .solution h2 {
+    font-size: 2rem;
+    margin-top: 0;
+  }
+  
+  /* ━━━ FOOTER ━━━ */
   .footer-columns {
     grid-template-columns: 1fr !important;
     gap: 2rem;
   }
 }
 
-/* Mobile (480px and below) */
+/* ============================================
+   RESPONSIVE - PHONE (480px and below)
+   ============================================ */
+
 @media (max-width: 480px) {
-  h1 { font-size: 1.8rem !important; }
-  h2 { font-size: 1.5rem !important; }
+  
+  /* ━━━ PAGE HEADERS ━━━ */
+  .page-header,
+  .about-hero {
+    padding-top: 5.5rem !important;
+    padding-bottom: 2rem !important;
+  }
   
   .page-header h1 {
     font-size: 1.8rem !important;
@@ -648,31 +637,11 @@ body > *:first-child:not(.navbar) {
     font-size: 0.85rem;
   }
   
-  .career-grid {
-    grid-template-columns: 1fr !important;
-  }
+  /* ━━━ TYPOGRAPHY ━━━ */
+  h1 { font-size: 1.8rem !important; }
+  h2 { font-size: 1.5rem !important; }
   
-  .career-grid .career-card:last-child {
-    grid-column: 1 / 2 !important;
-    max-width: 100% !important;
-    margin: 0 !important;
-  }
-  
-  .category-grid {
-    grid-template-columns: 1fr !important;
-  }
-  
-  .filter-btn {
-    width: 100% !important;
-    max-width: 300px !important;
-    margin: 0 auto !important;
-  }
-
-  @media (max-width: 480px) {
-  
-  /* ... existing mobile styles ... */
-  
-  /* ✅ HOME: 1 column on phone */
+  /* ━━━ HOME PAGE ━━━ */
   .categories {
     padding: 2rem 0 !important;
   }
@@ -684,7 +653,6 @@ body > *:first-child:not(.navbar) {
   .category-grid {
     grid-template-columns: 1fr !important;
     gap: 1.5rem;
-    padding: 0;
   }
   
   .category-grid .category-card:last-child {
@@ -700,7 +668,7 @@ body > *:first-child:not(.navbar) {
   }
   
   .category-card .emoji {
-    font-size: 2.5rem; /* Slightly smaller emoji on phone */
+    font-size: 2.5rem;
   }
   
   .category-card h3 {
@@ -710,10 +678,29 @@ body > *:first-child:not(.navbar) {
   .category-card p {
     font-size: 0.85rem;
   }
-}
+  
+  /* ━━━ EXPLORE PAGE ━━━ */
+  .career-grid {
+    grid-template-columns: 1fr !important;
+  }
+  
+  .career-grid .career-card:last-child {
+    grid-column: 1 / 2 !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+  }
+  
+  .filter-btn {
+    width: 100% !important;
+    max-width: 300px !important;
+    margin: 0 auto !important;
+  }
 }
 
-/* Utility Classes */
+/* ============================================
+   UTILITY CLASSES
+   ============================================ */
+
 body.menu-open {
   overflow: hidden;
   position: fixed;
@@ -721,104 +708,4 @@ body.menu-open {
   height: 100vh;
 }
 
-@media (max-width: 480px) {
-  
-  /* ... existing styles ... */
-  
-  /* Fix page header overflow on mobile */
-  .page-header,
-  .about-hero {
-    margin-top: 0 !important;
-    padding-top: 2rem !important;
-    overflow: hidden; /* Prevent gradient overflow */
-  }
-  
-  .page-header .container,
-  .about-hero .container {
-    padding: 0 1rem;
-  }
-}
-
-/* ============================================
-   FIX: Prevent gradient overflow on mobile
-   ============================================ */
-
-.page-header,
-.about-hero {
-  position: relative;
-  overflow: hidden;
-  margin-top: 0 !important;
-}
-
-/* Ensure no content above header is visible */
-body {
-  padding-top: 0;
-}
-
-/* Make sure navbar + header have no gap */
-.navbar + .page-header,
-.navbar + .about-hero {
-  margin-top: 0 !important;
-}
-
-@media (max-width: 480px) {
-  .page-header,
-  .about-hero {
-    padding-top: 2rem !important;
-    padding-bottom: 2rem !important;
-  }
-}
-
-@media (max-width: 768px) {
-  
-  /* ... existing mobile styles ... */
-  
-  /* About page spacing fixes */
-  .stats {
-    padding: 3rem 1.5rem 1.5rem 1.5rem !important;
-  }
-  
-  .stats-note {
-    margin: 1.5rem auto 0 auto;
-    padding: 0 1rem 0 1rem;
-  }
-  
-  .solution {
-    padding: 1.5rem 1.5rem 3rem 1.5rem !important;
-  }
-  
-  .solution h2 {
-    font-size: 2rem;
-    margin-top: 0;
-  }
-}
-
-@media (max-width: 768px) {
-  
-  /* ... existing mobile styles ... */
-  
-  /* Fix breadcrumbs going under fixed navbar */
-  .page-header,
-  .about-hero {
-    padding-top: 6rem !important; /* Add space for navbar */
-    padding-bottom: 3rem !important;
-  }
-  
-  .page-header .container,
-  .about-hero .container {
-    position: relative;
-  }
-}
-
-@media (max-width: 480px) {
-  
-  /* ... existing mobile styles ... */
-  
-  /* Smaller screens need less padding */
-  .page-header,
-  .about-hero {
-    padding-top: 5rem !important; /* Slightly less space */
-    padding-bottom: 2rem !important;
-  }
-}
 /* END OF STYLESHEET */
