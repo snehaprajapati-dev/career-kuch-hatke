@@ -610,5 +610,148 @@
     padding: 1.5rem;
   }
 }
+/* ============================================
+   RESPONSIVE - CAREER DETAIL PAGE (UPDATED)
+   ============================================ */
 
+@media (max-width: 1024px) {
+  .details-grid {
+    grid-template-columns: 1fr 300px;
+    gap: 2rem;
+  }
+  
+  .sidebar {
+    top: 80px;
+  }
+}
+
+@media (max-width: 768px) {
+  .career-hero {
+    padding: 2rem 0 3rem 0;
+  }
+  
+  #career-name {
+    font-size: 2rem !important;
+    word-break: break-word; /* ✅ Prevent overflow */
+  }
+  
+  .career-tagline {
+    font-size: 1.1rem !important;
+  }
+  
+  .quick-facts {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .details-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 0 1rem; /* ✅ Add padding */
+  }
+  
+  .sidebar {
+    position: static;
+    order: 2;
+  }
+  
+  .detail-card {
+    padding: 1.5rem;
+    width: 100%; /* ✅ Prevent overflow */
+    max-width: 100%; /* ✅ Stay within bounds */
+  }
+  
+  .card-header h2 {
+    font-size: 1.4rem;
+    word-break: break-word; /* ✅ Prevent text overflow */
+  }
+  
+  .card-content p,
+  .card-content div,
+  .card-content span {
+    word-break: break-word; /* ✅ Prevent all text overflow */
+    overflow-wrap: break-word;
+  }
+  
+  .salary-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .skills-list {
+    grid-template-columns: 1fr;
+  }
+  
+  /* ✅ Fix sidebar cards on mobile */
+  .sidebar-card {
+    width: 100%;
+    max-width: 100%;
+    padding: 1.5rem;
+  }
+  
+  .related-career-link {
+    word-break: break-word;
+  }
+}
+
+@media (max-width: 480px) {
+  .career-hero {
+    padding: 1.5rem 0 2rem 0;
+  }
+  
+  #career-name {
+    font-size: 1.6rem !important;
+    word-break: break-word; /* ✅ Prevent overflow */
+  }
+  
+  .career-tagline {
+    font-size: 1rem !important;
+  }
+  
+  .detail-card {
+    padding: 1.2rem;
+    border-width: 2px;
+    width: 100%; /* ✅ Prevent overflow */
+  }
+  
+  .card-header {
+    flex-direction: column;
+    align-items: start;
+    gap: 0.5rem;
+  }
+  
+  .card-number {
+    width: 35px;
+    height: 35px;
+    font-size: 1rem;
+  }
+  
+  .card-header h2 {
+    font-size: 1.2rem;
+    word-break: break-word; /* ✅ Prevent text overflow */
+  }
+  
+  .sidebar-card {
+    padding: 1.5rem;
+    width: 100%; /* ✅ Prevent overflow */
+  }
+  
+  /* ✅ Prevent all content from overflowing */
+  .career-details .container {
+    padding: 0 1rem;
+  }
+  
+  .card-content p,
+  .card-content div,
+  .card-content span,
+  .roadmap-step,
+  .skill-item,
+  .work-item,
+  .resource-category,
+  .for-you-item {
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+}
+
+/* END OF CAREER DETAIL PAGE RESPONSIVE STYLES */
 /* END OF CAREER DETAIL PAGE STYLES */

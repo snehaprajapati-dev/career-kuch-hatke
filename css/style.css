@@ -304,15 +304,86 @@ body > *:first-child:not(.navbar) {
 
 
 
+/* ============================================
+   PAGE HEADER (Used on Explore, Quiz, etc.)
+   ============================================ */
+
+.page-header {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+  color: var(--bg-white);
+  padding: 5rem 2rem;
+  text-align: center;
+  margin-top: 0 !important;
+  width: 100%;
+}
+
+.page-header .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.page-header h1 {
+  font-size: 3rem;
+  color: var(--accent);
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.page-header p {
+  max-width: 800px;
+  margin: 0 auto;
+  color: var(--bg-white);
+  opacity: 0.95;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  text-align: center;
+}
+
+.page-header .tagline {
+  display: block;
+  margin-top: 0.5rem;
+  font-size: 1rem;
+  opacity: 0.85;
+}
+
+/* Breadcrumb Navigation inside Page Header */
+.breadcrumb-nav {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  font-size: 0.95rem;
+  color: var(--bg-white);
+  opacity: 0.9;
+}
+
+.breadcrumb-nav a {
+  color: var(--bg-white);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  opacity: 0.85;
+  font-weight: 500;
+}
+
+.breadcrumb-nav a:hover {
+  color: var(--accent);
+  opacity: 1;
+  text-decoration: underline;
+}
+
+.breadcrumb-nav span {
+  color: var(--accent);
+  font-weight: 700;
+}
 
 /* ============================================
    RESPONSIVE
    ============================================ */
 
-/* Large Laptop/Desktop: Keep 5 categories in a row until 1100px */
+/* Large Laptop/Desktop */
 @media (max-width: 1100px) and (min-width: 769px) {
-  
-  /* Reduce gap slightly but keep 5 columns */
   .category-grid {
     grid-template-columns: repeat(5, 1fr);
     gap: 1.2rem;
@@ -327,7 +398,7 @@ body > *:first-child:not(.navbar) {
 /* Tablet (768px and below) */
 @media (max-width: 768px) {
   
-  /* ━━━ MOBILE NAVBAR ━━━ */
+  /* MOBILE NAVBAR */
   .navbar {
     padding: 0.7rem 0;
   }
@@ -342,11 +413,9 @@ body > *:first-child:not(.navbar) {
     top: 0;
     background-color: var(--bg-white);
     flex-direction: column !important;
-    flex-wrap: nowrap !important;
     width: 100vw;
     height: 100vh;
     overflow-y: auto;
-    -webkit-overflow-scrolling: touch;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
     transition: left 0.3s ease;
     padding: 80px 0 2rem 0;
@@ -364,7 +433,6 @@ body > *:first-child:not(.navbar) {
   .nav-menu li {
     width: 100%;
     border-bottom: 1px solid var(--bg-light);
-    background-color: var(--bg-white);
     text-align: center;
   }
 
@@ -373,10 +441,6 @@ body > *:first-child:not(.navbar) {
     padding: 1.2rem 1.5rem;
     font-size: 1.1rem;
     width: 100%;
-    background-color: var(--bg-white);
-    color: var(--text-dark);
-    text-align: center;
-    transition: all 0.3s ease;
   }
 
   .nav-menu li a.active {
@@ -385,11 +449,6 @@ body > *:first-child:not(.navbar) {
     background-color: var(--bg-light);
     color: var(--primary);
     font-weight: 700;
-  }
-
-  .nav-menu li a:hover {
-    background-color: var(--bg-light);
-    color: var(--primary);
   }
 
   .hamburger.active span:nth-child(1) {
@@ -404,47 +463,64 @@ body > *:first-child:not(.navbar) {
     transform: rotate(-45deg) translate(7px, -6px);
   }
   
-  /* ━━━ TYPOGRAPHY ━━━ */
-  h1 {
-    font-size: 2rem !important;
-  }
-  
-  h2 {
-    font-size: 1.8rem !important;
-  }
-  
-  h3 {
-    font-size: 1.3rem !important;
-  }
-  
-  p {
-    font-size: 1rem !important;
-  }
-  
-  .container {
-    padding: 0 15px;
-  }
-  
-  .btn {
-    padding: 0.8rem 1.5rem !important;
-    font-size: 1rem !important;
-  }
-  
-  .hero,
-  .page-header,
-  .contact-form-section,
-  .suggest-career-section,
-  .filters,
-  .careers,
-  .about-hero,
-  .my-story,
-  .solution,
-  .future-vision,
-  .call-to-action {
+  /* PAGE HEADER MOBILE */
+  .page-header {
     padding: 3rem 1.5rem !important;
   }
   
-  /* ━━━ HOME PAGE: 2x2 + centered 5th card ━━━ */
+  .page-header h1 {
+    font-size: 2rem !important;
+  }
+  
+  .page-header p {
+    font-size: 1rem !important;
+  }
+  
+  @media (max-width: 768px) {
+  
+  /* ... existing mobile navbar styles ... */
+  
+  /* ✅ FIX: Breadcrumbs going under fixed navbar - ALL PAGES */
+  .page-header,
+  .about-hero,
+  section:first-of-type {
+    padding-top: 6rem !important; /* Space for fixed navbar */
+    padding-bottom: 3rem !important;
+    margin-top: 0 !important;
+  }
+  
+  /* Specifically target breadcrumb containers */
+  .breadcrumb-nav {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+  }
+  
+  /* ... rest of mobile styles ... */
+}
+
+@media (max-width: 480px) {
+  
+  /* ... existing styles ... */
+  
+  /* ✅ Smaller screens */
+  .page-header,
+  .about-hero,
+  section:first-of-type {
+    padding-top: 5rem !important;
+    padding-bottom: 2rem !important;
+  }
+}
+  
+  /* TYPOGRAPHY */
+  h1 { font-size: 2rem !important; }
+  h2 { font-size: 1.8rem !important; }
+  h3 { font-size: 1.3rem !important; }
+  p { font-size: 1rem !important; }
+  
+  .container { padding: 0 15px; }
+  .btn { padding: 0.8rem 1.5rem !important; }
+  
+  /* HOME PAGE */
   .category-grid {
     grid-template-columns: repeat(2, 1fr) !important;
     gap: 1.5rem;
@@ -461,18 +537,9 @@ body > *:first-child:not(.navbar) {
     gap: 1.5rem;
   }
   
-  /* ━━━ EXPLORE PAGE: 2 cards per row ━━━ */
+  /* EXPLORE PAGE */
   .filters {
     padding: 2rem 0;
-  }
-  
-  .search-box input {
-    padding: 0.9rem 1.2rem;
-    font-size: 0.95rem;
-  }
-  
-  .filter-buttons {
-    gap: 0.7rem;
   }
   
   .filter-btn {
@@ -480,7 +547,6 @@ body > *:first-child:not(.navbar) {
     font-size: 0.85rem !important;
   }
   
-  /* ✅ CAREERS: 2 columns + centered last card */
   .career-grid {
     grid-template-columns: repeat(2, 1fr) !important;
     gap: 1.5rem;
@@ -496,167 +562,46 @@ body > *:first-child:not(.navbar) {
     padding: 1.5rem;
   }
   
-  .career-card h3 {
-    font-size: 1.2rem;
-  }
-  
-  .career-card .tagline {
-    font-size: 0.9rem;
-  }
-  
-  .career-card .salary {
-    font-size: 1rem;
-  }
-  
-  /* ━━━ CONTACT PAGE ━━━ */
-  .contact-form, 
-  .suggestion-form {
-    padding: 2rem 1.5rem;
-    border-width: 2px;
-  }
-  
-  .form-msg {
-    font-size: 2rem;
-  }
-  
-  .form-msg-p {
-    font-size: 1rem;
-    padding: 0 1rem;
-  }
-  
-  .contact-form .btn, 
-  .suggestion-form .btn {
-    width: 100%;
-    max-width: 100%;
-    padding: 1rem;
-    font-size: 1rem;
-  }
-  
-  .success-message {
-    margin: 1.5rem 1rem;
-    padding: 1.5rem;
-  }
-  
-  /* ━━━ ABOUT PAGE ━━━ */
-  .my-story h4 {
-    text-align: center;
-    font-size: 0.9rem;
-  }
-
-    /* ━━━ QUIZ PAGE ━━━ */
+  /* QUIZ PAGE */
   .quiz-container {
     padding: 2rem 0;
   }
   
   .question {
     padding: 2rem 1.5rem;
-    border-width: 2px;
-  }
-  
-  .question h2 {
-    font-size: 1.3rem;
-    text-align: left;
-  }
-  
-  .options label {
-    padding: 1rem;
-  }
-  
-  .options span {
-    font-size: 0.95rem;
   }
   
   .quiz-nav {
     flex-direction: column;
   }
   
-  .quiz-nav button {
-    width: 100%;
-    padding: 0.9rem;
-    font-size: 1rem;
-  }
-  
-  #next-btn {
-    margin-left: 0;
-  }
-  
-  .quiz-result {
-    padding: 3rem 1.5rem;
-  }
-  
-  #result-content {
-    padding: 2rem 1.5rem;
-  }
-  
-  #result-content h3 {
-    font-size: 1.5rem;
-  }
-  
-  /* ━━━ FOOTER ━━━ */
-  .footer {
-    padding: 2rem 0 0 0;
-  }
-  
+  /* FOOTER */
   .footer-columns {
     grid-template-columns: 1fr !important;
     gap: 2rem;
-    padding: 0 1rem;
-  }
-  
-  .footer-intro {
-    padding: 0 1rem 2rem 1rem;
-  }
-  
-  .footer-intro h3 {
-    font-size: 1.5rem;
-  }
-  
-  .footer-bottom {
-    padding: 1.5rem 1rem;
-    width: 100%;
-  }
-  
-  .footer-bottom p {
-    font-size: 0.85rem;
-    padding: 0 0.5rem;
   }
 }
 
-/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-   Mobile (480px and below)
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+/* Mobile (480px and below) */
 @media (max-width: 480px) {
+  h1 { font-size: 1.8rem !important; }
+  h2 { font-size: 1.5rem !important; }
   
-  h1 {
+  .page-header h1 {
     font-size: 1.8rem !important;
+    line-height: 1.3 !important;
   }
   
-  h2 {
-    font-size: 1.5rem !important;
+  .page-header p {
+    font-size: 0.95rem !important;
   }
   
-  .btn {
-    display: block;
-    width: 100%;
-    max-width: 300px;
-    margin: 0.5rem auto;
+  .breadcrumb-nav {
+    font-size: 0.85rem;
   }
   
-  /* ✅ HOME: 1 column on phone */
-  .category-grid {
-    grid-template-columns: 1fr !important;
-  }
-  
-  .category-grid .category-card:last-child {
-    grid-column: 1 / 2 !important;
-    max-width: 100% !important;
-    margin: 0 !important;
-  }
-  
-  /* ✅ EXPLORE: 1 column on phone - NO HOVER TRANSFORM */
   .career-grid {
     grid-template-columns: 1fr !important;
-    gap: 1.5rem;
   }
   
   .career-grid .career-card:last-child {
@@ -665,27 +610,8 @@ body > *:first-child:not(.navbar) {
     margin: 0 !important;
   }
   
-  .career-card {
-    padding: 1.5rem;
-  }
-  
-  /* ✅ DISABLE HOVER TRANSFORM ON MOBILE */
-  .career-card:hover {
-    transform: translateY(0) !important;
-    box-shadow: 0 8px 20px rgba(221, 168, 63, 0.3);
-  }
-  
-  .category-card:hover {
-    transform: translateY(0) !important;
-  }
-  
-  .career-card h3 {
-    font-size: 1.2rem;
-  }
-  
-  .filter-buttons {
-    flex-direction: column;
-    align-items: stretch;
+  .category-grid {
+    grid-template-columns: 1fr !important;
   }
   
   .filter-btn {
@@ -693,55 +619,9 @@ body > *:first-child:not(.navbar) {
     max-width: 300px !important;
     margin: 0 auto !important;
   }
-  
-  /* ✅ FIX HEADER TEXT GETTING CUT OFF */
-  .page-header h1,
-  .hero h1 {
-    font-size: 1.8rem !important;
-    line-height: 1.3 !important;
-    padding: 0 1rem;
-  }
-  
-  .page-header p,
-  .hero p {
-    font-size: 0.95rem !important;
-    line-height: 1.6 !important;
-    padding: 0 1rem;
-  }
-}
-/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-   Extra Small (360px and below)
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
-@media (max-width: 360px) {
-  
-  h1 {
-    font-size: 1.5rem !important;
-  }
-  
-  h2 {
-    font-size: 1.3rem !important;
-  }
-  
-  .container {
-    padding: 0 10px;
-  }
-  
-  .hero,
-  .page-header {
-    padding: 2rem 1rem !important;
-  }
-  
-  .category-card,
-  .career-card {
-    padding: 1.2rem;
-  }
 }
 
-/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-   Utility Classes
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
-
-/* Prevent scroll when menu open */
+/* Utility Classes */
 body.menu-open {
   overflow: hidden;
   position: fixed;
@@ -749,31 +629,104 @@ body.menu-open {
   height: 100vh;
 }
 
-/* Accessibility */
-.form-group input:focus-visible,
-.form-group select:focus-visible,
-.form-group textarea:focus-visible,
-.btn:focus-visible {
-  outline: 3px solid var(--accent);
-  outline-offset: 2px;
-}
-
-@media (prefers-contrast: high) {
-  .form-group input,
-  .form-group select,
-  .form-group textarea {
-    border-width: 3px;
+@media (max-width: 480px) {
+  
+  /* ... existing styles ... */
+  
+  /* Fix page header overflow on mobile */
+  .page-header,
+  .about-hero {
+    margin-top: 0 !important;
+    padding-top: 2rem !important;
+    overflow: hidden; /* Prevent gradient overflow */
+  }
+  
+  .page-header .container,
+  .about-hero .container {
+    padding: 0 1rem;
   }
 }
 
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
+/* ============================================
+   FIX: Prevent gradient overflow on mobile
+   ============================================ */
+
+.page-header,
+.about-hero {
+  position: relative;
+  overflow: hidden;
+  margin-top: 0 !important;
+}
+
+/* Ensure no content above header is visible */
+body {
+  padding-top: 0;
+}
+
+/* Make sure navbar + header have no gap */
+.navbar + .page-header,
+.navbar + .about-hero {
+  margin-top: 0 !important;
+}
+
+@media (max-width: 480px) {
+  .page-header,
+  .about-hero {
+    padding-top: 2rem !important;
+    padding-bottom: 2rem !important;
   }
 }
 
+@media (max-width: 768px) {
+  
+  /* ... existing mobile styles ... */
+  
+  /* About page spacing fixes */
+  .stats {
+    padding: 3rem 1.5rem 1.5rem 1.5rem !important;
+  }
+  
+  .stats-note {
+    margin: 1.5rem auto 0 auto;
+    padding: 0 1rem 0 1rem;
+  }
+  
+  .solution {
+    padding: 1.5rem 1.5rem 3rem 1.5rem !important;
+  }
+  
+  .solution h2 {
+    font-size: 2rem;
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  
+  /* ... existing mobile styles ... */
+  
+  /* Fix breadcrumbs going under fixed navbar */
+  .page-header,
+  .about-hero {
+    padding-top: 6rem !important; /* Add space for navbar */
+    padding-bottom: 3rem !important;
+  }
+  
+  .page-header .container,
+  .about-hero .container {
+    position: relative;
+  }
+}
+
+@media (max-width: 480px) {
+  
+  /* ... existing mobile styles ... */
+  
+  /* Smaller screens need less padding */
+  .page-header,
+  .about-hero {
+    padding-top: 5rem !important; /* Slightly less space */
+    padding-bottom: 2rem !important;
+  }
+}
 /* END OF STYLESHEET */
