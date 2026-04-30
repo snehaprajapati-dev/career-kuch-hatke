@@ -442,4 +442,28 @@ button.filter-btn[data-filter="unique"].active {
   }
 }
 
+/* Back to Top Button - Centered */
+.back-to-top {
+  text-align: center;
+  padding: 2rem 0;
+  background-color: var(--bg-light);
+}
+
+.back-to-top a {
+  display: inline-block;
+  padding: 1rem 2rem;
+  background: linear-gradient(135deg, var(--accent) 0%, #f0c050 100%);
+  color: var(--text-dark);
+  font-weight: 700;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.back-to-top a:hover {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+  color: var(--bg-white);
+  transform: translateY(-3px);
+}
+
 /* END OF EXPLORE PAGE RESPONSIVE STYLES */
