@@ -1,9 +1,268 @@
- <!DOCTYPE html>
-                           | <html>
-                           | <head>
-                           |   <title>Career Kuch Hatke</title>
-                           | </head>
-                           | <body>
-                           |   <h1>Coming Soon</h1>
-                           | </body>
-                           | </html>
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Career Detail - Career Kuch Hatke</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Detailed information about unconventional career paths in India."
+    />
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@400;500;600;700;800&family=Tenor+Sans&display=swap" rel="stylesheet">
+    
+    <!-- Common styles (navbar, footer, etc.) -->
+    <link rel="stylesheet" href="css/style.css" />
+    
+    <!-- Career detail page specific styles -->
+    <link rel="stylesheet" href="css/career-detail.css" />
+  </head>
+  
+  <body>
+    <!-- NAVBAR -->
+    <nav class="navbar">
+      <div class="container">
+        <h2 class="logo">Career Kuch Hatke</h2>
+        
+        <button class="hamburger" id="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        
+        <ul class="nav-menu" id="navMenu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="explore.html">Explore</a></li>
+          <li><a href="quiz.html">Quiz</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- CAREER HERO SECTION -->
+    <section class="career-hero">
+      <div class="container">
+        <div class="breadcrumb">
+          <a href="index.html">Home</a> → 
+          <a href="explore.html">Explore</a> → 
+          <span id="breadcrumb-career">Loading...</span>
+        </div>
+        
+        <div class="hero-content">
+          <span class="category-badge" id="hero-category">Creative</span>
+          <h1 id="career-name">Loading Career...</h1>
+          <p class="career-tagline" id="career-tagline">Please wait...</p>
+          
+          <div class="quick-facts">
+            <div class="fact">
+              <span class="fact-label">💰 Entry Salary</span>
+              <span class="fact-value" id="quick-salary">Loading...</span>
+            </div>
+            <div class="fact">
+              <span class="fact-label">🏠 Remote Work</span>
+              <span class="fact-value" id="quick-remote">Loading...</span>
+            </div>
+            <div class="fact">
+              <span class="fact-label">📚 Degree Needed</span>
+              <span class="fact-value" id="quick-degree">Loading...</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MAIN CONTENT -->
+    <section class="career-details">
+      <div class="container">
+        <div class="details-grid">
+          
+          <!-- Main Content Column -->
+          <div class="main-content">
+            
+            <!-- 1. What Do They Do? -->
+            <div class="detail-card">
+              <div class="card-header">
+                <span class="card-number">1</span>
+                <h2>What Do They Do?</h2>
+              </div>
+              <div class="card-content" id="what-they-do">
+                <p>Loading...</p>
+              </div>
+            </div>
+
+            <!-- 2. Salary Range -->
+            <div class="detail-card">
+              <div class="card-header">
+                <span class="card-number">2</span>
+                <h2>Salary Range</h2>
+              </div>
+              <div class="card-content">
+                <div class="salary-grid" id="salary-range">
+                  <!-- JS will fill this -->
+                </div>
+              </div>
+            </div>
+
+            <!-- 3. How to Get In? -->
+            <div class="detail-card">
+              <div class="card-header">
+                <span class="card-number">3</span>
+                <h2>How to Get In?</h2>
+              </div>
+              <div class="card-content">
+                <div class="roadmap" id="roadmap">
+                  <!-- JS will fill this -->
+                </div>
+              </div>
+            </div>
+
+            <!-- 4. Skills Needed -->
+            <div class="detail-card">
+              <div class="card-header">
+                <span class="card-number">4</span>
+                <h2>Skills Needed</h2>
+              </div>
+              <div class="card-content">
+                <div class="skills-list" id="skills-list">
+                  <!-- JS will fill this -->
+                </div>
+              </div>
+            </div>
+
+            <!-- 5. Where Can You Work? -->
+            <div class="detail-card">
+              <div class="card-header">
+                <span class="card-number">5</span>
+                <h2>Where Can You Work?</h2>
+              </div>
+              <div class="card-content" id="work-places">
+                <!-- JS will fill this -->
+              </div>
+            </div>
+
+            <!-- 6. Real Person Example -->
+            <div class="detail-card highlight-card">
+              <div class="card-header">
+                <span class="card-number">6</span>
+                <h2>Real Person Example</h2>
+              </div>
+              <div class="card-content" id="real-person">
+                <!-- JS will fill this -->
+              </div>
+            </div>
+
+            <!-- 7. Free Resources -->
+            <div class="detail-card">
+              <div class="card-header">
+                <span class="card-number">7</span>
+                <h2>Free Resources to Start</h2>
+              </div>
+              <div class="card-content" id="resources">
+                <!-- JS will fill this -->
+              </div>
+            </div>
+
+            <!-- 8. Is This For You? -->
+            <div class="detail-card">
+              <div class="card-header">
+                <span class="card-number">8</span>
+                <h2>Is This For You?</h2>
+              </div>
+              <div class="card-content" id="for-you">
+                <!-- JS will fill this -->
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Sidebar -->
+          <aside class="sidebar">
+            
+            <!-- Take Quiz CTA -->
+            <div class="sidebar-card cta-card">
+              <h3>Not Sure Yet?</h3>
+              <p>Take our quiz to find careers that match your personality!</p>
+              <a href="quiz.html" class="btn btn-primary">Take Quiz →</a>
+            </div>
+
+            <!-- Explore More -->
+            <div class="sidebar-card">
+              <h3>Explore More Careers</h3>
+              <div id="related-careers">
+                <!-- JS will fill this -->
+              </div>
+            </div>
+
+            <!-- Share Card -->
+            <div class="sidebar-card share-card">
+              <h3>Share This Career</h3>
+              <p>Know someone who'd love this? Share it!</p>
+              <button class="share-btn" onclick="shareCareer()">
+                📤 Share
+              </button>
+            </div>
+
+          </aside>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-intro">
+          <h3>Career Kuch Hatke</h3>
+          <p>Your Dream Career Exists. You Just Haven't Found It Yet.</p>
+        </div>
+        
+        <div class="footer-columns">
+          <div class="footer-section">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="explore.html">Explore</a></li>
+              <li><a href="quiz.html">Quiz</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-section">
+            <h4>Categories</h4>
+            <ul>
+              <li><a href="explore.html#creative">Creative</a></li>
+              <li><a href="explore.html#tech">Tech</a></li>
+              <li><a href="explore.html#science">Science</a></li>
+              <li><a href="explore.html#business">Business</a></li>
+              <li><a href="explore.html#unique">Unique</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-section">
+            <h4>Connect</h4>
+            <p><span class="emoji">📧</span> <a href="contact.html">Contact Us</a></p>
+            <p><span class="emoji">📱</span> <a href="#">Instagram (Coming Soon)</a></p>
+            <p><span class="emoji">💼</span> <a href="#">LinkedIn (Coming Soon)</a></p>
+            <p><span class="emoji">🐦</span> <a href="#">Twitter (Coming Soon)</a></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>Built with <span class="emoji">❤️</span> by Sneha Prajapati</p>
+        <p>FYBSc Computer Science | Vidyavardhini College</p>
+        <p>© 2026 Career Kuch Hatke. A student project for creating career awareness.</p>
+      </div>
+    </footer>
+
+    <!-- JavaScript Files -->
+    <script src="js/script.js"></script>
+    <script src="js/career-data.js"></script>
+    <script src="js/career-detail.js"></script>
+  </body>
+</html>
