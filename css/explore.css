@@ -466,4 +466,10 @@ button.filter-btn[data-filter="unique"].active {
   transform: translateY(-3px);
 }
 
+/* ✅ Center last card on desktop when odd number */
+@media (min-width: 769px) {
+  .career-grid .career-card:last-child:nth-child(odd) {
+    grid-column: 2 / 3;
+  }
+}
 /* END OF EXPLORE PAGE RESPONSIVE STYLES */
