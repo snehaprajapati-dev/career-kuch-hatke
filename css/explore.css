@@ -73,28 +73,37 @@
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
-button.filter-btn[data-filter="all"] {
-  background-color: rgba(221, 168, 63, 0.15) !important;
-  border-color: var(--accent) !important;
-  color: #b8860b !important;
+.filter-btn {
+  background-color: var(--bg-white);
+  color: var(--text-dark);
+  border: 2px solid transparent;
 }
 
+
+button.filter-btn[data-filter="all"] {
+  background-color: #ffe8e3;   /* soft peach */
+  border-color: #f5b7a8;       /* warm peach border */
+  color: #c25b5e;              /* deeper peach text */
+}
+
+
 button.filter-btn[data-filter="all"]:hover {
-  background-color: rgba(221, 168, 63, 0.3) !important;
+  background-color: #f5b7a8;
+  color: var(--bg-white);
 }
 
 button.filter-btn[data-filter="all"].active {
-  background: linear-gradient(135deg, var(--accent) 0%, #f0c050 100%) !important;
-  color: var(--text-dark) !important;
-  border-color: var(--accent) !important;
-  box-shadow: 0 4px 15px rgba(221, 168, 63, 0.4) !important;
-  font-weight: 700 !important;
+  background: linear-gradient(135deg, #f5b7a8 0%, #da7073 100%);
+  color: var(--bg-white);
+  border-color: #da7073;
+  box-shadow: 0 4px 15px rgba(218, 112, 115, 0.35);
+  font-weight: 700;
 }
 
 button.filter-btn[data-filter="creative"] {
-  background-color: rgba(221, 168, 63, 0.15) !important;
-  border-color: var(--accent) !important;
-  color: #b8860b !important;
+  border-color: var(--accent);
+  color: var(--accent);
+  background-color: transparent;
 }
 
 button.filter-btn[data-filter="creative"]:hover {
@@ -102,11 +111,9 @@ button.filter-btn[data-filter="creative"]:hover {
 }
 
 button.filter-btn[data-filter="creative"].active {
-  background: linear-gradient(135deg, var(--accent) 0%, #f0c050 100%) !important;
-  color: var(--text-dark) !important;
-  border-color: var(--accent) !important;
-  box-shadow: 0 4px 15px rgba(221, 168, 63, 0.4) !important;
-  font-weight: 700 !important;
+  background: linear-gradient(135deg, var(--accent) 0%, #f0c050 100%);
+  color: var(--bg-white);
+  border-color: var(--accent);
 }
 
 button.filter-btn[data-filter="tech"] {
@@ -465,6 +472,7 @@ button.filter-btn[data-filter="unique"].active {
   color: var(--bg-white);
   transform: translateY(-3px);
 }
+
 
 /* ✅ Center last card on desktop when odd number */
 @media (min-width: 769px) {
