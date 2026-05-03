@@ -210,8 +210,8 @@
 
 .quiz-result {
   padding: 5rem 0;
-  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-  color: var(--bg-white);
+  background-color: var(--bg-light);
+  color: var(--text-dark);
   text-align: center;
 }
 
@@ -246,21 +246,17 @@
 }
 
 #result-content .career-suggestions {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 1rem;
-  margin: 2rem 0;
+  display: flex;
+  justify-content: center;
 }
 
+
 #result-content .career-suggestions a {
-  padding: 1rem;
-  background-color: var(--bg-light);
-  border: 2px solid var(--accent);
-  border-radius: 10px;
-  color: var(--primary);
-  font-weight: 600;
-  text-decoration: none;
-  transition: all 0.3s ease;
+  display: inline-block;
+  padding: 0.9rem 2rem;
+  width: auto;
+  max-width: 300px;
+  border-radius: 50px;
 }
 
 #result-content .career-suggestions a:hover {

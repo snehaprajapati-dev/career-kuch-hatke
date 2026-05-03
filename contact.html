@@ -9,7 +9,7 @@
       content="Get in touch with Career Kuch Hatke. Send us your feedback or suggest new careers to feature."
     />
     <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/contact.css"/>
+    <link rel="stylesheet" href="css/contact.css" />
     <!-- Add this to <head> of ALL your HTML pages -->
 
     <!-- Google Fonts -->
@@ -44,12 +44,12 @@
     </nav>
 
     <section class="page-header">
-  <div class="container">
-    <!-- Add breadcrumb -->
-    <div class="breadcrumb-nav">
-      <a href="index.html">Home</a> → 
-      <span>Contact Us</span>
-    </div>
+      <div class="container">
+        <!-- Add breadcrumb -->
+        <div class="breadcrumb-nav">
+          <a href="index.html">Home</a> →
+          <span>Contact Us</span>
+        </div>
         <h1>Contact Us</h1>
         <p>
           Got a question? Found a bug? Want to suggest a career we haven't
@@ -66,11 +66,7 @@
       <div class="container">
         <h2 class="form-msg">Send Us a Message</h2>
 
-        <form
-          action="php/contact-process.php"
-          method="POST"
-          class="contact-form"
-        >
+        <form class="contact-form">
           <div class="form-group">
             <label for="name">Name:</label>
             <input type="text" id="name" name="name" required />
@@ -140,11 +136,7 @@
           Know an unconventional career we should add? Tell us about it!
         </p>
 
-        <form
-          action="php/suggestion-process.php"
-          method="POST"
-          class="suggestion-form"
-        >
+        <form class="suggestion-form">
           <div class="form-group">
             <label for="career-name">Career Name:</label>
             <input type="text" id="career-name" name="career-name" required />

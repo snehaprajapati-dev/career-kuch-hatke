@@ -2,20 +2,23 @@
    CAREER DETAIL PAGE STYLES
    ============================================ */
 
-/* Breadcrumb Navigation - UPDATED */
+/* Breadcrumb Navigation */
 .breadcrumb {
-  padding: 1rem 0;
-  font-size: 1rem;
+  text-align: center;
+  padding: 1.5rem 0;
+  margin-bottom: 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  font-size: 0.95rem;
   color: var(--bg-white);
+  opacity: 0.9;
   font-weight: 500;
   letter-spacing: 0.5px;
-  line-height: 1.5;
 }
 
 .breadcrumb a {
   color: var(--bg-white);
   text-decoration: none;
-  transition: all 0.3s;
+  transition: all 0.3s ease;
   opacity: 0.85;
   font-weight: 500;
 }
@@ -36,10 +39,11 @@
   font-size: 1.2rem;
 }
 /* Career Hero Section */
+/* Career Hero Section */
 .career-hero {
   background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
   color: var(--bg-white);
-  padding: 3rem 0 4rem 0;
+  padding: 3rem 0 4rem 0;  /* ✅ Added top padding */
   margin-top: 0;
 }
 
@@ -47,6 +51,7 @@
   text-align: center;
   max-width: 900px;
   margin: 0 auto;
+  padding-top: 1.5rem;  /* ✅ Extra spacing from breadcrumb line */
 }
 
 .hero-content .category-badge {
@@ -344,13 +349,6 @@
   gap: 1.5rem;
 }
 
-.resource-category {
-  padding: 1.2rem;
-  background-color: var(--bg-light);
-  border-radius: 10px;
-  border-left: 4px solid var(--accent);
-}
-
 .resource-category strong {
   display: block;
   color: var(--primary);
@@ -458,17 +456,6 @@
   gap: 1rem;
 }
 
-.related-career-link {
-  display: block;
-  padding: 1rem;
-  background-color: var(--bg-light);
-  border-radius: 10px;
-  border: 2px solid transparent;
-  transition: all 0.3s ease;
-  text-decoration: none;
-  color: var(--text-dark);
-}
-
 .related-career-link:hover {
   border-color: var(--accent);
   background-color: rgba(221, 168, 63, 0.1);
@@ -511,6 +498,108 @@
   color: var(--bg-white);
   transform: translateY(-3px);
 }
+
+
+/* ============================================
+   HOVER EFFECTS
+   ============================================ */
+
+/* Resources Card Hover */
+.resource-category {
+  padding: 1.2rem;
+  background-color: var(--bg-light);
+  border-radius: 10px;
+  border-left: 4px solid var(--accent);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.resource-category:hover {
+  background: linear-gradient(135deg, #fff5e6 0%, #ffe6f0 100%);
+  transform: translateX(10px);
+  box-shadow: 0 4px 15px rgba(255, 107, 107, 0.2);
+  border-left-color: var(--primary);
+}
+
+.resource-category strong {
+  display: block;
+  color: var(--primary);
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+  transition: color 0.3s ease;
+}
+
+.resource-category:hover strong {
+  color: var(--accent);
+}
+
+/* Sidebar Related Careers Hover */
+.related-career-link {
+  display: block;
+  padding: 1rem;
+  background-color: var(--bg-light);
+  border-radius: 10px;
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  color: var(--text-dark);
+}
+
+.related-career-link:hover {
+  background: linear-gradient(135deg, #fff5e6 0%, #ffe6f0 100%);
+  border-color: var(--primary);
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(255, 107, 107, 0.3);
+}
+
+.related-career-link strong {
+  display: block;
+  color: var(--primary);
+  font-weight: 700;
+  margin-bottom: 0.3rem;
+  transition: color 0.3s ease;
+}
+
+.related-career-link:hover strong {
+  color: var(--accent);
+}
+
+.related-career-link small {
+  color: var(--text-gray);
+  font-size: 0.85rem;
+  transition: all 0.3s ease;
+}
+
+.related-career-link:hover small {
+  color: var(--accent);
+  font-weight: 600;
+  transform: translateX(5px);
+  display: inline-block;
+}
+
+/* Animated Arrow */
+.related-career-link small::after {
+  content: ' →';
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.related-career-link:hover small::after {
+  transform: translateX(5px);
+}
+
+/* All Cards Hover */
+.detail-card,
+.sidebar-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.detail-card:hover,
+.sidebar-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
 
 /* ============================================
    RESPONSIVE - CAREER DETAIL PAGE

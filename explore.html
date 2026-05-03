@@ -20,7 +20,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@400;500;600;700;800&family=Tenor+Sans&display=swap" rel="stylesheet">  </head>
-  <body>
+  <body id="top">
     <nav class="navbar">
   <div class="container">
     <h2 class="logo">Career Kuch Hatke</h2>
@@ -77,16 +77,16 @@
   <button class="filter-btn" data-filter="tech">💻 Tech</button>
   <button class="filter-btn" data-filter="science">🔬 Science</button>
   <button class="filter-btn" data-filter="business">💰 Business</button>
-  <button class="filter-btn" data-filter="unique">🎭 Unique</button>
+    <button class="filter-btn" data-filter="unique">🎭 Unique</button>
 </div>
     </div>
   </div>
 </section>
-      </div>
-    </section>
-    <section class="careers">
-      <div class="container">
-        <div class="career-grid">
+
+<!-- Careers Section -->
+<section class="careers">
+  <div class="container">
+    <div class="career-grid">
           <!-- CREATIVE CAREERS -->
           <!-- Card 1: Food Stylist (Creative) -->
           <div class="career-card" data-category="creative">
@@ -100,7 +100,7 @@
               Makes food look so good you want to eat your screen
             </p>
             <p class="salary">₹3-12 LPA</p>
-<a href="javascript:void(0)" class="card-btn" onclick="showComingSoon(event)">Know More →</a>            
+<a href="career-detail.html?career=food-stylist" class="card-btn">Know More →</a>            
           </div>
           <!-- Card 2: UX/UI Designer (Creative) -->
           <div class="career-card" data-category="creative">
@@ -130,7 +130,8 @@
               heard
             </p>
             <p class="salary">₹2-20 LPA</p>
-          <a href="javascript:void(0)" class="card-btn" onclick="showComingSoon(event)">Know More →</a>
+          <a href="career-detail.html?career=voice-over-artist" class="card-btn">Know More →</a
+            >
           </div>
           <!-- Card 4: Ethical Fashion Designer (Creative) -->
           <div class="career-card" data-category="creative">
@@ -142,7 +143,7 @@
             <h3>Ethical Fashion Designer</h3>
             <p class="tagline">Making clothes not just fashion but emotion</p>
             <p class="salary">₹3-15 LPA</p>
-           <a href="javascript:void(0)" class="card-btn" onclick="showComingSoon(event)">Know More →</a>
+           <a href="career-detail.html?career=ethical-fashion-designer" class="card-btn">Know More →</a>
           </div>
           <!-- Card 5: Animator (Creative) -->
           <div class="career-card" data-category="creative">
@@ -156,7 +157,7 @@
               Bringing stories to life with movement and magic
             </p>
             <p class="salary">₹3-12 LPA</p>
-          <a href="javascript:void(0)" class="card-btn" onclick="showComingSoon(event)">Know More →</a>
+          <a href="career-detail.html?career=animator" class="card-btn">Know More →</a>
           </div>
           <!-- TECH CAREERS -->
           <!-- Card 1: Drone Pilot (Tech) -->
@@ -171,7 +172,7 @@
               Commanding the skies to film, farm, and deliver from above
             </p>
             <p class="salary">₹3-10 LPA</p>
-           <a href="javascript:void(0)" class="card-btn" onclick="showComingSoon(event)">Know More →</a>
+           <a href="career-detail.html?career=drone-pilot" class="card-btn">Know More →</a>
           </div>
 
           <!-- Card 2: Ethical Hacker (Tech) -->
@@ -203,7 +204,9 @@
               argue with ChatGPT until it behaves.
             </p>
             <p class="salary">₹6-25 LPA</p>
-           <a href="javascript:void(0)" class="card-btn" onclick="showComingSoon(event)">Know More →</a>
+           <a href="career-detail.html?career=ai-prompt-engineer" class="card-btn"
+              >Know More →</a
+            >
           </div>
           <!-- Card 4: Data Storyteller (Tech) -->
           <div class="career-card" data-category="tech">
@@ -218,7 +221,8 @@
               read
             </p>
             <p class="salary">₹4-18 LPA</p>
-            <a href="javascript:void(0)" class="card-btn" onclick="showComingSoon(event)">Know More →</a>
+            <a href="career-detail.html?career=data-storyteller" class="card-btn">Know More →</a
+              >
           </div>
           <!-- Card 5: Game Developer (Tech) -->
           <div class="career-card" data-category="tech">
@@ -232,7 +236,8 @@
               Builds the virtual worlds millions escape into every night
             </p>
             <p class="salary">₹3-20 LPA</p>
-           <a href="javascript:void(0)" class="card-btn" onclick="showComingSoon(event)">Know More →</a>
+           <a href="career-detail.html?career=game-developer" class="card-btn">Know More →</a
+            >
           </div>
           <!-- SCIENCE CAREERS -->
           <!-- Card 1: Restoration Architect (Science) -->
@@ -248,7 +253,8 @@
               intact.
             </p>
             <p class="salary">₹4-15 LPA</p>
-           <a href="javascript:void(0)" class="card-btn" onclick="showComingSoon(event)">Know More →</a>
+           <a href="career-detail.html?career=restoration-architect" class="card-btn">Know More →</a
+            >
           </div>
           <!-- Card 2:  Wildlife Photographer (Science) -->
           <div class="career-card" data-category="science">
@@ -262,7 +268,8 @@
               Lives in jungles for weeks just for that ONE perfect shot
             </p>
             <p class="salary">₹3-20 LPA</p>
-            <a href="javascript:void(0)" class="card-btn" onclick="showComingSoon(event)">Know More →</a>
+            <a href="career-detail.html?career=wildlife-photographer" class="card-btn">Know More →</a
+              >
           </div>
           <!-- Card 3: Forensic Scientist (Science) -->
           <div class="career-card" data-category="science">
@@ -276,8 +283,8 @@
               Solves real crimes with microscopes instead of guns
             </p>
             <p class="salary">₹3-12 LPA</p>
-            <a href="career-detail.html?career=forensic-scientist" class="card-btn">Know More →</a>
-            >
+            <a href="career-detail.html?career=forensic-scientist" class="card-btn">Know More →
+              </a>
           </div>
           <!-- Card 4: Oceanographer (Science) -->
           <div class="career-card" data-category="science">
@@ -291,7 +298,8 @@
               80% of the ocean is unexplored. They explore that 80%.
             </p>
             <p class="salary">₹4-15 LPA</p>
-            <a href="javascript:void(0)" class="card-btn" onclick="showComingSoon(event)">Know More →</a>
+            <a href="career-detail.html?career=oceanographer" class="card-btn">Know More →</a
+              >
           </div>
           <!-- Card 5: Food Scientist (Science) -->
           <div class="career-card" data-category="science">
@@ -305,7 +313,8 @@
               The reason Maggi tastes like Maggi and not like cardboard
             </p>
             <p class="salary">₹3-10 LPA</p>
-           <a href="javascript:void(0)" class="card-btn" onclick="showComingSoon(event)">Know More →</a>
+           <a href="career-detail.html?career=food-scientist" class="card-btn">Know More →</a
+            >
           </div>
           <!-- BUSINESS CAREERS -->
           <!-- Card 1: Sports Agent (Business) -->
@@ -320,7 +329,8 @@
               The person who turns a player's talent into crore-level contracts
             </p>
             <p class="salary">₹5-25 LPA</p>
-            <a href="javascript:void(0)" class="card-btn" onclick="showComingSoon(event)">Know More →</a>
+            <a href="career-detail.html?career=sports-agent" class="card-btn">Know More →</a
+              >
           </div>
           <!-- Card 2: Fragrance Designer (Business) -->
           <div class="career-card" data-category="business">
@@ -335,7 +345,8 @@
               until they imagined them.
             </p>
             <p class="salary">₹4-18 LPA</p>
-            <a href="javascript:void(0)" class="card-btn" onclick="showComingSoon(event)">Know More →</a>
+            <a href="career-detail.html?career=fragrance-designer" class="card-btn">Know More →</a
+              >
           </div>
           <!-- Card 3: Event manager (Business) -->
           <div class="career-card" data-category="business">
@@ -350,7 +361,8 @@
               ceremonies
             </p>
             <p class="salary">₹3-15 LPA</p>
-            <a href="javascript:void(0)" class="card-btn" onclick="showComingSoon(event)">Know More →</a>
+            <a href="career-detail.html?career=event-manager" class="card-btn">Know More →</a
+              >
           </div>
           <!-- Card 4: Social Media Manager (Business) -->
           <div class="career-card" data-category="business">
@@ -365,7 +377,8 @@
               you should be jealous
             </p>
             <p class="salary">₹2.5-10 LPA</p>
-            <a href="career-detail.html?career=social-media-manager" class="card-btn">Know More →</a>
+            <a href="career-detail.html?career=social-media-manager" class="card-btn">Know More →</a
+              >
   
           </div>
           <!-- Card 5: Ethical investment advisor (Business) -->
@@ -381,7 +394,8 @@
               the planet
             </p>
             <p class="salary">₹5-20 LPA</p>
-            <a href="javascript:void(0)" class="card-btn" onclick="showComingSoon(event)">Know More →</a>
+            <a href="career-detail.html?career=ethical-investment-advisor" class="card-btn">Know More →</a
+              >
           </div>
           <!-- UNIQUE CAREERS -->
           <!-- Card 1: Podcast Producer(Unique) -->
@@ -397,7 +411,8 @@
               stop listening to.
             </p>
             <p class="salary">₹3-12 LPA</p>
-           <a href="javascript:void(0)" class="card-btn" onclick="showComingSoon(event)">Know More →</a>
+           <a href="career-detail.html?career=podcast-producer" class="card-btn">Know More →</a
+            >
           </div>
           <!-- Card 2: Museum Curator(Unique) -->
           <div class="career-card" data-category="unique">
@@ -412,7 +427,8 @@
               today.
             </p>
             <p class="salary">₹3-10 LPA</p>
-           <a href="javascript:void(0)" class="card-btn" onclick="showComingSoon(event)">Know More →</a>
+           <a href="career-detail.html?career=museum-curator" class="card-btn">Know More →</a
+            >
           </div>
           <!-- Card 3: Sign Language Interpreter(Unique) -->
           <div class="career-card" data-category="unique">
@@ -427,7 +443,8 @@
               conversations that never make a sound.
             </p>
             <p class="salary">₹2-12 LPA</p>
-            <a href="career-detail.html?career=sign-language-interpreter" class="card-btn">Know More →</a>
+            <a href="career-detail.html?career=sign-language-interpreter" class="card-btn">Know More →</a
+              >
             
           </div>
           <!-- Card 4: Pet therapist(Unique) -->
@@ -442,7 +459,8 @@
               A psychologist whose patients bark, purr, and can't talk back
             </p>
             <p class="salary">₹2-8 LPA</p>
-            <a href="javascript:void(0)" class="card-btn" onclick="showComingSoon(event)">Know More →</a>
+            <a href="career-detail.html?career=pet-therapist" class="card-btn">Know More →</a
+              >
           </div>
           <!-- Card 5: Adventure Sports Instructor(Unique) -->
           <div class="career-card" data-category="unique">
@@ -456,14 +474,15 @@
               Turning mountains, rivers, and sky into a classroom for adrenaline
             </p>
             <p class="salary">₹2-10 LPA</p>
-           <a href="javascript:void(0)" class="card-btn" onclick="showComingSoon(event)">Know More →</a>
+           <a href="career-detail.html?career=adventure-sports-instructor" class="card-btn">Know More →</a
+            >
           </div>
         </div>
       </div>
     </section>
     <div class="back-to-top">
-      <a href="">↑ Back to Top</a>
-    </div>
+  <a href="#top">↑ Back to Top</a>
+</div>
    <!-- FOOTER -->
     <footer class="footer">
       <div class="container">
