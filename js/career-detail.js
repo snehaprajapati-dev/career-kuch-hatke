@@ -320,7 +320,7 @@ function fillRelatedCareers(currentCategory, currentCareerId) {
     html += `
       <a href="career-detail.html?career=${career.id}" class="related-career-link">
         <strong>${career.emoji} ${career.name}</strong>
-        <small>Click to explore →</small>
+        <small>Click to explore </small>
       </a>
     `;
   });
