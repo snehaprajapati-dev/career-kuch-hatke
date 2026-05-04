@@ -229,6 +229,23 @@
 .success-message a:hover {
   color: var(--accent);
 }
+/* Success Message OK Button - Green Theme */
+.success-message .btn {
+  background: #28a745;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.8rem 1.8rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.success-message .btn:hover {
+  background: #218838;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(40, 167, 69, 0.3);
+}
 
 /* ============================================
    RESPONSIVE - CONTACT PAGE
@@ -269,4 +286,126 @@
   }
 }
 
-/* END OF CONTACT PAGE STYLES */
+/* ============================================
+   CONTACT OPTIONS CARDS (NEW DESIGN)
+   ============================================ */
+
+.contact-options-section {
+  padding: 5rem 0;
+  background-color: var(--bg-light);
+}
+
+.options-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 3rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.contact-option-card {
+  background: var(--bg-white);
+  padding: 3rem 2rem;
+  border-radius: 20px;
+  text-align: center;
+  border: 3px solid var(--pink-light);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.contact-option-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.15);
+  border-color: var(--accent);
+}
+
+.option-icon {
+  font-size: 4rem;
+  display: block;
+  margin-bottom: 1.5rem;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.contact-option-card h3 {
+  font-size: 1.8rem;
+  color: var(--primary);
+  margin-bottom: 1rem;
+  font-family: 'Montserrat Alternates', sans-serif;
+}
+
+.contact-option-card p {
+  color: var(--text-gray);
+  line-height: 1.8;
+  margin-bottom: 2rem;
+  font-size: 1rem;
+}
+
+.contact-option-card .btn {
+  width: 100%;
+  max-width: 250px;
+}
+
+/* Back Button */
+.back-btn {
+  background: transparent;
+  border: 2px solid var(--primary);
+  color: var(--primary);
+  padding: 0.8rem 1.5rem;
+  border-radius: 10px;
+  font-family: 'Montserrat Alternates', sans-serif;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin: 0 auto 2rem auto; 
+  display: block;       
+}
+
+.back-btn:hover {
+  background: var(--primary);
+  color: var(--bg-white);
+  transform: translateX(-5px);
+}
+
+/* Updated Success Message */
+.success-message {
+  text-align: center;
+}
+
+.success-message h3 {
+  font-size: 2rem;
+  color: #155724;
+  margin: 1rem 0;
+}
+
+.success-message .btn {
+  margin-top: 1.5rem;
+  min-width: 150px;
+}
+
+/* Form sections hidden by default */
+.form-section {
+  padding: 5rem 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .options-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 0 1rem;
+  }
+  
+  .contact-option-card {
+    padding: 2rem 1.5rem;
+  }
+  
+  .option-icon {
+    font-size: 3rem;
+  }
+}

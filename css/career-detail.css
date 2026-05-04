@@ -2,13 +2,8 @@
    CAREER DETAIL PAGE STYLES
    ============================================ */
 
-<<<<<<< HEAD
-   
-
-/* Breadcrumb Navigation - UPDATED */
-=======
 /* Breadcrumb Navigation */
->>>>>>> 7b502961b53c3b66dda21ae3e0d284d49d53f932
+
 .breadcrumb {
   text-align: center;
   padding: 1.5rem 0;
@@ -40,16 +35,12 @@
   font-weight: 700;
 }
 
-/* Style the arrows to be bigger and more visible */
-.breadcrumb::after {
-  font-size: 1.2rem;
-}
 /* Career Hero Section */
-/* Career Hero Section */
+
 .career-hero {
   background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
   color: var(--bg-white);
-  padding: 3rem 0 4rem 0;  /* ✅ Added top padding */
+  padding: 3rem 0 4rem 0;
   margin-top: 0;
 }
 
@@ -57,7 +48,7 @@
   text-align: center;
   max-width: 900px;
   margin: 0 auto;
-  padding-top: 1.5rem;  /* ✅ Extra spacing from breadcrumb line */
+  padding-top: 1.5rem;
 }
 
 .hero-content .category-badge {
@@ -847,37 +838,6 @@
     overflow-wrap: break-word;
   }
 
-  /* ============================================
-   HOVER EFFECTS FOR CARD #7 (RESOURCES)
-   ============================================ */
-
-.resource-category {
-  padding: 1rem;
-  margin-bottom: 1rem;
-  border-radius: 10px;
-  background: #f8f9fa;
-  transition: all 0.3s ease;
-  cursor: pointer;
-}
-
-.resource-category:hover {
-  background: linear-gradient(135deg, #fff5e6 0%, #ffe6f0 100%);
-  transform: translateX(10px);
-  box-shadow: 0 4px 15px rgba(255, 107, 107, 0.2);
-}
-
-.resource-category strong {
-  display: block;
-  color: #ff6b6b;
-  margin-bottom: 0.5rem;
-  font-size: 1.1rem;
-  transition: color 0.3s ease;
-}
-
-.resource-category:hover strong {
-  color: #feca57;
-}
-
 
 /* ============================================
    HOVER EFFECTS FOR SIDEBAR LINKS
@@ -961,4 +921,5 @@
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 /* END OF CAREER DETAIL PAGE RESPONSIVE STYLES */
+
 /* END OF CAREER DETAIL PAGE STYLES */
