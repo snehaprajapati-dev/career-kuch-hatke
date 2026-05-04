@@ -294,51 +294,122 @@ if (document.querySelector('.question')) {
 }
 
 /* ============================================
-   CONTACT FORM SUBMISSION
+   CONTACT PAGE - FORM TOGGLE & SUBMISSION
    ============================================ */
-if (document.querySelector(".contact-form")) {
+
+// Show specific form
+function showForm(formType) {
+  const optionsSection = document.querySelector('.contact-options-section');
+  const contactSection = document.getElementById('contact-form-section');
+  const suggestionSection = document.getElementById('suggestion-form-section');
   
+  // Hide options
+  optionsSection.style.display = 'none';
+  
+  // Show selected form
+  if (formType === 'contact') {
+    contactSection.style.display = 'block';
+    suggestionSection.style.display = 'none';
+  } else if (formType === 'suggestion') {
+    suggestionSection.style.display = 'block';
+    contactSection.style.display = 'none';
+  }
+  
+  // Smooth scroll to top
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// Hide form and return to options
+function hideForm() {
+  const optionsSection = document.querySelector('.contact-options-section');
+  const contactSection = document.getElementById('contact-form-section');
+  const suggestionSection = document.getElementById('suggestion-form-section');
+  
+  contactSection.style.display = 'none';
+  suggestionSection.style.display = 'none';
+  optionsSection.style.display = 'block';
+  
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// Reset to options after success
+function resetToOptions() {
+
+  // Reset both forms completely
+  const contactForm = document.querySelector('.contact-form');
+  const suggestionForm = document.querySelector('.suggestion-form');
+
+  if (contactForm) contactForm.reset();
+  if (suggestionForm) suggestionForm.reset();
+
+  // Hide success messages
+  document.getElementById('contact-success').style.display = 'none';
+  document.getElementById('suggestion-success').style.display = 'none';
+
+  // Show forms again
+  if (contactForm) contactForm.style.display = 'block';
+  if (suggestionForm) suggestionForm.style.display = 'block';
+
+  // Go back to options
+  hideForm();
+}
+
+// Contact Form Submission
+if (document.querySelector(".contact-form")) {
   const contactForm = document.querySelector(".contact-form");
   const contactSuccess = document.getElementById("contact-success");
 
   contactForm.addEventListener("submit", function (e) {
     e.preventDefault();
 
-    console.log('Contact form submitted!'); // Debug
+    console.log('Contact form submitted!');
 
+    // Hide form, show success
     contactForm.style.display = "none";
     contactSuccess.style.display = "block";
 
+    // Scroll to success message
     contactSuccess.scrollIntoView({ behavior: "smooth" });
 
+    // Optional: Confetti
+    createConfetti();
+
+    // Reset form
     setTimeout(() => {
       contactForm.reset();
     }, 100);
   });
 }
 
-/* ============================================
-   SUGGESTION FORM SUBMISSION
-   ============================================ */
+// Suggestion Form Submission
 if (document.querySelector(".suggestion-form")) {
-  
   const suggestionForm = document.querySelector(".suggestion-form");
   const suggestionSuccess = document.getElementById("suggestion-success");
 
   suggestionForm.addEventListener("submit", function (e) {
     e.preventDefault();
 
-    console.log('Suggestion form submitted!'); // Debug
+    console.log('Suggestion form submitted!');
 
+    // Hide form, show success
     suggestionForm.style.display = "none";
     suggestionSuccess.style.display = "block";
 
+    // Scroll to success message
     suggestionSuccess.scrollIntoView({ behavior: "smooth" });
 
+    // Optional: Confetti
+    createConfetti();
+
+    // Reset form
     setTimeout(() => {
       suggestionForm.reset();
     }, 100);
   });
 }
+
+window.showForm = showForm;
+window.hideForm = hideForm;
+window.resetToOptions = resetToOptions;
 
 }); // ✅ Closes DOMContentLoaded
