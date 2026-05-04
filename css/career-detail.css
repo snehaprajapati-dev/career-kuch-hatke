@@ -2,6 +2,8 @@
    CAREER DETAIL PAGE STYLES
    ============================================ */
 
+   
+
 /* Breadcrumb Navigation - UPDATED */
 .breadcrumb {
   padding: 1rem 0;
@@ -751,7 +753,119 @@
     word-break: break-word;
     overflow-wrap: break-word;
   }
+
+  /* ============================================
+   HOVER EFFECTS FOR CARD #7 (RESOURCES)
+   ============================================ */
+
+.resource-category {
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 10px;
+  background: #f8f9fa;
+  transition: all 0.3s ease;
+  cursor: pointer;
 }
 
+.resource-category:hover {
+  background: linear-gradient(135deg, #fff5e6 0%, #ffe6f0 100%);
+  transform: translateX(10px);
+  box-shadow: 0 4px 15px rgba(255, 107, 107, 0.2);
+}
+
+.resource-category strong {
+  display: block;
+  color: #ff6b6b;
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
+}
+
+.resource-category:hover strong {
+  color: #feca57;
+}
+
+
+/* ============================================
+   HOVER EFFECTS FOR SIDEBAR LINKS
+   ============================================ */
+
+.related-career-link {
+  display: block;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  background: #f8f9fa;
+  border-radius: 10px;
+  text-decoration: none;
+  color: #2c3e50;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.related-career-link:hover {
+  background: linear-gradient(135deg, #fff5e6 0%, #ffe6f0 100%);
+  border-color: #ff6b6b;
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(255, 107, 107, 0.3);
+}
+
+.related-career-link strong
+ {
+  display: block;
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  color: #2c3e50;
+  transition: color 0.3s ease;
+}
+
+.related-career-link:hover strong
+ {
+  color: #ff6b6b;
+}
+
+.related-career-link small 
+{
+  color: #7f8c8d;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.related-career-link:hover small {
+  color: #feca57;
+  font-weight: 600;
+  transform: translateX(5px);
+  display: inline-block;
+}
+
+
+/* ============================================
+   ANIMATED ARROW ON HOVER
+   ============================================ */
+
+.related-career-link small::after {
+  content: ' →';
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.related-career-link:hover small::after {
+  transform: translateX(5px);
+}
+
+
+/* ============================================
+   SMOOTH CARD HOVER (BONUS)
+   ============================================ */
+
+.detail-card,
+.sidebar-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.detail-card:hover,
+.sidebar-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
 /* END OF CAREER DETAIL PAGE RESPONSIVE STYLES */
 /* END OF CAREER DETAIL PAGE STYLES */
