@@ -153,6 +153,11 @@ main {
   list-style: none;
 }
 
+.nav-menu a.active {
+  color: var(--primary);
+  font-weight: 700;
+}
+
 .nav-menu li a {
   text-decoration: none;
   color: var(--text-dark);
