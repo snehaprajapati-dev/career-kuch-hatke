@@ -36,6 +36,21 @@ if (hamburger && navMenu) {
 }
 
 /* ============================================
+   NAVBAR ACTIVE LINK
+   ============================================ */
+
+const currentPage = window.location.pathname.split("/").pop() || "index.html";
+const navLinksActive = document.querySelectorAll(".nav-menu a");
+
+navLinksActive.forEach(link => {
+  const linkPage = link.getAttribute("href");
+
+  if (linkPage === currentPage) {
+    link.classList.add("active");
+  }
+});
+
+/* ============================================
    CAREER FILTER & SEARCH - Explore Page
    ============================================ */
 if (document.querySelector('.filter-btn')) {
@@ -223,8 +238,8 @@ if (document.querySelector('.question')) {
     currentQuestion = 0;
     showQuestion(currentQuestion);
 
-    resultSection.style.display = "none";
-    document.querySelector(".quiz-container").style.display = "block";
+  resultSection.style.display = "none";
+document.getElementById("quiz-section").style.display = "block";
 
     window.scrollTo({ top: 0, behavior: "smooth" });
   }
@@ -233,7 +248,7 @@ if (document.querySelector('.question')) {
   window.resetQuiz = resetQuiz;
 
   function showResult(category) {
-    document.querySelector(".quiz-container").style.display = "none";
+    document.getElementById("quiz-section").style.display = "none";
     resultSection.style.display = "block";
 
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -292,6 +307,16 @@ if (document.querySelector('.question')) {
 
   showQuestion(currentQuestion);
 }
+
+function startQuiz() {
+  document.getElementById("quiz-intro").style.display = "none";
+  document.getElementById("quiz-section").style.display = "block";
+  document.getElementById("result").style.display = "none";
+
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+window.startQuiz = startQuiz;
 
 /* ============================================
    CONTACT PAGE - FORM TOGGLE & SUBMISSION

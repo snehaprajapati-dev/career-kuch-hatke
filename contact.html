@@ -62,30 +62,50 @@
     </section>
 
     <!-- CONTACT OPTIONS SECTION -->
-<section class="contact-options-section">
-  <div class="container">
-    <div class="options-grid">
-      
-      <!-- Option 1: Send Message -->
-      <div class="contact-option-card">
-        <span class="option-icon">📧</span>
-        <h3>Send Us a Message</h3>
-        <p>Got a question, feedback, or just want to say hi? Drop us a message and we'll get back to you within 24-48 hours.</p>
-        <button class="btn btn-primary" onclick="showForm('contact')">Send Message →</button>
+    <section class="contact-options-section">
+      <div class="container">
+        <div class="options-grid">
+          <!-- Option 1: Send Message -->
+          <div class="contact-option-card">
+            <span class="option-icon">📧</span>
+            <h3>Send Us a Message</h3>
+            <p>
+              Got a question, feedback, or just want to say hi? Drop us a
+              message and we'll get back to you within 24-48 hours.
+            </p>
+            <button class="btn btn-primary" onclick="showForm('contact')">
+              Send Message →
+            </button>
+          </div>
+
+          <!-- Option 2: Suggest Career -->
+          <div class="contact-option-card">
+            <span class="option-icon">💡</span>
+            <h3>Suggest a Career</h3>
+            <p>
+              Know an unconventional career we should add? Tell us about it and
+              help us grow Career Kuch Hatke!
+            </p>
+            <button class="btn btn-primary" onclick="showForm('suggestion')">
+              Suggest Career →
+            </button>
+          </div>
+        </div>
       </div>
+    </section>
 
-      <!-- Option 2: Suggest Career -->
-      <div class="contact-option-card">
-        <span class="option-icon">💡</span>
-        <h3>Suggest a Career</h3>
-        <p>Know an unconventional career we should add? Tell us about it and help us grow Career Kuch Hatke!</p>
-        <button class="btn btn-primary" onclick="showForm('suggestion')">Suggest Career →</button>
-      </div>
+    <!-- CONTACT FORM (Hidden Initially) -->
+    <section
+      class="contact-form-section form-section"
+      id="contact-form-section"
+      style="display: none"
+    >
+      <div class="container">
+        <button class="back-btn" onclick="hideForm()">← Back to Options</button>
 
-    </div>
-  </div>
-</section>
+        <h2 class="form-msg">Send Us a Message</h2>
 
+<<<<<<< HEAD
 <!-- CONTACT FORM (Hidden Initially) -->
 <section class="contact-form-section form-section" id="contact-form-section" style="display: none;">
   <div class="container">
@@ -99,38 +119,162 @@
         <label for="name">Name:</label>
         <input type="text" id="name" name="name" required minlength="3" maxlength="50" />
       </div>
+=======
+        <form class="contact-form">
+          <!-- Keep your existing form fields -->
+          <div class="form-group">
+            <label for="name">Name:</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              required
+              minlength="3"
+              maxlength="50"
+            />
+          </div>
+>>>>>>> 5199c700ce5d190477b9ebca320d356ce6928ab0
 
-      <div class="form-group">
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required />
-      </div>
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required />
+          </div>
 
-      <div class="form-group">
-        <label for="telephone">Telephone:</label>
-        <input type="tel" id="telephone" name="telephone" pattern="[0-9]{10}" />
-      </div>
+          <div class="form-group">
+            <label for="telephone">Telephone:</label>
+            <input
+              type="tel"
+              id="telephone"
+              name="telephone"
+              pattern="[0-9]{10}"
+            />
+          </div>
 
-      <div class="form-group">
-        <label for="subject">Subject:</label>
-        <input type="text" id="subject" name="subject" required />
-      </div>
+          <div class="form-group">
+            <label for="subject">Subject:</label>
+            <input type="text" id="subject" name="subject" required />
+          </div>
 
-      <div class="form-group">
-        <label for="i_am">I am a:</label>
-        <select id="i_am" name="i_am" required>
-              <option value="" disabled selected class="option">Select...</option>
+          <div class="form-group">
+            <label for="i_am">I am a:</label>
+            <select id="i_am" name="i_am" required>
+              <option value="" disabled selected class="option">
+                Select...
+              </option>
               <option value="student">Student</option>
               <option value="parent">Parent</option>
               <option value="educator">Educator</option>
               <option value="career_counselor">Career Counselor</option>
               <option value="other">Other</option>
             </select>
-      </div>
+          </div>
 
-      <div class="form-group">
-        <label for="message">Message:</label>
-        <textarea id="message" name="message" rows="5" required minlength="15" maxlength="500"></textarea>
+          <div class="form-group">
+            <label for="message">Message:</label>
+            <textarea
+              id="message"
+              name="message"
+              rows="5"
+              required
+              minlength="15"
+              maxlength="500"
+            ></textarea>
+          </div>
+
+          <div class="form-group">
+            <button type="submit" class="btn btn-secondary">
+              Send Message
+            </button>
+          </div>
+        </form>
+
+        <!-- Success Message (Modified) -->
+        <div class="success-message" id="contact-success" style="display: none">
+          <span class="emoji">✅</span>
+          <h3>Thank You!</h3>
+          <p>
+            Your message has been received. We'll get back to you within 24-48
+            hours.
+          </p>
+          <button class="btn btn-accent" onclick="resetToOptions()">OK</button>
+        </div>
       </div>
+    </section>
+
+    <!-- SUGGESTION FORM (Hidden Initially) -->
+    <section
+      class="suggest-career-section form-section"
+      id="suggestion-form-section"
+      style="display: none"
+    >
+      <div class="container">
+        <button class="back-btn" onclick="hideForm()">← Back to Options</button>
+
+        <h2 class="form-msg"><span class="emoji">💡</span> Suggest a Career</h2>
+        <p class="form-msg-p">
+          Know an unconventional career we should add? Tell us about it!
+        </p>
+
+        <form class="suggestion-form">
+          <!-- Keep your existing suggestion form fields -->
+          <div class="form-group">
+            <label for="career-name">Career Name:</label>
+            <input
+              type="text"
+              id="career-name"
+              name="career-name"
+              required
+              minlength="3"
+              maxlength="100"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="career-why">Why it's hatke:</label>
+            <textarea
+              id="career-why"
+              name="career-why"
+              rows="3"
+              required
+              minlength="20"
+              maxlength="400"
+            ></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="suggester-name">Your Name (optional):</label>
+            <input
+              type="text"
+              id="suggester-name"
+              name="suggester-name"
+              minlength="3"
+              maxlength="50"
+            />
+          </div>
+
+          <div class="form-group">
+            <button type="submit" class="btn btn-secondary">
+              Submit Suggestion
+            </button>
+          </div>
+        </form>
+
+        <!-- Success Message (Modified) -->
+        <div
+          class="success-message"
+          id="suggestion-success"
+          style="display: none"
+        >
+          <span class="emoji">✅</span>
+          <h3>Awesome Suggestion!</h3>
+          <p>
+            Thank you for helping us grow Career Kuch Hatke. We'll review your
+            suggestion and add it soon.
+          </p>
+          <button class="btn btn-accent" onclick="resetToOptions()">OK</button>
+        </div>
+      </div>
+<<<<<<< HEAD
 
       <div class="form-group">
         <button type="submit" class="btn btn-secondary">Send Message</button>
@@ -186,6 +330,9 @@
     </div>
   </div>
 </section>
+=======
+    </section>
+>>>>>>> 5199c700ce5d190477b9ebca320d356ce6928ab0
 
     <!-- FOOTER -->
     <footer class="footer">
@@ -222,6 +369,16 @@
             <p>
               <span class="emoji">📧</span>
               <a href="contact.html">Contact Us</a>
+            </p>
+            <p>
+              <span class="emoji">💻</span>
+              <a
+                href="https://github.com/snehaprajapati-dev"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                GitHub
+              </a>
             </p>
             <p>
               <span class="emoji">📱</span>
