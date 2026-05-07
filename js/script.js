@@ -379,62 +379,40 @@ function resetToOptions() {
   hideForm();
 }
 
-// Contact Form Submission
-if (document.querySelector(".contact-form")) {
-  const contactForm = document.querySelector(".contact-form");
-  const contactSuccess = document.getElementById("contact-success");
-
-  contactForm.addEventListener("submit", function (e) {
-    e.preventDefault();
-
-    console.log('Contact form submitted!');
-
-    // Hide form, show success
-    contactForm.style.display = "none";
-    contactSuccess.style.display = "block";
-
-    // Scroll to success message
-    contactSuccess.scrollIntoView({ behavior: "smooth" });
-
-    // Optional: Confetti
-    createConfetti();
-
-    // Reset form
-    setTimeout(() => {
-      contactForm.reset();
-    }, 100);
-  });
-}
-
-// Suggestion Form Submission
-if (document.querySelector(".suggestion-form")) {
-  const suggestionForm = document.querySelector(".suggestion-form");
-  const suggestionSuccess = document.getElementById("suggestion-success");
-
-  suggestionForm.addEventListener("submit", function (e) {
-    e.preventDefault();
-
-    console.log('Suggestion form submitted!');
-
-    // Hide form, show success
-    suggestionForm.style.display = "none";
-    suggestionSuccess.style.display = "block";
-
-    // Scroll to success message
-    suggestionSuccess.scrollIntoView({ behavior: "smooth" });
-
-    // Optional: Confetti
-    createConfetti();
-
-    // Reset form
-    setTimeout(() => {
-      suggestionForm.reset();
-    }, 100);
-  });
-}
 
 window.showForm = showForm;
 window.hideForm = hideForm;
 window.resetToOptions = resetToOptions;
+
+/* ============================================
+   SHOW SUCCESS MESSAGE AFTER PHP REDIRECT
+============================================ */
+
+const urlParams = new URLSearchParams(window.location.search);
+const success = urlParams.get('success');
+
+if (success === 'contact') {
+  showForm('contact');
+
+  const contactForm = document.querySelector('.contact-form');
+  const contactSuccess = document.getElementById('contact-success');
+
+  if (contactForm && contactSuccess) {
+    contactForm.style.display = 'none';
+    contactSuccess.style.display = 'block';
+  }
+}
+
+if (success === 'suggestion') {
+  showForm('suggestion');
+
+  const suggestionForm = document.querySelector('.suggestion-form');
+  const suggestionSuccess = document.getElementById('suggestion-success');
+
+  if (suggestionForm && suggestionSuccess) {
+    suggestionForm.style.display = 'none';
+    suggestionSuccess.style.display = 'block';
+  }
+}
 
 }); // ✅ Closes DOMContentLoaded
