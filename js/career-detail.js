@@ -395,3 +395,24 @@ function shareCareer() {
       });
   }
 }
+
+// ============================================
+// ACCORDION FUNCTIONALITY
+// ============================================
+
+document.addEventListener("click", function (e) {
+  const header = e.target.closest(".card-header");
+  if (!header) return;
+
+  const card = header.parentElement;
+
+  // Close all other cards
+  document.querySelectorAll(".detail-card").forEach(c => {
+    if (c !== card) {
+      c.classList.remove("active");
+    }
+  });
+
+  // Toggle current card
+  card.classList.toggle("active");
+});
