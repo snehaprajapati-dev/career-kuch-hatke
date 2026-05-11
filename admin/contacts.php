@@ -10,7 +10,25 @@ if (!isset($_SESSION['admin_logged_in'])) {
 require_once("../php/db_connect.php");
 
 // Fetch contact messages
-$result = mysqli_query($conn, "SELECT * FROM contact_messages ORDER BY created_at DESC");
+$search = "";
+
+if (isset($_GET['search'])) {
+    $search = mysqli_real_escape_string($conn, $_GET['search']);
+    $query = "
+    SELECT * FROM contact_messages 
+    WHERE name LIKE '%$search%' 
+    OR email LIKE '%$search%' 
+    OR subject LIKE '%$search%' 
+    OR message LIKE '%$search%' 
+    OR user_type LIKE '%$search%'
+    OR telephone LIKE '%$search%'
+    ORDER BY created_at DESC
+";
+} else {
+    $query = "SELECT * FROM contact_messages ORDER BY created_at DESC";
+}
+
+$result = mysqli_query($conn, $query);
 ?>
 
 <!DOCTYPE html>
@@ -65,7 +83,19 @@ $result = mysqli_query($conn, "SELECT * FROM contact_messages ORDER BY created_a
 <div class="admin-container">
     <a class="back-link" href="dashboard.php">← Back to Dashboard</a>
     <h1>📩 Contact Messages</h1>
-
+<form method="GET" style="margin-bottom:20px;">
+    <input type="text" name="search" 
+           placeholder="Search by name, email, subject..." 
+           value="<?php echo htmlspecialchars($search); ?>"
+           style="padding:10px; width:70%; border-radius:8px; border:1px solid #ccc;">
+    <button type="submit" 
+            style="padding:10px 15px; background:var(--accent); border:none; border-radius:8px; cursor:pointer;">
+        Search
+    </button>
+    <a href="contacts.php" style="margin-left:10px; font-weight:bold; text-decoration:none;">
+        Reset
+    </a>
+</form>
     <table>
         <tr>
             <th>Name</th>
