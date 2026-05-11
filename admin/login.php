@@ -8,14 +8,14 @@ if (isset($_SESSION['admin_logged_in'])) {
 }
 
 // Change this password to something strong
-$admin_password = "sneha@admin19";  
+$hashed_password = "$2y$10$D9BJ.kiKLGbs5e6oDRMyRebi81HJBDP1ubaVe61ONFggB3q6ONZGa"; 
 
 $error = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $entered_password = $_POST['password'];
 
-    if ($entered_password === $admin_password) {
+    if (password_verify($entered_password, $hashed_password)) {
         $_SESSION['admin_logged_in'] = true;
         header("Location: dashboard.php");
         exit();
