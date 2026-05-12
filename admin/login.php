@@ -1,14 +1,12 @@
 <?php
 session_start();
 
-// If already logged in, go to dashboard
 if (isset($_SESSION['admin_logged_in'])) {
     header("Location: dashboard.php");
     exit();
 }
 
-// Change this password to something strong
-$hashed_password = "$2y$10$D9BJ.kiKLGbs5e6oDRMyRebi81HJBDP1ubaVe61ONFggB3q6ONZGa"; 
+$hashed_password = "$2y$10$.cEo7MYgE05CcvvC3gVYdueIbeh4B.Rnj9pD4B/CEd5sRwECJPJ0y";
 
 $error = "";
 
@@ -29,43 +27,59 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <html>
 <head>
     <title>Admin Login - Career Kuch Hatke</title>
+    <link rel="stylesheet" href="../css/style.css">
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background: #f4f4f4;
+            background: var(--bg-light);
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
+            font-family: 'Montserrat Alternates', sans-serif;
         }
+
         .login-box {
-            background: white;
+            background: var(--bg-white);
             padding: 40px;
-            border-radius: 10px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-            width: 300px;
+            border-radius: 20px;
+            width: 350px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
             text-align: center;
+            border: 3px solid var(--accent);
         }
-        input {
-            width: 100%;
-            padding: 10px;
-            margin-top: 15px;
+
+        .login-box h2 {
+            color: var(--primary);
+            margin-bottom: 25px;
         }
-        button {
+
+        .login-box input {
             width: 100%;
-            padding: 10px;
-            margin-top: 15px;
-            background: #6a1b9a;
+            padding: 12px;
+            border-radius: 10px;
+            border: 1px solid #ccc;
+            margin-bottom: 20px;
+        }
+
+        .login-box button {
+            width: 100%;
+            padding: 12px;
+            background: linear-gradient(135deg, var(--accent), var(--primary));
             color: white;
             border: none;
+            border-radius: 10px;
+            font-weight: 600;
             cursor: pointer;
+            transition: 0.3s;
         }
-        button:hover {
-            background: #4a148c;
+
+        .login-box button:hover {
+            transform: translateY(-2px);
         }
+
         .error {
             color: red;
-            margin-top: 10px;
+            margin-top: 15px;
         }
     </style>
 </head>
@@ -73,10 +87,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <div class="login-box">
     <h2>Admin Login</h2>
+
     <form method="POST">
         <input type="password" name="password" placeholder="Enter Password" required>
         <button type="submit">Login</button>
     </form>
+
     <?php if ($error): ?>
         <div class="error"><?php echo $error; ?></div>
     <?php endif; ?>

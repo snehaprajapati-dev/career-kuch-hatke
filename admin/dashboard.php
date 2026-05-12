@@ -11,6 +11,10 @@ require_once("../php/db_connect.php");
 // Get counts
 $contactCount = mysqli_fetch_assoc(mysqli_query($conn, "SELECT COUNT(*) as total FROM contact_messages"))['total'];
 $suggestionCount = mysqli_fetch_assoc(mysqli_query($conn, "SELECT COUNT(*) as total FROM career_suggestions"))['total'];
+$unreadCount = mysqli_fetch_assoc(mysqli_query($conn, "SELECT COUNT(*) as total FROM contact_messages WHERE status='unread'"))['total'];
+$unreadSuggestionCount = mysqli_fetch_assoc(
+    mysqli_query($conn, "SELECT COUNT(*) as total FROM career_suggestions WHERE status='unread'")
+)['total'];
 
 // Get latest contact
 $latestContact = mysqli_fetch_assoc(mysqli_query($conn, "SELECT name, created_at FROM contact_messages ORDER BY created_at DESC LIMIT 1"));
@@ -89,33 +93,63 @@ $latestSuggestion = mysqli_fetch_assoc(mysqli_query($conn, "SELECT career_name, 
     </style>
 </head>
 <body>
+    <?php include("admin-nav.php"); ?>
 
 <div class="admin-container">
     <h1>Admin Dashboard</h1>
 
     <div class="stats">
         <div class="stat-box">
-            <div class="stat-number"><?php echo $contactCount; ?></div>
-            <div>📩 Total Contact Messages</div>
+    <div class="stat-number"><?php echo $contactCount; ?></div>
+    <div>📩 Total Contact Messages</div>
+    <div style="margin-top:10px; font-weight:bold; color:red;">
+        🔴 Unread: <?php echo $unreadCount; ?>
+    </div>
             <?php if ($latestContact): ?>
                 <div class="latest">Latest: <?php echo $latestContact['name']; ?> (<?php echo $latestContact['created_at']; ?>)</div>
             <?php endif; ?>
         </div>
 
         <div class="stat-box">
-            <div class="stat-number"><?php echo $suggestionCount; ?></div>
-            <div>💡 Total Career Suggestions</div>
+    <div class="stat-number"><?php echo $suggestionCount; ?></div>
+    <div>💡 Total Career Suggestions</div>
+    <div style="margin-top:10px; font-weight:bold; color:red;">
+        🔴 Unread: <?php echo $unreadSuggestionCount; ?>
+    </div>
             <?php if ($latestSuggestion): ?>
                 <div class="latest">Latest: <?php echo $latestSuggestion['career_name']; ?> (<?php echo $latestSuggestion['created_at']; ?>)</div>
             <?php endif; ?>
         </div>
     </div>
 
-    <div class="admin-links">
-        <a href="contacts.php">📩 View Contact Messages</a>
-        <a href="suggestions.php">💡 View Career Suggestions</a>
-    </div>
+    
+<div style="margin-top:30px; text-align:center;">
 
+    <a href="contacts.php" 
+       style="display:inline-block;
+              margin:10px;
+              padding:12px 25px;
+              background:var(--accent);
+              color:var(--text-dark);
+              text-decoration:none;
+              border-radius:10px;
+              font-weight:600;">
+        📩 View Contact Messages
+    </a>
+
+    <a href="suggestions.php" 
+       style="display:inline-block;
+              margin:10px;
+              padding:12px 25px;
+              background:var(--accent);
+              color:var(--text-dark);
+              text-decoration:none;
+              border-radius:10px;
+              font-weight:600;">
+        💡 View Career Suggestions
+    </a>
+
+</div>
     <a class="logout" href="logout.php">Logout</a>
 </div>
 
