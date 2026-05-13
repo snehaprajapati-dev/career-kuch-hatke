@@ -16,9 +16,10 @@ $offset = ($page - 1) * $limit;
 
 $search = "";
 $statusFilter = "";
+$dateFilter = "";
 $whereParts = [];
 
-// Search filter
+// 🔎 Search filter
 if (isset($_GET['search']) && $_GET['search'] !== "") {
     $search = mysqli_real_escape_string($conn, $_GET['search']);
     $whereParts[] = "(name LIKE '%$search%' 
@@ -29,26 +30,41 @@ if (isset($_GET['search']) && $_GET['search'] !== "") {
         OR telephone LIKE '%$search%')";
 }
 
-// Status filter
+// ✅ Status filter
 if (isset($_GET['status']) && $_GET['status'] !== "") {
     $statusFilter = mysqli_real_escape_string($conn, $_GET['status']);
     $whereParts[] = "status = '$statusFilter'";
 }
 
-// Combine conditions
+// 📅 Date filter
+if (isset($_GET['date']) && $_GET['date'] !== "") {
+    $dateFilter = $_GET['date'];
+
+    if ($dateFilter === "today") {
+        $whereParts[] = "DATE(created_at) = CURDATE()";
+    }
+
+    if ($dateFilter === "week") {
+        $whereParts[] = "YEARWEEK(created_at, 1) = YEARWEEK(CURDATE(), 1)";
+    }
+
+    if ($dateFilter === "month") {
+        $whereParts[] = "MONTH(created_at) = MONTH(CURDATE()) 
+                         AND YEAR(created_at) = YEAR(CURDATE())";
+    }
+}
+
+// Combine all conditions safely
 $whereClause = "";
 if (!empty($whereParts)) {
     $whereClause = "WHERE " . implode(" AND ", $whereParts);
 }
-
 // Get total records
 $countQuery = "SELECT COUNT(*) as total FROM contact_messages $whereClause";
 $countResult = mysqli_fetch_assoc(mysqli_query($conn, $countQuery));
 $totalRecords = $countResult['total'];
-
 $totalPages = ceil($totalRecords / $limit);
 
-// Main paginated query
 $query = "
     SELECT * FROM contact_messages 
     $whereClause
@@ -77,6 +93,13 @@ $result = mysqli_query($conn, $query);
     <input type="text" name="search"
            placeholder="Search by name, email, subject..."
            value="<?php echo htmlspecialchars($search); ?>">
+        
+          <select name="date">
+    <option value="">All Dates</option>
+    <option value="today" <?php if ($dateFilter == 'today') echo 'selected'; ?>>Today</option>
+    <option value="week" <?php if ($dateFilter == 'week') echo 'selected'; ?>>This Week</option>
+    <option value="month" <?php if ($dateFilter == 'month') echo 'selected'; ?>>This Month</option>
+</select>
 
     <select name="status" style="padding:8px;">
         <option value="">All</option>
@@ -87,6 +110,8 @@ $result = mysqli_query($conn, $query);
     <button type="submit">Filter</button>
 
     <a href="contacts.php">Reset</a>
+        
+      
         </form>
         
                     <a href="export.php"
@@ -161,7 +186,10 @@ $result = mysqli_query($conn, $query);
     </table>
     <div style="margin-top:20px; text-align:center;">
     <?php if ($page > 1): ?>
-        <a href="?page=<?php echo $page - 1; ?>&search=<?php echo urlencode($search); ?>&status=<?php echo urlencode($statusFilter); ?>">
+        <a href="?page=<?php echo $page - 1; ?>
+&search=<?php echo urlencode($search); ?>
+&status=<?php echo urlencode($statusFilter); ?>
+&date=<?php echo urlencode($dateFilter); ?>">
             ⬅ Previous
         </a>
     <?php endif; ?>
@@ -171,7 +199,10 @@ $result = mysqli_query($conn, $query);
     </span>
 
     <?php if ($page < $totalPages): ?>
-        <a href="?page=<?php echo $page + 1; ?>&search=<?php echo urlencode($search); ?>&status=<?php echo urlencode($statusFilter); ?>">
+        <a href="?page=<?php echo $page + 1; ?>
+&search=<?php echo urlencode($search); ?>
+&status=<?php echo urlencode($statusFilter); ?>
+&date=<?php echo urlencode($dateFilter); ?>">
             Next ➡
         </a>
     <?php endif; ?>
