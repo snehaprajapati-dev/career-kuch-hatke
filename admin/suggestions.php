@@ -18,6 +18,7 @@ $offset = ($page - 1) * $limit;
 
 $search = "";
 $statusFilter = "";
+$dateFilter = "";
 $whereParts = [];
 
 // Search filter
@@ -34,17 +35,30 @@ if (isset($_GET['status']) && $_GET['status'] !== "") {
     $whereParts[] = "status = '$statusFilter'";
 }
 
+// 📅 Date filter
+if (isset($_GET['date']) && $_GET['date'] !== "") {
+    $dateFilter = $_GET['date'];
+
+    if ($dateFilter === "today") {
+        $whereParts[] = "DATE(created_at) = CURDATE()";
+    }
+
+    if ($dateFilter === "week") {
+        $whereParts[] = "YEARWEEK(created_at, 1) = YEARWEEK(CURDATE(), 1)";
+    }
+
+    if ($dateFilter === "month") {
+        $whereParts[] = "MONTH(created_at) = MONTH(CURDATE()) 
+                         AND YEAR(created_at) = YEAR(CURDATE())";
+    }
+}
+
 // Combine conditions
 $whereClause = "";
 if (!empty($whereParts)) {
     $whereClause = "WHERE " . implode(" AND ", $whereParts);
 }
 
-// Count total records
-$countQuery = "SELECT COUNT(*) as total FROM career_suggestions $whereClause";
-$countResult = mysqli_fetch_assoc(mysqli_query($conn, $countQuery));
-$totalRecords = $countResult['total'];
-$totalPages = ceil($totalRecords / $limit);
 
 // Main query
 $query = "
@@ -54,23 +68,11 @@ $query = "
     LIMIT $limit OFFSET $offset
 ";
 
-$result = mysqli_query($conn, $query);
-
 // Count total records
 $countQuery = "SELECT COUNT(*) as total FROM career_suggestions $whereClause";
 $countResult = mysqli_fetch_assoc(mysqli_query($conn, $countQuery));
 $totalRecords = $countResult['total'];
-
 $totalPages = ceil($totalRecords / $limit);
-
-// Main query
-$query = "
-    SELECT * FROM career_suggestions
-    $whereClause
-    ORDER BY created_at DESC
-    LIMIT $limit OFFSET $offset
-";
-
 $result = mysqli_query($conn, $query);
 ?>
 
@@ -132,6 +134,25 @@ $result = mysqli_query($conn, $query);
     <input type="text" name="search"
            placeholder="Search by career, reason, suggester..."
            value="<?php echo htmlspecialchars($search); ?>">
+    
+    <select name="date">
+    <option value="">All Dates</option>
+
+    <option value="today"
+        <?php if ($dateFilter == 'today') echo 'selected'; ?>>
+        Today
+    </option>
+
+    <option value="week"
+        <?php if ($dateFilter == 'week') echo 'selected'; ?>>
+        This Week
+    </option>
+
+    <option value="month"
+        <?php if ($dateFilter == 'month') echo 'selected'; ?>>
+        This Month
+    </option>
+</select>
 
     <select name="status" style="padding:8px;">
         <option value="">All</option>
@@ -182,7 +203,7 @@ $result = mysqli_query($conn, $query);
             <td><?php echo htmlspecialchars($row['career_reason']); ?></td>
             <td><?php echo htmlspecialchars($row['suggester_name']); ?></td>
             <td><?php echo $row['created_at']; ?></td>
-<td><?php echo $row['status']; ?></td>
+
 
 <td>
     <?php if ($row['status'] === 'unread'): ?>
@@ -212,7 +233,10 @@ $result = mysqli_query($conn, $query);
     </table>
     <div style="margin-top:20px; text-align:center;">
     <?php if ($page > 1): ?>
-        <a href="?page=<?php echo $page - 1; ?>&search=<?php echo urlencode($search); ?>&status=<?php echo urlencode($statusFilter); ?>">
+       <a href="?page=<?php echo $page - 1; ?>
+&search=<?php echo urlencode($search); ?>
+&status=<?php echo urlencode($statusFilter); ?>
+&date=<?php echo urlencode($dateFilter); ?>">
             ⬅ Previous
         </a>
     <?php endif; ?>
@@ -222,7 +246,10 @@ $result = mysqli_query($conn, $query);
     </span>
 
     <?php if ($page < $totalPages): ?>
-        <a href="?page=<?php echo $page + 1; ?>&search=<?php echo urlencode($search); ?>&status=<?php echo urlencode($statusFilter); ?>">
+        <a href="?page=<?php echo $page + 1; ?>
+&search=<?php echo urlencode($search); ?>
+&status=<?php echo urlencode($statusFilter); ?>
+&date=<?php echo urlencode($dateFilter); ?>">
             Next ➡
         </a>
     <?php endif; ?>
