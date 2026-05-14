@@ -80,48 +80,8 @@ $result = mysqli_query($conn, $query);
 <html>
 <head>
     <title>Career Suggestions - Admin</title>
-    <link rel="stylesheet" href="../css/style.css">
-    <style>
-        body {
-            background: var(--bg-light);
-            font-family: 'Montserrat Alternates', sans-serif;
-        }
-        .admin-container {
-            max-width: 1100px;
-            margin: 60px auto;
-            background: var(--bg-white);
-            padding: 40px;
-            border-radius: 20px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-        }
-        h1 {
-            color: var(--primary);
-            margin-bottom: 30px;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-        th, td {
-            padding: 12px;
-            border-bottom: 1px solid #ddd;
-            text-align: left;
-        }
-        th {
-            background: var(--accent);
-            color: var(--text-dark);
-        }
-        tr:hover {
-            background: #f9f9f9;
-        }
-        .back-link {
-            display: inline-block;
-            margin-bottom: 20px;
-            text-decoration: none;
-            font-weight: bold;
-            color: var(--primary);
-        }
-    </style>
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/admin.css">
 </head>
 <body>
     <?php include("admin-nav.php"); ?>
@@ -129,7 +89,7 @@ $result = mysqli_query($conn, $query);
 <div class="admin-container">
     <a class="back-link" href="dashboard.php">← Back to Dashboard</a>
     <h1>💡 Career Suggestions</h1>
-<form method="GET" style="margin-bottom:20px;">
+<form method="GET">
 
     <input type="text" name="search"
            placeholder="Search by career, reason, suggester..."
@@ -154,7 +114,7 @@ $result = mysqli_query($conn, $query);
     </option>
 </select>
 
-    <select name="status" style="padding:8px;">
+    <select name="status">
         <option value="">All</option>
         <option value="unread" <?php if ($statusFilter == 'unread') echo 'selected'; ?>>Unread</option>
         <option value="read" <?php if ($statusFilter == 'read') echo 'selected'; ?>>Read</option>
@@ -164,26 +124,12 @@ $result = mysqli_query($conn, $query);
 
     <a href="suggestions.php">Reset</a>
 </form>
-    <a href="export_suggestions.php"
-   style="display:inline-block;
-          margin-bottom:20px;
-          padding:10px 15px;
-          background:var(--primary);
-          color:white;
-          text-decoration:none;
-          border-radius:8px;">
+    <a href="export_suggestions.php">
     📥 Export Suggestions to CSV
 </a>
 
     <a href="delete.php?type=mark_all_read_suggestion"
-   onclick="return confirm('Mark ALL suggestions as read?');"
-   style="display:inline-block;
-          margin-left:10px;
-          padding:10px 15px;
-          background:green;
-          color:white;
-          text-decoration:none;
-          border-radius:8px;">
+   onclick="return confirm('Mark ALL suggestions as read?');">
     ✅ Mark All as Read
 </a>
 
@@ -207,23 +153,21 @@ $result = mysqli_query($conn, $query);
 
 <td>
     <?php if ($row['status'] === 'unread'): ?>
-        <span style="color:red; font-weight:bold;">Unread</span>
+        <span>Unread</span>
     <?php else: ?>
-        <span style="color:green; font-weight:bold;">Read</span>
+        <span>Read</span>
     <?php endif; ?>
 </td>
 
 <td>
     <?php if ($row['status'] === 'unread'): ?>
-        <a href="delete.php?type=mark_read_suggestion&id=<?php echo $row['id']; ?>"
-           style="margin-right:10px; color:blue;">
+        <a href="delete.php?type=mark_read_suggestion&id=<?php echo $row['id']; ?>">
            Mark as Read
         </a>
     <?php endif; ?>
 
     <a href="delete.php?type=suggestion&id=<?php echo $row['id']; ?>"
-       onclick="return confirm('Are you sure?');"
-       style="color:red;">
+       onclick="return confirm('Are you sure?');">
        Delete
     </a>
 </td>
@@ -231,7 +175,7 @@ $result = mysqli_query($conn, $query);
         <?php endwhile; ?>
 
     </table>
-    <div style="margin-top:20px; text-align:center;">
+    <div>
     <?php if ($page > 1): ?>
        <a href="?page=<?php echo $page - 1; ?>
 &search=<?php echo urlencode($search); ?>
@@ -241,7 +185,7 @@ $result = mysqli_query($conn, $query);
         </a>
     <?php endif; ?>
 
-    <span style="margin:0 10px;">
+    <span>
         Page <?php echo $page; ?> of <?php echo $totalPages; ?>
     </span>
 
