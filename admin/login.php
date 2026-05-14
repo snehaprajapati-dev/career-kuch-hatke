@@ -28,60 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <head>
     <title>Admin Login - Career Kuch Hatke</title>
     <link rel="stylesheet" href="../css/style.css">
-    <style>
-        body {
-            background: var(--bg-light);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            font-family: 'Montserrat Alternates', sans-serif;
-        }
-
-        .login-box {
-            background: var(--bg-white);
-            padding: 40px;
-            border-radius: 20px;
-            width: 350px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            text-align: center;
-            border: 3px solid var(--accent);
-        }
-
-        .login-box h2 {
-            color: var(--primary);
-            margin-bottom: 25px;
-        }
-
-        .login-box input {
-            width: 100%;
-            padding: 12px;
-            border-radius: 10px;
-            border: 1px solid #ccc;
-            margin-bottom: 20px;
-        }
-
-        .login-box button {
-            width: 100%;
-            padding: 12px;
-            background: linear-gradient(135deg, var(--accent), var(--primary));
-            color: white;
-            border: none;
-            border-radius: 10px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-
-        .login-box button:hover {
-            transform: translateY(-2px);
-        }
-
-        .error {
-            color: red;
-            margin-top: 15px;
-        }
-    </style>
+    <link rel="stylesheet" href="../css/admin.css">
 </head>
 <body>
 

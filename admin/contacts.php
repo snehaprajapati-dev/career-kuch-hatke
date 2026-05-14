@@ -79,7 +79,10 @@ $result = mysqli_query($conn, $query);
 <html>
 <head>
     <title>Contact Messages - Admin</title>
+    <link rel="stylesheet" href="../css/admin.css">
     <link rel="stylesheet" href="../css/style.css">
+    
+
 </head>
 <body>
     <?php include("admin-nav.php"); ?>
@@ -88,7 +91,7 @@ $result = mysqli_query($conn, $query);
     <a class="back-link" href="dashboard.php">← Back to Dashboard</a>
     <h1>📩 Contact Messages</h1>
 
-    <form method="GET" style="margin-bottom:20px;">
+    <form method="GET">
 
     <input type="text" name="search"
            placeholder="Search by name, email, subject..."
@@ -101,7 +104,7 @@ $result = mysqli_query($conn, $query);
     <option value="month" <?php if ($dateFilter == 'month') echo 'selected'; ?>>This Month</option>
 </select>
 
-    <select name="status" style="padding:8px;">
+    <select name="status">
         <option value="">All</option>
         <option value="unread" <?php if ($statusFilter == 'unread') echo 'selected'; ?>>Unread</option>
         <option value="read" <?php if ($statusFilter == 'read') echo 'selected'; ?>>Read</option>
@@ -114,26 +117,12 @@ $result = mysqli_query($conn, $query);
       
         </form>
         
-                    <a href="export.php"
-   style="display:inline-block;
-          margin-bottom:20px;
-          padding:10px 15px;
-          background:var(--primary);
-          color:white;
-          text-decoration:none;
-          border-radius:8px;">
+                    <a href="export.php">
     📥 Export to CSV
 </a>
     
     <a href="delete.php?type=mark_all_read_contact"
-   onclick="return confirm('Mark ALL contact messages as read?');"
-   style="display:inline-block;
-          margin-left:10px;
-          padding:10px 15px;
-          background:green;
-          color:white;
-          text-decoration:none;
-          border-radius:8px;">
+   onclick="return confirm('Mark ALL contact messages as read?');">
     ✅ Mark All as Read
 </a>
 
@@ -161,22 +150,22 @@ $result = mysqli_query($conn, $query);
             <td><?php echo $row['created_at']; ?></td>
 <td>
     <?php if ($row['status'] === 'unread'): ?>
-        <span style="color:red; font-weight:bold;">Unread</span>
+        <span >Unread</span>
     <?php else: ?>
-        <span style="color:green; font-weight:bold;">Read</span>
+        <span >Read</span>
     <?php endif; ?>
 </td>
 <td>
     <?php if ($row['status'] === 'unread'): ?>
         <a href="delete.php?type=mark_read&id=<?php echo $row['id']; ?>"
-           style="margin-right:10px; color:blue;">
+           >
            Mark as Read
         </a>
     <?php endif; ?>
 
     <a href="delete.php?type=contact&id=<?php echo $row['id']; ?>"
        onclick="return confirm('Are you sure?');"
-       style="color:red;">
+       >
        Delete
     </a>
 </td>
@@ -184,7 +173,7 @@ $result = mysqli_query($conn, $query);
         <?php endwhile; ?>
 
     </table>
-    <div style="margin-top:20px; text-align:center;">
+    <div>
     <?php if ($page > 1): ?>
         <a href="?page=<?php echo $page - 1; ?>
 &search=<?php echo urlencode($search); ?>
@@ -194,7 +183,7 @@ $result = mysqli_query($conn, $query);
         </a>
     <?php endif; ?>
 
-    <span style="margin:0 10px;">
+    <span>
         Page <?php echo $page; ?> of <?php echo $totalPages; ?>
     </span>
 
@@ -211,3 +200,5 @@ $result = mysqli_query($conn, $query);
 
 </body>
 </html>
+
+
