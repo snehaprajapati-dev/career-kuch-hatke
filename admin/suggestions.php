@@ -89,7 +89,7 @@ $result = mysqli_query($conn, $query);
 <div class="admin-container">
     <a class="back-link" href="dashboard.php">← Back to Dashboard</a>
     <h1>💡 Career Suggestions</h1>
-<form method="GET">
+<form method="GET" class="filter-bar">
 
     <input type="text" name="search"
            placeholder="Search by career, reason, suggester..."
@@ -133,6 +133,7 @@ $result = mysqli_query($conn, $query);
     ✅ Mark All as Read
 </a>
 
+<div class="table-wrapper">
     <table>
         <tr>
             <th>Career Name</th>
@@ -153,9 +154,13 @@ $result = mysqli_query($conn, $query);
 
 <td>
     <?php if ($row['status'] === 'unread'): ?>
-        <span>Unread</span>
+        <span class="status-badge status-unread">
+    Unread
+</span>
     <?php else: ?>
-        <span>Read</span>
+        <span class="status-badge status-read">
+    Read
+</span>
     <?php endif; ?>
 </td>
 
@@ -175,7 +180,7 @@ $result = mysqli_query($conn, $query);
         <?php endwhile; ?>
 
     </table>
-    <div>
+    <div class="pagination">
     <?php if ($page > 1): ?>
        <a href="?page=<?php echo $page - 1; ?>
 &search=<?php echo urlencode($search); ?>
