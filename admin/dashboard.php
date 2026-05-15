@@ -27,8 +27,8 @@ $latestSuggestion = mysqli_fetch_assoc(mysqli_query($conn, "SELECT career_name, 
 <html>
 <head>
     <title>Admin Dashboard - Career Kuch Hatke</title>
-    <link rel="stylesheet" href="../css/admin.css">
     <link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/admin.css">
 
 </head>
 <body>
@@ -37,24 +37,38 @@ $latestSuggestion = mysqli_fetch_assoc(mysqli_query($conn, "SELECT career_name, 
 <div class="admin-container">
     <h1>Admin Dashboard</h1>
 
-    <div class="stats">
-        <div class="stat-box">
-    <div class="stat-number"><?php echo $contactCount; ?></div>
-    <div>📩 Total Contact Messages</div>
-    <div >
-        🔴 Unread: <?php echo $unreadCount; ?>
+    <div class="stat-box">
+
+    <h3>📩 Contact Messages</h3>
+
+    <div class="stat-number">
+        <?php echo $contactCount; ?>
     </div>
+
+    <p>
+        Unread Messages:
+        <strong><?php echo $unreadCount; ?></strong>
+    </p>
             <?php if ($latestContact): ?>
                 <div class="latest">Latest: <?php echo $latestContact['name']; ?> (<?php echo $latestContact['created_at']; ?>)</div>
             <?php endif; ?>
         </div>
 
-        <div class="stat-box">
-    <div class="stat-number"><?php echo $suggestionCount; ?></div>
-    <div>💡 Total Career Suggestions</div>
-    <div>
-        🔴 Unread: <?php echo $unreadSuggestionCount; ?>
+  
+    <div class="stat-box">
+
+    <h3>💡 Career Suggestions</h3>
+
+    <div class="stat-number">
+        <?php echo $suggestionCount; ?>
     </div>
+
+    <p>
+        Unread Suggestions:
+        <strong><?php echo $unreadSuggestionCount; ?></strong>
+    </p>
+
+    
             <?php if ($latestSuggestion): ?>
                 <div class="latest">Latest: <?php echo $latestSuggestion['career_name']; ?> (<?php echo $latestSuggestion['created_at']; ?>)</div>
             <?php endif; ?>
@@ -62,18 +76,20 @@ $latestSuggestion = mysqli_fetch_assoc(mysqli_query($conn, "SELECT career_name, 
     </div>
 
     
-<div>
+<div class="admin-actions">
 
-    <a href="contacts.php">
+    <a class="admin-btn" href="contacts.php">
         📩 View Contact Messages
     </a>
 
-    <a href="suggestions.php" >
+    <a class="admin-btn" href="suggestions.php">
         💡 View Career Suggestions
     </a>
 
-</div>
-    <a class="logout" href="logout.php">Logout</a>
+    <a class="admin-btn logout-link" href="logout.php">
+        Logout
+    </a>
+
 </div>
 
 </body>

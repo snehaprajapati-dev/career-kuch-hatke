@@ -79,8 +79,8 @@ $result = mysqli_query($conn, $query);
 <html>
 <head>
     <title>Contact Messages - Admin</title>
-    <link rel="stylesheet" href="../css/admin.css">
     <link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/admin.css">
     
 
 </head>
@@ -91,7 +91,7 @@ $result = mysqli_query($conn, $query);
     <a class="back-link" href="dashboard.php">← Back to Dashboard</a>
     <h1>📩 Contact Messages</h1>
 
-    <form method="GET">
+    <form method="GET" class="filter-bar">
 
     <input type="text" name="search"
            placeholder="Search by name, email, subject..."
@@ -116,16 +116,24 @@ $result = mysqli_query($conn, $query);
         
       
         </form>
+        </form>
+
+<div class="admin-actions">
+
+<a class="admin-btn" href="export.php">
         
-                    <a href="export.php">
+                   
     📥 Export to CSV
 </a>
     
-    <a href="delete.php?type=mark_all_read_contact"
+    <a class="admin-btn"
+href="delete.php?type=mark_all_read_contact"
    onclick="return confirm('Mark ALL contact messages as read?');">
     ✅ Mark All as Read
 </a>
+</div>
 
+    <div class="table-wrapper">
     <table>
         <tr>
             <th>Name</th>
@@ -150,9 +158,13 @@ $result = mysqli_query($conn, $query);
             <td><?php echo $row['created_at']; ?></td>
 <td>
     <?php if ($row['status'] === 'unread'): ?>
-        <span >Unread</span>
+        <span class="status-badge status-unread">
+    Unread
+</span>
     <?php else: ?>
-        <span >Read</span>
+        <span class="status-badge status-read">
+    Read
+</span>
     <?php endif; ?>
 </td>
 <td>
@@ -173,7 +185,7 @@ $result = mysqli_query($conn, $query);
         <?php endwhile; ?>
 
     </table>
-    <div>
+    <div class="pagination">
     <?php if ($page > 1): ?>
         <a href="?page=<?php echo $page - 1; ?>
 &search=<?php echo urlencode($search); ?>

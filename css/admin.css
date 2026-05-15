@@ -1,83 +1,843 @@
-.admin-container {
-    max-width: 1200px;
-    margin: 40px auto;
-    background: var(--bg-card);
-    padding: 30px;
-    border-radius: 20px;
-    box-shadow: var(--shadow-md);
-    transition: var(--transition);
+/* ============================================
+   ADMIN PANEL STYLES — Career Kuch Hatke
+   Matches main site visual language exactly
+   ============================================ */
+
+/* ============================================
+   ADMIN BODY
+   ============================================ */
+
+body {
+    background: var(--bg-main);
+    color: var(--text-main);
+    font-family: 'Tenor Sans', sans-serif;
+    min-height: 100vh;
+    transition: background 0.3s ease, color 0.3s ease;
 }
 
+/* ============================================
+   ADMIN NAVBAR
+   Adapted from main .navbar — same visual style,
+   admin branding + "Back to Site" link
+   ============================================ */
+
 .admin-navbar {
-    background: var(--primary);
-    padding: 18px 30px;
+    background-color: var(--bg-navbar, var(--bg-white));
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    padding: 1rem 0;
+    width: 100%;
+    border-bottom: 3px solid var(--accent);
+    transition: background 0.3s ease;
+}
+
+.admin-navbar .container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 4px solid var(--accent);
-    box-shadow: var(--shadow-sm);
 }
 
-.admin-navbar a {
-    color: white;
+/* Admin brand — same .logo style but says Admin Panel */
+.admin-brand {
+    color: var(--primary);
+    font-family: 'Montserrat Alternates', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
     text-decoration: none;
-    margin-left: 20px;
-    font-weight: 600;
-    transition: var(--transition);
 }
 
-.admin-navbar a:hover {
+.admin-brand span.brand-badge {
+    background: var(--accent);
+    color: var(--text-dark);
+    font-size: 0.7rem;
+    font-weight: 700;
+    padding: 0.2rem 0.5rem;
+    border-radius: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-family: 'Montserrat Alternates', sans-serif;
+}
+
+/* Nav links — same style as main .nav-menu */
+.admin-nav-links {
+    display: flex;
+    gap: 0.5rem;
+    list-style: none;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+.admin-nav-links li a {
+    text-decoration: none;
+    color: var(--text-dark);
+    font-family: 'Tenor Sans', sans-serif;
+    font-weight: 500;
+    padding: 0.5rem 0.9rem;
+    border-radius: 6px;
+    transition: all 0.3s;
+    font-size: 0.95rem;
+}
+
+.admin-nav-links li a:hover {
+    color: var(--primary);
+    background: var(--bg-light);
+}
+
+.admin-nav-links li a.active {
+    color: var(--primary);
+    font-weight: 700;
+    border-bottom: 2px solid var(--primary);
+    border-radius: 0;
+    padding-bottom: 0.3rem;
+}
+
+/* "Back to Site" link — distinct styling */
+.admin-nav-links li a.back-to-site {
+    background: var(--bg-light);
+    color: var(--secondary);
+    border: 1.5px solid var(--secondary);
+    border-radius: 8px;
+    padding: 0.45rem 1rem;
+    font-weight: 600;
+    font-size: 0.88rem;
+    transition: all 0.3s;
+}
+
+.admin-nav-links li a.back-to-site:hover {
+    background: var(--secondary);
+    color: white;
+    border-color: var(--secondary);
+    border-bottom: 1.5px solid var(--secondary);
+    border-radius: 8px;
+}
+
+/* Logout — accent style */
+.admin-nav-links li a.logout-link {
+    background: var(--primary);
+    color: white;
+    border-radius: 8px;
+    padding: 0.45rem 1.1rem;
+    font-weight: 600;
+}
+
+.admin-nav-links li a.logout-link:hover {
+    background: var(--secondary);
+    color: white;
+    border-bottom: none;
+}
+
+/* ============================================
+   THEME TOGGLE BUTTON (sun / moon)
+   ============================================ */
+
+.theme-toggle {
+    background: var(--bg-light);
+    border: 1.5px solid var(--border-color);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: all 0.3s;
+    color: var(--text-main);
+    flex-shrink: 0;
+}
+
+.theme-toggle:hover {
+    background: var(--accent);
+    border-color: var(--accent);
+    transform: rotate(20deg);
+}
+
+/* ============================================
+   ADMIN HAMBURGER (mobile)
+   ============================================ */
+
+.admin-hamburger {
+    display: none;
+    flex-direction: column;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1001;
+}
+
+.admin-hamburger span {
+    width: 25px;
+    height: 3px;
+    background-color: var(--primary);
+    margin: 3px 0;
+    transition: all 0.3s;
+    border-radius: 3px;
+    display: block;
+}
+
+/* ============================================
+   MAIN ADMIN CONTAINER
+   ============================================ */
+
+.admin-container {
+    width: 95%;
+    max-width: 1400px;
+    margin: 2rem auto 4rem auto;
+    background: var(--bg-card);
+    padding: 2.5rem;
+    border-radius: 24px;
+    box-shadow: var(--shadow-md);
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* ============================================
+   PAGE HEADING — matches .page-header style
+   but inline inside container
+   ============================================ */
+
+.admin-page-header {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+    color: white;
+    padding: 2rem 2.5rem;
+    border-radius: 16px;
+    margin-bottom: 2rem;
+}
+
+.admin-page-header h1 {
+    font-family: 'Montserrat Alternates', sans-serif;
+    color: var(--accent);
+    font-size: 2.2rem;
+    margin: 0 0 0.3rem 0;
+}
+
+.admin-page-header p {
+    color: rgba(255,255,255,0.85);
+    font-size: 1rem;
+    margin: 0;
+}
+
+/* Fallback plain heading inside container */
+.admin-container > h1 {
+    font-family: 'Montserrat Alternates', sans-serif;
+    color: var(--primary);
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+/* ============================================
+   DASHBOARD STATS GRID
+   Mirrors main site .stat-boxes
+   ============================================ */
+
+.admin-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.stat-box {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: white;
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: var(--shadow-md);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.stat-box::before {
+    content: '';
+    position: absolute;
+    top: -40px;
+    right: -40px;
+    width: 120px;
+    height: 120px;
+    background: rgba(255,255,255,0.05);
+    border-radius: 50%;
+}
+
+.stat-box:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+}
+
+.stat-box h3 {
+    font-family: 'Montserrat Alternates', sans-serif;
+    color: var(--accent);
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.stat-number {
+    font-family: 'Montserrat Alternates', sans-serif;
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: var(--accent);
+    line-height: 1;
+    margin-bottom: 0.8rem;
+}
+
+.stat-box p {
+    font-size: 0.95rem;
+    opacity: 0.9;
+    color: white;
+    margin-bottom: 0.3rem;
+}
+
+.stat-box p strong {
     color: var(--accent);
 }
 
-.admin-brand {
-    font-size: 1.3rem;
-    font-weight: 700;
+.latest {
+    margin-top: 1rem;
+    font-size: 0.85rem;
+    opacity: 0.75;
+    border-top: 1px solid rgba(255,255,255,0.15);
+    padding-top: 0.8rem;
+    color: white;
+}
+
+/* ============================================
+   ACTION BUTTONS — matches .btn .btn-primary
+   ============================================ */
+
+.admin-actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+}
+
+.admin-btn,
+.action-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.8rem 1.6rem;
+    border-radius: 8px;
+    font-family: 'Montserrat Alternates', sans-serif;
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-decoration: none;
+    border: none;
+    background-color: var(--accent);
+    color: var(--text-dark);
+}
+
+.admin-btn:hover,
+.action-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    background-color: var(--primary);
+    color: white;
+}
+
+.admin-btn.btn-danger {
+    background-color: #c62828;
+    color: white;
+}
+
+.admin-btn.btn-danger:hover {
+    background-color: #b71c1c;
+}
+
+/* ============================================
+   FILTER BAR
+   ============================================ */
+
+.filter-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    margin-bottom: 1.5rem;
+    align-items: center;
+    background: var(--bg-main);
+    padding: 1.2rem 1.5rem;
+    border-radius: 14px;
+    border: 1px solid var(--border-color);
+}
+
+.filter-bar input,
+.filter-bar select {
+    padding: 0.75rem 1rem;
+    border-radius: 10px;
+    border: 1px solid var(--border-color);
+    background: var(--bg-card);
+    color: var(--text-main);
+    font-family: 'Tenor Sans', sans-serif;
+    font-size: 0.95rem;
+    min-width: 200px;
+    flex: 1;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    outline: none;
+}
+
+.filter-bar input:focus,
+.filter-bar select:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(103,42,63,0.12);
+}
+
+.filter-bar input::placeholder {
+    color: var(--text-secondary);
+}
+
+.filter-bar button {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 10px;
+    background: var(--primary);
+    color: white;
+    font-family: 'Montserrat Alternates', sans-serif;
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.filter-bar button:hover {
+    background: var(--secondary);
+    transform: translateY(-1px);
+}
+
+/* Reset link inside filter bar */
+.filter-bar a.reset-link {
+    padding: 0.75rem 1.2rem;
+    border-radius: 10px;
+    border: 1.5px solid var(--border-color);
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s;
+    background: transparent;
+}
+
+.filter-bar a.reset-link:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+}
+
+/* ============================================
+   TABLE
+   ============================================ */
+
+.table-wrapper {
+    overflow-x: auto;
+    border-radius: 16px;
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-sm);
 }
 
 table {
     width: 100%;
     border-collapse: collapse;
     background: var(--bg-card);
-    border-radius: 12px;
-    overflow: hidden;
+    min-width: 900px;
+    font-family: 'Tenor Sans', sans-serif;
+}
+
+thead tr {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
 }
 
 th {
-    background: var(--accent);
-    color: black;
-    padding: 14px;
+    padding: 1rem 1.1rem;
+    text-align: left;
+    font-family: 'Montserrat Alternates', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: white;
+    letter-spacing: 0.3px;
+    white-space: nowrap;
 }
+
+th:first-child { border-radius: 16px 0 0 0; }
+th:last-child  { border-radius: 0 16px 0 0; }
 
 td {
-    padding: 14px;
+    padding: 1rem 1.1rem;
     border-bottom: 1px solid var(--border-color);
     color: var(--text-main);
+    vertical-align: top;
+    max-width: 240px;
+    word-break: break-word;
+    font-size: 0.95rem;
 }
 
-tr:hover {
+/* Message / reason column wider */
+table td:nth-child(6) {
+    min-width: 220px;
+}
+
+tbody tr:last-child td {
+    border-bottom: none;
+}
+
+tbody tr:hover {
     background: var(--table-hover);
 }
 
-input,
-select {
-    padding: 10px 14px;
-    border: 1px solid var(--border-color);
-    border-radius: 8px;
-    background: var(--bg-card);
-    color: var(--text-main);
+/* Row action links */
+td a {
+    display: inline-block;
+    padding: 0.35rem 0.75rem;
+    border-radius: 6px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    text-decoration: none;
+    margin: 0.2rem 0.15rem 0.2rem 0;
+    transition: all 0.25s;
+    font-family: 'Montserrat Alternates', sans-serif;
 }
 
-button {
-    padding: 10px 18px;
-    border: none;
-    border-radius: 8px;
+td a[href*="mark_read"] {
+    background: #e8f5e9;
+    color: #2e7d32;
+    border: 1px solid #a5d6a7;
+}
+
+td a[href*="mark_read"]:hover {
+    background: #2e7d32;
+    color: white;
+}
+
+td a[href*="contact"],
+td a[href*="suggestion"] {
+    background: #fce4e4;
+    color: #c62828;
+    border: 1px solid #ef9a9a;
+}
+
+td a[href*="contact"]:hover,
+td a[href*="suggestion"]:hover {
+    background: #c62828;
+    color: white;
+}
+
+/* ============================================
+   STATUS BADGES — matches your existing badges
+   ============================================ */
+
+.status-badge {
+    display: inline-block;
+    padding: 0.35rem 0.85rem;
+    border-radius: 30px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    font-family: 'Montserrat Alternates', sans-serif;
+    letter-spacing: 0.3px;
+}
+
+.status-read {
+    background: #d4edda;
+    color: #155724;
+}
+
+.status-unread {
+    background: #ffe5e5;
+    color: #c62828;
+}
+
+/* ============================================
+   PAGINATION — same pill style as .btn
+   ============================================ */
+
+.pagination {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.8rem;
+    flex-wrap: wrap;
+}
+
+.pagination a {
+    padding: 0.65rem 1.2rem;
     background: var(--primary);
     color: white;
-    cursor: pointer;
-    transition: var(--transition);
+    text-decoration: none;
+    border-radius: 8px;
+    font-family: 'Montserrat Alternates', sans-serif;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.3s;
 }
 
-button:hover {
+.pagination a:hover {
     background: var(--secondary);
+    transform: translateY(-1px);
+}
+
+.pagination span {
+    font-family: 'Tenor Sans', sans-serif;
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    padding: 0.65rem 1rem;
+    background: var(--bg-main);
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+}
+
+/* ============================================
+   BACK LINK
+   ============================================ */
+
+.back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    margin-bottom: 1.5rem;
+    color: var(--primary);
+    text-decoration: none;
+    font-family: 'Montserrat Alternates', sans-serif;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: gap 0.2s;
+}
+
+.back-link:hover {
+    gap: 0.7rem;
+    color: var(--secondary);
+}
+
+/* ============================================
+   LOGIN PAGE — same feel as .page-header gradient
+   ============================================ */
+
+.login-page {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+}
+
+.login-box {
+    width: 100%;
+    max-width: 420px;
+    background: var(--bg-card);
+    padding: 3rem;
+    border-radius: 24px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+    text-align: center;
+    border-top: 5px solid var(--accent);
+}
+
+.login-box .login-logo {
+    font-family: 'Montserrat Alternates', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: var(--primary);
+    margin-bottom: 0.3rem;
+}
+
+.login-box .login-badge {
+    display: inline-block;
+    background: var(--accent);
+    color: var(--text-dark);
+    font-size: 0.7rem;
+    font-weight: 700;
+    padding: 0.15rem 0.6rem;
+    border-radius: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-family: 'Montserrat Alternates', sans-serif;
+    margin-bottom: 2rem;
+}
+
+.login-box h2 {
+    font-family: 'Montserrat Alternates', sans-serif;
+    color: var(--primary);
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+    font-weight: 700;
+}
+
+.login-box input {
+    width: 100%;
+    padding: 1rem 1.2rem;
+    border-radius: 12px;
+    border: 1.5px solid var(--border-color);
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    font-family: 'Tenor Sans', sans-serif;
+    background: var(--bg-main);
+    color: var(--text-main);
+    transition: border-color 0.3s, box-shadow 0.3s;
+    outline: none;
+}
+
+.login-box input:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(103,42,63,0.12);
+}
+
+.login-box button {
+    width: 100%;
+    padding: 1rem;
+    border-radius: 12px;
+    border: none;
+    background: var(--accent);
+    color: var(--text-dark);
+    font-size: 1rem;
+    font-weight: 700;
+    font-family: 'Montserrat Alternates', sans-serif;
+    cursor: pointer;
+    transition: all 0.3s;
+    margin-top: 0.5rem;
+}
+
+.login-box button:hover {
+    background: var(--primary);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.error {
+    margin-top: 1rem;
+    color: #c62828;
+    font-weight: 600;
+    background: #fce4e4;
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    font-size: 0.9rem;
+}
+
+/* ============================================
+   MOBILE RESPONSIVE
+   ============================================ */
+
+@media (max-width: 900px) {
+
+    .admin-hamburger {
+        display: flex;
+    }
+
+    .admin-nav-links {
+        position: fixed;
+        left: -100%;
+        top: 0;
+        background: var(--bg-card);
+        flex-direction: column;
+        width: 100vw;
+        height: 100vh;
+        overflow-y: auto;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        transition: left 0.3s ease;
+        padding: 80px 0 2rem 0;
+        gap: 0;
+        z-index: 999;
+        border-top: 3px solid var(--accent);
+        align-items: center;
+        justify-content: flex-start;
+    }
+
+    .admin-nav-links.active {
+        left: 0;
+    }
+
+    .admin-nav-links li {
+        width: 100%;
+        border-bottom: 1px solid var(--border-color);
+        text-align: center;
+    }
+
+    .admin-nav-links li a {
+        display: block;
+        padding: 1.2rem 1.5rem;
+        font-size: 1.05rem;
+        border-radius: 0;
+        width: 100%;
+    }
+
+    .admin-nav-links li a.back-to-site,
+    .admin-nav-links li a.logout-link {
+        border-radius: 0;
+        border: none;
+        border-bottom: 1px solid var(--border-color);
+        width: 100%;
+        display: block;
+        padding: 1.2rem 1.5rem;
+    }
+
+    .admin-hamburger.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+    .admin-hamburger.active span:nth-child(2) {
+        opacity: 0;
+    }
+    .admin-hamburger.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -6px);
+    }
+
+    .admin-container {
+        width: 95%;
+        padding: 1.5rem;
+    }
+
+    .filter-bar {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .filter-bar input,
+    .filter-bar select,
+    .filter-bar button,
+    .filter-bar a.reset-link {
+        width: 100%;
+        min-width: unset;
+    }
+
+    .admin-actions {
+        flex-direction: column;
+    }
+
+    .admin-btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .admin-page-header h1 {
+        font-size: 1.7rem;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .admin-brand {
+        font-size: 1.1rem;
+    }
+
+    .stat-number {
+        font-size: 2.5rem;
+    }
+
+    .login-box {
+        padding: 2rem 1.5rem;
+    }
+
+    .admin-container {
+        padding: 1rem;
+        border-radius: 16px;
+    }
 }
