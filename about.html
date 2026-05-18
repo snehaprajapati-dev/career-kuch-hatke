@@ -4,179 +4,65 @@
     <title>About Us - Career Kuch Hatke</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Learn why Career Kuch Hatke was built and how it helps students discover unconventional career paths."
-    />
-    <meta
-      name="keywords"
-      content="Career, Guidance, Development, Unique, Platform"
-    />
-    <!--
-=================================================
-  THEME INIT SNIPPET — Career Kuch Hatke
-  Paste this inside <head> on EVERY main site page
-  (index.php, explore.php, quiz.php, contact.php…)
-  Must be BEFORE any stylesheets to avoid flash.
-=================================================
--->
+    <meta name="description" content="Learn why Career Kuch Hatke was built and how it helps students discover unconventional career paths." />
+    <meta name="keywords" content="Career, Guidance, Development, Unique, Platform" />
 
-<!-- 1. Prevent flash of wrong theme -->
-<script>
-    (function () {
-        var saved = localStorage.getItem('ckh_theme');
-        if (saved === 'dark') {
-            document.documentElement.setAttribute('data-theme', 'dark');
-        }
-    })();
-</script>
+    <script>
+      (function(){
+        var s = localStorage.getItem('ckh_theme');
+        if (s === 'dark') document.documentElement.setAttribute('data-theme','dark');
+      })();
+    </script>
 
-<!-- 2. Your existing stylesheet links go here as normal -->
-<!-- <link rel="stylesheet" href="css/style.css"> -->
-
-<!--
-=================================================
-  THEME TOGGLE BUTTON — add this to your main navbar
-  Place it inside .navbar .container, next to .hamburger
-
-  HTML to add to your navbar:
-=================================================
-
-<button class="theme-toggle" id="themeToggle" title="Toggle dark/light mode" aria-label="Toggle theme">🌙</button>
-
-=================================================
-  CSS to add to style.css (already in admin.css,
-  add same rule to style.css for main site):
-=================================================
-
-.theme-toggle {
-    background: var(--bg-light);
-    border: 1.5px solid var(--border-color, #e2d6cc);
-    border-radius: 50%;
-    width: 38px;
-    height: 38px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    font-size: 1rem;
-    transition: all 0.3s;
-    color: var(--text-main);
-    flex-shrink: 0;
-}
-
-.theme-toggle:hover {
-    background: var(--accent);
-    border-color: var(--accent);
-    transform: rotate(20deg);
-}
-
-=================================================
-  JS to add to your main site JS file (or inline):
-=================================================
--->
-
-<script>
-/* Main site theme toggle — add to your existing JS file */
-document.addEventListener('DOMContentLoaded', function () {
-
-    var toggleBtn = document.getElementById('themeToggle');
-    if (!toggleBtn) return; /* guard if button not yet added */
-
-    var html = document.documentElement;
-
-    function applyTheme(theme) {
-        if (theme === 'dark') {
-            html.setAttribute('data-theme', 'dark');
-            toggleBtn.textContent = '☀️';
-            toggleBtn.title = 'Switch to light mode';
-        } else {
-            html.removeAttribute('data-theme');
-            toggleBtn.textContent = '🌙';
-            toggleBtn.title = 'Switch to dark mode';
-        }
-    }
-
-    var current = localStorage.getItem('ckh_theme') || 'light';
-    applyTheme(current);
-
-    toggleBtn.addEventListener('click', function () {
-        var next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-        localStorage.setItem('ckh_theme', next);
-        applyTheme(next);
-    });
-
-});
-</script>
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/about.css" />
-    <!-- Add this to <head> of ALL your HTML pages -->
-
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@400;500;600;700;800&family=Tenor+Sans&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@400;500;600;700;800&family=Tenor+Sans&display=swap" rel="stylesheet" />
   </head>
   <body>
+
     <nav class="navbar">
       <div class="container">
-        <h2 class="logo">Career Kuch Hatke</h2>
-
-        <!-- ADD THIS: Hamburger button -->
-        <button class="hamburger" id="hamburger">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-
+        <a href="index.html" class="logo">Career Kuch Hatke</a>
         <ul class="nav-menu" id="navMenu">
           <li><a href="index.html">Home</a></li>
           <li><a href="explore.html">Explore</a></li>
           <li><a href="quiz.html">Quiz</a></li>
           <li><a href="about.html">About</a></li>
           <li><a href="contact.html">Contact</a></li>
-        </ul>
+        
+        <div class="nav-right">
+          <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme" align="right-top" padding="0px">🌙</button>
+          <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+            <span></span>
+              <span></span>
+              <span></span>
+          </button>
+        </div>
+            </ul>
       </div>
     </nav>
 
     <section class="about-hero">
       <div class="container">
-        <!-- Add breadcrumb -->
         <div class="breadcrumb-nav">
-          <a href="index.html">Home</a> →
-          <span>About Us</span>
+          <a href="index.html">Home</a> → <span>About Us</span>
         </div>
         <h2>The Career Crisis Nobody Talks About</h2>
-        <p>
-          Close your eyes and think back to Class 10. Someone asked you: "What
-          do you want to become?" Your options felt limited to: Doctor.
-          Engineer. CA. Lawyer. Teacher. Maybe your parents pushed you toward
-          one. Maybe your friends influenced you. Maybe you just picked what
-          felt "safe."
-        </p>
+        <p>Close your eyes and think back to Class 10. Someone asked you: "What do you want to become?" Your options felt limited to: Doctor. Engineer. CA. Lawyer. Teacher. Maybe your parents pushed you toward one. Maybe your friends influenced you. Maybe you just picked what felt "safe."</p>
         <h3>But here's the truth nobody told you:</h3>
-        <p>
-          There are over 500 different career paths in India. Careers that don't
-          require you to crack JEE or NEET. Careers where you can earn well,
-          work remotely, travel the world, or solve problems that excite you.
-          Careers like Ethical Hacker. Food Stylist. Wildlife Photographer. Sign
-          Language Interpreter. You never chose from 500 options. You chose from
-          5. That's the problem we're solving.
-        </p>
+        <p>There are over 500 different career paths in India. Careers that don't require you to crack JEE or NEET. Careers where you can earn well, work remotely, travel the world, or solve problems that excite you. Careers like Ethical Hacker. Food Stylist. Wildlife Photographer. Sign Language Interpreter. You never chose from 500 options. You chose from 5. That's the problem we're solving.</p>
       </div>
     </section>
+
     <section class="stats">
       <div class="container">
         <h2>The Real Numbers</h2>
         <div class="stat-boxes">
           <div class="stat-box">
             <h3>72%</h3>
-            <p>
-              of Indian students feel career guidance in school is inadequate
-            </p>
+            <p>of Indian students feel career guidance in school is inadequate</p>
           </div>
           <div class="stat-box">
             <h3>Only 3%</h3>
@@ -184,187 +70,80 @@ document.addEventListener('DOMContentLoaded', function () {
           </div>
           <div class="stat-box">
             <h3>65%</h3>
-            <p>
-              of working professionals wish they knew more options before
-              choosing
-            </p>
+            <p>of working professionals wish they knew more options before choosing</p>
           </div>
         </div>
-        <p class="stats-note">
-          These aren't just numbers. These are real students making
-          life-changing decisions based on incomplete information. We believe
-          every student deserves to KNOW what's possible before they decide.
-        </p>
+        <p class="stats-note">These aren't just numbers. These are real students making life-changing decisions based on incomplete information. We believe every student deserves to KNOW what's possible before they decide.</p>
       </div>
     </section>
+
     <section class="solution">
       <div class="container">
         <h2>What is Career Kuch Hatke?</h2>
-        <p>
-          Career Kuch Hatke is India's first student-built platform dedicated to
-          unconventional career discovery. We don't sell courses. We don't
-          promise jobs. We don't spam you with ads. What we DO:
-        </p>
+        <p>Career Kuch Hatke is India's first student-built platform dedicated to unconventional career discovery. We don't sell courses. We don't promise jobs. We don't spam you with ads. What we DO:</p>
         <ul>
-          <li>
-            <span class="emoji">✅</span>Showcase 25 handpicked careers across 5
-            categories (Creative, Tech, Science, Business, Unique)
-          </li>
-          <li>
-            <span class="emoji">✅</span>Explain EACH career in simple language
-            — what they do, how to get in, salary ranges, and real people doing
-            it
-          </li>
-          <li>
-            <span class="emoji">✅</span>Provide a fun 2-minute quiz that
-            suggests careers based on YOUR personality
-          </li>
-          <li>
-            <span class="emoji">✅</span>Share FREE resources — YouTube
-            channels, courses, books — to help you start exploring
-          </li>
-          <li>
-            <span class="emoji">✅</span>Make career discovery EXCITING, not
-            stressful
-          </li>
+          <li><span class="emoji">✅</span>Showcase 25 handpicked careers across 5 categories (Creative, Tech, Science, Business, Unique)</li>
+          <li><span class="emoji">✅</span>Explain EACH career in simple language — what they do, how to get in, salary ranges, and real people doing it</li>
+          <li><span class="emoji">✅</span>Provide a fun 2-minute quiz that suggests careers based on YOUR personality</li>
+          <li><span class="emoji">✅</span>Share FREE resources — YouTube channels, courses, books — to help you start exploring</li>
+          <li><span class="emoji">✅</span>Make career discovery EXCITING, not stressful</li>
         </ul>
-        <p>
-          We're not here to tell you WHAT to choose. We're here to show you WHAT
-          EXISTS. The choice? That's always yours.
-        </p>
+        <p>We're not here to tell you WHAT to choose. We're here to show you WHAT EXISTS. The choice? That's always yours.</p>
       </div>
     </section>
+
     <section class="my-story">
       <div class="container">
         <h2>Why I Built This</h2>
         <h3>Hi, I'm Sneha Mahendra Prajapati.</h3>
-        <p class="story-intro">
-          I'm a First Year BSc Computer Science student. But honestly? I almost
-          wasn't.
-        </p>
-
-        <p>
-          After Class 10, I scored 88%. Sounds good, right? But I studied
-          through COVID lockdowns. Physics and Chemistry concepts flew over my
-          head. Still, I chose Computer Science after 10th — not because I loved
-          it, but because "everyone said Science has scope."
-        </p>
-
-        <p>
-          Result? 67% in Class 12. Complete confusion about what to do next.
-        </p>
-
-        <p>
-          After 12th, I discovered Hotel Management. Finally, something clicked.
-          But the fees were high. My family couldn't afford it. I had no answer
-          when my parents asked, "Then why did you take CS after 10th?"
-        </p>
-
-        <p>
-          So I took BSc Computer Science — not out of passion, but out of
-          pressure and guilt.
-        </p>
-
-        <p>
-          Today, I don't blame my parents. I blame the system that forced me to
-          choose at 15 without showing me what else existed.
-        </p>
-
-        <p class="story-highlight">
-          When I got this college project, I knew what I wanted to build:<br /><b
-            >The website I wish existed when I was confused in Class 10.</b
-          >
-        </p>
-
-        <p>
-          Career Kuch Hatke is my way of saying:
-          <strong
-            >Explore before you decide. Your interests matter. It's okay to
-            choose something hatke.</strong
-          >
-        </p>
-
-        <p class="story-closing">
-          I can't change my past. But maybe I can help you avoid my mistakes. If
-          even one student explores careers because of this site, this project
-          was worth it.
-        </p>
-
-        <h4>
-          — Sneha Mahendra Prajapati<br />FYBSc Computer Science<br />April,
-          2026
-        </h4>
+        <p class="story-intro">I'm a First Year BSc Computer Science student. But honestly? I almost wasn't.</p>
+        <p>After Class 10, I scored 88%. Sounds good, right? But I studied through COVID lockdowns. Physics and Chemistry concepts flew over my head. Still, I chose Computer Science after 10th — not because I loved it, but because "everyone said Science has scope."</p>
+        <p>Result? 67% in Class 12. Complete confusion about what to do next.</p>
+        <p>After 12th, I discovered Hotel Management. Finally, something clicked. But the fees were high. My family couldn't afford it. I had no answer when my parents asked, "Then why did you take CS after 10th?"</p>
+        <p>So I took BSc Computer Science — not out of passion, but out of pressure and guilt.</p>
+        <p>Today, I don't blame my parents. I blame the system that forced me to choose at 15 without showing me what else existed.</p>
+        <p class="story-highlight">When I got this college project, I knew what I wanted to build:<br /><b>The website I wish existed when I was confused in Class 10.</b></p>
+        <p>Career Kuch Hatke is my way of saying: <strong>Explore before you decide. Your interests matter. It's okay to choose something hatke.</strong></p>
+        <p class="story-closing">I can't change my past. But maybe I can help you avoid my mistakes. If even one student explores careers because of this site, this project was worth it.</p>
+        <h4>— Sneha Mahendra Prajapati<br />FYBSc Computer Science<br />April, 2026</h4>
       </div>
     </section>
+
     <section class="future-vision">
       <div class="container">
         <h2>Where We're Going Next</h2>
-        <p>
-          This is just Version 1.0. Career Kuch Hatke is a long-term vision to
-          revolutionize career discovery<br />
-          <b>Here's what's coming:</b>
-        </p>
+        <p>This is just Version 1.0. Career Kuch Hatke is a long-term vision to revolutionize career discovery<br /><b>Here's what's coming:</b></p>
         <ul>
-          <li>
-            <span class="emoji">🎯</span>100+ Careers (covering every field
-            imaginable)
-          </li>
-          <li>
-            <span class="emoji">🎥</span> Video Interviews with real
-            professionals sharing their journeys
-          </li>
-          <li>
-            <span class="emoji">📱</span>Mobile App for career discovery
-            on-the-go
-          </li>
-          <li>
-            <span class="emoji">🏫</span>School Partnerships to bring career
-            awareness workshops to students
-          </li>
-          <li>
-            <span class="emoji">🤖</span>AI-Powered Career Recommendation based
-            on skills, interests, and personality
-          </li>
-          <li>
-            <span class="emoji">🌍</span>Regional Language Support (Hindi,
-            Marathi, Tamil, and more)
-          </li>
+          <li><span class="emoji">🎯</span>100+ Careers (covering every field imaginable)</li>
+          <li><span class="emoji">🎥</span>Video Interviews with real professionals sharing their journeys</li>
+          <li><span class="emoji">📱</span>Mobile App for career discovery on-the-go</li>
+          <li><span class="emoji">🏫</span>School Partnerships to bring career awareness workshops to students</li>
+          <li><span class="emoji">🤖</span>AI-Powered Career Recommendation based on skills, interests, and personality</li>
+          <li><span class="emoji">🌍</span>Regional Language Support (Hindi, Marathi, Tamil, and more)</li>
         </ul>
-        <p>
-          This is a long journey. But every big change starts with a small step.
-          Career Kuch Hatke is that step.
-        </p>
+        <p>This is a long journey. But every big change starts with a small step. Career Kuch Hatke is that step.</p>
       </div>
     </section>
+
     <section class="call-to-action">
       <div class="container">
         <h2>Ready to Explore?</h2>
-        <p>
-          You've read the story. Now write your own. The world is full of
-          amazing careers waiting to be discovered. Don't limit yourself to the
-          usual options. Take a moment. Explore. Dream big. Your dream career
-          might just be a click away.
-        </p>
+        <p>You've read the story. Now write your own. The world is full of amazing careers waiting to be discovered. Don't limit yourself to the usual options.</p>
         <div class="cta-buttons">
           <a href="explore.html" class="btn">Explore Careers →</a>
           <a href="quiz.html" class="btn">Take Career Quiz →</a>
         </div>
-        <p>
-          Got feedback? Found a bug? Want to suggest a career we should add?
-          We'd love to hear from you.
-        </p>
+        <p>Got feedback? Found a bug? Want to suggest a career we should add? We'd love to hear from you.</p>
         <a href="contact.html" class="btn btn-secondary">Contact Us →</a>
       </div>
     </section>
+
     <footer class="footer">
       <div class="container">
-        <!-- FIRST: Centered intro (OUTSIDE the grid) -->
         <div class="footer-intro">
           <h3>Career Kuch Hatke</h3>
           <p>Your Dream Career Exists. You Just Haven't Found It Yet.</p>
         </div>
-
-        <!-- THEN: 3 columns in grid -->
         <div class="footer-columns">
           <div class="footer-section">
             <h4>Quick Links</h4>
@@ -376,7 +155,6 @@ document.addEventListener('DOMContentLoaded', function () {
               <li><a href="contact.html">Contact</a></li>
             </ul>
           </div>
-
           <div class="footer-section">
             <h4>Categories</h4>
             <ul>
@@ -387,48 +165,23 @@ document.addEventListener('DOMContentLoaded', function () {
               <li><a href="explore.html#unique">Unique</a></li>
             </ul>
           </div>
-
           <div class="footer-section">
             <h4>Connect</h4>
-            <p>
-              <span class="emoji">📧</span>
-              <a href="contact.html">Contact Us</a>
-            </p>
-            <p>
-              <span class="emoji">💻</span>
-              <a
-                href="https://github.com/snehaprajapati-dev"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                GitHub
-              </a>
-            </p>
-            <p>
-              <span class="emoji">📱</span>
-              <a href="#">Instagram (Coming Soon)</a>
-            </p>
-            <p>
-              <span class="emoji">💼</span>
-              <a href="#">LinkedIn (Coming Soon)</a>
-            </p>
-            <p>
-              <span class="emoji">🐦</span>
-              <a href="#">Twitter (Coming Soon)</a>
-            </p>
+            <p><span class="emoji">📧</span> <a href="contact.html">Contact Us</a></p>
+            <p><span class="emoji">💻</span> <a href="https://github.com/snehaprajapati-dev" target="_blank" rel="noopener noreferrer">GitHub</a></p>
+            <p><span class="emoji">📱</span> <a href="#">Instagram (Coming Soon)</a></p>
+            <p><span class="emoji">💼</span> <a href="#">LinkedIn (Coming Soon)</a></p>
+            <p><span class="emoji">🐦</span> <a href="#">Twitter (Coming Soon)</a></p>
           </div>
         </div>
       </div>
-
       <div class="footer-bottom">
         <p>Built with <span class="emoji">❤️</span> by Sneha Prajapati</p>
         <p>FYBSc Computer Science | Vidyavardhini College</p>
-        <p>
-          © 2026 Career Kuch Hatke. A student project for creating career
-          awareness.
-        </p>
+        <p>© 2026 Career Kuch Hatke. A student project for creating career awareness.</p>
       </div>
     </footer>
+
     <script src="js/script.js"></script>
   </body>
 </html>

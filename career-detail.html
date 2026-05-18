@@ -4,154 +4,54 @@
     <title>Career Detail - Career Kuch Hatke</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Detailed information about unconventional career paths in India."
-    />
-    <!--
-=================================================
-  THEME INIT SNIPPET — Career Kuch Hatke
-  Paste this inside <head> on EVERY main site page
-  (index.php, explore.php, quiz.php, contact.php…)
-  Must be BEFORE any stylesheets to avoid flash.
-=================================================
--->
+    <meta name="description" content="Detailed information about unconventional career paths in India." />
 
-<!-- 1. Prevent flash of wrong theme -->
-<script>
-    (function () {
-        var saved = localStorage.getItem('ckh_theme');
-        if (saved === 'dark') {
-            document.documentElement.setAttribute('data-theme', 'dark');
-        }
-    })();
-</script>
+    <script>
+      (function(){
+        var s = localStorage.getItem('ckh_theme');
+        if (s === 'dark') document.documentElement.setAttribute('data-theme','dark');
+      })();
+    </script>
 
-<!-- 2. Your existing stylesheet links go here as normal -->
-<!-- <link rel="stylesheet" href="css/style.css"> -->
-
-<!--
-=================================================
-  THEME TOGGLE BUTTON — add this to your main navbar
-  Place it inside .navbar .container, next to .hamburger
-
-  HTML to add to your navbar:
-=================================================
-
-<button class="theme-toggle" id="themeToggle" title="Toggle dark/light mode" aria-label="Toggle theme">🌙</button>
-
-=================================================
-  CSS to add to style.css (already in admin.css,
-  add same rule to style.css for main site):
-=================================================
-
-.theme-toggle {
-    background: var(--bg-light);
-    border: 1.5px solid var(--border-color, #e2d6cc);
-    border-radius: 50%;
-    width: 38px;
-    height: 38px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    font-size: 1rem;
-    transition: all 0.3s;
-    color: var(--text-main);
-    flex-shrink: 0;
-}
-
-.theme-toggle:hover {
-    background: var(--accent);
-    border-color: var(--accent);
-    transform: rotate(20deg);
-}
-
-=================================================
-  JS to add to your main site JS file (or inline):
-=================================================
--->
-
-<script>
-/* Main site theme toggle — add to your existing JS file */
-document.addEventListener('DOMContentLoaded', function () {
-
-    var toggleBtn = document.getElementById('themeToggle');
-    if (!toggleBtn) return; /* guard if button not yet added */
-
-    var html = document.documentElement;
-
-    function applyTheme(theme) {
-        if (theme === 'dark') {
-            html.setAttribute('data-theme', 'dark');
-            toggleBtn.textContent = '☀️';
-            toggleBtn.title = 'Switch to light mode';
-        } else {
-            html.removeAttribute('data-theme');
-            toggleBtn.textContent = '🌙';
-            toggleBtn.title = 'Switch to dark mode';
-        }
-    }
-
-    var current = localStorage.getItem('ckh_theme') || 'light';
-    applyTheme(current);
-
-    toggleBtn.addEventListener('click', function () {
-        var next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-        localStorage.setItem('ckh_theme', next);
-        applyTheme(next);
-    });
-
-});
-</script>
-    <!-- Google Fonts -->
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/career-detail.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@400;500;600;700;800&family=Tenor+Sans&display=swap" rel="stylesheet">
-    
-    <!-- Common styles (navbar, footer, etc.) -->
-    <link rel="stylesheet" href="css/style.css" />
-    
-    <!-- Career detail page specific styles -->
-    <link rel="stylesheet" href="css/career-detail.css" />
   </head>
-  
   <body>
-    <!-- NAVBAR -->
-    <nav class="navbar">
+
+ <nav class="navbar">
       <div class="container">
-        <h2 class="logo">Career Kuch Hatke</h2>
-        
-        <button class="hamburger" id="hamburger">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-        
+        <a href="index.html" class="logo">Career Kuch Hatke</a>
         <ul class="nav-menu" id="navMenu">
           <li><a href="index.html">Home</a></li>
           <li><a href="explore.html">Explore</a></li>
           <li><a href="quiz.html">Quiz</a></li>
           <li><a href="about.html">About</a></li>
           <li><a href="contact.html">Contact</a></li>
-        </ul>
+        
+        <div class="nav-right">
+          <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme" align="right-top" padding="0px">🌙</button>
+          <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+            <span></span>
+              <span></span>
+              <span></span>
+          </button>
+        </div>
+            </ul>
       </div>
     </nav>
 
-    <!-- CAREER HERO SECTION -->
     <section class="career-hero">
       <div class="container">
         <div class="breadcrumb">
-          <a href="index.html">Home</a> → 
-          <a href="explore.html">Explore</a> → 
-          <span id="breadcrumb-career">Loading...</span>
+          <a href="index.html">Home</a> → <a href="explore.html">Explore</a> → <span id="breadcrumb-career">Loading...</span>
         </div>
-        
         <div class="hero-content">
           <span class="category-badge" id="hero-category">Creative</span>
           <h1 id="career-name">Loading Career...</h1>
           <p class="career-tagline" id="career-tagline">Please wait...</p>
-          
           <div class="quick-facts">
             <div class="fact">
               <span class="fact-label">💰 Entry Salary</span>
@@ -170,151 +70,70 @@ document.addEventListener('DOMContentLoaded', function () {
       </div>
     </section>
 
-    <!-- MAIN CONTENT -->
     <section class="career-details">
       <div class="container">
         <div class="details-grid">
-          
-          <!-- Main Content Column -->
           <div class="main-content">
-            
-            <!-- 1. What Do They Do? -->
             <div class="detail-card">
-              <div class="card-header">
-                <span class="card-number">1</span>
-                <h2>What Do They Do? →</h2>
-              </div>
-              <div class="card-content" id="what-they-do">
-                <p>Loading...</p>
-              </div>
+              <div class="card-header"><span class="card-number">1</span><h2>What Do They Do? →</h2></div>
+              <div class="card-content" id="what-they-do"><p>Loading...</p></div>
             </div>
-
-            <!-- 2. Salary Range -->
             <div class="detail-card">
-              <div class="card-header">
-                <span class="card-number">2</span>
-                <h2>Salary Range →</h2>
-              </div>
-              <div class="card-content">
-                <div class="salary-grid" id="salary-range">
-                  <!-- JS will fill this -->
-                </div>
-              </div>
+              <div class="card-header"><span class="card-number">2</span><h2>Salary Range →</h2></div>
+              <div class="card-content"><div class="salary-grid" id="salary-range"></div></div>
             </div>
-
-            <!-- 3. How to Get In? -->
             <div class="detail-card">
-              <div class="card-header">
-                <span class="card-number">3</span>
-                <h2>How to Get In? →</h2>
-              </div>
-              <div class="card-content">
-                <div class="roadmap" id="roadmap">
-                  <!-- JS will fill this -->
-                </div>
-              </div>
+              <div class="card-header"><span class="card-number">3</span><h2>How to Get In? →</h2></div>
+              <div class="card-content"><div class="roadmap" id="roadmap"></div></div>
             </div>
-
-            <!-- 4. Skills Needed -->
             <div class="detail-card">
-              <div class="card-header">
-                <span class="card-number">4</span>
-                <h2>Skills Needed →</h2>
-              </div>
-              <div class="card-content">
-                <div class="skills-list" id="skills-list">
-                  <!-- JS will fill this -->
-                </div>
-              </div>
+              <div class="card-header"><span class="card-number">4</span><h2>Skills Needed →</h2></div>
+              <div class="card-content"><div class="skills-list" id="skills-list"></div></div>
             </div>
-
-            <!-- 5. Where Can You Work? -->
             <div class="detail-card">
-              <div class="card-header">
-                <span class="card-number">5</span>
-                <h2>Where Can You Work? →</h2>
-              </div>
-              <div class="card-content" id="work-places">
-                <!-- JS will fill this -->
-              </div>
+              <div class="card-header"><span class="card-number">5</span><h2>Where Can You Work? →</h2></div>
+              <div class="card-content" id="work-places"></div>
             </div>
-
-            <!-- 6. Real Person Example -->
             <div class="detail-card highlight-card">
-              <div class="card-header">
-                <span class="card-number">6</span>
-                <h2>Real Person Example →</h2>
-              </div>
-              <div class="card-content" id="real-person">
-                <!-- JS will fill this -->
-              </div>
+              <div class="card-header"><span class="card-number">6</span><h2>Real Person Example →</h2></div>
+              <div class="card-content" id="real-person"></div>
             </div>
-
-            <!-- 7. Free Resources -->
             <div class="detail-card">
-              <div class="card-header">
-                <span class="card-number">7</span>
-                <h2>Free Resources to Start →</h2>
-              </div>
-              <div class="card-content" id="resources">
-                <!-- JS will fill this -->
-              </div>
+              <div class="card-header"><span class="card-number">7</span><h2>Free Resources to Start →</h2></div>
+              <div class="card-content" id="resources"></div>
             </div>
-
-            <!-- 8. Is This For You? -->
             <div class="detail-card">
-              <div class="card-header">
-                <span class="card-number">8</span>
-                <h2>Is This For You? →</h2>
-              </div>
-              <div class="card-content" id="for-you">
-                <!-- JS will fill this -->
-              </div>
+              <div class="card-header"><span class="card-number">8</span><h2>Is This For You? →</h2></div>
+              <div class="card-content" id="for-you"></div>
             </div>
-
           </div>
 
-          <!-- Sidebar -->
           <aside class="sidebar">
-            
-            <!-- Take Quiz CTA -->
             <div class="sidebar-card cta-card">
               <h3>Not Sure Yet?</h3>
               <p>Take our quiz to find careers that match your personality!</p>
               <a href="quiz.html" class="btn btn-primary">Take Quiz →</a>
             </div>
-
-            <!-- Explore More -->
             <div class="sidebar-card">
               <h3>Explore More Careers</h3>
-              <div id="related-careers">
-                <!-- JS will fill this -->
-              </div>
+              <div id="related-careers"></div>
             </div>
-
-            <!-- Share Card -->
             <div class="sidebar-card share-card">
               <h3>Share This Career</h3>
               <p>Know someone who'd love this? Share it!</p>
-              <button class="share-btn" onclick="shareCareer()">
-                📤 Share
-              </button>
+              <button class="share-btn" onclick="shareCareer()">📤 Share</button>
             </div>
-
           </aside>
-
         </div>
       </div>
     </section>
 
-    <!-- FOOTER -->
     <footer class="footer">
       <div class="container">
         <div class="footer-intro">
           <h3>Career Kuch Hatke</h3>
           <p>Your Dream Career Exists. You Just Haven't Found It Yet.</p>
         </div>
-        
         <div class="footer-columns">
           <div class="footer-section">
             <h4>Quick Links</h4>
@@ -326,7 +145,6 @@ document.addEventListener('DOMContentLoaded', function () {
               <li><a href="contact.html">Contact</a></li>
             </ul>
           </div>
-
           <div class="footer-section">
             <h4>Categories</h4>
             <ul>
@@ -337,7 +155,6 @@ document.addEventListener('DOMContentLoaded', function () {
               <li><a href="explore.html#unique">Unique</a></li>
             </ul>
           </div>
-
           <div class="footer-section">
             <h4>Connect</h4>
             <p><span class="emoji">📧</span> <a href="contact.html">Contact Us</a></p>
@@ -347,7 +164,6 @@ document.addEventListener('DOMContentLoaded', function () {
           </div>
         </div>
       </div>
-
       <div class="footer-bottom">
         <p>Built with <span class="emoji">❤️</span> by Sneha Prajapati</p>
         <p>FYBSc Computer Science | Vidyavardhini College</p>
@@ -355,11 +171,8 @@ document.addEventListener('DOMContentLoaded', function () {
       </div>
     </footer>
 
-    <!-- JavaScript Files -->
     <script src="js/script.js"></script>
     <script src="js/career-data.js"></script>
     <script src="js/career-detail.js"></script>
   </body>
 </html>
-
-/*i have made explore page which shows card fo 25 careers when user clicks on knoe more whole detail of that career gets visible but i think this gets to srolable for user it becames for mobile users i whant that when user clicks on a specific info part of a creer only that mush should be visible to then this will make it more easy to use ans scroll i think i am provideing you the code.......*/
