@@ -4,6 +4,34 @@
 document.addEventListener("DOMContentLoaded", function() {
 
 /* ============================================
+   THEME TOGGLE — Dark / Light Mode
+   ============================================ */
+var toggleBtn = document.getElementById('themeToggle');
+var html = document.documentElement;
+
+function applyTheme(theme) {
+    if (theme === 'dark') {
+        html.setAttribute('data-theme', 'dark');
+        if (toggleBtn) toggleBtn.textContent = '☀️';
+    } else {
+        html.removeAttribute('data-theme');
+        if (toggleBtn) toggleBtn.textContent = '🌙';
+    }
+}
+
+// Apply saved theme on page load
+applyTheme(localStorage.getItem('ckh_theme') || 'light');
+
+// Toggle on click
+if (toggleBtn) {
+    toggleBtn.addEventListener('click', function () {
+        var next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+        localStorage.setItem('ckh_theme', next);
+        applyTheme(next);
+    });
+}
+
+/* ============================================
    HAMBURGER MENU
    ============================================ */
 const hamburger = document.getElementById('hamburger');
@@ -11,43 +39,41 @@ const navMenu = document.getElementById('navMenu');
 const body = document.body;
 
 if (hamburger && navMenu) {
-  hamburger.addEventListener('click', () => {
-    hamburger.classList.toggle('active');
-    navMenu.classList.toggle('active');
-    body.classList.toggle('menu-open');
-  });
-  
-  const navLinks = document.querySelectorAll('.nav-menu li a');
-  navLinks.forEach(link => {
-    link.addEventListener('click', () => {
-      hamburger.classList.remove('active');
-      navMenu.classList.remove('active');
-      body.classList.remove('menu-open');
+    hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('active');
+        navMenu.classList.toggle('active');
+        body.classList.toggle('menu-open');
     });
-  });
-  
-  document.addEventListener('click', (e) => {
-    if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
-      hamburger.classList.remove('active');
-      navMenu.classList.remove('active');
-      body.classList.remove('menu-open');
-    }
-  });
+
+    const navLinks = document.querySelectorAll('.nav-menu li a');
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            hamburger.classList.remove('active');
+            navMenu.classList.remove('active');
+            body.classList.remove('menu-open');
+        });
+    });
+
+    document.addEventListener('click', (e) => {
+        if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
+            hamburger.classList.remove('active');
+            navMenu.classList.remove('active');
+            body.classList.remove('menu-open');
+        }
+    });
 }
 
 /* ============================================
    NAVBAR ACTIVE LINK
    ============================================ */
-
 const currentPage = window.location.pathname.split("/").pop() || "index.html";
 const navLinksActive = document.querySelectorAll(".nav-menu a");
 
 navLinksActive.forEach(link => {
-  const linkPage = link.getAttribute("href");
-
-  if (linkPage === currentPage) {
-    link.classList.add("active");
-  }
+    const linkPage = link.getAttribute("href");
+    if (linkPage === currentPage) {
+        link.classList.add("active");
+    }
 });
 
 /* ============================================
@@ -55,330 +81,224 @@ navLinksActive.forEach(link => {
    ============================================ */
 if (document.querySelector('.filter-btn')) {
 
-  // ✅ Declare all variables ONCE at the top
-  const filterButtons = document.querySelectorAll('.filter-btn');
-  const careerCards = document.querySelectorAll('.career-card');
-  const searchInput = document.getElementById('career-search');
-  const countSpan = document.getElementById('count');
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const careerCards = document.querySelectorAll('.career-card');
+    const searchInput = document.getElementById('career-search');
+    const countSpan = document.getElementById('count');
 
-  // ══════════════════════════════════════════
-  // FILTER BUTTONS
-  // ══════════════════════════════════════════
-  filterButtons.forEach(button => {
-    
-    button.addEventListener('click', function() {
-      
-      // Remove 'active' from all buttons
-      filterButtons.forEach(btn => btn.classList.remove('active'));
-      
-      // Add 'active' to clicked button
-      this.classList.add('active');
-      
-      // Get filter value
-      const filterValue = this.getAttribute('data-filter');
-      
-      console.log('Filter clicked:', filterValue);
-      
-      // Count visible cards
-      let visibleCount = 0;
-      
-      careerCards.forEach(card => {
-        const cardCategory = card.getAttribute('data-category');
-        
-        if (filterValue === 'all' || cardCategory === filterValue) {
-          card.style.display = 'block';
-          visibleCount++;
-        } else {
-          card.style.display = 'none';
-        }
-      });
-      
-      // Update counter
-      countSpan.textContent = visibleCount;
-      console.log('Showing', visibleCount, 'careers');
-      
+    filterButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            this.classList.add('active');
+
+            const filterValue = this.getAttribute('data-filter');
+            let visibleCount = 0;
+
+            careerCards.forEach(card => {
+                const cardCategory = card.getAttribute('data-category');
+                if (filterValue === 'all' || cardCategory === filterValue) {
+                    card.style.display = 'block';
+                    visibleCount++;
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+
+            if (countSpan) countSpan.textContent = visibleCount;
+        });
     });
-    
-  }); // ✅ Properly closes forEach
 
-  // ══════════════════════════════════════════
-  // SEARCH BOX
-  // ══════════════════════════════════════════
-  if (searchInput && countSpan) {
-    
-    searchInput.addEventListener('input', function() {
-      
-      const searchTerm = this.value.toLowerCase();
-      let visibleCount = 0;
-      
-      console.log('Searching for:', searchTerm);
-      
-      careerCards.forEach(card => {
-        const careerName = card.querySelector('h3').textContent.toLowerCase();
-        
-        if (careerName.includes(searchTerm)) {
-          card.style.display = 'block';
-          visibleCount++;
-        } else {
-          card.style.display = 'none';
-        }
-      });
-      
-      countSpan.textContent = visibleCount;
-      console.log('Found', visibleCount, 'careers');
-      
-    });
-    
-  }
+    if (searchInput && countSpan) {
+        searchInput.addEventListener('input', function() {
+            const searchTerm = this.value.toLowerCase();
+            let visibleCount = 0;
 
-  // ══════════════════════════════════════════
-  // CATEGORY FROM HOME PAGE
-  // ══════════════════════════════════════════
-  const urlParams = new URLSearchParams(window.location.search);
-  const category = urlParams.get('category');
+            careerCards.forEach(card => {
+                const careerName = card.querySelector('h3').textContent.toLowerCase();
+                if (careerName.includes(searchTerm)) {
+                    card.style.display = 'block';
+                    visibleCount++;
+                } else {
+                    card.style.display = 'none';
+                }
+            });
 
-  if (category) {
-    const targetButton = document.querySelector(`.filter-btn[data-filter="${category}"]`);
-    if (targetButton) {
-      targetButton.click();
+            countSpan.textContent = visibleCount;
+        });
     }
-  }
 
+    const urlParams = new URLSearchParams(window.location.search);
+    const category = urlParams.get('category');
+    if (category) {
+        const targetButton = document.querySelector(`.filter-btn[data-filter="${category}"]`);
+        if (targetButton) targetButton.click();
+    }
 }
 
 /* ============================================
    QUIZ LOGIC
    ============================================ */
 if (document.querySelector('.question')) {
-  
-  const questions = document.querySelectorAll(".question");
-  const nextBtn = document.getElementById("next-btn");
-  const prevBtn = document.getElementById("prev-btn");
-  const progressFill = document.getElementById("progress");
-  const currentText = document.getElementById("current");
-  const resultSection = document.getElementById("result");
-  const resultContent = document.getElementById("result-content");
 
-  let currentQuestion = 0;
-  const totalQuestions = questions.length;
+    const questions = document.querySelectorAll(".question");
+    const nextBtn = document.getElementById("next-btn");
+    const prevBtn = document.getElementById("prev-btn");
+    const progressFill = document.getElementById("progress");
+    const currentText = document.getElementById("current");
+    const resultSection = document.getElementById("result");
+    const resultContent = document.getElementById("result-content");
 
-  let scores = {
-    creative: 0,
-    tech: 0,
-    science: 0,
-    business: 0,
-    unique: 0
-  };
+    let currentQuestion = 0;
+    const totalQuestions = questions.length;
 
-  function showQuestion(index) {
-    questions.forEach((q, i) => {
-      q.style.display = i === index ? "block" : "none";
-    });
+    let scores = { creative: 0, tech: 0, science: 0, business: 0, unique: 0 };
 
-    currentText.textContent = index + 1;
-    progressFill.style.width = ((index + 1) / totalQuestions) * 100 + "%";
-
-    prevBtn.style.display = index === 0 ? "none" : "inline-block";
-
-    if (index === totalQuestions - 1) {
-      nextBtn.textContent = "See Result →";
-    } else {
-      nextBtn.textContent = "Next →";
+    function showQuestion(index) {
+        questions.forEach((q, i) => {
+            q.style.display = i === index ? "block" : "none";
+        });
+        if (currentText) currentText.textContent = index + 1;
+        if (progressFill) progressFill.style.width = ((index + 1) / totalQuestions) * 100 + "%";
+        if (prevBtn) prevBtn.style.display = index === 0 ? "none" : "inline-block";
+        if (nextBtn) nextBtn.textContent = index === totalQuestions - 1 ? "See Result →" : "Next →";
     }
-  }
 
-  if (nextBtn) {
-    nextBtn.addEventListener("click", () => {
-      const selected = questions[currentQuestion].querySelector("input:checked");
+    if (nextBtn) {
+        nextBtn.addEventListener("click", () => {
+            const selected = questions[currentQuestion].querySelector("input:checked");
+            if (!selected) {
+                alert("Please select an option before continuing 😊");
+                return;
+            }
+            if (currentQuestion < totalQuestions - 1) {
+                currentQuestion++;
+                showQuestion(currentQuestion);
+            } else {
+                calculateResult();
+            }
+        });
+    }
 
-      if (!selected) {
-        alert("Please select an option before continuing 😊");
-        return;
-      }
+    if (prevBtn) {
+        prevBtn.addEventListener("click", () => {
+            if (currentQuestion > 0) {
+                currentQuestion--;
+                showQuestion(currentQuestion);
+            }
+        });
+    }
 
-      if (currentQuestion < totalQuestions - 1) {
-        currentQuestion++;
+    function calculateResult() {
+        scores = { creative: 0, tech: 0, science: 0, business: 0, unique: 0 };
+        const selectedAnswers = document.querySelectorAll("input[type='radio']:checked");
+        selectedAnswers.forEach(answer => {
+            const category = answer.dataset.category;
+            scores[category]++;
+        });
+        let topCategory = Object.keys(scores).reduce((a, b) => scores[a] > scores[b] ? a : b);
+        showResult(topCategory);
+    }
+
+    function resetQuiz() {
+        document.querySelectorAll("input[type='radio']").forEach(input => { input.checked = false; });
+        currentQuestion = 0;
         showQuestion(currentQuestion);
-      } else {
-        calculateResult();
-      }
-    });
-  }
+        if (resultSection) resultSection.style.display = "none";
+        const quizSection = document.getElementById("quiz-section");
+        if (quizSection) quizSection.style.display = "block";
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    }
 
-  if (prevBtn) {
-    prevBtn.addEventListener("click", () => {
-      if (currentQuestion > 0) {
-        currentQuestion--;
-        showQuestion(currentQuestion);
-      }
-    });
-  }
+    window.resetQuiz = resetQuiz;
 
-  function calculateResult() {
-    scores = { creative:0, tech:0, science:0, business:0, unique:0 };
+    function showResult(category) {
+        const quizSection = document.getElementById("quiz-section");
+        if (quizSection) quizSection.style.display = "none";
+        if (resultSection) resultSection.style.display = "block";
+        window.scrollTo({ top: 0, behavior: "smooth" });
 
-    const selectedAnswers = document.querySelectorAll("input[type='radio']:checked");
-    selectedAnswers.forEach(answer => {
-      const category = answer.dataset.category;
-      scores[category]++;
-    });
+        const resultMap = {
+            creative: { title: "You are a Creative Mind 🎨", desc: "You thrive on imagination, aesthetics, and expression.", link: "creative" },
+            tech:     { title: "You are a Tech Explorer 💻",  desc: "You love solving problems using technology.",         link: "tech" },
+            science:  { title: "You are a Curious Scientist 🔬", desc: "You love discovering how the world works.",        link: "science" },
+            business: { title: "You are a Business Strategist 💰", desc: "You think about growth, money, and smart decisions.", link: "business" },
+            unique:   { title: "You are a Bold Adventurer 🎭", desc: "You love freedom, adventure, and unconventional paths.", link: "unique" }
+        };
 
-    let topCategory = Object.keys(scores).reduce((a, b) =>
-      scores[a] > scores[b] ? a : b
-    );
+        const r = resultMap[category] || resultMap['unique'];
+        if (resultContent) {
+            resultContent.innerHTML = `
+                <h3>${r.title}</h3>
+                <p>${r.desc}</p>
+                <div class="career-suggestions">
+                    <a href="explore.html?category=${r.link}">Explore ${r.link.charAt(0).toUpperCase() + r.link.slice(1)} Careers →</a>
+                </div>
+                <button class="retake-btn" onclick="resetQuiz()">Retake Quiz</button>
+            `;
+        }
+    }
 
-    showResult(topCategory);
-  }
-
-  function resetQuiz() {
-    document.querySelectorAll("input[type='radio']").forEach(input => {
-      input.checked = false;
-    });
-
-    currentQuestion = 0;
     showQuestion(currentQuestion);
-
-  resultSection.style.display = "none";
-document.getElementById("quiz-section").style.display = "block";
-
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  }
-
-  // Make resetQuiz available globally
-  window.resetQuiz = resetQuiz;
-
-  function showResult(category) {
-    document.getElementById("quiz-section").style.display = "none";
-    resultSection.style.display = "block";
-
-    window.scrollTo({ top: 0, behavior: "smooth" });
-
-    let resultHTML = "";
-
-    if (category === "creative") {
-      resultHTML = `
-        <h3>You are a Creative Mind 🎨</h3>
-        <p>You thrive on imagination, aesthetics, and expression.</p>
-        <div class="career-suggestions">
-          <a href="explore.html?category=creative">Explore Creative Careers →</a>
-        </div>
-        <button class="retake-btn" onclick="resetQuiz()">Retake Quiz</button>
-      `;
-    } else if (category === "tech") {
-      resultHTML = `
-        <h3>You are a Tech Explorer 💻</h3>
-        <p>You love solving problems using technology.</p>
-        <div class="career-suggestions">
-          <a href="explore.html?category=tech">Explore Tech Careers →</a>
-        </div>
-        <button class="retake-btn" onclick="resetQuiz()">Retake Quiz</button>
-      `;
-    } else if (category === "science") {
-      resultHTML = `
-        <h3>You are a Curious Scientist 🔬</h3>
-        <p>You love discovering how the world works.</p>
-        <div class="career-suggestions">
-          <a href="explore.html?category=science">Explore Science Careers →</a>
-        </div>
-        <button class="retake-btn" onclick="resetQuiz()">Retake Quiz</button>
-      `;
-    } else if (category === "business") {
-      resultHTML = `
-        <h3>You are a Business Strategist 💰</h3>
-        <p>You think about growth, money, and smart decisions.</p>
-        <div class="career-suggestions">
-          <a href="explore.html?category=business">Explore Business Careers →</a>
-        </div>
-        <button class="retake-btn" onclick="resetQuiz()">Retake Quiz</button>
-      `;
-    } else if (category === "unique") {
-      resultHTML = `
-        <h3>You are a Bold Adventurer 🎭</h3>
-        <p>You love freedom, adventure, and unconventional paths.</p>
-        <div class="career-suggestions">
-          <a href="explore.html?category=unique">Explore Unique Careers →</a>
-        </div>
-        <button class="retake-btn" onclick="resetQuiz()">Retake Quiz</button>
-      `;
-    }
-
-    resultContent.innerHTML = resultHTML;
-  }
-
-  showQuestion(currentQuestion);
 }
 
 function startQuiz() {
-  document.getElementById("quiz-intro").style.display = "none";
-  document.getElementById("quiz-section").style.display = "block";
-  document.getElementById("result").style.display = "none";
-
-  window.scrollTo({ top: 0, behavior: "smooth" });
+    const intro = document.getElementById("quiz-intro");
+    const quizSection = document.getElementById("quiz-section");
+    const result = document.getElementById("result");
+    if (intro) intro.style.display = "none";
+    if (quizSection) quizSection.style.display = "block";
+    if (result) result.style.display = "none";
+    window.scrollTo({ top: 0, behavior: "smooth" });
 }
-
 window.startQuiz = startQuiz;
 
 /* ============================================
    CONTACT PAGE - FORM TOGGLE & SUBMISSION
    ============================================ */
-
-// Show specific form
 function showForm(formType) {
-  const optionsSection = document.querySelector('.contact-options-section');
-  const contactSection = document.getElementById('contact-form-section');
-  const suggestionSection = document.getElementById('suggestion-form-section');
-  
-  // Hide options
-  optionsSection.style.display = 'none';
-  
-  // Show selected form
-  if (formType === 'contact') {
-    contactSection.style.display = 'block';
-    suggestionSection.style.display = 'none';
-  } else if (formType === 'suggestion') {
-    suggestionSection.style.display = 'block';
-    contactSection.style.display = 'none';
-  }
-  
-  // Smooth scroll to top
-  window.scrollTo({ top: 0, behavior: 'smooth' });
+    const optionsSection = document.querySelector('.contact-options-section');
+    const contactSection = document.getElementById('contact-form-section');
+    const suggestionSection = document.getElementById('suggestion-form-section');
+
+    if (optionsSection) optionsSection.style.display = 'none';
+    if (formType === 'contact') {
+        if (contactSection) contactSection.style.display = 'block';
+        if (suggestionSection) suggestionSection.style.display = 'none';
+    } else if (formType === 'suggestion') {
+        if (suggestionSection) suggestionSection.style.display = 'block';
+        if (contactSection) contactSection.style.display = 'none';
+    }
+    window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
-// Hide form and return to options
 function hideForm() {
-  const optionsSection = document.querySelector('.contact-options-section');
-  const contactSection = document.getElementById('contact-form-section');
-  const suggestionSection = document.getElementById('suggestion-form-section');
-  
-  contactSection.style.display = 'none';
-  suggestionSection.style.display = 'none';
-  optionsSection.style.display = 'block';
-  
-  window.scrollTo({ top: 0, behavior: 'smooth' });
+    const optionsSection = document.querySelector('.contact-options-section');
+    const contactSection = document.getElementById('contact-form-section');
+    const suggestionSection = document.getElementById('suggestion-form-section');
+
+    if (contactSection) contactSection.style.display = 'none';
+    if (suggestionSection) suggestionSection.style.display = 'none';
+    if (optionsSection) optionsSection.style.display = 'block';
+    window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
-// Reset to options after success
 function resetToOptions() {
+    const contactForm = document.querySelector('.contact-form');
+    const suggestionForm = document.querySelector('.suggestion-form');
 
-  // Reset both forms completely
-  const contactForm = document.querySelector('.contact-form');
-  const suggestionForm = document.querySelector('.suggestion-form');
+    if (contactForm) contactForm.reset();
+    if (suggestionForm) suggestionForm.reset();
 
-  if (contactForm) contactForm.reset();
-  if (suggestionForm) suggestionForm.reset();
+    const cs = document.getElementById('contact-success');
+    const ss = document.getElementById('suggestion-success');
+    if (cs) cs.style.display = 'none';
+    if (ss) ss.style.display = 'none';
 
-  // Hide success messages
-  document.getElementById('contact-success').style.display = 'none';
-  document.getElementById('suggestion-success').style.display = 'none';
+    if (contactForm) contactForm.style.display = 'block';
+    if (suggestionForm) suggestionForm.style.display = 'block';
 
-  // Show forms again
-  if (contactForm) contactForm.style.display = 'block';
-  if (suggestionForm) suggestionForm.style.display = 'block';
-
-  // Go back to options
-  hideForm();
+    hideForm();
 }
-
 
 window.showForm = showForm;
 window.hideForm = hideForm;
@@ -386,33 +306,25 @@ window.resetToOptions = resetToOptions;
 
 /* ============================================
    SHOW SUCCESS MESSAGE AFTER PHP REDIRECT
-============================================ */
-
+   ============================================ */
 const urlParams = new URLSearchParams(window.location.search);
 const success = urlParams.get('success');
 
 if (success === 'contact') {
-  showForm('contact');
-
-  const contactForm = document.querySelector('.contact-form');
-  const contactSuccess = document.getElementById('contact-success');
-
-  if (contactForm && contactSuccess) {
-    contactForm.style.display = 'none';
-    contactSuccess.style.display = 'block';
-  }
+    showForm('contact');
+    const contactForm = document.querySelector('.contact-form');
+    const contactSuccess = document.getElementById('contact-success');
+    if (contactForm) contactForm.style.display = 'none';
+    if (contactSuccess) contactSuccess.style.display = 'block';
 }
 
 if (success === 'suggestion') {
-  showForm('suggestion');
-
-  const suggestionForm = document.querySelector('.suggestion-form');
-  const suggestionSuccess = document.getElementById('suggestion-success');
-
-  if (suggestionForm && suggestionSuccess) {
-    suggestionForm.style.display = 'none';
-    suggestionSuccess.style.display = 'block';
-  }
+    showForm('suggestion');
+    const suggestionForm = document.querySelector('.suggestion-form');
+    const suggestionSuccess = document.getElementById('suggestion-success');
+    if (suggestionForm) suggestionForm.style.display = 'none';
+    if (suggestionSuccess) suggestionSuccess.style.display = 'block';
 }
 
-}); // ✅ Closes DOMContentLoaded
+}); // Closes DOMContentLoaded
+

@@ -13,7 +13,7 @@
   justify-content: center;
   text-align: center;
   padding: 4rem 2rem;
-  background: var(--bg-light);
+  background: linear-gradient(135deg, #dda83f 0%, #f2e9e1 100%);
   color: var(--text-gray);
 }
 
@@ -34,9 +34,23 @@
   opacity: 0.95;
 }
 
-.quiz-intro .btn {
-  padding: 1rem 2rem;
+.btn-start {
+  background-color: var(--primary);
+  color: var(--bg-white);
+  padding: 1rem 2.5rem;
   font-size: 1.1rem;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.3s;
+  display: inline-block;
+  margin-bottom: 1rem;
+  border: 2px solid var(--primary);
+}
+
+.btn-start:hover {
+  background-color: var(--bg-white);
+  color: var(--primary);
+  transform: scale(1.05);
 }
 
 /* Main quiz container */
