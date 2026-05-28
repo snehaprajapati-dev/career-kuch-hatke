@@ -1,11 +1,6 @@
 <?php
 session_start();
-
-if (!isset($_SESSION['admin_logged_in'])) {
-    header("Location: login.php");
-    exit();
-}
-
+if (!isset($_SESSION['admin_logged_in'])) { header("Location: login.php"); exit(); }
 require_once("../php/db_connect.php");
 
 $limit = 5;
@@ -13,37 +8,28 @@ $page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
 if ($page < 1) $page = 1;
 $offset = ($page - 1) * $limit;
 
-$search = "";
-$statusFilter = "";
-$dateFilter = "";
+$search = ""; $statusFilter = ""; $dateFilter = "";
 $whereParts = [];
 
 if (isset($_GET['search']) && $_GET['search'] !== "") {
     $search = mysqli_real_escape_string($conn, $_GET['search']);
     $whereParts[] = "(career_name LIKE '%$search%' OR career_reason LIKE '%$search%' OR suggester_name LIKE '%$search%')";
 }
-
 if (isset($_GET['status']) && $_GET['status'] !== "") {
     $statusFilter = mysqli_real_escape_string($conn, $_GET['status']);
     $whereParts[] = "status = '$statusFilter'";
 }
-
 if (isset($_GET['date']) && $_GET['date'] !== "") {
     $dateFilter = $_GET['date'];
-    if ($dateFilter === "today")
-        $whereParts[] = "DATE(created_at) = CURDATE()";
-    if ($dateFilter === "week")
-        $whereParts[] = "YEARWEEK(created_at, 1) = YEARWEEK(CURDATE(), 1)";
-    if ($dateFilter === "month")
-        $whereParts[] = "MONTH(created_at) = MONTH(CURDATE()) AND YEAR(created_at) = YEAR(CURDATE())";
+    if ($dateFilter === "today") $whereParts[] = "DATE(created_at) = CURDATE()";
+    if ($dateFilter === "week")  $whereParts[] = "YEARWEEK(created_at, 1) = YEARWEEK(CURDATE(), 1)";
+    if ($dateFilter === "month") $whereParts[] = "MONTH(created_at) = MONTH(CURDATE()) AND YEAR(created_at) = YEAR(CURDATE())";
 }
 
 $whereClause = !empty($whereParts) ? "WHERE " . implode(" AND ", $whereParts) : "";
-
 $countResult = mysqli_fetch_assoc(mysqli_query($conn, "SELECT COUNT(*) as total FROM career_suggestions $whereClause"));
 $totalRecords = $countResult['total'];
 $totalPages = ceil($totalRecords / $limit);
-
 $result = mysqli_query($conn, "SELECT * FROM career_suggestions $whereClause ORDER BY created_at DESC LIMIT $limit OFFSET $offset");
 ?>
 <!DOCTYPE html>
@@ -52,12 +38,7 @@ $result = mysqli_query($conn, "SELECT * FROM career_suggestions $whereClause ORD
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Career Suggestions - Admin</title>
-    <script>
-    (function(){
-        var s = localStorage.getItem('ckh_theme');
-        if (s === 'dark') document.documentElement.setAttribute('data-theme','dark');
-    })();
-    </script>
+    <script>(function(){ var s=localStorage.getItem('ckh_theme'); if(s==='dark') document.documentElement.setAttribute('data-theme','dark'); })();</script>
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/admin.css">
 </head>
@@ -68,35 +49,28 @@ $result = mysqli_query($conn, "SELECT * FROM career_suggestions $whereClause ORD
 <a class="back-link" href="dashboard.php">← Back to Dashboard</a>
 
 <div class="admin-container">
-    <h1>💡 Career Suggestions</h1>
+
+    <div class="admin-page-header">
+        <h1>💡 Career Suggestions</h1>
+        <p>View and manage career suggestions submitted by users.</p>
+    </div>
 
     <form method="GET" class="filter-bar">
-        <input type="text" name="search"
-               placeholder="Search by career, reason, suggester..."
-               value="<?php echo htmlspecialchars($search); ?>">
-
+        <input type="text" name="search" placeholder="Search by career, reason, suggester..." value="<?php echo htmlspecialchars($search); ?>">
         <select name="date">
             <option value="">All Dates</option>
-            <option value="today"  <?php if ($dateFilter == 'today')  echo 'selected'; ?>>Today</option>
-            <option value="week"   <?php if ($dateFilter == 'week')   echo 'selected'; ?>>This Week</option>
-            <option value="month"  <?php if ($dateFilter == 'month')  echo 'selected'; ?>>This Month</option>
+            <option value="today" <?php if($dateFilter=='today') echo 'selected'; ?>>Today</option>
+            <option value="week"  <?php if($dateFilter=='week')  echo 'selected'; ?>>This Week</option>
+            <option value="month" <?php if($dateFilter=='month') echo 'selected'; ?>>This Month</option>
         </select>
-
         <select name="status">
             <option value="">All</option>
-            <option value="unread" <?php if ($statusFilter == 'unread') echo 'selected'; ?>>Unread</option>
-            <option value="read"   <?php if ($statusFilter == 'read')   echo 'selected'; ?>>Read</option>
+            <option value="unread" <?php if($statusFilter=='unread') echo 'selected'; ?>>Unread</option>
+            <option value="read"   <?php if($statusFilter=='read')   echo 'selected'; ?>>Read</option>
         </select>
-
         <button type="submit">Filter</button>
         <a href="suggestions.php" class="reset-link">Reset</a>
     </form>
-
-    <div class="admin-actions">
-        <a class="admin-btn" href="export_suggestions.php">📥 Export to CSV</a>
-        <a class="admin-btn" href="delete.php?type=mark_all_read_suggestion"
-           onclick="return confirm('Mark ALL suggestions as read?');">✅ Mark All as Read</a>
-    </div>
 
     <div class="table-wrapper">
         <table>
@@ -125,11 +99,12 @@ $result = mysqli_query($conn, "SELECT * FROM career_suggestions $whereClause ORD
                         <?php endif; ?>
                     </td>
                     <td>
-                        <?php if ($row['status'] === 'unread'): ?>
-                            <a href="delete.php?type=mark_read_suggestion&id=<?php echo $row['id']; ?>">✓ Mark Read</a>
-                        <?php endif; ?>
-                        <a href="delete.php?type=suggestion&id=<?php echo $row['id']; ?>"
-                           onclick="return confirm('Delete this suggestion?');">🗑 Delete</a>
+                        <div class="table-actions">
+                            <?php if ($row['status'] === 'unread'): ?>
+                                <a class="action-read" href="delete.php?type=mark_read_suggestion&id=<?php echo $row['id']; ?>">✓ Mark Read</a>
+                            <?php endif; ?>
+                            <a class="action-delete" href="delete.php?type=suggestion&id=<?php echo $row['id']; ?>" onclick="return confirm('Delete this suggestion?');">🗑 Delete</a>
+                        </div>
                     </td>
                 </tr>
             <?php endwhile; ?>
@@ -146,6 +121,12 @@ $result = mysqli_query($conn, "SELECT * FROM career_suggestions $whereClause ORD
             <?php endif; ?>
         </div>
     </div>
+
+    <div class="admin-actions admin-actions--center">
+        <a class="admin-btn" href="export_suggestions.php">📥 Export to CSV</a>
+        <a class="admin-btn" href="delete.php?type=mark_all_read_suggestion" onclick="return confirm('Mark ALL suggestions as read?');">✅ Mark All as Read</a>
+    </div>
+
 </div>
 </body>
 </html>
