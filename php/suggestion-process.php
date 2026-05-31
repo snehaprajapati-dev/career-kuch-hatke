@@ -1,4 +1,23 @@
 <?php
+// reCAPTCHA verification
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $recaptcha_secret = "6LerTgItAAAAADya6lD7V7wAv1Ohv7inijN-ELtc";
+    $recaptcha_response = isset($_POST['g-recaptcha-response']) ? $_POST['g-recaptcha-response'] : '';
+    
+    if (empty($recaptcha_response)) {
+        header("Location: ../contact.html?error=captcha&form=suggestion");
+        exit();
+    }
+    
+    $verify = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret={$recaptcha_secret}&response={$recaptcha_response}");
+    $captcha_result = json_decode($verify);
+    
+    if (!$captcha_result->success) {
+        header("Location: ../contact.html?error=captcha&form=suggestion");
+        exit();
+    }
+}
+
 include("db_connect.php");
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
