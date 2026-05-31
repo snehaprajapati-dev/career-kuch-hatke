@@ -409,3 +409,86 @@
     font-size: 3rem;
   }
 }
+
+/* Form Error Message */
+.form-error-message {
+    background-color: #ffe6e6;
+    border: 2px solid #c74b50;
+    border-radius: 8px;
+    padding: 1rem 1.5rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    animation: shake 0.5s;
+}
+
+.form-error-message span {
+    color: #c74b50;
+    font-weight: 600;
+    font-size: 1rem;
+    display: block;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+    20%, 40%, 60%, 80% { transform: translateX(5px); }
+}
+
+/* Dark mode error */
+[data-theme="dark"] .form-error-message {
+    background-color: rgba(199, 75, 80, 0.15);
+    border-color: #c74b50;
+}
+
+[data-theme="dark"] .form-error-message span {
+    color: #ff6b6b;
+}
+
+/* ============================================
+   RECAPTCHA MOBILE FIX
+   Add this at the bottom of your contact.css
+   ============================================ */
+
+/* Default — let it be normal size on desktop */
+.g-recaptcha {
+    display: inline-block;
+    max-width: 100%;
+}
+
+/* The form group holding reCAPTCHA */
+.form-group:has(> .g-recaptcha),
+.form-group:has(> #recaptcha-contact),
+.form-group:has(> #recaptcha-suggestion) {
+    overflow: hidden;
+}
+
+/* ── Phones under 400px — scale down significantly ── */
+@media (max-width: 400px) {
+    .g-recaptcha {
+        transform: scale(0.77);
+        transform-origin: left top;
+        /* Compensate for the layout space the original size took */
+        /* reCAPTCHA is 304px wide × 78px tall at scale 1 */
+        /* At 0.77: visible size = 234px × 60px */
+        /* We need to collapse the extra white space below */
+        margin-bottom: -18px;
+    }
+}
+
+/* ── Phones 401–480px ── */
+@media (min-width: 401px) and (max-width: 480px) {
+    .g-recaptcha {
+        transform: scale(0.85);
+        transform-origin: left top;
+        margin-bottom: -10px;
+    }
+}
+
+/* ── Phones 481–520px ── */
+@media (min-width: 481px) and (max-width: 520px) {
+    .g-recaptcha {
+        transform: scale(0.92);
+        transform-origin: left top;
+        margin-bottom: -5px;
+    }
+}

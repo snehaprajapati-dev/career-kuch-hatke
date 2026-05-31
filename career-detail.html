@@ -4,51 +4,71 @@
     <title>Career Detail - Career Kuch Hatke</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Detailed information about unconventional career paths in India." />
+    <meta
+      name="google-site-verification"
+      content="LXFHaYN3pJBCfwy7T-cLEWYe8sBduRXk4IAoxF9HceM"
+    />
+    <meta
+      name="description"
+      content="Detailed information about unconventional career paths in India."
+    />
 
     <script>
-      (function(){
-        var s = localStorage.getItem('ckh_theme');
-        if (s === 'dark') document.documentElement.setAttribute('data-theme','dark');
+      (function () {
+        var s = localStorage.getItem("ckh_theme");
+        if (s === "dark")
+          document.documentElement.setAttribute("data-theme", "dark");
       })();
     </script>
 
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/career-detail.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@400;500;600;700;800&family=Tenor+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css?v=2.0" />
+    <link rel="stylesheet" href="css/career-detail.css?v=2.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@400;500;600;700;800&family=Tenor+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="../css/form-dark-mode-and-validation.css?v=2.0"
+    />
   </head>
   <body>
+    <nav class="navbar">
+      <div class="container">
+        <a href="index.html" class="logo">Career Kuch Hatke</a>
 
-<nav class="navbar">
-  <div class="container">
-    <a href="index.html" class="logo">Career Kuch Hatke</a>
-    
-    <ul class="nav-menu" id="navMenu">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="explore.html">Explore</a></li>
-      <li><a href="quiz.html">Quiz</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-    
-    <div class="nav-right">
-      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">🌙</button>
-      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-    </div>
-    
-  </div>
-</nav>
+        <ul class="nav-menu" id="navMenu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="explore.html" class="active">Explore</a></li>
+          <li><a href="quiz.html">Quiz</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+
+        <div class="nav-right">
+          <button
+            class="theme-toggle"
+            id="themeToggle"
+            aria-label="Toggle theme"
+          >
+            🌙
+          </button>
+          <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </div>
+    </nav>
 
     <section class="career-hero">
       <div class="container">
         <div class="breadcrumb">
-          <a href="index.html">Home</a> → <a href="explore.html">Explore</a> → <span id="breadcrumb-career">Loading...</span>
+          <a href="index.html">Home</a> → <a href="explore.html">Explore</a> →
+          <span id="breadcrumb-career">Loading...</span>
         </div>
         <div class="hero-content">
           <span class="category-badge" id="hero-category">Creative</span>
@@ -77,35 +97,67 @@
         <div class="details-grid">
           <div class="main-content">
             <div class="detail-card">
-              <div class="card-header"><span class="card-number">1</span><h2>What Do They Do? →</h2></div>
-              <div class="card-content" id="what-they-do"><p>Loading...</p></div>
+              <div class="card-header">
+                <span class="card-number">1</span>
+                <h2>What Do They Do? →</h2>
+              </div>
+              <div class="card-content" id="what-they-do">
+                <p>Loading...</p>
+              </div>
             </div>
             <div class="detail-card">
-              <div class="card-header"><span class="card-number">2</span><h2>Salary Range →</h2></div>
-              <div class="card-content"><div class="salary-grid" id="salary-range"></div></div>
+              <div class="card-header">
+                <span class="card-number">2</span>
+                <h2>Salary Range →</h2>
+              </div>
+              <div class="card-content">
+                <div class="salary-grid" id="salary-range"></div>
+              </div>
             </div>
             <div class="detail-card">
-              <div class="card-header"><span class="card-number">3</span><h2>How to Get In? →</h2></div>
-              <div class="card-content"><div class="roadmap" id="roadmap"></div></div>
+              <div class="card-header">
+                <span class="card-number">3</span>
+                <h2>How to Get In? →</h2>
+              </div>
+              <div class="card-content">
+                <div class="roadmap" id="roadmap"></div>
+              </div>
             </div>
             <div class="detail-card">
-              <div class="card-header"><span class="card-number">4</span><h2>Skills Needed →</h2></div>
-              <div class="card-content"><div class="skills-list" id="skills-list"></div></div>
+              <div class="card-header">
+                <span class="card-number">4</span>
+                <h2>Skills Needed →</h2>
+              </div>
+              <div class="card-content">
+                <div class="skills-list" id="skills-list"></div>
+              </div>
             </div>
             <div class="detail-card">
-              <div class="card-header"><span class="card-number">5</span><h2>Where Can You Work? →</h2></div>
+              <div class="card-header">
+                <span class="card-number">5</span>
+                <h2>Where Can You Work? →</h2>
+              </div>
               <div class="card-content" id="work-places"></div>
             </div>
             <div class="detail-card highlight-card">
-              <div class="card-header"><span class="card-number">6</span><h2>Real Person Example →</h2></div>
+              <div class="card-header">
+                <span class="card-number">6</span>
+                <h2>Real Person Example →</h2>
+              </div>
               <div class="card-content" id="real-person"></div>
             </div>
             <div class="detail-card">
-              <div class="card-header"><span class="card-number">7</span><h2>Free Resources to Start →</h2></div>
+              <div class="card-header">
+                <span class="card-number">7</span>
+                <h2>Free Resources to Start →</h2>
+              </div>
               <div class="card-content" id="resources"></div>
             </div>
             <div class="detail-card">
-              <div class="card-header"><span class="card-number">8</span><h2>Is This For You? →</h2></div>
+              <div class="card-header">
+                <span class="card-number">8</span>
+                <h2>Is This For You? →</h2>
+              </div>
               <div class="card-content" id="for-you"></div>
             </div>
           </div>
@@ -123,7 +175,9 @@
             <div class="sidebar-card share-card">
               <h3>Share This Career</h3>
               <p>Know someone who'd love this? Share it!</p>
-              <button class="share-btn" onclick="shareCareer()">📤 Share</button>
+              <button class="share-btn" onclick="shareCareer()">
+                📤 Share
+              </button>
             </div>
           </aside>
         </div>
@@ -159,22 +213,38 @@
           </div>
           <div class="footer-section">
             <h4>Connect</h4>
-            <p><span class="emoji">📧</span> <a href="contact.html">Contact Us</a></p>
-            <p><span class="emoji">📱</span> <a href="#">Instagram (Coming Soon)</a></p>
-            <p><span class="emoji">💼</span> <a href="#">LinkedIn (Coming Soon)</a></p>
-            <p><span class="emoji">🐦</span> <a href="#">Twitter (Coming Soon)</a></p>
+            <p>
+              <span class="emoji">📧</span>
+              <a href="contact.html">Contact Us</a>
+            </p>
+            <p>
+              <span class="emoji">📱</span>
+              <a href="#">Instagram (Coming Soon)</a>
+            </p>
+            <p>
+              <span class="emoji">💼</span>
+              <a href="#">LinkedIn (Coming Soon)</a>
+            </p>
+            <p>
+              <span class="emoji">🐦</span>
+              <a href="#">Twitter (Coming Soon)</a>
+            </p>
           </div>
         </div>
       </div>
       <div class="footer-bottom">
         <p>Built with <span class="emoji">❤️</span> by Sneha Prajapati</p>
         <p>FYBSc Computer Science | Vidyavardhini College</p>
-        <p>© 2026 Career Kuch Hatke. A student project for creating career awareness.</p>
+        <p>
+          © 2026 Career Kuch Hatke. A student project for creating career
+          awareness.
+        </p>
       </div>
     </footer>
 
-    <script src="js/script.js"></script>
-    <script src="js/career-data.js"></script>
-    <script src="js/career-detail.js"></script>
+    <script src="js/script.js?v=2.0"></script>
+    <script src="js/career-data.js?v=2.0"></script>
+    <script src="js/career-detail.js?v=2.0"></script>
+    <script src="../js/form-validation.js?v=2.0"></script>
   </body>
 </html>
