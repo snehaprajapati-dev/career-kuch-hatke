@@ -1,7 +1,13 @@
 // Global reCAPTCHA widget IDs
 window.contactRecaptchaWidget = undefined;
 window.suggestionRecaptchaWidget = undefined;
+<<<<<<< HEAD
 
+=======
+// ============================================
+// Wait for page to load before running code
+// ============================================
+>>>>>>> 7601500ab365b1aff109818bfca788b3934e5e0c
 document.addEventListener("DOMContentLoaded", function() {
 
 /* ============================================
@@ -228,6 +234,7 @@ window.startQuiz = startQuiz;
 /* ============================================
    RECAPTCHA RENDERING
    ============================================ */
+<<<<<<< HEAD
 
 window.onRecaptchaLoad = function() {
     console.log('reCAPTCHA API loaded and ready');
@@ -307,6 +314,60 @@ function renderSuggestionRecaptcha() {
    CONTACT PAGE - FORM TOGGLE
    ============================================ */
 
+=======
+    
+    /* ============================================
+   RECAPTCHA EXPLICIT RENDERING
+   ============================================ */
+var contactRecaptchaWidget;
+var suggestionRecaptchaWidget;
+
+window.onRecaptchaLoad = function() {
+    // Don't render yet - wait until form is visible
+    console.log('reCAPTCHA API loaded');
+};
+
+function renderContactRecaptcha() {
+    if (typeof grecaptcha === 'undefined') {
+        console.error('reCAPTCHA not loaded');
+        return;
+    }
+    
+    var container = document.getElementById('recaptcha-contact');
+    if (!container) return;
+    
+    // Check if already rendered
+    if (contactRecaptchaWidget !== undefined) {
+        grecaptcha.reset(contactRecaptchaWidget);
+        return;
+    }
+    
+    contactRecaptchaWidget = grecaptcha.render('recaptcha-contact', {
+        'sitekey': '6LerTgItAAAAAAGoMXY2M-csxr4o20ElcBXv4PDq'
+    });
+}
+
+function renderSuggestionRecaptcha() {
+    if (typeof grecaptcha === 'undefined') {
+        console.error('reCAPTCHA not loaded');
+        return;
+    }
+    
+    var container = document.getElementById('recaptcha-suggestion');
+    if (!container) return;
+    
+    // Check if already rendered
+    if (suggestionRecaptchaWidget !== undefined) {
+        grecaptcha.reset(suggestionRecaptchaWidget);
+        return;
+    }
+    
+    suggestionRecaptchaWidget = grecaptcha.render('recaptcha-suggestion', {
+        'sitekey': '6LerTgItAAAAAAGoMXY2M-csxr4o20ElcBXv4PDq'
+    });
+}
+    
+>>>>>>> 7601500ab365b1aff109818bfca788b3934e5e0c
 function showForm(formType) {
     const optionsSection   = document.querySelector('.contact-options-section');
     const contactSection   = document.getElementById('contact-form-section');
@@ -317,6 +378,7 @@ function showForm(formType) {
     if (formType === 'contact') {
         if (contactSection)    contactSection.style.display = 'block';
         if (suggestionSection) suggestionSection.style.display = 'none';
+<<<<<<< HEAD
         setTimeout(function() {
             renderContactRecaptcha();
             if (window.initContactValidation) window.initContactValidation();
@@ -328,6 +390,27 @@ function showForm(formType) {
         setTimeout(function() {
             renderSuggestionRecaptcha();
             if (window.initSuggestionValidation) window.initSuggestionValidation();
+=======
+        
+        // ✅ RENDER RECAPTCHA AFTER FORM IS VISIBLE
+        setTimeout(function() {
+            renderContactRecaptcha();
+            if (window.initContactValidation) {
+                window.initContactValidation();
+            }
+        }, 200);
+        
+    } else if (formType === 'suggestion') {
+        if (suggestionSection) suggestionSection.style.display = 'block';
+        if (contactSection) contactSection.style.display = 'none';
+        
+        // ✅ RENDER RECAPTCHA AFTER FORM IS VISIBLE
+        setTimeout(function() {
+            renderSuggestionRecaptcha();
+            if (window.initSuggestionValidation) {
+                window.initSuggestionValidation();
+            }
+>>>>>>> 7601500ab365b1aff109818bfca788b3934e5e0c
         }, 200);
     }
 
@@ -386,23 +469,41 @@ const success   = urlParams.get('success');
 const error     = urlParams.get('error');
 const formParam = urlParams.get('form');
 
+// When showing contact success
 if (success === 'contact') {
+<<<<<<< HEAD
     showForm('contact');
     const contactForm    = document.querySelector('.contact-form');
+=======
+    showForm('contact');  // This will now re-init validation
+    const contactForm = document.querySelector('.contact-form');
+>>>>>>> 7601500ab365b1aff109818bfca788b3934e5e0c
     const contactSuccess = document.getElementById('contact-success');
     if (contactForm)    contactForm.style.display = 'none';
     if (contactSuccess) contactSuccess.style.display = 'block';
 }
 
+// When showing suggestion success
 if (success === 'suggestion') {
+<<<<<<< HEAD
     showForm('suggestion');
     const suggestionForm    = document.querySelector('.suggestion-form');
+=======
+    showForm('suggestion');  // This will now re-init validation
+    const suggestionForm = document.querySelector('.suggestion-form');
+>>>>>>> 7601500ab365b1aff109818bfca788b3934e5e0c
     const suggestionSuccess = document.getElementById('suggestion-success');
     if (suggestionForm)    suggestionForm.style.display = 'none';
     if (suggestionSuccess) suggestionSuccess.style.display = 'block';
 }
+/* ============================================
+   HANDLE ERROR MESSAGES (reCAPTCHA)
+   ============================================ */
+const error = urlParams.get('error');
+const formType = urlParams.get('form');
 
 if (error === 'captcha') {
+<<<<<<< HEAD
     const optionsSection = document.querySelector('.contact-options-section');
     if (optionsSection) optionsSection.style.display = 'none';
 
@@ -434,3 +535,61 @@ if (error === 'captcha') {
 }
 
 }); // End DOMContentLoaded
+=======
+    // Hide options section
+    const optionsSection = document.querySelector('.contact-options-section');
+    if (optionsSection) optionsSection.style.display = 'none';
+    
+    if (formType === 'contact') {
+        // Show contact form
+        const contactSection = document.getElementById('contact-form-section');
+        if (contactSection) contactSection.style.display = 'block';
+        
+        // Create error box
+        const contactForm = document.querySelector('.contact-form');
+        if (contactForm) {
+            const errorBox = document.createElement('div');
+            errorBox.style.cssText = 'background:#ffe6e6; border:2px solid #c74b50; border-radius:8px; padding:15px; margin-bottom:20px; text-align:center; animation: shake 0.5s;';
+            errorBox.innerHTML = '<strong style="color:#c74b50; font-size:1rem;">⚠️ Please complete the "I\'m not a robot" verification before submitting.</strong>';
+            contactForm.insertBefore(errorBox, contactForm.firstChild);
+            
+            // Scroll to form
+            setTimeout(function() {
+                contactSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }, 100);
+            
+            // Remove after 6 seconds
+            setTimeout(function() {
+                errorBox.remove();
+                window.history.replaceState({}, document.title, 'contact.html');
+            }, 6000);
+        }
+    } else if (formType === 'suggestion') {
+        // Show suggestion form
+        const suggestionSection = document.getElementById('suggestion-form-section');
+        if (suggestionSection) suggestionSection.style.display = 'block';
+        
+        // Create error box
+        const suggestionForm = document.querySelector('.suggestion-form');
+        if (suggestionForm) {
+            const errorBox = document.createElement('div');
+            errorBox.style.cssText = 'background:#ffe6e6; border:2px solid #c74b50; border-radius:8px; padding:15px; margin-bottom:20px; text-align:center; animation: shake 0.5s;';
+            errorBox.innerHTML = '<strong style="color:#c74b50; font-size:1rem;">⚠️ Please complete the "I\'m not a robot" verification before submitting.</strong>';
+            suggestionForm.insertBefore(errorBox, suggestionForm.firstChild);
+            
+            // Scroll to form
+            setTimeout(function() {
+                suggestionSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }, 100);
+            
+            // Remove after 6 seconds
+            setTimeout(function() {
+                errorBox.remove();
+                window.history.replaceState({}, document.title, 'contact.html');
+            }, 6000);
+        }
+    }
+}
+
+}); // Closes DOMContentLoaded - THIS IS THE ONLY CLOSING BRACKET
+>>>>>>> 7601500ab365b1aff109818bfca788b3934e5e0c
