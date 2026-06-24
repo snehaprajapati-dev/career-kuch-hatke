@@ -1,10 +1,11 @@
-// ============================================
-// Wait for page to load before running code
-// ============================================
+// Global reCAPTCHA widget IDs
+window.contactRecaptchaWidget = undefined;
+window.suggestionRecaptchaWidget = undefined;
+
 document.addEventListener("DOMContentLoaded", function() {
 
 /* ============================================
-   THEME TOGGLE — Dark / Light Mode
+   THEME TOGGLE
    ============================================ */
 var toggleBtn = document.getElementById('themeToggle');
 var html = document.documentElement;
@@ -19,10 +20,8 @@ function applyTheme(theme) {
     }
 }
 
-// Apply saved theme on page load
 applyTheme(localStorage.getItem('ckh_theme') || 'light');
 
-// Toggle on click
 if (toggleBtn) {
     toggleBtn.addEventListener('click', function () {
         var next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
@@ -68,10 +67,8 @@ if (hamburger && navMenu) {
    ============================================ */
 const currentPage = window.location.pathname.split("/").pop() || "index.html";
 const navLinksActive = document.querySelectorAll(".nav-menu a");
-
 navLinksActive.forEach(link => {
-    const linkPage = link.getAttribute("href");
-    if (linkPage === currentPage) {
+    if (link.getAttribute("href") === currentPage) {
         link.classList.add("active");
     }
 });
@@ -80,7 +77,6 @@ navLinksActive.forEach(link => {
    CAREER FILTER & SEARCH - Explore Page
    ============================================ */
 if (document.querySelector('.filter-btn')) {
-
     const filterButtons = document.querySelectorAll('.filter-btn');
     const careerCards = document.querySelectorAll('.career-card');
     const searchInput = document.getElementById('career-search');
@@ -90,10 +86,8 @@ if (document.querySelector('.filter-btn')) {
         button.addEventListener('click', function() {
             filterButtons.forEach(btn => btn.classList.remove('active'));
             this.classList.add('active');
-
             const filterValue = this.getAttribute('data-filter');
             let visibleCount = 0;
-
             careerCards.forEach(card => {
                 const cardCategory = card.getAttribute('data-category');
                 if (filterValue === 'all' || cardCategory === filterValue) {
@@ -103,7 +97,6 @@ if (document.querySelector('.filter-btn')) {
                     card.style.display = 'none';
                 }
             });
-
             if (countSpan) countSpan.textContent = visibleCount;
         });
     });
@@ -112,7 +105,6 @@ if (document.querySelector('.filter-btn')) {
         searchInput.addEventListener('input', function() {
             const searchTerm = this.value.toLowerCase();
             let visibleCount = 0;
-
             careerCards.forEach(card => {
                 const careerName = card.querySelector('h3').textContent.toLowerCase();
                 if (careerName.includes(searchTerm)) {
@@ -122,13 +114,12 @@ if (document.querySelector('.filter-btn')) {
                     card.style.display = 'none';
                 }
             });
-
             countSpan.textContent = visibleCount;
         });
     }
 
-    const urlParams = new URLSearchParams(window.location.search);
-    const category = urlParams.get('category');
+    const urlParamsExplore = new URLSearchParams(window.location.search);
+    const category = urlParamsExplore.get('category');
     if (category) {
         const targetButton = document.querySelector(`.filter-btn[data-filter="${category}"]`);
         if (targetButton) targetButton.click();
@@ -139,7 +130,6 @@ if (document.querySelector('.filter-btn')) {
    QUIZ LOGIC
    ============================================ */
 if (document.querySelector('.question')) {
-
     const questions = document.querySelectorAll(".question");
     const nextBtn = document.getElementById("next-btn");
     const prevBtn = document.getElementById("prev-btn");
@@ -150,13 +140,10 @@ if (document.querySelector('.question')) {
 
     let currentQuestion = 0;
     const totalQuestions = questions.length;
-
     let scores = { creative: 0, tech: 0, science: 0, business: 0, unique: 0 };
 
     function showQuestion(index) {
-        questions.forEach((q, i) => {
-            q.style.display = i === index ? "block" : "none";
-        });
+        questions.forEach((q, i) => { q.style.display = i === index ? "block" : "none"; });
         if (currentText) currentText.textContent = index + 1;
         if (progressFill) progressFill.style.width = ((index + 1) / totalQuestions) * 100 + "%";
         if (prevBtn) prevBtn.style.display = index === 0 ? "none" : "inline-block";
@@ -166,32 +153,20 @@ if (document.querySelector('.question')) {
     if (nextBtn) {
         nextBtn.addEventListener("click", () => {
             const selected = questions[currentQuestion].querySelector("input:checked");
-            if (!selected) {
-                alert("Please select an option before continuing 😊");
-                return;
-            }
-            if (currentQuestion < totalQuestions - 1) {
-                currentQuestion++;
-                showQuestion(currentQuestion);
-            } else {
-                calculateResult();
-            }
+            if (!selected) { alert("Please select an option before continuing 😊"); return; }
+            if (currentQuestion < totalQuestions - 1) { currentQuestion++; showQuestion(currentQuestion); }
+            else { calculateResult(); }
         });
     }
-
     if (prevBtn) {
         prevBtn.addEventListener("click", () => {
-            if (currentQuestion > 0) {
-                currentQuestion--;
-                showQuestion(currentQuestion);
-            }
+            if (currentQuestion > 0) { currentQuestion--; showQuestion(currentQuestion); }
         });
     }
 
     function calculateResult() {
         scores = { creative: 0, tech: 0, science: 0, business: 0, unique: 0 };
-        const selectedAnswers = document.querySelectorAll("input[type='radio']:checked");
-        selectedAnswers.forEach(answer => {
+        document.querySelectorAll("input[type='radio']:checked").forEach(answer => {
             const category = answer.dataset.category;
             scores[category]++;
         });
@@ -208,7 +183,6 @@ if (document.querySelector('.question')) {
         if (quizSection) quizSection.style.display = "block";
         window.scrollTo({ top: 0, behavior: "smooth" });
     }
-
     window.resetQuiz = resetQuiz;
 
     function showResult(category) {
@@ -219,8 +193,8 @@ if (document.querySelector('.question')) {
 
         const resultMap = {
             creative: { title: "You are a Creative Mind 🎨", desc: "You thrive on imagination, aesthetics, and expression.", link: "creative" },
-            tech:     { title: "You are a Tech Explorer 💻",  desc: "You love solving problems using technology.",         link: "tech" },
-            science:  { title: "You are a Curious Scientist 🔬", desc: "You love discovering how the world works.",        link: "science" },
+            tech:     { title: "You are a Tech Explorer 💻",  desc: "You love solving problems using technology.", link: "tech" },
+            science:  { title: "You are a Curious Scientist 🔬", desc: "You love discovering how the world works.", link: "science" },
             business: { title: "You are a Business Strategist 💰", desc: "You think about growth, money, and smart decisions.", link: "business" },
             unique:   { title: "You are a Bold Adventurer 🎭", desc: "You love freedom, adventure, and unconventional paths.", link: "unique" }
         };
@@ -237,7 +211,6 @@ if (document.querySelector('.question')) {
             `;
         }
     }
-
     showQuestion(currentQuestion);
 }
 
@@ -253,40 +226,141 @@ function startQuiz() {
 window.startQuiz = startQuiz;
 
 /* ============================================
-   CONTACT PAGE - FORM TOGGLE & SUBMISSION
+   RECAPTCHA RENDERING
    ============================================ */
+
+window.onRecaptchaLoad = function() {
+    console.log('reCAPTCHA API loaded and ready');
+};
+
+function renderContactRecaptcha() {
+    if (typeof grecaptcha === 'undefined' || typeof grecaptcha.render !== 'function') {
+        console.log('grecaptcha not ready');
+        return;
+    }
+    var container = document.getElementById('recaptcha-contact');
+    if (!container) return;
+
+    // Already rendered — just reset it
+    if (window.contactRecaptchaWidget !== undefined && window.contactRecaptchaWidget !== null) {
+        try {
+            grecaptcha.reset(window.contactRecaptchaWidget);
+            console.log('Contact reCAPTCHA reset, ID:', window.contactRecaptchaWidget);
+        } catch(e) {
+            // If reset fails, force re-render
+            window.contactRecaptchaWidget = undefined;
+            container.innerHTML = '';
+            window.contactRecaptchaWidget = grecaptcha.render('recaptcha-contact', {
+                'sitekey': '6LerTgItAAAAAAGoMXY2M-csxr4o20ElcBXv4PDq'
+            });
+        }
+        return;
+    }
+
+    // First render
+    try {
+        window.contactRecaptchaWidget = grecaptcha.render('recaptcha-contact', {
+            'sitekey': '6LerTgItAAAAAAGoMXY2M-csxr4o20ElcBXv4PDq'
+        });
+        console.log('Contact reCAPTCHA rendered, ID:', window.contactRecaptchaWidget);
+    } catch(e) {
+        console.error('Error rendering contact reCAPTCHA:', e);
+    }
+}
+
+function renderSuggestionRecaptcha() {
+    if (typeof grecaptcha === 'undefined' || typeof grecaptcha.render !== 'function') {
+        console.log('grecaptcha not ready');
+        return;
+    }
+    var container = document.getElementById('recaptcha-suggestion');
+    if (!container) return;
+
+    // Already rendered — just reset it
+    if (window.suggestionRecaptchaWidget !== undefined && window.suggestionRecaptchaWidget !== null) {
+        try {
+            grecaptcha.reset(window.suggestionRecaptchaWidget);
+            console.log('Suggestion reCAPTCHA reset, ID:', window.suggestionRecaptchaWidget);
+        } catch(e) {
+            // If reset fails, force re-render
+            window.suggestionRecaptchaWidget = undefined;
+            container.innerHTML = '';
+            window.suggestionRecaptchaWidget = grecaptcha.render('recaptcha-suggestion', {
+                'sitekey': '6LerTgItAAAAAAGoMXY2M-csxr4o20ElcBXv4PDq'
+            });
+        }
+        return;
+    }
+
+    // First render
+    try {
+        window.suggestionRecaptchaWidget = grecaptcha.render('recaptcha-suggestion', {
+            'sitekey': '6LerTgItAAAAAAGoMXY2M-csxr4o20ElcBXv4PDq'
+        });
+        console.log('Suggestion reCAPTCHA rendered, ID:', window.suggestionRecaptchaWidget);
+    } catch(e) {
+        console.error('Error rendering suggestion reCAPTCHA:', e);
+    }
+}
+
+/* ============================================
+   CONTACT PAGE - FORM TOGGLE
+   ============================================ */
+
 function showForm(formType) {
-    const optionsSection = document.querySelector('.contact-options-section');
-    const contactSection = document.getElementById('contact-form-section');
+    const optionsSection   = document.querySelector('.contact-options-section');
+    const contactSection   = document.getElementById('contact-form-section');
     const suggestionSection = document.getElementById('suggestion-form-section');
 
     if (optionsSection) optionsSection.style.display = 'none';
+
     if (formType === 'contact') {
-        if (contactSection) contactSection.style.display = 'block';
+        if (contactSection)    contactSection.style.display = 'block';
         if (suggestionSection) suggestionSection.style.display = 'none';
+        setTimeout(function() {
+            renderContactRecaptcha();
+            if (window.initContactValidation) window.initContactValidation();
+        }, 200);
+
     } else if (formType === 'suggestion') {
         if (suggestionSection) suggestionSection.style.display = 'block';
-        if (contactSection) contactSection.style.display = 'none';
+        if (contactSection)    contactSection.style.display = 'none';
+        setTimeout(function() {
+            renderSuggestionRecaptcha();
+            if (window.initSuggestionValidation) window.initSuggestionValidation();
+        }, 200);
     }
+
     window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
 function hideForm() {
-    const optionsSection = document.querySelector('.contact-options-section');
-    const contactSection = document.getElementById('contact-form-section');
+    const optionsSection   = document.querySelector('.contact-options-section');
+    const contactSection   = document.getElementById('contact-form-section');
     const suggestionSection = document.getElementById('suggestion-form-section');
 
-    if (contactSection) contactSection.style.display = 'none';
+    if (contactSection)    contactSection.style.display = 'none';
     if (suggestionSection) suggestionSection.style.display = 'none';
-    if (optionsSection) optionsSection.style.display = 'block';
+    if (optionsSection)    optionsSection.style.display = 'block';
+
+    // Reset BOTH reCAPTCHAs so switching forms always works cleanly
+    if (typeof grecaptcha !== 'undefined') {
+        if (window.contactRecaptchaWidget !== undefined && window.contactRecaptchaWidget !== null) {
+            try { grecaptcha.reset(window.contactRecaptchaWidget); } catch(e) {}
+        }
+        if (window.suggestionRecaptchaWidget !== undefined && window.suggestionRecaptchaWidget !== null) {
+            try { grecaptcha.reset(window.suggestionRecaptchaWidget); } catch(e) {}
+        }
+    }
+
     window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
 function resetToOptions() {
-    const contactForm = document.querySelector('.contact-form');
+    const contactForm    = document.querySelector('.contact-form');
     const suggestionForm = document.querySelector('.suggestion-form');
 
-    if (contactForm) contactForm.reset();
+    if (contactForm)    contactForm.reset();
     if (suggestionForm) suggestionForm.reset();
 
     const cs = document.getElementById('contact-success');
@@ -294,37 +368,69 @@ function resetToOptions() {
     if (cs) cs.style.display = 'none';
     if (ss) ss.style.display = 'none';
 
-    if (contactForm) contactForm.style.display = 'block';
+    if (contactForm)    contactForm.style.display = 'block';
     if (suggestionForm) suggestionForm.style.display = 'block';
 
     hideForm();
 }
 
-window.showForm = showForm;
-window.hideForm = hideForm;
+window.showForm       = showForm;
+window.hideForm       = hideForm;
 window.resetToOptions = resetToOptions;
 
 /* ============================================
-   SHOW SUCCESS MESSAGE AFTER PHP REDIRECT
+   SUCCESS / ERROR HANDLING AFTER PHP REDIRECT
    ============================================ */
 const urlParams = new URLSearchParams(window.location.search);
-const success = urlParams.get('success');
+const success   = urlParams.get('success');
+const error     = urlParams.get('error');
+const formParam = urlParams.get('form');
 
 if (success === 'contact') {
     showForm('contact');
-    const contactForm = document.querySelector('.contact-form');
+    const contactForm    = document.querySelector('.contact-form');
     const contactSuccess = document.getElementById('contact-success');
-    if (contactForm) contactForm.style.display = 'none';
+    if (contactForm)    contactForm.style.display = 'none';
     if (contactSuccess) contactSuccess.style.display = 'block';
 }
 
 if (success === 'suggestion') {
     showForm('suggestion');
-    const suggestionForm = document.querySelector('.suggestion-form');
+    const suggestionForm    = document.querySelector('.suggestion-form');
     const suggestionSuccess = document.getElementById('suggestion-success');
-    if (suggestionForm) suggestionForm.style.display = 'none';
+    if (suggestionForm)    suggestionForm.style.display = 'none';
     if (suggestionSuccess) suggestionSuccess.style.display = 'block';
 }
 
-}); // Closes DOMContentLoaded
+if (error === 'captcha') {
+    const optionsSection = document.querySelector('.contact-options-section');
+    if (optionsSection) optionsSection.style.display = 'none';
 
+    var targetFormId = formParam === 'suggestion' ? 'suggestion-form-section' : 'contact-form-section';
+    var targetFormClass = formParam === 'suggestion' ? '.suggestion-form' : '.contact-form';
+
+    var targetSection = document.getElementById(targetFormId);
+    var targetForm    = document.querySelector(targetFormClass);
+
+    if (targetSection) targetSection.style.display = 'block';
+
+    if (formParam === 'suggestion') {
+        setTimeout(function() { renderSuggestionRecaptcha(); }, 200);
+    } else {
+        setTimeout(function() { renderContactRecaptcha(); }, 200);
+    }
+
+    if (targetForm) {
+        var errorBox = document.createElement('div');
+        errorBox.style.cssText = 'background:#ffe6e6;border:2px solid #c74b50;border-radius:8px;padding:15px;margin-bottom:20px;text-align:center;';
+        errorBox.innerHTML = '<strong style="color:#c74b50;">⚠️ Please complete the "I\'m not a robot" verification before submitting.</strong>';
+        targetForm.insertBefore(errorBox, targetForm.firstChild);
+        setTimeout(function() { errorBox.remove(); window.history.replaceState({}, document.title, 'contact.html'); }, 6000);
+    }
+
+    if (targetSection) {
+        setTimeout(function() { targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' }); }, 100);
+    }
+}
+
+}); // End DOMContentLoaded
