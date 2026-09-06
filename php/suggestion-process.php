@@ -1,7 +1,8 @@
 <?php
 // reCAPTCHA verification
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $recaptcha_secret = "6LerTgItAAAAADya6lD7V7wAv1Ohv7inijN-ELtc";
+    require_once('config.php');
+    $secret = RECAPTCHA_SECRET;
     $recaptcha_response = isset($_POST['g-recaptcha-response']) ? $_POST['g-recaptcha-response'] : '';
     
     if (empty($recaptcha_response)) {

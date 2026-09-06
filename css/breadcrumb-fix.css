@@ -1,0 +1,33 @@
+/* ============================================
+   FIXES - breadcrumb-fix.css
+   Add this file and link it in all HTML pages
+   ============================================ */
+
+/* Fix: Breadcrumb getting hidden behind fixed navbar on mobile.
+   The navbar is ~70px tall. We add padding-top to hero/header
+   sections only on mobile so breadcrumb is never covered.      */
+
+@media (max-width: 768px) {
+
+  /* About page hero */
+  .about-hero {
+    padding-top: 5.5rem !important;
+  }
+
+  /* Contact & Quiz page header */
+  .page-header {
+    padding-top: 5.5rem !important;
+  }
+
+  /* Career detail hero */
+  .career-hero {
+    padding-top: 5.5rem !important;
+  }
+
+  /* Breadcrumb text itself - make sure it's readable */
+  .breadcrumb-nav,
+  .breadcrumb {
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+  }
+}
