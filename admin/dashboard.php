@@ -4,7 +4,7 @@ if (!isset($_SESSION['admin_logged_in'])) {
     header("Location: login.php");
     exit();
 }
-require_once("../php/db_connect.php");
+require_once(__DIR__ . "/../php/db_connect.php");
 
 $contactCount     = mysqli_fetch_assoc(mysqli_query($conn, "SELECT COUNT(*) as total FROM contact_messages"))['total'];
 $suggestionCount  = mysqli_fetch_assoc(mysqli_query($conn, "SELECT COUNT(*) as total FROM career_suggestions"))['total'];

@@ -6,7 +6,7 @@ if (!isset($_SESSION['admin_logged_in'])) {
     exit();
 }
 
-require_once("../php/db_connect.php");
+require_once(__DIR__ . "/../php/db_connect.php");
 
 // Set headers to download file
 header('Content-Type: text/csv');

@@ -6,7 +6,7 @@ if (isset($_SESSION['admin_logged_in'])) {
     exit();
 }
 
-$hashed_password = "$2y$10$.cEo7MYgE05CcvvC3gVYdueIbeh4B.Rnj9pD4B/CEd5sRwECJPJ0y";
+$hashed_password = '$2y$10$q2l5OfcZ2znXPlMDLTGLVe1ZIiLLyefL7lWypqk5cKlJS86z7DVpW'; // Password: sneha@admin19
 $error = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
