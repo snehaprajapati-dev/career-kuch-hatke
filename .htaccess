@@ -1,55 +1,32 @@
-# Block access to .git folder
-<DirectoryMatch "^/.*/\.git/">
-    Order deny,allow
-    Deny from all
-</DirectoryMatch>
+# Block access to .git and hidden files/directories
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteRule (^|/)\.(git|github) - [F,L]
 
-# Block .git files
-<FilesMatch "^\.git">
-    Order allow,deny
-    Deny from all
-</FilesMatch>
+    # Force HTTPS only on production domains (exclude localhost / 127.0.0.1)
+    RewriteCond %{HTTP_HOST} !^(localhost|127\.0\.0\.1)(:\d+)?$ [NC]
+    RewriteCond %{HTTPS} off
+    RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+</IfModule>
 
-# Protect sensitive files
+# Protect sensitive file extensions
 <FilesMatch "\.(git|htaccess|htpasswd|ini|log|sh|sql|conf|bak|zip)$">
-    Order Allow,Deny
-    Deny from all
+    <IfModule mod_authz_core.c>
+        Require all denied
+    </IfModule>
+    <IfModule !mod_authz_core.c>
+        Order Allow,Deny
+        Deny from all
+    </IfModule>
 </FilesMatch>
 
-# Force HTTPS
-RewriteEngine On
-RewriteCond %{HTTPS} off
-RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
-
-# Security Headers
-<IfModule mod_headers.c>
-Header set X-Content-Type-Options "nosniff"
-Header set X-Frame-Options "SAMEORIGIN"
-Header set X-XSS-Protection "1; mode=block"
-Header set Referrer-Policy "strict-origin-when-cross-origin"
-</IfModule>
-
 # Prevent directory browsing
 Options -Indexes
 
-# Force HTTPS
-RewriteEngine On
-RewriteCond %{HTTPS} off
-RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
-
 # Security Headers
 <IfModule mod_headers.c>
-Header set X-Content-Type-Options "nosniff"
-Header set X-Frame-Options "SAMEORIGIN"
-Header set X-XSS-Protection "1; mode=block"
-Header set Referrer-Policy "strict-origin-when-cross-origin"
-</IfModule>
-
-# Prevent directory browsing
-Options -Indexes
-
-# Protect htaccess file
-<Files .htaccess>
-order allow,deny
-deny from all
-</Files>
+    Header set X-Content-Type-Options "nosniff"
+    Header set X-Frame-Options "SAMEORIGIN"
+    Header set X-XSS-Protection "1; mode=block"
+    Header set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>
