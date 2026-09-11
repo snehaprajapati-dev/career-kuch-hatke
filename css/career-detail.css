@@ -59,7 +59,7 @@
   font-weight: 700;
   letter-spacing: 0.5px;
   text-transform: uppercase;
-  font-family: 'Montserrat Alternates', sans-serif;
+  font-family: "Montserrat Alternates", sans-serif;
   margin-bottom: 1rem;
   background-color: rgba(255, 255, 255, 0.2);
   border: 2px solid var(--accent);
@@ -116,7 +116,7 @@
   display: block;
   font-size: 1.2rem;
   font-weight: 700;
-  font-family: 'Montserrat Alternates', sans-serif;
+  font-family: "Montserrat Alternates", sans-serif;
   color: var(--accent);
 }
 
@@ -175,7 +175,7 @@
   align-items: center;
   justify-content: center;
   font-weight: 700;
-  font-family: 'Montserrat Alternates', sans-serif;
+  font-family: "Montserrat Alternates", sans-serif;
   font-size: 1.2rem;
   flex-shrink: 0;
 }
@@ -242,7 +242,7 @@
   display: block;
   font-size: 1.5rem;
   font-weight: 700;
-  font-family: 'Montserrat Alternates', sans-serif;
+  font-family: "Montserrat Alternates", sans-serif;
   color: var(--primary);
 }
 
@@ -255,9 +255,10 @@
 
 .roadmap-step {
   display: flex;
-  align-items: start;
-  gap: 1rem;
-  padding: 1rem;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.35rem;
+  padding: 1rem 1.25rem;
   background-color: var(--bg-light);
   border-radius: 10px;
   border-left: 4px solid var(--secondary);
@@ -271,8 +272,15 @@
 
 .roadmap-step strong {
   color: var(--primary);
-  min-width: 100px;
   font-weight: 700;
+  font-size: 1.05rem;
+}
+
+.roadmap-step span {
+  color: var(--text-dark);
+  line-height: 1.6;
+  word-break: normal;
+  overflow-wrap: break-word;
 }
 
 /* Skills List */
@@ -485,7 +493,7 @@
 
 /* ✅ ADD ARROW INDICATOR */
 .card-header::after {
-  content: '▼';
+  content: "▼";
   margin-left: auto;
   font-size: 1.2rem;
   color: var(--primary);
@@ -528,7 +536,11 @@
 
 /* CTA Card */
 .cta-card {
-  background: linear-gradient(135deg, rgba(221, 168, 63, 0.15) 0%, rgba(103, 42, 63, 0.1) 100%);
+  background: linear-gradient(
+    135deg,
+    rgba(221, 168, 63, 0.15) 0%,
+    rgba(103, 42, 63, 0.1) 100%
+  );
   border-color: var(--accent);
   text-align: center;
 }
@@ -584,7 +596,7 @@
   background-color: var(--bg-light);
   border: 2px solid var(--primary);
   border-radius: 10px;
-  font-family: 'Montserrat Alternates', sans-serif;
+  font-family: "Montserrat Alternates", sans-serif;
   font-weight: 600;
   font-size: 1rem;
   color: var(--primary);
@@ -597,7 +609,6 @@
   color: var(--bg-white);
   transform: translateY(-3px);
 }
-
 
 /* ============================================
    HOVER EFFECTS
@@ -678,7 +689,7 @@
 
 /* Animated Arrow */
 .related-career-link small::after {
-  content: ' →';
+  content: " →";
   display: inline-block;
   transition: transform 0.3s ease;
 }
@@ -690,7 +701,9 @@
 /* All Cards Hover */
 .detail-card,
 .sidebar-card {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .detail-card:hover,
@@ -698,7 +711,6 @@
   transform: translateY(-5px);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
-
 
 /* ============================================
    RESPONSIVE - CAREER DETAIL PAGE
@@ -709,7 +721,7 @@
     grid-template-columns: 1fr 300px;
     gap: 2rem;
   }
-  
+
   .sidebar {
     top: 80px;
   }
@@ -719,42 +731,42 @@
   .career-hero {
     padding: 2rem 0 3rem 0;
   }
-  
+
   #career-name {
     font-size: 2rem !important;
   }
-  
+
   .career-tagline {
     font-size: 1.1rem !important;
   }
-  
+
   .quick-facts {
     grid-template-columns: 1fr;
     gap: 1rem;
   }
-  
+
   .details-grid {
     grid-template-columns: 1fr;
     gap: 2rem;
   }
-  
+
   .sidebar {
     position: static;
     order: 2;
   }
-  
+
   .detail-card {
     padding: 1.5rem;
   }
-  
+
   .card-header h2 {
     font-size: 1.4rem;
   }
-  
+
   .salary-grid {
     grid-template-columns: 1fr;
   }
-  
+
   .skills-list {
     grid-template-columns: 1fr;
   }
@@ -764,36 +776,36 @@
   .career-hero {
     padding: 1.5rem 0 2rem 0;
   }
-  
+
   #career-name {
     font-size: 1.6rem !important;
   }
-  
+
   .career-tagline {
     font-size: 1rem !important;
   }
-  
+
   .detail-card {
     padding: 1.2rem;
     border-width: 2px;
   }
-  
+
   .card-header {
     flex-direction: column;
     align-items: start;
     gap: 0.5rem;
   }
-  
+
   .card-number {
     width: 35px;
     height: 35px;
     font-size: 1rem;
   }
-  
+
   .card-header h2 {
     font-size: 1.2rem;
   }
-  
+
   .sidebar-card {
     padding: 1.5rem;
   }
@@ -807,7 +819,7 @@
     grid-template-columns: 1fr 300px;
     gap: 2rem;
   }
-  
+
   .sidebar {
     top: 80px;
   }
@@ -817,67 +829,80 @@
   .career-hero {
     padding: 2rem 0 3rem 0;
   }
-  
+
   #career-name {
     font-size: 2rem !important;
-    word-break: break-word; /* ✅ Prevent overflow */
+    overflow-wrap: break-word;
   }
-  
+
   .career-tagline {
     font-size: 1.1rem !important;
   }
-  
+
   .quick-facts {
     grid-template-columns: 1fr;
     gap: 1rem;
   }
-  
+
   .details-grid {
     grid-template-columns: 1fr;
-    gap: 2rem;
-    padding: 0 1rem; /* ✅ Add padding */
+    gap: 1.5rem;
+    padding: 0;
   }
-  
+
   .sidebar {
     position: static;
     order: 2;
   }
-  
+
   .detail-card {
-    padding: 1.5rem;
-    width: 100%; /* ✅ Prevent overflow */
-    max-width: 100%; /* ✅ Stay within bounds */
+    padding: 0 !important;
+    width: 100%;
+    max-width: 100%;
+    border-radius: 14px;
   }
-  
+
+  .detail-card .card-header {
+    padding: 1.1rem 1.25rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.85rem;
+  }
+
   .card-header h2 {
-    font-size: 1.4rem;
-    word-break: break-word; /* ✅ Prevent text overflow */
+    font-size: 1.3rem;
+    overflow-wrap: break-word;
+    flex: 1;
   }
-  
+
   .card-content p,
   .card-content div,
   .card-content span {
-    word-break: break-word; /* ✅ Prevent all text overflow */
+    word-break: normal;
     overflow-wrap: break-word;
   }
-  
+
+  .detail-card.active .card-content {
+    padding: 1.25rem 1rem;
+  }
+
   .salary-grid {
     grid-template-columns: 1fr;
   }
-  
+
   .skills-list {
     grid-template-columns: 1fr;
   }
-  
-  /* ✅ Fix sidebar cards on mobile */
+
   .sidebar-card {
     width: 100%;
     max-width: 100%;
     padding: 1.5rem;
   }
-  
+
   .related-career-link {
-    word-break: break-word;
+    overflow-wrap: break-word;
   }
 }
 
@@ -885,62 +910,86 @@
   .career-hero {
     padding: 1.5rem 0 2rem 0;
   }
-  
+
   #career-name {
     font-size: 1.6rem !important;
-    word-break: break-word; /* ✅ Prevent overflow */
-  }
-  
-  .career-tagline {
-    font-size: 1rem !important;
-  }
-  
-  .detail-card {
-    padding: 1.2rem;
-    border-width: 2px;
-    width: 100%; /* ✅ Prevent overflow */
-  }
-  
-  .card-header {
-    flex-direction: column;
-    align-items: start;
-    gap: 0.5rem;
-  }
-  
-  .card-number {
-    width: 35px;
-    height: 35px;
-    font-size: 1rem;
-  }
-  
-  .card-header h2 {
-    font-size: 1.2rem;
-    word-break: break-word; /* ✅ Prevent text overflow */
-  }
-  
-  .sidebar-card {
-    padding: 1.5rem;
-    width: 100%; /* ✅ Prevent overflow */
-  }
-  
-  /* ✅ Prevent all content from overflowing */
-  .career-details .container {
-    padding: 0 1rem;
-  }
-}
-  
-  .card-content p,
-  .card-content div,
-  .card-content span,
-  .roadmap-step,
-  .skill-item,
-  .work-item,
-  .resource-category,
-  .for-you-item {
-    word-break: break-word;
     overflow-wrap: break-word;
   }
 
+  .career-tagline {
+    font-size: 1rem !important;
+  }
+
+  .detail-card {
+    padding: 0 !important;
+    border-width: 2px;
+    width: 100%;
+    border-radius: 12px;
+  }
+
+  .detail-card .card-header {
+    flex-direction: row;
+    align-items: center;
+    padding: 0.9rem 1rem;
+    gap: 0.75rem;
+  }
+
+  .card-number {
+    width: 34px;
+    height: 34px;
+    font-size: 0.95rem;
+    flex-shrink: 0;
+  }
+
+  .card-header h2 {
+    font-size: 1.15rem;
+    overflow-wrap: break-word;
+    flex: 1;
+  }
+
+  .card-header::after {
+    font-size: 0.9rem;
+    margin-left: auto;
+  }
+
+  .detail-card.active .card-content {
+    padding: 1rem 0.85rem;
+  }
+
+  .roadmap-step {
+    padding: 0.85rem;
+    gap: 0.3rem;
+  }
+
+  .roadmap-step strong {
+    font-size: 0.95rem;
+  }
+
+  .roadmap-step span {
+    font-size: 0.9rem;
+  }
+
+  .sidebar-card {
+    padding: 1.2rem;
+    width: 100%;
+  }
+
+  .career-details .container {
+    padding: 0 0.75rem;
+  }
+}
+
+.card-content p,
+.card-content div,
+.card-content span,
+.roadmap-step,
+.skill-item,
+.work-item,
+.resource-category,
+.for-you-item {
+  word-break: normal;
+  overflow-wrap: break-word;
+}
 
 /* ============================================
    HOVER EFFECTS FOR SIDEBAR LINKS
@@ -965,8 +1014,7 @@
   box-shadow: 0 8px 20px rgba(255, 107, 107, 0.3);
 }
 
-.related-career-link strong
- {
+.related-career-link strong {
   display: block;
   font-size: 1.1rem;
   margin-bottom: 0.5rem;
@@ -974,13 +1022,11 @@
   transition: color 0.3s ease;
 }
 
-.related-career-link:hover strong
- {
+.related-career-link:hover strong {
   color: #ff6b6b;
 }
 
-.related-career-link small 
-{
+.related-career-link small {
   color: #7f8c8d;
   font-size: 0.9rem;
   transition: all 0.3s ease;
@@ -993,13 +1039,12 @@
   display: inline-block;
 }
 
-
 /* ============================================
    ANIMATED ARROW ON HOVER
    ============================================ */
 
 .related-career-link small::after {
-  content: ' →';
+  content: " →";
   display: inline-block;
   transition: transform 0.3s ease;
 }
@@ -1008,14 +1053,15 @@
   transform: translateX(5px);
 }
 
-
 /* ============================================
    SMOOTH CARD HOVER (BONUS)
    ============================================ */
 
 .detail-card,
 .sidebar-card {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .detail-card:hover,
