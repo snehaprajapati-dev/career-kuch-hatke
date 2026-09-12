@@ -39,8 +39,8 @@ $result = mysqli_query($conn, "SELECT * FROM career_suggestions $whereClause ORD
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Career Suggestions - Admin</title>
     <script>(function(){ var s=localStorage.getItem('ckh_theme'); if(s==='dark') document.documentElement.setAttribute('data-theme','dark'); })();</script>
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/admin.css">
+    <link rel="stylesheet" href="../css/style.css?v=3.5">
+    <link rel="stylesheet" href="../css/admin.css?v=3.5">
 </head>
 <body>
 

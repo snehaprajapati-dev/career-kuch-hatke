@@ -5,6 +5,10 @@ $currentPage = basename($_SERVER['PHP_SELF']);
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@400;600;700;800&family=Tenor+Sans&display=swap" rel="stylesheet">
+<link rel="shortcut icon" type="image/x-icon" href="../favicon.ico?v=3.5">
+<link rel="icon" type="image/x-icon" href="../favicon.ico?v=3.5">
+<link rel="icon" type="image/png" sizes="32x32" href="../images/logo-navbar-light.png?v=3.5">
+<link rel="apple-touch-icon" href="../images/logo-navbar-light.png?v=3.5">
 
 <script>
 (function(){
@@ -14,11 +18,15 @@ $currentPage = basename($_SERVER['PHP_SELF']);
 })();
 </script>
 
+<link rel="stylesheet" href="../css/logo-fix.css?v=3.5">
+
 <nav class="admin-navbar">
     <div class="admin-navbar-inner">
 
         <a href="dashboard.php" class="admin-brand">
-            🔐 Career Kuch Hatke
+            <img src="../images/logo-navbar-light.png" alt="Career Kuch Hatke Logo" class="logo-img logo-img-light">
+            <img src="../images/logo-navbar-dark.png" alt="Career Kuch Hatke Logo" class="logo-img logo-img-dark">
+            Career Kuch Hatke
             <span class="brand-badge">Admin</span>
         </a>
 

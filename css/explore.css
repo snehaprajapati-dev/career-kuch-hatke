@@ -18,7 +18,7 @@
   padding: 1rem 1.5rem;
   border: 2px solid var(--primary);
   border-radius: 50px;
-  font-family: 'Tenor Sans', sans-serif;
+  font-family: "Tenor Sans", sans-serif;
   font-size: 1rem;
   transition: all 0.3s ease;
   background-color: var(--bg-white);
@@ -57,7 +57,7 @@
 .filter-btn {
   padding: 0.8rem 1.8rem;
   border-radius: 50px;
-  font-family: 'Montserrat Alternates', sans-serif;
+  font-family: "Montserrat Alternates", sans-serif;
   font-weight: 600;
   font-size: 0.95rem;
   cursor: pointer;
@@ -79,13 +79,11 @@
   border: 2px solid transparent;
 }
 
-
 button.filter-btn[data-filter="all"] {
-  background-color: #ffe8e3;   /* soft peach */
-  border-color: #f5b7a8;       /* warm peach border */
-  color: #c25b5e;              /* deeper peach text */
+  background-color: #ffe8e3; /* soft peach */
+  border-color: #f5b7a8; /* warm peach border */
+  color: #c25b5e; /* deeper peach text */
 }
-
 
 button.filter-btn[data-filter="all"]:hover {
   background-color: #f5b7a8;
@@ -127,7 +125,11 @@ button.filter-btn[data-filter="tech"]:hover {
 }
 
 button.filter-btn[data-filter="tech"].active {
-  background: linear-gradient(135deg, var(--secondary) 0%, #3d6860 100%) !important;
+  background: linear-gradient(
+    135deg,
+    var(--secondary) 0%,
+    #3d6860 100%
+  ) !important;
   color: var(--bg-white) !important;
   border-color: var(--secondary) !important;
   box-shadow: 0 4px 15px rgba(43, 71, 67, 0.4) !important;
@@ -145,7 +147,11 @@ button.filter-btn[data-filter="science"]:hover {
 }
 
 button.filter-btn[data-filter="science"].active {
-  background: linear-gradient(135deg, var(--primary) 0%, #8a3a55 100%) !important;
+  background: linear-gradient(
+    135deg,
+    var(--primary) 0%,
+    #8a3a55 100%
+  ) !important;
   color: var(--bg-white) !important;
   border-color: var(--primary) !important;
   box-shadow: 0 4px 15px rgba(103, 42, 63, 0.4) !important;
@@ -207,11 +213,12 @@ button.filter-btn[data-filter="unique"].active {
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
   width: 100%;
+  align-items: stretch;
 }
 
 .career-card {
   background-color: var(--bg-white);
-  padding: 2rem;
+  padding: 2rem 1.8rem;
   border-radius: 16px;
   border: 3px solid var(--pink-light);
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
@@ -221,6 +228,9 @@ button.filter-btn[data-filter="unique"].active {
   cursor: pointer;
   position: relative;
   z-index: 1;
+  height: 100%;
+  min-height: 420px;
+  box-sizing: border-box;
 }
 
 .career-card:hover {
@@ -242,7 +252,7 @@ button.filter-btn[data-filter="unique"].active {
   font-weight: 700;
   letter-spacing: 0.5px;
   text-transform: uppercase;
-  font-family: 'Montserrat Alternates', sans-serif;
+  font-family: "Montserrat Alternates", sans-serif;
 }
 
 .category-badge.creative {
@@ -276,20 +286,24 @@ button.filter-btn[data-filter="unique"].active {
 }
 
 .career-card h3 {
-  font-size: 1.5rem;
+  font-size: 1.35rem;
   color: var(--primary);
   margin-bottom: 0.8rem;
-  line-height: 1.3;
+  line-height: 1.35;
+  min-height: 3.7rem;
+  display: flex;
+  align-items: flex-start;
   word-wrap: break-word;
 }
 
 .career-card .tagline {
   color: var(--text-gray);
   font-size: 0.95rem;
-  line-height: 1.6;
+  line-height: 1.55;
   margin-bottom: 1.2rem;
   font-style: italic;
   flex-grow: 1;
+  min-height: 4.4rem;
   word-wrap: break-word;
 }
 
@@ -297,29 +311,50 @@ button.filter-btn[data-filter="unique"].active {
   font-size: 1.1rem;
   font-weight: 700;
   color: var(--primary);
+  margin-top: auto;
   margin-bottom: 1.2rem;
-  font-family: 'Montserrat Alternates', sans-serif;
+  font-family: "Montserrat Alternates", sans-serif;
 }
 
 .card-btn {
   display: block;
   text-align: center;
-  padding: 0.9rem 1.5rem;
-  background: linear-gradient(135deg, var(--accent) 0%, #f0c050 100%);
-  color: var(--text-dark);
+  padding: 0.85rem 1.5rem;
+  background: linear-gradient(135deg, #dda83f 0%, #c4922b 100%);
+  color: #1a1a1a !important;
   font-weight: 700;
-  font-family: 'Montserrat Alternates', sans-serif;
+  font-family: "Montserrat Alternates", sans-serif;
   border-radius: 8px;
   text-decoration: none;
   transition: all 0.3s ease;
-  box-shadow: 0 3px 10px rgba(221, 168, 63, 0.3);
+  box-shadow: 0 3px 10px rgba(221, 168, 63, 0.25);
+  margin-top: 0;
 }
 
 .card-btn:hover {
-  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-  color: var(--bg-white);
+  background: linear-gradient(135deg, var(--primary) 0%, #853350 100%);
+  color: #ffffff !important;
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(103, 42, 63, 0.4);
+  box-shadow: 0 6px 20px rgba(103, 42, 63, 0.35);
+}
+
+/* 🌙 Dark Mode Card Button */
+[data-theme="dark"] .card-btn,
+[data-theme="dark"] .career-card .card-btn {
+  background: linear-gradient(135deg, #9b59b6 0%, #672a3f 100%) !important;
+  color: #ffffff !important;
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  box-shadow: 0 4px 15px rgba(155, 89, 182, 0.35) !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="dark"] .card-btn:hover,
+[data-theme="dark"] .career-card .card-btn:hover {
+  background: linear-gradient(135deg, #b06cc9 0%, #7d334e 100%) !important;
+  color: #ffffff !important;
+  border-color: rgba(255, 255, 255, 0.35) !important;
+  box-shadow: 0 6px 20px rgba(155, 89, 182, 0.55) !important;
+  transform: translateY(-2px);
 }
 
 .career-card.hidden {
@@ -334,6 +369,17 @@ button.filter-btn[data-filter="unique"].active {
   .career-grid {
     grid-template-columns: repeat(3, 1fr);
     gap: 1.5rem;
+    align-items: stretch;
+  }
+
+  .career-card {
+    min-height: 440px;
+    padding: 1.75rem 1.4rem;
+  }
+
+  .career-card h3 {
+    font-size: 1.25rem;
+    min-height: 3.5rem;
   }
 }
 
@@ -342,63 +388,67 @@ button.filter-btn[data-filter="unique"].active {
   .page-header {
     padding: 3rem 1.5rem !important;
   }
-  
+
   .page-header h1 {
     font-size: 2rem !important;
   }
-  
+
   .page-header p {
     font-size: 1rem !important;
   }
-  
+
   /* Filters */
   .filters {
     padding: 2rem 0;
   }
-  
+
   .search-box input {
     padding: 0.9rem 1.2rem;
     font-size: 0.95rem;
   }
-  
+
   .filter-buttons {
     gap: 0.7rem;
   }
-  
+
   .filter-btn {
     padding: 0.6rem 1rem !important;
     font-size: 0.85rem !important;
   }
-  
+
   /* Career cards - 2 columns on tablet */
   .career-grid {
     grid-template-columns: repeat(2, 1fr) !important;
     gap: 1.5rem;
     padding: 0 1rem; /* ✅ Prevent overflow */
+    align-items: stretch;
   }
-  
+
   .career-grid .career-card:last-child:nth-child(odd) {
     grid-column: 1 / 3;
     max-width: 350px;
     margin: 0 auto;
   }
-  
+
   .career-card {
     padding: 1.5rem;
     width: 100%; /* ✅ Prevent overflow */
     max-width: 100%; /* ✅ Stay within bounds */
+    min-height: 400px;
   }
-  
+
   .career-card h3 {
     font-size: 1.2rem;
+    min-height: 3.2rem;
     word-break: break-word; /* ✅ Prevent long words from breaking layout */
   }
-  
+
   .career-card .tagline {
     font-size: 0.9rem;
+    min-height: 4rem;
     word-break: break-word;
   }
-  
+
   .career-card .salary {
     font-size: 1rem;
   }
@@ -409,39 +459,39 @@ button.filter-btn[data-filter="unique"].active {
     font-size: 1.8rem !important;
     line-height: 1.3 !important;
   }
-  
+
   .page-header p {
     font-size: 0.95rem !important;
   }
-  
+
   /* Career cards - 1 column on phone */
   .career-grid {
     grid-template-columns: 1fr !important;
     gap: 1.5rem;
     padding: 0 1rem; /* ✅ Prevent overflow */
   }
-  
+
   .career-grid .career-card:last-child {
     grid-column: 1 / 2 !important;
     max-width: 100% !important;
     margin: 0 !important;
   }
-  
+
   .career-card {
     padding: 1.5rem;
     width: 100%; /* ✅ Prevent overflow */
     max-width: 100%; /* ✅ Ensure it stays within bounds */
   }
-  
+
   .career-card h3 {
     font-size: 1.1rem;
   }
-  
+
   .filter-buttons {
     flex-direction: column;
     align-items: stretch;
   }
-  
+
   .filter-btn {
     width: 100% !important;
     max-width: 300px !important;
@@ -472,7 +522,6 @@ button.filter-btn[data-filter="unique"].active {
   color: var(--bg-white);
   transform: translateY(-3px);
 }
-
 
 /* ✅ Center last card on desktop when odd number */
 @media (min-width: 769px) {
