@@ -1,0 +1,51 @@
+/* ============================================
+   CAREER KUCH HATKE - LOGO FIX
+   Controls navbar logo display & theme switching
+   ============================================ */
+
+.logo {
+  display: flex !important;
+  align-items: center !important;
+  gap: 0.6rem !important;
+  text-decoration: none;
+}
+
+.logo-img {
+  width: 38px !important;
+  height: 38px !important;
+  border-radius: 50% !important;
+  object-fit: contain !important;
+  vertical-align: middle;
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+}
+
+.logo:hover .logo-img {
+  transform: rotate(15deg) scale(1.05);
+}
+
+/* Light mode: show light logo, hide dark logo */
+.logo-img-light {
+  display: inline-block !important;
+}
+
+.logo-img-dark {
+  display: none !important;
+}
+
+/* Dark mode: hide light logo, show dark logo */
+[data-theme="dark"] .logo-img-light {
+  display: none !important;
+}
+
+[data-theme="dark"] .logo-img-dark {
+  display: inline-block !important;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .logo-img {
+    width: 32px !important;
+    height: 32px !important;
+  }
+}

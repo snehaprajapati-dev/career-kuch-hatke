@@ -220,40 +220,178 @@ document.addEventListener("DOMContentLoaded", function () {
       const resultMap = {
         creative: {
           title: "You are a Creative Mind 🎨",
-          desc: "You thrive on imagination, aesthetics, and expression.",
+          desc: "You thrive on imagination, aesthetics, and expression. You see possibilities where others see ordinary objects.",
           link: "creative",
+          strengths: [
+            "Visual Storytelling",
+            "Aesthetic Sense",
+            "Innovation",
+            "Originality",
+          ],
+          careers: [
+            {
+              title: "UX/UI Designer",
+              salary: "₹3-15 LPA",
+              link: "ui-ux-designer",
+            },
+            {
+              title: "Food Stylist",
+              salary: "₹3-12 LPA",
+              link: "food-stylist",
+            },
+            {
+              title: "Voice Over Artist",
+              salary: "₹2-20 LPA",
+              link: "voice-over-artist",
+            },
+          ],
         },
         tech: {
           title: "You are a Tech Explorer 💻",
-          desc: "You love solving problems using technology.",
+          desc: "You love solving problems using technology, code, and systems. You turn complex challenges into smart solutions.",
           link: "tech",
+          strengths: [
+            "Problem Solving",
+            "Tech Savvy",
+            "Logical Thinking",
+            "Digital Creation",
+          ],
+          careers: [
+            {
+              title: "AI Prompt Engineer",
+              salary: "₹4-18 LPA",
+              link: "ai-prompt-engineer",
+            },
+            {
+              title: "Ethical Hacker",
+              salary: "₹3.5-15 LPA",
+              link: "ethical-hacker",
+            },
+            {
+              title: "Game Developer",
+              salary: "₹3-15 LPA",
+              link: "game-developer",
+            },
+          ],
         },
         science: {
           title: "You are a Curious Scientist 🔬",
-          desc: "You love discovering how the world works.",
+          desc: "You love discovering how the world works, asking 'why', and finding patterns in nature and data.",
           link: "science",
+          strengths: [
+            "Analytical Mind",
+            "Curiosity",
+            "Research & Discovery",
+            "Systems Thinking",
+          ],
+          careers: [
+            {
+              title: "Forensic Scientist",
+              salary: "₹3-10 LPA",
+              link: "forensic-scientist",
+            },
+            {
+              title: "Oceanographer",
+              salary: "₹4-16 LPA",
+              link: "oceanographer",
+            },
+            {
+              title: "Restoration Architect",
+              salary: "₹4-18 LPA",
+              link: "restoration-architect",
+            },
+          ],
         },
         business: {
           title: "You are a Business Strategist 💰",
-          desc: "You think about growth, money, and smart decisions.",
+          desc: "You think about growth, money, and smart decisions. You identify value, connect people, and build ventures.",
           link: "business",
+          strengths: [
+            "Growth Strategy",
+            "Deal Making",
+            "Market Vision",
+            "Wealth Building",
+          ],
+          careers: [
+            {
+              title: "Ethical Investment Advisor",
+              salary: "₹5-20 LPA",
+              link: "ethical-investment-advisor",
+            },
+            {
+              title: "Sports Agent",
+              salary: "₹5-25 LPA",
+              link: "sports-agent",
+            },
+            {
+              title: "Social Media Manager",
+              salary: "₹2.5-10 LPA",
+              link: "social-media-manager",
+            },
+          ],
         },
         unique: {
           title: "You are a Bold Adventurer 🎭",
-          desc: "You love freedom, adventure, and unconventional paths.",
+          desc: "You love freedom, adventure, and unconventional paths. You follow your passions rather than standard formulas.",
           link: "unique",
+          strengths: [
+            "Risk Taking",
+            "Non-conformist",
+            "Exploration",
+            "Live Impact",
+          ],
+          careers: [
+            {
+              title: "Podcast Producer",
+              salary: "₹3-12 LPA",
+              link: "podcast-producer",
+            },
+            {
+              title: "Pet Therapist",
+              salary: "₹2-8 LPA",
+              link: "pet-therapist",
+            },
+            {
+              title: "Adventure Sports Instructor",
+              salary: "₹2.5-10 LPA",
+              link: "adventure-sports-instructor",
+            },
+          ],
         },
       };
 
       const r = resultMap[category] || resultMap["unique"];
       if (resultContent) {
         resultContent.innerHTML = `
-                <h3>${r.title}</h3>
-                <p>${r.desc}</p>
-                <div class="career-suggestions">
-                    <a href="explore.html?category=${r.link}">Explore ${r.link.charAt(0).toUpperCase() + r.link.slice(1)} Careers →</a>
+                <div class="result-badge">🎉 100% Career Personality Match</div>
+                <h3 class="result-title">${r.title}</h3>
+                <p class="result-desc">${r.desc}</p>
+                
+                <div class="result-strengths">
+                  ${r.strengths.map((s) => `<span class="strength-tag">${s}</span>`).join("")}
                 </div>
-                <button class="retake-btn" onclick="resetQuiz()">Retake Quiz</button>
+
+                <div class="result-recommendations">
+                  <h4>Top Hatke Careers Recommended For You:</h4>
+                  <div class="recommendation-cards">
+                    ${r.careers
+                      .map(
+                        (c) => `
+                      <a href="career-detail.html?career=${c.link}" class="recom-card">
+                        <div class="recom-title">${c.title}</div>
+                        <div class="recom-salary">${c.salary}</div>
+                        <span class="recom-arrow">View Career →</span>
+                      </a>
+                    `,
+                      )
+                      .join("")}
+                  </div>
+                </div>
+
+                <div class="result-actions">
+                  <a href="explore.html?category=${r.link}" class="result-primary-btn">Explore All ${r.link.charAt(0).toUpperCase() + r.link.slice(1)} Careers →</a>
+                  <button class="retake-btn" onclick="resetQuiz()">🔄 Retake Quiz</button>
+                </div>
             `;
       }
     }
@@ -276,11 +414,39 @@ document.addEventListener("DOMContentLoaded", function () {
    ============================================ */
   const RECAPTCHA_SITE_KEY = "6LcK1astAAAAAIdOqDv1TNZiuCJtC4Rx8xABPKRn";
 
+  const isLocalhost =
+    window.location.hostname === "localhost" ||
+    window.location.hostname === "127.0.0.1" ||
+    window.location.hostname === "";
+
   window.onRecaptchaLoad = function () {
     console.log("reCAPTCHA API loaded and ready");
   };
 
   function renderContactRecaptcha() {
+    var container = document.getElementById("recaptcha-contact");
+    if (!container) return;
+
+    // On localhost, bypass Google reCAPTCHA to prevent domain error
+    if (isLocalhost) {
+      container.innerHTML = `
+        <div style="display:flex; align-items:center; gap:12px; padding:12px 16px; border:2px dashed var(--accent); border-radius:12px; background:rgba(221,168,63,0.1); margin:0.5rem 0;">
+          <span style="font-size:1.4rem;">🛡️</span>
+          <div>
+            <div style="font-size:0.92rem; font-weight:700; color:var(--primary);">Localhost Development Mode</div>
+            <div style="font-size:0.82rem; color:var(--text-gray);">reCAPTCHA domain check bypassed for local testing</div>
+          </div>
+          <input type="hidden" name="g-recaptcha-response" value="localhost-dev-bypass" />
+        </div>
+      `;
+      var err = document.getElementById("recaptcha-error-contact");
+      if (err) {
+        err.textContent = "";
+        err.style.display = "none";
+      }
+      return;
+    }
+
     if (
       typeof grecaptcha === "undefined" ||
       typeof grecaptcha.render !== "function"
@@ -288,8 +454,6 @@ document.addEventListener("DOMContentLoaded", function () {
       console.log("grecaptcha not ready");
       return;
     }
-    var container = document.getElementById("recaptcha-contact");
-    if (!container) return;
 
     // Already rendered — just reset it
     if (
@@ -328,6 +492,29 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function renderSuggestionRecaptcha() {
+    var container = document.getElementById("recaptcha-suggestion");
+    if (!container) return;
+
+    // On localhost, bypass Google reCAPTCHA to prevent domain error
+    if (isLocalhost) {
+      container.innerHTML = `
+        <div style="display:flex; align-items:center; gap:12px; padding:12px 16px; border:2px dashed var(--accent); border-radius:12px; background:rgba(221,168,63,0.1); margin:0.5rem 0;">
+          <span style="font-size:1.4rem;">🛡️</span>
+          <div>
+            <div style="font-size:0.92rem; font-weight:700; color:var(--primary);">Localhost Development Mode</div>
+            <div style="font-size:0.82rem; color:var(--text-gray);">reCAPTCHA domain check bypassed for local testing</div>
+          </div>
+          <input type="hidden" name="g-recaptcha-response" value="localhost-dev-bypass" />
+        </div>
+      `;
+      var err = document.getElementById("recaptcha-error-suggestion");
+      if (err) {
+        err.textContent = "";
+        err.style.display = "none";
+      }
+      return;
+    }
+
     if (
       typeof grecaptcha === "undefined" ||
       typeof grecaptcha.render !== "function"
@@ -335,8 +522,6 @@ document.addEventListener("DOMContentLoaded", function () {
       console.log("grecaptcha not ready");
       return;
     }
-    var container = document.getElementById("recaptcha-suggestion");
-    if (!container) return;
 
     // Already rendered — just reset it
     if (
