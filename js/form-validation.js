@@ -321,6 +321,12 @@
         }
       } else {
         if (banner) banner.classList.remove("visible");
+        var btn = form.querySelector('button[type="submit"]');
+        if (btn && !btn.classList.contains("btn-loading")) {
+          btn.classList.add("btn-loading");
+          btn.innerHTML =
+            '<span class="btn-spinner"></span> Sending Message...';
+        }
       }
     });
   }
@@ -387,6 +393,12 @@
         }
       } else {
         if (banner) banner.classList.remove("visible");
+        var btn = form.querySelector('button[type="submit"]');
+        if (btn && !btn.classList.contains("btn-loading")) {
+          btn.classList.add("btn-loading");
+          btn.innerHTML =
+            '<span class="btn-spinner"></span> Submitting Suggestion...';
+        }
       }
     });
   }

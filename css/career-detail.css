@@ -68,9 +68,71 @@
 
 #career-name {
   font-size: 3rem;
-  color: var(--bg-white);
+  color: var(--accent);
   margin-bottom: 1rem;
+  font-family: "Montserrat Alternates", sans-serif;
+  font-weight: 800;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* 🌙 Dark Mode Career Hero - Matches other page headers */
+[data-theme="dark"] .career-hero {
+  background: linear-gradient(
+    135deg,
+    #3b1d6b 0%,
+    #1a0e35 50%,
+    #0f1a2e 100%
+  ) !important;
+  border-bottom: 2px solid #9b59b6 !important;
+  color: #ede8f5;
+}
+
+[data-theme="dark"] #career-name {
+  color: #ffe0a0 !important;
+  text-shadow: 0 2px 12px rgba(155, 89, 182, 0.4);
+}
+
+[data-theme="dark"] .career-tagline {
+  color: #ede8f5;
+  opacity: 0.92;
+}
+
+[data-theme="dark"] .quick-facts .fact {
+  background-color: rgba(26, 17, 48, 0.65) !important;
+  border: 1px solid #3d2b6b !important;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
+}
+
+[data-theme="dark"] .quick-facts .fact:hover {
+  background-color: rgba(45, 26, 74, 0.8) !important;
+  border-color: #9b59b6 !important;
+  box-shadow: 0 8px 25px rgba(155, 89, 182, 0.35) !important;
+  transform: translateY(-4px);
+}
+
+[data-theme="dark"] .fact-label {
+  color: #a89bc2 !important;
+}
+
+[data-theme="dark"] .fact-value {
+  color: #ffe0a0 !important;
+  font-weight: 700;
+}
+
+[data-theme="dark"] .breadcrumb {
+  border-bottom: 1px solid rgba(155, 89, 182, 0.25);
+}
+
+[data-theme="dark"] .breadcrumb a {
+  color: #a89bc2;
+}
+
+[data-theme="dark"] .breadcrumb a:hover {
+  color: #ffe0a0;
+}
+
+[data-theme="dark"] .breadcrumb span {
+  color: #ffe0a0;
 }
 
 .career-tagline {
