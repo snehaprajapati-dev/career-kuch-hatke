@@ -21,6 +21,13 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
+  var params = new URLSearchParams(window.location.search);
+  if (params.get("theme") === "dark") {
+    localStorage.setItem("ckh_theme", "dark");
+  } else if (params.get("theme") === "light") {
+    localStorage.setItem("ckh_theme", "light");
+  }
+
   applyTheme(localStorage.getItem("ckh_theme") || "light");
 
   if (toggleBtn) {

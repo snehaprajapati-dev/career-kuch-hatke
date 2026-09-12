@@ -1,5 +1,4 @@
-
- /* ============================================
+/* ============================================
    CONTACT PAGE STYLES
    ============================================ */
 
@@ -89,7 +88,7 @@
 
 .form-group label {
   display: block;
-  font-family: 'Montserrat Alternates', sans-serif;
+  font-family: "Montserrat Alternates", sans-serif;
   font-weight: 600;
   color: var(--primary);
   margin-bottom: 0.6rem;
@@ -117,7 +116,7 @@
   padding: 1rem 1.2rem;
   border: 2px solid #e0e0e0;
   border-radius: 10px;
-  font-family: 'Tenor Sans', sans-serif;
+  font-family: "Tenor Sans", sans-serif;
   font-size: 1rem;
   transition: all 0.3s ease;
   background-color: #fafafa;
@@ -141,9 +140,30 @@
 }
 
 .form-group select option {
-  padding: 0.5rem;
-  background-color: var(--bg-white);
-  color: var(--text-dark);
+  padding: 0.6rem 0.8rem;
+  background-color: #ffffff;
+  color: #1a1a1a;
+}
+
+/* 🌙 Dark Mode Select and Options */
+[data-theme="dark"] .form-group select {
+  background-color: #140d26 !important;
+  color: #ede8f5 !important;
+  border-color: #3d2b6b !important;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23ffe0a0' d='M6 9L1 4h10z'/%3E%3C/svg%3E") !important;
+  color-scheme: dark;
+}
+
+[data-theme="dark"] .form-group select option {
+  background-color: #140d26 !important;
+  color: #ede8f5 !important;
+  padding: 0.6rem 0.8rem;
+}
+
+[data-theme="dark"] .form-group select option:checked,
+[data-theme="dark"] .form-group select option:hover {
+  background-color: #9b59b6 !important;
+  color: #ffffff !important;
 }
 
 .form-group textarea {
@@ -176,7 +196,7 @@
   padding: 1.1rem 2rem;
   font-size: 1.1rem;
   font-weight: 700;
-  font-family: 'Montserrat Alternates', sans-serif;
+  font-family: "Montserrat Alternates", sans-serif;
   border: none;
   border-radius: 10px;
   cursor: pointer;
@@ -247,6 +267,33 @@
   box-shadow: 0 8px 20px rgba(40, 167, 69, 0.3);
 }
 
+/* Submit Button Loading State */
+.btn-loading {
+  pointer-events: none !important;
+  opacity: 0.85 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 0.6rem !important;
+  cursor: wait !important;
+}
+
+.btn-spinner {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 2.5px solid rgba(255, 255, 255, 0.35);
+  border-radius: 50%;
+  border-top-color: #ffffff;
+  animation: btn-spin 0.75s linear infinite;
+}
+
+@keyframes btn-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 /* ============================================
    RESPONSIVE - CONTACT PAGE
    ============================================ */
@@ -256,22 +303,22 @@
   .suggest-career-section {
     padding: 3rem 1.5rem !important;
   }
-  
+
   .contact-form,
   .suggestion-form {
     padding: 2rem 1.5rem;
     border-width: 2px;
   }
-  
+
   .form-msg {
     font-size: 2rem;
   }
-  
+
   .form-msg-p {
     font-size: 1rem;
     padding: 0 1rem;
   }
-  
+
   .contact-form .btn,
   .suggestion-form .btn {
     width: 100%;
@@ -279,7 +326,7 @@
     padding: 1rem;
     font-size: 1rem;
   }
-  
+
   .success-message {
     margin: 1.5rem 1rem;
     padding: 1.5rem;
@@ -328,15 +375,20 @@
 }
 
 @keyframes bounce {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
 }
 
 .contact-option-card h3 {
   font-size: 1.8rem;
   color: var(--primary);
   margin-bottom: 1rem;
-  font-family: 'Montserrat Alternates', sans-serif;
+  font-family: "Montserrat Alternates", sans-serif;
 }
 
 .contact-option-card p {
@@ -358,12 +410,12 @@
   color: var(--primary);
   padding: 0.8rem 1.5rem;
   border-radius: 10px;
-  font-family: 'Montserrat Alternates', sans-serif;
+  font-family: "Montserrat Alternates", sans-serif;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
-  margin: 0 auto 2rem auto; 
-  display: block;       
+  margin: 0 auto 2rem auto;
+  display: block;
 }
 
 .back-btn:hover {
@@ -400,11 +452,11 @@
     gap: 2rem;
     padding: 0 1rem;
   }
-  
+
   .contact-option-card {
     padding: 2rem 1.5rem;
   }
-  
+
   .option-icon {
     font-size: 3rem;
   }
@@ -412,36 +464,50 @@
 
 /* Form Error Message */
 .form-error-message {
-    background-color: #ffe6e6;
-    border: 2px solid #c74b50;
-    border-radius: 8px;
-    padding: 1rem 1.5rem;
-    margin-bottom: 1.5rem;
-    text-align: center;
-    animation: shake 0.5s;
+  background-color: #ffe6e6;
+  border: 2px solid #c74b50;
+  border-radius: 8px;
+  padding: 1rem 1.5rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  animation: shake 0.5s;
 }
 
 .form-error-message span {
-    color: #c74b50;
-    font-weight: 600;
-    font-size: 1rem;
-    display: block;
+  color: #c74b50;
+  font-weight: 600;
+  font-size: 1rem;
+  display: block;
 }
 
 @keyframes shake {
-    0%, 100% { transform: translateX(0); }
-    10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
-    20%, 40%, 60%, 80% { transform: translateX(5px); }
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    transform: translateX(-5px);
+  }
+  20%,
+  40%,
+  60%,
+  80% {
+    transform: translateX(5px);
+  }
 }
 
 /* Dark mode error */
 [data-theme="dark"] .form-error-message {
-    background-color: rgba(199, 75, 80, 0.15);
-    border-color: #c74b50;
+  background-color: rgba(199, 75, 80, 0.15);
+  border-color: #c74b50;
 }
 
 [data-theme="dark"] .form-error-message span {
-    color: #ff6b6b;
+  color: #ff6b6b;
 }
 
 /* ============================================
@@ -451,44 +517,44 @@
 
 /* Default — let it be normal size on desktop */
 .g-recaptcha {
-    display: inline-block;
-    max-width: 100%;
+  display: inline-block;
+  max-width: 100%;
 }
 
 /* The form group holding reCAPTCHA */
 .form-group:has(> .g-recaptcha),
 .form-group:has(> #recaptcha-contact),
 .form-group:has(> #recaptcha-suggestion) {
-    overflow: hidden;
+  overflow: hidden;
 }
 
 /* ── Phones under 400px — scale down significantly ── */
 @media (max-width: 400px) {
-    .g-recaptcha {
-        transform: scale(0.77);
-        transform-origin: left top;
-        /* Compensate for the layout space the original size took */
-        /* reCAPTCHA is 304px wide × 78px tall at scale 1 */
-        /* At 0.77: visible size = 234px × 60px */
-        /* We need to collapse the extra white space below */
-        margin-bottom: -18px;
-    }
+  .g-recaptcha {
+    transform: scale(0.77);
+    transform-origin: left top;
+    /* Compensate for the layout space the original size took */
+    /* reCAPTCHA is 304px wide × 78px tall at scale 1 */
+    /* At 0.77: visible size = 234px × 60px */
+    /* We need to collapse the extra white space below */
+    margin-bottom: -18px;
+  }
 }
 
 /* ── Phones 401–480px ── */
 @media (min-width: 401px) and (max-width: 480px) {
-    .g-recaptcha {
-        transform: scale(0.85);
-        transform-origin: left top;
-        margin-bottom: -10px;
-    }
+  .g-recaptcha {
+    transform: scale(0.85);
+    transform-origin: left top;
+    margin-bottom: -10px;
+  }
 }
 
 /* ── Phones 481–520px ── */
 @media (min-width: 481px) and (max-width: 520px) {
-    .g-recaptcha {
-        transform: scale(0.92);
-        transform-origin: left top;
-        margin-bottom: -5px;
-    }
+  .g-recaptcha {
+    transform: scale(0.92);
+    transform-origin: left top;
+    margin-bottom: -5px;
+  }
 }

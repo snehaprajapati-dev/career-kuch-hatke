@@ -14,23 +14,37 @@
       content="Career, Guidance, Development, Unique, Platform"
     />
 
-    <link rel="stylesheet" href="css/style.css?v=3.5" />
-    <link rel="stylesheet" href="css/explore.css?v=3.5" />
-    <link rel="stylesheet" href="css/logo-fix.css?v=3.5" />
-    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico?v=3.5" />
-    <link rel="icon" type="image/x-icon" href="favicon.ico?v=3.5" />
+    <!-- Anti-flash theme script — MUST be first, before stylesheets -->
+    <script>
+      (function () {
+        var params = new URLSearchParams(window.location.search);
+        if (params.get("theme") === "dark") {
+          localStorage.setItem("ckh_theme", "dark");
+        } else if (params.get("theme") === "light") {
+          localStorage.setItem("ckh_theme", "light");
+        }
+        var s = localStorage.getItem("ckh_theme");
+        if (s === "dark")
+          document.documentElement.setAttribute("data-theme", "dark");
+      })();
+    </script>
+
+    <link rel="stylesheet" href="css/style.css?v=3.9" />
+    <link rel="stylesheet" href="css/explore.css?v=3.9" />
+    <link rel="stylesheet" href="css/logo-fix.css?v=3.9" />
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico?v=3.9" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico?v=3.9" />
     <link
       rel="icon"
       type="image/png"
       sizes="32x32"
-      href="images/logo-navbar-light.png?v=3.5"
+      href="images/logo-navbar-light.png?v=3.8"
     />
-    <link rel="apple-touch-icon" href="images/logo-navbar-light.png?v=3.5" />
+    <link rel="apple-touch-icon" href="images/logo-navbar-light.png?v=3.8" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@400;500;600;700;800&family=Tenor+Sans&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/form-dark-mode-and-validation.css?v=3.5">
-</head>
+  </head>
   <body>
 
     <nav class="navbar">
@@ -554,7 +568,7 @@
         </p>
       </div>
     </footer>
-    <script src="js/script.js?v=3.5"></script>
+    <script src="js/script.js?v=3.8"></script>
     <script>
 function showComingSoon(event) {
   event.preventDefault(); // Prevent any default action
@@ -562,6 +576,6 @@ function showComingSoon(event) {
   return false; // Extra prevention
 }
 </script>
-    <script src="js/form-validation.js?v=3.5"></script>
+    <script src="js/form-validation.js?v=3.8"></script>
   </body>
 </html>

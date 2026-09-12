@@ -1,308 +1,618 @@
-
 /* ============================================
-   ABOUT PAGE
+   CAREER KUCH HATKE - ABOUT PAGE STYLES
+   v3.8
    ============================================ */
 
+/* ── About Hero Section ── */
 .about-hero {
-  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-  color: var(--bg-white);
-  padding: 5rem 2rem;
-  text-align: center;
+  background: linear-gradient(135deg, #672a3f 0%, #2b4743 100%) !important;
+  color: #ffffff !important;
+  padding: 6.5rem 2rem 4rem 2rem !important;
+  text-align: center !important;
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+.about-hero .container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.about-hero .breadcrumb-nav {
+  text-align: center !important;
+  margin-bottom: 1.5rem !important;
+  padding-bottom: 0.8rem !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2) !important;
+  font-size: 0.95rem !important;
+  color: #ffffff !important;
+}
+
+.about-hero .breadcrumb-nav a {
+  color: #dda83f !important;
+  text-decoration: none !important;
+  font-weight: 600 !important;
+  transition: color 0.3s ease;
+}
+
+.about-hero .breadcrumb-nav a:hover {
+  color: #ffffff !important;
+  text-decoration: underline !important;
+}
+
+.about-hero .breadcrumb-nav span {
+  color: #ffffff !important;
+  font-weight: 600 !important;
 }
 
 .about-hero h2 {
-  font-size: 2.5rem;
-  margin-bottom: 2rem;
-  color: var(--bg-white);
+  font-size: 2.5rem !important;
+  margin-bottom: 1.5rem !important;
+  color: #ffffff !important;
+  font-family: "Montserrat Alternates", sans-serif !important;
+  font-weight: 700 !important;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.3) !important;
+  text-align: center !important;
+  line-height: 1.3 !important;
 }
 
 .about-hero h3 {
-  font-size: 1.5rem;
-  color: var(--accent);
-  margin: 2rem 0 1rem 0;
+  font-size: 1.45rem !important;
+  color: #dda83f !important;
+  margin: 2rem 0 1rem 0 !important;
+  font-family: "Montserrat Alternates", sans-serif !important;
+  font-weight: 600 !important;
+  text-align: center !important;
 }
 
 .about-hero p {
-  font-size: 1.1rem;
-  line-height: 1.8;
-  max-width: 800px;
-  margin: 0 auto 1.5rem auto;
-  opacity: 0.95;
+  font-size: 1.1rem !important;
+  line-height: 1.85 !important;
+  max-width: 820px !important;
+  margin: 0 auto 1.5rem auto !important;
+  color: rgba(255, 255, 255, 0.95) !important;
+  text-align: center !important;
 }
+
+/* ── Stats Section (The Real Numbers) ── */
 .stats {
-  padding: 4rem 0;
-  background-color: var(--bg-white);
+  padding: 4.5rem 1.5rem 3rem 1.5rem !important;
+  background-color: var(--bg-white) !important;
 }
 
 .stats h2 {
-  text-align: center;
-  font-size: 2.5rem;
-  margin-bottom: 3rem;
-  color: var(--text-dark);
+  text-align: center !important;
+  font-size: 2.4rem !important;
+  margin-bottom: 2.8rem !important;
+  color: var(--primary) !important;
+  font-family: "Montserrat Alternates", sans-serif !important;
+  font-weight: 700 !important;
 }
 
 .stat-boxes {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr) !important;
+  gap: 2rem !important;
+  max-width: 1100px !important;
+  margin: 0 auto !important;
 }
 
 .stat-box {
-  background: linear-gradient(135deg, var(--primary), var(--secondary));
-  color: var(--bg-white);
-  padding: 2.5rem 2rem;
-  border-radius: 12px;
-  text-align: center;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s;
+  background: linear-gradient(135deg, #672a3f 0%, #2b4743 100%) !important;
+  color: #ffffff !important;
+  padding: 2.8rem 1.8rem !important;
+  border-radius: 16px !important;
+  text-align: center !important;
+  box-shadow: 0 8px 24px rgba(103, 42, 63, 0.18) !important;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: center !important;
 }
 
 .stat-box:hover {
-  transform: translateY(-5px);
+  transform: translateY(-6px) !important;
+  box-shadow: 0 12px 30px rgba(103, 42, 63, 0.28) !important;
 }
 
 .stat-box h3 {
-  font-size: 3rem;
-  margin-bottom: 0.5rem;
-  color: var(--accent);
+  font-size: 3rem !important;
+  margin-bottom: 0.6rem !important;
+  color: #dda83f !important;
+  font-family: "Montserrat Alternates", sans-serif !important;
+  font-weight: 800 !important;
 }
 
 .stat-box p {
-  font-size: 1rem;
-  opacity: 0.9;
-  color: var(--bg-white);
-}
-
-.stats {
-  padding: 4rem 0 2rem 0; /* ✅ Reduced bottom padding */
-  background-color: var(--bg-white);
+  font-size: 1rem !important;
+  line-height: 1.6 !important;
+  color: rgba(255, 255, 255, 0.95) !important;
+  margin: 0 !important;
 }
 
 .stats-note {
-  text-align: center;
-  max-width: 800px;
-  margin: 2rem auto 0 auto; /* ✅ Reduced top margin */
-  font-size: 1rem;
-  line-height: 1.8;
-  color: var(--text-gray);
-  padding-bottom: 0; /* ✅ No extra padding */
+  text-align: center !important;
+  max-width: 820px !important;
+  margin: 2.8rem auto 0 auto !important;
+  font-size: 1.05rem !important;
+  line-height: 1.85 !important;
+  color: var(--text-gray) !important;
+  font-style: italic !important;
 }
+
+/* ── Solution Section (What is Career Kuch Hatke?) ── */
 .solution {
-  padding: 2rem 2rem 4rem 2rem; /* ✅ Reduced top padding, normal bottom */
-  background-color: var(--bg-white);
+  padding: 4.5rem 1.5rem !important;
+  background-color: var(--bg-light) !important;
+}
+
+.solution .container {
+  max-width: 880px !important;
+  margin: 0 auto !important;
 }
 
 .solution h2 {
-  text-align: center;
-  font-size: 2.5rem;
-  margin-bottom: 2rem;
-  margin-top: 0; /* ✅ No extra top margin */
-  color: var(--primary);
+  text-align: center !important;
+  font-size: 2.4rem !important;
+  margin-bottom: 1.5rem !important;
+  color: var(--primary) !important;
+  font-family: "Montserrat Alternates", sans-serif !important;
+  font-weight: 700 !important;
 }
 
-.solution p {
-  font-size: 1.1rem;
-  line-height: 1.8;
-  max-width: 800px;
-  margin: 0 auto 2rem auto;
-  color: var(--text-gray);
-}
-
-.stats-note {
-  text-align: center;
-  max-width: 800px;
-  margin: 2rem auto 0 auto;
-  font-size: 1rem;
-  line-height: 1.8;
-  color: var(--text-gray);
+.solution > .container > p {
+  font-size: 1.1rem !important;
+  line-height: 1.85 !important;
+  max-width: 820px !important;
+  margin: 0 auto 2.2rem auto !important;
+  color: var(--text-gray) !important;
+  text-align: center !important;
 }
 
 .solution ul {
-  max-width: 800px;
-  margin: 0 auto;
-  list-style: none;
-  padding: 0;
+  max-width: 840px !important;
+  margin: 0 auto 2.5rem auto !important;
+  list-style: none !important;
+  padding: 0 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 1rem !important;
 }
 
 .solution li {
-  padding: 1rem 1rem 1rem 3rem;
-  margin-bottom: 1rem;
-  background-color: var(--bg-light);
-  border-left: 4px solid var(--accent);
-  border-radius: 8px;
-  position: relative;
+  padding: 1.2rem 1.5rem 1.2rem 3.6rem !important;
+  background-color: #ffffff !important;
+  border-left: 5px solid #dda83f !important;
+  border-radius: 12px !important;
+  position: relative !important;
+  font-size: 1.05rem !important;
+  line-height: 1.6 !important;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05) !important;
+  color: var(--text-dark) !important;
+  text-align: left !important;
 }
 
 .solution li .emoji {
-  position: absolute;
-  left: 1rem;
-  font-size: 1.2rem;
+  position: absolute !important;
+  left: 1.2rem !important;
+  top: 1.15rem !important;
+  font-size: 1.3rem !important;
 }
 
-.story-intro {
-  text-align: center;
-  font-size: 1.2rem;
-  font-weight: 500;
-  max-width: 700px;
-  margin: 0 auto 3rem auto;
-  color: var(--text-gray);
-  font-style: italic;
-}
-
+/* ── My Story Section (Why I Built This) ── */
 .my-story {
-  padding: 5rem 2rem;
-  background-color: var(--bg-light);
+  padding: 5rem 1.5rem !important;
+  background-color: var(--bg-white) !important;
+}
+
+.my-story .container {
+  max-width: 860px !important;
+  margin: 0 auto !important;
 }
 
 .my-story h2 {
-  text-align: center;
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-  color: var(--primary);
+  text-align: center !important;
+  font-size: 2.4rem !important;
+  margin-bottom: 0.8rem !important;
+  color: var(--primary) !important;
+  font-family: "Montserrat Alternates", sans-serif !important;
+  font-weight: 700 !important;
 }
 
 .my-story h3 {
-  text-align: center;
-  font-size: 1.3rem;
-  font-weight: 500;
-  margin-bottom: 3rem;
-  color: var(--text-gray);
-  max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
+  text-align: center !important;
+  font-size: 1.35rem !important;
+  font-weight: 600 !important;
+  margin-bottom: 2.5rem !important;
+  color: var(--accent) !important;
+  font-family: "Montserrat Alternates", sans-serif !important;
+}
+
+.story-intro {
+  text-align: center !important;
+  font-size: 1.2rem !important;
+  font-weight: 500 !important;
+  max-width: 720px !important;
+  margin: 0 auto 2.5rem auto !important;
+  color: var(--primary) !important;
+  font-style: italic !important;
 }
 
 .my-story p {
-  font-size: 1.1rem;
-  line-height: 2;
-  max-width: 800px;
-  margin: 0 auto 2rem auto;
-  color: var(--text-gray);
-  text-align: justify;
-}
-
-.my-story h4 {
-  text-align: right;
-  font-size: 1rem;
-  font-weight: 600;
-  margin-top: 3rem;
-  color: var(--primary);
-  max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
-  font-style: italic;
-  line-height: 1.8;
+  font-size: 1.08rem !important;
+  line-height: 1.95 !important;
+  margin: 0 auto 1.5rem auto !important;
+  color: var(--text-dark) !important;
+  text-align: justify !important;
 }
 
 .story-highlight {
-  background-color: var(--bg-white);
-  padding: 1.5rem;
-  border-left: 4px solid var(--accent);
-  border-radius: 8px;
-  font-size: 1.15rem;
-  font-weight: 500;
-  margin: 2rem auto;
-  max-width: 800px;
+  background-color: #fdfaf6 !important;
+  padding: 1.8rem 2rem !important;
+  border-left: 5px solid #dda83f !important;
+  border-radius: 12px !important;
+  font-size: 1.18rem !important;
+  font-weight: 600 !important;
+  margin: 2.5rem auto !important;
+  box-shadow: 0 4px 16px rgba(221, 168, 63, 0.12) !important;
+  color: #672a3f !important;
+  line-height: 1.7 !important;
+  text-align: left !important;
 }
 
 .story-closing {
-  font-size: 1.15rem;
-  font-style: italic;
-  color: var(--primary);
-  max-width: 800px;
-  margin: 2rem auto;
+  font-size: 1.15rem !important;
+  font-style: italic !important;
+  color: var(--primary) !important;
+  margin: 2.5rem auto !important;
+  text-align: center !important;
+  line-height: 1.8 !important;
 }
 
+.my-story h4 {
+  text-align: right !important;
+  font-size: 1.05rem !important;
+  font-weight: 600 !important;
+  margin-top: 2.5rem !important;
+  color: var(--primary) !important;
+  font-style: italic !important;
+  line-height: 1.8 !important;
+}
+
+/* ── Future Vision Section (Where We're Going Next) ── */
 .future-vision {
-  padding: 4rem 2rem;
-  background-color: var(--bg-white);
+  padding: 4.5rem 1.5rem !important;
+  background-color: var(--bg-light) !important;
+}
+
+.future-vision .container {
+  max-width: 900px !important;
+  margin: 0 auto !important;
 }
 
 .future-vision h2 {
-  text-align: center;
-  font-size: 2.5rem;
-  margin-bottom: 2rem;
-  color: var(--primary);
+  text-align: center !important;
+  font-size: 2.4rem !important;
+  margin-bottom: 1.5rem !important;
+  color: var(--primary) !important;
+  font-family: "Montserrat Alternates", sans-serif !important;
+  font-weight: 700 !important;
 }
 
-.future-vision p {
-  font-size: 1.1rem;
-  max-width: 800px;
-  margin: 0 auto 2rem auto;
-  color: var(--text-gray);
-  text-align: center;
+.future-vision > .container > p:first-of-type {
+  font-size: 1.1rem !important;
+  max-width: 800px !important;
+  margin: 0 auto 2.2rem auto !important;
+  color: var(--text-gray) !important;
+  text-align: center !important;
+  line-height: 1.8 !important;
 }
 
 .future-vision ul {
-  max-width: 800px;
-  margin: 0 auto;
-  list-style: none;
+  max-width: 880px !important;
+  margin: 0 auto 2.2rem auto !important;
+  list-style: none !important;
+  padding: 0 !important;
+  display: grid !important;
+  grid-template-columns: repeat(2, 1fr) !important;
+  gap: 1.2rem !important;
 }
 
 .future-vision li {
-  padding: 1rem 1rem 1rem 3rem;
-  margin-bottom: 1rem;
-  background-color: var(--bg-light);
-  border-left: 4px solid var(--secondary);
-  border-radius: 8px;
-  position: relative;
-  font-size: 1.05rem;
+  padding: 1.2rem 1.2rem 1.2rem 3.4rem !important;
+  background-color: #ffffff !important;
+  border-left: 5px solid #2b4743 !important;
+  border-radius: 12px !important;
+  position: relative !important;
+  font-size: 1.02rem !important;
+  line-height: 1.5 !important;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05) !important;
+  color: var(--text-dark) !important;
+  text-align: left !important;
 }
 
 .future-vision li .emoji {
-  position: absolute;
-  left: 1rem;
-  font-size: 1.2rem;
+  position: absolute !important;
+  left: 1.1rem !important;
+  top: 1.1rem !important;
+  font-size: 1.3rem !important;
 }
 
+.future-vision > .container > p:last-of-type {
+  font-size: 1.1rem !important;
+  max-width: 800px !important;
+  margin: 2rem auto 0 auto !important;
+  color: var(--text-gray) !important;
+  text-align: center !important;
+  line-height: 1.8 !important;
+}
+
+/* ── Call to Action Section (Ready to Explore?) ── */
 .call-to-action {
-  padding: 4rem 2rem;
-  background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%);
-  text-align: center;
-  color: var(--bg-white);
+  padding: 5rem 1.5rem !important;
+  background: linear-gradient(135deg, #2b4743 0%, #672a3f 100%) !important;
+  text-align: center !important;
+  color: #ffffff !important;
+  position: relative !important;
+}
+
+.call-to-action .container {
+  max-width: 860px !important;
+  margin: 0 auto !important;
 }
 
 .call-to-action h2 {
-  font-size: 2.5rem;
-  margin-bottom: 1.5rem;
-  color: var(--bg-white);
+  font-size: 2.6rem !important;
+  margin-bottom: 1.2rem !important;
+  color: #ffffff !important;
+  font-family: "Montserrat Alternates", sans-serif !important;
+  font-weight: 700 !important;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.3) !important;
 }
 
 .call-to-action p {
-  font-size: 1.1rem;
-  max-width: 700px;
-  margin: 0 auto 2rem auto;
-  line-height: 1.8;
-  opacity: 0.95;
+  font-size: 1.12rem !important;
+  max-width: 720px !important;
+  margin: 0 auto 2rem auto !important;
+  line-height: 1.85 !important;
+  color: rgba(255, 255, 255, 0.95) !important;
 }
 
 .cta-buttons {
-  display: flex;
-  gap: 1.5rem;
-  justify-content: center;
-  flex-wrap: wrap;
-  margin-bottom: 2rem;
+  display: flex !important;
+  gap: 1.4rem !important;
+  justify-content: center !important;
+  flex-wrap: wrap !important;
+  margin-bottom: 2.5rem !important;
 }
 
 .cta-buttons .btn {
-  background-color: var(--accent);
-  color: var(--text-dark);
-  padding: 1rem 2rem;
-  border-radius: 8px;
-  font-weight: 600;
-  transition: all 0.3s;
+  background: linear-gradient(135deg, #fff59d 0%, #fdd835 100%) !important;
+  color: #140f02 !important;
+  padding: 0.95rem 2.2rem !important;
+  border-radius: 12px !important;
+  font-weight: 700 !important;
+  font-family: "Montserrat Alternates", sans-serif !important;
+  font-size: 1.02rem !important;
+  text-decoration: none !important;
+  transition: all 0.3s ease !important;
+  box-shadow: 0 4px 16px rgba(253, 216, 53, 0.35) !important;
+  border: 1px solid rgba(255, 245, 157, 0.7) !important;
+  display: inline-block !important;
 }
 
 .cta-buttons .btn:hover {
-  background-color: var(--bg-white);
-  transform: translateY(-3px);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  background: linear-gradient(135deg, #fffde7 0%, #ffee58 100%) !important;
+  color: #000000 !important;
+  transform: translateY(-3px) !important;
+  box-shadow: 0 6px 24px rgba(253, 216, 53, 0.55) !important;
+  border-color: rgba(255, 255, 255, 0.9) !important;
 }
 
-/* About Page - Stat Boxes Mobile Fix */
+.call-to-action .btn-secondary {
+  background: rgba(255, 255, 255, 0.18) !important;
+  color: #ffffff !important;
+  border: 2px solid rgba(255, 255, 255, 0.85) !important;
+  padding: 0.85rem 2.2rem !important;
+  border-radius: 12px !important;
+  font-weight: 700 !important;
+  font-family: "Montserrat Alternates", sans-serif !important;
+  text-decoration: none !important;
+  display: inline-block !important;
+  transition: all 0.3s ease !important;
+}
+
+.call-to-action .btn-secondary:hover {
+  background: #ffffff !important;
+  color: #672a3f !important;
+  border-color: #ffffff !important;
+  transform: translateY(-3px) !important;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35) !important;
+}
+
+/* ============================================
+   🌙 DARK MODE - ABOUT PAGE
+   ============================================ */
+
+[data-theme="dark"] .about-hero {
+  background: linear-gradient(
+    135deg,
+    #3b1d6b 0%,
+    #1a0e35 50%,
+    #0f1a2e 100%
+  ) !important;
+  border-bottom: 2px solid #9b59b6 !important;
+}
+
+[data-theme="dark"] .about-hero h2 {
+  color: #ffe0a0 !important;
+  text-shadow: 0 2px 14px rgba(155, 89, 182, 0.5) !important;
+}
+
+[data-theme="dark"] .about-hero h3 {
+  color: #e8a0bf !important;
+}
+
+[data-theme="dark"] .about-hero p {
+  color: #ede8f5 !important;
+}
+
+[data-theme="dark"] .about-hero .breadcrumb-nav {
+  border-bottom-color: rgba(155, 89, 182, 0.3) !important;
+}
+
+[data-theme="dark"] .about-hero .breadcrumb-nav a {
+  color: #ffe0a0 !important;
+}
+
+[data-theme="dark"] .stats {
+  background-color: #0f0a1e !important;
+}
+
+[data-theme="dark"] .stats h2 {
+  color: #ffe0a0 !important;
+}
+
+[data-theme="dark"] .stat-box {
+  background: linear-gradient(135deg, #1a1130 0%, #231640 100%) !important;
+  border: 1px solid #3d2b6b !important;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5) !important;
+}
+
+[data-theme="dark"] .stat-box h3 {
+  color: #ffe0a0 !important;
+}
+
+[data-theme="dark"] .stat-box p {
+  color: #ede8f5 !important;
+}
+
+[data-theme="dark"] .stats-note {
+  color: #a89bc2 !important;
+}
+
+[data-theme="dark"] .solution {
+  background-color: #140d26 !important;
+}
+
+[data-theme="dark"] .solution h2 {
+  color: #ffe0a0 !important;
+}
+
+[data-theme="dark"] .solution > .container > p {
+  color: #a89bc2 !important;
+}
+
+[data-theme="dark"] .solution li {
+  background-color: #1a1130 !important;
+  border: 1px solid #3d2b6b !important;
+  border-left: 5px solid #ffe0a0 !important;
+  color: #ede8f5 !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4) !important;
+}
+
+[data-theme="dark"] .my-story {
+  background-color: #0f0a1e !important;
+}
+
+[data-theme="dark"] .my-story h2 {
+  color: #ffe0a0 !important;
+}
+
+[data-theme="dark"] .my-story h3 {
+  color: #e8a0bf !important;
+}
+
+[data-theme="dark"] .story-intro {
+  color: #ffe0a0 !important;
+}
+
+[data-theme="dark"] .my-story p {
+  color: #ede8f5 !important;
+}
+
+[data-theme="dark"] .story-highlight {
+  background-color: #1a1130 !important;
+  border: 1px solid #3d2b6b !important;
+  border-left: 5px solid #ffe0a0 !important;
+  color: #ffe0a0 !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4) !important;
+}
+
+[data-theme="dark"] .story-closing {
+  color: #dda83f !important;
+}
+
+[data-theme="dark"] .my-story h4 {
+  color: #a89bc2 !important;
+}
+
+[data-theme="dark"] .future-vision {
+  background-color: #140d26 !important;
+}
+
+[data-theme="dark"] .future-vision h2 {
+  color: #ffe0a0 !important;
+}
+
+[data-theme="dark"] .future-vision > .container > p {
+  color: #a89bc2 !important;
+}
+
+[data-theme="dark"] .future-vision li {
+  background-color: #1a1130 !important;
+  border: 1px solid #3d2b6b !important;
+  border-left: 5px solid #9b59b6 !important;
+  color: #ede8f5 !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4) !important;
+}
+
+[data-theme="dark"] .call-to-action {
+  background: linear-gradient(135deg, #1a0e35 0%, #3b1d6b 100%) !important;
+  border-top: 2px solid #9b59b6 !important;
+}
+
+[data-theme="dark"] .call-to-action h2 {
+  color: #ffe0a0 !important;
+}
+
+[data-theme="dark"] .call-to-action .btn-secondary {
+  background: rgba(255, 255, 255, 0.12) !important;
+  color: #ffffff !important;
+  border-color: rgba(255, 255, 255, 0.6) !important;
+}
+
+[data-theme="dark"] .call-to-action .btn-secondary:hover {
+  background: #ffffff !important;
+  color: #1a0e35 !important;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+
 @media (max-width: 768px) {
+  .about-hero {
+    padding-top: 6rem !important;
+    padding-bottom: 3rem !important;
+  }
+  .about-hero h2 {
+    font-size: 1.9rem !important;
+  }
+  .about-hero h3 {
+    font-size: 1.25rem !important;
+  }
   .stat-boxes {
-    grid-template-columns: 1fr !important; /* 1 box per row */
-    gap: 1.5rem;
+    grid-template-columns: 1fr !important;
+    gap: 1.3rem !important;
+  }
+  .future-vision ul {
+    grid-template-columns: 1fr !important;
+  }
+  .call-to-action h2 {
+    font-size: 2rem !important;
   }
 }

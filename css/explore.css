@@ -316,45 +316,70 @@ button.filter-btn[data-filter="unique"].active {
   font-family: "Montserrat Alternates", sans-serif;
 }
 
-.card-btn {
-  display: block;
-  text-align: center;
-  padding: 0.85rem 1.5rem;
-  background: linear-gradient(135deg, #dda83f 0%, #c4922b 100%);
-  color: #1a1a1a !important;
-  font-weight: 700;
-  font-family: "Montserrat Alternates", sans-serif;
-  border-radius: 8px;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  box-shadow: 0 3px 10px rgba(221, 168, 63, 0.25);
-  margin-top: 0;
+.card-btn,
+.career-card .card-btn,
+a.card-btn {
+  display: block !important;
+  text-align: center !important;
+  padding: 0.85rem 1.5rem !important;
+  background: linear-gradient(135deg, #fff59d 0%, #fdd835 100%) !important;
+  color: #140f02 !important;
+  font-weight: 700 !important;
+  font-family: "Montserrat Alternates", sans-serif !important;
+  font-size: 0.95rem !important;
+  border-radius: 10px !important;
+  text-decoration: none !important;
+  transition: all 0.3s ease !important;
+  box-shadow: 0 4px 16px rgba(253, 216, 53, 0.35) !important;
+  margin-top: 0 !important;
+  border: 1px solid rgba(255, 245, 157, 0.7) !important;
+  text-shadow: none !important;
 }
 
-.card-btn:hover {
-  background: linear-gradient(135deg, var(--primary) 0%, #853350 100%);
-  color: #ffffff !important;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(103, 42, 63, 0.35);
+.card-btn:hover,
+.career-card .card-btn:hover,
+a.card-btn:hover {
+  background: linear-gradient(135deg, #fffde7 0%, #ffee58 100%) !important;
+  color: #000000 !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 24px rgba(253, 216, 53, 0.55) !important;
+  border-color: rgba(255, 255, 255, 0.9) !important;
 }
 
-/* 🌙 Dark Mode Card Button */
+/* 🌙 Dark Mode Card Button - Radiant Light Yellow Gradient */
 [data-theme="dark"] .card-btn,
-[data-theme="dark"] .career-card .card-btn {
-  background: linear-gradient(135deg, #9b59b6 0%, #672a3f 100%) !important;
-  color: #ffffff !important;
-  border: 1px solid rgba(255, 255, 255, 0.15) !important;
-  box-shadow: 0 4px 15px rgba(155, 89, 182, 0.35) !important;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+[data-theme="dark"] .career-card .card-btn,
+[data-theme="dark"] a.card-btn {
+  background: linear-gradient(135deg, #fff59d 0%, #fdd835 100%) !important;
+  color: #140f02 !important;
+  border: 1px solid rgba(255, 245, 157, 0.8) !important;
+  box-shadow: 0 4px 18px rgba(253, 216, 53, 0.4) !important;
+  text-shadow: none !important;
+  font-weight: 700 !important;
 }
 
 [data-theme="dark"] .card-btn:hover,
-[data-theme="dark"] .career-card .card-btn:hover {
-  background: linear-gradient(135deg, #b06cc9 0%, #7d334e 100%) !important;
-  color: #ffffff !important;
-  border-color: rgba(255, 255, 255, 0.35) !important;
-  box-shadow: 0 6px 20px rgba(155, 89, 182, 0.55) !important;
-  transform: translateY(-2px);
+[data-theme="dark"] .career-card .card-btn:hover,
+[data-theme="dark"] a.card-btn:hover {
+  background: linear-gradient(135deg, #fffde7 0%, #ffee58 100%) !important;
+  color: #000000 !important;
+  border-color: rgba(255, 255, 255, 0.95) !important;
+  box-shadow: 0 6px 26px rgba(253, 216, 53, 0.65) !important;
+  transform: translateY(-3px) !important;
+}
+
+/* Strictly enforce no underline on any navbar link */
+.navbar .nav-menu li a,
+.navbar .nav-menu li a:hover,
+.navbar .nav-menu li a:focus,
+.navbar .nav-menu li a.active,
+[data-theme="dark"] .navbar .nav-menu li a,
+[data-theme="dark"] .navbar .nav-menu li a:hover,
+[data-theme="dark"] .navbar .nav-menu li a:focus,
+[data-theme="dark"] .navbar .nav-menu li a.active {
+  text-decoration: none !important;
+  border-bottom: none !important;
+  box-shadow: none !important;
 }
 
 .career-card.hidden {
