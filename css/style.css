@@ -1061,7 +1061,7 @@ body > *:first-child:not(.navbar) {
     var(--secondary) 100%
   ) !important;
   color: var(--bg-white) !important;
-  padding: 6rem 2rem 4rem 2rem !important;
+  padding: 6.5rem 2rem 3.5rem 2rem !important;
   text-align: center !important;
   margin-top: 0 !important;
   width: 100% !important;
@@ -1261,8 +1261,8 @@ body > *:first-child:not(.navbar) {
 
   .page-header,
   .about-hero {
-    padding-top: 6rem !important;
-    padding-bottom: 3rem !important;
+    padding-top: 5.5rem !important;
+    padding-bottom: 2.5rem !important;
   }
 
   .page-header h1 {
@@ -1413,7 +1413,7 @@ body > *:first-child:not(.navbar) {
 @media (max-width: 480px) {
   .page-header,
   .about-hero {
-    padding-top: 5.5rem !important;
+    padding-top: 5rem !important;
     padding-bottom: 2rem !important;
   }
 
@@ -1784,45 +1784,53 @@ body.menu-open {
   color: #ffe0a0;
 }
 
-/* ── Know More Button (Light + Dark) ── */
+/* ── Know More Button (Light Mode - Original Restored) ── */
 .card-btn,
 .career-card .card-btn,
 a.card-btn {
   display: block !important;
   text-align: center !important;
-  padding: 0.85rem 1.5rem !important;
-  background: linear-gradient(135deg, #fff59d 0%, #fdd835 100%) !important;
-  color: #140f02 !important;
+  padding: 0.9rem 1.5rem !important;
+  background: linear-gradient(
+    135deg,
+    var(--accent) 0%,
+    #f0c050 100%
+  ) !important;
+  color: var(--text-dark) !important;
   font-weight: 700 !important;
   font-family: "Montserrat Alternates", sans-serif !important;
   font-size: 0.95rem !important;
-  border-radius: 10px !important;
+  border-radius: 8px !important;
   text-decoration: none !important;
   transition: all 0.3s ease !important;
-  box-shadow: 0 4px 16px rgba(253, 216, 53, 0.35) !important;
+  box-shadow: 0 3px 10px rgba(221, 168, 63, 0.3) !important;
   margin-top: 0 !important;
-  border: 1px solid rgba(255, 245, 157, 0.7) !important;
+  border: none !important;
   text-shadow: none !important;
 }
 
 .card-btn:hover,
 .career-card .card-btn:hover,
 a.card-btn:hover {
-  background: linear-gradient(135deg, #fffde7 0%, #ffee58 100%) !important;
-  color: #000000 !important;
+  background: linear-gradient(
+    135deg,
+    var(--primary) 0%,
+    var(--secondary) 100%
+  ) !important;
+  color: var(--bg-white) !important;
   transform: translateY(-2px) !important;
-  box-shadow: 0 6px 24px rgba(253, 216, 53, 0.55) !important;
-  border-color: rgba(255, 255, 255, 0.9) !important;
+  box-shadow: 0 6px 20px rgba(103, 42, 63, 0.4) !important;
+  border: none !important;
 }
 
-/* ── Know More Button in Dark Mode ── */
+/* ── Know More Button in Dark Mode (Navbar Text Gradient #ffe0a0) ── */
 [data-theme="dark"] .card-btn,
 [data-theme="dark"] .career-card .card-btn,
 [data-theme="dark"] a.card-btn {
-  background: linear-gradient(135deg, #fff59d 0%, #fdd835 100%) !important;
-  color: #140f02 !important;
-  border: 1px solid rgba(255, 245, 157, 0.8) !important;
-  box-shadow: 0 4px 18px rgba(253, 216, 53, 0.4) !important;
+  background: linear-gradient(135deg, #ffe0a0 0%, #ffd080 100%) !important;
+  color: #1a1130 !important;
+  border: 1px solid rgba(255, 224, 160, 0.7) !important;
+  box-shadow: 0 4px 16px rgba(255, 224, 160, 0.35) !important;
   text-shadow: none !important;
   font-weight: 700 !important;
 }
@@ -1830,11 +1838,11 @@ a.card-btn:hover {
 [data-theme="dark"] .card-btn:hover,
 [data-theme="dark"] .career-card .card-btn:hover,
 [data-theme="dark"] a.card-btn:hover {
-  background: linear-gradient(135deg, #fffde7 0%, #ffee58 100%) !important;
-  color: #000000 !important;
-  border-color: rgba(255, 255, 255, 0.95) !important;
-  box-shadow: 0 6px 26px rgba(253, 216, 53, 0.65) !important;
-  transform: translateY(-3px) !important;
+  background: linear-gradient(135deg, #ffffff 0%, #ffe0a0 100%) !important;
+  color: #0c0817 !important;
+  border-color: rgba(255, 255, 255, 0.9) !important;
+  box-shadow: 0 6px 22px rgba(255, 224, 160, 0.55) !important;
+  transform: translateY(-2px) !important;
 }
 
 /* ── Buttons ── */

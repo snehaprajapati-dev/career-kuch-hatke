@@ -1,33 +1,107 @@
 /* ============================================
-   FIXES - breadcrumb-fix.css
-   Add this file and link it in all HTML pages
+   UNIFIED HEADER & BREADCRUMB STANDARDIZATION
+   Guarantees that:
+   1. Distance from Navbar to Breadcrumb
+   2. Distance from Breadcrumb to Thin Line
+   are 100% EQUAL across all pages and devices.
    ============================================ */
 
-/* Fix: Breadcrumb getting hidden behind fixed navbar on mobile.
-   The navbar is ~70px tall. We add padding-top to hero/header
-   sections only on mobile so breadcrumb is never covered.      */
+:root {
+  --ckh-nav-height: 70px;
+  --ckh-bc-gap: 1.35rem; /* ~22px */
+}
 
 @media (max-width: 768px) {
-
-  /* About page hero */
-  .about-hero {
-    padding-top: 5.5rem !important;
+  :root {
+    --ckh-nav-height: 56px;
+    --ckh-bc-gap: 1rem; /* ~16px */
   }
+}
 
-  /* Contact & Quiz page header */
-  .page-header {
-    padding-top: 5.5rem !important;
+@media (max-width: 480px) {
+  :root {
+    --ckh-nav-height: 56px;
+    --ckh-bc-gap: 0.875rem; /* ~14px */
   }
+}
 
-  /* Career detail hero */
+/* ── 1. Page Header & Heroes Top Clearance ── */
+.page-header,
+.about-hero,
+.career-hero {
+  padding-top: calc(var(--ckh-nav-height) + var(--ckh-bc-gap)) !important;
+  padding-bottom: 3.5rem !important;
+  margin-top: 0 !important;
+  box-sizing: border-box !important;
+}
+
+@media (max-width: 768px) {
+  .page-header,
+  .about-hero,
   .career-hero {
-    padding-top: 5.5rem !important;
+    padding-bottom: 2.5rem !important;
   }
+}
 
-  /* Breadcrumb text itself - make sure it's readable */
+@media (max-width: 480px) {
+  .page-header,
+  .about-hero,
+  .career-hero {
+    padding-bottom: 2rem !important;
+  }
+}
+
+/* ── 2. Breadcrumb with Symmetrical Thin Line ── */
+.breadcrumb-nav,
+.breadcrumb {
+  margin-top: 0 !important;
+  margin-bottom: 1.5rem !important;
+  padding-top: 0 !important;
+  padding-bottom: var(--ckh-bc-gap) !important;
+  font-size: 0.95rem !important;
+  line-height: 1.4 !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2) !important;
+  text-align: center !important;
+  display: block !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+.breadcrumb-nav a,
+.breadcrumb a {
+  color: var(--bg-white, #ffffff) !important;
+  text-decoration: none !important;
+  opacity: 0.85 !important;
+  transition:
+    opacity 0.2s ease,
+    color 0.2s ease !important;
+}
+
+.breadcrumb-nav a:hover,
+.breadcrumb a:hover {
+  opacity: 1 !important;
+  color: var(--accent, #dda83f) !important;
+  text-decoration: underline !important;
+}
+
+.breadcrumb-nav span,
+.breadcrumb span {
+  color: var(--accent, #dda83f) !important;
+  font-weight: 700 !important;
+  opacity: 1 !important;
+}
+
+@media (max-width: 768px) {
   .breadcrumb-nav,
   .breadcrumb {
-    margin-bottom: 1rem;
-    font-size: 0.9rem;
+    margin-bottom: 1.2rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .breadcrumb-nav,
+  .breadcrumb {
+    font-size: 0.85rem !important;
+    margin-bottom: 1.1rem !important;
   }
 }

@@ -432,6 +432,7 @@
   background-color: var(--bg-light);
   color: var(--text-dark);
   text-align: center;
+  scroll-margin-top: 80px;
 }
 
 .quiz-result h2 {
@@ -663,17 +664,18 @@
 }
 
 [data-theme="dark"] .result-primary-btn {
-  background: linear-gradient(135deg, #9b59b6 0%, #672a3f 100%) !important;
-  color: #ffffff !important;
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  box-shadow: 0 4px 20px rgba(155, 89, 182, 0.4) !important;
+  background: linear-gradient(135deg, #ffe0a0 0%, #ffd080 100%) !important;
+  color: #1a1130 !important;
+  border: 1px solid rgba(255, 224, 160, 0.7) !important;
+  box-shadow: 0 4px 20px rgba(255, 224, 160, 0.35) !important;
+  font-weight: 700 !important;
 }
 
 [data-theme="dark"] .result-primary-btn:hover {
-  background: linear-gradient(135deg, #b06cc9 0%, #7d334e 100%) !important;
-  color: #ffffff !important;
+  background: linear-gradient(135deg, #ffffff 0%, #ffe0a0 100%) !important;
+  color: #0c0817 !important;
   transform: translateY(-3px);
-  box-shadow: 0 8px 25px rgba(155, 89, 182, 0.6) !important;
+  box-shadow: 0 8px 25px rgba(255, 224, 160, 0.55) !important;
 }
 
 #result-content .retake-btn {
@@ -720,10 +722,6 @@
    ============================================ */
 
 @media (max-width: 768px) {
-  .page-header {
-    padding: 3rem 1.5rem !important;
-  }
-
   .page-header h1 {
     font-size: 2rem !important;
   }
@@ -776,16 +774,85 @@
     margin-left: 0;
   }
 
+  /* 📱 Quiz Result Mobile Fix */
   .quiz-result {
-    padding: 3rem 1.5rem;
+    padding: 2.5rem 1rem 4rem 1rem !important;
+    scroll-margin-top: 80px !important;
   }
 
   #result-content {
-    padding: 2rem 1.5rem;
+    padding: 1.8rem 1.2rem !important;
+    border-radius: 18px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
   }
 
   #result-content h3 {
-    font-size: 1.5rem;
+    font-size: 1.35rem !important;
+    line-height: 1.3 !important;
+  }
+
+  .result-desc {
+    font-size: 0.95rem !important;
+    line-height: 1.5 !important;
+    margin-bottom: 1.2rem !important;
+  }
+
+  .result-strengths {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 0.5rem !important;
+    justify-content: center !important;
+    margin-bottom: 1.5rem !important;
+  }
+
+  .strength-tag {
+    font-size: 0.8rem !important;
+    padding: 0.35rem 0.8rem !important;
+  }
+
+  .recommendation-cards {
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .recom-card {
+    width: 100% !important;
+    box-sizing: border-box !important;
+    padding: 1.2rem 1rem !important;
+  }
+
+  .recom-title {
+    font-size: 1.05rem !important;
+  }
+
+  .recom-salary {
+    font-size: 0.95rem !important;
+  }
+
+  .result-actions {
+    width: 100% !important;
+    margin-top: 1.8rem !important;
+  }
+
+  .result-primary-btn {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    padding: 0.95rem 1rem !important;
+    font-size: 0.95rem !important;
+    text-align: center !important;
+  }
+
+  #result-content .retake-btn {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
   }
 }
 

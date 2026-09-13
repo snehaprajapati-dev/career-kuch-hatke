@@ -1,3 +1,15 @@
+// Clean up InfinityFree security query param (?i=1, ?i=2) from the URL bar
+(function cleanInfinityFreeParam() {
+  try {
+    if (window.location.search && window.location.search.includes("i=")) {
+      var url = new URL(window.location.href);
+      url.searchParams.delete("i");
+      var cleanUrl = url.pathname + (url.search ? url.search : "") + url.hash;
+      window.history.replaceState({}, document.title, cleanUrl);
+    }
+  } catch (e) {}
+})();
+
 // Global reCAPTCHA widget IDs
 window.contactRecaptchaWidget = undefined;
 window.suggestionRecaptchaWidget = undefined;
@@ -213,16 +225,39 @@ document.addEventListener("DOMContentLoaded", function () {
       showQuestion(currentQuestion);
       if (resultSection) resultSection.style.display = "none";
       const quizSection = document.getElementById("quiz-section");
-      if (quizSection) quizSection.style.display = "block";
-      window.scrollTo({ top: 0, behavior: "smooth" });
+      if (quizSection) {
+        quizSection.style.display = "block";
+        setTimeout(() => {
+          const navHeight =
+            document.querySelector(".navbar")?.offsetHeight || 70;
+          const targetY =
+            quizSection.getBoundingClientRect().top +
+            window.pageYOffset -
+            navHeight -
+            15;
+          window.scrollTo({ top: Math.max(0, targetY), behavior: "smooth" });
+        }, 50);
+      }
     }
     window.resetQuiz = resetQuiz;
+    window.showResult = showResult;
 
     function showResult(category) {
       const quizSection = document.getElementById("quiz-section");
       if (quizSection) quizSection.style.display = "none";
-      if (resultSection) resultSection.style.display = "block";
-      window.scrollTo({ top: 0, behavior: "smooth" });
+      if (resultSection) {
+        resultSection.style.display = "block";
+        setTimeout(() => {
+          const navHeight =
+            document.querySelector(".navbar")?.offsetHeight || 70;
+          const targetY =
+            resultSection.getBoundingClientRect().top +
+            window.pageYOffset -
+            navHeight -
+            15;
+          window.scrollTo({ top: Math.max(0, targetY), behavior: "smooth" });
+        }, 50);
+      }
 
       const resultMap = {
         creative: {
@@ -403,6 +438,14 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     }
     showQuestion(currentQuestion);
+
+    const urlParamsQuiz = new URLSearchParams(window.location.search);
+    const resultParam = urlParamsQuiz.get("result");
+    if (resultParam) {
+      const intro = document.getElementById("quiz-intro");
+      if (intro) intro.style.display = "none";
+      showResult(resultParam);
+    }
   }
 
   function startQuiz() {
@@ -410,9 +453,19 @@ document.addEventListener("DOMContentLoaded", function () {
     const quizSection = document.getElementById("quiz-section");
     const result = document.getElementById("result");
     if (intro) intro.style.display = "none";
-    if (quizSection) quizSection.style.display = "block";
     if (result) result.style.display = "none";
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    if (quizSection) {
+      quizSection.style.display = "block";
+      setTimeout(() => {
+        const navHeight = document.querySelector(".navbar")?.offsetHeight || 70;
+        const targetY =
+          quizSection.getBoundingClientRect().top +
+          window.pageYOffset -
+          navHeight -
+          15;
+        window.scrollTo({ top: Math.max(0, targetY), behavior: "smooth" });
+      }, 50);
+    }
   }
   window.startQuiz = startQuiz;
 

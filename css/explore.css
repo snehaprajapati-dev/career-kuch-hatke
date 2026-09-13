@@ -321,39 +321,47 @@ button.filter-btn[data-filter="unique"].active {
 a.card-btn {
   display: block !important;
   text-align: center !important;
-  padding: 0.85rem 1.5rem !important;
-  background: linear-gradient(135deg, #fff59d 0%, #fdd835 100%) !important;
-  color: #140f02 !important;
+  padding: 0.9rem 1.5rem !important;
+  background: linear-gradient(
+    135deg,
+    var(--accent) 0%,
+    #f0c050 100%
+  ) !important;
+  color: var(--text-dark) !important;
   font-weight: 700 !important;
   font-family: "Montserrat Alternates", sans-serif !important;
   font-size: 0.95rem !important;
-  border-radius: 10px !important;
+  border-radius: 8px !important;
   text-decoration: none !important;
   transition: all 0.3s ease !important;
-  box-shadow: 0 4px 16px rgba(253, 216, 53, 0.35) !important;
+  box-shadow: 0 3px 10px rgba(221, 168, 63, 0.3) !important;
   margin-top: 0 !important;
-  border: 1px solid rgba(255, 245, 157, 0.7) !important;
+  border: none !important;
   text-shadow: none !important;
 }
 
 .card-btn:hover,
 .career-card .card-btn:hover,
 a.card-btn:hover {
-  background: linear-gradient(135deg, #fffde7 0%, #ffee58 100%) !important;
-  color: #000000 !important;
+  background: linear-gradient(
+    135deg,
+    var(--primary) 0%,
+    var(--secondary) 100%
+  ) !important;
+  color: var(--bg-white) !important;
   transform: translateY(-2px) !important;
-  box-shadow: 0 6px 24px rgba(253, 216, 53, 0.55) !important;
-  border-color: rgba(255, 255, 255, 0.9) !important;
+  box-shadow: 0 6px 20px rgba(103, 42, 63, 0.4) !important;
+  border: none !important;
 }
 
-/* 🌙 Dark Mode Card Button - Radiant Light Yellow Gradient */
+/* 🌙 Dark Mode Card Button - Navbar Text Gradient (#ffe0a0) with high contrast text */
 [data-theme="dark"] .card-btn,
 [data-theme="dark"] .career-card .card-btn,
 [data-theme="dark"] a.card-btn {
-  background: linear-gradient(135deg, #fff59d 0%, #fdd835 100%) !important;
-  color: #140f02 !important;
-  border: 1px solid rgba(255, 245, 157, 0.8) !important;
-  box-shadow: 0 4px 18px rgba(253, 216, 53, 0.4) !important;
+  background: linear-gradient(135deg, #ffe0a0 0%, #ffd080 100%) !important;
+  color: #1a1130 !important;
+  border: 1px solid rgba(255, 224, 160, 0.7) !important;
+  box-shadow: 0 4px 16px rgba(255, 224, 160, 0.35) !important;
   text-shadow: none !important;
   font-weight: 700 !important;
 }
@@ -361,11 +369,11 @@ a.card-btn:hover {
 [data-theme="dark"] .card-btn:hover,
 [data-theme="dark"] .career-card .card-btn:hover,
 [data-theme="dark"] a.card-btn:hover {
-  background: linear-gradient(135deg, #fffde7 0%, #ffee58 100%) !important;
-  color: #000000 !important;
-  border-color: rgba(255, 255, 255, 0.95) !important;
-  box-shadow: 0 6px 26px rgba(253, 216, 53, 0.65) !important;
-  transform: translateY(-3px) !important;
+  background: linear-gradient(135deg, #ffffff 0%, #ffe0a0 100%) !important;
+  color: #0c0817 !important;
+  border-color: rgba(255, 255, 255, 0.9) !important;
+  box-shadow: 0 6px 22px rgba(255, 224, 160, 0.55) !important;
+  transform: translateY(-2px) !important;
 }
 
 /* Strictly enforce no underline on any navbar link */
@@ -409,11 +417,6 @@ a.card-btn:hover {
 }
 
 @media (max-width: 768px) {
-  /* Page header */
-  .page-header {
-    padding: 3rem 1.5rem !important;
-  }
-
   .page-header h1 {
     font-size: 2rem !important;
   }
