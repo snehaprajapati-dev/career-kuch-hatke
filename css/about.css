@@ -22,7 +22,7 @@
 .about-hero .breadcrumb-nav {
   text-align: center !important;
   margin-bottom: 1.5rem !important;
-  padding-bottom: 0.8rem !important;
+  padding-bottom: var(--ckh-bc-gap, 1.35rem) !important;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2) !important;
   font-size: 0.95rem !important;
   color: #ffffff !important;
@@ -390,8 +390,12 @@
 }
 
 .cta-buttons .btn {
-  background: linear-gradient(135deg, #fff59d 0%, #fdd835 100%) !important;
-  color: #140f02 !important;
+  background: linear-gradient(
+    135deg,
+    var(--accent) 0%,
+    #f0c050 100%
+  ) !important;
+  color: #1a1a1a !important;
   padding: 0.95rem 2.2rem !important;
   border-radius: 12px !important;
   font-weight: 700 !important;
@@ -399,17 +403,34 @@
   font-size: 1.02rem !important;
   text-decoration: none !important;
   transition: all 0.3s ease !important;
-  box-shadow: 0 4px 16px rgba(253, 216, 53, 0.35) !important;
-  border: 1px solid rgba(255, 245, 157, 0.7) !important;
+  box-shadow: 0 4px 16px rgba(221, 168, 63, 0.3) !important;
+  border: none !important;
   display: inline-block !important;
 }
 
 .cta-buttons .btn:hover {
-  background: linear-gradient(135deg, #fffde7 0%, #ffee58 100%) !important;
-  color: #000000 !important;
+  background: linear-gradient(
+    135deg,
+    var(--primary) 0%,
+    var(--secondary) 100%
+  ) !important;
+  color: #ffffff !important;
   transform: translateY(-3px) !important;
-  box-shadow: 0 6px 24px rgba(253, 216, 53, 0.55) !important;
-  border-color: rgba(255, 255, 255, 0.9) !important;
+  box-shadow: 0 6px 20px rgba(103, 42, 63, 0.4) !important;
+}
+
+[data-theme="dark"] .cta-buttons .btn {
+  background: linear-gradient(135deg, #ffe0a0 0%, #ffd080 100%) !important;
+  color: #1a1130 !important;
+  border: 1px solid rgba(255, 224, 160, 0.7) !important;
+  box-shadow: 0 4px 18px rgba(255, 224, 160, 0.35) !important;
+  font-weight: 700 !important;
+}
+
+[data-theme="dark"] .cta-buttons .btn:hover {
+  background: linear-gradient(135deg, #ffffff 0%, #ffe0a0 100%) !important;
+  color: #0c0817 !important;
+  box-shadow: 0 6px 24px rgba(255, 224, 160, 0.55) !important;
 }
 
 .call-to-action .btn-secondary {
@@ -595,10 +616,6 @@
    ============================================ */
 
 @media (max-width: 768px) {
-  .about-hero {
-    padding-top: 6rem !important;
-    padding-bottom: 3rem !important;
-  }
   .about-hero h2 {
     font-size: 1.9rem !important;
   }
