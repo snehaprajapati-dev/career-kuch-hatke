@@ -17,10 +17,10 @@ jobs:
       - name: 📂 Sync files via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.4.0
         with:
-          server: ${{ secrets.FTP_SERVER || 'ftpupload.net' }}
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          server-dir: ${{ secrets.FTP_SERVER_DIR || './htdocs/' }}
+          server: ${{ secrets.FTP_SERVER || vars.FTP_SERVER || 'ftpupload.net' }}
+          username: ${{ secrets.FTP_USERNAME || secrets.FTP_USER || vars.FTP_USERNAME || vars.FTP_USER }}
+          password: ${{ secrets.FTP_PASSWORD || secrets.FTP_PASS }}
+          server-dir: ${{ secrets.FTP_SERVER_DIR || vars.FTP_SERVER_DIR || './htdocs/' }}
           protocol: ftp
           exclude: |
             **/.git*
