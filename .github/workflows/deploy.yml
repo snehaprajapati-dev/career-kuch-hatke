@@ -14,13 +14,25 @@ jobs:
       - name: 🚚 Checkout latest code
         uses: actions/checkout@v4
 
+      - name: 🔍 Check if secrets are configured
+        run: |
+          if [ -z "${{ secrets.FTP_USERNAME }}" ]; then
+            echo "::error::GitHub secret 'FTP_USERNAME' was not found! Please check GitHub Settings -> Secrets and variables -> Actions -> Repository secrets."
+            exit 1
+          fi
+          if [ -z "${{ secrets.FTP_PASSWORD }}" ]; then
+            echo "::error::GitHub secret 'FTP_PASSWORD' was not found! Please check GitHub Settings -> Secrets and variables -> Actions -> Repository secrets."
+            exit 1
+          fi
+          echo "FTP credentials are present in GitHub secrets."
+
       - name: 📂 Sync files via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.4.0
         with:
-          server: ${{ secrets.FTP_SERVER || vars.FTP_SERVER || 'ftpupload.net' }}
-          username: ${{ secrets.FTP_USERNAME || secrets.FTP_USER || vars.FTP_USERNAME || vars.FTP_USER }}
-          password: ${{ secrets.FTP_PASSWORD || secrets.FTP_PASS }}
-          server-dir: ${{ secrets.FTP_SERVER_DIR || vars.FTP_SERVER_DIR || './htdocs/' }}
+          server: ftpupload.net
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          server-dir: ./htdocs/
           protocol: ftp
           exclude: |
             **/.git*
