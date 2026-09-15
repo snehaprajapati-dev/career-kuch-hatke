@@ -562,27 +562,57 @@ a.card-btn:hover {
     flex-wrap: nowrap;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
-    gap: 0.55rem;
-    padding: 0.25rem 0.5rem 0.75rem 0.5rem;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
+    scroll-snap-type: x proximity;
+    gap: 0.6rem;
+    /* Bleed past container padding so pills scroll edge-to-edge and naturally peek */
+    width: calc(100% + 40px);
+    margin-left: -20px;
+    margin-right: -20px;
+    padding: 0.35rem 20px 0.75rem 20px;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(221, 168, 63, 0.45) transparent;
     justify-content: flex-start;
     align-items: center;
-    width: 100%;
     margin-bottom: 0.5rem;
+    /* Soft fade mask on right edge to signal more content */
+    -webkit-mask-image: linear-gradient(to right, #000 0%, #000 calc(100% - 35px), transparent 100%);
+    mask-image: linear-gradient(to right, #000 0%, #000 calc(100% - 35px), transparent 100%);
+    transition: -webkit-mask-image 0.25s ease, mask-image 0.25s ease;
   }
 
+  /* Sleek 3px pill scroll indicator on mobile */
   .filter-buttons::-webkit-scrollbar {
-    display: none;
+    height: 3px;
+    display: block;
+  }
+
+  .filter-buttons::-webkit-scrollbar-track {
+    background: rgba(107, 76, 154, 0.08);
+    border-radius: 10px;
+    margin: 0 20px;
+  }
+
+  .filter-buttons::-webkit-scrollbar-thumb {
+    background: rgba(221, 168, 63, 0.55);
+    border-radius: 10px;
+  }
+
+  [data-theme="dark"] .filter-buttons::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.06);
+  }
+
+  [data-theme="dark"] .filter-buttons::-webkit-scrollbar-thumb {
+    background: rgba(221, 168, 63, 0.65);
   }
 
   .filter-btn {
     flex: 0 0 auto;
+    scroll-snap-align: start;
     width: auto !important;
     max-width: none !important;
     white-space: nowrap;
-    padding: 0.55rem 1.15rem !important;
-    font-size: 0.88rem !important;
+    padding: 0.52rem 1.15rem !important;
+    font-size: 0.86rem !important;
     border-radius: 50px !important;
     margin: 0 !important;
   }
