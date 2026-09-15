@@ -130,44 +130,14 @@ document.addEventListener("DOMContentLoaded", function () {
         }
         // Smoothly center the clicked button in the scrollable bar if on mobile
         if (typeof this.scrollIntoView === "function") {
-          this.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "center" });
+          this.scrollIntoView({
+            behavior: "smooth",
+            block: "nearest",
+            inline: "center",
+          });
         }
       });
     });
-
-    // Dynamic horizontal scroll edge-fade mask for mobile
-    const filterButtonsContainer = document.querySelector(".filter-buttons");
-    if (filterButtonsContainer) {
-      const updateScrollMask = () => {
-        if (window.innerWidth > 600) {
-          filterButtonsContainer.style.maskImage = "none";
-          filterButtonsContainer.style.webkitMaskImage = "none";
-          return;
-        }
-        const sl = filterButtonsContainer.scrollLeft;
-        const maxScroll = filterButtonsContainer.scrollWidth - filterButtonsContainer.clientWidth;
-        if (maxScroll <= 10) {
-          filterButtonsContainer.style.maskImage = "none";
-          filterButtonsContainer.style.webkitMaskImage = "none";
-          return;
-        }
-        const atStart = sl <= 8;
-        const atEnd = sl >= maxScroll - 8;
-        if (atStart && !atEnd) {
-          filterButtonsContainer.style.maskImage = "linear-gradient(to right, #000 0%, #000 calc(100% - 35px), transparent 100%)";
-          filterButtonsContainer.style.webkitMaskImage = "linear-gradient(to right, #000 0%, #000 calc(100% - 35px), transparent 100%)";
-        } else if (!atStart && !atEnd) {
-          filterButtonsContainer.style.maskImage = "linear-gradient(to right, transparent 0%, #000 28px, #000 calc(100% - 28px), transparent 100%)";
-          filterButtonsContainer.style.webkitMaskImage = "linear-gradient(to right, transparent 0%, #000 28px, #000 calc(100% - 28px), transparent 100%)";
-        } else if (!atStart && atEnd) {
-          filterButtonsContainer.style.maskImage = "linear-gradient(to right, transparent 0%, #000 35px, #000 100%)";
-          filterButtonsContainer.style.webkitMaskImage = "linear-gradient(to right, transparent 0%, #000 35px, #000 100%)";
-        }
-      };
-      filterButtonsContainer.addEventListener("scroll", updateScrollMask, { passive: true });
-      window.addEventListener("resize", updateScrollMask, { passive: true });
-      updateScrollMask();
-    }
 
     if (searchInput && countSpan) {
       const performSearch = function () {
