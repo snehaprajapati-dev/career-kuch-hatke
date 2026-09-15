@@ -574,10 +574,6 @@ a.card-btn:hover {
     justify-content: flex-start;
     align-items: center;
     margin-bottom: 0.5rem;
-    /* Soft fade mask on right edge to signal more content */
-    -webkit-mask-image: linear-gradient(to right, #000 0%, #000 calc(100% - 35px), transparent 100%);
-    mask-image: linear-gradient(to right, #000 0%, #000 calc(100% - 35px), transparent 100%);
-    transition: -webkit-mask-image 0.25s ease, mask-image 0.25s ease;
   }
 
   /* Sleek 3px pill scroll indicator on mobile */

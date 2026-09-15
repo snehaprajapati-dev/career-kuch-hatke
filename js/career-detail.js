@@ -362,6 +362,103 @@ const parentPitches = {
     script:
       "Mom, Dad, every brand today gets 80% of its customers from social media. Social media managers aren't just scrolling; they analyze analytics, run high-budget ad campaigns, and drive sales for companies like Nykaa and Zomato. It is corporate digital marketing with salaries of ₹4-10 LPA.",
   },
+  "game-sound-designer": {
+    dilemma:
+      "Making sounds for games? Isn't that just playing on computers all day?",
+    financialAngle:
+      "Game audio engineers start at ₹4-6 LPA in studios like Ubisoft and EA, with seniors making ₹18-25+ LPA, plus lucrative global freelance contracts.",
+    safetyAngle:
+      "Can be pursued alongside any degree (B.Sc, BCA, or B.A) while building audio projects and Wwise certification on the side.",
+    script:
+      "Mom, Dad, the video game industry is bigger than Bollywood and Hollywood combined. Every Indian and international studio needs certified sound engineers to create audio effects. Companies like Ubisoft Pune and EA hire sound designers starting at ₹4-6 LPA, and senior specialists make ₹18-25 LPA. I will complete my graduation degree while building my sound design portfolio.",
+  },
+  "toy-designer": {
+    dilemma:
+      "Making toys and board games? Toys are for small children! Is that even a real career?",
+    financialAngle:
+      "Indian toy and game companies like Smartivity and Funskool hire product designers at ₹4-7 LPA, and game creators earn royalties of lakhs on box sales.",
+    safetyAngle:
+      "Backed by prestigious National Institute of Design (NID Kurukshetra has a dedicated B.Des in Toy & Game Design) and Government of India's 'Make in India' toy initiative.",
+    script:
+      "Mom, Dad, India's toy industry is booming with strong government backing and export incentives. Top institutions like NID Kurukshetra offer four-year government degrees in Toy Design. Companies like Funskool and Smartivity hire designers starting at ₹4-6 LPA, and original game inventors earn royalties on every copy sold worldwide.",
+  },
+  "vr-world-creator": {
+    dilemma:
+      "Virtual reality glasses? Why not normal software engineering (TCS/Infosys)?",
+    financialAngle:
+      "VR and 3D spatial developers command starting packages of ₹5-8 LPA, scaling to ₹20-35 LPA because 3D spatial talent is very rare in India.",
+    safetyAngle:
+      "Built on solid computer science fundamentals (C#, C++, 3D mathematics). Traditional IT giants like Infosys and Accenture are also building dedicated XR divisions.",
+    script:
+      "Mom, Dad, VR isn't just for gaming—it's used by hospitals for surgery simulations, airlines for pilot training, and real estate for virtual house tours. Because regular IT graduates don't know 3D spatial coding, companies pay starting salaries of ₹5-8 LPA, scaling to ₹20-30 LPA. I will have a full computer science foundation with an advanced specialization in future tech.",
+  },
+  "cyber-crime-investigator": {
+    dilemma: "Police cases and cyber criminals? Is it dangerous or stressful?",
+    financialAngle:
+      "Digital forensic specialists in banks and Big-4 firms start at ₹4-8 LPA, while government officers get secure central/state gazetted pay scales.",
+    safetyAngle:
+      "100% legal, high-respect cyber defense career recognized by Ministry of Home Affairs, NFSU, and Indian cyber police.",
+    script:
+      "Mom, Dad, cyber crime investigators are white-collar digital detectives. We don't go to dangerous physical crime scenes—we work in high-security forensic labs and banks protecting ordinary citizens from digital frauds, bank scams, and identity theft. Major banks, police departments, and Big-4 auditing firms like Deloitte hire specialists with starting pay of ₹5-8 LPA and immense societal respect.",
+  },
+  "food-flavor-creator": {
+    dilemma:
+      "Food flavor chemist? Why not do medicine (MBBS) or regular pharmacy?",
+    financialAngle:
+      "Certified flavor chemists are among the highest-paid scientific specialists in FMCG, with mid-level salaries of ₹10-18 LPA and seniors earning ₹25-35+ LPA.",
+    safetyAngle:
+      "Permanent laboratory positions in massive food conglomerates (PepsiCo, Britannia, ITC, Nestlé) backed by B.Sc/M.Sc Chemistry degrees.",
+    script:
+      "Mom, Dad, every packaged snack, chocolate, and beverage sold in supermarkets depends on flavor chemists. It requires a proper scientific B.Sc and M.Sc degree in Chemistry or Food Tech. Companies like ITC, Britannia, and Nestlé pay starting packages of ₹4-7 LPA, and senior flavorists earn ₹20-30+ LPA because creating a winning taste is worth hundreds of crores to brands.",
+  },
+  "space-mission-scientist": {
+    dilemma: "Space and rockets? Isn't getting into ISRO nearly impossible?",
+    financialAngle:
+      "Apart from prestigious ISRO Scientist scales (Level 10 Gazetted Pay + housing), India's private space startups (Skyroot, Pixxel) offer ₹6-12 LPA to freshers.",
+    safetyAngle:
+      "Strong STEM foundation in Physics and Engineering, backed by government space institutions like IIST and world-class research labs.",
+    script:
+      "Mom, Dad, India is now a global space superpower after Chandrayaan-3. With new government space policies, India has private space companies like Pixxel and Skyroot alongside ISRO that are launching rockets and satellites. A degree in Aerospace or Electronics provides top-tier engineering security with starting packages of ₹5-8 LPA and the honor of working on national missions.",
+  },
+  "meme-marketer": {
+    dilemma:
+      "Making memes on the internet? That sounds like a complete joke, not a respectable job!",
+    financialAngle:
+      "Social media agencies and startups pay ₹4-7 LPA to freshers who understand viral culture, with creative directors making ₹18-25+ LPA.",
+    safetyAngle:
+      "Can be done alongside any regular college degree (BMM, B.Com, BBA, B.Sc) with zero upfront financial investment.",
+    script:
+      "Mom, Dad, companies like Zomato, Swiggy, and Netflix spend crores on advertising, and 80% of their new customers come from viral memes and social media. Meme marketers are digital creative copywriters. I can complete my regular graduation degree while freelancing and building marketing campaigns that prove my earnings directly to you.",
+  },
+  "esports-manager": {
+    dilemma:
+      "Playing games all day? How will you support a household with video games?",
+    financialAngle:
+      "Team managers earn fixed salaries of ₹4-8 LPA plus percentages of tournament prize money and brand sponsorship deals worth lakhs.",
+    safetyAngle:
+      "Real corporate sports management involving contracts, sponsor relations, and event logistics—similar to managing IPL cricket teams.",
+    script:
+      "Mom, Dad, I am NOT a video game player—I am the team manager, exactly like a manager for an IPL cricket team. Esports tournaments in India fill stadiums and have multi-crore prize pools sponsored by brands like Red Bull and Asus. Team managers handle player contracts, budgets, and brand sponsorships with starting pay of ₹4-7 LPA and professional corporate experience.",
+  },
+  "tea-taster": {
+    dilemma:
+      "Drinking tea all day? Is there any real money or dignity in that?",
+    financialAngle:
+      "Trainee tasters start at ₹3.5-6 LPA, and senior master tasters in Kolkata, Darjeeling, and London earn ₹18-35+ LPA evaluating international auctions.",
+    safetyAngle:
+      "India is the world's 2nd largest tea exporter. Established century-old industry backed by the Ministry of Commerce and Tea Board of India.",
+    script:
+      "Mom, Dad, tea tasting is a century-old, elite profession tied to India's billion-dollar tea export industry. Tea tasters decide the pricing of thousands of kilograms of tea at major auctions. Tata Tea, Twinings, and luxury brands pay starting salaries of ₹4-6 LPA with free estate accommodation, and senior master tasters make ₹20-30+ LPA with global travel.",
+  },
+  "heritage-art-restorer": {
+    dilemma: "Fixing old paintings and dusty museum pieces? Who pays for that?",
+    financialAngle:
+      "Government museum officers earn secure pay scales (₹45k-₹90k/month), while private restoration for royal palaces and collectors commands ₹50k-₹3L per artwork.",
+    safetyAngle:
+      "Official Central Government appointments through ASI and Ministry of Culture, backed by an M.A. in Conservation from National Museum Institute.",
+    script:
+      "Mom, Dad, India has thousands of ancient temples, royal palaces, and museums with priceless historic treasures that must be preserved by law. The Archaeological Survey of India (ASI) and national museums offer permanent government officer positions with full security, pension, and housing. It combines history with chemistry in a respected, noble profession.",
+  },
 };
 
 function getParentAdvice(career, careerId) {
