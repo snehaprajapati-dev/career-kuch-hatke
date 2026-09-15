@@ -101,42 +101,141 @@ document.addEventListener("DOMContentLoaded", function () {
     const careerCards = document.querySelectorAll(".career-card");
     const searchInput = document.getElementById("career-search");
     const countSpan = document.getElementById("count");
+    const noResults = document.getElementById("no-careers-found");
+    const filtersSection = document.querySelector(".filters");
 
     filterButtons.forEach((button) => {
       button.addEventListener("click", function () {
         filterButtons.forEach((btn) => btn.classList.remove("active"));
         this.classList.add("active");
         const filterValue = this.getAttribute("data-filter");
+        if (searchInput) searchInput.value = "";
+        if (filtersSection) filtersSection.classList.remove("is-searching");
         let visibleCount = 0;
         careerCards.forEach((card) => {
           const cardCategory = card.getAttribute("data-category");
           if (filterValue === "all" || cardCategory === filterValue) {
-            card.style.display = "block";
+            card.style.display = "";
             visibleCount++;
           } else {
             card.style.display = "none";
           }
         });
         if (countSpan) countSpan.textContent = visibleCount;
+        if (noResults)
+          noResults.style.display = visibleCount === 0 ? "block" : "none";
+        const backToTop = document.querySelector(".back-to-top");
+        if (backToTop) {
+          backToTop.style.display = visibleCount === 0 ? "none" : "";
+        }
       });
     });
 
     if (searchInput && countSpan) {
-      searchInput.addEventListener("input", function () {
-        const searchTerm = this.value.toLowerCase();
+      const performSearch = function () {
+        const rawValue = searchInput.value.trim();
+        const searchTerm = rawValue.toLowerCase();
+
+        // On mobile, hide the category filter chips while actively typing to bring cards directly into view
+        if (filtersSection) {
+          if (rawValue.length > 0) {
+            filtersSection.classList.add("is-searching");
+          } else {
+            filtersSection.classList.remove("is-searching");
+          }
+        }
+
         let visibleCount = 0;
         careerCards.forEach((card) => {
-          const careerName = card.querySelector("h3").textContent.toLowerCase();
-          if (careerName.includes(searchTerm)) {
-            card.style.display = "block";
+          const careerName = card.querySelector("h3")
+            ? card.querySelector("h3").textContent.toLowerCase()
+            : "";
+          const tagline = card.querySelector(".tagline")
+            ? card.querySelector(".tagline").textContent.toLowerCase()
+            : "";
+          const category = card.getAttribute("data-category")
+            ? card.getAttribute("data-category").toLowerCase()
+            : "";
+          if (
+            careerName.includes(searchTerm) ||
+            tagline.includes(searchTerm) ||
+            category.includes(searchTerm)
+          ) {
+            card.style.display = "";
             visibleCount++;
           } else {
             card.style.display = "none";
           }
         });
         countSpan.textContent = visibleCount;
+
+        const backToTop = document.querySelector(".back-to-top");
+        const suggestBtn = document.getElementById("suggestCareerBtn");
+        const noResultsMsg = document.getElementById("no-results-msg");
+
+        if (noResults) {
+          noResults.style.display = visibleCount === 0 ? "block" : "none";
+          if (visibleCount === 0) {
+            noResults.style.display = "block";
+            if (noResultsMsg) {
+              if (rawValue) {
+                const safeTerm = rawValue
+                  .replace(/&/g, "&amp;")
+                  .replace(/</g, "&lt;")
+                  .replace(/>/g, "&gt;");
+                noResultsMsg.innerHTML = `We couldn't find any career matching "<strong>${safeTerm}</strong>". Have a unique career in mind that we haven't covered yet? Tell us and we'll add it!`;
+              } else {
+                noResultsMsg.textContent =
+                  "We couldn't find any career matching that keyword. Try searching for a different term or browse our categories!";
+              }
+            }
+            if (suggestBtn) {
+              suggestBtn.href = rawValue
+                ? `contact.html?type=suggestion&career=${encodeURIComponent(rawValue)}`
+                : `contact.html?type=suggestion`;
+              const safeCareerText =
+                rawValue.length > 18
+                  ? rawValue.substring(0, 18) + "..."
+                  : rawValue;
+              suggestBtn.innerHTML = rawValue
+                ? `<span>💡</span> Suggest "${safeCareerText.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")}"`
+                : `<span>💡</span> Suggest a Career`;
+            }
+          } else {
+            noResults.style.display = "none";
+          }
+        }
+
+        // Hide back-to-top when no careers match or during empty search
+        if (backToTop) {
+          backToTop.style.display = visibleCount === 0 ? "none" : "";
+        }
+      };
+
+      // Attach across multiple input events for robust mobile keyboard support (Gboard, Xiaomi, iOS)
+      ["input", "keyup", "change", "search"].forEach((evt) => {
+        searchInput.addEventListener(evt, performSearch);
       });
     }
+
+    window.resetCareerSearch = function () {
+      if (searchInput) searchInput.value = "";
+      if (filtersSection) filtersSection.classList.remove("is-searching");
+      filterButtons.forEach((btn) => {
+        if (btn.getAttribute("data-filter") === "all") {
+          btn.classList.add("active");
+        } else {
+          btn.classList.remove("active");
+        }
+      });
+      careerCards.forEach((card) => {
+        card.style.display = "";
+      });
+      if (countSpan) countSpan.textContent = careerCards.length;
+      if (noResults) noResults.style.display = "none";
+      const backToTop = document.querySelector(".back-to-top");
+      if (backToTop) backToTop.style.display = "";
+    };
 
     const urlParamsExplore = new URLSearchParams(window.location.search);
     const category = urlParamsExplore.get("category");
@@ -145,6 +244,12 @@ document.addEventListener("DOMContentLoaded", function () {
         `.filter-btn[data-filter="${category}"]`,
       );
       if (targetButton) targetButton.click();
+    }
+
+    const searchParam = urlParamsExplore.get("search");
+    if (searchParam && searchInput) {
+      searchInput.value = decodeURIComponent(searchParam);
+      searchInput.dispatchEvent(new Event("input", { bubbles: true }));
     }
   }
 
@@ -737,6 +842,25 @@ document.addEventListener("DOMContentLoaded", function () {
     const suggestionSuccess = document.getElementById("suggestion-success");
     if (suggestionForm) suggestionForm.style.display = "none";
     if (suggestionSuccess) suggestionSuccess.style.display = "block";
+  }
+
+  // When opening via deep link (e.g. from Explore empty state "Suggest a Career")
+  const typeParam = urlParams.get("type");
+  const careerParam = urlParams.get("career");
+  if (typeParam === "suggestion") {
+    showForm("suggestion");
+    if (careerParam) {
+      const careerInput = document.getElementById("career-name");
+      if (careerInput) {
+        careerInput.value = decodeURIComponent(careerParam);
+        const whyInput = document.getElementById("career-why");
+        if (whyInput) {
+          setTimeout(() => whyInput.focus(), 250);
+        }
+      }
+    }
+  } else if (typeParam === "contact") {
+    showForm("contact");
   }
 
   /* ============================================

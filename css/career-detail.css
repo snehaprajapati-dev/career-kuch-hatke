@@ -578,11 +578,17 @@
 }
 
 .sidebar-card {
-  background-color: var(--bg-white);
+  background-color: var(--bg-white, #ffffff);
   padding: 2rem;
   border-radius: 16px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-  border: 3px solid var(--pink-light);
+  border: 3px solid var(--pink-light, #ffd1dc);
+}
+
+[data-theme="dark"] .sidebar-card {
+  background: linear-gradient(135deg, #180d2e 0%, #22123d 100%) !important;
+  border: 2px solid rgba(221, 168, 63, 0.35) !important;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.45) !important;
 }
 
 .sidebar-card h3 {
@@ -591,10 +597,18 @@
   margin-bottom: 1rem;
 }
 
+[data-theme="dark"] .sidebar-card h3 {
+  color: #ffe0a0 !important;
+}
+
 .sidebar-card p {
   color: var(--text-gray);
   margin-bottom: 1.5rem;
   line-height: 1.6;
+}
+
+[data-theme="dark"] .sidebar-card p {
+  color: #c7bed9 !important;
 }
 
 /* CTA Card */
@@ -608,44 +622,72 @@
   text-align: center;
 }
 
-.cta-card .btn {
-  width: 100%;
-  background: linear-gradient(135deg, var(--accent) 0%, #f0c050 100%);
-  color: var(--text-dark);
-  padding: 1rem;
-  font-weight: 700;
-  transition: all 0.3s ease;
+.cta-card .btn,
+.cta-card .card-btn,
+.cta-card a.btn {
+  display: block !important;
+  width: 100% !important;
+  text-align: center !important;
+  padding: 0.95rem 1.5rem !important;
+  background: linear-gradient(
+    135deg,
+    var(--accent) 0%,
+    #f0c050 100%
+  ) !important;
+  color: var(--text-dark, #1a1130) !important;
+  font-weight: 700 !important;
+  font-family: "Montserrat Alternates", sans-serif !important;
+  font-size: 1rem !important;
+  border-radius: 8px !important;
+  text-decoration: none !important;
+  transition: all 0.3s ease !important;
+  box-shadow: 0 3px 10px rgba(221, 168, 63, 0.3) !important;
+  margin-top: 0 !important;
+  border: none !important;
+  text-shadow: none !important;
 }
 
-.cta-card .btn:hover {
-  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-  color: var(--bg-white);
-  transform: translateY(-3px);
+.cta-card .btn:hover,
+.cta-card .card-btn:hover,
+.cta-card a.btn:hover {
+  background: linear-gradient(
+    135deg,
+    var(--primary) 0%,
+    var(--secondary) 100%
+  ) !important;
+  color: var(--bg-white, #ffffff) !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 20px rgba(103, 42, 63, 0.4) !important;
+  border: none !important;
+}
+
+/* 🌙 Dark Mode CTA Card Button - Exact match to Know More button */
+[data-theme="dark"] .cta-card .btn,
+[data-theme="dark"] .cta-card .card-btn,
+[data-theme="dark"] .cta-card a.btn {
+  background: linear-gradient(135deg, #ffe0a0 0%, #ffd080 100%) !important;
+  color: #1a1130 !important;
+  border: 1px solid rgba(255, 224, 160, 0.7) !important;
+  box-shadow: 0 4px 16px rgba(255, 224, 160, 0.35) !important;
+  text-shadow: none !important;
+  font-weight: 700 !important;
+}
+
+[data-theme="dark"] .cta-card .btn:hover,
+[data-theme="dark"] .cta-card .card-btn:hover,
+[data-theme="dark"] .cta-card a.btn:hover {
+  background: linear-gradient(135deg, #ffffff 0%, #ffe0a0 100%) !important;
+  color: #0c0817 !important;
+  border-color: rgba(255, 255, 255, 0.9) !important;
+  box-shadow: 0 6px 22px rgba(255, 224, 160, 0.55) !important;
+  transform: translateY(-2px) !important;
 }
 
 /* Related Careers */
 #related-careers {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
-}
-
-.related-career-link:hover {
-  border-color: var(--accent);
-  background-color: rgba(221, 168, 63, 0.1);
-  transform: translateX(5px);
-}
-
-.related-career-link strong {
-  display: block;
-  color: var(--primary);
-  font-weight: 700;
-  margin-bottom: 0.3rem;
-}
-
-.related-career-link small {
-  color: var(--text-gray);
-  font-size: 0.85rem;
+  gap: 0.85rem;
 }
 
 /* Share Card */
@@ -685,13 +727,15 @@
   border-left: 4px solid var(--accent);
   transition: all 0.3s ease;
   cursor: pointer;
+  color: var(--text-dark);
 }
 
 .resource-category:hover {
-  background: linear-gradient(135deg, #fff5e6 0%, #ffe6f0 100%);
-  transform: translateX(10px);
-  box-shadow: 0 4px 15px rgba(255, 107, 107, 0.2);
+  background-color: rgba(221, 168, 63, 0.12);
+  transform: translateX(8px);
+  box-shadow: 0 4px 15px rgba(221, 168, 63, 0.2);
   border-left-color: var(--primary);
+  color: var(--text-dark);
 }
 
 .resource-category strong {
@@ -706,59 +750,128 @@
   color: var(--accent);
 }
 
-/* Sidebar Related Careers Hover */
-.related-career-link {
-  display: block;
-  padding: 1rem;
-  background-color: var(--bg-light);
-  border-radius: 10px;
-  border: 2px solid transparent;
-  transition: all 0.3s ease;
-  text-decoration: none;
-  color: var(--text-dark);
+/* 🌙 Dark Mode Resource Category */
+[data-theme="dark"] .resource-category {
+  background-color: #1e1238;
+  border-left-color: var(--accent);
+  color: #ede8f5;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
 
-.related-career-link:hover {
-  background: linear-gradient(135deg, #fff5e6 0%, #ffe6f0 100%);
-  border-color: var(--primary);
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(255, 107, 107, 0.3);
+[data-theme="dark"] .resource-category strong {
+  color: #ffe0a0;
+}
+
+[data-theme="dark"] .resource-category:hover {
+  background-color: rgba(221, 168, 63, 0.16) !important;
+  border-left-color: #ffe0a0 !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.4) !important;
+}
+
+[data-theme="dark"] .resource-category:hover strong {
+  color: #ffd080 !important;
+}
+
+/* ============================================
+   SIDEBAR: RELATED CAREERS LINKS (LIGHT & DARK)
+   ============================================ */
+.related-career-link {
+  display: block;
+  padding: 1rem 1.15rem;
+  background-color: #f8f6fb;
+  border-radius: 12px;
+  border: 1.5px solid rgba(107, 76, 154, 0.18);
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  text-decoration: none;
+  color: var(--text-dark, #1a1130);
 }
 
 .related-career-link strong {
   display: block;
-  color: var(--primary);
+  color: #3b1d6b;
   font-weight: 700;
+  font-size: 1rem;
   margin-bottom: 0.3rem;
-  transition: color 0.3s ease;
-}
-
-.related-career-link:hover strong {
-  color: var(--accent);
+  transition: color 0.25s ease;
 }
 
 .related-career-link small {
-  color: var(--text-gray);
+  color: #635777;
   font-size: 0.85rem;
-  transition: all 0.3s ease;
-}
-
-.related-career-link:hover small {
-  color: var(--accent);
-  font-weight: 600;
-  transform: translateX(5px);
+  font-weight: 500;
+  transition: all 0.25s ease;
   display: inline-block;
 }
 
-/* Animated Arrow */
 .related-career-link small::after {
   content: " →";
   display: inline-block;
-  transition: transform 0.3s ease;
+  transition: transform 0.25s ease;
+}
+
+/* Light Mode Hover */
+.related-career-link:hover {
+  background: #ffffff !important;
+  border-color: #6b4c9a !important;
+  transform: translateY(-3px) translateX(4px);
+  box-shadow: 0 6px 18px rgba(107, 76, 154, 0.18) !important;
+}
+
+.related-career-link:hover strong {
+  color: #6b4c9a !important;
+}
+
+.related-career-link:hover small {
+  color: #a36f0e !important;
+  font-weight: 700;
+  transform: translateX(4px);
 }
 
 .related-career-link:hover small::after {
-  transform: translateX(5px);
+  transform: translateX(4px);
+  color: #a36f0e !important;
+}
+
+/* 🌙 Dark Mode Related Career Link */
+[data-theme="dark"] .related-career-link {
+  background: #22133e !important;
+  border: 1.5px solid rgba(221, 168, 63, 0.28) !important;
+  color: #ede8f5 !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3) !important;
+}
+
+[data-theme="dark"] .related-career-link strong {
+  color: #ffe0a0 !important;
+}
+
+[data-theme="dark"] .related-career-link small {
+  color: #c7bed9 !important;
+}
+
+[data-theme="dark"] .related-career-link:hover {
+  background: #321a5a !important;
+  border-color: #ffd080 !important;
+  color: #ffffff !important;
+  transform: translateY(-3px) translateX(4px) !important;
+  box-shadow:
+    0 8px 25px rgba(0, 0, 0, 0.6),
+    0 0 14px rgba(255, 208, 128, 0.18) !important;
+}
+
+[data-theme="dark"] .related-career-link:hover strong {
+  color: #ffffff !important;
+}
+
+[data-theme="dark"] .related-career-link:hover small {
+  color: #ffd080 !important;
+  font-weight: 700;
+  transform: translateX(4px);
+}
+
+[data-theme="dark"] .related-career-link:hover small::after {
+  transform: translateX(4px);
+  color: #ffd080 !important;
 }
 
 /* All Cards Hover */
@@ -1055,68 +1168,6 @@
 }
 
 /* ============================================
-   HOVER EFFECTS FOR SIDEBAR LINKS
-   ============================================ */
-
-.related-career-link {
-  display: block;
-  padding: 1rem;
-  margin-bottom: 1rem;
-  background: #f8f9fa;
-  border-radius: 10px;
-  text-decoration: none;
-  color: #2c3e50;
-  transition: all 0.3s ease;
-  border: 2px solid transparent;
-}
-
-.related-career-link:hover {
-  background: linear-gradient(135deg, #fff5e6 0%, #ffe6f0 100%);
-  border-color: #ff6b6b;
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(255, 107, 107, 0.3);
-}
-
-.related-career-link strong {
-  display: block;
-  font-size: 1.1rem;
-  margin-bottom: 0.5rem;
-  color: #2c3e50;
-  transition: color 0.3s ease;
-}
-
-.related-career-link:hover strong {
-  color: #ff6b6b;
-}
-
-.related-career-link small {
-  color: #7f8c8d;
-  font-size: 0.9rem;
-  transition: all 0.3s ease;
-}
-
-.related-career-link:hover small {
-  color: #feca57;
-  font-weight: 600;
-  transform: translateX(5px);
-  display: inline-block;
-}
-
-/* ============================================
-   ANIMATED ARROW ON HOVER
-   ============================================ */
-
-.related-career-link small::after {
-  content: " →";
-  display: inline-block;
-  transition: transform 0.3s ease;
-}
-
-.related-career-link:hover small::after {
-  transform: translateX(5px);
-}
-
-/* ============================================
    SMOOTH CARD HOVER (BONUS)
    ============================================ */
 
@@ -1131,6 +1182,356 @@
 .sidebar-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* ============================================
+   SECTION 9: HOW TO TALK TO YOUR PARENTS
+   ============================================ */
+
+.parent-advice-box {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.parent-fear-banner {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 107, 107, 0.12) 0%,
+    rgba(221, 168, 63, 0.12) 100%
+  );
+  border: 1.5px dashed rgba(255, 107, 107, 0.45);
+  border-radius: 12px;
+  padding: 1.2rem 1.4rem;
+}
+
+[data-theme="dark"] .parent-fear-banner {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 107, 107, 0.15) 0%,
+    rgba(30, 18, 56, 0.8) 100%
+  );
+  border-color: rgba(255, 107, 107, 0.55);
+}
+
+.parent-fear-emoji {
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.parent-fear-text strong {
+  display: block;
+  font-size: 1rem;
+  color: #c0392b;
+  margin-bottom: 0.35rem;
+  font-family: "Montserrat Alternates", sans-serif;
+}
+
+[data-theme="dark"] .parent-fear-text strong {
+  color: #ff7675;
+}
+
+.parent-fear-text p {
+  margin: 0;
+  font-style: italic;
+  color: var(--text-dark);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+[data-theme="dark"] .parent-fear-text p {
+  color: #ede8f5;
+}
+
+.parent-reassurance {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--text-dark);
+}
+
+[data-theme="dark"] .parent-reassurance {
+  color: #cbd5e1;
+}
+
+.parent-talking-points {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.parent-point {
+  background: var(--bg-light);
+  border-radius: 12px;
+  padding: 1.25rem 1.4rem;
+  border-left: 4px solid var(--accent);
+  transition: all 0.3s ease;
+}
+
+[data-theme="dark"] .parent-point {
+  background: #1e1238;
+  border-left-color: var(--accent);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.parent-point:hover {
+  background: rgba(221, 168, 63, 0.12);
+  transform: translateX(6px);
+}
+
+[data-theme="dark"] .parent-point:hover {
+  background: rgba(221, 168, 63, 0.16);
+}
+
+.point-header {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.point-header strong {
+  font-size: 1.05rem;
+  color: var(--primary);
+  font-family: "Montserrat Alternates", sans-serif;
+}
+
+[data-theme="dark"] .point-header strong {
+  color: #ffe0a0;
+}
+
+.point-icon {
+  font-size: 1.3rem;
+}
+
+.parent-point p {
+  margin: 0;
+  color: var(--text-dark);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+[data-theme="dark"] .parent-point p {
+  color: #ede8f5;
+}
+
+.parent-point.script-point {
+  border-left-color: #2ed573;
+  background: linear-gradient(
+    135deg,
+    rgba(46, 213, 115, 0.08) 0%,
+    var(--bg-light) 100%
+  );
+}
+
+[data-theme="dark"] .parent-point.script-point {
+  background: linear-gradient(
+    135deg,
+    rgba(46, 213, 115, 0.12) 0%,
+    #1e1238 100%
+  );
+  border-left-color: #2ed573;
+}
+
+.btn-copy-script {
+  margin-left: auto;
+  background: var(--bg-white, #ffffff);
+  border: 1.5px solid var(--accent);
+  color: var(--primary);
+  padding: 0.4rem 0.85rem;
+  border-radius: 8px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: "Montserrat Alternates", sans-serif;
+  transition: all 0.2s ease;
+}
+
+.btn-copy-script:hover {
+  background: var(--accent);
+  color: #1a0e35;
+}
+
+[data-theme="dark"] .btn-copy-script {
+  background: #2a1a4a;
+  color: #ffe0a0;
+  border-color: #ffe0a0;
+}
+
+[data-theme="dark"] .btn-copy-script:hover {
+  background: #ffe0a0;
+  color: #1a0e35;
+}
+
+.parent-script {
+  margin: 0.75rem 0 0 0;
+  padding: 1rem 1.25rem;
+  background: var(--bg-white);
+  border-left: 3px solid #2ed573;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: var(--text-dark);
+  font-style: italic;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+[data-theme="dark"] .parent-script {
+  background: #140a28;
+  color: #f1f2f6;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* ============================================
+   ROADMAP ACTION TOOLBAR (Expanded Full-Width Bar)
+   ============================================ */
+
+.roadmap-toolbar {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.85rem;
+  width: 100%;
+  margin-bottom: 1.5rem;
+}
+
+.toolbar-btn {
+  width: 100%;
+  box-sizing: border-box;
+  background: var(--bg-white, #ffffff);
+  border: 1.5px solid rgba(221, 168, 63, 0.45);
+  color: var(--primary, #3b1d6b);
+  padding: 0.85rem 1rem;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: all 0.25s ease;
+  font-family: "Montserrat Alternates", sans-serif;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.04);
+  text-align: center;
+}
+
+.toolbar-btn:hover {
+  background: var(--accent, #dda83f);
+  color: #1a0e35;
+  border-color: var(--accent, #dda83f);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(221, 168, 63, 0.35);
+}
+
+[data-theme="dark"] .toolbar-btn {
+  background: #1e1238;
+  color: #ffe0a0;
+  border: 1.5px solid rgba(221, 168, 63, 0.4);
+  box-shadow: 0 3px 14px rgba(0, 0, 0, 0.35);
+}
+
+[data-theme="dark"] .toolbar-btn:hover {
+  background: linear-gradient(135deg, #ffe0a0 0%, #ffd080 100%);
+  color: #1a1130;
+  border-color: rgba(255, 224, 160, 0.8);
+  box-shadow: 0 6px 20px rgba(221, 168, 63, 0.4);
+}
+
+@media (max-width: 768px) {
+  .roadmap-toolbar {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.65rem;
+  }
+  .toolbar-btn:nth-child(3) {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 480px) {
+  .roadmap-toolbar {
+    grid-template-columns: 1fr;
+    gap: 0.65rem;
+  }
+  .toolbar-btn:nth-child(3) {
+    grid-column: auto;
+  }
+  .toolbar-btn {
+    padding: 0.75rem 1rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* ============================================
+   CLEAN PRINT ROADMAP (Save as PDF)
+   ============================================ */
+
+@media print {
+  .navbar,
+  .breadcrumb,
+  .breadcrumb-nav,
+  .sidebar,
+  .footer,
+  .roadmap-toolbar,
+  .back-to-top,
+  .theme-toggle,
+  .hamburger {
+    display: none !important;
+  }
+
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+    font-size: 11pt;
+  }
+
+  .career-hero {
+    background: none !important;
+    color: #000000 !important;
+    padding: 1rem 0 !important;
+    border-bottom: 2px solid #333 !important;
+  }
+
+  #career-name {
+    color: #000000 !important;
+    text-shadow: none !important;
+    font-size: 24pt !important;
+  }
+
+  .career-tagline {
+    color: #444 !important;
+    font-size: 12pt !important;
+  }
+
+  .details-grid {
+    display: block !important;
+  }
+
+  .main-content {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .detail-card {
+    break-inside: avoid;
+    page-break-inside: avoid;
+    border: 1px solid #ccc !important;
+    box-shadow: none !important;
+    margin-bottom: 1.5rem !important;
+  }
+
+  .detail-card .card-content {
+    max-height: none !important;
+    opacity: 1 !important;
+    padding: 1rem !important;
+    display: block !important;
+  }
+
+  .card-header::after {
+    display: none !important;
+  }
 }
 /* END OF CAREER DETAIL PAGE RESPONSIVE STYLES 
  END OF CAREER DETAIL PAGE STYLES */
