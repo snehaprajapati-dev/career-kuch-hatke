@@ -14,10 +14,17 @@ jobs:
       - name: 🚚 Checkout latest code
         uses: actions/checkout@v4
 
+      - name: 🔍 List available secret names
+        env:
+          SECRETS_JSON: ${{ toJson(secrets) }}
+        run: |
+          echo "Checking secret names..."
+          node -e 'const s = JSON.parse(process.env.SECRETS_JSON || "{}"); const keys = Object.keys(s); console.log("Secret names found in this repo:", keys.filter(k => k !== "github_token"));'
+
       - name: 🔍 Check if secrets are configured
         run: |
           if [ -z "${{ secrets.FTP_USERNAME }}" ]; then
-            echo "::error::GitHub secret 'FTP_USERNAME' was not found! Please check GitHub Settings -> Secrets and variables -> Actions -> Repository secrets."
+            echo "::error::GitHub secret 'FTP_USERNAME' was not found! Please check what name is used in GitHub Settings."
             exit 1
           fi
           if [ -z "${{ secrets.FTP_PASSWORD }}" ]; then
