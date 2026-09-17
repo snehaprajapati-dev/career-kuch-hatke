@@ -1386,6 +1386,26 @@
   color: #1a0e35;
 }
 
+.parent-pitch-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: rgba(37, 211, 102, 0.12);
+  border: 1px solid rgba(37, 211, 102, 0.35);
+  color: #128c7e;
+  padding: 0.3rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin: 0.6rem 0 0.4rem 0;
+}
+
+[data-theme="dark"] .parent-pitch-badge {
+  background: rgba(37, 211, 102, 0.15);
+  border-color: rgba(37, 211, 102, 0.4);
+  color: #4cd964;
+}
+
 .parent-script {
   margin: 0.75rem 0 0 0;
   padding: 1rem 1.25rem;

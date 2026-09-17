@@ -1049,6 +1049,22 @@ body > *:first-child:not(.navbar) {
   margin-bottom: 0.3rem;
 }
 
+.footer-disclaimer {
+  font-size: 0.82rem !important;
+  opacity: 0.88;
+  max-width: 840px;
+  margin: 0 auto 0.85rem auto !important;
+  line-height: 1.6;
+  text-align: center;
+  padding: 0 1rem;
+  color: #ffe0a0 !important;
+}
+
+[data-theme="dark"] .footer-disclaimer {
+  color: #ffe0a0 !important;
+  opacity: 0.9;
+}
+
 /* ============================================
    PAGE HEADER
    ============================================ */

@@ -99,8 +99,10 @@
       <input
         type="text"
         id="career-search"
-        placeholder="Search careers..."
+        placeholder="Search careers (e.g. coding, camera, food, games)..."
+        autocomplete="off"
       />
+      <button type="button" id="clearSearch" class="search-clear-btn" aria-label="Clear search" style="display: none;">✕</button>
     </div>
     <p class="results-count">Showing <span id="count">35</span> careers</p>
     <div class="filter-buttons">
@@ -709,6 +711,9 @@
     </div>
       </div>
       <div class="footer-bottom">
+        <p class="footer-disclaimer">
+          📋 <strong>Data & Transparency Note:</strong> All salary figures, study budgets, and college roadmaps are verified 2026 industry estimates compiled from AmbitionBox, Glassdoor India, central/state university portals, and government pay matrices. Actual compensation and tuition fees vary based on portfolio, individual merit, and recruiter.
+        </p>
         <p>Built with <span class="emoji">❤️</span> by Sneha Prajapati</p>
         <p>FYBSc Computer Science | Vidyavardhini College</p>
         <p>
@@ -717,7 +722,7 @@
         </p>
       </div>
     </footer>
-    <script src="js/script.js?v=5.0"></script>
+    <script src="js/script.js?v=5.3"></script>
     <script>
 function showComingSoon(event) {
   event.preventDefault(); // Prevent any default action
@@ -725,6 +730,6 @@ function showComingSoon(event) {
   return false; // Extra prevention
 }
 </script>
-    <script src="js/form-validation.js?v=3.8"></script>
+    <script src="js/form-validation.js?v=5.3"></script>
   </body>
 </html>

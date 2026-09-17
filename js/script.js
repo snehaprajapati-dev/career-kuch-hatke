@@ -140,9 +140,54 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     if (searchInput && countSpan) {
+      const clearBtn = document.getElementById("clearSearch");
+
+      const searchKeywordsMap = {
+        "food-stylist": ["food", "cooking", "styling", "photography", "chef", "culinary", "kitchen", "dishes", "restaurant", "baking"],
+        "ui-ux-designer": ["ui", "ux", "design", "figma", "app", "website", "web", "coding", "interface", "graphic", "product design", "wireframe"],
+        "voice-over-artist": ["voice", "dubbing", "audio", "mic", "speaking", "acting", "radio", "singing", "narration", "cartoon", "anime"],
+        "ethical-fashion-designer": ["fashion", "clothing", "clothes", "sustainable", "textile", "fabric", "dress", "style", "eco", "garment"],
+        "animator": ["animation", "animator", "cartoons", "drawing", "3d", "2d", "anime", "vfx", "blender", "cgi", "motion", "art"],
+        "game-sound-designer": ["gaming", "game", "sound", "audio", "music", "sfx", "foley", "bgm", "effects", "audio engineer"],
+        "toy-designer": ["toy", "toys", "games", "kids", "play", "board games", "3d printing", "crafts", "lego", "children"],
+        "drone-pilot": ["drone", "flying", "camera", "aerial", "aviation", "uav", "photography", "surveillance", "pilot", "videography"],
+        "ethical-hacker": ["hacker", "hacking", "cyber", "security", "coding", "programming", "bug bounty", "penetration", "cybersecurity", "kali", "linux", "computers"],
+        "ai-prompt-engineer": ["ai", "prompt", "chatgpt", "midjourney", "llm", "artificial intelligence", "coding", "automation", "tech", "machine learning"],
+        "data-storyteller": ["data", "storyteller", "statistics", "analytics", "charts", "graphs", "excel", "visualization", "bi", "numbers", "insights"],
+        "game-developer": ["game", "games", "gaming", "coding", "unity", "unreal", "c++", "c#", "steam", "programming", "playstation", "developer"],
+        "vr-world-creator": ["vr", "virtual reality", "metaverse", "ar", "augmented reality", "3d", "gaming", "oculus", "unity", "blender"],
+        "cyber-crime-investigator": ["cyber", "crime", "investigator", "forensics", "police", "detective", "fraud", "security", "law", "hacking"],
+        "restoration-architect": ["architecture", "architect", "monuments", "heritage", "buildings", "history", "civil", "conservation", "construction"],
+        "wildlife-photographer": ["wildlife", "photographer", "photography", "camera", "animals", "nature", "forest", "jungle", "birds", "travel", "nat geo"],
+        "forensic-scientist": ["forensic", "forensics", "crime", "science", "dna", "investigation", "police", "lab", "detective", "cid", "biology", "chemistry"],
+        "oceanographer": ["ocean", "oceanographer", "marine", "sea", "underwater", "scuba", "fish", "marine biology", "water", "deep sea"],
+        "food-scientist": ["food", "scientist", "science", "nutrition", "fssai", "diet", "preservation", "chemistry", "culinary", "lab"],
+        "food-flavor-creator": ["flavor", "flavour", "flavorist", "food", "taste", "chemistry", "perfume", "aroma", "seasoning", "science"],
+        "space-mission-scientist": ["space", "isro", "nasa", "astronomy", "physics", "rocket", "satellite", "cosmos", "science", "astrophysics", "mars"],
+        "sports-agent": ["sports", "cricket", "ipl", "athlete", "management", "contract", "business", "negotiation", "football", "fitness"],
+        "fragrance-designer": ["fragrance", "perfume", "scent", "aroma", "smell", "chemistry", "cosmetics", "luxury", "beauty", "perfumer"],
+        "event-manager": ["event", "events", "wedding", "planner", "planning", "party", "concert", "hospitality", "management", "festival"],
+        "social-media-manager": ["social media", "instagram", "youtube", "reels", "marketing", "influencer", "content", "viral", "digital marketing"],
+        "ethical-investment-advisor": ["investment", "money", "finance", "stocks", "shares", "advisor", "esg", "wealth", "banking", "mutual funds", "green"],
+        "meme-marketer": ["meme", "memes", "social media", "marketing", "comedy", "humour", "viral", "trending", "content", "reels", "gen z"],
+        "esports-manager": ["esports", "gaming", "tournament", "bgmi", "valorant", "gamers", "pubg", "streaming", "team", "competitive"],
+        "podcast-producer": ["podcast", "podcasting", "audio", "spotify", "interview", "sound", "radio", "broadcasting", "recording", "voice"],
+        "museum-curator": ["museum", "curator", "history", "art", "heritage", "culture", "exhibition", "archaeology", "antique", "historical"],
+        "sign-language-interpreter": ["sign language", "deaf", "interpreter", "accessibility", "ngo", "translation", "inclusive", "communication", "hearing"],
+        "pet-therapist": ["pet", "pets", "dog", "dogs", "cat", "animals", "therapy", "training", "veterinary", "animal behavior", "puppy"],
+        "adventure-sports-instructor": ["adventure", "sports", "trekking", "mountaineering", "scuba", "rafting", "outdoor", "travel", "fitness", "instructor"],
+        "tea-taster": ["tea", "chai", "tea taster", "sommelier", "beverage", "tasting", "plantations", "aroma", "assam", "darjeeling"],
+        "heritage-art-restorer": ["art", "painting", "restorer", "heritage", "museum", "canvas", "conservation", "fine arts", "monuments", "culture"]
+      };
+
       const performSearch = function () {
         const rawValue = searchInput.value.trim();
         const searchTerm = rawValue.toLowerCase();
+
+        // Toggle clear button
+        if (clearBtn) {
+          clearBtn.style.display = rawValue.length > 0 ? "flex" : "none";
+        }
 
         // On mobile, hide the category filter chips while actively typing to bring cards directly into view
         if (filtersSection) {
@@ -164,10 +209,26 @@ document.addEventListener("DOMContentLoaded", function () {
           const category = card.getAttribute("data-category")
             ? card.getAttribute("data-category").toLowerCase()
             : "";
+
+          // Extract career slug from card's "Know More" button href
+          const btn = card.querySelector("a.card-btn");
+          let slug = "";
+          if (btn) {
+            const href = btn.getAttribute("href") || "";
+            const match = href.match(/career=([a-z0-9\-]+)/);
+            if (match) slug = match[1];
+          }
+
+          const keywords = searchKeywordsMap[slug] || [];
+          const keywordMatch = keywords.some(
+            (k) => k.includes(searchTerm) || searchTerm.includes(k)
+          );
+
           if (
             careerName.includes(searchTerm) ||
             tagline.includes(searchTerm) ||
-            category.includes(searchTerm)
+            category.includes(searchTerm) ||
+            keywordMatch
           ) {
             card.style.display = "";
             visibleCount++;
@@ -224,10 +285,21 @@ document.addEventListener("DOMContentLoaded", function () {
       ["input", "keyup", "change", "search"].forEach((evt) => {
         searchInput.addEventListener(evt, performSearch);
       });
+
+      // Clear button click listener
+      if (clearBtn) {
+        clearBtn.addEventListener("click", function () {
+          searchInput.value = "";
+          performSearch();
+          searchInput.focus();
+        });
+      }
     }
 
     window.resetCareerSearch = function () {
       if (searchInput) searchInput.value = "";
+      const clearBtn = document.getElementById("clearSearch");
+      if (clearBtn) clearBtn.style.display = "none";
       if (filtersSection) filtersSection.classList.remove("is-searching");
       filterButtons.forEach((btn) => {
         if (btn.getAttribute("data-filter") === "all") {
