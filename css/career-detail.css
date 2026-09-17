@@ -1356,18 +1356,76 @@
   border-left-color: #2ed573;
 }
 
-.btn-copy-script {
+/* Script Container Box & Toolbar */
+.parent-script-box {
+  margin-top: 0.85rem;
+  background: var(--bg-white, #ffffff);
+  border: 1px solid rgba(46, 213, 115, 0.35);
+  border-left: 4px solid #2ed573;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.04);
+}
+
+[data-theme="dark"] .parent-script-box {
+  background: #140a28;
+  border: 1px solid rgba(46, 213, 115, 0.3);
+  border-left: 4px solid #2ed573;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.35);
+}
+
+.script-box-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.65rem 1rem;
+  background: rgba(46, 213, 115, 0.08);
+  border-bottom: 1px solid rgba(46, 213, 115, 0.18);
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+[data-theme="dark"] .script-box-header {
+  background: rgba(46, 213, 115, 0.12);
+  border-bottom: 1px solid rgba(46, 213, 115, 0.22);
+}
+
+.script-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #128c7e;
+  letter-spacing: 0.2px;
+}
+
+[data-theme="dark"] .script-badge {
+  color: #4cd964;
+}
+
+.script-btn-group {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
   margin-left: auto;
+}
+
+.btn-copy-script {
   background: var(--bg-white, #ffffff);
   border: 1.5px solid var(--accent);
   color: var(--primary);
-  padding: 0.4rem 0.85rem;
-  border-radius: 8px;
-  font-size: 0.82rem;
+  padding: 0.35rem 0.75rem;
+  border-radius: 7px;
+  font-size: 0.8rem;
   font-weight: 700;
   cursor: pointer;
   font-family: "Montserrat Alternates", sans-serif;
   transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
 }
 
 .btn-copy-script:hover {
@@ -1386,61 +1444,13 @@
   color: #1a0e35;
 }
 
-.parent-pitch-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  background: rgba(37, 211, 102, 0.12);
-  border: 1px solid rgba(37, 211, 102, 0.35);
-  color: #128c7e;
-  padding: 0.3rem 0.75rem;
-  border-radius: 20px;
-  font-size: 0.8rem;
-  font-weight: 600;
-  margin: 0.6rem 0 0.4rem 0;
-}
-
-[data-theme="dark"] .parent-pitch-badge {
-  background: rgba(37, 211, 102, 0.15);
-  border-color: rgba(37, 211, 102, 0.4);
-  color: #4cd964;
-}
-
-.parent-script {
-  margin: 0.75rem 0 0 0;
-  padding: 1rem 1.25rem;
-  background: var(--bg-white);
-  border-left: 3px solid #2ed573;
-  border-radius: 8px;
-  font-size: 0.95rem;
-  line-height: 1.65;
-  color: var(--text-dark);
-  font-style: italic;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
-}
-
-[data-theme="dark"] .parent-script {
-  background: #140a28;
-  color: #f1f2f6;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-}
-
-/* Script Button Group & WhatsApp Pitch */
-.script-btn-group {
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-  margin-left: auto;
-  flex-wrap: wrap;
-}
-
 .btn-whatsapp-pitch {
   background: #25d366;
   border: 1.5px solid #20ba5a;
   color: #ffffff;
-  padding: 0.4rem 0.85rem;
-  border-radius: 8px;
-  font-size: 0.82rem;
+  padding: 0.35rem 0.8rem;
+  border-radius: 7px;
+  font-size: 0.8rem;
   font-weight: 700;
   cursor: pointer;
   font-family: "Montserrat Alternates", sans-serif;
@@ -1453,8 +1463,49 @@
 
 .btn-whatsapp-pitch:hover {
   background: #1ebc59;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(37, 211, 102, 0.35);
+}
+
+.parent-script {
+  margin: 0;
+  padding: 1.1rem 1.25rem;
+  background: transparent;
+  border: none;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: var(--text-dark);
+  font-style: italic;
+  box-shadow: none;
+}
+
+[data-theme="dark"] .parent-script {
+  background: transparent;
+  color: #f1f2f6;
+  box-shadow: none;
+}
+
+@media (max-width: 600px) {
+  .script-box-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.6rem;
+  }
+  .script-btn-group {
+    width: 100%;
+    margin-left: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+  }
+  .btn-copy-script,
+  .btn-whatsapp-pitch {
+    justify-content: center;
+    width: 100%;
+    text-align: center;
+    padding: 0.45rem 0.5rem;
+    font-size: 0.76rem;
+  }
 }
 
 .whatsapp-sidebar-btn {
