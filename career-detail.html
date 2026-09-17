@@ -22,9 +22,9 @@
       })();
     </script>
 
-    <link rel="stylesheet" href="css/style.css?v=5.0" />
-    <link rel="stylesheet" href="css/career-detail.css?v=5.0" />
-    <link rel="stylesheet" href="css/breadcrumb-fix.css?v=5.0" />
+    <link rel="stylesheet" href="css/style.css?v=5.3" />
+    <link rel="stylesheet" href="css/career-detail.css?v=5.3" />
+    <link rel="stylesheet" href="css/breadcrumb-fix.css?v=5.3" />
     <link rel="stylesheet" href="css/logo-fix.css?v=5.0" />
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico?v=4.0" />
     <link rel="icon" type="image/x-icon" href="favicon.ico?v=4.0" />
@@ -96,16 +96,20 @@
           <p class="career-tagline" id="career-tagline">Please wait...</p>
           <div class="quick-facts">
             <div class="fact">
-              <span class="fact-label">💰 Entry Salary</span>
+              <span class="fact-label">💰 Salary Range</span>
               <span class="fact-value" id="quick-salary">Loading...</span>
             </div>
             <div class="fact">
-              <span class="fact-label">🏠 Remote Work</span>
-              <span class="fact-value" id="quick-remote">Loading...</span>
+              <span class="fact-label">🏠 Work Mode</span>
+              <span class="fact-value" id="quick-work-mode">Loading...</span>
             </div>
             <div class="fact">
-              <span class="fact-label">📚 Degree Needed</span>
+              <span class="fact-label">🎓 Degree Needed</span>
               <span class="fact-value" id="quick-degree">Loading...</span>
+            </div>
+            <div class="fact">
+              <span class="fact-label">💸 Study Budget</span>
+              <span class="fact-value" id="quick-budget">Loading...</span>
             </div>
           </div>
         </div>
@@ -161,6 +165,15 @@
             <div class="detail-card">
               <div class="card-header">
                 <span class="card-number">4</span>
+                <h2>Top Indian Colleges & Degrees</h2>
+              </div>
+              <div class="card-content" id="colleges-exams">
+                <p>Loading...</p>
+              </div>
+            </div>
+            <div class="detail-card">
+              <div class="card-header">
+                <span class="card-number">5</span>
                 <h2>Skills Needed</h2>
               </div>
               <div class="card-content">
@@ -169,35 +182,35 @@
             </div>
             <div class="detail-card">
               <div class="card-header">
-                <span class="card-number">5</span>
+                <span class="card-number">6</span>
                 <h2>Where Can You Work?</h2>
               </div>
               <div class="card-content" id="work-places"></div>
             </div>
-            <div class="detail-card highlight-card">
+            <div class="detail-card">
               <div class="card-header">
-                <span class="card-number">6</span>
+                <span class="card-number">7</span>
                 <h2>Real Person Example</h2>
               </div>
               <div class="card-content" id="real-person"></div>
             </div>
             <div class="detail-card">
               <div class="card-header">
-                <span class="card-number">7</span>
+                <span class="card-number">8</span>
                 <h2>Free Resources to Start</h2>
               </div>
               <div class="card-content" id="resources"></div>
             </div>
             <div class="detail-card">
               <div class="card-header">
-                <span class="card-number">8</span>
+                <span class="card-number">9</span>
                 <h2>Is This For You?</h2>
               </div>
               <div class="card-content" id="for-you"></div>
             </div>
             <div class="detail-card parent-talk-card">
               <div class="card-header">
-                <span class="card-number">9</span>
+                <span class="card-number">10</span>
                 <h2>How to Talk to Your Parents</h2>
               </div>
               <div class="card-content" id="convince-parents"></div>
@@ -220,7 +233,13 @@
               <h3>Share This Career</h3>
               <p>Know someone who'd love this? Share it!</p>
               <button class="share-btn" onclick="shareCareer()">
-                📤 Share
+                📤 Share with Friends
+              </button>
+              <button
+                class="share-btn whatsapp-sidebar-btn"
+                onclick="shareParentPitchWhatsApp()"
+              >
+                📲 Send Pitch to Parents
               </button>
             </div>
           </aside>
@@ -322,9 +341,9 @@
       </div>
     </footer>
 
-    <script src="js/script.js?v=5.0"></script>
-    <script src="js/career-data.js?v=5.0"></script>
-    <script src="js/career-detail.js?v=5.0"></script>
-    <script src="js/form-validation.js?v=5.0"></script>
+    <script src="js/script.js?v=5.2"></script>
+    <script src="js/career-data.js?v=5.2"></script>
+    <script src="js/career-detail.js?v=5.2"></script>
+    <script src="js/form-validation.js?v=5.2"></script>
   </body>
 </html>
