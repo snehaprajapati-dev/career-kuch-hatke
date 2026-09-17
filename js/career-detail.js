@@ -670,6 +670,9 @@ function fillConvinceParentsSection(career, careerId) {
               </button>
             </div>
           </div>
+          <div class="parent-pitch-badge">
+            <span>🛡️ Pre-formatted Polite Pitch for Indian Parents</span>
+          </div>
           <blockquote class="parent-script" id="parent-script-text">
             "${advice.script}"
           </blockquote>
