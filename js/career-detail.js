@@ -40,16 +40,35 @@ function fillCareerDetails(career, careerId) {
 
   document.getElementById("quick-salary").textContent =
     career.quickFacts.salary;
-  document.getElementById("quick-remote").textContent =
-    career.quickFacts.remote;
+
+  const quickWorkModeEl = document.getElementById("quick-work-mode");
+  if (quickWorkModeEl) {
+    quickWorkModeEl.textContent =
+      career.quickFacts.workMode ||
+      career.quickFacts.workLocation ||
+      (career.quickFacts.remote === "Yes"
+        ? "Remote Friendly 💻"
+        : "On-Site / Field 🏢");
+  } else {
+    const remoteEl = document.getElementById("quick-remote");
+    if (remoteEl) remoteEl.textContent = career.quickFacts.remote;
+  }
+
   document.getElementById("quick-degree").textContent =
     career.quickFacts.degree;
+
+  const quickBudgetEl = document.getElementById("quick-budget");
+  if (quickBudgetEl) {
+    quickBudgetEl.textContent =
+      career.quickFacts.studyBudget || "₹50K – ₹3 Lakhs";
+  }
 
   document.getElementById("what-they-do").innerHTML =
     `<p>${career.whatTheyDo}</p>`;
 
   fillSalarySection(career.salary);
   fillRoadmapSection(career.roadmap);
+  fillCollegesSection(career.indianColleges, career);
   fillSkillsSection(career.skills);
   fillWorkPlacesSection(career.workPlaces);
   fillRealPersonSection(career.realPerson);
@@ -138,7 +157,88 @@ function fillRoadmapSection(roadmap) {
 }
 
 /* ============================================
-   SECTION 4: SKILLS NEEDED
+   SECTION 4: TOP INDIAN COLLEGES & DEGREES
+   ============================================ */
+function fillCollegesSection(collegesData, career) {
+  const container = document.getElementById("colleges-exams");
+  if (!container) return;
+
+  if (!collegesData) {
+    container.innerHTML = `<p>College roadmaps are being updated for this career.</p>`;
+    return;
+  }
+
+  const degreesHtml = collegesData.degrees
+    ? collegesData.degrees
+        .map((deg) => `<span class="college-tag degree-tag">🎓 ${deg}</span>`)
+        .join("")
+    : "";
+
+  const institutesHtml = collegesData.topInstitutes
+    ? collegesData.topInstitutes
+        .map(
+          (inst) =>
+            `<li class="institute-item"><span class="inst-icon">🏛️</span> <strong>${inst}</strong></li>`,
+        )
+        .join("")
+    : "";
+
+  const examsHtml = collegesData.entranceExams
+    ? collegesData.entranceExams
+        .map((exam) => `<span class="college-tag exam-tag">📝 ${exam}</span>`)
+        .join("")
+    : "";
+
+  const budgetDetail =
+    collegesData.budgetDetail ||
+    (career.quickFacts && career.quickFacts.studyBudget) ||
+    "Standard college fees";
+  const tierReality =
+    collegesData.tierReality ||
+    "Work opportunities are available through remote contracts, freelance projects, and regional corporate hubs across India.";
+
+  container.innerHTML = `
+    <div class="colleges-container">
+      <div class="colleges-subcard">
+        <h3 class="subcard-title">🎓 Recommended Degrees & Pathways</h3>
+        <div class="tags-group">${degreesHtml}</div>
+      </div>
+
+      <div class="colleges-subcard">
+        <h3 class="subcard-title">🏛️ Top Reputed Indian Institutes</h3>
+        <ul class="institutes-list">
+          ${institutesHtml}
+        </ul>
+      </div>
+
+      <div class="colleges-subcard">
+        <h3 class="subcard-title">📝 Key Entrance Exams & Admission Paths</h3>
+        <div class="tags-group">${examsHtml}</div>
+      </div>
+
+      <div class="reality-grid">
+        <div class="reality-box budget-box">
+          <div class="reality-header">
+            <span class="reality-icon">💸</span>
+            <strong>Estimated Study Cost & Budget</strong>
+          </div>
+          <p>${budgetDetail}</p>
+        </div>
+
+        <div class="reality-box location-box">
+          <div class="reality-header">
+            <span class="reality-icon">📍</span>
+            <strong>Tier-2 / Tier-3 City Reality Check</strong>
+          </div>
+          <p>${tierReality}</p>
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+/* ============================================
+   SECTION 5: SKILLS NEEDED
    ============================================ */
 function fillSkillsSection(skills) {
   const skillsList = document.getElementById("skills-list");
@@ -561,9 +661,14 @@ function fillConvinceParentsSection(career, careerId) {
           <div class="point-header">
             <span class="point-icon">💬</span>
             <strong>4. Your 30-Second Script to Say to Mom & Dad</strong>
-            <button class="btn-copy-script" onclick="copyParentScript()" title="Copy script to clipboard">
-              📋 Copy Script
-            </button>
+            <div class="script-btn-group">
+              <button class="btn-copy-script" onclick="copyParentScript()" title="Copy script to clipboard">
+                📋 Copy Script
+              </button>
+              <button class="btn-whatsapp-pitch" onclick="shareParentPitchWhatsApp()" title="Send polite pitch directly to Parents on WhatsApp">
+                📲 Share with Parents on WhatsApp
+              </button>
+            </div>
           </div>
           <blockquote class="parent-script" id="parent-script-text">
             "${advice.script}"
@@ -599,7 +704,63 @@ function copyParentScript() {
   }
 }
 
+/* ============================================
+   SHARE PITCH WITH PARENTS ON WHATSAPP
+   ============================================ */
+function shareParentPitchWhatsApp() {
+  const urlParams = new URLSearchParams(window.location.search);
+  const careerId = urlParams.get("career");
+  const career =
+    typeof careerDatabase !== "undefined" && careerDatabase[careerId]
+      ? careerDatabase[careerId]
+      : null;
+  if (!career) return;
+
+  const advice = parentPitches[careerId] || defaultParentPitch(career);
+  const colleges =
+    career.indianColleges && career.indianColleges.topInstitutes
+      ? career.indianColleges.topInstitutes.slice(0, 2).join(", ")
+      : "Top National Institutes";
+  const entrySalary = career.salary
+    ? career.salary.entry.amount
+    : career.quickFacts.salary;
+  const seniorSalary = career.salary
+    ? career.salary.senior.amount
+    : "High Growth";
+  const budget =
+    (career.quickFacts && career.quickFacts.studyBudget) ||
+    "Standard college fees";
+
+  // Ensure link is always live, clickable HTTPS URL on WhatsApp even when previewing locally
+  let url = window.location.href;
+  if (
+    window.location.hostname === "localhost" ||
+    window.location.hostname === "127.0.0.1" ||
+    window.location.hostname.startsWith("192.168.")
+  ) {
+    url = `https://career-kuch-hatke.infinityfreeapp.com/career-detail.html?career=${careerId}`;
+  }
+
+  const msg = `Namaste Mummy / Papa,
+I was exploring career options and found this verified roadmap for *${career.name}* on Career Kuch Hatke:
+
+💰 *Earning Potential:* ${entrySalary} (Starting) up to ${seniorSalary} (Senior)
+🎯 *Why it has high scope:* ${advice.financialAngle}
+🛡️ *Degree Safety Cushion:* ${advice.safetyAngle}
+🏛️ *Reputed Indian Institutes:* ${colleges}
+💸 *Study Budget:* ${budget}
+
+Please check out the complete details and roadmap here:
+${url}
+
+I'd really value your advice. Let's discuss this whenever you are free! 🙏`;
+
+  const waUrl = `https://api.whatsapp.com/send?text=${encodeURIComponent(msg)}`;
+  window.open(waUrl, "_blank");
+}
+
 window.copyParentScript = copyParentScript;
+window.shareParentPitchWhatsApp = shareParentPitchWhatsApp;
 window.fillConvinceParentsSection = fillConvinceParentsSection;
 
 /* ============================================
@@ -697,7 +858,16 @@ function showError(message) {
    ============================================ */
 function shareCareer() {
   const careerName = document.getElementById("career-name").textContent;
-  const url = window.location.href;
+  const urlParams = new URLSearchParams(window.location.search);
+  const careerId = urlParams.get("career");
+  let url = window.location.href;
+  if (
+    window.location.hostname === "localhost" ||
+    window.location.hostname === "127.0.0.1" ||
+    window.location.hostname.startsWith("192.168.")
+  ) {
+    url = `https://career-kuch-hatke.infinityfreeapp.com/career-detail.html?career=${careerId}`;
+  }
 
   if (navigator.share) {
     navigator
