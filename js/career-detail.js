@@ -661,21 +661,23 @@ function fillConvinceParentsSection(career, careerId) {
           <div class="point-header">
             <span class="point-icon">💬</span>
             <strong>4. Your 30-Second Script to Say to Mom & Dad</strong>
-            <div class="script-btn-group">
-              <button class="btn-copy-script" onclick="copyParentScript()" title="Copy script to clipboard">
-                📋 Copy Script
-              </button>
-              <button class="btn-whatsapp-pitch" onclick="shareParentPitchWhatsApp()" title="Send polite pitch directly to Parents on WhatsApp">
-                📲 Share with Parents on WhatsApp
-              </button>
+          </div>
+          <div class="parent-script-box">
+            <div class="script-box-header">
+              <span class="script-badge">🛡️ Polite Pitch for Indian Parents</span>
+              <div class="script-btn-group">
+                <button class="btn-copy-script" onclick="copyParentScript()" title="Copy script to clipboard">
+                  📋 Copy Script
+                </button>
+                <button class="btn-whatsapp-pitch" onclick="shareParentPitchWhatsApp()" title="Send polite pitch directly to Parents on WhatsApp">
+                  📲 Share with Parents on WhatsApp
+                </button>
+              </div>
             </div>
+            <blockquote class="parent-script" id="parent-script-text">
+              "${advice.script}"
+            </blockquote>
           </div>
-          <div class="parent-pitch-badge">
-            <span>🛡️ Pre-formatted Polite Pitch for Indian Parents</span>
-          </div>
-          <blockquote class="parent-script" id="parent-script-text">
-            "${advice.script}"
-          </blockquote>
         </div>
       </div>
     </div>
