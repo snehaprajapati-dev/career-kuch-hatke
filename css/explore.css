@@ -301,7 +301,7 @@ button.filter-btn[data-filter="unique"].active {
   border: 3px solid var(--pink-light);
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
   transition: all 0.3s ease;
-  display: flex !important;
+  display: flex;
   flex-direction: column !important;
   justify-content: space-between !important;
   cursor: pointer;
@@ -352,7 +352,11 @@ button.filter-btn[data-filter="unique"].active {
 }
 
 .bookmark-card-btn.active {
-  background: linear-gradient(135deg, var(--accent) 0%, #f0c050 100%) !important;
+  background: linear-gradient(
+    135deg,
+    var(--accent) 0%,
+    #f0c050 100%
+  ) !important;
   border-color: var(--accent) !important;
   box-shadow: 0 3px 10px rgba(221, 168, 63, 0.45);
   transform: scale(1.08);
@@ -369,7 +373,11 @@ button.filter-btn[data-filter="unique"].active {
 }
 
 [data-theme="dark"] .bookmark-card-btn.active {
-  background: linear-gradient(135deg, var(--accent) 0%, #f0c050 100%) !important;
+  background: linear-gradient(
+    135deg,
+    var(--accent) 0%,
+    #f0c050 100%
+  ) !important;
   border-color: var(--accent) !important;
 }
 
@@ -378,7 +386,11 @@ button.filter-btn[data-filter="bookmarked"] {
 }
 
 button.filter-btn[data-filter="bookmarked"].active {
-  background: linear-gradient(135deg, var(--accent) 0%, #f0c050 100%) !important;
+  background: linear-gradient(
+    135deg,
+    var(--accent) 0%,
+    #f0c050 100%
+  ) !important;
   color: var(--text-dark) !important;
   border-color: var(--accent) !important;
   font-weight: 700;
@@ -553,8 +565,10 @@ a.card-btn:hover {
   box-shadow: none !important;
 }
 
-.career-card.hidden {
-  display: none;
+.career-card.is-hidden,
+.career-card.hidden,
+.career-card[style*="display: none"] {
+  display: none !important;
 }
 
 /* ============================================
@@ -625,7 +639,7 @@ a.card-btn:hover {
     width: 100%; /* ✅ Prevent overflow */
     max-width: 100%; /* ✅ Stay within bounds */
     min-height: 360px !important;
-    display: flex !important;
+    display: flex;
     flex-direction: column !important;
     justify-content: space-between !important;
     box-sizing: border-box;
@@ -679,7 +693,7 @@ a.card-btn:hover {
     width: 100%; /* ✅ Prevent overflow */
     max-width: 100%; /* ✅ Ensure it stays within bounds */
     min-height: 340px !important;
-    display: flex !important;
+    display: flex;
     flex-direction: column !important;
     justify-content: space-between !important;
     box-sizing: border-box;

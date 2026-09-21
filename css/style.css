@@ -1390,10 +1390,16 @@ body > *:first-child:not(.navbar) {
     width: 100%;
     max-width: 100%;
     min-height: 340px !important;
-    display: flex !important;
+    display: flex;
     flex-direction: column !important;
     justify-content: space-between !important;
     box-sizing: border-box;
+  }
+
+  .career-card.is-hidden,
+  .career-card.hidden,
+  .career-card[style*="display: none"] {
+    display: none !important;
   }
 
   .career-card h3 {
@@ -2465,7 +2471,9 @@ a.card-btn:hover {
   z-index: 999999;
   opacity: 0;
   pointer-events: none;
-  transition: transform 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.3s ease;
+  transition:
+    transform 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+    opacity 0.3s ease;
   border: 1.5px solid var(--accent, #dda83f);
   text-align: center;
   white-space: nowrap;

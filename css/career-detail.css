@@ -1774,7 +1774,11 @@
 }
 
 .toolbar-btn.active {
-  background: linear-gradient(135deg, var(--accent, #dda83f) 0%, #f0c050 100%) !important;
+  background: linear-gradient(
+    135deg,
+    var(--accent, #dda83f) 0%,
+    #f0c050 100%
+  ) !important;
   color: #1a0e35 !important;
   border-color: var(--accent, #dda83f) !important;
   box-shadow: 0 4px 15px rgba(221, 168, 63, 0.4) !important;

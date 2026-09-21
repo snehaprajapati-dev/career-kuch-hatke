@@ -260,10 +260,12 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         if (isMatch) {
-          card.style.display = "";
+          card.style.removeProperty("display");
+          card.classList.remove("is-hidden");
           visibleCount++;
         } else {
-          card.style.display = "none";
+          card.style.setProperty("display", "none", "important");
+          card.classList.add("is-hidden");
         }
       });
 
@@ -325,7 +327,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }
       });
     });
-
 
     if (searchInput && countSpan) {
       const clearBtn = document.getElementById("clearSearch");
@@ -817,10 +818,12 @@ document.addEventListener("DOMContentLoaded", function () {
             category.includes(searchTerm) ||
             keywordMatch
           ) {
-            card.style.display = "";
+            card.style.removeProperty("display");
+            card.classList.remove("is-hidden");
             visibleCount++;
           } else {
-            card.style.display = "none";
+            card.style.setProperty("display", "none", "important");
+            card.classList.add("is-hidden");
           }
         });
         countSpan.textContent = visibleCount;
@@ -896,7 +899,8 @@ document.addEventListener("DOMContentLoaded", function () {
         }
       });
       careerCards.forEach((card) => {
-        card.style.display = "";
+        card.style.removeProperty("display");
+        card.classList.remove("is-hidden");
       });
       if (countSpan) countSpan.textContent = careerCards.length;
       if (noResults) noResults.style.display = "none";
