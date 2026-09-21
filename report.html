@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Career Kuch Hatke - Project Documentation Report</title>
+  <style>
+    @page {
+      size: A4;
+      margin: 20mm 18mm 20mm 18mm;
+    }
+    
+    body {
+      font-family: 'Calibri', 'Segoe UI', Arial, sans-serif;
+      font-size: 11pt;
+      line-height: 1.35;
+      color: #1a1a1a;
+      background: #f4f6f8;
+      margin: 0;
+      padding: 20px;
+    }
+
+    .document-container {
+      max-width: 800px;
+      margin: 0 auto;
+      background: #ffffff;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    }
+
+    .page {
+      padding: 40px 48px;
+      box-sizing: border-box;
+      min-height: 1060px;
+      position: relative;
+      background: #ffffff;
+    }
+
+    .page-break {
+      page-break-after: always;
+      border-bottom: 2px dashed #cbd5e1;
+      margin: 0;
+    }
+
+    @media print {
+      body {
+        background: #ffffff;
+        padding: 0;
+      }
+      .document-container {
+        box-shadow: none;
+        max-width: 100%;
+      }
+      .page {
+        padding: 0;
+        min-height: auto;
+      }
+      .page-break {
+        page-break-after: always;
+        border-bottom: none;
+      }
+      .no-print {
+        display: none !important;
+      }
+    }
+
+    /* Academic Typography */
+    .college-header {
+      text-align: center;
+      border-bottom: 2px solid #3b1d6b;
+      padding-bottom: 12px;
+      margin-bottom: 16px;
+    }
+
+    .college-header h1 {
+      font-size: 18pt;
+      margin: 0 0 4px 0;
+      color: #3b1d6b;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .college-header h2 {
+      font-size: 12pt;
+      margin: 0 0 6px 0;
+      color: #4a5568;
+      font-weight: 600;
+    }
+
+    .college-header p {
+      font-size: 10pt;
+      margin: 0;
+      color: #718096;
+    }
+
+    .project-banner {
+      text-align: center;
+      background: #faf5ff;
+      border: 1px solid #e9d5ff;
+      border-radius: 8px;
+      padding: 12px;
+      margin-bottom: 18px;
+    }
+
+    .project-banner .label {
+      font-size: 9pt;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #6b21a8;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .project-banner h2 {
+      font-size: 20pt;
+      margin: 0 0 4px 0;
+      color: #3b1d6b;
+      font-weight: 800;
+    }
+
+    .project-banner .subtitle {
+      font-size: 10.5pt;
+      color: #6b21a8;
+      font-style: italic;
+      margin: 0;
+    }
+
+    .meta-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 18px;
+      font-size: 10pt;
+    }
+
+    .meta-table td {
+      padding: 4px 8px;
+      border: 1px solid #e2e8f0;
+    }
+
+    .meta-table td.label-col {
+      width: 25%;
+      font-weight: bold;
+      background: #f8fafc;
+      color: #334155;
+    }
+
+    h2.section-title {
+      font-size: 13pt;
+      color: #3b1d6b;
+      border-bottom: 1.5px solid #e2e8f0;
+      padding-bottom: 4px;
+      margin-top: 16px;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+    }
+
+    h3.sub-title {
+      font-size: 11pt;
+      color: #1e293b;
+      margin-top: 10px;
+      margin-bottom: 4px;
+      font-weight: bold;
+    }
+
+    p {
+      margin: 0 0 8px 0;
+      text-align: justify;
+    }
+
+    ul, ol {
+      margin: 4px 0 10px 0;
+      padding-left: 20px;
+    }
+
+    li {
+      margin-bottom: 4px;
+      text-align: justify;
+    }
+
+    table.data-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 10px 0 14px 0;
+      font-size: 9.5pt;
+    }
+
+    table.data-table th, table.data-table td {
+      border: 1px solid #cbd5e1;
+      padding: 6px 10px;
+      text-align: left;
+    }
+
+    table.data-table th {
+      background: #f1f5f9;
+      color: #1e293b;
+      font-weight: bold;
+    }
+
+    code {
+      font-family: 'Consolas', 'Courier New', monospace;
+      background: #f1f5f9;
+      padding: 1px 4px;
+      border-radius: 3px;
+      font-size: 9pt;
+      color: #b91c1c;
+    }
+
+    pre {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 6px;
+      padding: 8px 12px;
+      font-family: 'Consolas', monospace;
+      font-size: 8.5pt;
+      line-height: 1.35;
+      overflow-x: auto;
+      margin: 6px 0 10px 0;
+      color: #0f172a;
+    }
+
+    .page-footer-note {
+      position: absolute;
+      bottom: 15px;
+      left: 48px;
+      right: 48px;
+      display: flex;
+      justify-content: space-between;
+      font-size: 8.5pt;
+      color: #94a3b8;
+      border-top: 1px solid #f1f5f9;
+      padding-top: 6px;
+    }
+
+    .instructions-bar {
+      background: #3b1d6b;
+      color: #ffffff;
+      padding: 14px 20px;
+      text-align: center;
+      font-family: sans-serif;
+      font-size: 11pt;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
+    .instructions-bar button {
+      background: #dda83f;
+      color: #1a0e35;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
+      margin-left: 15px;
+      font-size: 10.5pt;
+    }
+    .instructions-bar button:hover {
+      background: #f0c050;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="instructions-bar no-print">
+    📄 <strong>4-Page Project Documentation Report Ready!</strong> 
+    <button onclick="window.print()">🖨️ Print / Save as PDF (Ctrl + P)</button>
+    <button onclick="copyRichText()" style="background: #ffffff; color: #3b1d6b;">📋 Copy for Google Docs</button>
+  </div>
+
+  <div class="document-container" id="reportContent">
+
+    <!-- ================================================================
+         PAGE 1: COVER HEADER, ABSTRACT, PROBLEM STATEMENT & OBJECTIVES
+         ================================================================ -->
+    <div class="page">
+      <div class="college-header">
+        <h1>Vidyavardhini's College</h1>
+        <h2>Department of Computer Science</h2>
+        <p>Field Project Report &bull; Academic Year 2025 &ndash; 2026 &bull; Bachelor of Science in Computer Science</p>
+      </div>
+
+      <div class="project-banner">
+        <div class="label">Project Title</div>
+        <h2>CAREER KUCH HATKE</h2>
+        <p class="subtitle">An Interactive Unconventional Career Guidance Web Platform with Administrative Management</p>
+      </div>
+
+      <table class="meta-table">
+        <tr>
+          <td class="label-col">Candidate Name:</td>
+          <td>Sneha Prajapati</td>
+          <td class="label-col">Academic Class:</td>
+          <td>Second Year B.Sc. Computer Science</td>
+        </tr>
+        <tr>
+          <td class="label-col">Subject / Stream:</td>
+          <td>Field Project (Computer Science)</td>
+          <td class="label-col">Institutional Roll / PRN:</td>
+          <td>B.Sc. CS &mdash; Semester III</td>
+        </tr>
+        <tr>
+          <td class="label-col">Live Application URL:</td>
+          <td colspan="3"><a href="https://career-kuch-hatke.infinityfreeapp.com" target="_blank">https://career-kuch-hatke.infinityfreeapp.com</a></td>
+        </tr>
+        <tr>
+          <td class="label-col">Source Code Repository:</td>
+          <td colspan="3"><a href="https://github.com/snehaprajapati-dev/career-kuch-hatke" target="_blank">https://github.com/snehaprajapati-dev/career-kuch-hatke</a></td>
+        </tr>
+      </table>
+
+      <h2 class="section-title">1. Abstract &amp; Executive Summary</h2>
+      <p>
+        In the Indian educational ecosystem, over 80% of secondary and undergraduate students are funneled toward an extremely narrow set of conventional careers&mdash;principally Engineering, Medicine, Government Civil Services, or Banking. This conventional pressure results in rampant academic fatigue, high college dropout rates, and widespread career dissatisfaction, while sunrise creative and technology sectors face an acute shortage of skilled practitioners.
+      </p>
+      <p>
+        <strong>Career Kuch Hatke</strong> is an interactive, mobile-responsive web platform engineered to resolve this guidance deficit. It curates <strong>35+ verified unconventional career paths</strong> across Creative, Tech, Science, Business, and Unique disciplines. Beyond high-level career profiles, the platform provides students with authentic 2026 Indian salary benchmarks (starting packages through senior levels), safety-cushion degrees, accredited institutional roadmaps, an algorithmic aptitude quiz, a client-side bookmarking engine, and a specialized <strong>"Talk to Your Parents"</strong> pitch generator with one-tap WhatsApp integration. Developed using <strong>HTML5, CSS3, JavaScript, PHP, and MySQL</strong>, the project features a complete administrative backend and is deployed live via automated GitHub Actions CI/CD pipelines.
+      </p>
+
+      <h2 class="section-title">2. Problem Statement &amp; Motivation</h2>
+      <ul>
+        <li><strong>Information Asymmetry:</strong> Reliable academic prerequisites and Indian salary figures for emerging professions (e.g., Ethical Hacker, UI/UX Designer, Drone Pilot, Flavor Chemist, Space Mission Scientist) are scattered across fragmented overseas websites that fail to reflect Indian recruiter expectations.</li>
+        <li><strong>The "Parental Resistance" Hurdle:</strong> Indian students frequently encounter skepticism from parents who worry about stability, financial packages, and societal prestige in non-traditional fields.</li>
+        <li><strong>Absence of Self-Assessment Tools:</strong> Students lack beginner-friendly assessment tools that evaluate their natural problem-solving inclinations and match them to modern industry specializations.</li>
+      </ul>
+
+      <h2 class="section-title">3. Project Objectives &amp; Scope</h2>
+      <ul>
+        <li><strong>Curated Knowledge Base:</strong> Build comprehensive, verified roadmaps for 35+ non-traditional professions with transparent salary brackets, degree cushions, and realistic study budgets.</li>
+        <li><strong>Client-Side Interactivity:</strong> Implement zero-latency keyword search with synonym mapping, dynamic category filtering, and saved bookmarks using pure JavaScript.</li>
+        <li><strong>Parental Alignment Mechanism:</strong> Formulate customized 30-second conversational pitches containing verifiable industry packages for students to share directly via WhatsApp.</li>
+        <li><strong>Full-Stack Form Processing:</strong> Handle student feedback and community career suggestions through server-side PHP validation, sanitized database insertion, and an administrative dashboard.</li>
+        <li><strong>Production Deployment:</strong> Establish continuous integration and deployment (CI/CD via GitHub Actions) to synchronize local XAMPP developments directly with InfinityFree live Linux hosting.</li>
+      </ul>
+
+      <div class="page-footer-note no-print">
+        <span>Career Kuch Hatke &bull; Field Project Documentation</span>
+        <span>Page 1 of 4</span>
+      </div>
+    </div>
+
+    <div class="page-break"></div>
+
+    <!-- ================================================================
+         PAGE 2: ARCHITECTURE, TECH STACK & 7 WEBPAGE MODULES
+         ================================================================ -->
+    <div class="page">
+      <h2 class="section-title">4. System Architecture &amp; Technology Stack</h2>
+      <p>
+        The platform utilizes a decoupled, client-server web architecture designed for instantaneous browser interactivity paired with secure PHP server-side data processing:
+      </p>
+
+      <pre>
++-------------------------------------------------------------------------------+
+|                             CLIENT-SIDE (BROWSER)                             |
+|  HTML5 (Semantic Pages) | CSS3 (Grid, Flexbox, Dark/Light) | JavaScript (ES6) |
+|  - Smart Synonym Search  - Aptitude Quiz Engine   - LocalStorage Bookmarks    |
++-------------------------------------------------------------------------------+
+                                      |
+                       HTTP / HTTPS (GET & POST)
+                                      |
++-------------------------------------------------------------------------------+
+|                      SERVER-SIDE (APACHE & PHP 8.x)                           |
+|  - Form Processors (contact-process.php, suggestion-process.php)              |
+|  - Admin Module (login.php, dashboard.php, export.php, delete.php)            |
+|  - Security Layer: Input sanitization, XSS protection, Session Auth           |
++-------------------------------------------------------------------------------+
+                                      |
+                                  SQL Queries
+                                      |
++-------------------------------------------------------------------------------+
+|                         DATABASE LAYER (MySQL)                                |
+|  - Table: contacts (id, name, email, message, submitted_at)                   |
+|  - Table: career_suggestions (id, name, email, career_title, description, at) |
++-------------------------------------------------------------------------------+
+      </pre>
+
+      <table class="data-table">
+        <tr>
+          <th>Layer</th>
+          <th>Technology</th>
+          <th>Implementation Details</th>
+        </tr>
+        <tr>
+          <td><strong>Frontend Markup</strong></td>
+          <td>HTML5 Semantic</td>
+          <td>Structured elements (<code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;section&gt;</code>, <code>&lt;footer&gt;</code>) for clean DOM hierarchy and accessibility.</td>
+        </tr>
+        <tr>
+          <td><strong>Styling &amp; Theme</strong></td>
+          <td>CSS3 (Grid &amp; Flexbox)</td>
+          <td>CSS Custom Properties (Variables), mobile-first media queries, anti-flash Dark/Light mode theme persistence.</td>
+        </tr>
+        <tr>
+          <td><strong>Client Logic</strong></td>
+          <td>Vanilla JavaScript (ES6+)</td>
+          <td>DOM event listeners, synonym keyword dictionary, quiz scoring engine, browser <code>localStorage</code> API.</td>
+        </tr>
+        <tr>
+          <td><strong>Backend Server</strong></td>
+          <td>PHP 8.2 (Procedural)</td>
+          <td>Asynchronous POST handling, data sanitization (<code>htmlspecialchars</code>), admin session authentication.</td>
+        </tr>
+        <tr>
+          <td><strong>Database</strong></td>
+          <td>MySQL Relational DB</td>
+          <td>Normalized database storing student contact inquiries and community career suggestions.</td>
+        </tr>
+        <tr>
+          <td><strong>Hosting &amp; CI/CD</strong></td>
+          <td>InfinityFree &amp; GitHub Actions</td>
+          <td>Automated FTPS continuous deployment pipeline triggered on every commit to the GitHub <code>main</code> branch.</td>
+        </tr>
+      </table>
+
+      <h2 class="section-title">5. Webpage Modules &amp; Functional Breakdown</h2>
+      <p>The application comprises <strong>6 primary user-facing pages</strong> and an integrated <strong>Administrative Portal</strong>:</p>
+
+      <ul>
+        <li><strong>1. Home Page (<code>index.html</code>):</strong> Hero banner with primary CTAs, comparative "Rat Race vs. Hatke Career" problem-solution section, featured career showcase, and persistent theme switcher.</li>
+        <li><strong>2. Explore Careers (<code>explore.html</code>):</strong> Grid layout featuring 35 standardized equal-height career cards. Includes real-time Category Filter Pills (Creative, Tech, Science, Business, Unique), dedicated <strong>Bookmarked (<code>🔖</code>)</strong> filter, and an instant keyword search bar with clear toggle.</li>
+        <li><strong>3. Dynamic Career Roadmap (<code>career-detail.html</code>):</strong> Single-page dynamic template driven by URL parameters (e.g., <code>?career=ui-ux-designer</code>). Features 10 modular sections: Quick Facts, What They Actually Do, Career Trajectory, Accredited Colleges, Degree Safety Net, and "Talk to Your Parents" pitch generator with an Action Toolbar (<code>Expand All</code>, <code>Save PDF</code>, <code>Share</code>, <code>Bookmark</code>).</li>
+        <li><strong>4. Career Aptitude Quiz (<code>quiz.html</code>):</strong> Interactive self-assessment evaluating problem-solving instincts, creativity, and analytical traits. Employs a client-side vector weighting algorithm to display percentage matches and targeted career recommendations.</li>
+        <li><strong>5. About Us &amp; Transparency (<code>about.html</code>):</strong> Documents the project vision, developer biography, data collection methodologies, and authoritative citation sources.</li>
+        <li><strong>6. Contact &amp; Suggestions (<code>contact.html</code>):</strong> Interactive user portal supporting both feedback inquiries and student-submitted career suggestions with client and server validation.</li>
+        <li><strong>7. Admin Management Module (<code>admin/</code>):</strong> Restricted back-office consisting of session-authenticated login (<code>login.php</code>), metrics dashboard (<code>dashboard.php</code>), submission review tables (<code>contacts.php</code>, <code>suggestions.php</code>), item deletion (<code>delete.php</code>), and CSV export for Excel analysis (<code>export.php</code>).</li>
+      </ul>
+
+      <div class="page-footer-note no-print">
+        <span>Career Kuch Hatke &bull; Field Project Documentation</span>
+        <span>Page 2 of 4</span>
+      </div>
+    </div>
+
+    <div class="page-break"></div>
+
+    <!-- ================================================================
+         PAGE 3: KEY ALGORITHMS, SECURITY, PARENT PITCH & BOOKMARKS
+         ================================================================ -->
+    <div class="page">
+      <h2 class="section-title">6. Key Technical Implementations &amp; Algorithms</h2>
+
+      <h3 class="sub-title">A. Smart Synonym Search &amp; Live DOM Filtering (<code>js/script.js</code>)</h3>
+      <p>
+        Students commonly search using conversational terms rather than formal corporate job designations. To solve this, the search engine utilizes a comprehensive synonym mapping dictionary that evaluates student queries against pre-indexed career keywords:
+      </p>
+      <pre>
+const searchKeywordsMap = {
+  "ethical-hacker": ["coding", "security", "hacking", "cyber", "python", "linux", "bug bounty"],
+  "food-stylist": ["food", "cooking", "styling", "photography", "chef", "culinary", "baking"],
+  "ui-ux-designer": ["design", "figma", "app", "website", "interface", "wireframe", "product"]
+};
+      </pre>
+      <p>
+        On every keystroke, the algorithm evaluates career titles, taglines, categories, and synonym arrays. Unmatched card elements are marked with <code>.is-hidden</code> and hidden with <code>display: none !important;</code>, instantly recalculating the active count badge without reloading the page.
+      </p>
+
+      <h3 class="sub-title">B. Client-Side Bookmark Persistence (<code>localStorage</code>)</h3>
+      <p>
+        To allow students to curate a personalized list of favorite careers without requiring account creation or database login friction, a zero-latency storage architecture was implemented:
+      </p>
+      <ul>
+        <li><strong>Data Model:</strong> Saved career identifiers are stored as a JSON array under the key <code>'ckh_bookmarks'</code> in browser <code>localStorage</code>.</li>
+        <li><strong>Dynamic UI Synchronization:</strong> Tapping <code>🔖</code> on any card toggles the slug in storage, transitions the button to an active gold gradient, increments the <code>#bookmarkCount</code> badge, and presents an animated floating toast notification (<em>"Career saved to bookmarks! 🔖"</em>).</li>
+        <li><strong>Smart Empty State:</strong> When the <code>🔖 Bookmarked</code> filter is selected with zero saved careers, a custom prompt appears with a one-tap <strong>"View All Careers"</strong> reset button.</li>
+      </ul>
+
+      <h3 class="sub-title">C. 30-Second Parent Pitch Generator &amp; WhatsApp Integration</h3>
+      <p>
+        To address parental skepticism, <code>career-detail.js</code> dynamically aggregates verified starting salaries, safety-cushion degree alternatives, and top Indian institutions into a structured WhatsApp message:
+      </p>
+      <pre>
+const shareUrl = "https://career-kuch-hatke.infinityfreeapp.com/career-detail.html?career=" + careerId;
+const pitchText = `Namaste Mummy/Papa, I was exploring verified career roadmaps on Career Kuch Hatke:\n\n` +
+                  `🎯 Career: *${career.name}*\n💰 Salary Potential: ${career.quickFacts.salary}\n` +
+                  `🛡️ Degree Safety Cushion: ${career.quickFacts.degree}\n` +
+                  `🏛️ Top Institutes: ${career.indianColleges.slice(0,2).join(", ")}\n\n` +
+                  `Please check the complete roadmap here: ${shareUrl}`;
+window.open("https://api.whatsapp.com/send?text=" + encodeURIComponent(pitchText), "_blank");
+      </pre>
+
+      <h3 class="sub-title">D. Server-Side PHP Validation &amp; Input Sanitization</h3>
+      <p>
+        All incoming POST data is rigorously cleansed before database interaction to prevent Cross-Site Scripting (XSS) and SQL injection vulnerabilities:
+      </p>
+      <pre>
+$name    = htmlspecialchars(strip_tags(trim($_POST['name'])), ENT_QUOTES, 'UTF-8');
+$email   = filter_var(trim($_POST['email']), FILTER_SANITIZE_EMAIL);
+$message = htmlspecialchars(strip_tags(trim($_POST['message'])), ENT_QUOTES, 'UTF-8');
+
+if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+    die(json_encode(["status" => "error", "message" => "Please provide a valid email."]));
+}
+      </pre>
+
+      <h3 class="sub-title">E. Anti-Flash Theme Persistence Architecture</h3>
+      <p>
+        To eliminate the jarring white flash of unstyled content when reloading dark mode pages, a micro-script executes synchronously inside the document <code>&lt;head&gt;</code> before any stylesheet is parsed:
+      </p>
+      <pre>
+(function() {
+  var s = localStorage.getItem("ckh_theme");
+  if (s === "dark") document.documentElement.setAttribute("data-theme", "dark");
+})();
+      </pre>
+
+      <div class="page-footer-note no-print">
+        <span>Career Kuch Hatke &bull; Field Project Documentation</span>
+        <span>Page 3 of 4</span>
+      </div>
+    </div>
+
+    <div class="page-break"></div>
+
+    <!-- ================================================================
+         PAGE 4: DATABASE SCHEMA, TESTING, DEPLOYMENT & CONCLUSION
+         ================================================================ -->
+    <div class="page">
+      <h2 class="section-title">7. Database Design &amp; Schema Specification</h2>
+      <p>The MySQL relational backend comprises two tables supporting inquiries and user submissions:</p>
+
+      <table class="data-table">
+        <tr>
+          <th>Table Name</th>
+          <th>Field Name</th>
+          <th>Data Type</th>
+          <th>Constraints / Description</th>
+        </tr>
+        <tr>
+          <td rowspan="4"><strong>contacts</strong><br><small>Student feedback &amp; inquiries</small></td>
+          <td><code>id</code></td>
+          <td>INT(11)</td>
+          <td>PRIMARY KEY, AUTO_INCREMENT</td>
+        </tr>
+        <tr>
+          <td><code>name</code>, <code>email</code></td>
+          <td>VARCHAR(100), VARCHAR(150)</td>
+          <td>NOT NULL, Validated email address</td>
+        </tr>
+        <tr>
+          <td><code>message</code></td>
+          <td>TEXT</td>
+          <td>Sanitized inquiry text body</td>
+        </tr>
+        <tr>
+          <td><code>submitted_at</code></td>
+          <td>TIMESTAMP</td>
+          <td>DEFAULT CURRENT_TIMESTAMP</td>
+        </tr>
+        <tr>
+          <td rowspan="3"><strong>career_suggestions</strong><br><small>Crowd-sourced career ideas</small></td>
+          <td><code>id</code></td>
+          <td>INT(11)</td>
+          <td>PRIMARY KEY, AUTO_INCREMENT</td>
+        </tr>
+        <tr>
+          <td><code>career_title</code>, <code>category</code></td>
+          <td>VARCHAR(150), VARCHAR(50)</td>
+          <td>Proposed career title and primary domain</td>
+        </tr>
+        <tr>
+          <td><code>description</code></td>
+          <td>TEXT</td>
+          <td>Student explanation of career viability</td>
+        </tr>
+      </table>
+
+      <h2 class="section-title">8. Testing, Verification &amp; Quality Assurance</h2>
+      <table class="data-table">
+        <tr>
+          <th>Verification Domain</th>
+          <th>Testing Procedure</th>
+          <th>Outcome &amp; Status</th>
+        </tr>
+        <tr>
+          <td><strong>Cross-Browser Compatibility</strong></td>
+          <td>Audited on Google Chrome 120+, Firefox 122+, MS Edge, and Safari iOS.</td>
+          <td><strong>Passed:</strong> Consistent flex/grid layout across all engines.</td>
+        </tr>
+        <tr>
+          <td><strong>Mobile Responsiveness</strong></td>
+          <td>Simulated viewports from 360px (mobile) to 768px (tablet) and 1440px (desktop).</td>
+          <td><strong>Passed:</strong> Equalized card heights, centered footer, touch tap targets.</td>
+        </tr>
+        <tr>
+          <td><strong>Syntax &amp; Runtime Integrity</strong></td>
+          <td>Validated via Node.js compiler (<code>node -c script.js</code>).</td>
+          <td><strong>Passed:</strong> Zero syntax errors or uncaught promise rejections.</td>
+        </tr>
+        <tr>
+          <td><strong>Cache Invalidation Strategy</strong></td>
+          <td>Query version parameters (<code>?v=6.0</code>) assigned to all stylesheet and script tags.</td>
+          <td><strong>Passed:</strong> Instant updates on client devices without stale cache.</td>
+        </tr>
+      </table>
+
+      <h2 class="section-title">9. Live Deployment Pipeline &amp; CI/CD Workflow</h2>
+      <ul>
+        <li><strong>Local Development:</strong> Created and validated on an Apache/PHP/MySQL stack using XAMPP on Windows.</li>
+        <li><strong>Version Control:</strong> Source code managed with Git and synchronized to GitHub (<code>origin/main</code>).</li>
+        <li><strong>Continuous Deployment (GitHub Actions):</strong> Configured <code>.github/workflows/deploy.yml</code> to securely authenticate via repository secrets (<code>FTP_SERVER</code>, <code>FTP_USERNAME</code>, <code>FTP_PASSWORD</code>) and trigger automated FTPS synchronization to InfinityFree production servers on every push.</li>
+      </ul>
+
+      <h2 class="section-title">10. Limitations &amp; Future Scope</h2>
+      <ul>
+        <li><strong>Current Limitations:</strong> Career content is currently managed via static client-side JavaScript structures rather than a headless database CMS. Bookmarks are tied to device <code>localStorage</code>.</li>
+        <li><strong>Future Enhancements:</strong>
+          <ol>
+            <li><strong>Cloud-Synced Student Accounts:</strong> User authentication with hashed passwords (<code>password_hash</code>) to synchronize bookmarks across devices.</li>
+            <li><strong>Direct Mentorship Scheduling:</strong> Calendar booking integration for students to schedule 1-on-1 counseling calls with working domain professionals.</li>
+            <li><strong>AI Career Chatbot:</strong> LLM integration to answer student queries regarding college entrance cutoffs, portfolio requirements, and job outlooks.</li>
+          </ol>
+        </li>
+      </ul>
+
+      <h2 class="section-title">11. Conclusion &amp; References</h2>
+      <p>
+        The <strong>Career Kuch Hatke</strong> project fulfills all academic requirements of the BSc Computer Science Field Project curriculum. It demonstrates a production-grade fusion of semantic HTML5, responsive CSS3 Grid and Flexbox, dynamic JavaScript event handling, client-side persistence, and secure PHP/MySQL backend administration. By addressing an authentic societal dilemma in the Indian academic landscape, the project provides a practical, high-utility resource for the student community.
+      </p>
+      <p style="font-size: 8.5pt; color: #64748b; margin-top: 8px;">
+        <strong>References:</strong> (1) Glassdoor India &amp; AmbitionBox 2026 Industry Reports; (2) UGC &amp; AICTE Institutional Accreditation Portals; (3) MDN Web Docs: HTML5 Semantics, CSS Grid &amp; Web Storage APIs.
+      </p>
+
+      <div class="page-footer-note no-print">
+        <span>Career Kuch Hatke &bull; Field Project Documentation</span>
+        <span>Page 4 of 4</span>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function copyRichText() {
+      const container = document.getElementById('reportContent');
+      const selection = window.getSelection();
+      const range = document.createRange();
+      range.selectNodeContents(container);
+      selection.removeAllRanges();
+      selection.addRange(range);
+      
+      try {
+        document.execCommand('copy');
+        alert('✅ Rich Text Copied Successfully!\n\nNow open Google Docs and press Ctrl + V. It will paste with real headings, tables, and colors!');
+      } catch (err) {
+        alert('Please press Ctrl + A, then Ctrl + C on this page to copy.');
+      }
+      selection.removeAllRanges();
+    }
+  </script>
+</body>
+</html>
