@@ -320,7 +320,68 @@ button.filter-btn[data-filter="unique"].active {
 }
 
 .card-header {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
   margin-bottom: 0.75rem;
+}
+
+.bookmark-card-btn {
+  background: rgba(0, 0, 0, 0.04);
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 50%;
+  width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: all 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  color: var(--text-gray);
+  padding: 0;
+  line-height: 1;
+  outline: none;
+  z-index: 2;
+}
+
+.bookmark-card-btn:hover {
+  transform: scale(1.15);
+  border-color: var(--accent);
+  background: rgba(221, 168, 63, 0.18);
+}
+
+.bookmark-card-btn.active {
+  background: linear-gradient(135deg, var(--accent) 0%, #f0c050 100%) !important;
+  border-color: var(--accent) !important;
+  box-shadow: 0 3px 10px rgba(221, 168, 63, 0.45);
+  transform: scale(1.08);
+}
+
+[data-theme="dark"] .bookmark-card-btn {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+[data-theme="dark"] .bookmark-card-btn:hover {
+  background: rgba(221, 168, 63, 0.25);
+  border-color: var(--accent);
+}
+
+[data-theme="dark"] .bookmark-card-btn.active {
+  background: linear-gradient(135deg, var(--accent) 0%, #f0c050 100%) !important;
+  border-color: var(--accent) !important;
+}
+
+button.filter-btn[data-filter="bookmarked"] {
+  border-color: rgba(221, 168, 63, 0.4);
+}
+
+button.filter-btn[data-filter="bookmarked"].active {
+  background: linear-gradient(135deg, var(--accent) 0%, #f0c050 100%) !important;
+  color: var(--text-dark) !important;
+  border-color: var(--accent) !important;
+  font-weight: 700;
 }
 
 .category-badge {

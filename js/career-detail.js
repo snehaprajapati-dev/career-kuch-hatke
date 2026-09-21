@@ -78,6 +78,10 @@ function fillCareerDetails(career, careerId) {
 
   fillRelatedCareers(career.category, careerId);
 
+  if (window.ckhBookmarks) {
+    window.ckhBookmarks.updateUI();
+  }
+
   // Open Section 1 by default so students immediately see content
   const firstCard = document.querySelector(".detail-card");
   if (firstCard) {
@@ -955,6 +959,20 @@ function printRoadmap() {
   window.print();
 }
 
+function toggleDetailBookmark() {
+  const urlParams = new URLSearchParams(window.location.search);
+  const careerId = urlParams.get("career");
+  if (!careerId || !window.ckhBookmarks) return;
+
+  const isSaved = window.ckhBookmarks.toggle(careerId);
+  if (isSaved) {
+    if (window.showToast) window.showToast("Career saved to bookmarks! 🔖");
+  } else {
+    if (window.showToast) window.showToast("Career removed from bookmarks");
+  }
+}
+
 window.toggleAllSections = toggleAllSections;
 window.updateToggleAllBtn = updateToggleAllBtn;
 window.printRoadmap = printRoadmap;
+window.toggleDetailBookmark = toggleDetailBookmark;

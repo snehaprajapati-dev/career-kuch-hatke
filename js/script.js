@@ -13,6 +13,94 @@
 // Global reCAPTCHA widget IDs
 window.contactRecaptchaWidget = undefined;
 window.suggestionRecaptchaWidget = undefined;
+
+/* ============================================
+   TOAST NOTIFICATION UTILITY
+   ============================================ */
+window.showToast = function (message) {
+  var toast = document.getElementById("ckh-toast");
+  if (!toast) {
+    toast = document.createElement("div");
+    toast.id = "ckh-toast";
+    document.body.appendChild(toast);
+  }
+  toast.textContent = message;
+  toast.className = "ckh-toast show";
+  clearTimeout(window.ckhToastTimer);
+  window.ckhToastTimer = setTimeout(function () {
+    toast.className = "ckh-toast";
+  }, 2400);
+};
+
+/* ============================================
+   CAREER BOOKMARKS (Saved Careers via localStorage)
+   ============================================ */
+window.ckhBookmarks = {
+  get: function () {
+    try {
+      return JSON.parse(localStorage.getItem("ckh_bookmarks") || "[]");
+    } catch (e) {
+      return [];
+    }
+  },
+  set: function (arr) {
+    try {
+      localStorage.setItem("ckh_bookmarks", JSON.stringify(arr));
+    } catch (e) {}
+  },
+  has: function (slug) {
+    return this.get().includes(slug);
+  },
+  toggle: function (slug) {
+    var list = this.get();
+    var added = false;
+    if (list.includes(slug)) {
+      list = list.filter(function (s) {
+        return s !== slug;
+      });
+      added = false;
+    } else {
+      list.push(slug);
+      added = true;
+    }
+    this.set(list);
+    this.updateUI();
+    return added;
+  },
+  updateUI: function () {
+    var list = this.get();
+    var countEl = document.getElementById("bookmarkCount");
+    if (countEl) countEl.textContent = list.length;
+
+    document.querySelectorAll(".bookmark-card-btn").forEach(function (btn) {
+      var slug = btn.getAttribute("data-slug");
+      if (list.includes(slug)) {
+        btn.classList.add("active");
+        btn.setAttribute("aria-label", "Remove from bookmarks");
+        btn.setAttribute("title", "Remove from bookmarks");
+        btn.innerHTML = "🔖";
+      } else {
+        btn.classList.remove("active");
+        btn.setAttribute("aria-label", "Save to bookmarks");
+        btn.setAttribute("title", "Save to bookmarks");
+        btn.innerHTML = "🔖";
+      }
+    });
+
+    var detailBtn = document.getElementById("bookmarkDetailBtn");
+    if (detailBtn) {
+      var urlParams = new URLSearchParams(window.location.search);
+      var currentSlug = urlParams.get("career");
+      if (currentSlug && list.includes(currentSlug)) {
+        detailBtn.classList.add("active");
+        detailBtn.innerHTML = "🔖 Saved to Bookmarks";
+      } else {
+        detailBtn.classList.remove("active");
+        detailBtn.innerHTML = "🔖 Bookmark Career";
+      }
+    }
+  },
+};
 // ============================================
 // Wait for page to load before running code
 // ============================================
@@ -104,30 +192,129 @@ document.addEventListener("DOMContentLoaded", function () {
     const noResults = document.getElementById("no-careers-found");
     const filtersSection = document.querySelector(".filters");
 
+    // Initialize data-slug and bookmark buttons on each card
+    careerCards.forEach((card) => {
+      const btn = card.querySelector("a.card-btn");
+      let slug = "";
+      if (btn) {
+        const href = btn.getAttribute("href") || "";
+        const match = href.match(/career=([a-z0-9\-]+)/);
+        if (match) slug = match[1];
+      }
+      if (slug) card.setAttribute("data-slug", slug);
+
+      const header = card.querySelector(".card-header");
+      if (header && slug && !header.querySelector(".bookmark-card-btn")) {
+        const bookmarkBtn = document.createElement("button");
+        bookmarkBtn.className = "bookmark-card-btn";
+        bookmarkBtn.type = "button";
+        bookmarkBtn.setAttribute("data-slug", slug);
+        bookmarkBtn.setAttribute("aria-label", "Save to bookmarks");
+        bookmarkBtn.setAttribute("title", "Save to bookmarks");
+        bookmarkBtn.innerHTML = "🔖";
+
+        bookmarkBtn.addEventListener("click", function (e) {
+          e.preventDefault();
+          e.stopPropagation();
+          const isSaved = window.ckhBookmarks.toggle(slug);
+          if (isSaved) {
+            window.showToast("Career saved to bookmarks! 🔖");
+          } else {
+            window.showToast("Career removed from bookmarks");
+          }
+
+          // If currently viewing the bookmarked filter, refresh the filter immediately
+          const activeFilter = document.querySelector(".filter-btn.active");
+          if (
+            activeFilter &&
+            activeFilter.getAttribute("data-filter") === "bookmarked"
+          ) {
+            applyActiveFilter("bookmarked");
+          }
+        });
+
+        header.appendChild(bookmarkBtn);
+      }
+    });
+
+    // Update bookmark UI (active states and counters)
+    window.ckhBookmarks.updateUI();
+
+    function applyActiveFilter(filterValue) {
+      if (searchInput) searchInput.value = "";
+      if (filtersSection) filtersSection.classList.remove("is-searching");
+      let visibleCount = 0;
+      const bookmarks = window.ckhBookmarks.get();
+
+      careerCards.forEach((card) => {
+        const cardCategory = card.getAttribute("data-category");
+        const cardSlug = card.getAttribute("data-slug");
+
+        let isMatch = false;
+        if (filterValue === "all") {
+          isMatch = true;
+        } else if (filterValue === "bookmarked") {
+          isMatch = bookmarks.includes(cardSlug);
+        } else {
+          isMatch = cardCategory === filterValue;
+        }
+
+        if (isMatch) {
+          card.style.display = "";
+          visibleCount++;
+        } else {
+          card.style.display = "none";
+        }
+      });
+
+      if (countSpan) countSpan.textContent = visibleCount;
+
+      const noResultsMsg = document.getElementById("no-results-msg");
+      const noResultsIcon = document.querySelector(".no-results-icon");
+      const noResultsHeading = document.querySelector("#no-careers-found h3");
+      const suggestBtn = document.getElementById("suggestCareerBtn");
+
+      if (noResults) {
+        if (visibleCount === 0) {
+          noResults.style.display = "block";
+          if (filterValue === "bookmarked") {
+            if (noResultsIcon) noResultsIcon.textContent = "🔖";
+            if (noResultsHeading)
+              noResultsHeading.textContent = "No Bookmarked Careers Yet";
+            if (noResultsMsg) {
+              noResultsMsg.innerHTML =
+                "You haven't bookmarked any careers yet! Tap the 🔖 bookmark icon on any career card to save it here for quick access.";
+            }
+            if (suggestBtn) suggestBtn.style.display = "none";
+          } else {
+            if (noResultsIcon) noResultsIcon.textContent = "🔍";
+            if (noResultsHeading)
+              noResultsHeading.textContent = "No Hatke Careers Found";
+            if (noResultsMsg) {
+              noResultsMsg.textContent =
+                "We couldn't find any career matching that filter. Try browsing another category!";
+            }
+            if (suggestBtn) suggestBtn.style.display = "";
+          }
+        } else {
+          noResults.style.display = "none";
+          if (suggestBtn) suggestBtn.style.display = "";
+        }
+      }
+
+      const backToTop = document.querySelector(".back-to-top");
+      if (backToTop) {
+        backToTop.style.display = visibleCount === 0 ? "none" : "";
+      }
+    }
+
     filterButtons.forEach((button) => {
       button.addEventListener("click", function () {
         filterButtons.forEach((btn) => btn.classList.remove("active"));
         this.classList.add("active");
         const filterValue = this.getAttribute("data-filter");
-        if (searchInput) searchInput.value = "";
-        if (filtersSection) filtersSection.classList.remove("is-searching");
-        let visibleCount = 0;
-        careerCards.forEach((card) => {
-          const cardCategory = card.getAttribute("data-category");
-          if (filterValue === "all" || cardCategory === filterValue) {
-            card.style.display = "";
-            visibleCount++;
-          } else {
-            card.style.display = "none";
-          }
-        });
-        if (countSpan) countSpan.textContent = visibleCount;
-        if (noResults)
-          noResults.style.display = visibleCount === 0 ? "block" : "none";
-        const backToTop = document.querySelector(".back-to-top");
-        if (backToTop) {
-          backToTop.style.display = visibleCount === 0 ? "none" : "";
-        }
+        applyActiveFilter(filterValue);
+
         // Smoothly center the clicked button in the scrollable bar if on mobile
         if (typeof this.scrollIntoView === "function") {
           this.scrollIntoView({
@@ -138,6 +325,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
       });
     });
+
 
     if (searchInput && countSpan) {
       const clearBtn = document.getElementById("clearSearch");
