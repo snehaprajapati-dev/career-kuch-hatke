@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Career Kuch Hatke - Academic Project Documentation Report</title>
+  <title>Career Kuch Hatke - Academic Project Documentation Report (8 Pages)</title>
   <style>
     /* ==========================================================================
        ACADEMIC PROJECT REPORT STYLESHEET (MONOCHROME / FORMAL STANDARD)
@@ -45,11 +45,12 @@
 
     /* Page Definition (Standard Academic A4 Pages) */
     .report-page {
-      padding: 42px 48px 50px 48px;
+      padding: 38px 48px 48px 48px;
       min-height: 1080px;
       position: relative;
       background: #ffffff !important;
       color: #000000 !important;
+      box-sizing: border-box;
     }
 
     .page-break {
@@ -82,8 +83,16 @@
       .no-print {
         display: none !important;
       }
-      .screenshot-card .img-wrapper {
-        max-height: 350px !important;
+      .single-screenshot-frame {
+        max-height: 690px !important;
+        margin: 4px auto 6px auto;
+        padding: 4px;
+      }
+      .single-screenshot-frame img {
+        max-height: 670px !important;
+      }
+      .screenshot-caption-box {
+        font-size: 8.5pt !important;
       }
     }
 
@@ -118,26 +127,36 @@
       text-align: center;
       border-bottom: 2px solid #000000;
       padding-bottom: 8px;
-      margin-bottom: 14px;
+      margin-bottom: 12px;
     }
 
     .academic-header .institution-name {
-      font-size: 16pt;
+      font-size: 15pt;
       font-weight: bold;
       text-transform: uppercase;
       letter-spacing: 0.5px;
       margin-bottom: 2px;
     }
 
+    .academic-header .college-subname {
+      font-size: 11.5pt;
+      font-weight: bold;
+      line-height: 1.3;
+      margin-bottom: 4px;
+      color: #000000;
+    }
+
     .academic-header .dept-name {
-      font-size: 12pt;
+      font-size: 11.5pt;
       font-weight: bold;
       text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-top: 4px;
       margin-bottom: 2px;
     }
 
     .academic-header .sub-details {
-      font-size: 9.5pt;
+      font-size: 9pt;
       font-style: italic;
     }
 
@@ -145,28 +164,28 @@
     .title-box {
       text-align: center;
       border: 1.5px solid #000000;
-      padding: 10px 14px;
-      margin-bottom: 14px;
+      padding: 8px 14px;
+      margin-bottom: 12px;
       background: #ffffff !important;
     }
 
     .title-box .report-type {
-      font-size: 9pt;
+      font-size: 8.5pt;
       font-weight: bold;
       text-transform: uppercase;
       letter-spacing: 1px;
-      margin-bottom: 4px;
+      margin-bottom: 3px;
     }
 
     .title-box h1 {
-      font-size: 18pt;
+      font-size: 17pt;
       font-weight: bold;
       letter-spacing: 0.5px;
-      margin: 2px 0 4px 0;
+      margin: 2px 0 3px 0;
     }
 
     .title-box .project-subtitle {
-      font-size: 10pt;
+      font-size: 9.5pt;
       font-style: italic;
       margin: 0;
     }
@@ -175,14 +194,14 @@
     table.meta-table {
       width: 100%;
       border-collapse: collapse;
-      margin-bottom: 14px;
+      margin-bottom: 12px;
       font-size: 9.5pt;
       background-color: transparent !important;
     }
 
     table.meta-table td {
       border: 1px solid #000000;
-      padding: 5px 8px;
+      padding: 4px 8px;
       vertical-align: middle;
       background-color: transparent !important;
       color: #000000 !important;
@@ -202,20 +221,20 @@
 
     /* Formal Numbered Headings */
     h2.academic-heading {
-      font-size: 12pt;
+      font-size: 11.5pt;
       font-weight: bold;
       text-transform: uppercase;
       border-bottom: 1px solid #000000;
       padding-bottom: 3px;
-      margin-top: 14px;
+      margin-top: 12px;
       margin-bottom: 8px;
       letter-spacing: 0.3px;
     }
 
     h3.academic-subheading {
-      font-size: 11pt;
+      font-size: 10.5pt;
       font-weight: bold;
-      margin-top: 10px;
+      margin-top: 8px;
       margin-bottom: 4px;
     }
 
@@ -223,7 +242,7 @@
     table.academic-table {
       width: 100%;
       border-collapse: collapse;
-      margin: 8px 0 12px 0;
+      margin: 8px 0 10px 0;
       font-size: 9pt;
       background-color: transparent !important;
     }
@@ -252,11 +271,11 @@
       border: 1px solid #000000;
       padding: 6px 10px;
       font-family: "Courier New", Courier, monospace;
-      font-size: 8pt;
+      font-size: 7.5pt;
       line-height: 1.25;
       color: #000000 !important;
       overflow-x: auto;
-      margin: 6px 0 10px 0;
+      margin: 5px 0 8px 0;
       white-space: pre;
     }
 
@@ -268,47 +287,40 @@
       background-color: transparent !important;
     }
 
-    /* System Interface Screenshot Gallery Grid */
-    .screenshot-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 14px;
-      margin-top: 10px;
-      margin-bottom: 12px;
-    }
-
-    .screenshot-card {
+    /* Single Screenshot Page Layout (Pages 5 to 8) */
+    .single-screenshot-frame {
       border: 1px solid #000000;
       padding: 6px;
       background: #ffffff !important;
-      box-sizing: border-box;
+      margin: 6px auto 10px auto;
       text-align: center;
-    }
-
-    .screenshot-card .img-wrapper {
-      max-height: 380px;
-      overflow: hidden;
-      border: 1px solid #9ca3af;
-      margin-bottom: 6px;
-      background: #fafafa;
       display: flex;
       justify-content: center;
-      align-items: flex-start;
+      align-items: center;
+      box-sizing: border-box;
+      width: 100%;
+      max-height: 740px;
+      overflow: hidden;
     }
 
-    .screenshot-card img {
-      width: 100%;
+    .single-screenshot-frame img {
+      max-width: 100%;
+      max-height: 720px;
       height: auto;
+      width: auto;
       display: block;
+      margin: 0 auto;
       object-fit: contain;
     }
 
-    .screenshot-card .fig-caption {
-      font-size: 8.5pt;
-      line-height: 1.25;
-      text-align: center;
+    .screenshot-caption-box {
+      border-top: 1px solid #000000;
+      padding-top: 6px;
+      margin-top: 4px;
+      text-align: justify;
+      font-size: 9.5pt;
+      line-height: 1.35;
       color: #000000 !important;
-      padding: 2px 4px;
     }
 
     /* Academic Running Header & Footer */
@@ -461,7 +473,7 @@
 
   <!-- Screen-Only Controls Bar -->
   <div class="controls-toolbar no-print">
-    <span class="status-tag">Academic Report (5 Pages With Screenshots)</span>
+    <span class="status-tag">Academic Project Report (Total 8 Pages: 4 Docs + 4 Website Screenshots)</span>
     <button class="primary-btn" onclick="window.print()">Print / Save PDF (Ctrl + P)</button>
     <button onclick="copyDocumentRichText()">Copy for Google Docs (Clean / No Black Boxes)</button>
     <button onclick="copyDocumentPlainText()">Copy Plain Text</button>
@@ -494,15 +506,20 @@
          ==================================================================== -->
     <div class="report-page">
       <div class="academic-header">
-        <div class="institution-name">Vidyavardhini's College</div>
+        <div class="institution-name">Vidyavardhini’s</div>
+        <div class="college-subname">
+          Annasaheb Vartak College of Arts,<br>
+          Kedarnath Malhotra College of Commerce,<br>
+          E. S. Andrades College of Science
+        </div>
         <div class="dept-name">Department of Computer Science</div>
         <div class="sub-details">
-          Academic Year 2025 &ndash; 2026 &bull; Bachelor of Science in Computer Science &bull; Field Project Report
+          (Affiliated to the University of Mumbai) &bull; Vasai Road (West), Palghar &bull; Academic Year 2025 &ndash; 2026
         </div>
       </div>
 
       <div class="title-box">
-        <div class="report-type">A Project Report On</div>
+        <div class="report-type">A Field Project Report On</div>
         <h1>CAREER KUCH HATKE</h1>
         <p class="project-subtitle">An Interactive Unconventional Career Guidance Web Platform with Administrative Management Portal</p>
       </div>
@@ -511,14 +528,20 @@
         <tr>
           <td class="label-col">Candidate Name:</td>
           <td>Sneha Prajapati</td>
+          <td class="label-col">Institutional Roll No.:</td>
+          <td><strong>89</strong></td>
+        </tr>
+        <tr>
           <td class="label-col">Academic Class:</td>
           <td>Second Year B.Sc. Computer Science</td>
+          <td class="label-col">Semester / Stream:</td>
+          <td>Semester III &mdash; Computer Science</td>
         </tr>
         <tr>
           <td class="label-col">Course / Subject:</td>
           <td>Field Project (Computer Science)</td>
-          <td class="label-col">Semester / Stream:</td>
-          <td>Semester III &mdash; Computer Science</td>
+          <td class="label-col">Academic Session:</td>
+          <td>Academic Year 2025 &ndash; 2026</td>
         </tr>
         <tr>
           <td class="label-col">Live Application URL:</td>
@@ -558,7 +581,7 @@
 
       <div class="running-footer">
         <span>Department of Computer Science &bull; S.Y. B.Sc. CS &bull; Field Project Documentation</span>
-        <span>Page 1 of 5</span>
+        <span>Page 1 of 8</span>
       </div>
     </div>
 
@@ -656,7 +679,7 @@
 
       <div class="running-footer">
         <span>Department of Computer Science &bull; S.Y. B.Sc. CS &bull; Field Project Documentation</span>
-        <span>Page 2 of 5</span>
+        <span>Page 2 of 8</span>
       </div>
     </div>
 
@@ -734,7 +757,7 @@ if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
 
       <div class="running-footer">
         <span>Department of Computer Science &bull; S.Y. B.Sc. CS &bull; Field Project Documentation</span>
-        <span>Page 3 of 5</span>
+        <span>Page 3 of 8</span>
       </div>
     </div>
 
@@ -854,70 +877,115 @@ if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
 
       <div class="running-footer">
         <span>Department of Computer Science &bull; S.Y. B.Sc. CS &bull; Field Project Documentation</span>
-        <span>Page 4 of 5</span>
+        <span>Page 4 of 8</span>
       </div>
     </div>
 
     <div class="page-break"></div>
 
     <!-- ====================================================================
-         PAGE 5: APPLICATION USER INTERFACE & PAGE SCREENSHOTS (GALLERY)
+         PAGE 5: WEBSITE IMAGE 1 - HOME PORTAL (index.html)
          ==================================================================== -->
-    <div class="report-page">
-      <h2 class="academic-heading">5.0 Platform User Interface &amp; Application Screenshots</h2>
-      <p>
-        The following screenshots demonstrate the primary user-facing interfaces and responsive design implemented across the <strong>Career Kuch Hatke</strong> web platform:
-      </p>
-
-      <div class="screenshot-grid">
-        <!-- Figure 5.1: Home Page -->
-        <div class="screenshot-card">
-          <div class="img-wrapper">
-            <img src="images/screenshot-home.png" alt="Figure 5.1: Home Portal" />
-          </div>
-          <div class="fig-caption">
-            <strong>Figure 5.1:</strong> Home Portal (<code>index.html</code>) &mdash; Hero banner, comparative dilemma matrix, and career domain navigation.
-          </div>
-        </div>
-
-        <!-- Figure 5.2: Career Detail Roadmap -->
-        <div class="screenshot-card">
-          <div class="img-wrapper">
-            <img src="images/screenshot-roadmap.png" alt="Figure 5.2: Dynamic Career Roadmap" />
-          </div>
-          <div class="fig-caption">
-            <strong>Figure 5.2:</strong> Career Roadmap (<code>career-detail.html</code>) &mdash; AI Prompt Engineer roadmap, salary packages, and parent pitch tool.
-          </div>
-        </div>
-
-        <!-- Figure 5.3: About Us -->
-        <div class="screenshot-card">
-          <div class="img-wrapper">
-            <img src="images/screenshot-about.png" alt="Figure 5.3: About Us & Transparency" />
-          </div>
-          <div class="fig-caption">
-            <strong>Figure 5.3:</strong> About Us (<code>about.html</code>) &mdash; Developer background (Sneha Prajapati), statistics, and research methodology.
-          </div>
-        </div>
-
-        <!-- Figure 5.4: Contact Us Form -->
-        <div class="screenshot-card">
-          <div class="img-wrapper">
-            <img src="images/screenshot-contact.png" alt="Figure 5.4: Inquiries & Career Suggestions" />
-          </div>
-          <div class="fig-caption">
-            <strong>Figure 5.4:</strong> Inquiries &amp; Suggestions (<code>contact.html</code>) &mdash; Interactive student feedback form with input validation.
-          </div>
-        </div>
+    <div class="report-page single-screenshot-page">
+      <h2 class="academic-heading">5.0 Platform User Interface &mdash; Module 1: Home Portal</h2>
+      <div class="screenshot-header">
+        <p>
+          The <strong>Home Page (<code>index.html</code>)</strong> acts as the central introductory gateway to the platform. It features a bold hero headline addressing career anxiety, direct action callouts, the comparative "Rat Race vs. Hatke Career" problem-solution dilemma matrix, and categorical exploration pills:
+        </p>
       </div>
 
-      <p style="font-size: 8.5pt; text-align: center; color: #4b5563; margin-top: 4px;">
-        <em>Note: High-resolution screenshots captured from live production deployment on Google Chrome &amp; mobile viewports.</em>
-      </p>
+      <div class="single-screenshot-frame">
+        <img src="images/screenshot-home.png" alt="Figure 5.1: Home Portal Interface (index.html)" />
+      </div>
+
+      <div class="screenshot-caption-box">
+        <strong>Figure 5.1: Home Page Interface (<code>index.html</code>)</strong> &mdash; Demonstrates the primary landing view, interactive "Rat Race vs. Hatke Career" comparative statistics (93% career awareness gap), 5 domain category spotlights (Creative, Tech, Science, Business, Unique), and fully responsive navigation with Dark/Light theme toggle.
+      </div>
 
       <div class="running-footer">
         <span>Department of Computer Science &bull; S.Y. B.Sc. CS &bull; Field Project Documentation</span>
-        <span>Page 5 of 5</span>
+        <span>Page 5 of 8</span>
+      </div>
+    </div>
+
+    <div class="page-break"></div>
+
+    <!-- ====================================================================
+         PAGE 6: WEBSITE IMAGE 2 - CAREER ROADMAP DETAIL (career-detail.html)
+         ==================================================================== -->
+    <div class="report-page single-screenshot-page">
+      <h2 class="academic-heading">6.0 Platform User Interface &mdash; Module 2: Career Roadmap Detail</h2>
+      <div class="screenshot-header">
+        <p>
+          The <strong>Career Roadmap Engine (<code>career-detail.html</code>)</strong> dynamically constructs an in-depth vocational blueprint from URL query parameters. The template organizes authentic 2026 industry packages, accredited colleges, degree safety cushions, and parental conversation pitches:
+        </p>
+      </div>
+
+      <div class="single-screenshot-frame">
+        <img src="images/screenshot-roadmap.png" alt="Figure 6.1: Dynamic Career Roadmap Engine (career-detail.html)" />
+      </div>
+
+      <div class="screenshot-caption-box">
+        <strong>Figure 6.1: Dynamic Career Roadmap Engine (<code>career-detail.html?career=ai-prompt-engineer</code>)</strong> &mdash; Illustrates the modular career guide for an <em>AI Prompt Engineer</em>, detailing verified starting-to-senior salary brackets, step-by-step educational milestones, accredited Indian colleges, degree cushions, and the one-tap 30-Second WhatsApp Parent Pitch generator.
+      </div>
+
+      <div class="running-footer">
+        <span>Department of Computer Science &bull; S.Y. B.Sc. CS &bull; Field Project Documentation</span>
+        <span>Page 6 of 8</span>
+      </div>
+    </div>
+
+    <div class="page-break"></div>
+
+    <!-- ====================================================================
+         PAGE 7: WEBSITE IMAGE 3 - ABOUT US & TRANSPARENCY (about.html)
+         ==================================================================== -->
+    <div class="report-page single-screenshot-page">
+      <h2 class="academic-heading">7.0 Platform User Interface &mdash; Module 3: About Us &amp; Research</h2>
+      <div class="screenshot-header">
+        <p>
+          The <strong>About Us &amp; Transparency Portal (<code>about.html</code>)</strong> outlines the foundational research motivation, statistical realities of career selection pressures in India, the developer's academic background, and future platform roadmap milestones:
+        </p>
+      </div>
+
+      <div class="single-screenshot-frame">
+        <img src="images/screenshot-about.png" alt="Figure 7.1: About Us & Research Transparency Portal (about.html)" />
+      </div>
+
+      <div class="screenshot-caption-box">
+        <strong>Figure 7.1: About Us &amp; Research Transparency Portal (<code>about.html</code>)</strong> &mdash; Highlights the academic narrative and personal motivation of developer Sneha Prajapati (Roll No. 89), contextualized with national student career surveys (72% career mismatch rate), core platform values, and authorized citation references.
+      </div>
+
+      <div class="running-footer">
+        <span>Department of Computer Science &bull; S.Y. B.Sc. CS &bull; Field Project Documentation</span>
+        <span>Page 7 of 8</span>
+      </div>
+    </div>
+
+    <div class="page-break"></div>
+
+    <!-- ====================================================================
+         PAGE 8: WEBSITE IMAGE 4 - INQUIRIES & SUGGESTIONS (contact.html)
+         ==================================================================== -->
+    <div class="report-page single-screenshot-page">
+      <h2 class="academic-heading">8.0 Platform User Interface &mdash; Module 4: Inquiries &amp; Suggestions</h2>
+      <div class="screenshot-header">
+        <p>
+          The <strong>Contact &amp; Career Suggestion Portal (<code>contact.html</code>)</strong> provides a full-stack communication interface enabling students and educators to submit general queries and propose new emerging vocational disciplines for editorial review:
+        </p>
+      </div>
+
+      <div class="single-screenshot-frame">
+        <img src="images/screenshot-contact.png" alt="Figure 8.1: Inquiries & Career Suggestions Interface (contact.html)" />
+      </div>
+
+      <div class="screenshot-caption-box">
+        <strong>Figure 8.1: Student Inquiries &amp; Career Proposal Form (<code>contact.html</code>)</strong> &mdash; Displays the user feedback interface equipped with client-side regex input validation, responsive form controls, anti-spam safeguards, and asynchronous submission to the PHP/MySQL administrative backend.
+      </div>
+
+      <div class="running-footer">
+        <span>Department of Computer Science &bull; S.Y. B.Sc. CS &bull; Field Project Documentation</span>
+        <span>Page 8 of 8</span>
       </div>
     </div>
 
@@ -964,7 +1032,7 @@ if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         el.style.color = "#000000";
         if (el.tagName === "TD" || el.tagName === "TH") {
           el.style.border = "1px solid #000000";
-          el.style.padding = "5px 8px";
+          el.style.padding = "4px 8px";
           el.style.backgroundColor = "transparent";
           el.style.color = "#000000";
         }
