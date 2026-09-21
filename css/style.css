@@ -1386,9 +1386,28 @@ body > *:first-child:not(.navbar) {
   }
 
   .career-card {
-    padding: 1.5rem;
+    padding: 1.35rem 1.25rem;
     width: 100%;
     max-width: 100%;
+    min-height: 340px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+    box-sizing: border-box;
+  }
+
+  .career-card h3 {
+    min-height: 2.8rem;
+    display: flex;
+    align-items: flex-start;
+  }
+
+  .career-card .tagline {
+    min-height: 4.8rem;
+  }
+
+  .career-card .salary {
+    margin-top: auto !important;
   }
 
   .quiz-container {
