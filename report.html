@@ -18,6 +18,12 @@
       box-sizing: border-box;
     }
 
+    /* Force clean selection so browser doesn't copy black selection highlight */
+    ::selection {
+      background-color: #e2e8f0 !important;
+      color: #000000 !important;
+    }
+
     body {
       font-family: "Times New Roman", Times, "Liberation Serif", serif;
       font-size: 11pt;
@@ -37,13 +43,13 @@
       border: 1px solid #d1d5db;
     }
 
-    /* Page Definition (4 Standard Academic A4 Pages) */
+    /* Page Definition (Standard Academic A4 Pages) */
     .report-page {
       padding: 42px 48px 50px 48px;
       min-height: 1080px;
       position: relative;
-      background: #ffffff;
-      color: #000000;
+      background: #ffffff !important;
+      color: #000000 !important;
     }
 
     .page-break {
@@ -76,12 +82,16 @@
       .no-print {
         display: none !important;
       }
+      .screenshot-card .img-wrapper {
+        max-height: 350px !important;
+      }
     }
 
     /* Typography & Hierarchy */
     h1, h2, h3, h4, p, ul, ol, table {
       margin-top: 0;
       color: #000000;
+      background-color: transparent !important;
     }
 
     p {
@@ -137,7 +147,7 @@
       border: 1.5px solid #000000;
       padding: 10px 14px;
       margin-bottom: 14px;
-      background: #ffffff;
+      background: #ffffff !important;
     }
 
     .title-box .report-type {
@@ -161,29 +171,33 @@
       margin: 0;
     }
 
-    /* Formal Metadata Table */
+    /* Formal Metadata Table (Pure transparent backgrounds to avoid Google Docs black highlight) */
     table.meta-table {
       width: 100%;
       border-collapse: collapse;
       margin-bottom: 14px;
       font-size: 9.5pt;
+      background-color: transparent !important;
     }
 
     table.meta-table td {
       border: 1px solid #000000;
       padding: 5px 8px;
       vertical-align: middle;
+      background-color: transparent !important;
+      color: #000000 !important;
     }
 
     table.meta-table td.label-col {
       width: 25%;
       font-weight: bold;
-      background: #f5f5f5;
+      background-color: transparent !important;
     }
 
     table.meta-table a {
-      color: #000000;
+      color: #000000 !important;
       text-decoration: underline;
+      background-color: transparent !important;
     }
 
     /* Formal Numbered Headings */
@@ -211,6 +225,7 @@
       border-collapse: collapse;
       margin: 8px 0 12px 0;
       font-size: 9pt;
+      background-color: transparent !important;
     }
 
     table.academic-table th,
@@ -219,10 +234,12 @@
       padding: 5px 8px;
       text-align: left;
       vertical-align: top;
+      background-color: transparent !important;
+      color: #000000 !important;
     }
 
     table.academic-table th {
-      background: #f2f2f2;
+      background-color: transparent !important;
       font-weight: bold;
       text-transform: uppercase;
       font-size: 8.5pt;
@@ -231,13 +248,13 @@
 
     /* Preformatted Architecture & Code */
     pre.academic-code {
-      background: #ffffff;
+      background: #ffffff !important;
       border: 1px solid #000000;
       padding: 6px 10px;
       font-family: "Courier New", Courier, monospace;
       font-size: 8pt;
       line-height: 1.25;
-      color: #000000;
+      color: #000000 !important;
       overflow-x: auto;
       margin: 6px 0 10px 0;
       white-space: pre;
@@ -247,7 +264,51 @@
       font-family: "Courier New", Courier, monospace;
       font-size: 9pt;
       font-weight: bold;
-      color: #000000;
+      color: #000000 !important;
+      background-color: transparent !important;
+    }
+
+    /* System Interface Screenshot Gallery Grid */
+    .screenshot-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-top: 10px;
+      margin-bottom: 12px;
+    }
+
+    .screenshot-card {
+      border: 1px solid #000000;
+      padding: 6px;
+      background: #ffffff !important;
+      box-sizing: border-box;
+      text-align: center;
+    }
+
+    .screenshot-card .img-wrapper {
+      max-height: 380px;
+      overflow: hidden;
+      border: 1px solid #9ca3af;
+      margin-bottom: 6px;
+      background: #fafafa;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+    }
+
+    .screenshot-card img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: contain;
+    }
+
+    .screenshot-card .fig-caption {
+      font-size: 8.5pt;
+      line-height: 1.25;
+      text-align: center;
+      color: #000000 !important;
+      padding: 2px 4px;
     }
 
     /* Academic Running Header & Footer */
@@ -266,7 +327,7 @@
 
     /* Clean, Professional Screen-Only Control Toolbar */
     .controls-toolbar {
-      background: #1e293b;
+      background: #0f172a;
       color: #ffffff;
       padding: 12px 20px;
       text-align: center;
@@ -275,11 +336,11 @@
       position: sticky;
       top: 0;
       z-index: 9999;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 12px;
+      gap: 10px;
       flex-wrap: wrap;
     }
 
@@ -287,15 +348,16 @@
       font-weight: bold;
       color: #e2e8f0;
       letter-spacing: 0.5px;
+      margin-right: 6px;
     }
 
     .controls-toolbar button {
       background: #ffffff;
       color: #0f172a;
       border: 1px solid #cbd5e1;
-      padding: 7px 16px;
+      padding: 7px 15px;
       font-family: Arial, sans-serif;
-      font-size: 9.5pt;
+      font-size: 9pt;
       font-weight: bold;
       cursor: pointer;
       border-radius: 4px;
@@ -317,20 +379,81 @@
       background: #7dd3fc;
     }
 
+    .controls-toolbar button.help-btn {
+      background: #fef08a;
+      color: #854d0e;
+      border: 1px solid #eab308;
+    }
+
+    .controls-toolbar button.help-btn:hover {
+      background: #fef9c3;
+    }
+
+    /* Floating Toast */
     .alert-banner {
       display: none;
       position: fixed;
-      top: 60px;
+      top: 55px;
       left: 50%;
       transform: translateX(-50%);
       background: #0f172a;
       color: #ffffff;
-      padding: 10px 24px;
+      padding: 12px 24px;
       border-radius: 6px;
       font-family: Arial, sans-serif;
       font-size: 9.5pt;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.35);
       z-index: 10000;
+      border: 1px solid #38bdf8;
+      max-width: 90%;
+      text-align: center;
+    }
+
+    /* Modal for Quick Google Docs Instructions */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.6);
+      z-index: 10001;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .modal-card {
+      background: #ffffff;
+      padding: 24px;
+      max-width: 520px;
+      border-radius: 8px;
+      font-family: Arial, sans-serif;
+      color: #1f2937;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+    }
+
+    .modal-card h3 {
+      margin-top: 0;
+      color: #0f172a;
+      font-size: 13pt;
+      border-bottom: 2px solid #e2e8f0;
+      padding-bottom: 8px;
+    }
+
+    .modal-card ol {
+      margin: 12px 0;
+      padding-left: 20px;
+      font-size: 10pt;
+      line-height: 1.6;
+    }
+
+    .modal-card button.close-btn {
+      background: #0f172a;
+      color: #ffffff;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: bold;
+      float: right;
     }
   </style>
 </head>
@@ -338,13 +461,31 @@
 
   <!-- Screen-Only Controls Bar -->
   <div class="controls-toolbar no-print">
-    <span class="status-tag">Formal Academic Report Format (Standard B&W)</span>
+    <span class="status-tag">Academic Report (5 Pages With Screenshots)</span>
     <button class="primary-btn" onclick="window.print()">Print / Save PDF (Ctrl + P)</button>
-    <button onclick="copyDocumentRichText()">Copy for Google Docs</button>
+    <button onclick="copyDocumentRichText()">Copy for Google Docs (Clean / No Black Boxes)</button>
     <button onclick="copyDocumentPlainText()">Copy Plain Text</button>
+    <button class="help-btn" onclick="openHelpModal()">Fix Black Highlight in Google Docs</button>
   </div>
 
-  <div id="toastAlert" class="alert-banner">Document copied to clipboard! Paste directly into Google Docs or Word.</div>
+  <!-- Toast Notification -->
+  <div id="toastAlert" class="alert-banner">Document copied cleanly! Paste (Ctrl + V) into Google Docs.</div>
+
+  <!-- Instruction Modal -->
+  <div id="helpModal" class="modal-overlay" onclick="closeHelpModal(event)">
+    <div class="modal-card" onclick="event.stopPropagation()">
+      <h3>How to Remove Black Highlight in Google Docs</h3>
+      <p style="font-size: 9.5pt; color: #4b5563;">If Google Docs ever pastes text with black background blocks, do this in 5 seconds:</p>
+      <ol>
+        <li><strong>Select the Table or Affected Text</strong> (or press <code>Ctrl + A</code> to select all).</li>
+        <li>In Google Docs top toolbar, find the <strong>Highlight Color icon</strong> (the marker/pen icon next to the "A" Text Color icon).</li>
+        <li>Click it and choose <strong>"None"</strong>.</li>
+        <li><em>Shortcut:</em> You can also press <strong><code>Ctrl + \</code></strong> (Ctrl and backslash) to clear all formatting instantly!</li>
+      </ol>
+      <button class="close-btn" onclick="closeHelpModal()">Got It!</button>
+      <div style="clear: both;"></div>
+    </div>
+  </div>
 
   <div class="document-wrapper" id="academicReport">
 
@@ -417,7 +558,7 @@
 
       <div class="running-footer">
         <span>Department of Computer Science &bull; S.Y. B.Sc. CS &bull; Field Project Documentation</span>
-        <span>Page 1 of 4</span>
+        <span>Page 1 of 5</span>
       </div>
     </div>
 
@@ -515,7 +656,7 @@
 
       <div class="running-footer">
         <span>Department of Computer Science &bull; S.Y. B.Sc. CS &bull; Field Project Documentation</span>
-        <span>Page 2 of 4</span>
+        <span>Page 2 of 5</span>
       </div>
     </div>
 
@@ -593,7 +734,7 @@ if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
 
       <div class="running-footer">
         <span>Department of Computer Science &bull; S.Y. B.Sc. CS &bull; Field Project Documentation</span>
-        <span>Page 3 of 4</span>
+        <span>Page 3 of 5</span>
       </div>
     </div>
 
@@ -713,7 +854,70 @@ if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
 
       <div class="running-footer">
         <span>Department of Computer Science &bull; S.Y. B.Sc. CS &bull; Field Project Documentation</span>
-        <span>Page 4 of 4</span>
+        <span>Page 4 of 5</span>
+      </div>
+    </div>
+
+    <div class="page-break"></div>
+
+    <!-- ====================================================================
+         PAGE 5: APPLICATION USER INTERFACE & PAGE SCREENSHOTS (GALLERY)
+         ==================================================================== -->
+    <div class="report-page">
+      <h2 class="academic-heading">5.0 Platform User Interface &amp; Application Screenshots</h2>
+      <p>
+        The following screenshots demonstrate the primary user-facing interfaces and responsive design implemented across the <strong>Career Kuch Hatke</strong> web platform:
+      </p>
+
+      <div class="screenshot-grid">
+        <!-- Figure 5.1: Home Page -->
+        <div class="screenshot-card">
+          <div class="img-wrapper">
+            <img src="images/screenshot-home.png" alt="Figure 5.1: Home Portal" />
+          </div>
+          <div class="fig-caption">
+            <strong>Figure 5.1:</strong> Home Portal (<code>index.html</code>) &mdash; Hero banner, comparative dilemma matrix, and career domain navigation.
+          </div>
+        </div>
+
+        <!-- Figure 5.2: Career Detail Roadmap -->
+        <div class="screenshot-card">
+          <div class="img-wrapper">
+            <img src="images/screenshot-roadmap.png" alt="Figure 5.2: Dynamic Career Roadmap" />
+          </div>
+          <div class="fig-caption">
+            <strong>Figure 5.2:</strong> Career Roadmap (<code>career-detail.html</code>) &mdash; AI Prompt Engineer roadmap, salary packages, and parent pitch tool.
+          </div>
+        </div>
+
+        <!-- Figure 5.3: About Us -->
+        <div class="screenshot-card">
+          <div class="img-wrapper">
+            <img src="images/screenshot-about.png" alt="Figure 5.3: About Us & Transparency" />
+          </div>
+          <div class="fig-caption">
+            <strong>Figure 5.3:</strong> About Us (<code>about.html</code>) &mdash; Developer background (Sneha Prajapati), statistics, and research methodology.
+          </div>
+        </div>
+
+        <!-- Figure 5.4: Contact Us Form -->
+        <div class="screenshot-card">
+          <div class="img-wrapper">
+            <img src="images/screenshot-contact.png" alt="Figure 5.4: Inquiries & Career Suggestions" />
+          </div>
+          <div class="fig-caption">
+            <strong>Figure 5.4:</strong> Inquiries &amp; Suggestions (<code>contact.html</code>) &mdash; Interactive student feedback form with input validation.
+          </div>
+        </div>
+      </div>
+
+      <p style="font-size: 8.5pt; text-align: center; color: #4b5563; margin-top: 4px;">
+        <em>Note: High-resolution screenshots captured from live production deployment on Google Chrome &amp; mobile viewports.</em>
+      </p>
+
+      <div class="running-footer">
+        <span>Department of Computer Science &bull; S.Y. B.Sc. CS &bull; Field Project Documentation</span>
+        <span>Page 5 of 5</span>
       </div>
     </div>
 
@@ -726,10 +930,74 @@ if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
       toast.style.display = "block";
       setTimeout(function() {
         toast.style.display = "none";
-      }, 3500);
+      }, 4000);
+    }
+
+    function openHelpModal() {
+      document.getElementById("helpModal").style.display = "flex";
+    }
+
+    function closeHelpModal() {
+      document.getElementById("helpModal").style.display = "none";
     }
 
     function copyDocumentRichText() {
+      const container = document.getElementById("academicReport");
+      const clone = container.cloneNode(true);
+
+      // Convert image sources to full absolute production URLs so Google Docs fetches them
+      const liveBase = "https://career-kuch-hatke.infinityfreeapp.com/";
+      const images = clone.querySelectorAll("img");
+      images.forEach(function(img) {
+        const src = img.getAttribute("src");
+        if (src && !src.startsWith("http")) {
+          img.setAttribute("src", liveBase + src.replace(/^\/+/, ""));
+        }
+        img.style.maxWidth = "100%";
+        img.style.height = "auto";
+      });
+
+      // Strip any backgrounds or highlights from all nodes to ensure 0% black boxes in Google Docs
+      const allElements = clone.querySelectorAll("*");
+      allElements.forEach(function(el) {
+        el.style.backgroundColor = "transparent";
+        el.style.color = "#000000";
+        if (el.tagName === "TD" || el.tagName === "TH") {
+          el.style.border = "1px solid #000000";
+          el.style.padding = "5px 8px";
+          el.style.backgroundColor = "transparent";
+          el.style.color = "#000000";
+        }
+        if (el.tagName === "TABLE") {
+          el.style.borderCollapse = "collapse";
+          el.style.width = "100%";
+          el.style.border = "1px solid #000000";
+          el.style.backgroundColor = "transparent";
+        }
+      });
+
+      const cleanHtml = clone.innerHTML;
+      const plainText = container.innerText;
+
+      if (navigator.clipboard && window.ClipboardItem) {
+        const htmlBlob = new Blob([cleanHtml], { type: "text/html" });
+        const textBlob = new Blob([plainText], { type: "text/plain" });
+        navigator.clipboard.write([
+          new ClipboardItem({
+            "text/html": htmlBlob,
+            "text/plain": textBlob
+          })
+        ]).then(function() {
+          showToast("Document copied cleanly! Paste (Ctrl + V) into Google Docs without black boxes.");
+        }).catch(function() {
+          fallbackCopy();
+        });
+      } else {
+        fallbackCopy();
+      }
+    }
+
+    function fallbackCopy() {
       const container = document.getElementById("academicReport");
       const selection = window.getSelection();
       const range = document.createRange();
@@ -739,7 +1007,7 @@ if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
 
       try {
         document.execCommand("copy");
-        showToast("Formatted text copied! Paste (Ctrl + V) into Google Docs or MS Word.");
+        showToast("Copied to clipboard! If any background appears, select text in Docs and set Highlight to None.");
       } catch (err) {
         alert("Please press Ctrl + A, then Ctrl + C on this page to copy.");
       }
