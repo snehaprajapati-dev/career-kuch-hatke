@@ -8,12 +8,15 @@ if (!isset($_SESSION['admin_logged_in'])) {
 
 require_once(__DIR__ . "/../php/db_connect.php");
 
-// Set headers to download file
-header('Content-Type: text/csv');
-header('Content-Disposition: attachment; filename="contact_messages.csv"');
+// Set headers to download file with UTF-8 encoding
+header('Content-Type: text/csv; charset=UTF-8');
+header('Content-Disposition: attachment; filename="contact_messages_' . date('Y-m-d') . '.csv"');
 
 // Open output stream
 $output = fopen("php://output", "w");
+
+// Write UTF-8 BOM so Excel opens the file cleanly without character corruption
+fprintf($output, chr(0xEF) . chr(0xBB) . chr(0xBF));
 
 // Add CSV column headers
 fputcsv($output, [
@@ -33,15 +36,28 @@ $result = mysqli_query($conn, $query);
 
 // Add rows to CSV
 while ($row = mysqli_fetch_assoc($result)) {
+    // Format telephone as string formula so Excel treats it as text and avoids scientific notation (e.g. 8.8E+09)
+    $phone = trim($row['telephone']);
+    $phoneDisplay = ($phone !== '') ? '="' . $phone . '"' : '';
+
+    // Format user type (e.g. career_counselor -> Career Counselor)
+    $userType = ucwords(str_replace('_', ' ', $row['user_type']));
+
+    // Format status
+    $status = ucfirst($row['status']);
+
+    // Format readable date
+    $dateDisplay = !empty($row['created_at']) ? date("d M Y, h:i A", strtotime($row['created_at'])) : '';
+
     fputcsv($output, [
         $row['name'],
         $row['email'],
-        $row['telephone'],
+        $phoneDisplay,
         $row['subject'],
-        $row['user_type'],
+        $userType,
         $row['message'],
-        $row['status'],
-        $row['created_at']
+        $status,
+        $dateDisplay
     ]);
 }
 

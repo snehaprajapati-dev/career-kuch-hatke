@@ -56,11 +56,17 @@
 
   /* 💫 SHADOWS & EFFECTS */
   --shadow-sm: 0 4px 16px rgba(0, 0, 0, 0.45);
-  --shadow-md: 0 8px 30px rgba(0, 0, 0, 0.65), 0 0 15px rgba(155, 89, 182, 0.12);
+  --shadow-md:
+    0 8px 30px rgba(0, 0, 0, 0.65), 0 0 15px rgba(155, 89, 182, 0.12);
   --table-hover: #1e1533;
 
   /* 🎨 GRADIENTS (for hero, headers, cards) */
-  --gradient-primary: linear-gradient(135deg, #3b1d6b 0%, #1a0e35 50%, #0c0817 100%);
+  --gradient-primary: linear-gradient(
+    135deg,
+    #3b1d6b 0%,
+    #1a0e35 50%,
+    #0c0817 100%
+  );
   --gradient-card: linear-gradient(145deg, #18112b 0%, #1f1438 100%);
 }
 

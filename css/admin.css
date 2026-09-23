@@ -10,22 +10,22 @@
 
 :root {
   /* 🎨 Primary Brand Palette */
-  --admin-primary: #672a3f;          /* Royal Wine / Deep Plum */
-  --admin-primary-dark: #4e1e2e;     /* Midnight Wine */
-  --admin-secondary: #2b4743;        /* Deep Forest Teal */
-  --admin-accent: #dda83f;           /* Warm Radiant Gold */
-  --admin-accent-glow: #ffe0a0;      /* Luminous Gold Highlight */
+  --admin-primary: #672a3f; /* Royal Wine / Deep Plum */
+  --admin-primary-dark: #4e1e2e; /* Midnight Wine */
+  --admin-secondary: #2b4743; /* Deep Forest Teal */
+  --admin-accent: #dda83f; /* Warm Radiant Gold */
+  --admin-accent-glow: #ffe0a0; /* Luminous Gold Highlight */
 
   /* 🏛️ Light Mode Surfaces */
-  --admin-bg: #f9f6f3;               /* Clean warm porcelain canvas */
-  --admin-card-bg: #ffffff;          /* Pure crisp white card surface */
-  --admin-card-border: #ede4dc;      /* Subtle warm border */
+  --admin-bg: #f9f6f3; /* Clean warm porcelain canvas */
+  --admin-card-bg: #ffffff; /* Pure crisp white card surface */
+  --admin-card-border: #ede4dc; /* Subtle warm border */
   --admin-navbar-bg: rgba(255, 255, 255, 0.95);
   --admin-navbar-border: rgba(103, 42, 63, 0.08);
 
   /* 📝 Light Mode Typography */
-  --admin-text-main: #1f1422;        /* High-contrast plum charcoal */
-  --admin-text-muted: #736270;       /* Refined secondary gray */
+  --admin-text-main: #1f1422; /* High-contrast plum charcoal */
+  --admin-text-muted: #736270; /* Refined secondary gray */
   --admin-text-light: #ffffff;
 
   /* 🔲 Data Elements & Tables */
@@ -57,22 +57,22 @@
 
 [data-theme="dark"] {
   /* 🎨 Dark Mode Brand Palette */
-  --admin-primary: #c084fc;          /* Vibrant Royal Lavender-Plum */
+  --admin-primary: #c084fc; /* Vibrant Royal Lavender-Plum */
   --admin-primary-dark: #9333ea;
-  --admin-secondary: #2dd4bf;        /* Luminous Emerald Teal */
-  --admin-accent: #ffe0a0;           /* Warm Radiant Gold */
+  --admin-secondary: #2dd4bf; /* Luminous Emerald Teal */
+  --admin-accent: #ffe0a0; /* Warm Radiant Gold */
   --admin-accent-glow: #fff1c2;
 
   /* 🏛️ Dark Mode Surfaces */
-  --admin-bg: #0c0817;               /* Deepest Midnight Obsidian */
-  --admin-card-bg: #161026;          /* Elevated Velvet Card Surface */
+  --admin-bg: #0c0817; /* Deepest Midnight Obsidian */
+  --admin-card-bg: #161026; /* Elevated Velvet Card Surface */
   --admin-card-border: rgba(155, 89, 182, 0.2);
   --admin-navbar-bg: rgba(14, 9, 26, 0.94);
   --admin-navbar-border: rgba(155, 89, 182, 0.18);
 
   /* 📝 Dark Mode Typography */
-  --admin-text-main: #ede8f5;        /* Crisp Soft White */
-  --admin-text-muted: #a89bc2;       /* Lavender Slate */
+  --admin-text-main: #ede8f5; /* Crisp Soft White */
+  --admin-text-muted: #a89bc2; /* Lavender Slate */
   --admin-text-light: #ffffff;
 
   /* 🔲 Data Elements & Tables */
@@ -94,8 +94,10 @@
 
   /* 💫 Shadows */
   --admin-shadow-sm: 0 4px 16px rgba(0, 0, 0, 0.45);
-  --admin-shadow-md: 0 10px 35px rgba(0, 0, 0, 0.65), 0 0 15px rgba(155, 89, 182, 0.1);
-  --admin-shadow-lg: 0 20px 50px rgba(0, 0, 0, 0.8), 0 0 25px rgba(155, 89, 182, 0.15);
+  --admin-shadow-md:
+    0 10px 35px rgba(0, 0, 0, 0.65), 0 0 15px rgba(155, 89, 182, 0.1);
+  --admin-shadow-lg:
+    0 20px 50px rgba(0, 0, 0, 0.8), 0 0 25px rgba(155, 89, 182, 0.15);
 }
 
 /* ==========================================================================
@@ -116,12 +118,20 @@ html {
 body {
   background-color: var(--admin-bg);
   color: var(--admin-text-main);
-  font-family: "Montserrat Alternates", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family:
+    "Montserrat Alternates",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    sans-serif;
   min-height: 100vh;
   margin: 0;
   padding-top: 78px;
   overflow-x: hidden;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
 }
@@ -144,7 +154,10 @@ nav.admin-navbar,
   box-shadow: var(--admin-shadow-sm);
   padding: 0.85rem 0;
   width: 100% !important;
-  transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    background-color 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .admin-navbar-inner {
@@ -476,7 +489,10 @@ nav.admin-navbar,
   border-radius: var(--admin-radius-lg);
   border: 1px solid var(--admin-card-border);
   box-shadow: var(--admin-shadow-md);
-  transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    background-color 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 /* ==========================================================================
@@ -484,7 +500,12 @@ nav.admin-navbar,
    ========================================================================== */
 
 .admin-page-header {
-  background: linear-gradient(135deg, #672a3f 0%, #4a1d2e 55%, #2b4743 100%) !important;
+  background: linear-gradient(
+    135deg,
+    #672a3f 0%,
+    #4a1d2e 55%,
+    #2b4743 100%
+  ) !important;
   padding: 2.2rem 2.5rem;
   border-radius: var(--admin-radius-md);
   margin: 0 0 2.2rem 0;
@@ -495,8 +516,15 @@ nav.admin-navbar,
 }
 
 [data-theme="dark"] .admin-page-header {
-  background: linear-gradient(135deg, #3b1d6b 0%, #1f113a 55%, #0f1c2e 100%) !important;
-  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.7), 0 0 20px rgba(155, 89, 182, 0.2);
+  background: linear-gradient(
+    135deg,
+    #3b1d6b 0%,
+    #1f113a 55%,
+    #0f1c2e 100%
+  ) !important;
+  box-shadow:
+    0 12px 35px rgba(0, 0, 0, 0.7),
+    0 0 20px rgba(155, 89, 182, 0.2);
   border-bottom-color: var(--admin-accent);
 }
 
@@ -507,7 +535,11 @@ nav.admin-navbar,
   right: -10%;
   width: 320px;
   height: 320px;
-  background: radial-gradient(circle, rgba(221, 168, 63, 0.18) 0%, transparent 70%);
+  background: radial-gradient(
+    circle,
+    rgba(221, 168, 63, 0.18) 0%,
+    transparent 70%
+  );
   pointer-events: none;
 }
 
@@ -578,7 +610,10 @@ nav.admin-navbar,
   border-radius: var(--admin-radius-md);
   border: 1.5px solid var(--admin-card-border);
   box-shadow: var(--admin-shadow-sm);
-  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease, border-color 0.3s ease;
+  transition:
+    transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1),
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
   position: relative;
   overflow: hidden;
   display: flex;
@@ -617,7 +652,9 @@ nav.admin-navbar,
 
 [data-theme="dark"] .stat-box:hover {
   border-color: rgba(255, 224, 160, 0.45);
-  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.7), 0 0 20px rgba(155, 89, 182, 0.2);
+  box-shadow:
+    0 14px 40px rgba(0, 0, 0, 0.7),
+    0 0 20px rgba(155, 89, 182, 0.2);
 }
 
 .stat-box h3 {
@@ -768,7 +805,11 @@ nav.admin-navbar,
   border: 1.5px solid var(--admin-input-border);
   background: var(--admin-input-bg);
   color: var(--admin-text-main);
-  font-family: "Montserrat Alternates", -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family:
+    "Montserrat Alternates",
+    -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
   font-size: 0.9rem;
   min-width: 180px;
   flex: 1;
@@ -861,7 +902,11 @@ table {
   border-collapse: collapse;
   background: var(--admin-card-bg);
   min-width: 880px;
-  font-family: "Montserrat Alternates", -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family:
+    "Montserrat Alternates",
+    -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
   font-size: 0.88rem;
 }
 
@@ -1168,7 +1213,9 @@ body.login-page {
   background: #ffffff;
   padding: 2.8rem 2.5rem;
   border-radius: 24px;
-  box-shadow: 0 25px 65px rgba(0, 0, 0, 0.5), 0 0 35px rgba(221, 168, 63, 0.15);
+  box-shadow:
+    0 25px 65px rgba(0, 0, 0, 0.5),
+    0 0 35px rgba(221, 168, 63, 0.15);
   text-align: center;
   border-top: 5px solid #dda83f;
   position: relative;
@@ -1181,7 +1228,9 @@ body.login-page {
   border-top-color: #ffe0a0;
   border: 1px solid rgba(155, 89, 182, 0.25);
   border-top: 5px solid #ffe0a0;
-  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.8), 0 0 30px rgba(155, 89, 182, 0.2);
+  box-shadow:
+    0 25px 70px rgba(0, 0, 0, 0.8),
+    0 0 30px rgba(155, 89, 182, 0.2);
 }
 
 .login-box h2 {
@@ -1222,7 +1271,10 @@ body.login-page {
   border: 1.5px solid #ded5ce;
   margin-bottom: 0;
   font-size: 1rem;
-  font-family: "Montserrat Alternates", -apple-system, sans-serif;
+  font-family:
+    "Montserrat Alternates",
+    -apple-system,
+    sans-serif;
   background: #fbf8f5;
   color: #1f1422;
   outline: none;
@@ -1261,7 +1313,9 @@ body.login-page {
   font-size: 1.2rem;
   padding: 0;
   color: #878787;
-  transition: color 0.2s, transform 0.2s;
+  transition:
+    color 0.2s,
+    transform 0.2s;
   width: auto;
 }
 
