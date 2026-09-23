@@ -1,746 +1,1047 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Career Kuch Hatke - Standard Academic Project Documentation</title>
-  <style>
-    /* ==========================================================================
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <title>Career Kuch Hatke - Standard Academic Project Documentation</title>
+    <style>
+      /* ==========================================================================
        STANDARD FORMAL ACADEMIC PROJECT REPORT STYLESHEET
        Strict Academic Format: Times New Roman, Monochrome (Black & White), Clean Tables
        Max 10 Pages (Excluding Certificate Page)
        ========================================================================== */
 
-    @page {
-      size: A4 portrait;
-      margin: 18mm 16mm 18mm 20mm;
-    }
+      @page {
+        size: A4 portrait;
+        margin: 18mm 16mm 18mm 20mm;
+      }
 
-    * {
-      box-sizing: border-box;
-    }
+      * {
+        box-sizing: border-box;
+      }
 
-    ::selection {
-      background-color: #e2e8f0 !important;
-      color: #000000 !important;
-    }
+      ::selection {
+        background-color: #e2e8f0 !important;
+        color: #000000 !important;
+      }
 
-    body {
-      font-family: "Times New Roman", Times, "Liberation Serif", serif;
-      font-size: 11pt;
-      line-height: 1.4;
-      color: #000000;
-      background: #eef2f5;
-      margin: 0;
-      padding: 24px 0;
-    }
-
-    /* Screen Document Container */
-    .document-wrapper {
-      max-width: 820px;
-      margin: 0 auto;
-      background: #ffffff;
-      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
-      border: 1px solid #d1d5db;
-    }
-
-    /* Page Definition (Standard Academic A4 Pages) */
-    .report-page {
-      padding: 38px 46px 46px 46px;
-      min-height: 1080px;
-      position: relative;
-      background: #ffffff !important;
-      color: #000000 !important;
-      box-sizing: border-box;
-    }
-
-    .page-break {
-      page-break-after: always;
-      border-bottom: 2px dashed #9ca3af;
-      margin: 0;
-    }
-
-    /* Print Stylesheet Overrides */
-    @media print {
       body {
-        background: #ffffff;
-        padding: 0;
+        font-family: "Times New Roman", Times, "Liberation Serif", serif;
+        font-size: 11pt;
+        line-height: 1.4;
+        color: #000000;
+        background: #eef2f5;
         margin: 0;
+        padding: 24px 0;
       }
+
+      /* Screen Document Container */
       .document-wrapper {
-        box-shadow: none;
-        border: none;
-        max-width: 100%;
-        margin: 0;
+        max-width: 820px;
+        margin: 0 auto;
+        background: #ffffff;
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+        border: 1px solid #d1d5db;
       }
+
+      /* Page Definition (Standard Academic A4 Pages) */
       .report-page {
-        padding: 0;
-        min-height: auto;
+        padding: 38px 46px 46px 46px;
+        min-height: 1080px;
+        position: relative;
+        background: #ffffff !important;
+        color: #000000 !important;
+        box-sizing: border-box;
       }
+
       .page-break {
         page-break-after: always;
-        border-bottom: none;
+        border-bottom: 2px dashed #9ca3af;
+        margin: 0;
       }
-      .no-print {
-        display: none !important;
+
+      /* Print Stylesheet Overrides */
+      @media print {
+        body {
+          background: #ffffff;
+          padding: 0;
+          margin: 0;
+        }
+        .document-wrapper {
+          box-shadow: none;
+          border: none;
+          max-width: 100%;
+          margin: 0;
+        }
+        .report-page {
+          padding: 0;
+          min-height: auto;
+        }
+        .page-break {
+          page-break-after: always;
+          border-bottom: none;
+        }
+        .no-print {
+          display: none !important;
+        }
+        .screenshot-three-grid .top-img-box {
+          max-height: 290px !important;
+        }
+        .screenshot-three-grid .bottom-img-box {
+          max-height: 270px !important;
+        }
       }
-      .screenshot-three-grid .top-img-box {
-        max-height: 290px !important;
+
+      /* Typography & Hierarchy */
+      h1,
+      h2,
+      h3,
+      h4,
+      p,
+      ul,
+      ol,
+      table {
+        margin-top: 0;
+        color: #000000;
+        background-color: transparent !important;
       }
-      .screenshot-three-grid .bottom-img-box {
-        max-height: 270px !important;
+
+      p {
+        text-align: justify;
+        text-justify: inter-word;
+        margin-bottom: 8px;
+        font-size: 10.5pt;
       }
-    }
 
-    /* Typography & Hierarchy */
-    h1, h2, h3, h4, p, ul, ol, table {
-      margin-top: 0;
-      color: #000000;
-      background-color: transparent !important;
-    }
+      ul,
+      ol {
+        margin-top: 4px;
+        margin-bottom: 8px;
+        padding-left: 22px;
+      }
 
-    p {
-      text-align: justify;
-      text-justify: inter-word;
-      margin-bottom: 8px;
-      font-size: 10.5pt;
-    }
+      li {
+        margin-bottom: 4px;
+        text-align: justify;
+        font-size: 10.5pt;
+      }
 
-    ul, ol {
-      margin-top: 4px;
-      margin-bottom: 8px;
-      padding-left: 22px;
-    }
+      /* College / University Formal Header */
+      .academic-header {
+        text-align: center;
+        border-bottom: 2px solid #000000;
+        padding-bottom: 8px;
+        margin-bottom: 12px;
+      }
 
-    li {
-      margin-bottom: 4px;
-      text-align: justify;
-      font-size: 10.5pt;
-    }
+      .academic-header .institution-name {
+        font-size: 14pt;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        margin-bottom: 2px;
+      }
 
-    /* College / University Formal Header */
-    .academic-header {
-      text-align: center;
-      border-bottom: 2px solid #000000;
-      padding-bottom: 8px;
-      margin-bottom: 12px;
-    }
+      .academic-header .college-subname {
+        font-size: 11pt;
+        font-weight: bold;
+        line-height: 1.3;
+        margin-bottom: 3px;
+        color: #000000;
+      }
 
-    .academic-header .institution-name {
-      font-size: 14pt;
-      font-weight: bold;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      margin-bottom: 2px;
-    }
+      .academic-header .dept-name {
+        font-size: 11pt;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        margin-top: 3px;
+        margin-bottom: 2px;
+      }
 
-    .academic-header .college-subname {
-      font-size: 11pt;
-      font-weight: bold;
-      line-height: 1.3;
-      margin-bottom: 3px;
-      color: #000000;
-    }
+      .academic-header .sub-details {
+        font-size: 9pt;
+        font-style: italic;
+      }
 
-    .academic-header .dept-name {
-      font-size: 11pt;
-      font-weight: bold;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      margin-top: 3px;
-      margin-bottom: 2px;
-    }
+      /* Project Title Banner */
+      .title-box {
+        text-align: center;
+        border: 1.5px solid #000000;
+        padding: 8px 14px;
+        margin-bottom: 12px;
+        background: #ffffff !important;
+      }
 
-    .academic-header .sub-details {
-      font-size: 9pt;
-      font-style: italic;
-    }
+      .title-box .report-type {
+        font-size: 8.5pt;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: 3px;
+      }
 
-    /* Project Title Banner */
-    .title-box {
-      text-align: center;
-      border: 1.5px solid #000000;
-      padding: 8px 14px;
-      margin-bottom: 12px;
-      background: #ffffff !important;
-    }
+      .title-box h1 {
+        font-size: 16.5pt;
+        font-weight: bold;
+        letter-spacing: 0.5px;
+        margin: 2px 0 3px 0;
+      }
 
-    .title-box .report-type {
-      font-size: 8.5pt;
-      font-weight: bold;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      margin-bottom: 3px;
-    }
+      .title-box .project-subtitle {
+        font-size: 9.5pt;
+        font-style: italic;
+        margin: 0;
+      }
 
-    .title-box h1 {
-      font-size: 16.5pt;
-      font-weight: bold;
-      letter-spacing: 0.5px;
-      margin: 2px 0 3px 0;
-    }
+      /* Formal Tables (Transparent backgrounds to prevent Google Docs black highlight) */
+      table.academic-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 8px 0 10px 0;
+        font-size: 9.5pt;
+        background-color: transparent !important;
+      }
 
-    .title-box .project-subtitle {
-      font-size: 9.5pt;
-      font-style: italic;
-      margin: 0;
-    }
+      table.academic-table th,
+      table.academic-table td {
+        border: 1px solid #000000;
+        padding: 5px 8px;
+        text-align: left;
+        vertical-align: middle;
+        background-color: transparent !important;
+        color: #000000 !important;
+      }
 
-    /* Formal Tables (Transparent backgrounds to prevent Google Docs black highlight) */
-    table.academic-table {
-      width: 100%;
-      border-collapse: collapse;
-      margin: 8px 0 10px 0;
-      font-size: 9.5pt;
-      background-color: transparent !important;
-    }
+      table.academic-table th {
+        background-color: transparent !important;
+        font-weight: bold;
+        text-transform: uppercase;
+        font-size: 8.5pt;
+        letter-spacing: 0.3px;
+      }
 
-    table.academic-table th,
-    table.academic-table td {
-      border: 1px solid #000000;
-      padding: 5px 8px;
-      text-align: left;
-      vertical-align: middle;
-      background-color: transparent !important;
-      color: #000000 !important;
-    }
+      table.meta-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 10px;
+        font-size: 9.5pt;
+        background-color: transparent !important;
+      }
 
-    table.academic-table th {
-      background-color: transparent !important;
-      font-weight: bold;
-      text-transform: uppercase;
-      font-size: 8.5pt;
-      letter-spacing: 0.3px;
-    }
+      table.meta-table td {
+        border: 1px solid #000000;
+        padding: 4px 8px;
+        vertical-align: middle;
+        background-color: transparent !important;
+        color: #000000 !important;
+      }
 
-    table.meta-table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-bottom: 10px;
-      font-size: 9.5pt;
-      background-color: transparent !important;
-    }
+      table.meta-table td.label-col {
+        width: 25%;
+        font-weight: bold;
+        background-color: transparent !important;
+      }
 
-    table.meta-table td {
-      border: 1px solid #000000;
-      padding: 4px 8px;
-      vertical-align: middle;
-      background-color: transparent !important;
-      color: #000000 !important;
-    }
+      table.meta-table a {
+        color: #000000 !important;
+        text-decoration: underline;
+        background-color: transparent !important;
+      }
 
-    table.meta-table td.label-col {
-      width: 25%;
-      font-weight: bold;
-      background-color: transparent !important;
-    }
+      /* Section Headings */
+      h2.academic-heading {
+        font-size: 12pt;
+        font-weight: bold;
+        text-transform: uppercase;
+        border-bottom: 1px solid #000000;
+        padding-bottom: 3px;
+        margin-top: 10px;
+        margin-bottom: 6px;
+        letter-spacing: 0.3px;
+      }
 
-    table.meta-table a {
-      color: #000000 !important;
-      text-decoration: underline;
-      background-color: transparent !important;
-    }
+      h3.academic-subheading {
+        font-size: 10.5pt;
+        font-weight: bold;
+        margin-top: 8px;
+        margin-bottom: 3px;
+      }
 
-    /* Section Headings */
-    h2.academic-heading {
-      font-size: 12pt;
-      font-weight: bold;
-      text-transform: uppercase;
-      border-bottom: 1px solid #000000;
-      padding-bottom: 3px;
-      margin-top: 10px;
-      margin-bottom: 6px;
-      letter-spacing: 0.3px;
-    }
+      /* Preformatted Code & Diagrams */
+      pre.academic-code {
+        background: #ffffff !important;
+        border: 1px solid #000000;
+        padding: 6px 10px;
+        font-family: "Courier New", Courier, monospace;
+        font-size: 7.5pt;
+        line-height: 1.25;
+        color: #000000 !important;
+        overflow-x: auto;
+        margin: 5px 0 8px 0;
+        white-space: pre;
+      }
 
-    h3.academic-subheading {
-      font-size: 10.5pt;
-      font-weight: bold;
-      margin-top: 8px;
-      margin-bottom: 3px;
-    }
+      code {
+        font-family: "Courier New", Courier, monospace;
+        font-size: 9pt;
+        font-weight: bold;
+        color: #000000 !important;
+        background-color: transparent !important;
+      }
 
-    /* Preformatted Code & Diagrams */
-    pre.academic-code {
-      background: #ffffff !important;
-      border: 1px solid #000000;
-      padding: 6px 10px;
-      font-family: "Courier New", Courier, monospace;
-      font-size: 7.5pt;
-      line-height: 1.25;
-      color: #000000 !important;
-      overflow-x: auto;
-      margin: 5px 0 8px 0;
-      white-space: pre;
-    }
+      /* Certificate Layout */
+      .certificate-container {
+        border: 4px double #000000;
+        padding: 30px 36px;
+        min-height: 980px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        box-sizing: border-box;
+        text-align: center;
+      }
 
-    code {
-      font-family: "Courier New", Courier, monospace;
-      font-size: 9pt;
-      font-weight: bold;
-      color: #000000 !important;
-      background-color: transparent !important;
-    }
+      .cert-heading {
+        font-size: 26pt;
+        font-weight: bold;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        margin: 10px 0 20px 0;
+      }
 
-    /* Certificate Layout */
-    .certificate-container {
-      border: 4px double #000000;
-      padding: 30px 36px;
-      min-height: 980px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      box-sizing: border-box;
-      text-align: center;
-    }
+      .cert-meta-row {
+        display: flex;
+        justify-content: space-between;
+        font-size: 11pt;
+        font-weight: bold;
+        margin-bottom: 30px;
+        padding: 0 10px;
+      }
 
-    .cert-heading {
-      font-size: 26pt;
-      font-weight: bold;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      margin: 10px 0 20px 0;
-    }
+      .cert-body-text {
+        font-size: 11.5pt;
+        line-height: 2.2;
+        text-align: justify;
+        margin: 20px 10px 40px 10px;
+      }
 
-    .cert-meta-row {
-      display: flex;
-      justify-content: space-between;
-      font-size: 11pt;
-      font-weight: bold;
-      margin-bottom: 30px;
-      padding: 0 10px;
-    }
+      .cert-underline {
+        display: inline-block;
+        border-bottom: 1px solid #000000;
+        padding: 0 8px;
+        font-weight: bold;
+      }
 
-    .cert-body-text {
-      font-size: 11.5pt;
-      line-height: 2.2;
-      text-align: justify;
-      margin: 20px 10px 40px 10px;
-    }
+      .cert-signatures {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 60px;
+        padding: 0 10px;
+      }
 
-    .cert-underline {
-      display: inline-block;
-      border-bottom: 1px solid #000000;
-      padding: 0 8px;
-      font-weight: bold;
-    }
+      .cert-sig-block {
+        text-align: center;
+        width: 28%;
+        border-top: 1px solid #000000;
+        padding-top: 6px;
+        font-size: 10pt;
+        font-weight: bold;
+      }
 
-    .cert-signatures {
-      display: flex;
-      justify-content: space-between;
-      margin-top: 60px;
-      padding: 0 10px;
-    }
+      .cert-footer-row {
+        display: flex;
+        justify-content: space-between;
+        font-size: 10pt;
+        margin-top: 30px;
+        padding: 0 10px;
+      }
 
-    .cert-sig-block {
-      text-align: center;
-      width: 28%;
-      border-top: 1px solid #000000;
-      padding-top: 6px;
-      font-size: 10pt;
-      font-weight: bold;
-    }
+      /* 3-Screenshot Page Layout (Page 9) */
+      .screenshot-three-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        margin-top: 8px;
+      }
 
-    .cert-footer-row {
-      display: flex;
-      justify-content: space-between;
-      font-size: 10pt;
-      margin-top: 30px;
-      padding: 0 10px;
-    }
+      .screenshot-card-box {
+        border: 1px solid #000000;
+        padding: 6px;
+        background: #ffffff !important;
+        text-align: center;
+        box-sizing: border-box;
+      }
 
-    /* 3-Screenshot Page Layout (Page 9) */
-    .screenshot-three-grid {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      margin-top: 8px;
-    }
+      .screenshot-card-box .img-frame {
+        max-height: 275px;
+        overflow: hidden;
+        border: 1px solid #9ca3af;
+        margin-bottom: 4px;
+        background: #fafafa;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+      }
 
-    .screenshot-card-box {
-      border: 1px solid #000000;
-      padding: 6px;
-      background: #ffffff !important;
-      text-align: center;
-      box-sizing: border-box;
-    }
+      .screenshot-card-box img {
+        max-width: 100%;
+        max-height: 270px;
+        width: auto;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+        object-fit: contain;
+      }
 
-    .screenshot-card-box .img-frame {
-      max-height: 275px;
-      overflow: hidden;
-      border: 1px solid #9ca3af;
-      margin-bottom: 4px;
-      background: #fafafa;
-      display: flex;
-      justify-content: center;
-      align-items: flex-start;
-    }
+      .screenshot-card-box .caption-text {
+        font-size: 8.5pt;
+        line-height: 1.25;
+        text-align: center;
+        color: #000000 !important;
+      }
 
-    .screenshot-card-box img {
-      max-width: 100%;
-      max-height: 270px;
-      width: auto;
-      height: auto;
-      display: block;
-      margin: 0 auto;
-      object-fit: contain;
-    }
+      .two-cols-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+      }
 
-    .screenshot-card-box .caption-text {
-      font-size: 8.5pt;
-      line-height: 1.25;
-      text-align: center;
-      color: #000000 !important;
-    }
+      /* Academic Running Header & Footer */
+      .running-footer {
+        position: absolute;
+        bottom: 14px;
+        left: 46px;
+        right: 46px;
+        display: flex;
+        justify-content: space-between;
+        font-size: 8.5pt;
+        color: #333333;
+        border-top: 1px solid #000000;
+        padding-top: 5px;
+      }
 
-    .two-cols-row {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
-    }
+      /* Screen-Only Control Toolbar */
+      .controls-toolbar {
+        background: #0f172a;
+        color: #ffffff;
+        padding: 12px 20px;
+        text-align: center;
+        font-family: Arial, sans-serif;
+        font-size: 10pt;
+        position: sticky;
+        top: 0;
+        z-index: 9999;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
 
-    /* Academic Running Header & Footer */
-    .running-footer {
-      position: absolute;
-      bottom: 14px;
-      left: 46px;
-      right: 46px;
-      display: flex;
-      justify-content: space-between;
-      font-size: 8.5pt;
-      color: #333333;
-      border-top: 1px solid #000000;
-      padding-top: 5px;
-    }
+      .controls-toolbar span.status-tag {
+        font-weight: bold;
+        color: #e2e8f0;
+        letter-spacing: 0.5px;
+        margin-right: 6px;
+      }
 
-    /* Screen-Only Control Toolbar */
-    .controls-toolbar {
-      background: #0f172a;
-      color: #ffffff;
-      padding: 12px 20px;
-      text-align: center;
-      font-family: Arial, sans-serif;
-      font-size: 10pt;
-      position: sticky;
-      top: 0;
-      z-index: 9999;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
+      .controls-toolbar button {
+        background: #ffffff;
+        color: #0f172a;
+        border: 1px solid #cbd5e1;
+        padding: 7px 15px;
+        font-family: Arial, sans-serif;
+        font-size: 9pt;
+        font-weight: bold;
+        cursor: pointer;
+        border-radius: 4px;
+        transition:
+          background 0.15s,
+          color 0.15s;
+      }
 
-    .controls-toolbar span.status-tag {
-      font-weight: bold;
-      color: #e2e8f0;
-      letter-spacing: 0.5px;
-      margin-right: 6px;
-    }
+      .controls-toolbar button:hover {
+        background: #f1f5f9;
+        color: #000000;
+      }
 
-    .controls-toolbar button {
-      background: #ffffff;
-      color: #0f172a;
-      border: 1px solid #cbd5e1;
-      padding: 7px 15px;
-      font-family: Arial, sans-serif;
-      font-size: 9pt;
-      font-weight: bold;
-      cursor: pointer;
-      border-radius: 4px;
-      transition: background 0.15s, color 0.15s;
-    }
+      .controls-toolbar button.primary-btn {
+        background: #38bdf8;
+        color: #042f2c;
+        border: 1px solid #0284c7;
+      }
 
-    .controls-toolbar button:hover {
-      background: #f1f5f9;
-      color: #000000;
-    }
+      .controls-toolbar button.primary-btn:hover {
+        background: #7dd3fc;
+      }
 
-    .controls-toolbar button.primary-btn {
-      background: #38bdf8;
-      color: #042f2c;
-      border: 1px solid #0284c7;
-    }
+      .alert-banner {
+        display: none;
+        position: fixed;
+        top: 55px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: #0f172a;
+        color: #ffffff;
+        padding: 12px 24px;
+        border-radius: 6px;
+        font-family: Arial, sans-serif;
+        font-size: 9.5pt;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
+        z-index: 10000;
+        border: 1px solid #38bdf8;
+        max-width: 90%;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Screen-Only Controls Bar -->
+    <div class="controls-toolbar no-print">
+      <span class="status-tag"
+        >Standard Project Documentation (10 Pages + Certificate)</span
+      >
+      <button class="primary-btn" onclick="window.print()">
+        Print / Save PDF (Ctrl + P)
+      </button>
+      <button onclick="copyDocumentRichText()">
+        Copy Clean for Google Docs
+      </button>
+      <button onclick="copyDocumentPlainText()">Copy Plain Text</button>
+    </div>
 
-    .controls-toolbar button.primary-btn:hover {
-      background: #7dd3fc;
-    }
+    <div id="toastAlert" class="alert-banner">
+      Document copied cleanly! Paste (Ctrl + V) into Google Docs without black
+      boxes.
+    </div>
 
-    .alert-banner {
-      display: none;
-      position: fixed;
-      top: 55px;
-      left: 50%;
-      transform: translateX(-50%);
-      background: #0f172a;
-      color: #ffffff;
-      padding: 12px 24px;
-      border-radius: 6px;
-      font-family: Arial, sans-serif;
-      font-size: 9.5pt;
-      box-shadow: 0 4px 16px rgba(0,0,0,0.35);
-      z-index: 10000;
-      border: 1px solid #38bdf8;
-      max-width: 90%;
-      text-align: center;
-    }
-  </style>
-</head>
-<body>
-
-  <!-- Screen-Only Controls Bar -->
-  <div class="controls-toolbar no-print">
-    <span class="status-tag">Standard Project Documentation (10 Pages + Certificate)</span>
-    <button class="primary-btn" onclick="window.print()">Print / Save PDF (Ctrl + P)</button>
-    <button onclick="copyDocumentRichText()">Copy Clean for Google Docs</button>
-    <button onclick="copyDocumentPlainText()">Copy Plain Text</button>
-  </div>
-
-  <div id="toastAlert" class="alert-banner">Document copied cleanly! Paste (Ctrl + V) into Google Docs without black boxes.</div>
-
-  <div class="document-wrapper" id="academicReport">
-
-    <!-- ====================================================================
+    <div class="document-wrapper" id="academicReport">
+      <!-- ====================================================================
          CERTIFICATE PAGE (EXCLUDED FROM 10-PAGE COUNT)
          Matches Official College Journal Format
          ==================================================================== -->
-    <div class="report-page">
-      <div class="certificate-container">
-        <div>
-          <div class="academic-header" style="border-bottom: none; margin-bottom: 4px;">
-            <div class="institution-name">Vidyavardhini’s</div>
-            <div class="college-subname">
-              Annasaheb Vartak College of Arts,<br>
-              Kedarnath Malhotra College of Commerce,<br>
-              E. S. Andrades College of Science
+      <div class="report-page">
+        <div class="certificate-container">
+          <div>
+            <div
+              class="academic-header"
+              style="border-bottom: none; margin-bottom: 4px"
+            >
+              <div class="institution-name">Vidyavardhini’s</div>
+              <div class="college-subname">
+                Annasaheb Vartak College of Arts,<br />
+                Kedarnath Malhotra College of Commerce,<br />
+                E. S. Andrades College of Science
+              </div>
+              <div class="dept-name">Department of Computer Science</div>
+              <div class="sub-details">
+                Vasai Road (West), Dist. Palghar &bull; Affiliated to University
+                of Mumbai
+              </div>
             </div>
-            <div class="dept-name">Department of Computer Science</div>
-            <div class="sub-details">Vasai Road (West), Dist. Palghar &bull; Affiliated to University of Mumbai</div>
+
+            <div class="cert-heading">CERTIFICATE</div>
+
+            <div class="cert-meta-row">
+              <div>
+                Class: <span class="cert-underline">S.Y. B.Sc. CS</span>
+              </div>
+              <div>
+                Academic Year:
+                <span class="cert-underline">2026 &ndash; 2027</span>
+              </div>
+            </div>
+
+            <div class="cert-body-text">
+              This is to certify that the project work entitled
+              <span class="cert-underline">CAREER KUCH HATKE</span> entered in
+              this report is the bonafide work of Kumari
+              <span class="cert-underline">Sneha Mahendra Prajapati</span> of
+              class <span class="cert-underline">S.Y. B.Sc. CS</span>, Division
+              <span class="cert-underline">&mdash;</span>, Institutional Roll
+              No. <span class="cert-underline">89</span>, University Exam No.
+              <span class="cert-underline"
+                >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span
+              >, who has satisfactorily completed the required Field Project
+              work in the college laboratory as prescribed by the University of
+              Mumbai for Semester III during the academic year 2026 &ndash;
+              2027.
+            </div>
           </div>
 
-          <div class="cert-heading">CERTIFICATE</div>
+          <div>
+            <div class="cert-signatures">
+              <div class="cert-sig-block">Head of the Department</div>
+              <div class="cert-sig-block">External Examiner</div>
+              <div class="cert-sig-block">
+                Internal Examiner / Subject Teacher
+              </div>
+            </div>
 
-          <div class="cert-meta-row">
-            <div>Class: <span class="cert-underline">S.Y. B.Sc. CS</span></div>
-            <div>Academic Year: <span class="cert-underline">2026 &ndash; 2027</span></div>
-          </div>
-
-          <div class="cert-body-text">
-            This is to certify that the project work entitled <span class="cert-underline">CAREER KUCH HATKE</span> entered in this report is the bonafide work of Kumari <span class="cert-underline">Sneha Mahendra Prajapati</span> of class <span class="cert-underline">S.Y. B.Sc. CS</span>, Division <span class="cert-underline">&mdash;</span>, Institutional Roll No. <span class="cert-underline">89</span>, University Exam No. <span class="cert-underline">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>, who has satisfactorily completed the required Field Project work in the college laboratory as prescribed by the University of Mumbai for Semester III during the academic year 2026 &ndash; 2027.
-          </div>
-        </div>
-
-        <div>
-          <div class="cert-signatures">
-            <div class="cert-sig-block">Head of the Department</div>
-            <div class="cert-sig-block">External Examiner</div>
-            <div class="cert-sig-block">Internal Examiner / Subject Teacher</div>
-          </div>
-
-          <div class="cert-footer-row">
-            <div>Date: <span class="cert-underline">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/ 2026</span></div>
-            <div>Department of: <span class="cert-underline">Computer Science</span></div>
+            <div class="cert-footer-row">
+              <div>
+                Date:
+                <span class="cert-underline"
+                  >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/
+                  2026</span
+                >
+              </div>
+              <div>
+                Department of:
+                <span class="cert-underline">Computer Science</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
 
-    <div class="page-break"></div>
+      <div class="page-break"></div>
 
-    <!-- ====================================================================
+      <!-- ====================================================================
          PAGE 1: INDEX PAGE (TABLE OF CONTENTS - REQUIRED BY MAM)
          ==================================================================== -->
-    <div class="report-page">
-      <div class="academic-header">
-        <div class="institution-name">Vidyavardhini’s</div>
-        <div class="college-subname">
-          Annasaheb Vartak College of Arts, Kedarnath Malhotra College of Commerce, E. S. Andrades College of Science
+      <div class="report-page">
+        <div class="academic-header">
+          <div class="institution-name">Vidyavardhini’s</div>
+          <div class="college-subname">
+            Annasaheb Vartak College of Arts, Kedarnath Malhotra College of
+            Commerce, E. S. Andrades College of Science
+          </div>
+          <div class="dept-name">Department of Computer Science</div>
         </div>
-        <div class="dept-name">Department of Computer Science</div>
-      </div>
 
-      <div class="title-box">
-        <div class="report-type">Field Project Documentation</div>
-        <h1>PROJECT INDEX / TABLE OF CONTENTS</h1>
-        <p class="project-subtitle">Project Title: CAREER KUCH HATKE &bull; Candidate: Sneha Prajapati (Roll No. 89)</p>
-      </div>
+        <div class="title-box">
+          <div class="report-type">Field Project Documentation</div>
+          <h1>PROJECT INDEX / TABLE OF CONTENTS</h1>
+          <p class="project-subtitle">
+            Project Title: CAREER KUCH HATKE &bull; Candidate: Sneha Prajapati
+            (Roll No. 89)
+          </p>
+        </div>
 
-      <table class="academic-table" style="margin-top: 16px;">
-        <thead>
-          <tr>
-            <th style="width: 10%; text-align: center;">Sr. No.</th>
-            <th style="width: 55%;">Topic / Chapter Title</th>
-            <th style="width: 15%; text-align: center;">Page No.</th>
-            <th style="width: 20%; text-align: center;">Teacher's Sign</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td style="text-align: center;"><strong>1.0</strong></td>
-            <td><strong>Introduction &amp; Problem Statement</strong><br><small>Background, societal need, problem statement, objectives &amp; scope</small></td>
-            <td style="text-align: center;"><strong>Page 2</strong></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td style="text-align: center;"><strong>2.0</strong></td>
-            <td><strong>About the Website &amp; Core Modules</strong><br><small>Platform purpose, target audience, and detailed breakdown of all 7 modules</small></td>
-            <td style="text-align: center;"><strong>Page 3</strong></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td style="text-align: center;"><strong>3.0</strong></td>
-            <td><strong>System Architecture &amp; Technologies Used</strong><br><small>Client-server block diagram, technology stack, and hardware/software specifications</small></td>
-            <td style="text-align: center;"><strong>Page 4</strong></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td style="text-align: center;"><strong>4.0</strong></td>
-            <td><strong>Implementation of CSS: Why and How</strong><br><small>Responsive design rationale, CSS grid/flexbox, custom variables, and dark/light themes</small></td>
-            <td style="text-align: center;"><strong>Page 5</strong></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td style="text-align: center;"><strong>5.0</strong></td>
-            <td><strong>Implementation of PHP &amp; Database: Why and How</strong><br><small>Backend data persistence, input sanitization, XSS security, and MySQL schema</small></td>
-            <td style="text-align: center;"><strong>Page 6</strong></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td style="text-align: center;"><strong>6.0</strong></td>
-            <td><strong>Web Hosting &amp; CI/CD Deployment Process</strong><br><small>Local XAMPP setup, Git version control, InfinityFree hosting, and GitHub Actions</small></td>
-            <td style="text-align: center;"><strong>Page 7</strong></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td style="text-align: center;"><strong>7.0</strong></td>
-            <td><strong>System Testing &amp; Quality Assurance Matrix</strong><br><small>Cross-browser testing, mobile viewports, JS runtime checks, and cache invalidation</small></td>
-            <td style="text-align: center;"><strong>Page 8</strong></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td style="text-align: center;"><strong>8.0</strong></td>
-            <td><strong>Website Interface Screenshots (3 Core Modules)</strong><br><small>Home page portal, dynamic career roadmap detail, and contact/suggestion form</small></td>
-            <td style="text-align: center;"><strong>Page 9</strong></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td style="text-align: center;"><strong>9.0</strong></td>
-            <td><strong>Limitations, Future Scope, Conclusion &amp; References</strong><br><small>Current constraints, future roadmap, concluding summary, and authoritative citations</small></td>
-            <td style="text-align: center;"><strong>Page 10</strong></td>
-            <td></td>
-          </tr>
-        </tbody>
-      </table>
+        <table class="academic-table" style="margin-top: 16px">
+          <thead>
+            <tr>
+              <th style="width: 10%; text-align: center">Sr. No.</th>
+              <th style="width: 55%">Topic / Chapter Title</th>
+              <th style="width: 15%; text-align: center">Page No.</th>
+              <th style="width: 20%; text-align: center">Teacher's Sign</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="text-align: center"><strong>1.0</strong></td>
+              <td>
+                <strong>Introduction &amp; Problem Statement</strong
+                ><br /><small
+                  >Background, societal need, problem statement, objectives
+                  &amp; scope</small
+                >
+              </td>
+              <td style="text-align: center"><strong>Page 2</strong></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td style="text-align: center"><strong>2.0</strong></td>
+              <td>
+                <strong>About the Website &amp; Core Modules</strong
+                ><br /><small
+                  >Platform purpose, target audience, and detailed breakdown of
+                  all 7 modules</small
+                >
+              </td>
+              <td style="text-align: center"><strong>Page 3</strong></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td style="text-align: center"><strong>3.0</strong></td>
+              <td>
+                <strong>System Architecture &amp; Technologies Used</strong
+                ><br /><small
+                  >Client-server block diagram, technology stack, and
+                  hardware/software specifications</small
+                >
+              </td>
+              <td style="text-align: center"><strong>Page 4</strong></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td style="text-align: center"><strong>4.0</strong></td>
+              <td>
+                <strong>Implementation of CSS: Why and How</strong><br /><small
+                  >Responsive design rationale, CSS grid/flexbox, custom
+                  variables, and dark/light themes</small
+                >
+              </td>
+              <td style="text-align: center"><strong>Page 5</strong></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td style="text-align: center"><strong>5.0</strong></td>
+              <td>
+                <strong
+                  >Implementation of PHP &amp; Database: Why and How</strong
+                ><br /><small
+                  >Backend data persistence, input sanitization, XSS security,
+                  and MySQL schema</small
+                >
+              </td>
+              <td style="text-align: center"><strong>Page 6</strong></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td style="text-align: center"><strong>6.0</strong></td>
+              <td>
+                <strong>Web Hosting &amp; CI/CD Deployment Process</strong
+                ><br /><small
+                  >Local XAMPP setup, Git version control, InfinityFree hosting,
+                  and GitHub Actions</small
+                >
+              </td>
+              <td style="text-align: center"><strong>Page 7</strong></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td style="text-align: center"><strong>7.0</strong></td>
+              <td>
+                <strong>System Testing &amp; Quality Assurance Matrix</strong
+                ><br /><small
+                  >Cross-browser testing, mobile viewports, JS runtime checks,
+                  and cache invalidation</small
+                >
+              </td>
+              <td style="text-align: center"><strong>Page 8</strong></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td style="text-align: center"><strong>8.0</strong></td>
+              <td>
+                <strong>Website Interface Screenshots (3 Core Modules)</strong
+                ><br /><small
+                  >Home page portal, dynamic career roadmap detail, and
+                  contact/suggestion form</small
+                >
+              </td>
+              <td style="text-align: center"><strong>Page 9</strong></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td style="text-align: center"><strong>9.0</strong></td>
+              <td>
+                <strong
+                  >Limitations, Future Scope, Conclusion &amp;
+                  References</strong
+                ><br /><small
+                  >Current constraints, future roadmap, concluding summary, and
+                  authoritative citations</small
+                >
+              </td>
+              <td style="text-align: center"><strong>Page 10</strong></td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
 
-      <div style="margin-top: 36px; padding: 12px; border: 1px solid #000000; font-size: 9.5pt;">
-        <strong>Student Declaration:</strong> I hereby declare that this project documentation report of 10 pages represents authentic academic work completed by me for the B.Sc. Computer Science Field Project curriculum (Academic Year 2026&ndash;2027).
-        <div style="margin-top: 24px; display: flex; justify-content: space-between;">
-          <span><strong>Date:</strong> ____________________</span>
-          <span><strong>Candidate Signature:</strong> (Sneha Prajapati - Roll No. 89)</span>
+        <div
+          style="
+            margin-top: 36px;
+            padding: 12px;
+            border: 1px solid #000000;
+            font-size: 9.5pt;
+          "
+        >
+          <strong>Student Declaration:</strong> I hereby declare that this
+          project documentation report of 10 pages represents authentic academic
+          work completed by me for the B.Sc. Computer Science Field Project
+          curriculum (Academic Year 2026&ndash;2027).
+          <div
+            style="
+              margin-top: 24px;
+              display: flex;
+              justify-content: space-between;
+            "
+          >
+            <span><strong>Date:</strong> ____________________</span>
+            <span
+              ><strong>Candidate Signature:</strong> (Sneha Prajapati - Roll No.
+              89)</span
+            >
+          </div>
+        </div>
+
+        <div class="running-footer">
+          <span
+            >Department of Computer Science &bull; S.Y. B.Sc. CS &bull; Roll No.
+            89</span
+          >
+          <span>Page 1 of 10</span>
         </div>
       </div>
 
-      <div class="running-footer">
-        <span>Department of Computer Science &bull; S.Y. B.Sc. CS &bull; Roll No. 89</span>
-        <span>Page 1 of 10</span>
-      </div>
-    </div>
+      <div class="page-break"></div>
 
-    <div class="page-break"></div>
-
-    <!-- ====================================================================
+      <!-- ====================================================================
          PAGE 2: 1.0 INTRODUCTION & PROBLEM STATEMENT
          ==================================================================== -->
-    <div class="report-page">
-      <div class="academic-header">
-        <div class="institution-name">Vidyavardhini’s &bull; Department of Computer Science</div>
-        <div class="sub-details">Academic Year 2026 &ndash; 2027 &bull; Field Project Report</div>
+      <div class="report-page">
+        <div class="academic-header">
+          <div class="institution-name">
+            Vidyavardhini’s &bull; Department of Computer Science
+          </div>
+          <div class="sub-details">
+            Academic Year 2026 &ndash; 2027 &bull; Field Project Report
+          </div>
+        </div>
+
+        <h2 class="academic-heading">
+          1.0 Introduction &amp; Problem Statement
+        </h2>
+
+        <h3 class="academic-subheading">
+          1.1 Project Title &amp; Executive Summary
+        </h3>
+        <p>
+          <strong>Project Title:</strong> CAREER KUCH HATKE &mdash; An
+          Interactive Unconventional Career Guidance Web Platform with
+          Administrative Management Portal.<br />
+          <strong>Live Hosted URL:</strong>
+          <a
+            href="https://career-kuch-hatke.infinityfreeapp.com"
+            target="_blank"
+            >https://career-kuch-hatke.infinityfreeapp.com</a
+          ><br />
+          <strong>Source Code Repository:</strong>
+          <a
+            href="https://github.com/snehaprajapati-dev/career-kuch-hatke"
+            target="_blank"
+            >https://github.com/snehaprajapati-dev/career-kuch-hatke</a
+          >
+        </p>
+        <p>
+          In the Indian educational system, over eighty percent of secondary and
+          undergraduate students are funneled toward an extremely narrow cluster
+          of traditional vocations&mdash;predominantly Engineering, Medicine,
+          Civil Services, or Banking. This restrictive focus results in intense
+          academic fatigue, high college dropout rates, and widespread career
+          dissatisfaction, while sunrise creative and technology sectors face an
+          acute shortage of skilled talent.
+        </p>
+        <p>
+          <strong>Career Kuch Hatke</strong> is an interactive web platform
+          engineered to eliminate this guidance deficit. It curates
+          <strong>35+ verified unconventional career pathways</strong> across
+          Creative, Tech, Science, Business, and Unique disciplines. The
+          platform equips students with transparent 2026 Indian salary packages,
+          safety-cushion degree alternatives, accredited institutional roadmaps,
+          an algorithmic aptitude quiz, a client-side bookmarking system, and a
+          specialized <strong>"Talk to Your Parents"</strong> conversational
+          pitch generator with one-tap WhatsApp integration.
+        </p>
+
+        <h3 class="academic-subheading">
+          1.2 Problem Statement &amp; Motivation
+        </h3>
+        <ul>
+          <li>
+            <strong>Information Asymmetry:</strong> Reliable academic
+            prerequisites, study budgets, and authentic Indian entry-level
+            compensation figures for emerging professions (e.g., Ethical Hacker,
+            UI/UX Designer, Drone Pilot, Food Stylist, Flavor Chemist) are
+            scattered across fragmented foreign publications that fail to
+            reflect Indian recruiting standards.
+          </li>
+          <li>
+            <strong>The "Parental Resistance" Hurdle:</strong> Indian students
+            frequently encounter skepticism from family members who prioritize
+            financial stability, predictable progression, and recognized
+            degrees.
+          </li>
+          <li>
+            <strong>Absence of Accessible Assessment Tools:</strong> Secondary
+            and college students lack beginner-friendly assessment tools that
+            evaluate their natural problem-solving inclinations and match them
+            to modern industry specializations.
+          </li>
+        </ul>
+
+        <h3 class="academic-subheading">1.3 Project Objectives &amp; Scope</h3>
+        <ul>
+          <li>
+            <strong>Curated Knowledge Base:</strong> Compile comprehensive,
+            verified roadmaps for 35+ non-traditional vocations with realistic
+            salary brackets, degree cushions, and institutional timelines.
+          </li>
+          <li>
+            <strong>Zero-Latency Client Interactivity:</strong> Implement
+            client-side real-time keyword search with synonym matching, category
+            domain filtering, and saved bookmarks using pure JavaScript without
+            heavy external libraries.
+          </li>
+          <li>
+            <strong>Parental Alignment Facilitation:</strong> Formulate
+            customized 30-second conversational pitches containing verifiable
+            industry packages that students can share with parents via WhatsApp.
+          </li>
+          <li>
+            <strong>Full-Stack Form Processing:</strong> Handle student feedback
+            and community career suggestions through server-side PHP validation,
+            sanitized database insertion, and an administrative review
+            dashboard.
+          </li>
+          <li>
+            <strong>Automated Production Deployment:</strong> Establish
+            continuous integration and deployment (CI/CD via GitHub Actions) to
+            synchronize local developments directly with production Linux
+            hosting.
+          </li>
+        </ul>
+
+        <div class="running-footer">
+          <span
+            >Department of Computer Science &bull; S.Y. B.Sc. CS &bull; Roll No.
+            89</span
+          >
+          <span>Page 2 of 10</span>
+        </div>
       </div>
 
-      <h2 class="academic-heading">1.0 Introduction &amp; Problem Statement</h2>
+      <div class="page-break"></div>
 
-      <h3 class="academic-subheading">1.1 Project Title &amp; Executive Summary</h3>
-      <p>
-        <strong>Project Title:</strong> CAREER KUCH HATKE &mdash; An Interactive Unconventional Career Guidance Web Platform with Administrative Management Portal.<br>
-        <strong>Live Hosted URL:</strong> <a href="https://career-kuch-hatke.infinityfreeapp.com" target="_blank">https://career-kuch-hatke.infinityfreeapp.com</a><br>
-        <strong>Source Code Repository:</strong> <a href="https://github.com/snehaprajapati-dev/career-kuch-hatke" target="_blank">https://github.com/snehaprajapati-dev/career-kuch-hatke</a>
-      </p>
-      <p>
-        In the Indian educational system, over eighty percent of secondary and undergraduate students are funneled toward an extremely narrow cluster of traditional vocations&mdash;predominantly Engineering, Medicine, Civil Services, or Banking. This restrictive focus results in intense academic fatigue, high college dropout rates, and widespread career dissatisfaction, while sunrise creative and technology sectors face an acute shortage of skilled talent.
-      </p>
-      <p>
-        <strong>Career Kuch Hatke</strong> is an interactive web platform engineered to eliminate this guidance deficit. It curates <strong>35+ verified unconventional career pathways</strong> across Creative, Tech, Science, Business, and Unique disciplines. The platform equips students with transparent 2026 Indian salary packages, safety-cushion degree alternatives, accredited institutional roadmaps, an algorithmic aptitude quiz, a client-side bookmarking system, and a specialized <strong>"Talk to Your Parents"</strong> conversational pitch generator with one-tap WhatsApp integration.
-      </p>
-
-      <h3 class="academic-subheading">1.2 Problem Statement &amp; Motivation</h3>
-      <ul>
-        <li><strong>Information Asymmetry:</strong> Reliable academic prerequisites, study budgets, and authentic Indian entry-level compensation figures for emerging professions (e.g., Ethical Hacker, UI/UX Designer, Drone Pilot, Food Stylist, Flavor Chemist) are scattered across fragmented foreign publications that fail to reflect Indian recruiting standards.</li>
-        <li><strong>The "Parental Resistance" Hurdle:</strong> Indian students frequently encounter skepticism from family members who prioritize financial stability, predictable progression, and recognized degrees.</li>
-        <li><strong>Absence of Accessible Assessment Tools:</strong> Secondary and college students lack beginner-friendly assessment tools that evaluate their natural problem-solving inclinations and match them to modern industry specializations.</li>
-      </ul>
-
-      <h3 class="academic-subheading">1.3 Project Objectives &amp; Scope</h3>
-      <ul>
-        <li><strong>Curated Knowledge Base:</strong> Compile comprehensive, verified roadmaps for 35+ non-traditional vocations with realistic salary brackets, degree cushions, and institutional timelines.</li>
-        <li><strong>Zero-Latency Client Interactivity:</strong> Implement client-side real-time keyword search with synonym matching, category domain filtering, and saved bookmarks using pure JavaScript without heavy external libraries.</li>
-        <li><strong>Parental Alignment Facilitation:</strong> Formulate customized 30-second conversational pitches containing verifiable industry packages that students can share with parents via WhatsApp.</li>
-        <li><strong>Full-Stack Form Processing:</strong> Handle student feedback and community career suggestions through server-side PHP validation, sanitized database insertion, and an administrative review dashboard.</li>
-        <li><strong>Automated Production Deployment:</strong> Establish continuous integration and deployment (CI/CD via GitHub Actions) to synchronize local developments directly with production Linux hosting.</li>
-      </ul>
-
-      <div class="running-footer">
-        <span>Department of Computer Science &bull; S.Y. B.Sc. CS &bull; Roll No. 89</span>
-        <span>Page 2 of 10</span>
-      </div>
-    </div>
-
-    <div class="page-break"></div>
-
-    <!-- ====================================================================
+      <!-- ====================================================================
          PAGE 3: 2.0 ABOUT THE WEBSITE & CORE MODULES
          ==================================================================== -->
-    <div class="report-page">
-      <h2 class="academic-heading">2.0 About the Website &amp; Core Modules</h2>
+      <div class="report-page">
+        <h2 class="academic-heading">
+          2.0 About the Website &amp; Core Modules
+        </h2>
 
-      <h3 class="academic-subheading">2.1 Platform Purpose &amp; Target Audience</h3>
-      <p>
-        <strong>Career Kuch Hatke</strong> is conceptualized as an end-to-end guidance companion for Indian students in grades 10&ndash;12, undergraduates, and career switchers. Unlike generic educational directories, the website delivers actionable intelligence: not just "what the job is", but "how much it pays in India", "what safety degree keeps parents happy", "which colleges teach it", and "how to pitch it to Indian parents".
-      </p>
+        <h3 class="academic-subheading">
+          2.1 Platform Purpose &amp; Target Audience
+        </h3>
+        <p>
+          <strong>Career Kuch Hatke</strong> is conceptualized as an end-to-end
+          guidance companion for Indian students in grades 10&ndash;12,
+          undergraduates, and career switchers. Unlike generic educational
+          directories, the website delivers actionable intelligence: not just
+          "what the job is", but "how much it pays in India", "what safety
+          degree keeps parents happy", "which colleges teach it", and "how to
+          pitch it to Indian parents".
+        </p>
 
-      <h3 class="academic-subheading">2.2 Detailed Breakdown of Core Webpage Modules</h3>
-      <p>
-        The platform architecture comprises six distinct user-facing modules and a protected administrative back-office:
-      </p>
-      <ul>
-        <li><strong>Module 1 &mdash; Home Portal (<code>index.html</code>):</strong> Introduces the platform mission, provides immediate calls-to-action ("Explore Careers" and "Take Quiz"), features an analytical "Rat Race vs. Hatke Career" problem-solution dilemma matrix, highlights featured professions, and includes an anti-flash dark/light theme switcher.</li>
-        <li><strong>Module 2 &mdash; Career Exploration Grid (<code>explore.html</code>):</strong> Houses 35 standardized equal-height career cards. Features real-time Category Filter Pills (Creative, Tech, Science, Business, Unique), an instant keyword search bar with clear button and synonym evaluation, and a dedicated <strong>"Bookmarked"</strong> filter tab with friendly empty state.</li>
-        <li><strong>Module 3 &mdash; Dynamic Career Roadmap Engine (<code>career-detail.html</code>):</strong> A parameterized single-page template driven by URL queries (e.g., <code>?career=ai-prompt-engineer</code>). Dynamically renders 10 structured sections: Quick Facts, Actual Duties, Career Trajectory, Accredited Indian Colleges, Degree Safety Net, and "Talk to Your Parents" pitch generator with action toolbar.</li>
-        <li><strong>Module 4 &mdash; Career Aptitude Assessment Quiz (<code>quiz.html</code>):</strong> Interactive 5-step self-assessment evaluating analytical traits, creativity, and working preferences through a client-side weighted scoring algorithm yielding match percentages.</li>
-        <li><strong>Module 5 &mdash; About Us &amp; Research Transparency (<code>about.html</code>):</strong> Documents developer background (Sneha Prajapati, Roll No. 89), foundational research motivation, statistical realities of career selection pressures in India, and verified citation sources.</li>
-        <li><strong>Module 6 &mdash; Contact &amp; Suggestion Portal (<code>contact.html</code>):</strong> Dual-purpose communication portal allowing students to submit general inquiries and propose new emerging vocational paths for addition with client and server-side validation.</li>
-        <li><strong>Module 7 &mdash; Administrative Management Portal (<code>admin/</code>):</strong> Restricted back-office consisting of session-authenticated login (<code>login.php</code>), metrics dashboard (<code>dashboard.php</code>), submission review tables (<code>contacts.php</code>, <code>suggestions.php</code>), item deletion (<code>delete.php</code>), and CSV export for Excel analysis (<code>export.php</code>).</li>
-      </ul>
+        <h3 class="academic-subheading">
+          2.2 Detailed Breakdown of Core Webpage Modules
+        </h3>
+        <p>
+          The platform architecture comprises six distinct user-facing modules
+          and a protected administrative back-office:
+        </p>
+        <ul>
+          <li>
+            <strong
+              >Module 1 &mdash; Home Portal (<code>index.html</code>):</strong
+            >
+            Introduces the platform mission, provides immediate calls-to-action
+            ("Explore Careers" and "Take Quiz"), features an analytical "Rat
+            Race vs. Hatke Career" problem-solution dilemma matrix, highlights
+            featured professions, and includes an anti-flash dark/light theme
+            switcher.
+          </li>
+          <li>
+            <strong
+              >Module 2 &mdash; Career Exploration Grid
+              (<code>explore.html</code>):</strong
+            >
+            Houses 35 standardized equal-height career cards. Features real-time
+            Category Filter Pills (Creative, Tech, Science, Business, Unique),
+            an instant keyword search bar with clear button and synonym
+            evaluation, and a dedicated <strong>"Bookmarked"</strong> filter tab
+            with friendly empty state.
+          </li>
+          <li>
+            <strong
+              >Module 3 &mdash; Dynamic Career Roadmap Engine
+              (<code>career-detail.html</code>):</strong
+            >
+            A parameterized single-page template driven by URL queries (e.g.,
+            <code>?career=ai-prompt-engineer</code>). Dynamically renders 10
+            structured sections: Quick Facts, Actual Duties, Career Trajectory,
+            Accredited Indian Colleges, Degree Safety Net, and "Talk to Your
+            Parents" pitch generator with action toolbar.
+          </li>
+          <li>
+            <strong
+              >Module 4 &mdash; Career Aptitude Assessment Quiz
+              (<code>quiz.html</code>):</strong
+            >
+            Interactive 5-step self-assessment evaluating analytical traits,
+            creativity, and working preferences through a client-side weighted
+            scoring algorithm yielding match percentages.
+          </li>
+          <li>
+            <strong
+              >Module 5 &mdash; About Us &amp; Research Transparency
+              (<code>about.html</code>):</strong
+            >
+            Documents developer background (Sneha Prajapati, Roll No. 89),
+            foundational research motivation, statistical realities of career
+            selection pressures in India, and verified citation sources.
+          </li>
+          <li>
+            <strong
+              >Module 6 &mdash; Contact &amp; Suggestion Portal
+              (<code>contact.html</code>):</strong
+            >
+            Dual-purpose communication portal allowing students to submit
+            general inquiries and propose new emerging vocational paths for
+            addition with client and server-side validation.
+          </li>
+          <li>
+            <strong
+              >Module 7 &mdash; Administrative Management Portal
+              (<code>admin/</code>):</strong
+            >
+            Restricted back-office consisting of session-authenticated login
+            (<code>login.php</code>), metrics dashboard
+            (<code>dashboard.php</code>), submission review tables
+            (<code>contacts.php</code>, <code>suggestions.php</code>), item
+            deletion (<code>delete.php</code>), and CSV export for Excel
+            analysis (<code>export.php</code>).
+          </li>
+        </ul>
 
-      <div class="running-footer">
-        <span>Department of Computer Science &bull; S.Y. B.Sc. CS &bull; Roll No. 89</span>
-        <span>Page 3 of 10</span>
+        <div class="running-footer">
+          <span
+            >Department of Computer Science &bull; S.Y. B.Sc. CS &bull; Roll No.
+            89</span
+          >
+          <span>Page 3 of 10</span>
+        </div>
       </div>
-    </div>
 
-    <div class="page-break"></div>
+      <div class="page-break"></div>
 
-    <!-- ====================================================================
+      <!-- ====================================================================
          PAGE 4: 3.0 SYSTEM ARCHITECTURE & TECHNOLOGIES USED
          ==================================================================== -->
-    <div class="report-page">
-      <h2 class="academic-heading">3.0 System Architecture &amp; Technologies Used</h2>
+      <div class="report-page">
+        <h2 class="academic-heading">
+          3.0 System Architecture &amp; Technologies Used
+        </h2>
 
-      <h3 class="academic-subheading">3.1 System Architecture &amp; Data Flow Diagram</h3>
-      <p>
-        The platform implements a decoupled client-server architecture designed for rapid client-side rendering combined with server-side validation and relational database persistence:
-      </p>
+        <h3 class="academic-subheading">
+          3.1 System Architecture &amp; Data Flow Diagram
+        </h3>
+        <p>
+          The platform implements a decoupled client-server architecture
+          designed for rapid client-side rendering combined with server-side
+          validation and relational database persistence:
+        </p>
 
-      <pre class="academic-code">
+        <pre class="academic-code">
 +-------------------------------------------------------------------------------+
 |                             CLIENT-SIDE LAYER (BROWSER)                       |
 |   HTML5 (Semantic Web) | CSS3 (Grid & Flexbox Layouts) | JavaScript (ES6+)    |
@@ -764,94 +1065,172 @@
 |   - Table: contacts (id, name, email, message, submitted_at)                  |
 |   - Table: career_suggestions (id, name, email, career_title, description)    |
 +-------------------------------------------------------------------------------+
-      </pre>
+      </pre
+        >
 
-      <h3 class="academic-subheading">3.2 Technology Specifications Table</h3>
-      <table class="academic-table">
-        <thead>
-          <tr>
-            <th style="width: 25%;">Layer</th>
-            <th style="width: 25%;">Technology</th>
-            <th>Role &amp; Implementation Purpose</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><strong>Frontend Markup</strong></td>
-            <td>HTML5 Semantic</td>
-            <td>Structured semantic elements (&lt;header&gt;, &lt;nav&gt;, &lt;main&gt;, &lt;section&gt;, &lt;footer&gt;) for accessibility and clean DOM tree traversal.</td>
-          </tr>
-          <tr>
-            <td><strong>Styling &amp; Theme</strong></td>
-            <td>CSS3 (Grid &amp; Flexbox)</td>
-            <td>Custom CSS variables, mobile-first responsive media queries, and anti-flash dark/light mode theme persistence.</td>
-          </tr>
-          <tr>
-            <td><strong>Client Scripting</strong></td>
-            <td>Vanilla JavaScript (ES6+)</td>
-            <td>DOM event listeners, keyword synonym dictionary, quiz scoring engine, and Web Storage API (localStorage) bookmarking.</td>
-          </tr>
-          <tr>
-            <td><strong>Backend Processing</strong></td>
-            <td>PHP 8.2 (Procedural)</td>
-            <td>Asynchronous POST parsing, data sanitization (htmlspecialchars, filter_var), and session-based administrator authentication.</td>
-          </tr>
-          <tr>
-            <td><strong>Database Layer</strong></td>
-            <td>MySQL Relational DB</td>
-            <td>Normalized relational storage for student inquiries and community career submissions.</td>
-          </tr>
-          <tr>
-            <td><strong>Hosting &amp; CI/CD</strong></td>
-            <td>InfinityFree &amp; GitHub Actions</td>
-            <td>Cloud Linux hosting with automated FTPS deployment pipeline triggered on git push to the main branch.</td>
-          </tr>
-        </tbody>
-      </table>
+        <h3 class="academic-subheading">3.2 Technology Specifications Table</h3>
+        <table class="academic-table">
+          <thead>
+            <tr>
+              <th style="width: 25%">Layer</th>
+              <th style="width: 25%">Technology</th>
+              <th>Role &amp; Implementation Purpose</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Frontend Markup</strong></td>
+              <td>HTML5 Semantic</td>
+              <td>
+                Structured semantic elements (&lt;header&gt;, &lt;nav&gt;,
+                &lt;main&gt;, &lt;section&gt;, &lt;footer&gt;) for accessibility
+                and clean DOM tree traversal.
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Styling &amp; Theme</strong></td>
+              <td>CSS3 (Grid &amp; Flexbox)</td>
+              <td>
+                Custom CSS variables, mobile-first responsive media queries, and
+                anti-flash dark/light mode theme persistence.
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Client Scripting</strong></td>
+              <td>Vanilla JavaScript (ES6+)</td>
+              <td>
+                DOM event listeners, keyword synonym dictionary, quiz scoring
+                engine, and Web Storage API (localStorage) bookmarking.
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Backend Processing</strong></td>
+              <td>PHP 8.2 (Procedural)</td>
+              <td>
+                Asynchronous POST parsing, data sanitization (htmlspecialchars,
+                filter_var), and session-based administrator authentication.
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Database Layer</strong></td>
+              <td>MySQL Relational DB</td>
+              <td>
+                Normalized relational storage for student inquiries and
+                community career submissions.
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Hosting &amp; CI/CD</strong></td>
+              <td>InfinityFree &amp; GitHub Actions</td>
+              <td>
+                Cloud Linux hosting with automated FTPS deployment pipeline
+                triggered on git push to the main branch.
+              </td>
+            </tr>
+          </tbody>
+        </table>
 
-      <h3 class="academic-subheading">3.3 Hardware &amp; Software Environment Requirements</h3>
-      <ul>
-        <li><strong>Development Hardware:</strong> Standard x86-64 PC with Intel/AMD Multi-Core Processor, 8GB RAM, 100MB free disk storage.</li>
-        <li><strong>Operating System &amp; Tooling:</strong> Windows 11, Visual Studio Code, XAMPP v8.2.12 (Apache 2.4, MariaDB 10.4, PHP 8.2).</li>
-        <li><strong>Client Requirements:</strong> Any modern standards-compliant web browser (Google Chrome 100+, Firefox 100+, Edge, Safari iOS).</li>
-      </ul>
+        <h3 class="academic-subheading">
+          3.3 Hardware &amp; Software Environment Requirements
+        </h3>
+        <ul>
+          <li>
+            <strong>Development Hardware:</strong> Standard x86-64 PC with
+            Intel/AMD Multi-Core Processor, 8GB RAM, 100MB free disk storage.
+          </li>
+          <li>
+            <strong>Operating System &amp; Tooling:</strong> Windows 11, Visual
+            Studio Code, XAMPP v8.2.12 (Apache 2.4, MariaDB 10.4, PHP 8.2).
+          </li>
+          <li>
+            <strong>Client Requirements:</strong> Any modern standards-compliant
+            web browser (Google Chrome 100+, Firefox 100+, Edge, Safari iOS).
+          </li>
+        </ul>
 
-      <div class="running-footer">
-        <span>Department of Computer Science &bull; S.Y. B.Sc. CS &bull; Roll No. 89</span>
-        <span>Page 4 of 10</span>
+        <div class="running-footer">
+          <span
+            >Department of Computer Science &bull; S.Y. B.Sc. CS &bull; Roll No.
+            89</span
+          >
+          <span>Page 4 of 10</span>
+        </div>
       </div>
-    </div>
 
-    <div class="page-break"></div>
+      <div class="page-break"></div>
 
-    <!-- ====================================================================
+      <!-- ====================================================================
          PAGE 5: 4.0 CSS IMPLEMENTATION: WHY AND HOW
          ==================================================================== -->
-    <div class="report-page">
-      <h2 class="academic-heading">4.0 Implementation of CSS: Why and How</h2>
+      <div class="report-page">
+        <h2 class="academic-heading">4.0 Implementation of CSS: Why and How</h2>
 
-      <h3 class="academic-subheading">4.1 Why CSS was Implemented</h3>
-      <p>
-        Modern web applications demand an intuitive, visually engaging, and responsive interface that adapts seamlessly across smartphones, tablets, laptops, and desktop displays. Pure HTML produces unstyled, linear documents inadequate for structured career guidance. CSS3 was implemented to achieve:
-      </p>
-      <ul>
-        <li><strong>Responsive Multi-Column Grids:</strong> Displaying 35 career options requires dynamic multi-column layouts on desktop that gracefully collapse into a single touch-friendly column on mobile devices.</li>
-        <li><strong>Equalized Card Heights:</strong> In exploration grids, varying text length across careers causes uneven card heights. CSS Flexbox was implemented to ensure cards maintain identical vertical height across rows.</li>
-        <li><strong>Accessible Color Contrast &amp; Theme Support:</strong> Implementation of Dark and Light modes reduces eye strain during prolonged reading and respects user operating system preferences.</li>
-        <li><strong>Visual Affordance &amp; Micro-Interactions:</strong> Subtle hover states, smooth transitions, and glowing bookmark pills provide instant tactile feedback without cognitive overload.</li>
-      </ul>
+        <h3 class="academic-subheading">4.1 Why CSS was Implemented</h3>
+        <p>
+          Modern web applications demand an intuitive, visually engaging, and
+          responsive interface that adapts seamlessly across smartphones,
+          tablets, laptops, and desktop displays. Pure HTML produces unstyled,
+          linear documents inadequate for structured career guidance. CSS3 was
+          implemented to achieve:
+        </p>
+        <ul>
+          <li>
+            <strong>Responsive Multi-Column Grids:</strong> Displaying 35 career
+            options requires dynamic multi-column layouts on desktop that
+            gracefully collapse into a single touch-friendly column on mobile
+            devices.
+          </li>
+          <li>
+            <strong>Equalized Card Heights:</strong> In exploration grids,
+            varying text length across careers causes uneven card heights. CSS
+            Flexbox was implemented to ensure cards maintain identical vertical
+            height across rows.
+          </li>
+          <li>
+            <strong>Accessible Color Contrast &amp; Theme Support:</strong>
+            Implementation of Dark and Light modes reduces eye strain during
+            prolonged reading and respects user operating system preferences.
+          </li>
+          <li>
+            <strong>Visual Affordance &amp; Micro-Interactions:</strong> Subtle
+            hover states, smooth transitions, and glowing bookmark pills provide
+            instant tactile feedback without cognitive overload.
+          </li>
+        </ul>
 
-      <h3 class="academic-subheading">4.2 How CSS was Structured and Implemented</h3>
-      <p>
-        The styling architecture follows modular separation across distinct CSS files:
-      </p>
-      <ul>
-        <li><strong>Global Design Tokens (<code>css/style.css</code>):</strong> Defined using CSS Custom Properties (Variables) on the <code>:root</code> selector (e.g., <code>--bg-primary</code>, <code>--text-primary</code>, <code>--accent-purple</code>, <code>--card-border</code>) allowing instantaneous theme switching by toggling a single <code>data-theme="dark"</code> attribute on the root HTML element.</li>
-        <li><strong>Modular Component Styles:</strong> Dedicated stylesheets isolate component boundaries: <code>explore.css</code> manages filters and card grids; <code>career-detail.css</code> styles roadmap accordions and the parent pitch box; <code>quiz.css</code> handles progress indicators.</li>
-        <li><strong>Strict Card Filtering Rule:</strong> To resolve card filtering conflicts where flex cards remained visible, a strict utility class was implemented: <code>.career-card.is-hidden { display: none !important; }</code>.</li>
-      </ul>
+        <h3 class="academic-subheading">
+          4.2 How CSS was Structured and Implemented
+        </h3>
+        <p>
+          The styling architecture follows modular separation across distinct
+          CSS files:
+        </p>
+        <ul>
+          <li>
+            <strong>Global Design Tokens (<code>css/style.css</code>):</strong>
+            Defined using CSS Custom Properties (Variables) on the
+            <code>:root</code> selector (e.g., <code>--bg-primary</code>,
+            <code>--text-primary</code>, <code>--accent-purple</code>,
+            <code>--card-border</code>) allowing instantaneous theme switching
+            by toggling a single <code>data-theme="dark"</code> attribute on the
+            root HTML element.
+          </li>
+          <li>
+            <strong>Modular Component Styles:</strong> Dedicated stylesheets
+            isolate component boundaries: <code>explore.css</code> manages
+            filters and card grids; <code>career-detail.css</code> styles
+            roadmap accordions and the parent pitch box;
+            <code>quiz.css</code> handles progress indicators.
+          </li>
+          <li>
+            <strong>Strict Card Filtering Rule:</strong> To resolve card
+            filtering conflicts where flex cards remained visible, a strict
+            utility class was implemented:
+            <code>.career-card.is-hidden { display: none !important; }</code>.
+          </li>
+        </ul>
 
-      <pre class="academic-code">
+        <pre class="academic-code">
 /* Equal Height Flexbox Card Architecture (css/explore.css) */
 .career-card {
   display: flex !important;
@@ -868,88 +1247,123 @@
 .career-card.is-hidden {
   display: none !important; /* Overrides flex display when card is filtered out */
 }
-      </pre>
+      </pre
+        >
 
-      <div class="running-footer">
-        <span>Department of Computer Science &bull; S.Y. B.Sc. CS &bull; Roll No. 89</span>
-        <span>Page 5 of 10</span>
+        <div class="running-footer">
+          <span
+            >Department of Computer Science &bull; S.Y. B.Sc. CS &bull; Roll No.
+            89</span
+          >
+          <span>Page 5 of 10</span>
+        </div>
       </div>
-    </div>
 
-    <div class="page-break"></div>
+      <div class="page-break"></div>
 
-    <!-- ====================================================================
+      <!-- ====================================================================
          PAGE 6: 5.0 PHP & DATABASE IMPLEMENTATION: WHY AND HOW
          ==================================================================== -->
-    <div class="report-page">
-      <h2 class="academic-heading">5.0 Implementation of PHP &amp; Database: Why and How</h2>
+      <div class="report-page">
+        <h2 class="academic-heading">
+          5.0 Implementation of PHP &amp; Database: Why and How
+        </h2>
 
-      <h3 class="academic-subheading">5.1 Why PHP and MySQL were Implemented</h3>
-      <p>
-        Client-side technologies (HTML, CSS, JavaScript) execute entirely within the user's browser and cannot securely persist data across sessions or protect confidential back-office records. PHP and MySQL were implemented for:
-      </p>
-      <ul>
-        <li><strong>Server-Side Form Processing:</strong> Student inquiries and career suggestions submitted on <code>contact.html</code> must be received, parsed, validated, and stored permanently on the server.</li>
-        <li><strong>Defense Against Malicious Injections:</strong> Client-side validation can be bypassed by disabling JavaScript. Server-side PHP sanitizes all inputs against Cross-Site Scripting (XSS) and SQL injection.</li>
-        <li><strong>Administrative Access Control:</strong> An administrative portal requires protected session authentication (<code>session_start()</code>) so only authorized faculty can view incoming messages.</li>
-      </ul>
+        <h3 class="academic-subheading">
+          5.1 Why PHP and MySQL were Implemented
+        </h3>
+        <p>
+          Client-side technologies (HTML, CSS, JavaScript) execute entirely
+          within the user's browser and cannot securely persist data across
+          sessions or protect confidential back-office records. PHP and MySQL
+          were implemented for:
+        </p>
+        <ul>
+          <li>
+            <strong>Server-Side Form Processing:</strong> Student inquiries and
+            career suggestions submitted on <code>contact.html</code> must be
+            received, parsed, validated, and stored permanently on the server.
+          </li>
+          <li>
+            <strong>Defense Against Malicious Injections:</strong> Client-side
+            validation can be bypassed by disabling JavaScript. Server-side PHP
+            sanitizes all inputs against Cross-Site Scripting (XSS) and SQL
+            injection.
+          </li>
+          <li>
+            <strong>Administrative Access Control:</strong> An administrative
+            portal requires protected session authentication
+            (<code>session_start()</code>) so only authorized faculty can view
+            incoming messages.
+          </li>
+        </ul>
 
-      <h3 class="academic-subheading">5.2 How PHP and MySQL were Implemented</h3>
-      <p>
-        PHP 8.2 handles POST requests asynchronously, returning structured JSON payloads to the client without page reload. The MySQL database comprises two normalized tables:
-      </p>
+        <h3 class="academic-subheading">
+          5.2 How PHP and MySQL were Implemented
+        </h3>
+        <p>
+          PHP 8.2 handles POST requests asynchronously, returning structured
+          JSON payloads to the client without page reload. The MySQL database
+          comprises two normalized tables:
+        </p>
 
-      <table class="academic-table">
-        <thead>
-          <tr>
-            <th style="width: 25%;">Table Name</th>
-            <th style="width: 25%;">Field Identifier</th>
-            <th style="width: 20%;">Data Type</th>
-            <th>Constraints &amp; Purpose</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td rowspan="4"><strong>contacts</strong><br><small>Student inquiries</small></td>
-            <td><code>id</code></td>
-            <td>INT(11)</td>
-            <td>PRIMARY KEY, AUTO_INCREMENT</td>
-          </tr>
-          <tr>
-            <td><code>name</code>, <code>email</code></td>
-            <td>VARCHAR(100), VARCHAR(150)</td>
-            <td>NOT NULL, Validated email format</td>
-          </tr>
-          <tr>
-            <td><code>message</code></td>
-            <td>TEXT</td>
-            <td>Sanitized inquiry text body</td>
-          </tr>
-          <tr>
-            <td><code>submitted_at</code></td>
-            <td>TIMESTAMP</td>
-            <td>DEFAULT CURRENT_TIMESTAMP</td>
-          </tr>
-          <tr>
-            <td rowspan="3"><strong>career_suggestions</strong><br><small>Community suggestions</small></td>
-            <td><code>id</code></td>
-            <td>INT(11)</td>
-            <td>PRIMARY KEY, AUTO_INCREMENT</td>
-          </tr>
-          <tr>
-            <td><code>career_title</code>, <code>category</code></td>
-            <td>VARCHAR(150), VARCHAR(50)</td>
-            <td>Proposed career title and primary domain</td>
-          </tr>
-          <tr>
-            <td><code>description</code></td>
-            <td>TEXT</td>
-            <td>Student explanation of vocational viability</td>
-          </tr>
-        </tbody>
-      </table>
+        <table class="academic-table">
+          <thead>
+            <tr>
+              <th style="width: 25%">Table Name</th>
+              <th style="width: 25%">Field Identifier</th>
+              <th style="width: 20%">Data Type</th>
+              <th>Constraints &amp; Purpose</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td rowspan="4">
+                <strong>contacts</strong><br /><small>Student inquiries</small>
+              </td>
+              <td><code>id</code></td>
+              <td>INT(11)</td>
+              <td>PRIMARY KEY, AUTO_INCREMENT</td>
+            </tr>
+            <tr>
+              <td><code>name</code>, <code>email</code></td>
+              <td>VARCHAR(100), VARCHAR(150)</td>
+              <td>NOT NULL, Validated email format</td>
+            </tr>
+            <tr>
+              <td><code>message</code></td>
+              <td>TEXT</td>
+              <td>Sanitized inquiry text body</td>
+            </tr>
+            <tr>
+              <td><code>submitted_at</code></td>
+              <td>TIMESTAMP</td>
+              <td>DEFAULT CURRENT_TIMESTAMP</td>
+            </tr>
+            <tr>
+              <td rowspan="3">
+                <strong>career_suggestions</strong><br /><small
+                  >Community suggestions</small
+                >
+              </td>
+              <td><code>id</code></td>
+              <td>INT(11)</td>
+              <td>PRIMARY KEY, AUTO_INCREMENT</td>
+            </tr>
+            <tr>
+              <td><code>career_title</code>, <code>category</code></td>
+              <td>VARCHAR(150), VARCHAR(50)</td>
+              <td>Proposed career title and primary domain</td>
+            </tr>
+            <tr>
+              <td><code>description</code></td>
+              <td>TEXT</td>
+              <td>Student explanation of vocational viability</td>
+            </tr>
+          </tbody>
+        </table>
 
-      <pre class="academic-code">
+        <pre class="academic-code">
 // Server-Side Sanitization & Validation Handler (php/contact-process.php)
 $name    = htmlspecialchars(strip_tags(trim($_POST['name'])), ENT_QUOTES, 'UTF-8');
 $email   = filter_var(trim($_POST['email']), FILTER_SANITIZE_EMAIL);
@@ -961,53 +1375,112 @@ if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
 $stmt = $conn->prepare("INSERT INTO contacts (name, email, message) VALUES (?, ?, ?)");
 $stmt->bind_param("sss", $name, $email, $message);
 $stmt->execute();
-      </pre>
+      </pre
+        >
 
-      <div class="running-footer">
-        <span>Department of Computer Science &bull; S.Y. B.Sc. CS &bull; Roll No. 89</span>
-        <span>Page 6 of 10</span>
+        <div class="running-footer">
+          <span
+            >Department of Computer Science &bull; S.Y. B.Sc. CS &bull; Roll No.
+            89</span
+          >
+          <span>Page 6 of 10</span>
+        </div>
       </div>
-    </div>
 
-    <div class="page-break"></div>
+      <div class="page-break"></div>
 
-    <!-- ====================================================================
+      <!-- ====================================================================
          PAGE 7: 6.0 WEB HOSTING & CI/CD DEPLOYMENT PROCESS
          ==================================================================== -->
-    <div class="report-page">
-      <h2 class="academic-heading">6.0 Web Hosting &amp; CI/CD Deployment Process</h2>
+      <div class="report-page">
+        <h2 class="academic-heading">
+          6.0 Web Hosting &amp; CI/CD Deployment Process
+        </h2>
 
-      <h3 class="academic-subheading">6.1 Local Development Environment (XAMPP)</h3>
-      <p>
-        The platform was developed and rigorously debugged locally using the <strong>XAMPP</strong> stack on Windows:
-      </p>
-      <ul>
-        <li><strong>Apache Web Server:</strong> Configured on port <code>8080</code> (<code>http://localhost:8080/</code>) to serve static assets and proxy PHP requests.</li>
-        <li><strong>MariaDB / MySQL:</strong> Running on port <code>3306</code> with phpMyAdmin used for database provisioning, indexing, and schema validation.</li>
-        <li><strong>Local Testing:</strong> Ensured zero runtime console errors, verified database insertion, and checked asynchronous fetch promises locally before cloud staging.</li>
-      </ul>
+        <h3 class="academic-subheading">
+          6.1 Local Development Environment (XAMPP)
+        </h3>
+        <p>
+          The platform was developed and rigorously debugged locally using the
+          <strong>XAMPP</strong> stack on Windows:
+        </p>
+        <ul>
+          <li>
+            <strong>Apache Web Server:</strong> Configured on port
+            <code>8080</code> (<code>http://localhost:8080/</code>) to serve
+            static assets and proxy PHP requests.
+          </li>
+          <li>
+            <strong>MariaDB / MySQL:</strong> Running on port
+            <code>3306</code> with phpMyAdmin used for database provisioning,
+            indexing, and schema validation.
+          </li>
+          <li>
+            <strong>Local Testing:</strong> Ensured zero runtime console errors,
+            verified database insertion, and checked asynchronous fetch promises
+            locally before cloud staging.
+          </li>
+        </ul>
 
-      <h3 class="academic-subheading">6.2 Cloud Web Hosting Infrastructure (InfinityFree)</h3>
-      <p>
-        To ensure round-the-clock accessibility for college evaluators and students, the application was deployed to <strong>InfinityFree</strong> cloud hosting:
-      </p>
-      <ul>
-        <li><strong>Production Server:</strong> Linux-based Apache web server with native PHP 8.2 runtime and remote MySQL database storage.</li>
-        <li><strong>Live Production URL:</strong> <code>https://career-kuch-hatke.infinityfreeapp.com</code>.</li>
-        <li><strong>Web Server Configuration (<code>.htaccess</code>):</strong> Configured URL rewriting, gzip compression, and MIME types for web fonts and JSON data.</li>
-      </ul>
+        <h3 class="academic-subheading">
+          6.2 Cloud Web Hosting Infrastructure (InfinityFree)
+        </h3>
+        <p>
+          To ensure round-the-clock accessibility for college evaluators and
+          students, the application was deployed to
+          <strong>InfinityFree</strong> cloud hosting:
+        </p>
+        <ul>
+          <li>
+            <strong>Production Server:</strong> Linux-based Apache web server
+            with native PHP 8.2 runtime and remote MySQL database storage.
+          </li>
+          <li>
+            <strong>Live Production URL:</strong>
+            <code>https://career-kuch-hatke.infinityfreeapp.com</code>.
+          </li>
+          <li>
+            <strong>Web Server Configuration (<code>.htaccess</code>):</strong>
+            Configured URL rewriting, gzip compression, and MIME types for web
+            fonts and JSON data.
+          </li>
+        </ul>
 
-      <h3 class="academic-subheading">6.3 Automated CI/CD Pipeline (GitHub Actions)</h3>
-      <p>
-        Manual FTP file transfers are prone to human omission and file corruption. To ensure modern professional deployment, an automated <strong>Continuous Integration and Continuous Deployment (CI/CD)</strong> pipeline was established:
-      </p>
-      <ul>
-        <li><strong>Version Control:</strong> Source code is tracked using Git and pushed to GitHub: <code>snehaprajapati-dev/career-kuch-hatke</code>.</li>
-        <li><strong>Workflow Automation (<code>.github/workflows/deploy.yml</code>):</strong> Configured a GitHub Actions runner that automatically listens for push events to the <code>main</code> branch.</li>
-        <li><strong>Encrypted Secret Authentication:</strong> Securely injects encrypted repository secrets (<code>FTP_SERVER</code>, <code>FTP_USERNAME</code>, <code>FTP_PASSWORD</code>) into an FTPS deployment action, publishing updated files to production servers within seconds.</li>
-      </ul>
+        <h3 class="academic-subheading">
+          6.3 Automated CI/CD Pipeline (GitHub Actions)
+        </h3>
+        <p>
+          Manual FTP file transfers are prone to human omission and file
+          corruption. To ensure modern professional deployment, an automated
+          <strong
+            >Continuous Integration and Continuous Deployment (CI/CD)</strong
+          >
+          pipeline was established:
+        </p>
+        <ul>
+          <li>
+            <strong>Version Control:</strong> Source code is tracked using Git
+            and pushed to GitHub:
+            <code>snehaprajapati-dev/career-kuch-hatke</code>.
+          </li>
+          <li>
+            <strong
+              >Workflow Automation
+              (<code>.github/workflows/deploy.yml</code>):</strong
+            >
+            Configured a GitHub Actions runner that automatically listens for
+            push events to the <code>main</code> branch.
+          </li>
+          <li>
+            <strong>Encrypted Secret Authentication:</strong> Securely injects
+            encrypted repository secrets (<code>FTP_SERVER</code>,
+            <code>FTP_USERNAME</code>, <code>FTP_PASSWORD</code>) into an FTPS
+            deployment action, publishing updated files to production servers
+            within seconds.
+          </li>
+        </ul>
 
-      <pre class="academic-code">
+        <pre class="academic-code">
 # GitHub Actions CI/CD Pipeline (.github/workflows/deploy.yml)
 name: Deploy to InfinityFree
 on:
@@ -1026,265 +1499,428 @@ jobs:
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           server-dir: htdocs/
-      </pre>
+      </pre
+        >
 
-      <div class="running-footer">
-        <span>Department of Computer Science &bull; S.Y. B.Sc. CS &bull; Roll No. 89</span>
-        <span>Page 7 of 10</span>
+        <div class="running-footer">
+          <span
+            >Department of Computer Science &bull; S.Y. B.Sc. CS &bull; Roll No.
+            89</span
+          >
+          <span>Page 7 of 10</span>
+        </div>
       </div>
-    </div>
 
-    <div class="page-break"></div>
+      <div class="page-break"></div>
 
-    <!-- ====================================================================
+      <!-- ====================================================================
          PAGE 8: 7.0 SYSTEM TESTING & QUALITY ASSURANCE
          ==================================================================== -->
-    <div class="report-page">
-      <h2 class="academic-heading">7.0 System Testing &amp; Quality Assurance</h2>
+      <div class="report-page">
+        <h2 class="academic-heading">
+          7.0 System Testing &amp; Quality Assurance
+        </h2>
 
-      <h3 class="academic-subheading">7.1 Quality Assurance &amp; Verification Matrix</h3>
-      <p>
-        Comprehensive quality assurance protocols were executed across development and production staging:
-      </p>
+        <h3 class="academic-subheading">
+          7.1 Quality Assurance &amp; Verification Matrix
+        </h3>
+        <p>
+          Comprehensive quality assurance protocols were executed across
+          development and production staging:
+        </p>
 
-      <table class="academic-table">
-        <thead>
-          <tr>
-            <th style="width: 25%;">Testing Domain</th>
-            <th style="width: 45%;">Verification Procedure</th>
-            <th style="width: 30%;">Outcome &amp; Status</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><strong>Cross-Browser Compatibility</strong></td>
-            <td>Audited on Google Chrome 120+, Mozilla Firefox 122+, Microsoft Edge, and Apple Safari iOS.</td>
-            <td><strong>Passed:</strong> Consistent layout rendering, flex alignments, and CSS variable inheritance.</td>
-          </tr>
-          <tr>
-            <td><strong>Mobile Responsiveness</strong></td>
-            <td>Simulated viewports from 360px (mobile) to 768px (tablet) and 1440px (desktop monitor).</td>
-            <td><strong>Passed:</strong> Equalized card heights, centered footer columns, touch tap targets.</td>
-          </tr>
-          <tr>
-            <td><strong>Syntax &amp; Runtime Integrity</strong></td>
-            <td>Validated via Node.js compiler (<code>node -c script.js</code>) and browser dev tools.</td>
-            <td><strong>Passed:</strong> Zero syntax errors, uncaught promise rejections, or console exceptions.</td>
-          </tr>
-          <tr>
-            <td><strong>Input Validation &amp; Security</strong></td>
-            <td>Tested SQL injection and XSS payloads (&lt;script&gt;) in feedback and suggestion inputs.</td>
-            <td><strong>Passed:</strong> Inputs strictly escaped and sanitized; invalid emails rejected.</td>
-          </tr>
-          <tr>
-            <td><strong>Cache Invalidation Strategy</strong></td>
-            <td>Appended explicit cache-busting query version parameters (<code>?v=6.0</code>) to script/style tags.</td>
-            <td><strong>Passed:</strong> Instant updates on client devices without stale browser caching.</td>
-          </tr>
-        </tbody>
-      </table>
+        <table class="academic-table">
+          <thead>
+            <tr>
+              <th style="width: 25%">Testing Domain</th>
+              <th style="width: 45%">Verification Procedure</th>
+              <th style="width: 30%">Outcome &amp; Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Cross-Browser Compatibility</strong></td>
+              <td>
+                Audited on Google Chrome 120+, Mozilla Firefox 122+, Microsoft
+                Edge, and Apple Safari iOS.
+              </td>
+              <td>
+                <strong>Passed:</strong> Consistent layout rendering, flex
+                alignments, and CSS variable inheritance.
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Mobile Responsiveness</strong></td>
+              <td>
+                Simulated viewports from 360px (mobile) to 768px (tablet) and
+                1440px (desktop monitor).
+              </td>
+              <td>
+                <strong>Passed:</strong> Equalized card heights, centered footer
+                columns, touch tap targets.
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Syntax &amp; Runtime Integrity</strong></td>
+              <td>
+                Validated via Node.js compiler (<code>node -c script.js</code>)
+                and browser dev tools.
+              </td>
+              <td>
+                <strong>Passed:</strong> Zero syntax errors, uncaught promise
+                rejections, or console exceptions.
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Input Validation &amp; Security</strong></td>
+              <td>
+                Tested SQL injection and XSS payloads (&lt;script&gt;) in
+                feedback and suggestion inputs.
+              </td>
+              <td>
+                <strong>Passed:</strong> Inputs strictly escaped and sanitized;
+                invalid emails rejected.
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Cache Invalidation Strategy</strong></td>
+              <td>
+                Appended explicit cache-busting query version parameters
+                (<code>?v=6.0</code>) to script/style tags.
+              </td>
+              <td>
+                <strong>Passed:</strong> Instant updates on client devices
+                without stale browser caching.
+              </td>
+            </tr>
+          </tbody>
+        </table>
 
-      <h3 class="academic-subheading">7.2 Algorithmic Verification: Search &amp; Bookmarking Engines</h3>
-      <ul>
-        <li><strong>Synonym Mapping Test:</strong> Searching conversational keywords (e.g., <em>"coding"</em>, <em>"camera"</em>, <em>"food"</em>) correctly retrieves <em>"Ethical Hacker"</em>, <em>"Wildlife Photographer"</em>, and <em>"Food Stylist"</em> via the pre-indexed keyword map.</li>
-        <li><strong>Bookmark Persistence Test:</strong> Saving bookmarks, refreshing the browser, and switching between categories verified that <code>localStorage</code> array serialization correctly maintains saved states.</li>
-        <li><strong>Empty State Test:</strong> Selecting the "Bookmarked" filter with zero saved careers correctly presents a helpful prompt with a working "View All Careers" reset button.</li>
-      </ul>
+        <h3 class="academic-subheading">
+          7.2 Algorithmic Verification: Search &amp; Bookmarking Engines
+        </h3>
+        <ul>
+          <li>
+            <strong>Synonym Mapping Test:</strong> Searching conversational
+            keywords (e.g., <em>"coding"</em>, <em>"camera"</em>,
+            <em>"food"</em>) correctly retrieves <em>"Ethical Hacker"</em>,
+            <em>"Wildlife Photographer"</em>, and <em>"Food Stylist"</em> via
+            the pre-indexed keyword map.
+          </li>
+          <li>
+            <strong>Bookmark Persistence Test:</strong> Saving bookmarks,
+            refreshing the browser, and switching between categories verified
+            that <code>localStorage</code> array serialization correctly
+            maintains saved states.
+          </li>
+          <li>
+            <strong>Empty State Test:</strong> Selecting the "Bookmarked" filter
+            with zero saved careers correctly presents a helpful prompt with a
+            working "View All Careers" reset button.
+          </li>
+        </ul>
 
-      <div class="running-footer">
-        <span>Department of Computer Science &bull; S.Y. B.Sc. CS &bull; Roll No. 89</span>
-        <span>Page 8 of 10</span>
+        <div class="running-footer">
+          <span
+            >Department of Computer Science &bull; S.Y. B.Sc. CS &bull; Roll No.
+            89</span
+          >
+          <span>Page 8 of 10</span>
+        </div>
       </div>
-    </div>
 
-    <div class="page-break"></div>
+      <div class="page-break"></div>
 
-    <!-- ====================================================================
+      <!-- ====================================================================
          PAGE 9: 8.0 WEBSITE USER INTERFACE SCREENSHOTS (MAX 3 IMAGES)
          Matches Mam's Requirement: Exactly 3 Core Screenshots
          ==================================================================== -->
-    <div class="report-page">
-      <h2 class="academic-heading">8.0 Website User Interface Screenshots (3 Core Modules)</h2>
-      <p style="margin-bottom: 6px;">
-        The following screenshots showcase the primary responsive user interfaces implemented across the <strong>Career Kuch Hatke</strong> web platform (captured live from production deployment):
-      </p>
+      <div class="report-page">
+        <h2 class="academic-heading">
+          8.0 Website User Interface Screenshots (3 Core Modules)
+        </h2>
+        <p style="margin-bottom: 6px">
+          The following screenshots showcase the primary responsive user
+          interfaces implemented across the
+          <strong>Career Kuch Hatke</strong> web platform (captured live from
+          production deployment):
+        </p>
 
-      <div class="screenshot-three-grid">
-        <!-- Figure 8.1: Home Page -->
-        <div class="screenshot-card-box">
-          <div class="img-frame" style="max-height: 290px;">
-            <img src="images/screenshot-home.png" alt="Figure 8.1: Home Page Interface" style="max-height: 280px;" />
+        <div class="screenshot-three-grid">
+          <!-- Figure 8.1: Home Page -->
+          <div class="screenshot-card-box">
+            <div class="img-frame" style="max-height: 290px">
+              <img
+                src="images/screenshot-home.png"
+                alt="Figure 8.1: Home Page Interface"
+                style="max-height: 280px"
+              />
+            </div>
+            <div class="caption-text">
+              <strong
+                >Figure 8.1: Home Page Interface
+                (<code>index.html</code>)</strong
+              >
+              &mdash; Showcases the hero banner, interactive "Rat Race vs. Hatke
+              Career" problem-solution comparative dilemma matrix, and 5 domain
+              category spotlights.
+            </div>
           </div>
-          <div class="caption-text">
-            <strong>Figure 8.1: Home Page Interface (<code>index.html</code>)</strong> &mdash; Showcases the hero banner, interactive "Rat Race vs. Hatke Career" problem-solution comparative dilemma matrix, and 5 domain category spotlights.
+
+          <!-- 2 Side-by-Side Images -->
+          <div class="two-cols-row">
+            <!-- Figure 8.2: Career Detail Roadmap -->
+            <div class="screenshot-card-box">
+              <div class="img-frame" style="max-height: 360px">
+                <img
+                  src="images/screenshot-roadmap.png"
+                  alt="Figure 8.2: Career Detail Roadmap"
+                  style="max-height: 350px"
+                />
+              </div>
+              <div class="caption-text">
+                <strong
+                  >Figure 8.2: Career Detail Roadmap
+                  (<code>career-detail.html</code>)</strong
+                >
+                &mdash; Illustrates AI Prompt Engineer roadmap, salary packages,
+                and WhatsApp parent pitch tool.
+              </div>
+            </div>
+
+            <!-- Figure 8.3: Contact & Suggestion Form -->
+            <div class="screenshot-card-box">
+              <div class="img-frame" style="max-height: 360px">
+                <img
+                  src="images/screenshot-contact.png"
+                  alt="Figure 8.3: Contact & Suggestion Form"
+                  style="max-height: 350px"
+                />
+              </div>
+              <div class="caption-text">
+                <strong
+                  >Figure 8.3: Contact &amp; Suggestion Portal
+                  (<code>contact.html</code>)</strong
+                >
+                &mdash; Displays user feedback form with client regex validation
+                and server-side sanitized submission.
+              </div>
+            </div>
           </div>
         </div>
 
-        <!-- 2 Side-by-Side Images -->
-        <div class="two-cols-row">
-          <!-- Figure 8.2: Career Detail Roadmap -->
-          <div class="screenshot-card-box">
-            <div class="img-frame" style="max-height: 360px;">
-              <img src="images/screenshot-roadmap.png" alt="Figure 8.2: Career Detail Roadmap" style="max-height: 350px;" />
-            </div>
-            <div class="caption-text">
-              <strong>Figure 8.2: Career Detail Roadmap (<code>career-detail.html</code>)</strong> &mdash; Illustrates AI Prompt Engineer roadmap, salary packages, and WhatsApp parent pitch tool.
-            </div>
-          </div>
-
-          <!-- Figure 8.3: Contact & Suggestion Form -->
-          <div class="screenshot-card-box">
-            <div class="img-frame" style="max-height: 360px;">
-              <img src="images/screenshot-contact.png" alt="Figure 8.3: Contact & Suggestion Form" style="max-height: 350px;" />
-            </div>
-            <div class="caption-text">
-              <strong>Figure 8.3: Contact &amp; Suggestion Portal (<code>contact.html</code>)</strong> &mdash; Displays user feedback form with client regex validation and server-side sanitized submission.
-            </div>
-          </div>
+        <div class="running-footer">
+          <span
+            >Department of Computer Science &bull; S.Y. B.Sc. CS &bull; Roll No.
+            89</span
+          >
+          <span>Page 9 of 10</span>
         </div>
       </div>
 
-      <div class="running-footer">
-        <span>Department of Computer Science &bull; S.Y. B.Sc. CS &bull; Roll No. 89</span>
-        <span>Page 9 of 10</span>
-      </div>
-    </div>
+      <div class="page-break"></div>
 
-    <div class="page-break"></div>
-
-    <!-- ====================================================================
+      <!-- ====================================================================
          PAGE 10: 9.0 LIMITATIONS, FUTURE SCOPE, CONCLUSION & REFERENCES
          ==================================================================== -->
-    <div class="report-page">
-      <h2 class="academic-heading">9.0 Limitations, Future Scope, Conclusion &amp; References</h2>
+      <div class="report-page">
+        <h2 class="academic-heading">
+          9.0 Limitations, Future Scope, Conclusion &amp; References
+        </h2>
 
-      <h3 class="academic-subheading">9.1 Current System Limitations</h3>
-      <ul>
-        <li><strong>Client-Side Content Storage:</strong> Career information currently resides in structured client-side JavaScript objects rather than a headless database CMS.</li>
-        <li><strong>Device-Specific Bookmarks:</strong> Bookmarks rely on browser <code>localStorage</code> and do not synchronize automatically across separate devices.</li>
-      </ul>
+        <h3 class="academic-subheading">9.1 Current System Limitations</h3>
+        <ul>
+          <li>
+            <strong>Client-Side Content Storage:</strong> Career information
+            currently resides in structured client-side JavaScript objects
+            rather than a headless database CMS.
+          </li>
+          <li>
+            <strong>Device-Specific Bookmarks:</strong> Bookmarks rely on
+            browser <code>localStorage</code> and do not synchronize
+            automatically across separate devices.
+          </li>
+        </ul>
 
-      <h3 class="academic-subheading">9.2 Future Scope &amp; Planned Enhancements</h3>
-      <ol>
-        <li><strong>Cloud-Synchronized Student Accounts:</strong> User authentication with hashed passwords (<code>password_hash</code>) to persist bookmarks and quiz results across devices.</li>
-        <li><strong>Direct Mentorship Scheduling:</strong> Integrated calendar booking allowing students to schedule 1-on-1 counseling video calls with practicing domain professionals.</li>
-        <li><strong>AI Career Chatbot:</strong> LLM integration to answer student queries regarding college entrance cutoffs, portfolio requirements, and job outlooks.</li>
-      </ol>
+        <h3 class="academic-subheading">
+          9.2 Future Scope &amp; Planned Enhancements
+        </h3>
+        <ol>
+          <li>
+            <strong>Cloud-Synchronized Student Accounts:</strong> User
+            authentication with hashed passwords (<code>password_hash</code>) to
+            persist bookmarks and quiz results across devices.
+          </li>
+          <li>
+            <strong>Direct Mentorship Scheduling:</strong> Integrated calendar
+            booking allowing students to schedule 1-on-1 counseling video calls
+            with practicing domain professionals.
+          </li>
+          <li>
+            <strong>AI Career Chatbot:</strong> LLM integration to answer
+            student queries regarding college entrance cutoffs, portfolio
+            requirements, and job outlooks.
+          </li>
+        </ol>
 
-      <h3 class="academic-subheading">9.3 Academic Conclusion</h3>
-      <p>
-        The <strong>Career Kuch Hatke</strong> project successfully fulfills all academic specifications stipulated for the B.Sc. Computer Science Field Project curriculum (Academic Year 2026&ndash;2027). It demonstrates a complete, production-grade synthesis of semantic HTML5, responsive CSS3 Grid and Flexbox, asynchronous JavaScript event handling, persistent browser storage, and secure PHP 8.2 / MySQL backend administration. By addressing an authentic, widespread dilemma in the Indian student community, the project delivers high social utility paired with technical competency.
-      </p>
+        <h3 class="academic-subheading">9.3 Academic Conclusion</h3>
+        <p>
+          The <strong>Career Kuch Hatke</strong> project successfully fulfills
+          all academic specifications stipulated for the B.Sc. Computer Science
+          Field Project curriculum (Academic Year 2026&ndash;2027). It
+          demonstrates a complete, production-grade synthesis of semantic HTML5,
+          responsive CSS3 Grid and Flexbox, asynchronous JavaScript event
+          handling, persistent browser storage, and secure PHP 8.2 / MySQL
+          backend administration. By addressing an authentic, widespread dilemma
+          in the Indian student community, the project delivers high social
+          utility paired with technical competency.
+        </p>
 
-      <h3 class="academic-subheading">9.4 Academic References &amp; Authoritative Citations</h3>
-      <ol style="font-size: 9pt; line-height: 1.35;">
-        <li><strong>Glassdoor India &amp; AmbitionBox:</strong> 2025–2026 Indian Industry Compensation &amp; Salary Benchmark Reports for emerging tech and creative vocations.</li>
-        <li><strong>University Grants Commission (UGC) &amp; AICTE:</strong> National institutional accreditation directories, degree prerequisites, and recognized higher education programs.</li>
-        <li><strong>Mozilla Developer Network (MDN Web Docs):</strong> HTML5 Semantics, CSS Flexible Box, CSS Grid, and Web Storage API documentation.</li>
-        <li><strong>The PHP Group:</strong> Official PHP 8.2 Documentation &mdash; Filter Functions, Data Sanitization, Prepared Statements, and Session Security Standards.</li>
-        <li><strong>MySQL Documentation:</strong> MySQL 8.0 Reference Manual &mdash; Relational Schema Design, Foreign Keys, and InnoDB Storage Engine.</li>
-      </ol>
+        <h3 class="academic-subheading">
+          9.4 Academic References &amp; Authoritative Citations
+        </h3>
+        <ol style="font-size: 9pt; line-height: 1.35">
+          <li>
+            <strong>Glassdoor India &amp; AmbitionBox:</strong> 2025–2026 Indian
+            Industry Compensation &amp; Salary Benchmark Reports for emerging
+            tech and creative vocations.
+          </li>
+          <li>
+            <strong>University Grants Commission (UGC) &amp; AICTE:</strong>
+            National institutional accreditation directories, degree
+            prerequisites, and recognized higher education programs.
+          </li>
+          <li>
+            <strong>Mozilla Developer Network (MDN Web Docs):</strong> HTML5
+            Semantics, CSS Flexible Box, CSS Grid, and Web Storage API
+            documentation.
+          </li>
+          <li>
+            <strong>The PHP Group:</strong> Official PHP 8.2 Documentation
+            &mdash; Filter Functions, Data Sanitization, Prepared Statements,
+            and Session Security Standards.
+          </li>
+          <li>
+            <strong>MySQL Documentation:</strong> MySQL 8.0 Reference Manual
+            &mdash; Relational Schema Design, Foreign Keys, and InnoDB Storage
+            Engine.
+          </li>
+        </ol>
 
-      <div class="running-footer">
-        <span>Department of Computer Science &bull; S.Y. B.Sc. CS &bull; Roll No. 89</span>
-        <span>Page 10 of 10</span>
+        <div class="running-footer">
+          <span
+            >Department of Computer Science &bull; S.Y. B.Sc. CS &bull; Roll No.
+            89</span
+          >
+          <span>Page 10 of 10</span>
+        </div>
       </div>
     </div>
 
-  </div>
+    <script>
+      function showToast(message) {
+        const toast = document.getElementById("toastAlert");
+        toast.innerText = message;
+        toast.style.display = "block";
+        setTimeout(function () {
+          toast.style.display = "none";
+        }, 4000);
+      }
 
-  <script>
-    function showToast(message) {
-      const toast = document.getElementById("toastAlert");
-      toast.innerText = message;
-      toast.style.display = "block";
-      setTimeout(function() {
-        toast.style.display = "none";
-      }, 4000);
-    }
+      function copyDocumentRichText() {
+        const container = document.getElementById("academicReport");
+        const clone = container.cloneNode(true);
 
-    function copyDocumentRichText() {
-      const container = document.getElementById("academicReport");
-      const clone = container.cloneNode(true);
+        // Convert image sources to full absolute production URLs so Google Docs fetches them
+        const liveBase = "https://career-kuch-hatke.infinityfreeapp.com/";
+        const images = clone.querySelectorAll("img");
+        images.forEach(function (img) {
+          const src = img.getAttribute("src");
+          if (src && !src.startsWith("http")) {
+            img.setAttribute("src", liveBase + src.replace(/^\/+/, ""));
+          }
+          img.style.maxWidth = "100%";
+          img.style.height = "auto";
+        });
 
-      // Convert image sources to full absolute production URLs so Google Docs fetches them
-      const liveBase = "https://career-kuch-hatke.infinityfreeapp.com/";
-      const images = clone.querySelectorAll("img");
-      images.forEach(function(img) {
-        const src = img.getAttribute("src");
-        if (src && !src.startsWith("http")) {
-          img.setAttribute("src", liveBase + src.replace(/^\/+/, ""));
-        }
-        img.style.maxWidth = "100%";
-        img.style.height = "auto";
-      });
-
-      // Strip any backgrounds or highlights from all nodes to ensure 0% black boxes in Google Docs
-      const allElements = clone.querySelectorAll("*");
-      allElements.forEach(function(el) {
-        el.style.backgroundColor = "transparent";
-        el.style.color = "#000000";
-        if (el.tagName === "TD" || el.tagName === "TH") {
-          el.style.border = "1px solid #000000";
-          el.style.padding = "4px 8px";
+        // Strip any backgrounds or highlights from all nodes to ensure 0% black boxes in Google Docs
+        const allElements = clone.querySelectorAll("*");
+        allElements.forEach(function (el) {
           el.style.backgroundColor = "transparent";
           el.style.color = "#000000";
-        }
-        if (el.tagName === "TABLE") {
-          el.style.borderCollapse = "collapse";
-          el.style.width = "100%";
-          el.style.border = "1px solid #000000";
-          el.style.backgroundColor = "transparent";
-        }
-      });
-
-      const cleanHtml = clone.innerHTML;
-      const plainText = container.innerText;
-
-      if (navigator.clipboard && window.ClipboardItem) {
-        const htmlBlob = new Blob([cleanHtml], { type: "text/html" });
-        const textBlob = new Blob([plainText], { type: "text/plain" });
-        navigator.clipboard.write([
-          new ClipboardItem({
-            "text/html": htmlBlob,
-            "text/plain": textBlob
-          })
-        ]).then(function() {
-          showToast("Document copied cleanly! Paste (Ctrl + V) into Google Docs without black boxes.");
-        }).catch(function() {
-          fallbackCopy();
+          if (el.tagName === "TD" || el.tagName === "TH") {
+            el.style.border = "1px solid #000000";
+            el.style.padding = "4px 8px";
+            el.style.backgroundColor = "transparent";
+            el.style.color = "#000000";
+          }
+          if (el.tagName === "TABLE") {
+            el.style.borderCollapse = "collapse";
+            el.style.width = "100%";
+            el.style.border = "1px solid #000000";
+            el.style.backgroundColor = "transparent";
+          }
         });
-      } else {
-        fallbackCopy();
+
+        const cleanHtml = clone.innerHTML;
+        const plainText = container.innerText;
+
+        if (navigator.clipboard && window.ClipboardItem) {
+          const htmlBlob = new Blob([cleanHtml], { type: "text/html" });
+          const textBlob = new Blob([plainText], { type: "text/plain" });
+          navigator.clipboard
+            .write([
+              new ClipboardItem({
+                "text/html": htmlBlob,
+                "text/plain": textBlob,
+              }),
+            ])
+            .then(function () {
+              showToast(
+                "Document copied cleanly! Paste (Ctrl + V) into Google Docs without black boxes.",
+              );
+            })
+            .catch(function () {
+              fallbackCopy();
+            });
+        } else {
+          fallbackCopy();
+        }
       }
-    }
 
-    function fallbackCopy() {
-      const container = document.getElementById("academicReport");
-      const selection = window.getSelection();
-      const range = document.createRange();
-      range.selectNodeContents(container);
-      selection.removeAllRanges();
-      selection.addRange(range);
+      function fallbackCopy() {
+        const container = document.getElementById("academicReport");
+        const selection = window.getSelection();
+        const range = document.createRange();
+        range.selectNodeContents(container);
+        selection.removeAllRanges();
+        selection.addRange(range);
 
-      try {
-        document.execCommand("copy");
-        showToast("Copied to clipboard! If any background appears, select text in Docs and set Highlight to None.");
-      } catch (err) {
-        alert("Please press Ctrl + A, then Ctrl + C on this page to copy.");
+        try {
+          document.execCommand("copy");
+          showToast(
+            "Copied to clipboard! If any background appears, select text in Docs and set Highlight to None.",
+          );
+        } catch (err) {
+          alert("Please press Ctrl + A, then Ctrl + C on this page to copy.");
+        }
+        selection.removeAllRanges();
       }
-      selection.removeAllRanges();
-    }
 
-    function copyDocumentPlainText() {
-      const container = document.getElementById("academicReport");
-      const text = container.innerText;
-      navigator.clipboard.writeText(text).then(function() {
-        showToast("Plain text copied to clipboard!");
-      }).catch(function() {
-        showToast("Failed to copy plain text. Please select all and copy manually.");
-      });
-    }
-  </script>
-</body>
+      function copyDocumentPlainText() {
+        const container = document.getElementById("academicReport");
+        const text = container.innerText;
+        navigator.clipboard
+          .writeText(text)
+          .then(function () {
+            showToast("Plain text copied to clipboard!");
+          })
+          .catch(function () {
+            showToast(
+              "Failed to copy plain text. Please select all and copy manually.",
+            );
+          });
+      }
+    </script>
+  </body>
 </html>
