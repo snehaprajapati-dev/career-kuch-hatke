@@ -31,37 +31,37 @@
 
 [data-theme="dark"] {
   color-scheme: dark;
-  /* 🎨 BASE COLORS */
-  --bg-main: #0c1519; /* Chinese Black - main background */
-  --bg-card: #162127; /* Dark Jungle Green - cards */
-  --bg-navbar: #0c1519; /* Navbar same as background for consistency */
-  --bg-light: #1a252c; /* Slightly lighter for sections */
-  --bg-dark: #050a0c; /* Even darker for footer */
+  /* 🎨 BASE COLORS - MIDNIGHT OBSIDIAN & VELVET VIOLET */
+  --bg-main: #0c0817; /* Deepest Midnight Obsidian */
+  --bg-card: #161026; /* Elevated Velvet Surface */
+  --bg-navbar: rgba(14, 9, 26, 0.94); /* Frosted Glass Obsidian */
+  --bg-light: #120c22; /* Slightly elevated section background */
+  --bg-dark: #07040d; /* Deep obsidian for footer / underlays */
 
-  /* 📝 TEXT COLORS */
-  --text-main: #e8e6e3; /* Soft white for readability */
-  --text-secondary: #a39a8f; /* Muted beige */
-  --text-dark: #e8e6e3; /* Override */
-  --text-gray: #8a8177; /* Subdued gray */
+  /* 📝 TEXT COLORS - HIGH CONTRAST & READABILITY */
+  --text-main: #ede8f5; /* Crisp, elegant soft white-violet */
+  --text-secondary: #a89bc2; /* Muted lavender-slate */
+  --text-dark: #ede8f5; /* Override */
+  --text-gray: #8a7c9f; /* Subdued violet-gray */
 
-  /* 🎯 ACCENT COLORS - CAREFULLY BALANCED */
-  --primary: #cf9d7b; /* Antique Brass - main accent */
-  --secondary: #724b39; /* Coffee - secondary accent */
-  --accent: #d4a574; /* Slightly brighter Antique Brass */
+  /* 🎯 ACCENT COLORS - VIBRANT BRAND COMPLEMENTS */
+  --primary: #c084fc; /* Vibrant Royal Violet-Plum */
+  --secondary: #2dd4bf; /* Glowing Emerald Teal */
+  --accent: #ffe0a0; /* Radiant Warm Gold */
 
   /* 🔲 UI ELEMENTS */
-  --border-color: #253039; /* Subtle borders */
-  --pink-light: #3a3534; /* Jet for subtle backgrounds */
-  --coral: #cf9d7b; /* Match primary */
+  --border-color: rgba(155, 89, 182, 0.22); /* Subtle violet glass border */
+  --pink-light: #281938; /* Soft plum tint */
+  --coral: #f472b6; /* Luminous rose */
 
   /* 💫 SHADOWS & EFFECTS */
-  --shadow-sm: 0 2px 12px rgba(0, 0, 0, 0.6);
-  --shadow-md: 0 5px 25px rgba(0, 0, 0, 0.8);
-  --table-hover: #1f2d36;
+  --shadow-sm: 0 4px 16px rgba(0, 0, 0, 0.45);
+  --shadow-md: 0 8px 30px rgba(0, 0, 0, 0.65), 0 0 15px rgba(155, 89, 182, 0.12);
+  --table-hover: #1e1533;
 
-  /* 🎨 GRADIENTS (for headers, buttons, etc) */
-  --gradient-primary: linear-gradient(135deg, #724b39 0%, #3a3534 100%);
-  --gradient-card: linear-gradient(145deg, #162127 0%, #1a252c 100%);
+  /* 🎨 GRADIENTS (for hero, headers, cards) */
+  --gradient-primary: linear-gradient(135deg, #3b1d6b 0%, #1a0e35 50%, #0c0817 100%);
+  --gradient-card: linear-gradient(145deg, #18112b 0%, #1f1438 100%);
 }
 
 /* ============================================
@@ -94,7 +94,7 @@
 
 [data-theme="dark"] .logo {
   color: var(--accent);
-  text-shadow: 0 0 10px rgba(207, 157, 123, 0.3);
+  text-shadow: 0 0 12px rgba(255, 224, 160, 0.4);
 }
 
 [data-theme="dark"] .nav-menu li a {
@@ -125,7 +125,7 @@
 [data-theme="dark"] .theme-toggle:hover {
   background: var(--secondary);
   border-color: var(--accent);
-  box-shadow: 0 0 15px rgba(207, 157, 123, 0.4);
+  box-shadow: 0 0 15px rgba(255, 224, 160, 0.45);
 }
 
 /* ============================================
@@ -147,7 +147,7 @@
 }
 
 [data-theme="dark"] .breadcrumb-nav {
-  border-bottom-color: rgba(207, 157, 123, 0.2);
+  border-bottom-color: rgba(155, 89, 182, 0.25);
 }
 
 [data-theme="dark"] .breadcrumb-nav a {
@@ -201,13 +201,13 @@
 
 [data-theme="dark"] .stat-box:hover {
   border-color: var(--accent);
-  box-shadow: 0 8px 30px rgba(207, 157, 123, 0.3);
+  box-shadow: 0 10px 32px rgba(155, 89, 182, 0.35);
   transform: translateY(-8px);
 }
 
 [data-theme="dark"] .stat-box h3 {
   color: var(--accent);
-  text-shadow: 0 0 15px rgba(207, 157, 123, 0.4);
+  text-shadow: 0 0 15px rgba(255, 224, 160, 0.45);
 }
 
 [data-theme="dark"] .stat-box p {
@@ -236,7 +236,7 @@
 [data-theme="dark"] .category-card:hover,
 [data-theme="dark"] .career-card:hover {
   border-color: var(--accent);
-  box-shadow: 0 12px 35px rgba(207, 157, 123, 0.25);
+  box-shadow: 0 12px 35px rgba(255, 224, 160, 0.25);
   transform: translateY(-10px);
 }
 
@@ -259,7 +259,7 @@
 [data-theme="dark"] .category-card a:hover,
 [data-theme="dark"] .career-card a:not(.card-btn):hover {
   color: var(--text-main);
-  text-shadow: 0 0 8px rgba(207, 157, 123, 0.5);
+  text-shadow: 0 0 8px rgba(255, 224, 160, 0.5);
 }
 
 /* ============================================
@@ -267,7 +267,7 @@
    ============================================ */
 
 [data-theme="dark"] .quiz-cta {
-  background: linear-gradient(135deg, #1a252c 0%, #162127 100%);
+  background: linear-gradient(135deg, #1f1438 0%, #150d28 100%);
   border-top: 3px solid var(--accent);
   border-bottom: 3px solid var(--accent);
 }
@@ -290,7 +290,7 @@
 
 [data-theme="dark"] .btn-primary {
   background-color: var(--accent);
-  color: var(--bg-dark);
+  color: #0c0817;
   border: 2px solid var(--accent);
   font-weight: 700;
 }
@@ -299,7 +299,7 @@
   background-color: transparent;
   color: var(--accent);
   border-color: var(--accent);
-  box-shadow: 0 0 20px rgba(207, 157, 123, 0.4);
+  box-shadow: 0 0 20px rgba(255, 224, 160, 0.5);
 }
 
 [data-theme="dark"] .btn-secondary {
@@ -310,8 +310,8 @@
 
 [data-theme="dark"] .btn-secondary:hover {
   background-color: var(--accent);
-  color: var(--bg-dark);
-  box-shadow: 0 5px 20px rgba(207, 157, 123, 0.3);
+  color: #0c0817;
+  box-shadow: 0 5px 20px rgba(255, 224, 160, 0.35);
 }
 
 /* ============================================
@@ -324,7 +324,7 @@
 }
 
 [data-theme="dark"] .footer-intro {
-  border-bottom-color: rgba(207, 157, 123, 0.15);
+  border-bottom-color: rgba(155, 89, 182, 0.2);
 }
 
 [data-theme="dark"] .footer-intro h3,
@@ -343,11 +343,11 @@
 
 [data-theme="dark"] .footer-section a:hover {
   color: var(--accent);
-  text-shadow: 0 0 8px rgba(207, 157, 123, 0.3);
+  text-shadow: 0 0 8px rgba(255, 224, 160, 0.35);
 }
 
 [data-theme="dark"] .footer-bottom {
-  background-color: rgba(5, 10, 12, 0.9);
+  background-color: rgba(7, 4, 13, 0.95);
   border-top: 1px solid var(--accent);
 }
 
@@ -372,7 +372,7 @@
   [data-theme="dark"] .nav-menu li a.active {
     background: linear-gradient(
       to right,
-      rgba(207, 157, 123, 0.15),
+      rgba(255, 224, 160, 0.15),
       transparent
     );
     border-left: 4px solid var(--accent);
@@ -397,9 +397,9 @@
 [data-theme="dark"] .filter-btn:hover,
 [data-theme="dark"] .filter-btn.active {
   background-color: var(--accent);
-  color: var(--bg-dark);
+  color: #0c0817;
   border-color: var(--accent);
-  box-shadow: 0 4px 15px rgba(207, 157, 123, 0.3);
+  box-shadow: 0 4px 15px rgba(255, 224, 160, 0.35);
 }
 
 /* ============================================
@@ -418,7 +418,7 @@
 [data-theme="dark"] textarea:focus,
 [data-theme="dark"] select:focus {
   border-color: var(--accent);
-  box-shadow: 0 0 15px rgba(207, 157, 123, 0.2);
+  box-shadow: 0 0 15px rgba(255, 224, 160, 0.25);
   outline: none;
 }
 
@@ -470,7 +470,7 @@
 
 [data-theme="dark"] .category-card:hover,
 [data-theme="dark"] .career-card:hover {
-  box-shadow: 0 10px 30px rgba(207, 157, 123, 0.3); /* Antique Brass glow */
+  box-shadow: 0 10px 30px rgba(255, 224, 160, 0.28);
   border-color: var(--accent);
 }
 
@@ -640,7 +640,7 @@
 
 [data-theme="dark"] .detail-card.active {
   border-color: var(--accent);
-  box-shadow: 0 8px 25px rgba(207, 157, 123, 0.3);
+  box-shadow: 0 8px 25px rgba(255, 224, 160, 0.3);
 }
 
 [data-theme="dark"] .detail-card.active .card-header {

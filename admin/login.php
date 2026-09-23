@@ -29,8 +29,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@400;600;700;800&family=Tenor+Sans&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/admin.css">
+    <script>
+    (function(){
+        var s = localStorage.getItem('ckh_theme');
+        if(s==='dark') document.documentElement.setAttribute('data-theme','dark');
+    })();
+    </script>
+    <link rel="stylesheet" href="../css/style.css?v=4.0">
+    <link rel="stylesheet" href="../css/admin.css?v=4.0">
 </head>
 <body class="login-page">
 
