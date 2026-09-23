@@ -49,13 +49,19 @@ while ($row = mysqli_fetch_assoc($result)) {
     // Format readable date
     $dateDisplay = !empty($row['created_at']) ? date("d M Y, h:i A", strtotime($row['created_at'])) : '';
 
+    // Clean HTML entities if any were stored encoded (e.g. &amp; -> &)
+    $name = html_entity_decode($row['name'], ENT_QUOTES, 'UTF-8');
+    $email = html_entity_decode($row['email'], ENT_QUOTES, 'UTF-8');
+    $subject = html_entity_decode($row['subject'], ENT_QUOTES, 'UTF-8');
+    $message = html_entity_decode($row['message'], ENT_QUOTES, 'UTF-8');
+
     fputcsv($output, [
-        $row['name'],
-        $row['email'],
+        $name,
+        $email,
         $phoneDisplay,
-        $row['subject'],
+        $subject,
         $userType,
-        $row['message'],
+        $message,
         $status,
         $dateDisplay
     ]);

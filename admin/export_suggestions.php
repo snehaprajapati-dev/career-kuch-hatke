@@ -36,10 +36,15 @@ while ($row = mysqli_fetch_assoc($result)) {
     $status = ucfirst($row['status']);
     $dateDisplay = !empty($row['created_at']) ? date("d M Y, h:i A", strtotime($row['created_at'])) : '';
 
+    // Clean HTML entities if any were stored encoded (e.g. &amp; -> &)
+    $careerName = html_entity_decode($row['career_name'], ENT_QUOTES, 'UTF-8');
+    $careerReason = html_entity_decode($row['career_reason'], ENT_QUOTES, 'UTF-8');
+    $suggesterName = html_entity_decode($row['suggester_name'], ENT_QUOTES, 'UTF-8');
+
     fputcsv($output, [
-        $row['career_name'],
-        $row['career_reason'],
-        $row['suggester_name'],
+        $careerName,
+        $careerReason,
+        $suggesterName,
         $status,
         $dateDisplay
     ]);
