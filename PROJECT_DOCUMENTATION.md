@@ -1,80 +1,110 @@
 # ==============================================================================
-
-# PROJECT DOCUMENTATION REPORT (TOTAL 8 PAGES - FORMAL ACADEMIC FORMAT)
-
-# (4 Pages of Project Documentation + 4 Pages of Full-Page Website Screenshots)
-
+# STANDARD PROJECT DOCUMENTATION REPORT (10 PAGES + CERTIFICATE)
 # ==============================================================================
+
+<!-- ======================= CERTIFICATE (PAGE 0) ======================= -->
+
+# VIDYAVARDHINI’S
+### ANNASAHEB VARTAK COLLEGE OF ARTS,
+### KEDARNATH MALHOTRA COLLEGE OF COMMERCE,
+### E. S. ANDRADES COLLEGE OF SCIENCE
+#### DEPARTMENT OF COMPUTER SCIENCE
+*(Affiliated to the University of Mumbai) • Vasai Road (West), Dist. Palghar*
+
+## CERTIFICATE
+
+**Class:** S.Y. B.Sc. CS &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Academic Year:** 2026 – 2027  
+
+This is to certify that the project work entitled **CAREER KUCH HATKE** entered in this report is the bonafide work of Kumari **Sneha Mahendra Prajapati** of class **S.Y. B.Sc. CS**, Division **—**, Institutional Roll No. **89**, University Exam No. `________________`, who has satisfactorily completed the required Field Project work in the college laboratory as prescribed by the University of Mumbai for Semester III during the academic year 2026 – 2027.
+
+| Head of the Department | External Examiner | Internal Examiner / Subject Teacher |
+| :---: | :---: | :---: |
+
+**Date:** `    /    / 2026` &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Department of:** Computer Science  
+
+<div style="page-break-after: always;"></div>
 
 <!-- ============================== PAGE 1 ============================== -->
 
 # VIDYAVARDHINI’S
-
-### ANNASAHEB VARTAK COLLEGE OF ARTS,
-
-### KEDARNATH MALHOTRA COLLEGE OF COMMERCE,
-
-### E. S. ANDRADES COLLEGE OF SCIENCE
-
+### ANNASAHEB VARTAK COLLEGE OF ARTS, KEDARNATH MALHOTRA COLLEGE OF COMMERCE, E. S. ANDRADES COLLEGE OF SCIENCE
 #### DEPARTMENT OF COMPUTER SCIENCE
 
-_(Affiliated to the University of Mumbai) • Vasai Road (West), Palghar • Academic Year 2025 – 2026_
+## PROJECT INDEX / TABLE OF CONTENTS
+**Project Title:** CAREER KUCH HATKE &bull; **Candidate:** Sneha Prajapati (Roll No. 89)
 
----
+| Sr. No. | Topic / Chapter Title | Page No. | Teacher's Signature |
+| :---: | :--- | :---: | :---: |
+| **1.0** | **Introduction & Problem Statement**<br>*Background, societal need, problem statement, objectives & scope* | **Page 2** | |
+| **2.0** | **About the Website & Core Modules**<br>*Platform purpose, target audience, and detailed breakdown of all 7 modules* | **Page 3** | |
+| **3.0** | **System Architecture & Technologies Used**<br>*Client-server block diagram, technology stack, and hardware/software specifications* | **Page 4** | |
+| **4.0** | **Implementation of CSS: Why and How**<br>*Responsive design rationale, CSS grid/flexbox, custom variables, and dark/light themes* | **Page 5** | |
+| **5.0** | **Implementation of PHP & Database: Why and How**<br>*Backend data persistence, input sanitization, XSS security, and MySQL schema* | **Page 6** | |
+| **6.0** | **Web Hosting & CI/CD Deployment Process**<br>*Local XAMPP setup, Git version control, InfinityFree hosting, and GitHub Actions* | **Page 7** | |
+| **7.0** | **System Testing & Quality Assurance Matrix**<br>*Cross-browser testing, mobile viewports, JS runtime checks, and cache invalidation* | **Page 8** | |
+| **8.0** | **Website Interface Screenshots (3 Core Modules)**<br>*Home page portal, dynamic career roadmap detail, and contact/suggestion form* | **Page 9** | |
+| **9.0** | **Limitations, Future Scope, Conclusion & References**<br>*Current constraints, future roadmap, concluding summary, and authoritative citations* | **Page 10** | |
 
-## A FIELD PROJECT REPORT ON:
+**Student Declaration:** I hereby declare that this project documentation report of 10 pages represents authentic academic work completed by me for the B.Sc. Computer Science Field Project curriculum (Academic Year 2026–2027).  
+**Candidate Signature:** Sneha Prajapati (Roll No. 89)
 
-# CAREER KUCH HATKE
-
-### _An Interactive Unconventional Career Guidance Web Platform with Administrative Management Portal_
-
-| Metadata Field              | Value / Details                                                                                                    | Metadata Field              | Value / Details                 |
-| :-------------------------- | :----------------------------------------------------------------------------------------------------------------- | :-------------------------- | :------------------------------ |
-| **Candidate Name:**         | Sneha Prajapati                                                                                                    | **Institutional Roll No.:** | **89**                          |
-| **Academic Class:**         | Second Year B.Sc. Computer Science                                                                                 | **Semester / Stream:**      | Semester III — Computer Science |
-| **Course / Subject:**       | Field Project (Computer Science)                                                                                   | **Academic Session:**       | Academic Year 2025 – 2026       |
-| **Live Application URL:**   | [https://career-kuch-hatke.infinityfreeapp.com](https://career-kuch-hatke.infinityfreeapp.com)                     |                             |                                 |
-| **Source Code Repository:** | [https://github.com/snehaprajapati-dev/career-kuch-hatke](https://github.com/snehaprajapati-dev/career-kuch-hatke) |                             |                                 |
-
----
-
-### 1.0 Introduction & Project Overview
-
-#### 1.1 Abstract & Executive Summary
-
-In the Indian educational system, over eighty percent of secondary and undergraduate students are funneled toward an extremely narrow cluster of traditional careers—principally Engineering, Medicine, Civil Services, or Banking. This conventional pressure results in rampant academic fatigue, high institutional dropout rates, and widespread career dissatisfaction, while emerging creative and technology sectors face an acute shortage of skilled practitioners.
-
-**Career Kuch Hatke** is an interactive, mobile-responsive web platform engineered to resolve this guidance deficit. It curates **35+ verified unconventional career pathways** across Creative, Tech, Science, Business, and Unique disciplines. Beyond high-level career profiles, the platform provides students with authentic 2026 Indian salary benchmarks (starting packages through senior levels), safety-cushion degrees, accredited institutional roadmaps, an algorithmic aptitude assessment quiz, a persistent client-side bookmarking engine, and a specialized **"Talk to Your Parents"** conversational pitch generator with one-tap WhatsApp integration. Developed using **HTML5, CSS3, JavaScript (ES6+), PHP 8.2, and MySQL**, the project features a complete administrative backend and is deployed live via automated GitHub Actions CI/CD pipelines.
-
----
-
-#### 1.2 Problem Statement & Motivation
-
-1. **Information Asymmetry:** Reliable academic prerequisites and Indian salary figures for emerging professions (e.g., Ethical Hacker, UI/UX Designer, Drone Pilot, Flavor Chemist, Space Mission Scientist) are scattered across fragmented foreign publications that fail to reflect Indian recruiter standards.
-2. **The "Parental Resistance" Hurdle:** Indian students frequently encounter skepticism from parents who prioritize financial stability, predictable progression, and recognizable formal degrees.
-3. **Absence of Accessible Assessment Tools:** Students lack beginner-friendly assessment tools that evaluate their natural problem-solving inclinations and match them to modern industry specializations.
-
----
-
-#### 1.3 Project Objectives & Scope
-
-- **Curated Knowledge Base:** Build comprehensive, verified roadmaps for 35+ non-traditional professions with transparent salary brackets, degree cushions, and realistic study budgets.
-- **Client-Side Interactivity:** Implement zero-latency keyword search with synonym mapping, dynamic category filtering, and saved bookmarks using pure JavaScript without heavy external libraries.
-- **Parental Alignment Mechanism:** Formulate customized 30-second conversational pitches containing verifiable industry packages for students to share directly via WhatsApp.
-- **Full-Stack Form Processing:** Handle student feedback and community career suggestions through server-side PHP validation, sanitized database insertion, and an administrative review dashboard.
-- **Production Deployment:** Establish continuous integration and deployment (CI/CD via GitHub Actions) to synchronize local developments directly with production Linux hosting.
-
-<!-- Running Footer: Department of Computer Science • S.Y. B.Sc. CS • Field Project Documentation • Page 1 of 8 -->
-<!-- ============================ END OF PAGE 1 ============================ -->
-
+<!-- Running Footer: Department of Computer Science • S.Y. B.Sc. CS • Roll No. 89 • Page 1 of 10 -->
 <div style="page-break-after: always;"></div>
 
 <!-- ============================== PAGE 2 ============================== -->
 
-### 2.0 System Architecture & Module Specifications
+### 1.0 Introduction & Problem Statement
 
-#### 2.1 System Architecture & Data Flow
+#### 1.1 Project Title & Executive Summary
+- **Project Title:** CAREER KUCH HATKE — An Interactive Unconventional Career Guidance Web Platform with Administrative Management Portal.
+- **Live Hosted URL:** https://career-kuch-hatke.infinityfreeapp.com
+- **Source Code Repository:** https://github.com/snehaprajapati-dev/career-kuch-hatke
 
+In the Indian educational system, over eighty percent of secondary and undergraduate students are funneled toward an extremely narrow cluster of traditional vocations—predominantly Engineering, Medicine, Civil Services, or Banking. This restrictive focus results in intense academic fatigue, high college dropout rates, and widespread career dissatisfaction, while sunrise creative and technology sectors face an acute shortage of skilled talent.
+
+**Career Kuch Hatke** is an interactive web platform engineered to eliminate this guidance deficit. It curates **35+ verified unconventional career pathways** across Creative, Tech, Science, Business, and Unique disciplines. The platform equips students with transparent 2026 Indian salary packages, safety-cushion degree alternatives, accredited institutional roadmaps, an algorithmic aptitude quiz, a client-side bookmarking system, and a specialized **"Talk to Your Parents"** conversational pitch generator with one-tap WhatsApp integration.
+
+#### 1.2 Problem Statement & Motivation
+1. **Information Asymmetry:** Reliable academic prerequisites, study budgets, and authentic Indian entry-level compensation figures for emerging professions (e.g., Ethical Hacker, UI/UX Designer, Drone Pilot, Food Stylist, Flavor Chemist) are scattered across fragmented foreign publications that fail to reflect Indian recruiting standards.
+2. **The "Parental Resistance" Hurdle:** Indian students frequently encounter skepticism from family members who prioritize financial stability, predictable progression, and recognized degrees.
+3. **Absence of Accessible Assessment Tools:** Secondary and college students lack beginner-friendly assessment tools that evaluate their natural problem-solving inclinations and match them to modern industry specializations.
+
+#### 1.3 Project Objectives & Scope
+- **Curated Knowledge Base:** Compile comprehensive, verified roadmaps for 35+ non-traditional vocations with realistic salary brackets, degree cushions, and institutional timelines.
+- **Zero-Latency Client Interactivity:** Implement client-side real-time keyword search with synonym mapping, category domain filtering, and saved bookmarks using pure JavaScript without heavy external libraries.
+- **Parental Alignment Facilitation:** Formulate customized 30-second conversational pitches containing verifiable industry packages that students can share with parents via WhatsApp.
+- **Full-Stack Form Processing:** Handle student feedback and community career suggestions through server-side PHP validation, sanitized database insertion, and an administrative review dashboard.
+- **Automated Production Deployment:** Establish continuous integration and deployment (CI/CD via GitHub Actions) to synchronize local developments directly with production Linux hosting.
+
+<!-- Running Footer: Department of Computer Science • S.Y. B.Sc. CS • Roll No. 89 • Page 2 of 10 -->
+<div style="page-break-after: always;"></div>
+
+<!-- ============================== PAGE 3 ============================== -->
+
+### 2.0 About the Website & Core Modules
+
+#### 2.1 Platform Purpose & Target Audience
+**Career Kuch Hatke** is conceptualized as an end-to-end guidance companion for Indian students in grades 10–12, undergraduates, and career switchers. Unlike generic educational directories, the website delivers actionable intelligence: not just "what the job is", but "how much it pays in India", "what safety degree keeps parents happy", "which colleges teach it", and "how to pitch it to Indian parents".
+
+#### 2.2 Detailed Breakdown of Core Webpage Modules
+The platform architecture comprises six distinct user-facing modules and a protected administrative back-office:
+
+1. **Module 1 — Home Portal (`index.html`):** Introduces the platform mission, provides immediate calls-to-action ("Explore Careers" and "Take Quiz"), features an analytical "Rat Race vs. Hatke Career" problem-solution dilemma matrix, highlights featured professions, and includes an anti-flash dark/light theme switcher.
+2. **Module 2 — Career Exploration Grid (`explore.html`):** Houses 35 standardized equal-height career cards. Features real-time Category Filter Pills (Creative, Tech, Science, Business, Unique), an instant keyword search bar with clear button and synonym evaluation, and a dedicated **"Bookmarked"** filter tab with friendly empty state.
+3. **Module 3 — Dynamic Career Roadmap Engine (`career-detail.html`):** A parameterized single-page template driven by URL queries (e.g., `?career=ai-prompt-engineer`). Dynamically renders 10 structured sections: Quick Facts, Actual Duties, Career Trajectory, Accredited Indian Colleges, Degree Safety Net, and "Talk to Your Parents" pitch generator with action toolbar.
+4. **Module 4 — Career Aptitude Assessment Quiz (`quiz.html`):** Interactive 5-step self-assessment evaluating analytical traits, creativity, and working preferences through a client-side weighted scoring algorithm yielding match percentages.
+5. **Module 5 — About Us & Research Transparency (`about.html`):** Documents developer background (Sneha Prajapati, Roll No. 89), foundational research motivation, statistical realities of career selection pressures in India, and verified citation sources.
+6. **Module 6 — Contact & Suggestion Portal (`contact.html`):** Dual-purpose communication portal allowing students to submit general inquiries and propose new emerging vocational paths for addition with client and server-side validation.
+7. **Module 7 — Administrative Management Portal (`admin/`):** Restricted back-office consisting of session-authenticated login (`login.php`), metrics dashboard (`dashboard.php`), submission review tables (`contacts.php`, `suggestions.php`), item deletion (`delete.php`), and CSV export for Excel analysis (`export.php`).
+
+<!-- Running Footer: Department of Computer Science • S.Y. B.Sc. CS • Roll No. 89 • Page 3 of 10 -->
+<div style="page-break-after: always;"></div>
+
+<!-- ============================== PAGE 4 ============================== -->
+
+### 3.0 System Architecture & Technologies Used
+
+#### 3.1 System Architecture & Data Flow Diagram
 ```text
 +-------------------------------------------------------------------------------+
 |                             CLIENT-SIDE LAYER (BROWSER)                       |
@@ -101,249 +131,209 @@ In the Indian educational system, over eighty percent of secondary and undergrad
 +-------------------------------------------------------------------------------+
 ```
 
-#### 2.2 Technology Stack Specifications
+#### 3.2 Technology Specifications Table
+| Layer | Technology | Role & Implementation Purpose |
+| :--- | :--- | :--- |
+| **Frontend Markup** | **HTML5 Semantic** | Structured semantic elements (`<header>`, `<nav>`, `<main>`, `<section>`, `<footer>`) for accessibility and clean DOM tree traversal. |
+| **Styling & Theme** | **CSS3 (Grid & Flexbox)** | Custom CSS variables, mobile-first responsive media queries, and anti-flash dark/light mode theme persistence. |
+| **Client Scripting** | **Vanilla JavaScript (ES6+)** | DOM event listeners, keyword synonym dictionary, quiz scoring engine, and Web Storage API (`localStorage`) bookmarking. |
+| **Backend Processing** | **PHP 8.2 (Procedural)** | Asynchronous POST parsing, data sanitization (`htmlspecialchars`, `filter_var`), and session-based administrator authentication. |
+| **Database Layer** | **MySQL Relational DB** | Normalized relational storage for student inquiries and community career submissions. |
+| **Hosting & CI/CD** | **InfinityFree & GitHub Actions** | Cloud Linux hosting with automated FTPS deployment pipeline triggered on git push to the main branch. |
 
-| Architecture Layer         | Technology Selected           | Implementation Details                                                                                                  |
-| :------------------------- | :---------------------------- | :---------------------------------------------------------------------------------------------------------------------- |
-| **Frontend Structure**     | **HTML5 Semantic**            | Structured elements (`<header>`, `<nav>`, `<main>`, `<section>`, `<footer>`) for clean DOM hierarchy and accessibility. |
-| **Styling & Presentation** | **CSS3 (Grid & Flexbox)**     | CSS Custom Properties (Variables), mobile-first media queries, anti-flash Dark/Light mode theme persistence.            |
-| **Client Scripting**       | **Vanilla JavaScript (ES6+)** | DOM event listeners, synonym keyword dictionary, quiz vector scoring engine, browser Web Storage API (`localStorage`).  |
-| **Backend Processing**     | **PHP 8.2 (Procedural)**      | Asynchronous POST handling, data sanitization (`htmlspecialchars`), admin session authentication.                       |
-| **Relational Database**    | **MySQL Relational DB**       | Normalized relational database storing student contact inquiries and community career suggestions.                      |
-| **Deployment & CI/CD**     | **GitHub Actions & FTPS**     | Automated continuous deployment pipeline triggered on every commit to the GitHub `main` branch.                         |
+#### 3.3 Hardware & Software Environment Requirements
+- **Development Hardware:** Standard x86-64 PC with Intel/AMD Multi-Core Processor, 8GB RAM, 100MB free disk storage.
+- **Operating System & Tooling:** Windows 11, Visual Studio Code, XAMPP v8.2.12 (Apache 2.4, MariaDB 10.4, PHP 8.2).
+- **Client Requirements:** Any modern standards-compliant web browser (Google Chrome 100+, Firefox 100+, Edge, Safari iOS).
 
----
-
-#### 2.3 Functional Module Breakdown
-
-The application comprises **6 primary user-facing modules** and an integrated **Administrative Portal**:
-
-1. **Home Portal (`index.html`):** Hero banner with primary CTAs, comparative "Rat Race vs. Hatke Career" problem-solution section, featured career showcase, and persistent theme switcher.
-2. **Career Exploration Grid (`explore.html`):** Grid layout featuring 35 standardized equal-height career cards. Includes real-time Category Filter Pills (Creative, Tech, Science, Business, Unique), dedicated Bookmarked filter, and an instant keyword search bar with clear toggle.
-3. **Dynamic Career Roadmap Engine (`career-detail.html`):** Single-page dynamic template driven by URL parameters (e.g., `?career=ui-ux-designer`). Features 10 modular sections: Quick Facts, What They Actually Do, Career Trajectory, Accredited Colleges, Degree Safety Net, and "Talk to Your Parents" pitch generator with an Action Toolbar (Expand All, Save PDF, Share, Bookmark).
-4. **Career Aptitude Quiz (`quiz.html`):** Interactive self-assessment evaluating problem-solving instincts, creativity, and analytical traits. Employs a client-side vector weighting algorithm to display percentage matches and targeted career recommendations.
-5. **About & Transparency (`about.html`):** Documents the project vision, developer biography, data collection methodologies, and authoritative citation sources.
-6. **Contact & Suggestions (`contact.html`):** Interactive user portal supporting both feedback inquiries and student-submitted career suggestions with client and server validation.
-7. **Admin Management Module (`admin/`):** Restricted back-office consisting of session-authenticated login (`login.php`), metrics dashboard (`dashboard.php`), submission review tables (`contacts.php`, `suggestions.php`), item deletion (`delete.php`), and CSV export for Excel analysis (`export.php`).
-
-<!-- Running Footer: Department of Computer Science • S.Y. B.Sc. CS • Field Project Documentation • Page 2 of 8 -->
-<!-- ============================ END OF PAGE 2 ============================ -->
-
+<!-- Running Footer: Department of Computer Science • S.Y. B.Sc. CS • Roll No. 89 • Page 4 of 10 -->
 <div style="page-break-after: always;"></div>
 
-<!-- ============================== PAGE 3 ============================== -->
+<!-- ============================== PAGE 5 ============================== -->
 
-### 3.0 Technical Methodology & Key Implementations
+### 4.0 Implementation of CSS: Why and How
 
-#### 3.1 Smart Synonym Search & Live DOM Filtering (`js/script.js`)
+#### 4.1 Why CSS was Implemented
+Modern web applications demand an intuitive, visually engaging, and responsive interface that adapts seamlessly across smartphones, tablets, laptops, and desktop displays. Pure HTML produces unstyled, linear documents inadequate for structured career guidance. CSS3 was implemented to achieve:
+- **Responsive Multi-Column Grids:** Displaying 35 career options requires dynamic multi-column layouts on desktop that gracefully collapse into a single touch-friendly column on mobile devices.
+- **Equalized Card Heights:** In exploration grids, varying text length across careers causes uneven card heights. CSS Flexbox was implemented to ensure cards maintain identical vertical height across rows.
+- **Accessible Color Contrast & Theme Support:** Implementation of Dark and Light modes reduces eye strain during prolonged reading and respects user operating system preferences.
+- **Visual Affordance & Micro-Interactions:** Subtle hover states, smooth transitions, and glowing bookmark pills provide instant tactile feedback without cognitive overload.
 
-Students commonly search using conversational terms rather than formal corporate job designations. To solve this, the search engine utilizes a comprehensive synonym mapping dictionary that evaluates student queries against pre-indexed career keywords:
+#### 4.2 How CSS was Structured and Implemented
+The styling architecture follows modular separation across distinct CSS files:
+- **Global Design Tokens (`css/style.css`):** Defined using CSS Custom Properties (Variables) on the `:root` selector (e.g., `--bg-primary`, `--text-primary`, `--accent-purple`, `--card-border`) allowing instantaneous theme switching by toggling a single `data-theme="dark"` attribute on the root HTML element.
+- **Modular Component Styles:** Dedicated stylesheets isolate component boundaries: `explore.css` manages filters and card grids; `career-detail.css` styles roadmap accordions and the parent pitch box; `quiz.css` handles progress indicators.
+- **Strict Card Filtering Rule:** To resolve card filtering conflicts where flex cards remained visible, a strict utility class was implemented: `.career-card.is-hidden { display: none !important; }`.
 
-```javascript
-const searchKeywordsMap = {
-  "ethical-hacker": [
-    "coding",
-    "security",
-    "hacking",
-    "cyber",
-    "python",
-    "linux",
-    "bug bounty",
-  ],
-  "food-stylist": [
-    "food",
-    "cooking",
-    "styling",
-    "photography",
-    "chef",
-    "culinary",
-    "baking",
-  ],
-  "ui-ux-designer": [
-    "design",
-    "figma",
-    "app",
-    "website",
-    "interface",
-    "wireframe",
-    "product",
-  ],
-};
+```css
+/* Equal Height Flexbox Card Architecture (css/explore.css) */
+.career-card {
+  display: flex !important;
+  flex-direction: column;
+  height: 100%;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.career-card-content {
+  flex-grow: 1; /* Automatically expands to equalize card heights across rows */
+}
+.career-card.is-hidden {
+  display: none !important; /* Overrides flex display when card is filtered out */
+}
 ```
 
-On every keystroke, the algorithm evaluates career titles, taglines, categories, and synonym arrays. Unmatched card elements are marked with `.is-hidden` and hidden with `display: none !important;`, instantly recalculating the active count badge without reloading the page.
+<!-- Running Footer: Department of Computer Science • S.Y. B.Sc. CS • Roll No. 89 • Page 5 of 10 -->
+<div style="page-break-after: always;"></div>
 
-#### 3.2 Client-Side Bookmark State Persistence (`localStorage`)
+<!-- ============================== PAGE 6 ============================== -->
 
-To allow students to curate a personalized list of favorite careers without requiring account creation friction, a zero-latency storage architecture was implemented:
+### 5.0 Implementation of PHP & Database: Why and How
 
-- **Data Model:** Saved career identifiers are stored as a JSON array under the key `'ckh_bookmarks'` in browser `localStorage`.
-- **Dynamic UI Synchronization:** Tapping the bookmark button on any card toggles the slug in storage, transitions the button to an active state, increments the `#bookmarkCount` badge, and presents a floating notification (_"Career saved to bookmarks"_).
-- **Smart Empty State:** When the Bookmarked filter is selected with zero saved careers, a custom prompt appears with a one-tap **"View All Careers"** reset button.
+#### 5.1 Why PHP and MySQL were Implemented
+Client-side technologies (HTML, CSS, JavaScript) execute entirely within the user's browser and cannot securely persist data across sessions or protect confidential back-office records. PHP and MySQL were implemented for:
+- **Server-Side Form Processing:** Student inquiries and career suggestions submitted on `contact.html` must be received, parsed, validated, and stored permanently on the server.
+- **Defense Against Malicious Injections:** Client-side validation can be bypassed by disabling JavaScript. Server-side PHP sanitizes all inputs against Cross-Site Scripting (XSS) and SQL injection.
+- **Administrative Access Control:** An administrative portal requires protected session authentication (`session_start()`) so only authorized faculty can view incoming messages.
 
-#### 3.3 Parental Communication Logic & WhatsApp Integration
+#### 5.2 How PHP and MySQL were Implemented
+PHP 8.2 handles POST requests asynchronously, returning structured JSON payloads to the client without page reload. The MySQL database comprises two normalized tables:
 
-To address parental skepticism, `career-detail.js` dynamically aggregates verified starting salaries, safety-cushion degree alternatives, and top Indian institutions into a structured WhatsApp message:
-
-```javascript
-const shareUrl =
-  "https://career-kuch-hatke.infinityfreeapp.com/career-detail.html?career=" +
-  careerId;
-const pitchText =
-  `Namaste Mummy/Papa, I was exploring verified career roadmaps on Career Kuch Hatke:\n\n` +
-  `Career: ${career.name}\nSalary Potential: ${career.quickFacts.salary}\n` +
-  `Degree Safety Cushion: ${career.quickFacts.degree}\n` +
-  `Top Institutes: ${career.indianColleges.slice(0, 2).join(", ")}\n\n` +
-  `Please check the complete roadmap here: ${shareUrl}`;
-window.open(
-  "https://api.whatsapp.com/send?text=" + encodeURIComponent(pitchText),
-  "_blank",
-);
-```
-
-#### 3.4 Server-Side PHP Validation & Input Sanitization
-
-All incoming POST data is rigorously cleansed before database interaction to prevent Cross-Site Scripting (XSS) and SQL injection vulnerabilities:
+| Table Name | Field Identifier | Data Type | Constraints & Purpose |
+| :--- | :--- | :--- | :--- |
+| **contacts**<br><small>Student inquiries</small> | `id`<br>`name`, `email`<br>`message`<br>`submitted_at` | `INT(11)`<br>`VARCHAR(100)`, `VARCHAR(150)`<br>`TEXT`<br>`TIMESTAMP` | `PRIMARY KEY, AUTO_INCREMENT`<br>`NOT NULL, Validated email format`<br>`Sanitized inquiry text body`<br>`DEFAULT CURRENT_TIMESTAMP` |
+| **career_suggestions**<br><small>Community suggestions</small> | `id`<br>`career_title`, `category`<br>`description` | `INT(11)`<br>`VARCHAR(150)`, `VARCHAR(50)`<br>`TEXT` | `PRIMARY KEY, AUTO_INCREMENT`<br>`Proposed career title and primary domain`<br>`Student explanation of vocational viability` |
 
 ```php
+// Server-Side Sanitization & Validation Handler (php/contact-process.php)
 $name    = htmlspecialchars(strip_tags(trim($_POST['name'])), ENT_QUOTES, 'UTF-8');
 $email   = filter_var(trim($_POST['email']), FILTER_SANITIZE_EMAIL);
 $message = htmlspecialchars(strip_tags(trim($_POST['message'])), ENT_QUOTES, 'UTF-8');
 
 if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-    die(json_encode(["status" => "error", "message" => "Please provide a valid email."]));
+    die(json_encode(["status" => "error", "message" => "Please enter a valid email address."]));
 }
+$stmt = $conn->prepare("INSERT INTO contacts (name, email, message) VALUES (?, ?, ?)");
+$stmt->bind_param("sss", $name, $email, $message);
+$stmt->execute();
 ```
 
-#### 3.5 Anti-Flash Theme Persistence Architecture
-
-To eliminate the jarring white flash of unstyled content when reloading dark mode pages, a micro-script executes synchronously inside the document `<head>` before any stylesheet is parsed:
-
-```javascript
-(function () {
-  var s = localStorage.getItem("ckh_theme");
-  if (s === "dark") document.documentElement.setAttribute("data-theme", "dark");
-})();
-```
-
-<!-- Running Footer: Department of Computer Science • S.Y. B.Sc. CS • Field Project Documentation • Page 3 of 8 -->
-<!-- ============================ END OF PAGE 3 ============================ -->
-
-<div style="page-break-after: always;"></div>
-
-<!-- ============================== PAGE 4 ============================== -->
-
-### 4.0 Database Design, Testing & Conclusion
-
-#### 4.1 Database Design & Table Schema Specifications
-
-The MySQL relational backend comprises two tables supporting inquiries and user submissions:
-
-| Table Name                                                         | Field Identifier                                       | Data Type                                                            | Constraints & Purpose                                                                                                               |
-| :----------------------------------------------------------------- | :----------------------------------------------------- | :------------------------------------------------------------------- | :---------------------------------------------------------------------------------------------------------------------------------- |
-| **contacts**<br><small>(Student inquiries)</small>                 | `id`<br>`name`, `email`<br>`message`<br>`submitted_at` | `INT(11)`<br>`VARCHAR(100)`, `VARCHAR(150)`<br>`TEXT`<br>`TIMESTAMP` | `PRIMARY KEY, AUTO_INCREMENT`<br>`NOT NULL, Validated email format`<br>`Sanitized inquiry text body`<br>`DEFAULT CURRENT_TIMESTAMP` |
-| **career_suggestions**<br><small>(Crowd-sourced proposals)</small> | `id`<br>`career_title`, `category`<br>`description`    | `INT(11)`<br>`VARCHAR(150)`, `VARCHAR(50)`<br>`TEXT`                 | `PRIMARY KEY, AUTO_INCREMENT`<br>`Proposed career title and primary domain`<br>`Student explanation of career viability`            |
-
----
-
-#### 4.2 Testing, Verification & Quality Assurance Matrix
-
-| Verification Domain             | Testing Procedure                                                               | Outcome & Status                                                        |
-| :------------------------------ | :------------------------------------------------------------------------------ | :---------------------------------------------------------------------- |
-| **Cross-Browser Compatibility** | Audited on Google Chrome 120+, Firefox 122+, MS Edge, and Safari iOS.           | **Passed:** Consistent flex/grid layout across all engines.             |
-| **Mobile Responsiveness**       | Simulated viewports from 360px (mobile) to 768px (tablet) and 1440px (desktop). | **Passed:** Equalized card heights, centered footer, touch tap targets. |
-| **Syntax & Runtime Integrity**  | Validated via Node.js compiler (`node -c script.js`).                           | **Passed:** Zero syntax errors or uncaught promise rejections.          |
-| **Cache Invalidation Strategy** | Query version parameters (`?v=6.0`) assigned to all stylesheet and script tags. | **Passed:** Instant updates on client devices without stale cache.      |
-
----
-
-#### 4.3 Live Deployment Pipeline & CI/CD Workflow
-
-1. **Local Development:** Created and validated on an Apache/PHP/MySQL stack using XAMPP on Windows (`http://localhost:8080/`).
-2. **Version Control:** Source code managed with Git and synchronized to GitHub (`origin/main`).
-3. **Continuous Deployment (GitHub Actions):** Configured `.github/workflows/deploy.yml` to securely authenticate via repository secrets (`FTP_SERVER`, `FTP_USERNAME`, `FTP_PASSWORD`) and trigger automated FTPS synchronization to InfinityFree production servers on every push.
-
----
-
-#### 4.4 Project Limitations & Future Scope
-
-- **Current Limitations:** Career content is currently managed via static client-side JavaScript structures rather than a headless database CMS. Bookmarks are tied to device `localStorage`.
-- **Future Enhancements:**
-  1. **Cloud-Synced Student Accounts:** User authentication with hashed passwords (`password_hash`) to synchronize bookmarks across devices.
-  2. **Direct Mentorship Scheduling:** Calendar booking integration for students to schedule 1-on-1 counseling calls with working domain professionals.
-  3. **AI Career Chatbot:** LLM integration to answer student queries regarding college entrance cutoffs, portfolio requirements, and job outlooks.
-
----
-
-#### 4.5 Conclusion & Academic References
-
-The **Career Kuch Hatke** project fulfills all academic requirements of the BSc Computer Science Field Project curriculum. It demonstrates a production-grade fusion of semantic HTML5, responsive CSS3 Grid and Flexbox, dynamic JavaScript event handling, client-side persistence, and secure PHP/MySQL backend administration. By addressing an authentic societal dilemma in the Indian academic landscape, the project provides a practical, high-utility resource for the student community.
-
-**Academic References:**
-
-1. Glassdoor India & AmbitionBox: 2026 Indian Industry Compensation Reports.
-2. UGC & AICTE: Institutional Accreditations, Program Structures & Degree Guidelines.
-3. MDN Web Docs: HTML5 Semantics, CSS Grid & Web Storage APIs.
-
-<!-- Running Footer: Department of Computer Science • S.Y. B.Sc. CS • Field Project Documentation • Page 4 of 8 -->
-<!-- ============================ END OF PAGE 4 ============================ -->
-
-<div style="page-break-after: always;"></div>
-
-<!-- ============================== PAGE 5 ============================== -->
-
-### 5.0 Platform User Interface &mdash; Module 1: Home Portal
-
-The **Home Page (`index.html`)** acts as the central introductory gateway to the platform. It features a bold hero headline addressing career anxiety, direct action callouts, the comparative "Rat Race vs. Hatke Career" problem-solution dilemma matrix, and categorical exploration pills.
-
-![Figure 5.1: Home Portal Interface](images/screenshot-home.png)
-
-**Figure 5.1: Home Page Interface (`index.html`)** — Demonstrates the primary landing view, interactive "Rat Race vs. Hatke Career" comparative statistics (93% career awareness gap), 5 domain category spotlights (Creative, Tech, Science, Business, Unique), and fully responsive navigation with Dark/Light theme toggle.
-
-<!-- Running Footer: Department of Computer Science • S.Y. B.Sc. CS • Field Project Documentation • Page 5 of 8 -->
-<!-- ============================ END OF PAGE 5 ============================ -->
-
-<div style="page-break-after: always;"></div>
-
-<!-- ============================== PAGE 6 ============================== -->
-
-### 6.0 Platform User Interface &mdash; Module 2: Career Roadmap Detail
-
-The **Career Roadmap Engine (`career-detail.html`)** dynamically constructs an in-depth vocational blueprint from URL query parameters. The template organizes authentic 2026 industry packages, accredited colleges, degree safety cushions, and parental conversation pitches.
-
-![Figure 6.1: Dynamic Career Roadmap Engine](images/screenshot-roadmap.png)
-
-**Figure 6.1: Dynamic Career Roadmap Engine (`career-detail.html?career=ai-prompt-engineer`)** — Illustrates the modular career guide for an _AI Prompt Engineer_, detailing verified starting-to-senior salary brackets, step-by-step educational milestones, accredited Indian colleges, degree cushions, and the one-tap 30-Second WhatsApp Parent Pitch generator.
-
-<!-- Running Footer: Department of Computer Science • S.Y. B.Sc. CS • Field Project Documentation • Page 6 of 8 -->
-<!-- ============================ END OF PAGE 6 ============================ -->
-
+<!-- Running Footer: Department of Computer Science • S.Y. B.Sc. CS • Roll No. 89 • Page 6 of 10 -->
 <div style="page-break-after: always;"></div>
 
 <!-- ============================== PAGE 7 ============================== -->
 
-### 7.0 Platform User Interface &mdash; Module 3: About Us & Research
+### 6.0 Web Hosting & CI/CD Deployment Process
 
-The **About Us & Transparency Portal (`about.html`)** outlines the foundational research motivation, statistical realities of career selection pressures in India, the developer's academic background, and future platform roadmap milestones.
+#### 6.1 Local Development Environment (XAMPP)
+The platform was developed and rigorously debugged locally using the **XAMPP** stack on Windows:
+- **Apache Web Server:** Configured on port `8080` (`http://localhost:8080/`) to serve static assets and proxy PHP requests.
+- **MariaDB / MySQL:** Running on port `3306` with phpMyAdmin used for database provisioning, indexing, and schema validation.
+- **Local Testing:** Ensured zero runtime console errors, verified database insertion, and checked asynchronous fetch promises locally before cloud staging.
 
-![Figure 7.1: About Us & Research Transparency Portal](images/screenshot-about.png)
+#### 6.2 Cloud Web Hosting Infrastructure (InfinityFree)
+To ensure round-the-clock accessibility for college evaluators and students, the application was deployed to **InfinityFree** cloud hosting:
+- **Production Server:** Linux-based Apache web server with native PHP 8.2 runtime and remote MySQL database storage.
+- **Live Production URL:** `https://career-kuch-hatke.infinityfreeapp.com`.
+- **Web Server Configuration (`.htaccess`):** Configured URL rewriting, gzip compression, and MIME types for web fonts and JSON data.
 
-**Figure 7.1: About Us & Research Transparency Portal (`about.html`)** — Highlights the academic narrative and personal motivation of developer Sneha Prajapati (Roll No. 89), contextualized with national student career surveys (72% career mismatch rate), core platform values, and authorized citation references.
+#### 6.3 Automated CI/CD Pipeline (GitHub Actions)
+Manual FTP file transfers are prone to human omission and file corruption. To ensure modern professional deployment, an automated **Continuous Integration and Continuous Deployment (CI/CD)** pipeline was established:
+- **Version Control:** Source code is tracked using Git and pushed to GitHub: `snehaprajapati-dev/career-kuch-hatke`.
+- **Workflow Automation (`.github/workflows/deploy.yml`):** Configured a GitHub Actions runner that automatically listens for push events to the `main` branch.
+- **Encrypted Secret Authentication:** Securely injects encrypted repository secrets (`FTP_SERVER`, `FTP_USERNAME`, `FTP_PASSWORD`) into an FTPS deployment action, publishing updated files to production servers within seconds.
 
-<!-- Running Footer: Department of Computer Science • S.Y. B.Sc. CS • Field Project Documentation • Page 7 of 8 -->
-<!-- ============================ END OF PAGE 7 ============================ -->
+```yaml
+# GitHub Actions CI/CD Pipeline (.github/workflows/deploy.yml)
+name: Deploy to InfinityFree
+on:
+  push:
+    branches: [ main ]
+jobs:
+  web-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Source Code
+        uses: actions/checkout@v3
+      - name: Automated FTPS Sync
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          server-dir: htdocs/
+```
 
+<!-- Running Footer: Department of Computer Science • S.Y. B.Sc. CS • Roll No. 89 • Page 7 of 10 -->
 <div style="page-break-after: always;"></div>
 
 <!-- ============================== PAGE 8 ============================== -->
 
-### 8.0 Platform User Interface &mdash; Module 4: Inquiries & Suggestions
+### 7.0 System Testing & Quality Assurance
 
-The **Contact & Career Suggestion Portal (`contact.html`)** provides a full-stack communication interface enabling students and educators to submit general queries and propose new emerging vocational disciplines for editorial review.
+#### 7.1 Quality Assurance & Verification Matrix
+Comprehensive quality assurance protocols were executed across development and production staging:
 
-![Figure 8.1: Student Inquiries & Career Proposal Form](images/screenshot-contact.png)
+| Testing Domain | Verification Procedure | Outcome & Status |
+| :--- | :--- | :--- |
+| **Cross-Browser Compatibility** | Audited on Google Chrome 120+, Mozilla Firefox 122+, Microsoft Edge, and Apple Safari iOS. | **Passed:** Consistent layout rendering, flex alignments, and CSS variable inheritance. |
+| **Mobile Responsiveness** | Simulated viewports from 360px (mobile) to 768px (tablet) and 1440px (desktop monitor). | **Passed:** Equalized card heights, centered footer columns, touch tap targets. |
+| **Syntax & Runtime Integrity** | Validated via Node.js compiler (`node -c script.js`) and browser dev tools. | **Passed:** Zero syntax errors, uncaught promise rejections, or console exceptions. |
+| **Input Validation & Security** | Tested SQL injection and XSS payloads (`<script>`) in feedback and suggestion inputs. | **Passed:** Inputs strictly escaped and sanitized; invalid emails rejected. |
+| **Cache Invalidation Strategy** | Appended explicit cache-busting query version parameters (`?v=6.0`) to script/style tags. | **Passed:** Instant updates on client devices without stale browser caching. |
 
-**Figure 8.1: Student Inquiries & Career Proposal Form (`contact.html`)** — Displays the user feedback interface equipped with client-side regex input validation, responsive form controls, anti-spam safeguards, and asynchronous submission to the PHP/MySQL administrative backend.
+#### 7.2 Algorithmic Verification: Search & Bookmarking Engines
+- **Synonym Mapping Test:** Searching conversational keywords (e.g., *"coding"*, *"camera"*, *"food"*) correctly retrieves *"Ethical Hacker"*, *"Wildlife Photographer"*, and *"Food Stylist"* via the pre-indexed keyword map.
+- **Bookmark Persistence Test:** Saving bookmarks, refreshing the browser, and switching between categories verified that `localStorage` array serialization correctly maintains saved states.
+- **Empty State Test:** Selecting the "Bookmarked" filter with zero saved careers correctly presents a helpful prompt with a working "View All Careers" reset button.
 
-<!-- Running Footer: Department of Computer Science • S.Y. B.Sc. CS • Field Project Documentation • Page 8 of 8 -->
-<!-- ============================ END OF PAGE 8 ============================ -->
+<!-- Running Footer: Department of Computer Science • S.Y. B.Sc. CS • Roll No. 89 • Page 8 of 10 -->
+<div style="page-break-after: always;"></div>
+
+<!-- ============================== PAGE 9 ============================== -->
+
+### 8.0 Website User Interface Screenshots (3 Core Modules)
+
+The following screenshots showcase the primary responsive user interfaces implemented across the **Career Kuch Hatke** web platform (captured live from production deployment):
+
+#### Figure 8.1: Home Page Interface (`index.html`)
+Showcases the hero banner, interactive "Rat Race vs. Hatke Career" problem-solution comparative dilemma matrix, and 5 domain category spotlights.
+![Figure 8.1: Home Page Interface](images/screenshot-home.png)
+
+#### Figure 8.2: Dynamic Career Roadmap Detail (`career-detail.html`)
+Illustrates AI Prompt Engineer roadmap, salary packages, and WhatsApp parent pitch tool.
+![Figure 8.2: Career Detail Roadmap](images/screenshot-roadmap.png)
+
+#### Figure 8.3: Contact & Suggestion Form (`contact.html`)
+Displays user feedback form with client regex validation and server-side sanitized submission.
+![Figure 8.3: Contact & Suggestion Form](images/screenshot-contact.png)
+
+<!-- Running Footer: Department of Computer Science • S.Y. B.Sc. CS • Roll No. 89 • Page 9 of 10 -->
+<div style="page-break-after: always;"></div>
+
+<!-- ============================== PAGE 10 ============================== -->
+
+### 9.0 Limitations, Future Scope, Conclusion & References
+
+#### 9.1 Current System Limitations
+- **Client-Side Content Storage:** Career information currently resides in structured client-side JavaScript objects rather than a headless database CMS.
+- **Device-Specific Bookmarks:** Bookmarks rely on browser `localStorage` and do not synchronize automatically across separate devices.
+
+#### 9.2 Future Scope & Planned Enhancements
+1. **Cloud-Synchronized Student Accounts:** User authentication with hashed passwords (`password_hash`) to persist bookmarks and quiz results across devices.
+2. **Direct Mentorship Scheduling:** Integrated calendar booking allowing students to schedule 1-on-1 counseling video calls with practicing domain professionals.
+3. **AI Career Chatbot:** LLM integration to answer student queries regarding college entrance cutoffs, portfolio requirements, and job outlooks.
+
+#### 9.3 Academic Conclusion
+The **Career Kuch Hatke** project successfully fulfills all academic specifications stipulated for the B.Sc. Computer Science Field Project curriculum (Academic Year 2026–2027). It demonstrates a complete, production-grade synthesis of semantic HTML5, responsive CSS3 Grid and Flexbox, asynchronous JavaScript event handling, persistent browser storage, and secure PHP 8.2 / MySQL backend administration. By addressing an authentic, widespread dilemma in the Indian student community, the project delivers high social utility paired with technical competency.
+
+#### 9.4 Academic References & Authoritative Citations
+1. **Glassdoor India & AmbitionBox:** 2025–2026 Indian Industry Compensation & Salary Benchmark Reports for emerging tech and creative vocations.
+2. **University Grants Commission (UGC) & AICTE:** National institutional accreditation directories, degree prerequisites, and recognized higher education programs.
+3. **Mozilla Developer Network (MDN Web Docs):** HTML5 Semantics, CSS Flexible Box, CSS Grid, and Web Storage API documentation.
+4. **The PHP Group:** Official PHP 8.2 Documentation — Filter Functions, Data Sanitization, Prepared Statements, and Session Security Standards.
+5. **MySQL Documentation:** MySQL 8.0 Reference Manual — Relational Schema Design, Foreign Keys, and InnoDB Storage Engine.
+
+<!-- Running Footer: Department of Computer Science • S.Y. B.Sc. CS • Roll No. 89 • Page 10 of 10 -->
