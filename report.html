@@ -44,9 +44,10 @@
       .document-wrapper {
         max-width: 820px;
         margin: 0 auto;
-        background: #ffffff;
-        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
-        border: 1px solid #d1d5db;
+        background: transparent;
+        box-shadow: none;
+        border: none;
+        padding: 0 10px;
       }
 
       /* Page Definition (Standard Academic A4 Pages) */
@@ -57,12 +58,19 @@
         background: #ffffff !important;
         color: #000000 !important;
         box-sizing: border-box;
+        margin: 0 auto 36px auto;
+        box-shadow: 0 4px 18px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.08);
+        border: 1px solid #d1d5db;
+        border-radius: 3px;
       }
 
       .page-break {
+        display: block;
         page-break-after: always;
-        border-bottom: 2px dashed #9ca3af;
+        break-after: page;
+        height: 0;
         margin: 0;
+        border: none;
       }
 
       /* Print Stylesheet Overrides */
@@ -77,14 +85,24 @@
           border: none;
           max-width: 100%;
           margin: 0;
+          padding: 0;
         }
         .report-page {
           padding: 0;
           min-height: auto;
+          margin: 0;
+          box-shadow: none;
+          border: none;
+          border-radius: 0;
+          page-break-after: always;
+          break-after: page;
+        }
+        .report-page:last-child {
+          page-break-after: avoid;
+          break-after: avoid;
         }
         .page-break {
-          page-break-after: always;
-          border-bottom: none;
+          display: none;
         }
         .no-print {
           display: none !important;
@@ -1674,7 +1692,7 @@ jobs:
           <div class="screenshot-card-box">
             <div class="img-frame">
               <img
-                src="images/screenshot-home.png"
+                src="images/screenshot-home.png?v=2"
                 alt="Figure 8.1: Home Page Hero Interface"
               />
             </div>
@@ -1695,7 +1713,7 @@ jobs:
             <div class="screenshot-card-box">
               <div class="img-frame">
                 <img
-                  src="images/screenshot-roadmap.png"
+                  src="images/screenshot-roadmap.png?v=2"
                   alt="Figure 8.2: Career Profile & Specification"
                 />
               </div>
@@ -1714,7 +1732,7 @@ jobs:
             <div class="screenshot-card-box">
               <div class="img-frame">
                 <img
-                  src="images/screenshot-contact.png"
+                  src="images/screenshot-contact.png?v=2"
                   alt="Figure 8.3: Contact & Suggestion Portal"
                 />
               </div>
