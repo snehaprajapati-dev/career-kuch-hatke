@@ -1534,6 +1534,10 @@ document.addEventListener("DOMContentLoaded", function () {
     showForm("contact");
   }
 
+  if (urlParams.get("compact") === "true") {
+    document.body.setAttribute("data-compact", "true");
+  }
+
   /* ============================================
    HANDLE ERROR MESSAGES (reCAPTCHA)
    ============================================ */

@@ -1042,7 +1042,15 @@
           validation and relational database persistence:
         </p>
 
-        <pre class="academic-code" style="font-size: 7pt; line-height: 1.1; margin: 3px 0 6px 0; padding: 4px 6px;">
+        <pre
+          class="academic-code"
+          style="
+            font-size: 7pt;
+            line-height: 1.1;
+            margin: 3px 0 6px 0;
+            padding: 4px 6px;
+          "
+        >
 +-------------------------------------------------------------------------------+
 |                             CLIENT-SIDE LAYER (BROWSER)                       |
 |   HTML5 (Semantic Web) | CSS3 (Grid &amp; Flexbox Layouts) | JavaScript (ES6+)    |
@@ -1064,60 +1072,81 @@
 +-------------------------------------------------------------------------------+
         </pre>
 
-        <h3 class="academic-subheading" style="margin-top: 4px; margin-bottom: 3px;">3.2 Technology Specifications Table</h3>
-        <table class="academic-table" style="font-size: 8pt; margin-bottom: 4px;">
+        <h3
+          class="academic-subheading"
+          style="margin-top: 4px; margin-bottom: 3px"
+        >
+          3.2 Technology Specifications Table
+        </h3>
+        <table
+          class="academic-table"
+          style="font-size: 8pt; margin-bottom: 4px"
+        >
           <thead>
             <tr>
-              <th style="width: 22%; padding: 3px 5px;">Layer</th>
-              <th style="width: 25%; padding: 3px 5px;">Technology</th>
-              <th style="padding: 3px 5px;">Role &amp; Implementation Purpose</th>
+              <th style="width: 22%; padding: 3px 5px">Layer</th>
+              <th style="width: 25%; padding: 3px 5px">Technology</th>
+              <th style="padding: 3px 5px">
+                Role &amp; Implementation Purpose
+              </th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td style="padding: 2px 5px;"><strong>Frontend Markup</strong></td>
-              <td style="padding: 2px 5px;">HTML5 Semantic</td>
-              <td style="padding: 2px 5px;">
+              <td style="padding: 2px 5px"><strong>Frontend Markup</strong></td>
+              <td style="padding: 2px 5px">HTML5 Semantic</td>
+              <td style="padding: 2px 5px">
                 Structured semantic elements (&lt;header&gt;, &lt;nav&gt;,
-                &lt;main&gt;, &lt;section&gt;, &lt;footer&gt;) for accessibility.
+                &lt;main&gt;, &lt;section&gt;, &lt;footer&gt;) for
+                accessibility.
               </td>
             </tr>
             <tr>
-              <td style="padding: 2px 5px;"><strong>Styling &amp; Theme</strong></td>
-              <td style="padding: 2px 5px;">CSS3 (Grid &amp; Flexbox)</td>
-              <td style="padding: 2px 5px;">
-                Custom CSS variables, mobile-first media queries, and
-                anti-flash dark/light mode theme persistence.
+              <td style="padding: 2px 5px">
+                <strong>Styling &amp; Theme</strong>
+              </td>
+              <td style="padding: 2px 5px">CSS3 (Grid &amp; Flexbox)</td>
+              <td style="padding: 2px 5px">
+                Custom CSS variables, mobile-first media queries, and anti-flash
+                dark/light mode theme persistence.
               </td>
             </tr>
             <tr>
-              <td style="padding: 2px 5px;"><strong>Client Scripting</strong></td>
-              <td style="padding: 2px 5px;">Vanilla JavaScript (ES6+)</td>
-              <td style="padding: 2px 5px;">
+              <td style="padding: 2px 5px">
+                <strong>Client Scripting</strong>
+              </td>
+              <td style="padding: 2px 5px">Vanilla JavaScript (ES6+)</td>
+              <td style="padding: 2px 5px">
                 DOM event listeners, keyword synonym dictionary, quiz scoring
                 engine, and Web Storage API (localStorage).
               </td>
             </tr>
             <tr>
-              <td style="padding: 2px 5px;"><strong>Backend Processing</strong></td>
-              <td style="padding: 2px 5px;">PHP 8.2 (Procedural)</td>
-              <td style="padding: 2px 5px;">
+              <td style="padding: 2px 5px">
+                <strong>Backend Processing</strong>
+              </td>
+              <td style="padding: 2px 5px">PHP 8.2 (Procedural)</td>
+              <td style="padding: 2px 5px">
                 Asynchronous POST parsing, data sanitization (htmlspecialchars,
                 filter_var), and session-based admin authentication.
               </td>
             </tr>
             <tr>
-              <td style="padding: 2px 5px;"><strong>Database Layer</strong></td>
-              <td style="padding: 2px 5px;">MySQL Relational DB</td>
-              <td style="padding: 2px 5px;">
+              <td style="padding: 2px 5px"><strong>Database Layer</strong></td>
+              <td style="padding: 2px 5px">MySQL Relational DB</td>
+              <td style="padding: 2px 5px">
                 Normalized relational storage for student inquiries and
                 community career submissions.
               </td>
             </tr>
             <tr>
-              <td style="padding: 2px 5px;"><strong>Hosting &amp; CI/CD</strong></td>
-              <td style="padding: 2px 5px;">InfinityFree &amp; GitHub Actions</td>
-              <td style="padding: 2px 5px;">
+              <td style="padding: 2px 5px">
+                <strong>Hosting &amp; CI/CD</strong>
+              </td>
+              <td style="padding: 2px 5px">
+                InfinityFree &amp; GitHub Actions
+              </td>
+              <td style="padding: 2px 5px">
                 Cloud Linux hosting with automated FTPS deployment pipeline
                 triggered on git push to main branch.
               </td>
@@ -1125,13 +1154,21 @@
           </tbody>
         </table>
 
-        <h3 class="academic-subheading" style="margin-top: 4px; margin-bottom: 2px;">
+        <h3
+          class="academic-subheading"
+          style="margin-top: 4px; margin-bottom: 2px"
+        >
           3.3 Hardware &amp; Software Environment Requirements
         </h3>
-        <p style="font-size: 8pt; line-height: 1.35; margin: 0;">
-          <strong>&bull; Development Hardware:</strong> Standard x86-64 PC with Intel/AMD Multi-Core Processor, 8GB RAM, 100MB free disk storage.<br />
-          <strong>&bull; Operating System &amp; Tooling:</strong> Windows 11, Visual Studio Code, XAMPP v8.2.12 (Apache 2.4, MariaDB 10.4, PHP 8.2).<br />
-          <strong>&bull; Client Requirements:</strong> Any modern standards-compliant web browser (Google Chrome 100+, Firefox 100+, Edge, Safari iOS).
+        <p style="font-size: 8pt; line-height: 1.35; margin: 0">
+          <strong>&bull; Development Hardware:</strong> Standard x86-64 PC with
+          Intel/AMD Multi-Core Processor, 8GB RAM, 100MB free disk storage.<br />
+          <strong>&bull; Operating System &amp; Tooling:</strong> Windows 11,
+          Visual Studio Code, XAMPP v8.2.12 (Apache 2.4, MariaDB 10.4, PHP
+          8.2).<br />
+          <strong>&bull; Client Requirements:</strong> Any modern
+          standards-compliant web browser (Google Chrome 100+, Firefox 100+,
+          Edge, Safari iOS).
         </p>
 
         <div class="running-footer">
@@ -1635,51 +1672,50 @@ jobs:
         <div class="screenshot-three-grid">
           <!-- Figure 8.1: Home Page -->
           <div class="screenshot-card-box">
-            <div class="img-frame" style="height: 180px; max-height: 180px">
+            <div class="img-frame">
               <img
                 src="images/screenshot-home.png"
-                alt="Figure 8.1: Home Page Interface"
-                style="height: 180px; object-fit: cover; object-position: top center;"
+                alt="Figure 8.1: Home Page Hero Interface"
               />
             </div>
             <div class="caption-text">
               <strong
-                >Figure 8.1: Home Page Interface
+                >Figure 8.1: Home Page Hero Interface
                 (<code>index.html</code>)</strong
               >
-              &mdash; Showcases the hero banner, interactive "Rat Race vs. Hatke
-              Career" problem-solution dilemma matrix, and domain spotlights.
+              &mdash; Showcases responsive header navigation, core mission value
+              proposition, and dual CTA pathways to career exploration and
+              assessment.
             </div>
           </div>
 
           <!-- 2 Side-by-Side Images -->
           <div class="two-cols-row">
-            <!-- Figure 8.2: Career Detail Roadmap -->
+            <!-- Figure 8.2: Career Detail Specification -->
             <div class="screenshot-card-box">
-              <div class="img-frame" style="height: 160px; max-height: 160px">
+              <div class="img-frame">
                 <img
                   src="images/screenshot-roadmap.png"
-                  alt="Figure 8.2: Career Detail Roadmap"
-                  style="height: 160px; object-fit: cover; object-position: top center;"
+                  alt="Figure 8.2: Career Profile & Specification"
                 />
               </div>
               <div class="caption-text">
                 <strong
-                  >Figure 8.2: Career Detail Roadmap
+                  >Figure 8.2: Career Profile &amp; Roadmap
                   (<code>career-detail.html</code>)</strong
                 >
-                &mdash; Illustrates AI Prompt Engineer roadmap, salary packages,
-                and career trajectory.
+                &mdash; Illustrates specialized career profile, 4-tier
+                compensation metrics, educational requirements, and interactive
+                action toolbar.
               </div>
             </div>
 
             <!-- Figure 8.3: Contact & Suggestion Form -->
             <div class="screenshot-card-box">
-              <div class="img-frame" style="height: 160px; max-height: 160px">
+              <div class="img-frame">
                 <img
                   src="images/screenshot-contact.png"
-                  alt="Figure 8.3: Contact & Suggestion Form"
-                  style="height: 160px; object-fit: cover; object-position: top center;"
+                  alt="Figure 8.3: Contact & Suggestion Portal"
                 />
               </div>
               <div class="caption-text">
@@ -1687,8 +1723,8 @@ jobs:
                   >Figure 8.3: Contact &amp; Suggestion Portal
                   (<code>contact.html</code>)</strong
                 >
-                &mdash; Displays user feedback portal with regex validation
-                and sanitized database storage.
+                &mdash; Displays dual feedback channels for direct developer
+                communication and student-driven career addition submissions.
               </div>
             </div>
           </div>
@@ -1713,9 +1749,21 @@ jobs:
           9.0 Limitations, Future Scope, Conclusion &amp; References
         </h2>
 
-        <h3 class="academic-subheading" style="margin-top: 4px; margin-bottom: 2px;">9.1 Current System Limitations</h3>
-        <ul style="font-size: 8.5pt; line-height: 1.25; margin: 3px 0 6px 0; padding-left: 18px;">
-          <li style="margin-bottom: 2px;">
+        <h3
+          class="academic-subheading"
+          style="margin-top: 4px; margin-bottom: 2px"
+        >
+          9.1 Current System Limitations
+        </h3>
+        <ul
+          style="
+            font-size: 8.5pt;
+            line-height: 1.25;
+            margin: 3px 0 6px 0;
+            padding-left: 18px;
+          "
+        >
+          <li style="margin-bottom: 2px">
             <strong>Client-Side Content Storage:</strong> Career information
             currently resides in structured client-side JavaScript objects
             rather than a headless database CMS.
@@ -1727,16 +1775,26 @@ jobs:
           </li>
         </ul>
 
-        <h3 class="academic-subheading" style="margin-top: 4px; margin-bottom: 2px;">
+        <h3
+          class="academic-subheading"
+          style="margin-top: 4px; margin-bottom: 2px"
+        >
           9.2 Future Scope &amp; Planned Enhancements
         </h3>
-        <ol style="font-size: 8.5pt; line-height: 1.25; margin: 3px 0 6px 0; padding-left: 18px;">
-          <li style="margin-bottom: 2px;">
+        <ol
+          style="
+            font-size: 8.5pt;
+            line-height: 1.25;
+            margin: 3px 0 6px 0;
+            padding-left: 18px;
+          "
+        >
+          <li style="margin-bottom: 2px">
             <strong>Cloud-Synchronized Student Accounts:</strong> User
             authentication with hashed passwords (<code>password_hash</code>) to
             persist bookmarks and quiz results across devices.
           </li>
-          <li style="margin-bottom: 2px;">
+          <li style="margin-bottom: 2px">
             <strong>Direct Mentorship Scheduling:</strong> Integrated calendar
             booking allowing students to schedule 1-on-1 counseling video calls
             with practicing domain professionals.
@@ -1748,8 +1806,13 @@ jobs:
           </li>
         </ol>
 
-        <h3 class="academic-subheading" style="margin-top: 4px; margin-bottom: 2px;">9.3 Academic Conclusion</h3>
-        <p style="font-size: 8.5pt; line-height: 1.3; margin: 3px 0 6px 0;">
+        <h3
+          class="academic-subheading"
+          style="margin-top: 4px; margin-bottom: 2px"
+        >
+          9.3 Academic Conclusion
+        </h3>
+        <p style="font-size: 8.5pt; line-height: 1.3; margin: 3px 0 6px 0">
           The <strong>Career Kuch Hatke</strong> project successfully fulfills
           all academic specifications stipulated for the B.Sc. Computer Science
           Field Project curriculum (Academic Year 2026&ndash;2027). It
@@ -1761,26 +1824,36 @@ jobs:
           utility paired with technical competency.
         </p>
 
-        <h3 class="academic-subheading" style="margin-top: 4px; margin-bottom: 2px;">
+        <h3
+          class="academic-subheading"
+          style="margin-top: 4px; margin-bottom: 2px"
+        >
           9.4 Academic References &amp; Authoritative Citations
         </h3>
-        <ol style="font-size: 8.5pt; line-height: 1.22; margin: 3px 0 0 0; padding-left: 18px;">
-          <li style="margin-bottom: 2px;">
+        <ol
+          style="
+            font-size: 8.5pt;
+            line-height: 1.22;
+            margin: 3px 0 0 0;
+            padding-left: 18px;
+          "
+        >
+          <li style="margin-bottom: 2px">
             <strong>Glassdoor India &amp; AmbitionBox:</strong> 2025–2026 Indian
             Industry Compensation &amp; Salary Benchmark Reports for emerging
             tech and creative vocations.
           </li>
-          <li style="margin-bottom: 2px;">
+          <li style="margin-bottom: 2px">
             <strong>University Grants Commission (UGC) &amp; AICTE:</strong>
             National institutional accreditation directories, degree
             prerequisites, and recognized higher education programs.
           </li>
-          <li style="margin-bottom: 2px;">
+          <li style="margin-bottom: 2px">
             <strong>Mozilla Developer Network (MDN Web Docs):</strong> HTML5
             Semantics, CSS Flexible Box, CSS Grid, and Web Storage API
             documentation.
           </li>
-          <li style="margin-bottom: 2px;">
+          <li style="margin-bottom: 2px">
             <strong>The PHP Group:</strong> Official PHP 8.2 Documentation
             &mdash; Filter Functions, Data Sanitization, Prepared Statements,
             and Session Security Standards.
