@@ -45,6 +45,24 @@
   margin-top: 0;
 }
 
+body[data-compact="true"] .sidebar,
+body[data-compact="true"] .details-sidebar {
+  display: none !important;
+}
+body[data-compact="true"] .details-grid {
+  display: block !important;
+}
+body[data-compact="true"] .main-content {
+  width: 100% !important;
+  max-width: 100% !important;
+}
+body[data-compact="true"] .career-hero {
+  padding: 6.5rem 0 2rem 0 !important;
+}
+body[data-compact="true"] .career-details {
+  padding: 1.5rem 0 2rem 0 !important;
+}
+
 .hero-content {
   text-align: center;
   max-width: 900px;

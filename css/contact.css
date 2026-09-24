@@ -29,17 +29,24 @@
 
 /* Rest of your contact page styles... */
 body[data-compact="true"] .page-header {
-  padding: 2.2rem 2rem 1rem 2rem !important;
+  padding: 1.8rem 2rem 0.8rem 2rem !important;
 }
 body[data-compact="true"] .page-header h1 {
-  font-size: 2.5rem !important;
-  margin-bottom: 0.5rem !important;
+  font-size: 2.2rem !important;
+  margin-bottom: 0.3rem !important;
+}
+body[data-compact="true"] .page-header p {
+  margin-bottom: 0 !important;
+  line-height: 1.5 !important;
 }
 body[data-compact="true"] .contact-options-section {
-  padding: 1.2rem 0 !important;
+  padding: 1rem 0 !important;
 }
 body[data-compact="true"] .contact-option-card {
-  padding: 1.5rem 1.2rem !important;
+  padding: 1.2rem 1.2rem !important;
+}
+body[data-compact="true"] .contact-option-card p {
+  margin-bottom: 0.8rem !important;
 }
 .contact-form-section,
 .suggest-career-section {
