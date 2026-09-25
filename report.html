@@ -52,7 +52,7 @@
 
       /* Page Definition (Standard Academic A4 Pages) */
       .report-page {
-        padding: 38px 46px 28px 46px;
+        padding: 38px 46px 22px 46px;
         min-height: 1080px;
         position: relative;
         display: flex;
@@ -91,7 +91,10 @@
         }
         .report-page {
           padding: 0;
-          min-height: 256mm;
+          height: 261mm;
+          max-height: 261mm;
+          min-height: 261mm;
+          overflow: hidden;
           margin: 0;
           box-shadow: none;
           border: none;
@@ -108,12 +111,6 @@
         }
         .no-print {
           display: none !important;
-        }
-        .screenshot-three-grid .top-img-box {
-          max-height: 290px !important;
-        }
-        .screenshot-three-grid .bottom-img-box {
-          max-height: 270px !important;
         }
       }
 
@@ -386,13 +383,13 @@
       .screenshot-three-grid {
         display: flex;
         flex-direction: column;
-        gap: 8px;
-        margin-top: 4px;
+        gap: 10px;
+        margin-top: 6px;
       }
 
       .screenshot-card-box {
         border: 1px solid #1f2937;
-        padding: 4px;
+        padding: 5px;
         background: #ffffff !important;
         text-align: center;
         box-sizing: border-box;
@@ -401,19 +398,25 @@
       .screenshot-card-box .img-frame {
         overflow: hidden;
         border: 1px solid #9ca3af;
-        margin-bottom: 3px;
+        margin-bottom: 4px;
         background: #ffffff;
         display: flex;
         justify-content: center;
-        align-items: flex-start;
+        align-items: center;
       }
 
       .screenshot-card-box img {
         width: 100%;
         height: auto;
+        max-height: 425px;
+        object-fit: contain;
         display: block;
         margin: 0 auto;
         image-rendering: -webkit-optimize-contrast;
+      }
+
+      .two-cols-row .screenshot-card-box img {
+        max-height: 255px;
       }
 
       .screenshot-card-box .caption-text {
@@ -427,7 +430,7 @@
       .two-cols-row {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        gap: 8px;
+        gap: 10px;
       }
 
       /* Academic Running Header & Footer */
@@ -1676,7 +1679,7 @@ jobs:
          PAGE 9: 8.0 WEBSITE USER INTERFACE SCREENSHOTS (MAX 3 IMAGES)
          Matches Mam's Requirement: Exactly 3 Core Screenshots
          ==================================================================== -->
-      <div class="report-page" id="page-9">
+      <div class="report-page">
         <h2 class="academic-heading">
           8.0 Website User Interface Screenshots (3 Core Modules)
         </h2>
@@ -1692,19 +1695,18 @@ jobs:
           <div class="screenshot-card-box">
             <div class="img-frame">
               <img
-                src="images/screenshot-home.png?v=4"
+                src="images/screenshot-home.png?v=5"
                 alt="Figure 8.1: Complete Home Page Interface"
-                style="max-height: 415px; width: auto; max-width: 100%;"
               />
             </div>
             <div class="caption-text">
               <strong
-                >Figure 8.1: Home Page Interface
+                >Figure 8.1: Complete Home Page Interface
                 (<code>index.html</code>)</strong
               >
-              &mdash; Complete view from navigation bar to footer showcasing the
-              hero section, personality quiz CTA, awareness statistics, and 5
-              core career categories.
+              &mdash; Full top-to-bottom view showcasing the navigation bar,
+              hero section, personality quiz banner, key statistics, 5 career
+              category cards, and complete site footer.
             </div>
           </div>
 
@@ -1714,18 +1716,18 @@ jobs:
             <div class="screenshot-card-box">
               <div class="img-frame">
                 <img
-                  src="images/screenshot-roadmap.png?v=4"
-                  alt="Figure 8.2: Career Profile & Roadmap"
+                  src="images/screenshot-roadmap.png?v=5"
+                  alt="Figure 8.2: Complete Career Profile & Roadmap Page"
                 />
               </div>
               <div class="caption-text">
                 <strong
-                  >Figure 8.2: Career Profile &amp; Roadmap
+                  >Figure 8.2: Career Profile &amp; Roadmap Page
                   (<code>career-detail.html</code>)</strong
                 >
-                &mdash; Complete page view displaying quick facts, interactive
-                toolbar, 4-tier salary breakdown, step-by-step entry roadmap,
-                top Indian colleges, sidebar widgets, and footer.
+                &mdash; Complete page view displaying the career hero banner,
+                action toolbar, 10-step accordion roadmap stack, right sidebar
+                modules, and footer.
               </div>
             </div>
 
@@ -1733,8 +1735,8 @@ jobs:
             <div class="screenshot-card-box">
               <div class="img-frame">
                 <img
-                  src="images/screenshot-contact.png?v=4"
-                  alt="Figure 8.3: Contact & Suggestion Portal"
+                  src="images/screenshot-contact.png?v=5"
+                  alt="Figure 8.3: Complete Contact & Suggestion Portal"
                 />
               </div>
               <div class="caption-text">
@@ -1742,9 +1744,9 @@ jobs:
                   >Figure 8.3: Contact &amp; Suggestion Portal
                   (<code>contact.html</code>)</strong
                 >
-                &mdash; Complete page view illustrating the dual feedback option
-                cards, active message submission form with reCAPTCHA
-                verification, and footer.
+                &mdash; Complete page view displaying the navigation bar,
+                header banner, dual interactive option cards (Send Message &amp;
+                Suggest Career), and footer.
               </div>
             </div>
           </div>
