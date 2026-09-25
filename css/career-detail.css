@@ -45,24 +45,6 @@
   margin-top: 0;
 }
 
-body[data-compact="true"] .sidebar,
-body[data-compact="true"] .details-sidebar {
-  display: none !important;
-}
-body[data-compact="true"] .details-grid {
-  display: block !important;
-}
-body[data-compact="true"] .main-content {
-  width: 100% !important;
-  max-width: 100% !important;
-}
-body[data-compact="true"] .career-hero {
-  padding: 6.5rem 0 2rem 0 !important;
-}
-body[data-compact="true"] .career-details {
-  padding: 1.5rem 0 2rem 0 !important;
-}
-
 .hero-content {
   text-align: center;
   max-width: 900px;
@@ -1909,5 +1891,252 @@ body[data-compact="true"] .career-details {
     display: none !important;
   }
 }
+/* ============================================
+   FULL-PAGE COMPACT MODE (Documentation Screenshots)
+   ============================================ */
+body[data-compact="true"] .career-hero {
+  padding: 3.25rem 0 0.6rem 0 !important;
+}
+
+body[data-compact="true"] .breadcrumb {
+  margin-bottom: 0.25rem !important;
+  padding-bottom: 0.2rem !important;
+  font-size: 0.72rem !important;
+}
+
+body[data-compact="true"] .hero-content {
+  padding-top: 0.1rem !important;
+}
+
+body[data-compact="true"] .hero-content .category-badge {
+  padding: 0.15rem 0.6rem !important;
+  font-size: 0.64rem !important;
+  margin-bottom: 0.15rem !important;
+}
+
+body[data-compact="true"] #career-name {
+  font-size: 1.55rem !important;
+  margin-bottom: 0.1rem !important;
+}
+
+body[data-compact="true"] .career-tagline {
+  font-size: 0.82rem !important;
+  margin-bottom: 0.35rem !important;
+}
+
+body[data-compact="true"] .quick-facts {
+  margin-top: 0.3rem !important;
+  gap: 0.6rem !important;
+}
+
+body[data-compact="true"] .fact {
+  padding: 0.32rem 0.4rem !important;
+}
+
+body[data-compact="true"] .fact-label {
+  font-size: 0.66rem !important;
+  margin-bottom: 0.05rem !important;
+}
+
+body[data-compact="true"] .fact-value {
+  font-size: 0.8rem !important;
+}
+
+body[data-compact="true"] .career-details {
+  padding: 0.5rem 0 !important;
+}
+
+body[data-compact="true"] .details-grid {
+  grid-template-columns: 1fr 260px !important;
+  gap: 0.7rem !important;
+}
+
+body[data-compact="true"] .main-content {
+  display: grid !important;
+  grid-template-columns: repeat(2, 1fr) !important;
+  gap: 0.3rem !important;
+  align-items: start !important;
+}
+
+body[data-compact="true"] .roadmap-toolbar {
+  grid-column: 1 / -1 !important;
+  margin-bottom: 0.05rem !important;
+  gap: 0.35rem !important;
+}
+
+body[data-compact="true"] .toolbar-btn {
+  padding: 0.28rem 0.4rem !important;
+  font-size: 0.68rem !important;
+  border-radius: 7px !important;
+}
+
+body[data-compact="true"] .detail-card {
+  margin-bottom: 0 !important;
+  border-radius: 8px !important;
+}
+
+body[data-compact="true"] .detail-card .card-header {
+  padding: 0.28rem 0.55rem !important;
+  margin-bottom: 0 !important;
+  gap: 0.4rem !important;
+}
+
+body[data-compact="true"] .detail-card .card-number {
+  width: 20px !important;
+  height: 20px !important;
+  font-size: 0.68rem !important;
+}
+
+body[data-compact="true"] .detail-card .card-header h2 {
+  font-size: 0.78rem !important;
+}
+
+body[data-compact="true"] .detail-card .card-header::after {
+  font-size: 0.68rem !important;
+}
+
+body[data-compact="true"] .detail-card.active .card-content {
+  padding: 0.35rem 0.55rem !important;
+  font-size: 0.68rem !important;
+  line-height: 1.24 !important;
+}
+
+body[data-compact="true"] .detail-card.active .card-content p {
+  font-size: 0.68rem !important;
+  margin-bottom: 0.15rem !important;
+  line-height: 1.24 !important;
+}
+
+body[data-compact="true"] .salary-grid {
+  gap: 0.25rem !important;
+}
+
+body[data-compact="true"] .salary-box {
+  padding: 0.28rem 0.45rem !important;
+  border-radius: 6px !important;
+}
+
+body[data-compact="true"] .salary-label {
+  font-size: 0.6rem !important;
+  margin-bottom: 0.04rem !important;
+}
+
+body[data-compact="true"] .salary-amount {
+  font-size: 0.78rem !important;
+}
+
+body[data-compact="true"] .roadmap {
+  display: grid !important;
+  grid-template-columns: repeat(2, 1fr) !important;
+  gap: 0.2rem !important;
+}
+
+body[data-compact="true"] .roadmap-step {
+  padding: 0.2rem 0.4rem !important;
+  gap: 0.04rem !important;
+  border-radius: 5px !important;
+}
+
+body[data-compact="true"] .roadmap-step strong {
+  font-size: 0.66rem !important;
+}
+
+body[data-compact="true"] .roadmap-step span {
+  font-size: 0.62rem !important;
+  line-height: 1.16 !important;
+}
+
+body[data-compact="true"] .colleges-container {
+  gap: 0.18rem !important;
+}
+
+body[data-compact="true"] .colleges-subcard {
+  padding: 0.22rem 0.42rem !important;
+  border-radius: 5px !important;
+  margin-bottom: 0.12rem !important;
+}
+
+body[data-compact="true"] .colleges-subcard:nth-child(n+3),
+body[data-compact="true"] .reality-grid {
+  display: none !important;
+}
+
+body[data-compact="true"] .subcard-title {
+  font-size: 0.66rem !important;
+  margin-bottom: 0.1rem !important;
+}
+
+body[data-compact="true"] .college-tag {
+  padding: 0.1rem 0.35rem !important;
+  font-size: 0.58rem !important;
+}
+
+body[data-compact="true"] .institutes-list {
+  display: grid !important;
+  grid-template-columns: repeat(2, 1fr) !important;
+  gap: 0.1rem 0.35rem !important;
+}
+
+body[data-compact="true"] .institutes-list li {
+  font-size: 0.58rem !important;
+  padding: 0.06rem 0 !important;
+  margin-bottom: 0 !important;
+  line-height: 1.15 !important;
+}
+
+body[data-compact="true"] .sidebar {
+  position: static !important;
+  gap: 0.45rem !important;
+}
+
+body[data-compact="true"] .sidebar-card {
+  padding: 0.55rem 0.75rem !important;
+  border-radius: 9px !important;
+  border-width: 2px !important;
+}
+
+body[data-compact="true"] .sidebar-card h3 {
+  font-size: 0.88rem !important;
+  margin-bottom: 0.22rem !important;
+}
+
+body[data-compact="true"] .sidebar-card p {
+  font-size: 0.7rem !important;
+  margin-bottom: 0.35rem !important;
+  line-height: 1.25 !important;
+}
+
+body[data-compact="true"] .cta-card .btn {
+  padding: 0.38rem 0.65rem !important;
+  font-size: 0.75rem !important;
+}
+
+body[data-compact="true"] #related-careers {
+  gap: 0.3rem !important;
+}
+
+body[data-compact="true"] .related-career-link {
+  padding: 0.32rem 0.55rem !important;
+  border-radius: 7px !important;
+}
+
+body[data-compact="true"] .related-career-link strong {
+  font-size: 0.72rem !important;
+  margin-bottom: 0.05rem !important;
+}
+
+body[data-compact="true"] .related-career-link small {
+  font-size: 0.64rem !important;
+}
+
+body[data-compact="true"] .share-btn {
+  padding: 0.36rem 0.55rem !important;
+  font-size: 0.72rem !important;
+}
+
+body[data-compact="true"] .whatsapp-sidebar-btn {
+  margin-top: 0.3rem !important;
+}
+
 /* END OF CAREER DETAIL PAGE RESPONSIVE STYLES 
  END OF CAREER DETAIL PAGE STYLES */

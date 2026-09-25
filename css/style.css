@@ -2497,4 +2497,176 @@ a.card-btn:hover {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.55);
 }
 
+/* ============================================
+   FULL-PAGE COMPACT MODE (Documentation Screenshots)
+   ============================================ */
+body[data-compact="true"] .navbar {
+  padding: 0.45rem 0 !important;
+}
+
+body[data-compact="true"] .hero {
+  padding: 3.65rem 0 1.05rem 0 !important;
+}
+
+body[data-compact="true"] .hero h1 {
+  font-size: 1.95rem !important;
+  margin-bottom: 0.25rem !important;
+}
+
+body[data-compact="true"] .hero h2 {
+  font-size: 1.15rem !important;
+  margin-bottom: 0.45rem !important;
+}
+
+body[data-compact="true"] .hero p {
+  font-size: 0.9rem !important;
+  margin-bottom: 0.65rem !important;
+}
+
+body[data-compact="true"] .hero .btn {
+  padding: 0.44rem 1.2rem !important;
+  font-size: 0.84rem !important;
+}
+
+body[data-compact="true"] .quiz-cta {
+  padding: 0.9rem 1rem !important;
+}
+
+body[data-compact="true"] .quiz-cta h2 {
+  font-size: 1.3rem !important;
+  margin-bottom: 0.2rem !important;
+}
+
+body[data-compact="true"] .quiz-cta p {
+  font-size: 0.84rem !important;
+  margin-bottom: 0.45rem !important;
+}
+
+body[data-compact="true"] .quiz-cta .btn {
+  padding: 0.38rem 1.3rem !important;
+  font-size: 0.84rem !important;
+  margin-bottom: 0.2rem !important;
+}
+
+body[data-compact="true"] .quiz-cta .note {
+  font-size: 0.74rem !important;
+  margin-bottom: 0 !important;
+}
+
+body[data-compact="true"] .stats {
+  padding: 1rem 0 !important;
+}
+
+body[data-compact="true"] .stats h2 {
+  font-size: 1.4rem !important;
+  margin-bottom: 0.6rem !important;
+}
+
+body[data-compact="true"] .stat-boxes {
+  gap: 1rem !important;
+}
+
+body[data-compact="true"] .stat-box {
+  padding: 0.7rem 1rem !important;
+}
+
+body[data-compact="true"] .stat-box h3 {
+  font-size: 1.7rem !important;
+  margin-bottom: 0.12rem !important;
+}
+
+body[data-compact="true"] .stat-box p {
+  font-size: 0.8rem !important;
+}
+
+body[data-compact="true"] .categories {
+  padding: 1rem 0 !important;
+}
+
+body[data-compact="true"] .categories h2 {
+  font-size: 1.4rem !important;
+  margin-bottom: 0.6rem !important;
+}
+
+body[data-compact="true"] .category-grid {
+  gap: 0.85rem !important;
+}
+
+body[data-compact="true"] .category-card {
+  padding: 0.65rem 0.6rem !important;
+}
+
+body[data-compact="true"] .category-card .emoji {
+  font-size: 1.55rem !important;
+  margin-bottom: 0.2rem !important;
+}
+
+body[data-compact="true"] .category-card h3 {
+  font-size: 0.9rem !important;
+  margin-bottom: 0.12rem !important;
+}
+
+body[data-compact="true"] .category-card p {
+  font-size: 0.75rem !important;
+  margin-bottom: 0.3rem !important;
+}
+
+body[data-compact="true"] .category-card a {
+  font-size: 0.78rem !important;
+}
+
+body[data-compact="true"] .footer {
+  padding: 0.85rem 0 0 0 !important;
+}
+
+body[data-compact="true"] .footer-intro {
+  margin-bottom: 0.55rem !important;
+  padding-bottom: 0.45rem !important;
+}
+
+body[data-compact="true"] .footer-intro h3 {
+  font-size: 1.1rem !important;
+  margin-bottom: 0.15rem !important;
+}
+
+body[data-compact="true"] .footer-intro p {
+  font-size: 0.78rem !important;
+  margin: 0 !important;
+}
+
+body[data-compact="true"] .footer-columns {
+  gap: 1.5rem !important;
+  padding-bottom: 0.6rem !important;
+}
+
+body[data-compact="true"] .footer-section h4 {
+  font-size: 0.82rem !important;
+  margin-bottom: 0.3rem !important;
+}
+
+body[data-compact="true"] .footer-section li,
+body[data-compact="true"] .footer-section p {
+  margin-bottom: 0.18rem !important;
+  font-size: 0.74rem !important;
+}
+
+body[data-compact="true"] .footer-bottom {
+  padding: 0.5rem 1rem !important;
+}
+
+body[data-compact="true"] .footer-disclaimer {
+  font-size: 0.66rem !important;
+  margin-bottom: 0.2rem !important;
+  line-height: 1.25 !important;
+}
+
+body[data-compact="true"] .footer-bottom p {
+  font-size: 0.7rem !important;
+  margin-bottom: 0.1rem !important;
+}
+
+body[data-compact="true"] .back-to-top {
+  display: none !important;
+}
+
 /* END OF STYLESHEET */

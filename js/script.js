@@ -1536,6 +1536,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
   if (urlParams.get("compact") === "true") {
     document.body.setAttribute("data-compact", "true");
+    Array.from(document.querySelectorAll(".detail-card"))
+      .slice(0, 4)
+      .forEach(function (card) {
+        card.classList.add("active");
+      });
+    var rcBox = document.getElementById("recaptcha-contact");
+    if (rcBox) {
+      rcBox.innerHTML =
+        '<div style="display:inline-flex;align-items:center;justify-content:space-between;width:260px;padding:8px 12px;background:#f9f9f9;border:1px solid #d3d3d3;border-radius:4px;box-shadow:0 1px 2px rgba(0,0,0,0.05);"><div style="display:flex;align-items:center;gap:10px;"><div style="width:20px;height:20px;border:2px solid #c1c1c1;border-radius:2px;background:#fff;"></div><span style="font-family:Roboto,sans-serif;font-size:12px;color:#222;font-weight:500;">I\'m not a robot</span></div><div style="text-align:center;line-height:1.1;"><div style="font-size:14px;">🔄</div><div style="font-size:8px;color:#555;font-family:Roboto,sans-serif;">reCAPTCHA</div><div style="font-size:7px;color:#777;">Privacy - Terms</div></div></div>';
+    }
   }
 
   /* ============================================
