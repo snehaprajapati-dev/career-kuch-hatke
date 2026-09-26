@@ -16,14 +16,12 @@
     <script>
       (function () {
         var s = localStorage.getItem("ckh_theme");
-        var params = new URLSearchParams(window.location.search);
-        var p = params.get("theme");
+        var p = new URLSearchParams(window.location.search).get("theme");
         if (s === "dark" || p === "dark")
           document.documentElement.setAttribute("data-theme", "dark");
-        if (params.get("compact") === "true")
-          document.documentElement.setAttribute("data-compact", "true");
       })();
     </script>
+
     <link rel="stylesheet" href="css/style.css?v=7.0" />
     <link rel="stylesheet" href="css/career-detail.css?v=6.0" />
     <link rel="stylesheet" href="css/breadcrumb-fix.css?v=5.3" />
@@ -43,203 +41,6 @@
       href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@400;500;600;700;800&family=Tenor+Sans&display=swap"
       rel="stylesheet"
     />
-    <style>
-      html[data-compact="true"] .navbar {
-        position: relative !important;
-        padding: 0.35rem 0 !important;
-      }
-      html[data-compact="true"] .career-hero {
-        padding: 0.35rem 0 0.45rem 0 !important;
-        margin-top: 0 !important;
-      }
-      html[data-compact="true"] .career-hero .breadcrumb-nav,
-      html[data-compact="true"] .career-hero .breadcrumb {
-        padding-top: 0 !important;
-        padding-bottom: 0.25rem !important;
-        margin-bottom: 0.25rem !important;
-        font-size: 0.76rem !important;
-      }
-      html[data-compact="true"] .hero-content {
-        padding-top: 0.05rem !important;
-      }
-      html[data-compact="true"] .hero-content .category-badge {
-        padding: 0.15rem 0.7rem !important;
-        font-size: 0.68rem !important;
-        margin-bottom: 0.15rem !important;
-      }
-      html[data-compact="true"] #career-name {
-        font-size: 1.5rem !important;
-        margin-bottom: 0.1rem !important;
-      }
-      html[data-compact="true"] .career-tagline {
-        font-size: 0.84rem !important;
-        margin-bottom: 0.3rem !important;
-      }
-      html[data-compact="true"] .quick-facts {
-        margin-top: 0.25rem !important;
-        padding: 0 !important;
-        gap: 0.7rem !important;
-      }
-      html[data-compact="true"] .quick-facts .fact {
-        padding: 0.32rem 0.55rem !important;
-        min-height: 0 !important;
-      }
-      html[data-compact="true"] .fact-label {
-        font-size: 0.7rem !important;
-        margin-bottom: 0.08rem !important;
-      }
-      html[data-compact="true"] .fact-value {
-        font-size: 0.82rem !important;
-      }
-      html[data-compact="true"] .career-details {
-        padding: 0.45rem 0 !important;
-      }
-      html[data-compact="true"] .details-grid {
-        gap: 1.2rem !important;
-      }
-      html[data-compact="true"] .main-content {
-        gap: 0.24rem !important;
-      }
-      html[data-compact="true"] .roadmap-toolbar {
-        padding: 0 !important;
-        margin-bottom: 0.12rem !important;
-        gap: 0.45rem !important;
-      }
-      html[data-compact="true"] .toolbar-btn {
-        padding: 0.28rem 0.45rem !important;
-        font-size: 0.74rem !important;
-      }
-      html[data-compact="true"] .detail-card {
-        padding: 0 !important;
-        margin-bottom: 0 !important;
-        border-radius: 9px !important;
-      }
-      html[data-compact="true"] .detail-card .card-header {
-        padding: 0.26rem 0.85rem !important;
-        margin-bottom: 0 !important;
-        border-bottom: none !important;
-      }
-      html[data-compact="true"] .detail-card .card-number {
-        width: 22px !important;
-        height: 22px !important;
-        font-size: 0.74rem !important;
-      }
-      html[data-compact="true"] .detail-card .card-header h2 {
-        font-size: 0.84rem !important;
-      }
-      html[data-compact="true"] .detail-card .card-header::after {
-        font-size: 0.78rem !important;
-      }
-      html[data-compact="true"] .detail-card.active .card-content {
-        padding: 0.38rem 0.85rem 0.42rem !important;
-      }
-      html[data-compact="true"] .detail-card .card-content p {
-        font-size: 0.78rem !important;
-        line-height: 1.3 !important;
-        margin-bottom: 0.25rem !important;
-      }
-      html[data-compact="true"] .highlight-box {
-        padding: 0.32rem 0.65rem !important;
-        margin-top: 0.2rem !important;
-      }
-      html[data-compact="true"] .highlight-box h4 {
-        font-size: 0.78rem !important;
-        margin-bottom: 0.08rem !important;
-      }
-      html[data-compact="true"] .highlight-box p {
-        margin-bottom: 0 !important;
-      }
-      html[data-compact="true"] .sidebar {
-        gap: 0.45rem !important;
-        position: static !important;
-      }
-      html[data-compact="true"] .sidebar-card {
-        padding: 0.6rem 0.85rem !important;
-      }
-      html[data-compact="true"] .sidebar-card h3 {
-        font-size: 0.92rem !important;
-        margin-bottom: 0.2rem !important;
-      }
-      html[data-compact="true"] .sidebar-card p {
-        font-size: 0.75rem !important;
-        line-height: 1.3 !important;
-        margin-bottom: 0.35rem !important;
-      }
-      html[data-compact="true"] .cta-card .btn,
-      html[data-compact="true"] .cta-card a.btn {
-        padding: 0.38rem 0.75rem !important;
-        font-size: 0.76rem !important;
-      }
-      html[data-compact="true"] #related-careers {
-        gap: 0.32rem !important;
-      }
-      html[data-compact="true"] .related-career-link {
-        padding: 0.38rem 0.65rem !important;
-      }
-      html[data-compact="true"] .related-career-link strong {
-        font-size: 0.8rem !important;
-        margin-bottom: 0.08rem !important;
-      }
-      html[data-compact="true"] .related-career-link small {
-        font-size: 0.7rem !important;
-      }
-      html[data-compact="true"] .share-btn {
-        padding: 0.34rem 0.55rem !important;
-        font-size: 0.74rem !important;
-      }
-      html[data-compact="true"] .whatsapp-sidebar-btn {
-        margin-top: 0.28rem !important;
-      }
-      html[data-compact="true"] .footer {
-        padding: 0.4rem 0 0.25rem !important;
-      }
-      html[data-compact="true"] .footer-intro {
-        margin-bottom: 0.25rem !important;
-        padding-bottom: 0.25rem !important;
-      }
-      html[data-compact="true"] .footer-intro h3 {
-        font-size: 0.92rem !important;
-        margin-bottom: 0.08rem !important;
-      }
-      html[data-compact="true"] .footer-intro p {
-        font-size: 0.7rem !important;
-        margin-bottom: 0 !important;
-      }
-      html[data-compact="true"] .footer-columns {
-        margin-bottom: 0.25rem !important;
-        gap: 0.6rem !important;
-      }
-      html[data-compact="true"] .footer-section h4 {
-        font-size: 0.72rem !important;
-        margin-bottom: 0.15rem !important;
-      }
-      html[data-compact="true"] .footer-section ul li,
-      html[data-compact="true"] .footer-section p {
-        margin-bottom: 0.06rem !important;
-        line-height: 1.2 !important;
-        font-size: 0.68rem !important;
-      }
-      html[data-compact="true"] .footer-section ul li a,
-      html[data-compact="true"] .footer-section p a {
-        font-size: 0.68rem !important;
-      }
-      html[data-compact="true"] .footer-bottom {
-        padding-top: 0.22rem !important;
-      }
-      html[data-compact="true"] .footer-disclaimer {
-        font-size: 0.64rem !important;
-        margin-bottom: 0.1rem !important;
-        line-height: 1.15 !important;
-      }
-      html[data-compact="true"] .footer-bottom p {
-        font-size: 0.65rem !important;
-        margin-bottom: 0.05rem !important;
-        line-height: 1.15 !important;
-      }
-      html[data-compact="true"] .back-to-top {
-        display: none !important;
-      }
-    </style>
   </head>
   <body>
     <nav class="navbar">
@@ -476,11 +277,11 @@
           <div class="footer-section">
             <h4>Categories</h4>
             <ul>
-              <li><a href="explore.html#creative">Creative</a></li>
-              <li><a href="explore.html#tech">Tech</a></li>
-              <li><a href="explore.html#science">Science</a></li>
-              <li><a href="explore.html#business">Business</a></li>
-              <li><a href="explore.html#unique">Unique</a></li>
+              <li><a href="explore.html?category=creative">Creative</a></li>
+              <li><a href="explore.html?category=tech">Tech</a></li>
+              <li><a href="explore.html?category=science">Science</a></li>
+              <li><a href="explore.html?category=business">Business</a></li>
+              <li><a href="explore.html?category=unique">Unique</a></li>
             </ul>
           </div>
           <div class="footer-section">

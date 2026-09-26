@@ -28,6 +28,19 @@
 }
 
 /* Rest of your contact page styles... */
+body[data-compact="true"] .page-header {
+  padding: 2.2rem 2rem 1rem 2rem !important;
+}
+body[data-compact="true"] .page-header h1 {
+  font-size: 2.5rem !important;
+  margin-bottom: 0.5rem !important;
+}
+body[data-compact="true"] .contact-options-section {
+  padding: 1.2rem 0 !important;
+}
+body[data-compact="true"] .contact-option-card {
+  padding: 1.5rem 1.2rem !important;
+}
 .contact-form-section,
 .suggest-career-section {
   padding: 5rem 0;

@@ -52,11 +52,11 @@
 
       /* Page Definition (Standard Academic A4 Pages) */
       .report-page {
-        padding: 38px 46px 22px 46px;
+        padding: 38px 46px 24px 46px;
         min-height: 1080px;
-        position: relative;
         display: flex;
         flex-direction: column;
+        position: relative;
         background: #ffffff !important;
         color: #000000 !important;
         box-sizing: border-box;
@@ -91,10 +91,7 @@
         }
         .report-page {
           padding: 0;
-          height: 261mm;
-          max-height: 261mm;
-          min-height: 261mm;
-          overflow: hidden;
+          min-height: 995px;
           margin: 0;
           box-shadow: none;
           border: none;
@@ -384,7 +381,7 @@
         display: flex;
         flex-direction: column;
         gap: 10px;
-        margin-top: 6px;
+        margin-top: 4px;
       }
 
       .screenshot-card-box {
@@ -396,19 +393,20 @@
       }
 
       .screenshot-card-box .img-frame {
-        overflow: hidden;
         border: 1px solid #9ca3af;
         margin-bottom: 4px;
-        background: #ffffff;
+        background: #f8fafc;
         display: flex;
         justify-content: center;
         align-items: center;
+        padding: 2px;
       }
 
       .screenshot-card-box img {
-        width: 100%;
+        max-width: 100%;
+        width: auto;
         height: auto;
-        max-height: 425px;
+        max-height: 295px;
         object-fit: contain;
         display: block;
         margin: 0 auto;
@@ -416,7 +414,7 @@
       }
 
       .two-cols-row .screenshot-card-box img {
-        max-height: 255px;
+        max-height: 365px;
       }
 
       .screenshot-card-box .caption-text {
@@ -436,13 +434,13 @@
       /* Academic Running Header & Footer */
       .running-footer {
         margin-top: auto;
+        padding-top: 6px;
         width: 100%;
         display: flex;
         justify-content: space-between;
         font-size: 8.5pt;
         color: #333333;
         border-top: 1px solid #000000;
-        padding-top: 5px;
       }
 
       /* Screen-Only Control Toolbar */
@@ -966,11 +964,11 @@
             <strong
               >Module 1 &mdash; Home Portal (<code>index.html</code>):</strong
             >
-            Introduces the platform mission, provides immediate calls-to-action
-            ("Explore Careers" and "Take Quiz"), features an analytical "Rat
-            Race vs. Hatke Career" problem-solution dilemma matrix, highlights
-            featured professions, and includes an anti-flash dark/light theme
-            switcher.
+            Introduces the platform mission ("Your Dream Career Exists"),
+            provides immediate calls-to-action ("Explore Careers" and "Take
+            Quiz"), highlights key Indian career-awareness statistics (93%,
+            500+, 68%), presents 5 interactive domain category cards, and
+            includes an anti-flash dark/light theme switcher.
           </li>
           <li>
             <strong
@@ -999,9 +997,10 @@
               >Module 4 &mdash; Career Aptitude Assessment Quiz
               (<code>quiz.html</code>):</strong
             >
-            Interactive 5-step self-assessment evaluating analytical traits,
-            creativity, and working preferences through a client-side weighted
-            scoring algorithm yielding match percentages.
+            Interactive 8-question self-assessment evaluating analytical traits,
+            creativity, and working preferences across 5 career domains through
+            a client-side category-scoring algorithm that recommends top
+            matching careers.
           </li>
           <li>
             <strong
@@ -1009,8 +1008,9 @@
               (<code>about.html</code>):</strong
             >
             Documents developer background (Sneha Prajapati, Roll No. 89),
-            foundational research motivation, statistical realities of career
-            selection pressures in India, and verified citation sources.
+            foundational motivation ("Why I Built This"), statistical realities
+            of career selection pressures in India (72%, 3%, 65%), and the
+            Version 1.0 future platform roadmap.
           </li>
           <li>
             <strong
@@ -1081,15 +1081,15 @@
                                       | HTTP / HTTPS GET &amp; POST
 +-------------------------------------------------------------------------------+
 |                      APPLICATION SERVER (APACHE / PHP 8.2)                    |
-|   - Request Routing &amp; Form Handlers (contact-process.php, suggestion.php)     |
+|   - Request Routing &amp; Form Handlers (contact-process.php, suggestion-process) |
 |   - Administrative Back-Office (login.php, dashboard.php, export.php)         |
-|   - Security Layer: Input Sanitization, XSS Neutralization, Session Auth      |
+|   - Security Layer: Prepared Statements, XSS Sanitization, Session Auth       |
 +-------------------------------------------------------------------------------+
                                       | SQL Query Execution
 +-------------------------------------------------------------------------------+
 |                         DATABASE LAYER (MySQL 8.x)                            |
-|   - Table: contacts (id, name, email, message, submitted_at)                  |
-|   - Table: career_suggestions (id, name, email, career_title, description)    |
+|   - Table: contact_messages (id, name, email, telephone, subject, user_type)  |
+|   - Table: career_suggestions (id, career_name, career_reason, suggester_name)|
 +-------------------------------------------------------------------------------+
         </pre>
 
@@ -1346,9 +1346,9 @@
           5.2 How PHP and MySQL were Implemented
         </h3>
         <p>
-          PHP 8.2 handles POST requests asynchronously, returning structured
-          JSON payloads to the client without page reload. The MySQL database
-          comprises two normalized tables:
+          PHP 8.2 handles POST requests via parameterized prepared statements,
+          verifying Google reCAPTCHA v2 tokens and redirecting with status query
+          flags. The MySQL database comprises two normalized tables:
         </p>
 
         <table class="academic-table">
@@ -1363,26 +1363,28 @@
           <tbody>
             <tr>
               <td rowspan="4">
-                <strong>contacts</strong><br /><small>Student inquiries</small>
+                <strong>contact_messages</strong><br /><small
+                  >Student inquiries</small
+                >
               </td>
               <td><code>id</code></td>
               <td>INT(11)</td>
               <td>PRIMARY KEY, AUTO_INCREMENT</td>
             </tr>
             <tr>
-              <td><code>name</code>, <code>email</code></td>
+              <td><code>name</code>, <code>email</code>, <code>telephone</code></td>
               <td>VARCHAR(100), VARCHAR(150)</td>
-              <td>NOT NULL, Validated email format</td>
+              <td>NOT NULL, Validated contact details</td>
             </tr>
             <tr>
-              <td><code>message</code></td>
-              <td>TEXT</td>
-              <td>Sanitized inquiry text body</td>
+              <td><code>subject</code>, <code>user_type</code></td>
+              <td>VARCHAR(100), VARCHAR(50)</td>
+              <td>Inquiry subject &amp; role (Student/Parent/Educator)</td>
             </tr>
             <tr>
-              <td><code>submitted_at</code></td>
-              <td>TIMESTAMP</td>
-              <td>DEFAULT CURRENT_TIMESTAMP</td>
+              <td><code>message</code>, <code>status</code></td>
+              <td>TEXT, VARCHAR(20)</td>
+              <td>Sanitized message body &amp; read/unread state</td>
             </tr>
             <tr>
               <td rowspan="3">
@@ -1395,30 +1397,30 @@
               <td>PRIMARY KEY, AUTO_INCREMENT</td>
             </tr>
             <tr>
-              <td><code>career_title</code>, <code>category</code></td>
-              <td>VARCHAR(150), VARCHAR(50)</td>
-              <td>Proposed career title and primary domain</td>
+              <td><code>career_name</code>, <code>suggester_name</code></td>
+              <td>VARCHAR(100), VARCHAR(100)</td>
+              <td>Proposed hatke career title &amp; contributor name</td>
             </tr>
             <tr>
-              <td><code>description</code></td>
-              <td>TEXT</td>
-              <td>Student explanation of vocational viability</td>
+              <td><code>career_reason</code>, <code>status</code></td>
+              <td>TEXT, VARCHAR(20)</td>
+              <td>Explanation of uniqueness &amp; review status</td>
             </tr>
           </tbody>
         </table>
 
         <pre class="academic-code">
-// Server-Side Sanitization & Validation Handler (php/contact-process.php)
-$name    = htmlspecialchars(strip_tags(trim($_POST['name'])), ENT_QUOTES, 'UTF-8');
-$email   = filter_var(trim($_POST['email']), FILTER_SANITIZE_EMAIL);
-$message = htmlspecialchars(strip_tags(trim($_POST['message'])), ENT_QUOTES, 'UTF-8');
+// Server-Side Sanitization &amp; Prepared Statement Handler (php/contact-process.php)
+$name      = htmlspecialchars(trim($_POST["name"]));
+$email     = htmlspecialchars(trim($_POST["email"]));
+$telephone = isset($_POST["telephone"]) ? htmlspecialchars(trim($_POST["telephone"])) : '';
+$subject   = htmlspecialchars(trim($_POST["subject"]));
+$i_am      = htmlspecialchars(trim($_POST["i_am"]));
+$message   = htmlspecialchars(trim($_POST["message"]));
 
-if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-    die(json_encode(["status" => "error", "message" => "Please enter a valid email address."]));
-}
-$stmt = $conn->prepare("INSERT INTO contacts (name, email, message) VALUES (?, ?, ?)");
-$stmt->bind_param("sss", $name, $email, $message);
-$stmt->execute();
+$stmt = $conn->prepare("INSERT INTO contact_messages (name, email, telephone, subject, user_type, message, status) VALUES (?, ?, ?, ?, ?, ?, 'unread')");
+$stmt->bind_param("ssssss", $name, $email, $telephone, $subject, $i_am, $message);
+if ($stmt->execute()) { header("Location: ../contact.html?success=contact"); }
       </pre
         >
 
@@ -1695,18 +1697,18 @@ jobs:
           <div class="screenshot-card-box">
             <div class="img-frame">
               <img
-                src="images/screenshot-home.png?v=5"
-                alt="Figure 8.1: Complete Home Page Interface"
+                src="images/screenshot-home.png?v=6"
+                alt="Figure 8.1: Home Page Hero Interface"
               />
             </div>
             <div class="caption-text">
               <strong
-                >Figure 8.1: Complete Home Page Interface
+                >Figure 8.1: Home Page Hero Interface
                 (<code>index.html</code>)</strong
               >
-              &mdash; Full top-to-bottom view showcasing the navigation bar,
-              hero section, personality quiz banner, key statistics, 5 career
-              category cards, and complete site footer.
+              &mdash; Showcases responsive header navigation, core mission value
+              proposition, and dual CTA pathways to career exploration and
+              assessment.
             </div>
           </div>
 
@@ -1716,18 +1718,18 @@ jobs:
             <div class="screenshot-card-box">
               <div class="img-frame">
                 <img
-                  src="images/screenshot-roadmap.png?v=5"
-                  alt="Figure 8.2: Complete Career Profile & Roadmap Page"
+                  src="images/screenshot-roadmap.png?v=6"
+                  alt="Figure 8.2: Career Profile & Specification"
                 />
               </div>
               <div class="caption-text">
                 <strong
-                  >Figure 8.2: Career Profile &amp; Roadmap Page
+                  >Figure 8.2: Career Profile &amp; Roadmap
                   (<code>career-detail.html</code>)</strong
                 >
-                &mdash; Complete page view displaying the career hero banner,
-                action toolbar, 10-step accordion roadmap stack, right sidebar
-                modules, and footer.
+                &mdash; Illustrates specialized career profile, 4-tier
+                compensation metrics, educational requirements, and interactive
+                action toolbar.
               </div>
             </div>
 
@@ -1735,8 +1737,8 @@ jobs:
             <div class="screenshot-card-box">
               <div class="img-frame">
                 <img
-                  src="images/screenshot-contact.png?v=5"
-                  alt="Figure 8.3: Complete Contact & Suggestion Portal"
+                  src="images/screenshot-contact.png?v=6"
+                  alt="Figure 8.3: Contact & Suggestion Portal"
                 />
               </div>
               <div class="caption-text">
@@ -1744,9 +1746,8 @@ jobs:
                   >Figure 8.3: Contact &amp; Suggestion Portal
                   (<code>contact.html</code>)</strong
                 >
-                &mdash; Complete page view displaying the navigation bar,
-                header banner, dual interactive option cards (Send Message &amp;
-                Suggest Career), and footer.
+                &mdash; Displays dual feedback channels for direct developer
+                communication and student-driven career addition submissions.
               </div>
             </div>
           </div>
