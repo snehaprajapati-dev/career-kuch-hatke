@@ -91,13 +91,20 @@
         }
         .report-page {
           padding: 0;
-          min-height: 995px;
+          min-height: 268mm;
+          height: 268mm;
+          max-height: 268mm;
+          overflow: hidden;
           margin: 0;
           box-shadow: none;
           border: none;
           border-radius: 0;
           page-break-after: always;
           break-after: page;
+        }
+        .certificate-container {
+          min-height: 265mm !important;
+          height: 265mm !important;
         }
         .report-page:last-child {
           page-break-after: avoid;
@@ -1418,7 +1425,9 @@ $subject   = htmlspecialchars(trim($_POST["subject"]));
 $i_am      = htmlspecialchars(trim($_POST["i_am"]));
 $message   = htmlspecialchars(trim($_POST["message"]));
 
-$stmt = $conn->prepare("INSERT INTO contact_messages (name, email, telephone, subject, user_type, message, status) VALUES (?, ?, ?, ?, ?, ?, 'unread')");
+$sql  = "INSERT INTO contact_messages (name, email, telephone, subject, user_type, message, status) ";
+$sql .= "VALUES (?, ?, ?, ?, ?, ?, 'unread')";
+$stmt = $conn->prepare($sql);
 $stmt->bind_param("ssssss", $name, $email, $telephone, $subject, $i_am, $message);
 if ($stmt->execute()) { header("Location: ../contact.html?success=contact"); }
       </pre
