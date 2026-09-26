@@ -52,10 +52,9 @@
 
       /* Page Definition (Standard Academic A4 Pages) */
       .report-page {
-        padding: 38px 46px 24px 46px;
-        min-height: 1080px;
-        display: flex;
-        flex-direction: column;
+        padding: 38px 46px 56px 46px;
+        min-height: 1060px;
+        display: block;
         position: relative;
         background: #ffffff !important;
         color: #000000 !important;
@@ -90,21 +89,28 @@
           padding: 0;
         }
         .report-page {
-          padding: 0;
-          min-height: 268mm;
-          height: 268mm;
-          max-height: 268mm;
-          overflow: hidden;
-          margin: 0;
-          box-shadow: none;
-          border: none;
-          border-radius: 0;
+          display: block !important;
+          padding: 0 !important;
+          min-height: 0 !important;
+          height: auto !important;
+          max-height: none !important;
+          overflow: visible !important;
+          margin: 0 !important;
+          box-shadow: none !important;
+          border: none !important;
+          border-radius: 0 !important;
           page-break-after: always;
           break-after: page;
         }
         .certificate-container {
-          min-height: 265mm !important;
-          height: 265mm !important;
+          min-height: 0 !important;
+          height: auto !important;
+          padding: 24px 30px !important;
+        }
+        .running-footer {
+          position: static !important;
+          margin-top: 14px !important;
+          padding-top: 6px !important;
         }
         .report-page:last-child {
           page-break-after: avoid;
@@ -440,9 +446,11 @@
 
       /* Academic Running Header & Footer */
       .running-footer {
-        margin-top: auto;
+        position: absolute;
+        bottom: 16px;
+        left: 46px;
+        right: 46px;
         padding-top: 6px;
-        width: 100%;
         display: flex;
         justify-content: space-between;
         font-size: 8.5pt;
