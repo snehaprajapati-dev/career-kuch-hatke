@@ -104,11 +104,11 @@ In the Indian educational system, over eighty percent of secondary and undergrad
 
 The platform architecture comprises six distinct user-facing modules and a protected administrative back-office:
 
-1. **Module 1 — Home Portal (`index.html`):** Introduces the platform mission, provides immediate calls-to-action ("Explore Careers" and "Take Quiz"), features an analytical "Rat Race vs. Hatke Career" problem-solution dilemma matrix, highlights featured professions, and includes an anti-flash dark/light theme switcher.
+1. **Module 1 — Home Portal (`index.html`):** Introduces the platform mission ("Your Dream Career Exists"), provides immediate calls-to-action ("Explore Careers" and "Take Quiz"), highlights key Indian career-awareness statistics (93%, 500+, 68%), presents 5 interactive domain category cards, and includes an anti-flash dark/light theme switcher.
 2. **Module 2 — Career Exploration Grid (`explore.html`):** Houses 35 standardized equal-height career cards. Features real-time Category Filter Pills (Creative, Tech, Science, Business, Unique), an instant keyword search bar with clear button and synonym evaluation, and a dedicated **"Bookmarked"** filter tab with friendly empty state.
 3. **Module 3 — Dynamic Career Roadmap Engine (`career-detail.html`):** A parameterized single-page template driven by URL queries (e.g., `?career=ai-prompt-engineer`). Dynamically renders 10 structured sections: Quick Facts, Actual Duties, Career Trajectory, Accredited Indian Colleges, Degree Safety Net, and "Talk to Your Parents" pitch generator with action toolbar.
-4. **Module 4 — Career Aptitude Assessment Quiz (`quiz.html`):** Interactive 5-step self-assessment evaluating analytical traits, creativity, and working preferences through a client-side weighted scoring algorithm yielding match percentages.
-5. **Module 5 — About Us & Research Transparency (`about.html`):** Documents developer background (Sneha Prajapati, Roll No. 89), foundational research motivation, statistical realities of career selection pressures in India, and verified citation sources.
+4. **Module 4 — Career Aptitude Assessment Quiz (`quiz.html`):** Interactive 8-question self-assessment evaluating analytical traits, creativity, and working preferences across 5 career domains through a client-side category-scoring algorithm that recommends top matching careers.
+5. **Module 5 — About Us & Research Transparency (`about.html`):** Documents developer background (Sneha Prajapati, Roll No. 89), foundational motivation ("Why I Built This"), statistical realities of career selection pressures in India (72%, 3%, 65%), and the Version 1.0 future platform roadmap.
 6. **Module 6 — Contact & Suggestion Portal (`contact.html`):** Dual-purpose communication portal allowing students to submit general inquiries and propose new emerging vocational paths for addition with client and server-side validation.
 7. **Module 7 — Administrative Management Portal (`admin/`):** Restricted back-office consisting of session-authenticated login (`login.php`), metrics dashboard (`dashboard.php`), submission review tables (`contacts.php`, `suggestions.php`), item deletion (`delete.php`), and CSV export for Excel analysis (`export.php`).
 
@@ -142,8 +142,8 @@ The platform architecture comprises six distinct user-facing modules and a prote
                                       |
 +-------------------------------------------------------------------------------+
 |                         DATABASE LAYER (MySQL 8.x)                            |
-|   - Table: contacts (id, name, email, message, submitted_at)                  |
-|   - Table: career_suggestions (id, name, email, career_title, description)    |
+|   - Table: contact_messages (id, name, email, telephone, subject, user_type)  |
+|   - Table: career_suggestions (id, career_name, career_reason, suggester_name)|
 +-------------------------------------------------------------------------------+
 ```
 
