@@ -1132,7 +1132,7 @@ document.addEventListener("DOMContentLoaded", function () {
           ],
           careers: [
             {
-              title: "UX/UI Designer",
+              title: "UI/UX Designer",
               salary: "₹3-30 LPA",
               link: "ui-ux-designer",
             },
@@ -1149,7 +1149,7 @@ document.addEventListener("DOMContentLoaded", function () {
           ],
         },
         tech: {
-          title: "You are a Tech Explorer 💻",
+          title: "You are a Tech Innovator 💻",
           desc: "You love solving problems using technology, code, and systems. You turn complex challenges into smart solutions.",
           link: "tech",
           strengths: [
@@ -1177,7 +1177,7 @@ document.addEventListener("DOMContentLoaded", function () {
           ],
         },
         science: {
-          title: "You are a Curious Scientist 🔬",
+          title: "You are a Science Explorer 🔬",
           desc: "You love discovering how the world works, asking 'why', and finding patterns in nature and data.",
           link: "science",
           strengths: [
@@ -1233,14 +1233,14 @@ document.addEventListener("DOMContentLoaded", function () {
           ],
         },
         unique: {
-          title: "You are a Bold Adventurer 🎭",
-          desc: "You love freedom, adventure, and unconventional paths. You follow your passions rather than standard formulas.",
+          title: "You are a Unique Trailblazer 🎭",
+          desc: "You love unexpected, inspiring, and unconventional paths. You follow your unique passions rather than standard career formulas.",
           link: "unique",
           strengths: [
-            "Risk Taking",
-            "Non-conformist",
-            "Exploration",
-            "Live Impact",
+            "Unconventional Thinking",
+            "Empathy & Impact",
+            "Originality",
+            "Cultural Curiosity",
           ],
           careers: [
             {
@@ -1254,15 +1254,18 @@ document.addEventListener("DOMContentLoaded", function () {
               link: "pet-therapist",
             },
             {
-              title: "Adventure Sports Instructor",
-              salary: "₹2.5-12 LPA",
-              link: "adventure-sports-instructor",
+              title: "Tea Taster",
+              salary: "₹3-20 LPA",
+              link: "tea-taster",
             },
           ],
         },
       };
 
       const r = resultMap[category] || resultMap["unique"];
+      try {
+        sessionStorage.setItem("ckh_explore_filter", r.link);
+      } catch (e) {}
       if (resultContent) {
         resultContent.innerHTML = `
                 <div class="result-badge">🎉 100% Career Personality Match</div>
@@ -1279,7 +1282,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     ${r.careers
                       .map(
                         (c) => `
-                      <a href="career-detail.html?career=${c.link}" class="recom-card">
+                      <a href="career-detail.html?career=${c.link}&from=${r.link}" class="recom-card">
                         <div class="recom-title">${c.title}</div>
                         <div class="recom-salary">${c.salary}</div>
                         <span class="recom-arrow">View Career →</span>
