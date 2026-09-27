@@ -306,8 +306,44 @@ document.addEventListener("DOMContentLoaded", function () {
 
       const backToTop = document.querySelector(".back-to-top");
       if (backToTop) {
-        backToTop.style.display = visibleCount === 0 ? "none" : "";
+        backToTop.style.display =
+          filterValue === "all" && visibleCount > 0 ? "" : "none";
       }
+
+      try {
+        sessionStorage.setItem("ckh_explore_filter", filterValue || "all");
+      } catch (e) {}
+
+      try {
+        const url = new URL(window.location.href);
+        if (filterValue && filterValue !== "all") {
+          url.searchParams.set("category", filterValue);
+        } else {
+          url.searchParams.delete("category");
+        }
+        window.history.replaceState(
+          {},
+          document.title,
+          url.pathname + (url.search ? url.search : ""),
+        );
+      } catch (e) {}
+
+      careerCards.forEach((card) => {
+        const link = card.querySelector('a.card-btn[href*="career-detail.html"]');
+        if (link) {
+          const baseHref = link
+            .getAttribute("href")
+            .replace(/&from=[^&]*/g, "");
+          if (filterValue && filterValue !== "all") {
+            link.setAttribute(
+              "href",
+              `${baseHref}&from=${encodeURIComponent(filterValue)}`,
+            );
+          } else {
+            link.setAttribute("href", baseHref);
+          }
+        }
+      });
     }
 
     filterButtons.forEach((button) => {
@@ -865,9 +901,16 @@ document.addEventListener("DOMContentLoaded", function () {
           }
         }
 
-        // Hide back-to-top when no careers match or during empty search
+        // Show back-to-top only when all careers are displayed together (no active filter or search)
         if (backToTop) {
-          backToTop.style.display = visibleCount === 0 ? "none" : "";
+          const activeFilterBtn = document.querySelector(".filter-btn.active");
+          const currentFilter = activeFilterBtn
+            ? activeFilterBtn.getAttribute("data-filter")
+            : "all";
+          backToTop.style.display =
+            rawValue.length === 0 && currentFilter === "all" && visibleCount > 0
+              ? ""
+              : "none";
         }
       };
 
@@ -901,11 +944,28 @@ document.addEventListener("DOMContentLoaded", function () {
       careerCards.forEach((card) => {
         card.style.removeProperty("display");
         card.classList.remove("is-hidden");
+        const link = card.querySelector('a.card-btn[href*="career-detail.html"]');
+        if (link) {
+          link.setAttribute(
+            "href",
+            link.getAttribute("href").replace(/&from=[^&]*/g, ""),
+          );
+        }
       });
       if (countSpan) countSpan.textContent = careerCards.length;
       if (noResults) noResults.style.display = "none";
       const backToTop = document.querySelector(".back-to-top");
       if (backToTop) backToTop.style.display = "";
+      try {
+        sessionStorage.setItem("ckh_explore_filter", "all");
+        const url = new URL(window.location.href);
+        url.searchParams.delete("category");
+        window.history.replaceState(
+          {},
+          document.title,
+          url.pathname + (url.search ? url.search : ""),
+        );
+      } catch (e) {}
     };
 
     const urlParamsExplore = new URLSearchParams(window.location.search);
@@ -918,6 +978,10 @@ document.addEventListener("DOMContentLoaded", function () {
         `.filter-btn[data-filter="${category}"]`,
       );
       if (targetButton) targetButton.click();
+    } else {
+      try {
+        sessionStorage.setItem("ckh_explore_filter", "all");
+      } catch (e) {}
     }
 
     window.addEventListener("hashchange", function () {
@@ -1069,12 +1133,12 @@ document.addEventListener("DOMContentLoaded", function () {
           careers: [
             {
               title: "UX/UI Designer",
-              salary: "₹3-15 LPA",
+              salary: "₹3-30 LPA",
               link: "ui-ux-designer",
             },
             {
               title: "Food Stylist",
-              salary: "₹3-12 LPA",
+              salary: "₹2.5-15 LPA",
               link: "food-stylist",
             },
             {
@@ -1097,7 +1161,7 @@ document.addEventListener("DOMContentLoaded", function () {
           careers: [
             {
               title: "AI Prompt Engineer",
-              salary: "₹6-25 LPA",
+              salary: "₹6-40 LPA",
               link: "ai-prompt-engineer",
             },
             {
@@ -1107,7 +1171,7 @@ document.addEventListener("DOMContentLoaded", function () {
             },
             {
               title: "Game Developer",
-              salary: "₹3-20 LPA",
+              salary: "₹4-30 LPA",
               link: "game-developer",
             },
           ],
@@ -1125,17 +1189,17 @@ document.addEventListener("DOMContentLoaded", function () {
           careers: [
             {
               title: "Forensic Scientist",
-              salary: "₹3-12 LPA",
+              salary: "₹3-25 LPA",
               link: "forensic-scientist",
             },
             {
               title: "Oceanographer",
-              salary: "₹4-15 LPA",
+              salary: "₹4-18 LPA",
               link: "oceanographer",
             },
             {
               title: "Restoration Architect",
-              salary: "₹4-15 LPA",
+              salary: "₹4-20 LPA",
               link: "restoration-architect",
             },
           ],
@@ -1158,12 +1222,12 @@ document.addEventListener("DOMContentLoaded", function () {
             },
             {
               title: "Sports Agent",
-              salary: "₹5-25 LPA",
+              salary: "₹4-50 LPA",
               link: "sports-agent",
             },
             {
               title: "Social Media Manager",
-              salary: "₹2.5-10 LPA",
+              salary: "₹2.5-20 LPA",
               link: "social-media-manager",
             },
           ],
@@ -1181,12 +1245,12 @@ document.addEventListener("DOMContentLoaded", function () {
           careers: [
             {
               title: "Podcast Producer",
-              salary: "₹3-12 LPA",
+              salary: "₹3-18 LPA",
               link: "podcast-producer",
             },
             {
               title: "Pet Therapist",
-              salary: "₹2-8 LPA",
+              salary: "₹2.5-15 LPA",
               link: "pet-therapist",
             },
             {

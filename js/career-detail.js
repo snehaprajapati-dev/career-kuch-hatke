@@ -31,6 +31,32 @@ function fillCareerDetails(career, careerId) {
 
   document.getElementById("breadcrumb-career").textContent = career.name;
 
+  const urlParams = new URLSearchParams(window.location.search);
+  let activeFilter = urlParams.get("from");
+  if (activeFilter) {
+    try {
+      sessionStorage.setItem("ckh_explore_filter", activeFilter);
+    } catch (e) {}
+  } else {
+    try {
+      activeFilter = sessionStorage.getItem("ckh_explore_filter");
+    } catch (e) {}
+  }
+
+  const breadcrumbExploreLink = document.querySelector(
+    '.breadcrumb-nav a[href^="explore.html"]',
+  );
+  if (breadcrumbExploreLink) {
+    if (activeFilter && activeFilter !== "all") {
+      breadcrumbExploreLink.setAttribute(
+        "href",
+        `explore.html?category=${encodeURIComponent(activeFilter)}`,
+      );
+    } else {
+      breadcrumbExploreLink.setAttribute("href", "explore.html");
+    }
+  }
+
   document.getElementById("hero-category").textContent =
     career.emoji + " " + career.categoryName;
   document.getElementById("hero-category").className =
@@ -810,11 +836,22 @@ function fillRelatedCareers(currentCategory, currentCareerId) {
     }
   }
 
+  let activeFilter = new URLSearchParams(window.location.search).get("from");
+  if (!activeFilter) {
+    try {
+      activeFilter = sessionStorage.getItem("ckh_explore_filter");
+    } catch (e) {}
+  }
+  const fromParam =
+    activeFilter && activeFilter !== "all"
+      ? `&from=${encodeURIComponent(activeFilter)}`
+      : "";
+
   let html = "";
 
   relatedCareers.forEach((career) => {
     html += `
-      <a href="career-detail.html?career=${career.id}" class="related-career-link">
+      <a href="career-detail.html?career=${career.id}${fromParam}" class="related-career-link">
         <strong>${career.emoji} ${career.name}</strong>
         <small>Click to explore </small>
       </a>
