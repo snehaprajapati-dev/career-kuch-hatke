@@ -538,7 +538,7 @@
     <!-- Screen-Only Controls Bar -->
     <div class="controls-toolbar no-print">
       <span class="status-tag"
-        >Standard Project Documentation (10 Pages + Certificate)</span
+        >Standard Field Project Documentation (Strictly 10 Pages Total)</span
       >
       <button class="primary-btn" onclick="window.print()">
         Print / Save PDF (Ctrl + P)
@@ -556,78 +556,159 @@
 
     <div class="document-wrapper" id="academicReport">
       <!-- ====================================================================
-         CERTIFICATE PAGE (EXCLUDED FROM 10-PAGE COUNT)
-         Matches Official College Journal Format
+         PAGE 1 OF 10: TITLE PAGE (COVER PAGE WITH WEBSITE LOGO)
          ==================================================================== -->
       <div class="report-page">
-        <div class="certificate-container">
+        <div class="certificate-container" style="padding: 26px 34px; min-height: 980px;">
           <div>
             <div
               class="academic-header"
-              style="border-bottom: none; margin-bottom: 4px"
+              style="border-bottom: 2px solid #000000; padding-bottom: 10px; margin-bottom: 16px"
             >
-              <div class="institution-name">Vidyavardhini’s</div>
-              <div class="college-subname">
+              <div class="institution-name" style="font-size: 15pt;">Vidyavardhini’s</div>
+              <div class="college-subname" style="font-size: 11.5pt;">
                 Annasaheb Vartak College of Arts,<br />
                 Kedarnath Malhotra College of Commerce,<br />
                 E. S. Andrades College of Science
               </div>
-              <div class="dept-name">Department of Computer Science</div>
+              <div class="dept-name" style="font-size: 11.5pt; margin-top: 5px;">
+                Department of Computer Science
+              </div>
               <div class="sub-details">
                 Vasai Road (West), Dist. Palghar &bull; Affiliated to University
                 of Mumbai
               </div>
             </div>
 
-            <div class="cert-heading">CERTIFICATE</div>
-
-            <div class="cert-meta-row">
-              <div>
-                Class: <span class="cert-underline">S.Y. B.Sc. CS</span>
-              </div>
-              <div>
-                Academic Year:
-                <span class="cert-underline">2026 &ndash; 2027</span>
-              </div>
+            <div
+              style="
+                font-size: 11pt;
+                font-weight: bold;
+                text-transform: uppercase;
+                letter-spacing: 1.5px;
+                margin: 14px 0 10px 0;
+              "
+            >
+              A Field Project Report On
             </div>
 
-            <div class="cert-body-text">
-              This is to certify that the project work entitled
-              <span class="cert-underline">CAREER KUCH HATKE</span> entered in
-              this report is the bonafide work of Kumari
-              <span class="cert-underline">Sneha Mahendra Prajapati</span> of
-              class <span class="cert-underline">S.Y. B.Sc. CS</span>, Division
-              <span class="cert-underline">&mdash;</span>, Institutional Roll
-              No. <span class="cert-underline">89</span>, University Exam No.
-              <span class="cert-underline"
-                >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span
-              >, who has satisfactorily completed the required Field Project
-              work in the college laboratory as prescribed by the University of
-              Mumbai for Semester III during the academic year 2026 &ndash;
-              2027.
+            <div style="margin: 10px auto 12px auto; text-align: center;">
+              <img
+                src="favicon-512.png"
+                alt="Career Kuch Hatke Official Logo"
+                style="
+                  width: 135px;
+                  height: 135px;
+                  object-fit: contain;
+                  display: block;
+                  margin: 0 auto;
+                "
+              />
             </div>
+
+            <div
+              style="
+                font-size: 22pt;
+                font-weight: bold;
+                letter-spacing: 1.5px;
+                text-transform: uppercase;
+                margin: 6px 0 4px 0;
+              "
+            >
+              CAREER KUCH HATKE
+            </div>
+            <div
+              style="
+                font-size: 10.5pt;
+                font-style: italic;
+                margin-bottom: 16px;
+              "
+            >
+              An Interactive Unconventional Career Guidance Web Platform with
+              Administrative Management Portal
+            </div>
+
+            <div
+              style="
+                font-size: 10pt;
+                margin-bottom: 16px;
+                line-height: 1.5;
+              "
+            >
+              Submitted in partial fulfillment of the requirements for the degree of<br />
+              <strong>Bachelor of Science in Computer Science (S.Y. B.Sc. CS &mdash; Semester III)</strong><br />
+              Academic Year: <strong>2026 &ndash; 2027</strong>
+            </div>
+
+            <table
+              class="meta-table"
+              style="
+                width: 92%;
+                margin: 0 auto 14px auto;
+                font-size: 10pt;
+                text-align: left;
+              "
+            >
+              <tbody>
+                <tr>
+                  <td class="label-col" style="width: 34%;">Submitted By (Candidate):</td>
+                  <td><strong>Kumari Sneha Mahendra Prajapati</strong></td>
+                </tr>
+                <tr>
+                  <td class="label-col">Class &amp; Semester:</td>
+                  <td><strong>S.Y. B.Sc. Computer Science (Semester III)</strong></td>
+                </tr>
+                <tr>
+                  <td class="label-col">Institutional Roll No.:</td>
+                  <td><strong>89</strong></td>
+                </tr>
+                <tr>
+                  <td class="label-col">Course / Subject:</td>
+                  <td><strong>Field Project (FP)</strong></td>
+                </tr>
+                <tr>
+                  <td class="label-col">Live Hosted Website:</td>
+                  <td>
+                    <a
+                      href="https://career-kuch-hatke.infinityfreeapp.com"
+                      target="_blank"
+                      >https://career-kuch-hatke.infinityfreeapp.com</a
+                    >
+                  </td>
+                </tr>
+                <tr>
+                  <td class="label-col">GitHub Source Repository:</td>
+                  <td>
+                    <a
+                      href="https://github.com/snehaprajapati-dev/career-kuch-hatke"
+                      target="_blank"
+                      >https://github.com/snehaprajapati-dev/career-kuch-hatke</a
+                    >
+                  </td>
+                </tr>
+              </tbody>
+            </table>
           </div>
 
           <div>
-            <div class="cert-signatures">
-              <div class="cert-sig-block">Head of the Department</div>
-              <div class="cert-sig-block">External Examiner</div>
-              <div class="cert-sig-block">
-                Internal Examiner / Subject Teacher
+            <div class="cert-signatures" style="margin-top: 36px;">
+              <div class="cert-sig-block" style="width: 40%;">
+                Subject Teacher / Project Guide
+              </div>
+              <div class="cert-sig-block" style="width: 40%;">
+                Head of the Department
               </div>
             </div>
 
-            <div class="cert-footer-row">
+            <div class="cert-footer-row" style="margin-top: 18px; font-size: 9.5pt;">
               <div>
-                Date:
-                <span class="cert-underline"
-                  >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/
-                  2026</span
-                >
+                <strong>Place:</strong> Vasai Road (West)
               </div>
               <div>
-                Department of:
-                <span class="cert-underline">Computer Science</span>
+                <strong>Academic Year:</strong> 2026 &ndash; 2027
+              </div>
+              <div>
+                <strong>Page 1 of 10</strong>
               </div>
             </div>
           </div>
@@ -637,7 +718,7 @@
       <div class="page-break"></div>
 
       <!-- ====================================================================
-         PAGE 1: INDEX PAGE (TABLE OF CONTENTS - REQUIRED BY MAM)
+         PAGE 2 OF 10: PROJECT INDEX / TABLE OF CONTENTS
          ==================================================================== -->
       <div class="report-page">
         <div class="academic-header">
@@ -658,121 +739,126 @@
           </p>
         </div>
 
-        <table class="academic-table" style="margin-top: 16px">
+        <table class="academic-table" style="margin-top: 14px">
           <thead>
             <tr>
               <th style="width: 10%; text-align: center">Sr. No.</th>
-              <th style="width: 55%">Topic / Chapter Title</th>
+              <th style="width: 55%">Topic / Section Title</th>
               <th style="width: 15%; text-align: center">Page No.</th>
               <th style="width: 20%; text-align: center">Teacher's Sign</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td style="text-align: center"><strong>1.0</strong></td>
+              <td style="text-align: center"><strong>&mdash;</strong></td>
               <td>
-                <strong>Introduction &amp; Problem Statement</strong
+                <strong>Title Page &amp; Project Overview</strong
                 ><br /><small
-                  >Background, societal need, problem statement, objectives
-                  &amp; scope</small
+                  >Official project cover page with website emblem, candidate
+                  metadata, and live deployment links</small
                 >
               </td>
-              <td style="text-align: center"><strong>Page 2</strong></td>
+              <td style="text-align: center"><strong>Page 1</strong></td>
               <td></td>
             </tr>
             <tr>
-              <td style="text-align: center"><strong>2.0</strong></td>
+              <td style="text-align: center"><strong>1.0</strong></td>
               <td>
-                <strong>About the Website &amp; Core Modules</strong
+                <strong>Introduction to Website &amp; Problem Statement</strong
                 ><br /><small
-                  >Platform purpose, target audience, and detailed breakdown of
-                  all 7 modules</small
+                  >Executive summary, societal need, problem statement, and
+                  project objectives</small
                 >
               </td>
               <td style="text-align: center"><strong>Page 3</strong></td>
               <td></td>
             </tr>
             <tr>
-              <td style="text-align: center"><strong>3.0</strong></td>
+              <td style="text-align: center"><strong>2.0</strong></td>
               <td>
-                <strong>System Architecture &amp; Technologies Used</strong
+                <strong>Introduction to Website: Core Webpage Modules</strong
                 ><br /><small
-                  >Client-server block diagram, technology stack, and
-                  hardware/software specifications</small
+                  >Target audience and detailed breakdown of all 7 website
+                  modules</small
                 >
               </td>
               <td style="text-align: center"><strong>Page 4</strong></td>
               <td></td>
             </tr>
             <tr>
-              <td style="text-align: center"><strong>4.0</strong></td>
+              <td style="text-align: center"><strong>3.0</strong></td>
               <td>
-                <strong>Implementation of CSS: Why and How</strong><br /><small
-                  >Responsive design rationale, CSS grid/flexbox, custom
-                  variables, and dark/light themes</small
+                <strong>Technologies Used &amp; System Architecture</strong
+                ><br /><small
+                  >Client-server data flow diagram, technology stack table, and
+                  environment requirements</small
                 >
               </td>
               <td style="text-align: center"><strong>Page 5</strong></td>
               <td></td>
             </tr>
             <tr>
-              <td style="text-align: center"><strong>5.0</strong></td>
+              <td style="text-align: center"><strong>4.0</strong></td>
               <td>
                 <strong
-                  >Implementation of PHP &amp; Database: Why and How</strong
+                  >Technologies Used: Implementation of CSS (Why &amp;
+                  How)</strong
                 ><br /><small
-                  >Backend data persistence, input sanitization, XSS security,
-                  and MySQL schema</small
+                  >Responsive CSS Grid/Flexbox layouts, custom variables, and
+                  dark/light themes</small
                 >
               </td>
               <td style="text-align: center"><strong>Page 6</strong></td>
               <td></td>
             </tr>
             <tr>
-              <td style="text-align: center"><strong>6.0</strong></td>
+              <td style="text-align: center"><strong>5.0</strong></td>
               <td>
-                <strong>Web Hosting &amp; CI/CD Deployment Process</strong
+                <strong
+                  >Technologies Used: Implementation of PHP &amp; MySQL
+                  Database</strong
                 ><br /><small
-                  >Local XAMPP setup, Git version control, InfinityFree hosting,
-                  and GitHub Actions</small
+                  >Backend form processing, XSS/SQL injection security, and
+                  database schema</small
                 >
               </td>
               <td style="text-align: center"><strong>Page 7</strong></td>
               <td></td>
             </tr>
             <tr>
-              <td style="text-align: center"><strong>7.0</strong></td>
+              <td style="text-align: center"><strong>6.0</strong></td>
               <td>
-                <strong>System Testing &amp; Quality Assurance Matrix</strong
+                <strong
+                  >Web Hosting, CI/CD Deployment &amp; System Testing</strong
                 ><br /><small
-                  >Cross-browser testing, mobile viewports, JS runtime checks,
-                  and cache invalidation</small
+                  >Local XAMPP setup, InfinityFree cloud hosting, GitHub
+                  Actions CI/CD, and QA matrix</small
                 >
               </td>
               <td style="text-align: center"><strong>Page 8</strong></td>
               <td></td>
             </tr>
             <tr>
-              <td style="text-align: center"><strong>8.0</strong></td>
+              <td style="text-align: center"><strong>7.0</strong></td>
               <td>
-                <strong>Website Interface Screenshots (3 Core Modules)</strong
+                <strong>Website Screenshots (Only 3 Core Modules)</strong
                 ><br /><small
-                  >Home page portal, dynamic career roadmap detail, and
-                  contact/suggestion form</small
+                  >Home page hero portal, dynamic career roadmap detail, and
+                  contact/suggestion portal</small
                 >
               </td>
               <td style="text-align: center"><strong>Page 9</strong></td>
               <td></td>
             </tr>
             <tr>
-              <td style="text-align: center"><strong>9.0</strong></td>
+              <td style="text-align: center"><strong>8.0</strong></td>
               <td>
                 <strong
-                  >Limitations, Future Scope, Conclusion &amp;
-                  References</strong
+                  >References and Bibliography (with Conclusion &amp;
+                  Scope)</strong
                 ><br /><small
-                  >Current constraints, future roadmap, concluding summary, and
-                  authoritative citations</small
+                  >Current limitations, future scope, academic conclusion, and
+                  bibliography citations</small
                 >
               </td>
               <td style="text-align: center"><strong>Page 10</strong></td>
@@ -783,7 +869,7 @@
 
         <div
           style="
-            margin-top: 36px;
+            margin-top: 28px;
             padding: 12px;
             border: 1px solid #000000;
             font-size: 9.5pt;
@@ -795,7 +881,7 @@
           curriculum (Academic Year 2026&ndash;2027).
           <div
             style="
-              margin-top: 24px;
+              margin-top: 20px;
               display: flex;
               justify-content: space-between;
             "
@@ -813,14 +899,14 @@
             >Department of Computer Science &bull; S.Y. B.Sc. CS &bull; Roll No.
             89</span
           >
-          <span>Page 1 of 10</span>
+          <span>Page 2 of 10</span>
         </div>
       </div>
 
       <div class="page-break"></div>
 
       <!-- ====================================================================
-         PAGE 2: 1.0 INTRODUCTION & PROBLEM STATEMENT
+         PAGE 3 OF 10: 1.0 INTRODUCTION TO WEBSITE & PROBLEM STATEMENT
          ==================================================================== -->
       <div class="report-page">
         <div class="academic-header">
@@ -833,7 +919,7 @@
         </div>
 
         <h2 class="academic-heading">
-          1.0 Introduction &amp; Problem Statement
+          1.0 Introduction to Website &amp; Problem Statement
         </h2>
 
         <h3 class="academic-subheading">
@@ -940,18 +1026,18 @@
             >Department of Computer Science &bull; S.Y. B.Sc. CS &bull; Roll No.
             89</span
           >
-          <span>Page 2 of 10</span>
+          <span>Page 3 of 10</span>
         </div>
       </div>
 
       <div class="page-break"></div>
 
       <!-- ====================================================================
-         PAGE 3: 2.0 ABOUT THE WEBSITE & CORE MODULES
+         PAGE 4 OF 10: 2.0 INTRODUCTION TO WEBSITE: CORE WEBPAGE MODULES
          ==================================================================== -->
       <div class="report-page">
         <h2 class="academic-heading">
-          2.0 About the Website &amp; Core Modules
+          2.0 Introduction to Website: Core Webpage Modules
         </h2>
 
         <h3 class="academic-subheading">
@@ -1055,18 +1141,18 @@
             >Department of Computer Science &bull; S.Y. B.Sc. CS &bull; Roll No.
             89</span
           >
-          <span>Page 3 of 10</span>
+          <span>Page 4 of 10</span>
         </div>
       </div>
 
       <div class="page-break"></div>
 
       <!-- ====================================================================
-         PAGE 4: 3.0 SYSTEM ARCHITECTURE & TECHNOLOGIES USED
+         PAGE 5 OF 10: 3.0 TECHNOLOGIES USED & SYSTEM ARCHITECTURE
          ==================================================================== -->
       <div class="report-page">
         <h2 class="academic-heading">
-          3.0 System Architecture &amp; Technologies Used
+          3.0 Technologies Used &amp; System Architecture
         </h2>
 
         <h3 class="academic-subheading">
@@ -1212,17 +1298,19 @@
             >Department of Computer Science &bull; S.Y. B.Sc. CS &bull; Roll No.
             89</span
           >
-          <span>Page 4 of 10</span>
+          <span>Page 5 of 10</span>
         </div>
       </div>
 
       <div class="page-break"></div>
 
       <!-- ====================================================================
-         PAGE 5: 4.0 CSS IMPLEMENTATION: WHY AND HOW
+         PAGE 6 OF 10: 4.0 TECHNOLOGIES USED: IMPLEMENTATION OF CSS
          ==================================================================== -->
       <div class="report-page">
-        <h2 class="academic-heading">4.0 Implementation of CSS: Why and How</h2>
+        <h2 class="academic-heading">
+          4.0 Technologies Used: Implementation of CSS (Why &amp; How)
+        </h2>
 
         <h3 class="academic-subheading">4.1 Why CSS was Implemented</h3>
         <p>
@@ -1314,18 +1402,18 @@
             >Department of Computer Science &bull; S.Y. B.Sc. CS &bull; Roll No.
             89</span
           >
-          <span>Page 5 of 10</span>
+          <span>Page 6 of 10</span>
         </div>
       </div>
 
       <div class="page-break"></div>
 
       <!-- ====================================================================
-         PAGE 6: 5.0 PHP & DATABASE IMPLEMENTATION: WHY AND HOW
+         PAGE 7 OF 10: 5.0 TECHNOLOGIES USED: PHP & DATABASE IMPLEMENTATION
          ==================================================================== -->
       <div class="report-page">
         <h2 class="academic-heading">
-          5.0 Implementation of PHP &amp; Database: Why and How
+          5.0 Technologies Used: Implementation of PHP &amp; Database
         </h2>
 
         <h3 class="academic-subheading">
@@ -1446,130 +1534,6 @@ if ($stmt->execute()) { header("Location: ../contact.html?success=contact"); }
             >Department of Computer Science &bull; S.Y. B.Sc. CS &bull; Roll No.
             89</span
           >
-          <span>Page 6 of 10</span>
-        </div>
-      </div>
-
-      <div class="page-break"></div>
-
-      <!-- ====================================================================
-         PAGE 7: 6.0 WEB HOSTING & CI/CD DEPLOYMENT PROCESS
-         ==================================================================== -->
-      <div class="report-page">
-        <h2 class="academic-heading">
-          6.0 Web Hosting &amp; CI/CD Deployment Process
-        </h2>
-
-        <h3 class="academic-subheading">
-          6.1 Local Development Environment (XAMPP)
-        </h3>
-        <p>
-          The platform was developed and rigorously debugged locally using the
-          <strong>XAMPP</strong> stack on Windows:
-        </p>
-        <ul>
-          <li>
-            <strong>Apache Web Server:</strong> Configured on port
-            <code>8080</code> (<code>http://localhost:8080/</code>) to serve
-            static assets and proxy PHP requests.
-          </li>
-          <li>
-            <strong>MariaDB / MySQL:</strong> Running on port
-            <code>3306</code> with phpMyAdmin used for database provisioning,
-            indexing, and schema validation.
-          </li>
-          <li>
-            <strong>Local Testing:</strong> Ensured zero runtime console errors,
-            verified database insertion, and checked asynchronous fetch promises
-            locally before cloud staging.
-          </li>
-        </ul>
-
-        <h3 class="academic-subheading">
-          6.2 Cloud Web Hosting Infrastructure (InfinityFree)
-        </h3>
-        <p>
-          To ensure round-the-clock accessibility for college evaluators and
-          students, the application was deployed to
-          <strong>InfinityFree</strong> cloud hosting:
-        </p>
-        <ul>
-          <li>
-            <strong>Production Server:</strong> Linux-based Apache web server
-            with native PHP 8.2 runtime and remote MySQL database storage.
-          </li>
-          <li>
-            <strong>Live Production URL:</strong>
-            <code>https://career-kuch-hatke.infinityfreeapp.com</code>.
-          </li>
-          <li>
-            <strong>Web Server Configuration (<code>.htaccess</code>):</strong>
-            Configured URL rewriting, gzip compression, and MIME types for web
-            fonts and JSON data.
-          </li>
-        </ul>
-
-        <h3 class="academic-subheading">
-          6.3 Automated CI/CD Pipeline (GitHub Actions)
-        </h3>
-        <p>
-          Manual FTP file transfers are prone to human omission and file
-          corruption. To ensure modern professional deployment, an automated
-          <strong
-            >Continuous Integration and Continuous Deployment (CI/CD)</strong
-          >
-          pipeline was established:
-        </p>
-        <ul>
-          <li>
-            <strong>Version Control:</strong> Source code is tracked using Git
-            and pushed to GitHub:
-            <code>snehaprajapati-dev/career-kuch-hatke</code>.
-          </li>
-          <li>
-            <strong
-              >Workflow Automation
-              (<code>.github/workflows/deploy.yml</code>):</strong
-            >
-            Configured a GitHub Actions runner that automatically listens for
-            push events to the <code>main</code> branch.
-          </li>
-          <li>
-            <strong>Encrypted Secret Authentication:</strong> Securely injects
-            encrypted repository secrets (<code>FTP_SERVER</code>,
-            <code>FTP_USERNAME</code>, <code>FTP_PASSWORD</code>) into an FTPS
-            deployment action, publishing updated files to production servers
-            within seconds.
-          </li>
-        </ul>
-
-        <pre class="academic-code">
-# GitHub Actions CI/CD Pipeline (.github/workflows/deploy.yml)
-name: Deploy to InfinityFree
-on:
-  push:
-    branches: [ main ]
-jobs:
-  web-deploy:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout Source Code
-        uses: actions/checkout@v3
-      - name: Automated FTPS Sync
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
-        with:
-          server: ${{ secrets.FTP_SERVER }}
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          server-dir: htdocs/
-      </pre
-        >
-
-        <div class="running-footer">
-          <span
-            >Department of Computer Science &bull; S.Y. B.Sc. CS &bull; Roll No.
-            89</span
-          >
           <span>Page 7 of 10</span>
         </div>
       </div>
@@ -1577,111 +1541,106 @@ jobs:
       <div class="page-break"></div>
 
       <!-- ====================================================================
-         PAGE 8: 7.0 SYSTEM TESTING & QUALITY ASSURANCE
+         PAGE 8 OF 10: 6.0 WEB HOSTING, CI/CD DEPLOYMENT & SYSTEM TESTING
          ==================================================================== -->
       <div class="report-page">
         <h2 class="academic-heading">
-          7.0 System Testing &amp; Quality Assurance
+          6.0 Web Hosting, CI/CD Deployment &amp; System Testing
         </h2>
 
-        <h3 class="academic-subheading">
-          7.1 Quality Assurance &amp; Verification Matrix
+        <h3 class="academic-subheading" style="margin-top: 4px; margin-bottom: 2px">
+          6.1 Local XAMPP Environment &amp; Cloud Hosting (InfinityFree)
         </h3>
-        <p>
-          Comprehensive quality assurance protocols were executed across
-          development and production staging:
-        </p>
+        <ul style="font-size: 9pt; line-height: 1.3; margin: 3px 0 6px 0">
+          <li>
+            <strong>Local Development (XAMPP):</strong> Apache Web Server on
+            port <code>8080</code> and MariaDB/MySQL on port
+            <code>3306</code> (phpMyAdmin) were used to test PHP form handlers,
+            prepared statements, and UI responsiveness locally.
+          </li>
+          <li>
+            <strong>Production Cloud Hosting (InfinityFree):</strong> Deployed to
+            Linux-based Apache hosting with PHP 8.2 and remote MySQL at
+            <code>https://career-kuch-hatke.infinityfreeapp.com</code>,
+            configured via <code>.htaccess</code> for compression and caching.
+          </li>
+          <li>
+            <strong>Automated CI/CD Pipeline (GitHub Actions):</strong> Every
+            <code>git push</code> to <code>main</code> on GitHub
+            (<code>snehaprajapati-dev/career-kuch-hatke</code>) triggers
+            <code>.github/workflows/deploy.yml</code>, which securely syncs
+            files to the live server via FTPS using encrypted secrets.
+          </li>
+        </ul>
 
-        <table class="academic-table">
+        <pre class="academic-code" style="font-size: 6.8pt; line-height: 1.15; margin: 3px 0 6px 0; padding: 4px 8px;">
+# GitHub Actions CI/CD Pipeline (.github/workflows/deploy.yml)
+name: Deploy to InfinityFree
+on: { push: { branches: [ main ] } }
+jobs:
+  web-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Automated FTPS Sync
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          server-dir: htdocs/
+        </pre>
+
+        <h3 class="academic-subheading" style="margin-top: 4px; margin-bottom: 3px">
+          6.2 System Testing &amp; Quality Assurance Matrix
+        </h3>
+        <table class="academic-table" style="font-size: 8pt; margin-bottom: 4px">
           <thead>
             <tr>
-              <th style="width: 25%">Testing Domain</th>
-              <th style="width: 45%">Verification Procedure</th>
-              <th style="width: 30%">Outcome &amp; Status</th>
+              <th style="width: 25%; padding: 3px 5px">Testing Domain</th>
+              <th style="width: 45%; padding: 3px 5px">Verification Procedure</th>
+              <th style="width: 30%; padding: 3px 5px">Outcome &amp; Status</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td><strong>Cross-Browser Compatibility</strong></td>
-              <td>
-                Audited on Google Chrome 120+, Mozilla Firefox 122+, Microsoft
-                Edge, and Apple Safari iOS.
+              <td style="padding: 2px 5px"><strong>Cross-Browser Compatibility</strong></td>
+              <td style="padding: 2px 5px">
+                Audited on Google Chrome 120+, Mozilla Firefox 122+, Edge, and Safari iOS.
               </td>
-              <td>
-                <strong>Passed:</strong> Consistent layout rendering, flex
-                alignments, and CSS variable inheritance.
+              <td style="padding: 2px 5px">
+                <strong>Passed:</strong> Consistent grid/flex alignments and theme variables.
               </td>
             </tr>
             <tr>
-              <td><strong>Mobile Responsiveness</strong></td>
-              <td>
-                Simulated viewports from 360px (mobile) to 768px (tablet) and
-                1440px (desktop monitor).
+              <td style="padding: 2px 5px"><strong>Mobile Responsiveness</strong></td>
+              <td style="padding: 2px 5px">
+                Simulated viewports from 360px (mobile) to 768px (tablet) and 1440px (desktop).
               </td>
-              <td>
-                <strong>Passed:</strong> Equalized card heights, centered footer
-                columns, touch tap targets.
+              <td style="padding: 2px 5px">
+                <strong>Passed:</strong> Equalized card heights and responsive navigation.
               </td>
             </tr>
             <tr>
-              <td><strong>Syntax &amp; Runtime Integrity</strong></td>
-              <td>
-                Validated via Node.js compiler (<code>node -c script.js</code>)
-                and browser dev tools.
+              <td style="padding: 2px 5px"><strong>Search, Filter &amp; Bookmarks</strong></td>
+              <td style="padding: 2px 5px">
+                Tested synonym search, category filter persistence across breadcrumbs, and localStorage.
               </td>
-              <td>
-                <strong>Passed:</strong> Zero syntax errors, uncaught promise
-                rejections, or console exceptions.
+              <td style="padding: 2px 5px">
+                <strong>Passed:</strong> Instant filtering and persistent saved bookmarks.
               </td>
             </tr>
             <tr>
-              <td><strong>Input Validation &amp; Security</strong></td>
-              <td>
-                Tested SQL injection and XSS payloads (&lt;script&gt;) in
-                feedback and suggestion inputs.
+              <td style="padding: 2px 5px"><strong>Input Validation &amp; Security</strong></td>
+              <td style="padding: 2px 5px">
+                Tested SQL injection and XSS payloads (&lt;script&gt;) in contact/suggestion forms.
               </td>
-              <td>
-                <strong>Passed:</strong> Inputs strictly escaped and sanitized;
-                invalid emails rejected.
-              </td>
-            </tr>
-            <tr>
-              <td><strong>Cache Invalidation Strategy</strong></td>
-              <td>
-                Appended explicit cache-busting query version parameters
-                (<code>?v=6.0</code>) to script/style tags.
-              </td>
-              <td>
-                <strong>Passed:</strong> Instant updates on client devices
-                without stale browser caching.
+              <td style="padding: 2px 5px">
+                <strong>Passed:</strong> Inputs strictly sanitized via prepared statements.
               </td>
             </tr>
           </tbody>
         </table>
-
-        <h3 class="academic-subheading">
-          7.2 Algorithmic Verification: Search &amp; Bookmarking Engines
-        </h3>
-        <ul>
-          <li>
-            <strong>Synonym Mapping Test:</strong> Searching conversational
-            keywords (e.g., <em>"coding"</em>, <em>"camera"</em>,
-            <em>"food"</em>) correctly retrieves <em>"Ethical Hacker"</em>,
-            <em>"Wildlife Photographer"</em>, and <em>"Food Stylist"</em> via
-            the pre-indexed keyword map.
-          </li>
-          <li>
-            <strong>Bookmark Persistence Test:</strong> Saving bookmarks,
-            refreshing the browser, and switching between categories verified
-            that <code>localStorage</code> array serialization correctly
-            maintains saved states.
-          </li>
-          <li>
-            <strong>Empty State Test:</strong> Selecting the "Bookmarked" filter
-            with zero saved careers correctly presents a helpful prompt with a
-            working "View All Careers" reset button.
-          </li>
-        </ul>
 
         <div class="running-footer">
           <span
@@ -1695,32 +1654,32 @@ jobs:
       <div class="page-break"></div>
 
       <!-- ====================================================================
-         PAGE 9: 8.0 WEBSITE USER INTERFACE SCREENSHOTS (MAX 3 IMAGES)
-         Matches Mam's Requirement: Exactly 3 Core Screenshots
+         PAGE 9 OF 10: 7.0 WEBSITE SCREENSHOTS (ONLY 3 - IMPORTANT)
+         Matches Mam's Requirement: Strictly 3 Core Screenshots
          ==================================================================== -->
       <div class="report-page">
         <h2 class="academic-heading">
-          8.0 Website User Interface Screenshots (3 Core Modules)
+          7.0 Website Screenshots (Only 3 Core Modules)
         </h2>
         <p style="margin-bottom: 6px">
-          The following screenshots showcase the primary responsive user
+          The following three screenshots showcase the primary responsive user
           interfaces implemented across the
           <strong>Career Kuch Hatke</strong> web platform (captured live from
           production deployment):
         </p>
 
         <div class="screenshot-three-grid">
-          <!-- Figure 8.1: Home Page -->
+          <!-- Figure 7.1: Home Page -->
           <div class="screenshot-card-box">
             <div class="img-frame">
               <img
                 src="images/screenshot-home.png?v=6"
-                alt="Figure 8.1: Home Page Hero Interface"
+                alt="Figure 7.1: Home Page Hero Interface"
               />
             </div>
             <div class="caption-text">
               <strong
-                >Figure 8.1: Home Page Hero Interface
+                >Figure 7.1: Home Page Hero Interface
                 (<code>index.html</code>)</strong
               >
               &mdash; Showcases responsive header navigation, core mission value
@@ -1731,17 +1690,17 @@ jobs:
 
           <!-- 2 Side-by-Side Images -->
           <div class="two-cols-row">
-            <!-- Figure 8.2: Career Detail Specification -->
+            <!-- Figure 7.2: Career Detail Specification -->
             <div class="screenshot-card-box">
               <div class="img-frame">
                 <img
                   src="images/screenshot-roadmap.png?v=6"
-                  alt="Figure 8.2: Career Profile & Specification"
+                  alt="Figure 7.2: Career Profile & Specification"
                 />
               </div>
               <div class="caption-text">
                 <strong
-                  >Figure 8.2: Career Profile &amp; Roadmap
+                  >Figure 7.2: Career Profile &amp; Roadmap
                   (<code>career-detail.html</code>)</strong
                 >
                 &mdash; Illustrates specialized career profile, 4-tier
@@ -1750,17 +1709,17 @@ jobs:
               </div>
             </div>
 
-            <!-- Figure 8.3: Contact & Suggestion Form -->
+            <!-- Figure 7.3: Contact & Suggestion Form -->
             <div class="screenshot-card-box">
               <div class="img-frame">
                 <img
                   src="images/screenshot-contact.png?v=6"
-                  alt="Figure 8.3: Contact & Suggestion Portal"
+                  alt="Figure 7.3: Contact & Suggestion Portal"
                 />
               </div>
               <div class="caption-text">
                 <strong
-                  >Figure 8.3: Contact &amp; Suggestion Portal
+                  >Figure 7.3: Contact &amp; Suggestion Portal
                   (<code>contact.html</code>)</strong
                 >
                 &mdash; Displays dual feedback channels for direct developer
@@ -1782,18 +1741,18 @@ jobs:
       <div class="page-break"></div>
 
       <!-- ====================================================================
-         PAGE 10: 9.0 LIMITATIONS, FUTURE SCOPE, CONCLUSION & REFERENCES
+         PAGE 10 OF 10: 8.0 REFERENCES AND BIBLIOGRAPHY (WITH CONCLUSION)
          ==================================================================== -->
       <div class="report-page">
         <h2 class="academic-heading">
-          9.0 Limitations, Future Scope, Conclusion &amp; References
+          8.0 References and Bibliography (with Conclusion &amp; Future Scope)
         </h2>
 
         <h3
           class="academic-subheading"
           style="margin-top: 4px; margin-bottom: 2px"
         >
-          9.1 Current System Limitations
+          8.1 Current System Limitations &amp; Future Scope
         </h3>
         <ul
           style="
@@ -1804,14 +1763,18 @@ jobs:
           "
         >
           <li style="margin-bottom: 2px">
-            <strong>Client-Side Content Storage:</strong> Career information
-            currently resides in structured client-side JavaScript objects
-            rather than a headless database CMS.
+            <strong>Current Limitations:</strong> Career data resides in
+            structured client-side JavaScript objects
+            (<code>career-data.js</code>) rather than a database CMS, and
+            bookmarks rely on device-specific browser
+            <code>localStorage</code>.
           </li>
-          <li>
-            <strong>Device-Specific Bookmarks:</strong> Bookmarks rely on
-            browser <code>localStorage</code> and do not synchronize
-            automatically across separate devices.
+          <li style="margin-bottom: 2px">
+            <strong>Future Enhancements:</strong> (1) Cloud-synchronized student
+            accounts using PHP <code>password_hash()</code> authentication, (2)
+            Direct 1-on-1 mentorship booking with domain professionals, and (3)
+            AI Career Counselor chatbot for college cutoff and portfolio
+            queries.
           </li>
         </ul>
 
@@ -1819,38 +1782,7 @@ jobs:
           class="academic-subheading"
           style="margin-top: 4px; margin-bottom: 2px"
         >
-          9.2 Future Scope &amp; Planned Enhancements
-        </h3>
-        <ol
-          style="
-            font-size: 8.5pt;
-            line-height: 1.25;
-            margin: 3px 0 6px 0;
-            padding-left: 18px;
-          "
-        >
-          <li style="margin-bottom: 2px">
-            <strong>Cloud-Synchronized Student Accounts:</strong> User
-            authentication with hashed passwords (<code>password_hash</code>) to
-            persist bookmarks and quiz results across devices.
-          </li>
-          <li style="margin-bottom: 2px">
-            <strong>Direct Mentorship Scheduling:</strong> Integrated calendar
-            booking allowing students to schedule 1-on-1 counseling video calls
-            with practicing domain professionals.
-          </li>
-          <li>
-            <strong>AI Career Chatbot:</strong> LLM integration to answer
-            student queries regarding college entrance cutoffs, portfolio
-            requirements, and job outlooks.
-          </li>
-        </ol>
-
-        <h3
-          class="academic-subheading"
-          style="margin-top: 4px; margin-bottom: 2px"
-        >
-          9.3 Academic Conclusion
+          8.2 Academic Conclusion
         </h3>
         <p style="font-size: 8.5pt; line-height: 1.3; margin: 3px 0 6px 0">
           The <strong>Career Kuch Hatke</strong> project successfully fulfills
@@ -1859,49 +1791,66 @@ jobs:
           demonstrates a complete, production-grade synthesis of semantic HTML5,
           responsive CSS3 Grid and Flexbox, asynchronous JavaScript event
           handling, persistent browser storage, and secure PHP 8.2 / MySQL
-          backend administration. By addressing an authentic, widespread dilemma
-          in the Indian student community, the project delivers high social
+          backend administration. By addressing an authentic career-awareness
+          gap in the Indian student community, the platform delivers high social
           utility paired with technical competency.
         </p>
 
         <h3
           class="academic-subheading"
-          style="margin-top: 4px; margin-bottom: 2px"
+          style="margin-top: 6px; margin-bottom: 3px"
         >
-          9.4 Academic References &amp; Authoritative Citations
+          8.3 References and Bibliography
         </h3>
         <ol
           style="
             font-size: 8.5pt;
-            line-height: 1.22;
+            line-height: 1.28;
             margin: 3px 0 0 0;
             padding-left: 18px;
           "
         >
-          <li style="margin-bottom: 2px">
-            <strong>Glassdoor India &amp; AmbitionBox:</strong> 2025–2026 Indian
-            Industry Compensation &amp; Salary Benchmark Reports for emerging
-            tech and creative vocations.
+          <li style="margin-bottom: 3px">
+            <strong>Mozilla Developer Network (MDN Web Docs):</strong>
+            <em>HTML5 Semantic Elements, CSS3 Flexible Box &amp; Grid Layout,
+            and Web Storage API (localStorage/sessionStorage) Reference.</em>
+            Available at: <code>https://developer.mozilla.org/</code>
           </li>
-          <li style="margin-bottom: 2px">
-            <strong>University Grants Commission (UGC) &amp; AICTE:</strong>
-            National institutional accreditation directories, degree
-            prerequisites, and recognized higher education programs.
+          <li style="margin-bottom: 3px">
+            <strong>The PHP Group:</strong>
+            <em>Official PHP 8.2 Documentation &mdash; MySQLi Prepared
+            Statements, Input Filtering (<code>filter_var</code>), Cross-Site
+            Scripting Sanitization (<code>htmlspecialchars</code>), and Session
+            Management.</em> Available at: <code>https://www.php.net/docs.php</code>
           </li>
-          <li style="margin-bottom: 2px">
-            <strong>Mozilla Developer Network (MDN Web Docs):</strong> HTML5
-            Semantics, CSS Flexible Box, CSS Grid, and Web Storage API
-            documentation.
+          <li style="margin-bottom: 3px">
+            <strong>MySQL / MariaDB Documentation:</strong>
+            <em>MySQL 8.0 Reference Manual &mdash; Relational Schema Design,
+            Primary Keys, and InnoDB Storage Engine.</em> Available at:
+            <code>https://dev.mysql.com/doc/</code>
           </li>
-          <li style="margin-bottom: 2px">
-            <strong>The PHP Group:</strong> Official PHP 8.2 Documentation
-            &mdash; Filter Functions, Data Sanitization, Prepared Statements,
-            and Session Security Standards.
+          <li style="margin-bottom: 3px">
+            <strong>Duckett, Jon (2014):</strong>
+            <em>HTML &amp; CSS: Design and Build Websites</em> and
+            <em>JavaScript &amp; JQuery: Interactive Front-End Web
+            Development.</em> John Wiley &amp; Sons, Inc. (Reference Textbook).
+          </li>
+          <li style="margin-bottom: 3px">
+            <strong>Nixon, Robin (2021):</strong>
+            <em>Learning PHP, MySQL &amp; JavaScript: A Step-by-Step Guide to
+            Creating Dynamic Websites (6th Edition).</em> O'Reilly Media.
+          </li>
+          <li style="margin-bottom: 3px">
+            <strong>Glassdoor India &amp; AmbitionBox (2025&ndash;2026):</strong>
+            <em>Indian Industry Compensation &amp; Salary Benchmark Reports for
+            Emerging Technology, Design, Science, and Media Vocations.</em>
+            Available at: <code>https://www.ambitionbox.com/</code>
           </li>
           <li>
-            <strong>MySQL Documentation:</strong> MySQL 8.0 Reference Manual
-            &mdash; Relational Schema Design, Foreign Keys, and InnoDB Storage
-            Engine.
+            <strong>University Grants Commission (UGC), AICTE &amp; NSDC India:</strong>
+            <em>National Higher Education Directories, NID/IIT/FTII/NFSU
+            Curriculum Handbooks, and Skill India Vocational Frameworks.</em>
+            Available at: <code>https://www.ugc.gov.in/</code>
           </li>
         </ol>
 

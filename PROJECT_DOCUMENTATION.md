@@ -1,37 +1,54 @@
 # ==============================================================================
 
-# STANDARD PROJECT DOCUMENTATION REPORT (10 PAGES + CERTIFICATE)
+# STANDARD FIELD PROJECT DOCUMENTATION REPORT (STRICTLY 10 PAGES TOTAL)
 
 # ==============================================================================
 
-<!-- ======================= CERTIFICATE (PAGE 0) ======================= -->
+<!-- ============================== PAGE 1 OF 10: TITLE PAGE ============================== -->
 
 # VIDYAVARDHINI’S
 
 ### ANNASAHEB VARTAK COLLEGE OF ARTS,
-
 ### KEDARNATH MALHOTRA COLLEGE OF COMMERCE,
-
 ### E. S. ANDRADES COLLEGE OF SCIENCE
 
 #### DEPARTMENT OF COMPUTER SCIENCE
 
 _(Affiliated to the University of Mumbai) • Vasai Road (West), Dist. Palghar_
 
-## CERTIFICATE
+---
 
-**Class:** S.Y. B.Sc. CS &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Academic Year:** 2026 – 2027
+### A FIELD PROJECT REPORT ON
 
-This is to certify that the project work entitled **CAREER KUCH HATKE** entered in this report is the bonafide work of Kumari **Sneha Mahendra Prajapati** of class **S.Y. B.Sc. CS**, Division **—**, Institutional Roll No. **89**, University Exam No. `________________`, who has satisfactorily completed the required Field Project work in the college laboratory as prescribed by the University of Mumbai for Semester III during the academic year 2026 – 2027.
+<p align="center">
+  <img src="favicon-512.png" alt="Career Kuch Hatke Official Logo" width="135" height="135" />
+</p>
 
-| Head of the Department | External Examiner | Internal Examiner / Subject Teacher |
-| :--------------------: | :---------------: | :---------------------------------: |
+# CAREER KUCH HATKE
 
-**Date:** `    /    / 2026` &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Department of:** Computer Science
+_An Interactive Unconventional Career Guidance Web Platform with Administrative Management Portal_
+
+Submitted in partial fulfillment of the requirements for the degree of  
+**Bachelor of Science in Computer Science (S.Y. B.Sc. CS — Semester III)**  
+**Academic Year:** 2026 – 2027
+
+| Field                        | Details                                                   |
+| :--------------------------- | :-------------------------------------------------------- |
+| **Submitted By (Candidate)** | **Kumari Sneha Mahendra Prajapati**                       |
+| **Class & Semester**         | **S.Y. B.Sc. Computer Science (Semester III)**            |
+| **Institutional Roll No.**   | **89**                                                    |
+| **Course / Subject**         | **Field Project (FP)**                                    |
+| **Live Hosted Website**      | https://career-kuch-hatke.infinityfreeapp.com             |
+| **GitHub Source Repository** | https://github.com/snehaprajapati-dev/career-kuch-hatke   |
+
+| Subject Teacher / Project Guide | Head of the Department |
+| :-----------------------------: | :--------------------: |
+
+**Place:** Vasai Road (West) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Academic Year:** 2026 – 2027 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Page 1 of 10**
 
 <div style="page-break-after: always;"></div>
 
-<!-- ============================== PAGE 1 ============================== -->
+<!-- ============================== PAGE 2 OF 10: INDEX ============================== -->
 
 # VIDYAVARDHINI’S
 
@@ -43,27 +60,27 @@ This is to certify that the project work entitled **CAREER KUCH HATKE** entered 
 
 **Project Title:** CAREER KUCH HATKE &bull; **Candidate:** Sneha Prajapati (Roll No. 89)
 
-| Sr. No. | Topic / Chapter Title                                                                                                                            |  Page No.   | Teacher's Signature |
-| :-----: | :----------------------------------------------------------------------------------------------------------------------------------------------- | :---------: | :-----------------: |
-| **1.0** | **Introduction & Problem Statement**<br>_Background, societal need, problem statement, objectives & scope_                                       | **Page 2**  |                     |
-| **2.0** | **About the Website & Core Modules**<br>_Platform purpose, target audience, and detailed breakdown of all 7 modules_                             | **Page 3**  |                     |
-| **3.0** | **System Architecture & Technologies Used**<br>_Client-server block diagram, technology stack, and hardware/software specifications_             | **Page 4**  |                     |
-| **4.0** | **Implementation of CSS: Why and How**<br>_Responsive design rationale, CSS grid/flexbox, custom variables, and dark/light themes_               | **Page 5**  |                     |
-| **5.0** | **Implementation of PHP & Database: Why and How**<br>_Backend data persistence, input sanitization, XSS security, and MySQL schema_              | **Page 6**  |                     |
-| **6.0** | **Web Hosting & CI/CD Deployment Process**<br>_Local XAMPP setup, Git version control, InfinityFree hosting, and GitHub Actions_                 | **Page 7**  |                     |
-| **7.0** | **System Testing & Quality Assurance Matrix**<br>_Cross-browser testing, mobile viewports, JS runtime checks, and cache invalidation_            | **Page 8**  |                     |
-| **8.0** | **Website Interface Screenshots (3 Core Modules)**<br>_Home page portal, dynamic career roadmap detail, and contact/suggestion form_             | **Page 9**  |                     |
-| **9.0** | **Limitations, Future Scope, Conclusion & References**<br>_Current constraints, future roadmap, concluding summary, and authoritative citations_ | **Page 10** |                     |
+| Sr. No. | Topic / Section Title                                                                                                                                      |  Page No.   | Teacher's Signature |
+| :-----: | :--------------------------------------------------------------------------------------------------------------------------------------------------------- | :---------: | :-----------------: |
+|  **—**  | **Title Page & Project Overview**<br>_Official project cover page with website emblem, candidate metadata, and live deployment links_                      | **Page 1**  |                     |
+| **1.0** | **Introduction to Website & Problem Statement**<br>_Executive summary, societal need, problem statement, and project objectives_                           | **Page 3**  |                     |
+| **2.0** | **Introduction to Website: Core Webpage Modules**<br>_Target audience and detailed breakdown of all 7 website modules_                                     | **Page 4**  |                     |
+| **3.0** | **Technologies Used & System Architecture**<br>_Client-server data flow diagram, technology stack table, and environment requirements_                     | **Page 5**  |                     |
+| **4.0** | **Technologies Used: Implementation of CSS (Why & How)**<br>_Responsive CSS Grid/Flexbox layouts, custom variables, and dark/light themes_                 | **Page 6**  |                     |
+| **5.0** | **Technologies Used: Implementation of PHP & MySQL Database**<br>_Backend form processing, XSS/SQL injection security, and database schema_                | **Page 7**  |                     |
+| **6.0** | **Web Hosting, CI/CD Deployment & System Testing**<br>_Local XAMPP setup, InfinityFree cloud hosting, GitHub Actions CI/CD, and QA matrix_                 | **Page 8**  |                     |
+| **7.0** | **Website Screenshots (Only 3 Core Modules)**<br>_Home page hero portal, dynamic career roadmap detail, and contact/suggestion portal_                     | **Page 9**  |                     |
+| **8.0** | **References and Bibliography (with Conclusion & Scope)**<br>_Current limitations, future scope, academic conclusion, and bibliography citations_          | **Page 10** |                     |
 
 **Student Declaration:** I hereby declare that this project documentation report of 10 pages represents authentic academic work completed by me for the B.Sc. Computer Science Field Project curriculum (Academic Year 2026–2027).  
 **Candidate Signature:** Sneha Prajapati (Roll No. 89)
 
-<!-- Running Footer: Department of Computer Science • S.Y. B.Sc. CS • Roll No. 89 • Page 1 of 10 -->
+<!-- Running Footer: Department of Computer Science • S.Y. B.Sc. CS • Roll No. 89 • Page 2 of 10 -->
 <div style="page-break-after: always;"></div>
 
-<!-- ============================== PAGE 2 ============================== -->
+<!-- ============================== PAGE 3 OF 10 ============================== -->
 
-### 1.0 Introduction & Problem Statement
+### 1.0 Introduction to Website & Problem Statement
 
 #### 1.1 Project Title & Executive Summary
 
@@ -89,12 +106,12 @@ In the Indian educational system, over eighty percent of secondary and undergrad
 - **Full-Stack Form Processing:** Handle student feedback and community career suggestions through server-side PHP validation, sanitized database insertion, and an administrative review dashboard.
 - **Automated Production Deployment:** Establish continuous integration and deployment (CI/CD via GitHub Actions) to synchronize local developments directly with production Linux hosting.
 
-<!-- Running Footer: Department of Computer Science • S.Y. B.Sc. CS • Roll No. 89 • Page 2 of 10 -->
+<!-- Running Footer: Department of Computer Science • S.Y. B.Sc. CS • Roll No. 89 • Page 3 of 10 -->
 <div style="page-break-after: always;"></div>
 
-<!-- ============================== PAGE 3 ============================== -->
+<!-- ============================== PAGE 4 OF 10 ============================== -->
 
-### 2.0 About the Website & Core Modules
+### 2.0 Introduction to Website: Core Webpage Modules
 
 #### 2.1 Platform Purpose & Target Audience
 
@@ -112,12 +129,12 @@ The platform architecture comprises six distinct user-facing modules and a prote
 6. **Module 6 — Contact & Suggestion Portal (`contact.html`):** Dual-purpose communication portal allowing students to submit general inquiries and propose new emerging vocational paths for addition with client and server-side validation.
 7. **Module 7 — Administrative Management Portal (`admin/`):** Restricted back-office consisting of session-authenticated login (`login.php`), metrics dashboard (`dashboard.php`), submission review tables (`contacts.php`, `suggestions.php`), item deletion (`delete.php`), and CSV export for Excel analysis (`export.php`).
 
-<!-- Running Footer: Department of Computer Science • S.Y. B.Sc. CS • Roll No. 89 • Page 3 of 10 -->
+<!-- Running Footer: Department of Computer Science • S.Y. B.Sc. CS • Roll No. 89 • Page 4 of 10 -->
 <div style="page-break-after: always;"></div>
 
-<!-- ============================== PAGE 4 ============================== -->
+<!-- ============================== PAGE 5 OF 10 ============================== -->
 
-### 3.0 System Architecture & Technologies Used
+### 3.0 Technologies Used & System Architecture
 
 #### 3.1 System Architecture & Data Flow Diagram
 
@@ -164,12 +181,12 @@ The platform architecture comprises six distinct user-facing modules and a prote
 - **Operating System & Tooling:** Windows 11, Visual Studio Code, XAMPP v8.2.12 (Apache 2.4, MariaDB 10.4, PHP 8.2).
 - **Client Requirements:** Any modern standards-compliant web browser (Google Chrome 100+, Firefox 100+, Edge, Safari iOS).
 
-<!-- Running Footer: Department of Computer Science • S.Y. B.Sc. CS • Roll No. 89 • Page 4 of 10 -->
+<!-- Running Footer: Department of Computer Science • S.Y. B.Sc. CS • Roll No. 89 • Page 5 of 10 -->
 <div style="page-break-after: always;"></div>
 
-<!-- ============================== PAGE 5 ============================== -->
+<!-- ============================== PAGE 6 OF 10 ============================== -->
 
-### 4.0 Implementation of CSS: Why and How
+### 4.0 Technologies Used: Implementation of CSS (Why & How)
 
 #### 4.1 Why CSS was Implemented
 
@@ -209,12 +226,12 @@ The styling architecture follows modular separation across distinct CSS files:
 }
 ```
 
-<!-- Running Footer: Department of Computer Science • S.Y. B.Sc. CS • Roll No. 89 • Page 5 of 10 -->
+<!-- Running Footer: Department of Computer Science • S.Y. B.Sc. CS • Roll No. 89 • Page 6 of 10 -->
 <div style="page-break-after: always;"></div>
 
-<!-- ============================== PAGE 6 ============================== -->
+<!-- ============================== PAGE 7 OF 10 ============================== -->
 
-### 5.0 Implementation of PHP & Database: Why and How
+### 5.0 Technologies Used: Implementation of PHP & Database
 
 #### 5.1 Why PHP and MySQL were Implemented
 
@@ -226,70 +243,51 @@ Client-side technologies (HTML, CSS, JavaScript) execute entirely within the use
 
 #### 5.2 How PHP and MySQL were Implemented
 
-PHP 8.2 handles POST requests asynchronously, returning structured JSON payloads to the client without page reload. The MySQL database comprises two normalized tables:
+PHP 8.2 handles POST requests via parameterized prepared statements, verifying Google reCAPTCHA v2 tokens and redirecting with status query flags. The MySQL database comprises two normalized tables:
 
-| Table Name                                                     | Field Identifier                                       | Data Type                                                            | Constraints & Purpose                                                                                                               |
-| :------------------------------------------------------------- | :----------------------------------------------------- | :------------------------------------------------------------------- | :---------------------------------------------------------------------------------------------------------------------------------- |
-| **contacts**<br><small>Student inquiries</small>               | `id`<br>`name`, `email`<br>`message`<br>`submitted_at` | `INT(11)`<br>`VARCHAR(100)`, `VARCHAR(150)`<br>`TEXT`<br>`TIMESTAMP` | `PRIMARY KEY, AUTO_INCREMENT`<br>`NOT NULL, Validated email format`<br>`Sanitized inquiry text body`<br>`DEFAULT CURRENT_TIMESTAMP` |
-| **career_suggestions**<br><small>Community suggestions</small> | `id`<br>`career_title`, `category`<br>`description`    | `INT(11)`<br>`VARCHAR(150)`, `VARCHAR(50)`<br>`TEXT`                 | `PRIMARY KEY, AUTO_INCREMENT`<br>`Proposed career title and primary domain`<br>`Student explanation of vocational viability`        |
+| Table Name                                                     | Field Identifier                                                  | Data Type                                                              | Constraints & Purpose                                                                                                            |
+| :------------------------------------------------------------- | :---------------------------------------------------------------- | :--------------------------------------------------------------------- | :------------------------------------------------------------------------------------------------------------------------------- |
+| **contact_messages**<br><small>Student inquiries</small>       | `id`<br>`name`, `email`, `telephone`<br>`subject`, `user_type`<br>`message`, `status` | `INT(11)`<br>`VARCHAR(100)`, `VARCHAR(150)`<br>`VARCHAR(100)`, `VARCHAR(50)`<br>`TEXT`, `VARCHAR(20)` | `PRIMARY KEY, AUTO_INCREMENT`<br>`NOT NULL, Validated contact details`<br>`Inquiry subject & role`<br>`Sanitized message body` |
+| **career_suggestions**<br><small>Community suggestions</small> | `id`<br>`career_name`, `suggester_name`<br>`career_reason`, `status` | `INT(11)`<br>`VARCHAR(100)`, `VARCHAR(100)`<br>`TEXT`, `VARCHAR(20)` | `PRIMARY KEY, AUTO_INCREMENT`<br>`Proposed hatke career title & contributor`<br>`Explanation of uniqueness & review status`     |
 
 ```php
-// Server-Side Sanitization & Validation Handler (php/contact-process.php)
-$name    = htmlspecialchars(strip_tags(trim($_POST['name'])), ENT_QUOTES, 'UTF-8');
-$email   = filter_var(trim($_POST['email']), FILTER_SANITIZE_EMAIL);
-$message = htmlspecialchars(strip_tags(trim($_POST['message'])), ENT_QUOTES, 'UTF-8');
+// Server-Side Sanitization & Prepared Statement Handler (php/contact-process.php)
+$name      = htmlspecialchars(trim($_POST["name"]));
+$email     = htmlspecialchars(trim($_POST["email"]));
+$telephone = isset($_POST["telephone"]) ? htmlspecialchars(trim($_POST["telephone"])) : '';
+$subject   = htmlspecialchars(trim($_POST["subject"]));
+$i_am      = htmlspecialchars(trim($_POST["i_am"]));
+$message   = htmlspecialchars(trim($_POST["message"]));
 
-if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-    die(json_encode(["status" => "error", "message" => "Please enter a valid email address."]));
-}
-$stmt = $conn->prepare("INSERT INTO contacts (name, email, message) VALUES (?, ?, ?)");
-$stmt->bind_param("sss", $name, $email, $message);
-$stmt->execute();
+$sql  = "INSERT INTO contact_messages (name, email, telephone, subject, user_type, message, status) ";
+$sql .= "VALUES (?, ?, ?, ?, ?, ?, 'unread')";
+$stmt = $conn->prepare($sql);
+$stmt->bind_param("ssssss", $name, $email, $telephone, $subject, $i_am, $message);
+if ($stmt->execute()) { header("Location: ../contact.html?success=contact"); }
 ```
 
-<!-- Running Footer: Department of Computer Science • S.Y. B.Sc. CS • Roll No. 89 • Page 6 of 10 -->
+<!-- Running Footer: Department of Computer Science • S.Y. B.Sc. CS • Roll No. 89 • Page 7 of 10 -->
 <div style="page-break-after: always;"></div>
 
-<!-- ============================== PAGE 7 ============================== -->
+<!-- ============================== PAGE 8 OF 10 ============================== -->
 
-### 6.0 Web Hosting & CI/CD Deployment Process
+### 6.0 Web Hosting, CI/CD Deployment & System Testing
 
-#### 6.1 Local Development Environment (XAMPP)
+#### 6.1 Local XAMPP Environment & Cloud Hosting (InfinityFree)
 
-The platform was developed and rigorously debugged locally using the **XAMPP** stack on Windows:
-
-- **Apache Web Server:** Configured on port `8080` (`http://localhost:8080/`) to serve static assets and proxy PHP requests.
-- **MariaDB / MySQL:** Running on port `3306` with phpMyAdmin used for database provisioning, indexing, and schema validation.
-- **Local Testing:** Ensured zero runtime console errors, verified database insertion, and checked asynchronous fetch promises locally before cloud staging.
-
-#### 6.2 Cloud Web Hosting Infrastructure (InfinityFree)
-
-To ensure round-the-clock accessibility for college evaluators and students, the application was deployed to **InfinityFree** cloud hosting:
-
-- **Production Server:** Linux-based Apache web server with native PHP 8.2 runtime and remote MySQL database storage.
-- **Live Production URL:** `https://career-kuch-hatke.infinityfreeapp.com`.
-- **Web Server Configuration (`.htaccess`):** Configured URL rewriting, gzip compression, and MIME types for web fonts and JSON data.
-
-#### 6.3 Automated CI/CD Pipeline (GitHub Actions)
-
-Manual FTP file transfers are prone to human omission and file corruption. To ensure modern professional deployment, an automated **Continuous Integration and Continuous Deployment (CI/CD)** pipeline was established:
-
-- **Version Control:** Source code is tracked using Git and pushed to GitHub: `snehaprajapati-dev/career-kuch-hatke`.
-- **Workflow Automation (`.github/workflows/deploy.yml`):** Configured a GitHub Actions runner that automatically listens for push events to the `main` branch.
-- **Encrypted Secret Authentication:** Securely injects encrypted repository secrets (`FTP_SERVER`, `FTP_USERNAME`, `FTP_PASSWORD`) into an FTPS deployment action, publishing updated files to production servers within seconds.
+- **Local Development (XAMPP):** Apache Web Server on port `8080` and MariaDB/MySQL on port `3306` (phpMyAdmin) were used to test PHP form handlers, prepared statements, and UI responsiveness locally.
+- **Production Cloud Hosting (InfinityFree):** Deployed to Linux-based Apache hosting with PHP 8.2 and remote MySQL at `https://career-kuch-hatke.infinityfreeapp.com`, configured via `.htaccess` for compression and caching.
+- **Automated CI/CD Pipeline (GitHub Actions):** Every `git push` to `main` on GitHub (`snehaprajapati-dev/career-kuch-hatke`) triggers `.github/workflows/deploy.yml`, which securely syncs files to the live server via FTPS using encrypted secrets.
 
 ```yaml
 # GitHub Actions CI/CD Pipeline (.github/workflows/deploy.yml)
 name: Deploy to InfinityFree
-on:
-  push:
-    branches: [main]
+on: { push: { branches: [main] } }
 jobs:
   web-deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Source Code
-        uses: actions/checkout@v3
+      - uses: actions/checkout@v3
       - name: Automated FTPS Sync
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
@@ -299,83 +297,63 @@ jobs:
           server-dir: htdocs/
 ```
 
-<!-- Running Footer: Department of Computer Science • S.Y. B.Sc. CS • Roll No. 89 • Page 7 of 10 -->
-<div style="page-break-after: always;"></div>
+#### 6.2 System Testing & Quality Assurance Matrix
 
-<!-- ============================== PAGE 8 ============================== -->
-
-### 7.0 System Testing & Quality Assurance
-
-#### 7.1 Quality Assurance & Verification Matrix
-
-Comprehensive quality assurance protocols were executed across development and production staging:
-
-| Testing Domain                  | Verification Procedure                                                                     | Outcome & Status                                                                        |
-| :------------------------------ | :----------------------------------------------------------------------------------------- | :-------------------------------------------------------------------------------------- |
-| **Cross-Browser Compatibility** | Audited on Google Chrome 120+, Mozilla Firefox 122+, Microsoft Edge, and Apple Safari iOS. | **Passed:** Consistent layout rendering, flex alignments, and CSS variable inheritance. |
-| **Mobile Responsiveness**       | Simulated viewports from 360px (mobile) to 768px (tablet) and 1440px (desktop monitor).    | **Passed:** Equalized card heights, centered footer columns, touch tap targets.         |
-| **Syntax & Runtime Integrity**  | Validated via Node.js compiler (`node -c script.js`) and browser dev tools.                | **Passed:** Zero syntax errors, uncaught promise rejections, or console exceptions.     |
-| **Input Validation & Security** | Tested SQL injection and XSS payloads (`<script>`) in feedback and suggestion inputs.      | **Passed:** Inputs strictly escaped and sanitized; invalid emails rejected.             |
-| **Cache Invalidation Strategy** | Appended explicit cache-busting query version parameters (`?v=6.0`) to script/style tags.  | **Passed:** Instant updates on client devices without stale browser caching.            |
-
-#### 7.2 Algorithmic Verification: Search & Bookmarking Engines
-
-- **Synonym Mapping Test:** Searching conversational keywords (e.g., _"coding"_, _"camera"_, _"food"_) correctly retrieves _"Ethical Hacker"_, _"Wildlife Photographer"_, and _"Food Stylist"_ via the pre-indexed keyword map.
-- **Bookmark Persistence Test:** Saving bookmarks, refreshing the browser, and switching between categories verified that `localStorage` array serialization correctly maintains saved states.
-- **Empty State Test:** Selecting the "Bookmarked" filter with zero saved careers correctly presents a helpful prompt with a working "View All Careers" reset button.
+| Testing Domain                  | Verification Procedure                                                                    | Outcome & Status                                                        |
+| :------------------------------ | :---------------------------------------------------------------------------------------- | :---------------------------------------------------------------------- |
+| **Cross-Browser Compatibility** | Audited on Google Chrome 120+, Mozilla Firefox 122+, Edge, and Safari iOS.                | **Passed:** Consistent grid/flex alignments and theme variables.        |
+| **Mobile Responsiveness**       | Simulated viewports from 360px (mobile) to 768px (tablet) and 1440px (desktop).           | **Passed:** Equalized card heights and responsive navigation.           |
+| **Search, Filter & Bookmarks**  | Tested synonym search, category filter persistence across breadcrumbs, and `localStorage`. | **Passed:** Instant filtering and persistent saved bookmarks.           |
+| **Input Validation & Security** | Tested SQL injection and XSS payloads (`<script>`) in contact/suggestion forms.           | **Passed:** Inputs strictly sanitized via prepared statements.          |
 
 <!-- Running Footer: Department of Computer Science • S.Y. B.Sc. CS • Roll No. 89 • Page 8 of 10 -->
 <div style="page-break-after: always;"></div>
 
-<!-- ============================== PAGE 9 ============================== -->
+<!-- ============================== PAGE 9 OF 10 ============================== -->
 
-### 8.0 Website User Interface Screenshots (3 Core Modules)
+### 7.0 Website Screenshots (Only 3 Core Modules)
 
-The following screenshots showcase the primary responsive user interfaces implemented across the **Career Kuch Hatke** web platform (captured live from production deployment):
+The following three screenshots showcase the primary responsive user interfaces implemented across the **Career Kuch Hatke** web platform (captured live from production deployment):
 
-#### Figure 8.1: Home Page Interface (`index.html`)
+#### Figure 7.1: Home Page Hero Interface (`index.html`)
 
-Showcases the hero banner, interactive "Rat Race vs. Hatke Career" problem-solution comparative dilemma matrix, and 5 domain category spotlights.
-![Figure 8.1: Home Page Interface](images/screenshot-home.png)
+Showcases responsive header navigation, core mission value proposition, and dual CTA pathways to career exploration and assessment.
+![Figure 7.1: Home Page Interface](images/screenshot-home.png)
 
-#### Figure 8.2: Dynamic Career Roadmap Detail (`career-detail.html`)
+#### Figure 7.2: Career Profile & Roadmap (`career-detail.html`)
 
-Illustrates AI Prompt Engineer roadmap, salary packages, and WhatsApp parent pitch tool.
-![Figure 8.2: Career Detail Roadmap](images/screenshot-roadmap.png)
+Illustrates specialized career profile, 4-tier compensation metrics, educational requirements, and interactive action toolbar.
+![Figure 7.2: Career Detail Roadmap](images/screenshot-roadmap.png)
 
-#### Figure 8.3: Contact & Suggestion Form (`contact.html`)
+#### Figure 7.3: Contact & Suggestion Portal (`contact.html`)
 
-Displays user feedback form with client regex validation and server-side sanitized submission.
-![Figure 8.3: Contact & Suggestion Form](images/screenshot-contact.png)
+Displays dual feedback channels for direct developer communication and student-driven career addition submissions.
+![Figure 7.3: Contact & Suggestion Form](images/screenshot-contact.png)
 
 <!-- Running Footer: Department of Computer Science • S.Y. B.Sc. CS • Roll No. 89 • Page 9 of 10 -->
 <div style="page-break-after: always;"></div>
 
-<!-- ============================== PAGE 10 ============================== -->
+<!-- ============================== PAGE 10 OF 10 ============================== -->
 
-### 9.0 Limitations, Future Scope, Conclusion & References
+### 8.0 References and Bibliography (with Conclusion & Future Scope)
 
-#### 9.1 Current System Limitations
+#### 8.1 Current System Limitations & Future Scope
 
-- **Client-Side Content Storage:** Career information currently resides in structured client-side JavaScript objects rather than a headless database CMS.
-- **Device-Specific Bookmarks:** Bookmarks rely on browser `localStorage` and do not synchronize automatically across separate devices.
+- **Current Limitations:** Career data resides in structured client-side JavaScript objects (`career-data.js`) rather than a database CMS, and bookmarks rely on device-specific browser `localStorage`.
+- **Future Enhancements:** (1) Cloud-synchronized student accounts using PHP `password_hash()` authentication, (2) Direct 1-on-1 mentorship booking with domain professionals, and (3) AI Career Counselor chatbot for college cutoff and portfolio queries.
 
-#### 9.2 Future Scope & Planned Enhancements
+#### 8.2 Academic Conclusion
 
-1. **Cloud-Synchronized Student Accounts:** User authentication with hashed passwords (`password_hash`) to persist bookmarks and quiz results across devices.
-2. **Direct Mentorship Scheduling:** Integrated calendar booking allowing students to schedule 1-on-1 counseling video calls with practicing domain professionals.
-3. **AI Career Chatbot:** LLM integration to answer student queries regarding college entrance cutoffs, portfolio requirements, and job outlooks.
+The **Career Kuch Hatke** project successfully fulfills all academic specifications stipulated for the B.Sc. Computer Science Field Project curriculum (Academic Year 2026–2027). It demonstrates a complete, production-grade synthesis of semantic HTML5, responsive CSS3 Grid and Flexbox, asynchronous JavaScript event handling, persistent browser storage, and secure PHP 8.2 / MySQL backend administration. By addressing an authentic career-awareness gap in the Indian student community, the platform delivers high social utility paired with technical competency.
 
-#### 9.3 Academic Conclusion
+#### 8.3 References and Bibliography
 
-The **Career Kuch Hatke** project successfully fulfills all academic specifications stipulated for the B.Sc. Computer Science Field Project curriculum (Academic Year 2026–2027). It demonstrates a complete, production-grade synthesis of semantic HTML5, responsive CSS3 Grid and Flexbox, asynchronous JavaScript event handling, persistent browser storage, and secure PHP 8.2 / MySQL backend administration. By addressing an authentic, widespread dilemma in the Indian student community, the project delivers high social utility paired with technical competency.
-
-#### 9.4 Academic References & Authoritative Citations
-
-1. **Glassdoor India & AmbitionBox:** 2025–2026 Indian Industry Compensation & Salary Benchmark Reports for emerging tech and creative vocations.
-2. **University Grants Commission (UGC) & AICTE:** National institutional accreditation directories, degree prerequisites, and recognized higher education programs.
-3. **Mozilla Developer Network (MDN Web Docs):** HTML5 Semantics, CSS Flexible Box, CSS Grid, and Web Storage API documentation.
-4. **The PHP Group:** Official PHP 8.2 Documentation — Filter Functions, Data Sanitization, Prepared Statements, and Session Security Standards.
-5. **MySQL Documentation:** MySQL 8.0 Reference Manual — Relational Schema Design, Foreign Keys, and InnoDB Storage Engine.
+1. **Mozilla Developer Network (MDN Web Docs):** _HTML5 Semantic Elements, CSS3 Flexible Box & Grid Layout, and Web Storage API (`localStorage`/`sessionStorage`) Reference._ Available at: `https://developer.mozilla.org/`
+2. **The PHP Group:** _Official PHP 8.2 Documentation — MySQLi Prepared Statements, Input Filtering (`filter_var`), Cross-Site Scripting Sanitization (`htmlspecialchars`), and Session Management._ Available at: `https://www.php.net/docs.php`
+3. **MySQL / MariaDB Documentation:** _MySQL 8.0 Reference Manual — Relational Schema Design, Primary Keys, and InnoDB Storage Engine._ Available at: `https://dev.mysql.com/doc/`
+4. **Duckett, Jon (2014):** _HTML & CSS: Design and Build Websites_ and _JavaScript & JQuery: Interactive Front-End Web Development._ John Wiley & Sons, Inc. (Reference Textbook).
+5. **Nixon, Robin (2021):** _Learning PHP, MySQL & JavaScript: A Step-by-Step Guide to Creating Dynamic Websites (6th Edition)._ O'Reilly Media.
+6. **Glassdoor India & AmbitionBox (2025–2026):** _Indian Industry Compensation & Salary Benchmark Reports for Emerging Technology, Design, Science, and Media Vocations._ Available at: `https://www.ambitionbox.com/`
+7. **University Grants Commission (UGC), AICTE & NSDC India:** _National Higher Education Directories, NID/IIT/FTII/NFSU Curriculum Handbooks, and Skill India Vocational Frameworks._ Available at: `https://www.ugc.gov.in/`
 
 <!-- Running Footer: Department of Computer Science • S.Y. B.Sc. CS • Roll No. 89 • Page 10 of 10 -->
