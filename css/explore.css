@@ -272,6 +272,22 @@ button.filter-btn[data-filter="unique"].active {
   font-weight: 700 !important;
 }
 
+[data-theme="dark"] button.filter-btn[data-filter="unique"] {
+  background-color: rgba(217, 70, 166, 0.15) !important;
+  border-color: #e879f9 !important;
+  color: #f0abfc !important;
+}
+
+[data-theme="dark"] button.filter-btn[data-filter="unique"]:hover {
+  background-color: rgba(217, 70, 166, 0.28) !important;
+}
+
+[data-theme="dark"] button.filter-btn[data-filter="unique"].active {
+  background: linear-gradient(135deg, #d946a6 0%, #c026d3 100%) !important;
+  color: #ffffff !important;
+  border-color: #e879f9 !important;
+}
+
 /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
    CAREERS SECTION - FIXED
    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
@@ -373,6 +389,7 @@ button.filter-btn[data-filter="unique"].active {
     #f0c050 100%
   ) !important;
   border-color: var(--accent) !important;
+  color: #672a3f !important;
   box-shadow: 0 3px 10px rgba(221, 168, 63, 0.45);
   transform: scale(1.08);
 }
@@ -394,6 +411,7 @@ button.filter-btn[data-filter="unique"].active {
     #f0c050 100%
   ) !important;
   border-color: var(--accent) !important;
+  color: #672a3f !important;
 }
 
 button.filter-btn[data-filter="bookmarked"] {
@@ -450,6 +468,12 @@ button.filter-btn[data-filter="bookmarked"].active {
   background-color: rgba(255, 211, 219, 0.3);
   color: #d946a6;
   border: 1px solid var(--pink-light);
+}
+
+[data-theme="dark"] .category-badge.unique {
+  background-color: rgba(217, 70, 166, 0.15) !important;
+  color: #f0abfc !important;
+  border: 1px solid #e879f9 !important;
 }
 
 .career-card h3 {
