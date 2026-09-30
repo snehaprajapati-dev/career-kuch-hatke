@@ -2986,24 +2986,47 @@ a.card-btn:hover {
 
 /* 9. Career Detail Inner Cards & Sidebar Icon Circles */
 .inst-icon.ckh-icon-circle,
+.subcard-icon.ckh-icon-circle,
 .reality-icon.ckh-icon-circle,
 .resource-category strong .ckh-icon-circle,
 .point-icon.ckh-icon-circle,
-.related-career-link strong .ckh-icon-circle {
+.related-career-link strong .ckh-icon-circle,
+.skill-badge-icon.ckh-icon-circle,
+.work-badge-icon.ckh-icon-circle,
+.for-you-badge-yes.ckh-icon-circle,
+.for-you-badge-no.ckh-icon-circle {
   width: 28px !important;
   height: 28px !important;
   font-size: 1rem !important;
   margin-right: 0.45rem !important;
   vertical-align: middle;
+  flex-shrink: 0;
 }
 
 .inst-icon.ckh-icon-circle svg,
+.subcard-icon.ckh-icon-circle svg,
 .reality-icon.ckh-icon-circle svg,
 .resource-category strong .ckh-icon-circle svg,
 .point-icon.ckh-icon-circle svg,
-.related-career-link strong .ckh-icon-circle svg {
-  width: 15px;
-  height: 15px;
+.related-career-link strong .ckh-icon-circle svg,
+.skill-badge-icon.ckh-icon-circle svg,
+.work-badge-icon.ckh-icon-circle svg,
+.for-you-badge-yes.ckh-icon-circle svg,
+.for-you-badge-no.ckh-icon-circle svg {
+  width: 15px !important;
+  height: 15px !important;
+}
+
+.ckh-inline-svg,
+.college-tag svg,
+.subcard-title svg,
+.script-badge svg,
+.script-read-time svg {
+  width: 15px !important;
+  height: 15px !important;
+  flex-shrink: 0 !important;
+  display: inline-block !important;
+  vertical-align: middle !important;
 }
 
 .parent-fear-emoji.ckh-icon-circle {

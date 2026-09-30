@@ -44,11 +44,38 @@
 .hero-badge-dot {
   width: 8px;
   height: 8px;
+  min-width: 8px;
+  min-height: 8px;
+  flex-shrink: 0;
+  aspect-ratio: 1 / 1;
   border-radius: 50%;
   background-color: #dda83f;
   box-shadow: 0 0 8px #dda83f;
   display: inline-block;
   animation: heroPulseDot 2s infinite ease-in-out;
+}
+
+@media (max-width: 600px) {
+  .hero-badge {
+    display: inline-block;
+    text-align: center;
+    font-size: 0.78rem;
+    line-height: 1.45;
+    padding: 0.45rem 1rem;
+    border-radius: 24px;
+    max-width: 94%;
+  }
+
+  .hero-badge-dot {
+    display: inline-block;
+    vertical-align: middle;
+    width: 7px;
+    height: 7px;
+    min-width: 7px;
+    min-height: 7px;
+    margin-right: 0.38rem;
+    margin-top: -2px;
+  }
 }
 
 @keyframes heroPulseDot {

@@ -73,7 +73,7 @@
     if (!response || response.length === 0) {
       if (errorEl) {
         errorEl.textContent =
-          '⚠️ Please tick "I\'m not a robot" before submitting.';
+          'Please tick "I\'m not a robot" before submitting.';
         errorEl.classList.add("visible");
         errorEl.style.display = "block";
       }

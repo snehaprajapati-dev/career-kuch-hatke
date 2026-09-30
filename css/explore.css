@@ -279,13 +279,15 @@ button.filter-btn[data-filter="unique"].active {
 }
 
 [data-theme="dark"] button.filter-btn[data-filter="unique"]:hover {
-  background-color: rgba(217, 70, 166, 0.28) !important;
+  background-color: rgba(217, 70, 166, 0.25) !important;
 }
 
 [data-theme="dark"] button.filter-btn[data-filter="unique"].active {
   background: linear-gradient(135deg, #d946a6 0%, #c026d3 100%) !important;
   color: #ffffff !important;
-  border-color: #e879f9 !important;
+  border-color: #f0abfc !important;
+  box-shadow: 0 4px 15px rgba(217, 70, 166, 0.45) !important;
+  font-weight: 700 !important;
 }
 
 /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
