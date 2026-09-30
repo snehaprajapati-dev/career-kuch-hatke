@@ -121,12 +121,12 @@ In the Indian educational system, over eighty percent of secondary and undergrad
 
 The platform architecture comprises six distinct user-facing modules and a protected administrative back-office:
 
-1. **Module 1 — Home Portal (`index.html`):** Introduces the platform mission ("Your Dream Career Exists"), provides immediate calls-to-action ("Explore Careers" and "Take Quiz"), highlights key Indian career-awareness statistics (93%, 500+, 68%), presents 5 interactive domain category cards, and includes an anti-flash dark/light theme switcher.
-2. **Module 2 — Career Exploration Grid (`explore.html`):** Houses 35 standardized equal-height career cards. Features real-time Category Filter Pills (Creative, Tech, Science, Business, Unique), an instant keyword search bar with clear button and synonym evaluation, and a dedicated **"Bookmarked"** filter tab with friendly empty state.
+1. **Module 1 — Home Portal (`index.html`):** Introduces the platform mission ("Your Dream Career Exists"), provides immediate calls-to-action ("Explore Careers" and "Take Quiz"), highlights animated Indian career-awareness statistics (93%, 500+, 68%), presents 5 domain category cards with circular SVG badges, and includes an anti-flash dark/light theme switcher.
+2. **Module 2 — Career Exploration Grid (`explore.html`):** Houses 35 standardized equal-height career cards with theme-matched circular SVG icon badges. Features real-time Category Filter Pills (Creative, Tech, Science, Business, Unique), an instant keyword search bar with synonym evaluation, and a dedicated **"Bookmarked"** filter tab.
 3. **Module 3 — Dynamic Career Roadmap Engine (`career-detail.html`):** A parameterized single-page template driven by URL queries (e.g., `?career=ai-prompt-engineer`). Dynamically renders 10 structured sections: Quick Facts, Actual Duties, Career Trajectory, Accredited Indian Colleges, Degree Safety Net, and "Talk to Your Parents" pitch generator with action toolbar.
 4. **Module 4 — Career Aptitude Assessment Quiz (`quiz.html`):** Interactive 8-question self-assessment evaluating analytical traits, creativity, and working preferences across 5 career domains through a client-side category-scoring algorithm that recommends top matching careers.
 5. **Module 5 — About Us & Research Transparency (`about.html`):** Documents developer background (Sneha Prajapati, Roll No. 89), foundational motivation ("Why I Built This"), statistical realities of career selection pressures in India (72%, 3%, 65%), and the Version 1.0 future platform roadmap.
-6. **Module 6 — Contact & Suggestion Portal (`contact.html`):** Dual-purpose communication portal allowing students to submit general inquiries and propose new emerging vocational paths for addition with client and server-side validation.
+6. **Module 6 — Contact & Suggestion Portal (`contact.html`):** Dual-purpose communication portal with custom circular SVG option badges allowing students to submit general inquiries and propose new emerging vocational paths with client and server-side validation.
 7. **Module 7 — Administrative Management Portal (`admin/`):** Restricted back-office consisting of session-authenticated login (`login.php`), metrics dashboard (`dashboard.php`), submission review tables (`contacts.php`, `suggestions.php`), item deletion (`delete.php`), and CSV export for Excel analysis (`export.php`).
 
 <!-- Running Footer: Department of Computer Science • S.Y. B.Sc. CS • Roll No. 89 • Page 4 of 10 -->
@@ -141,7 +141,7 @@ The platform architecture comprises six distinct user-facing modules and a prote
 ```text
 +-------------------------------------------------------------------------------+
 |                             CLIENT-SIDE LAYER (BROWSER)                       |
-|   HTML5 (Semantic Web) | CSS3 (Grid & Flexbox Layouts) | JavaScript (ES6+)    |
+|   HTML5 (Semantic + SVG) | CSS3 (Grid & Flexbox Layouts) | JavaScript (ES6+)  |
 |   - Real-Time Keyword & Synonym Search     - Aptitude Assessment Quiz Engine   |
 |   - Multi-Category Domain Filtering        - LocalStorage Bookmarks Engine     |
 +-------------------------------------------------------------------------------+
@@ -168,7 +168,7 @@ The platform architecture comprises six distinct user-facing modules and a prote
 
 | Layer                  | Technology                        | Role & Implementation Purpose                                                                                                         |
 | :--------------------- | :-------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------ |
-| **Frontend Markup**    | **HTML5 Semantic**                | Structured semantic elements (`<header>`, `<nav>`, `<main>`, `<section>`, `<footer>`) for accessibility and clean DOM tree traversal. |
+| **Frontend Markup**    | **HTML5 & Inline SVG**            | Semantic elements (`<header>`, `<nav>`, `<main>`, `<section>`, `<footer>`) and scalable monoline SVG icon badges.                     |
 | **Styling & Theme**    | **CSS3 (Grid & Flexbox)**         | Custom CSS variables, mobile-first responsive media queries, and anti-flash dark/light mode theme persistence.                        |
 | **Client Scripting**   | **Vanilla JavaScript (ES6+)**     | DOM event listeners, keyword synonym dictionary, quiz scoring engine, and Web Storage API (`localStorage`) bookmarking.               |
 | **Backend Processing** | **PHP 8.2 (Procedural)**          | Asynchronous POST parsing, data sanitization (`htmlspecialchars`, `filter_var`), and session-based administrator authentication.      |
@@ -195,14 +195,14 @@ Modern web applications demand an intuitive, visually engaging, and responsive i
 - **Responsive Multi-Column Grids:** Displaying 35 career options requires dynamic multi-column layouts on desktop that gracefully collapse into a single touch-friendly column on mobile devices.
 - **Equalized Card Heights:** In exploration grids, varying text length across careers causes uneven card heights. CSS Flexbox was implemented to ensure cards maintain identical vertical height across rows.
 - **Accessible Color Contrast & Theme Support:** Implementation of Dark and Light modes reduces eye strain during prolonged reading and respects user operating system preferences.
-- **Visual Affordance & Micro-Interactions:** Subtle hover states, smooth transitions, and glowing bookmark pills provide instant tactile feedback without cognitive overload.
+- **Visual Affordance & Custom SVG Badge System:** Theme-matched circular monoline SVG icon badges (`.ckh-icon-circle`), hover states, and glowing bookmark pills provide instant tactile feedback.
 
 #### 4.2 How CSS was Structured and Implemented
 
 The styling architecture follows modular separation across distinct CSS files:
 
 - **Global Design Tokens (`css/style.css`):** Defined using CSS Custom Properties (Variables) on the `:root` selector (e.g., `--bg-primary`, `--text-primary`, `--accent-purple`, `--card-border`) allowing instantaneous theme switching by toggling a single `data-theme="dark"` attribute on the root HTML element.
-- **Modular Component Styles:** Dedicated stylesheets isolate component boundaries: `explore.css` manages filters and card grids; `career-detail.css` styles roadmap accordions and the parent pitch box; `quiz.css` handles progress indicators.
+- **Modular Component & SVG Icon Styles:** Dedicated stylesheets isolate component boundaries: `style.css` defines circular SVG badge tokens (`.ckh-icon-circle`); `explore.css` manages card grids; `career-detail.css` styles roadmap accordions; `quiz.css` handles progress indicators.
 - **Strict Card Filtering Rule:** To resolve card filtering conflicts where flex cards remained visible, a strict utility class was implemented: `.career-card.is-hidden { display: none !important; }`.
 
 ```css
@@ -317,17 +317,17 @@ The following three screenshots showcase the primary responsive user interfaces 
 
 #### Figure 7.1: Home Page Hero Interface (`index.html`)
 
-Showcases responsive header navigation, core mission value proposition, and dual CTA pathways to career exploration and assessment.
+Showcases responsive header navigation, hero badge, category cards with circular SVG badges, and dual CTA pathways.
 ![Figure 7.1: Home Page Interface](images/screenshot-home.png)
 
 #### Figure 7.2: Career Profile & Roadmap (`career-detail.html`)
 
-Illustrates specialized career profile, 4-tier compensation metrics, educational requirements, and interactive action toolbar.
+Illustrates specialized career profile, Quick Fact SVG badges, 4-tier salary metrics, and interactive action toolbar.
 ![Figure 7.2: Career Detail Roadmap](images/screenshot-roadmap.png)
 
 #### Figure 7.3: Contact & Suggestion Portal (`contact.html`)
 
-Displays dual feedback channels for direct developer communication and student-driven career addition submissions.
+Displays dual feedback cards with circular SVG badges for direct inquiries and student-driven career submissions.
 ![Figure 7.3: Contact & Suggestion Form](images/screenshot-contact.png)
 
 <!-- Running Footer: Department of Computer Science • S.Y. B.Sc. CS • Roll No. 89 • Page 9 of 10 -->
