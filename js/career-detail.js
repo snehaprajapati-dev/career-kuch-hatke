@@ -24,6 +24,25 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 /* ============================================
+   SVG ICON HELPER FOR CATEGORIES
+   ============================================ */
+function getCategoryIconSvg(category) {
+  const icons = {
+    creative:
+      '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="13.5" cy="6.5" r=".5" fill="currentColor"/><circle cx="17.5" cy="10.5" r=".5" fill="currentColor"/><circle cx="8.5" cy="7.5" r=".5" fill="currentColor"/><circle cx="6.5" cy="12.5" r=".5" fill="currentColor"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/></svg>',
+    tech:
+      '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>',
+    science:
+      '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 18h8"/><path d="M3 22h18"/><path d="M14 22a7 7 0 1 0 0-14h-1"/><path d="M9 14h2"/><path d="M9 12a2 2 0 0 1-2-2V6h6v4a2 2 0 0 1-2 2Z"/><path d="M12 6V3a1 1 0 0 0-1-1H9a1 1 0 0 0-1 1v3"/></svg>',
+    business:
+      '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>',
+    unique:
+      '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg>',
+  };
+  return icons[category] || icons.unique;
+}
+
+/* ============================================
    FILL PAGE WITH CAREER DATA
    ============================================ */
 function fillCareerDetails(career, careerId) {
@@ -57,8 +76,8 @@ function fillCareerDetails(career, careerId) {
     }
   }
 
-  document.getElementById("hero-category").textContent =
-    career.emoji + " " + career.categoryName;
+  document.getElementById("hero-category").innerHTML =
+    `<span class="emoji" aria-hidden="true">${getCategoryIconSvg(career.category)}</span> ${career.categoryName}`;
   document.getElementById("hero-category").className =
     `category-badge ${career.category}`;
   document.getElementById("career-name").textContent = career.name;
@@ -69,12 +88,15 @@ function fillCareerDetails(career, careerId) {
 
   const quickWorkModeEl = document.getElementById("quick-work-mode");
   if (quickWorkModeEl) {
-    quickWorkModeEl.textContent =
+    const rawWorkMode =
       career.quickFacts.workMode ||
       career.quickFacts.workLocation ||
       (career.quickFacts.remote === "Yes"
-        ? "Remote Friendly 💻"
-        : "On-Site / Field 🏢");
+        ? "Remote Friendly"
+        : "On-Site / Field");
+    quickWorkModeEl.textContent = rawWorkMode
+      .replace(/[\u{1F300}-\u{1FAFF}\u{2600}-\u{27BF}\u{FE0F}\u{200D}]/gu, "")
+      .trim();
   } else {
     const remoteEl = document.getElementById("quick-remote");
     if (remoteEl) remoteEl.textContent = career.quickFacts.remote;
@@ -198,9 +220,13 @@ function fillCollegesSection(collegesData, career) {
     return;
   }
 
+  const degreeSvg = '<svg class="ckh-inline-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>';
+  const instituteSvg = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="22" x2="21" y2="22"/><line x1="6" y1="18" x2="6" y2="11"/><line x1="10" y1="18" x2="10" y2="11"/><line x1="14" y1="18" x2="14" y2="11"/><line x1="18" y1="18" x2="18" y2="11"/><polygon points="12 2 20 7 4 7"/></svg>';
+  const examSvg = '<svg class="ckh-inline-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>';
+
   const degreesHtml = collegesData.degrees
     ? collegesData.degrees
-        .map((deg) => `<span class="college-tag degree-tag">🎓 ${deg}</span>`)
+        .map((deg) => `<span class="college-tag degree-tag">${degreeSvg} ${deg}</span>`)
         .join("")
     : "";
 
@@ -208,14 +234,14 @@ function fillCollegesSection(collegesData, career) {
     ? collegesData.topInstitutes
         .map(
           (inst) =>
-            `<li class="institute-item"><span class="inst-icon">🏛️</span> <strong>${inst}</strong></li>`,
+            `<li class="institute-item"><span class="inst-icon ckh-icon-circle science">${instituteSvg}</span> <strong>${inst}</strong></li>`,
         )
         .join("")
     : "";
 
   const examsHtml = collegesData.entranceExams
     ? collegesData.entranceExams
-        .map((exam) => `<span class="college-tag exam-tag">📝 ${exam}</span>`)
+        .map((exam) => `<span class="college-tag exam-tag">${examSvg} ${exam}</span>`)
         .join("")
     : "";
 
@@ -230,26 +256,26 @@ function fillCollegesSection(collegesData, career) {
   container.innerHTML = `
     <div class="colleges-container">
       <div class="colleges-subcard">
-        <h3 class="subcard-title">🎓 Recommended Degrees & Pathways</h3>
+        <h3 class="subcard-title">${degreeSvg} Recommended Degrees & Pathways</h3>
         <div class="tags-group">${degreesHtml}</div>
       </div>
 
       <div class="colleges-subcard">
-        <h3 class="subcard-title">🏛️ Top Reputed Indian Institutes</h3>
+        <h3 class="subcard-title"><svg class="ckh-inline-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="22" x2="21" y2="22"/><line x1="6" y1="18" x2="6" y2="11"/><line x1="10" y1="18" x2="10" y2="11"/><line x1="14" y1="18" x2="14" y2="11"/><line x1="18" y1="18" x2="18" y2="11"/><polygon points="12 2 20 7 4 7"/></svg> Top Reputed Indian Institutes</h3>
         <ul class="institutes-list">
           ${institutesHtml}
         </ul>
       </div>
 
       <div class="colleges-subcard">
-        <h3 class="subcard-title">📝 Key Entrance Exams & Admission Paths</h3>
+        <h3 class="subcard-title">${examSvg} Key Entrance Exams & Admission Paths</h3>
         <div class="tags-group">${examsHtml}</div>
       </div>
 
       <div class="reality-grid">
         <div class="reality-box budget-box">
           <div class="reality-header">
-            <span class="reality-icon">💸</span>
+            <span class="reality-icon ckh-icon-circle business"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg></span>
             <strong>Estimated Study Cost & Budget</strong>
           </div>
           <p>${budgetDetail}</p>
@@ -257,7 +283,7 @@ function fillCollegesSection(collegesData, career) {
 
         <div class="reality-box location-box">
           <div class="reality-header">
-            <span class="reality-icon">📍</span>
+            <span class="reality-icon ckh-icon-circle creative"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
             <strong>Tier-2 / Tier-3 City Reality Check</strong>
           </div>
           <p>${tierReality}</p>
@@ -326,7 +352,7 @@ function fillResourcesSection(resources) {
   if (resources.youtube) {
     html += `
       <div class="resource-category">
-        <strong>📺 YouTube:</strong>
+        <strong><span class="ckh-icon-circle creative" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg></span> YouTube:</strong>
         ${resources.youtube}
       </div>
     `;
@@ -335,7 +361,7 @@ function fillResourcesSection(resources) {
   if (resources.courses) {
     html += `
       <div class="resource-category">
-        <strong>🎓 Free Courses:</strong>
+        <strong><span class="ckh-icon-circle science" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></span> Free Courses:</strong>
         ${resources.courses}
       </div>
     `;
@@ -344,7 +370,7 @@ function fillResourcesSection(resources) {
   if (resources.practice) {
     html += `
       <div class="resource-category">
-        <strong>💪 Practice:</strong>
+        <strong><span class="ckh-icon-circle business" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></span> Practice:</strong>
         ${resources.practice}
       </div>
     `;
@@ -353,7 +379,7 @@ function fillResourcesSection(resources) {
   if (resources.books) {
     html += `
       <div class="resource-category">
-        <strong>📚 Books:</strong>
+        <strong><span class="ckh-icon-circle tech" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></span> Books:</strong>
         ${resources.books}
       </div>
     `;
@@ -362,7 +388,7 @@ function fillResourcesSection(resources) {
   if (resources.portfolio) {
     html += `
       <div class="resource-category">
-        <strong>🎨 Portfolio:</strong>
+        <strong><span class="ckh-icon-circle unique" aria-hidden="true">${getCategoryIconSvg("creative")}</span> Portfolio:</strong>
         ${resources.portfolio}
       </div>
     `;
@@ -651,7 +677,7 @@ function fillConvinceParentsSection(career, careerId) {
   container.innerHTML = `
     <div class="parent-advice-box">
       <div class="parent-fear-banner">
-        <span class="parent-fear-emoji">💭</span>
+        <span class="parent-fear-emoji ckh-icon-circle creative" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span>
         <div class="parent-fear-text">
           <strong>The Typical Indian Parent Concern:</strong>
           <p>"${advice.dilemma}"</p>
@@ -665,7 +691,7 @@ function fillConvinceParentsSection(career, careerId) {
       <div class="parent-talking-points">
         <div class="parent-point">
           <div class="point-header">
-            <span class="point-icon">💰</span>
+            <span class="point-icon ckh-icon-circle business" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></span>
             <strong>1. Financial Stability & Proof</strong>
           </div>
           <p>${advice.financialAngle} Explain that entry packages start at <strong>${entrySalary}</strong> and scale up to <strong>${seniorSalary}</strong>.</p>
@@ -673,7 +699,7 @@ function fillConvinceParentsSection(career, careerId) {
 
         <div class="parent-point">
           <div class="point-header">
-            <span class="point-icon">🏢</span>
+            <span class="point-icon ckh-icon-circle tech" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg></span>
             <strong>2. Recognized Employers & Real Jobs</strong>
           </div>
           <p>Show them that legitimate organizations like <strong>${workplacesText}</strong> hire full-time professionals with stability, EPF, and medical benefits.</p>
@@ -681,7 +707,7 @@ function fillConvinceParentsSection(career, careerId) {
 
         <div class="parent-point">
           <div class="point-header">
-            <span class="point-icon">🎓</span>
+            <span class="point-icon ckh-icon-circle science" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></span>
             <strong>3. The Degree Safety Net (Peace of Mind)</strong>
           </div>
           <p>${advice.safetyAngle} Reassure them: <em>"My college degree (${degreeText}) remains my solid safety cushion while I build this specialized skill."</em></p>
@@ -689,23 +715,23 @@ function fillConvinceParentsSection(career, careerId) {
 
         <div class="parent-point script-point">
           <div class="point-header">
-            <span class="point-icon">💬</span>
+            <span class="point-icon ckh-icon-circle unique" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></span>
             <strong>4. Your 30-Second Script to Say to Mom & Dad</strong>
           </div>
           <div class="parent-script-box">
             <div class="script-box-header">
-              <span class="script-badge">🛡️ Polite Pitch for Indian Parents</span>
-              <span class="script-read-time">⏱️ 30-Sec Pitch</span>
+              <span class="script-badge"><svg class="ckh-inline-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> Polite Pitch for Indian Parents</span>
+              <span class="script-read-time"><svg class="ckh-inline-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 30-Sec Pitch</span>
             </div>
             <blockquote class="parent-script" id="parent-script-text">
               "${advice.script}"
             </blockquote>
             <div class="script-box-footer">
               <button class="btn-copy-script" onclick="copyParentScript()" title="Copy script to clipboard">
-                📋 Copy Script
+                <svg class="ckh-inline-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg> Copy Script
               </button>
               <button class="btn-whatsapp-pitch" onclick="shareParentPitchWhatsApp()" title="Send polite pitch directly to Parents on WhatsApp">
-                📲 Share with Parents on WhatsApp
+                <svg class="ckh-inline-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg> Share with Parents on WhatsApp
               </button>
             </div>
           </div>
@@ -726,9 +752,11 @@ function copyParentScript() {
       .then(() => {
         const btn = document.querySelector(".btn-copy-script");
         if (btn) {
-          btn.innerHTML = "✅ Copied!";
+          btn.innerHTML =
+            '<svg class="ckh-inline-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Copied!';
           setTimeout(() => {
-            btn.innerHTML = "📋 Copy Script";
+            btn.innerHTML =
+              '<svg class="ckh-inline-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg> Copy Script';
           }, 2500);
         }
       })
@@ -815,7 +843,7 @@ function fillRelatedCareers(currentCategory, currentCareerId) {
       relatedCareers.push({
         id: id,
         name: careerDatabase[id].name,
-        emoji: careerDatabase[id].emoji,
+        category: careerDatabase[id].category,
       });
     }
 
@@ -828,7 +856,7 @@ function fillRelatedCareers(currentCategory, currentCareerId) {
         relatedCareers.push({
           id: id,
           name: careerDatabase[id].name,
-          emoji: careerDatabase[id].emoji,
+          category: careerDatabase[id].category,
         });
       }
 
@@ -852,7 +880,7 @@ function fillRelatedCareers(currentCategory, currentCareerId) {
   relatedCareers.forEach((career) => {
     html += `
       <a href="career-detail.html?career=${career.id}${fromParam}" class="related-career-link">
-        <strong>${career.emoji} ${career.name}</strong>
+        <strong><span class="ckh-icon-circle ${career.category}" aria-hidden="true">${getCategoryIconSvg(career.category)}</span> ${career.name}</strong>
         <small>Click to explore </small>
       </a>
     `;
@@ -879,8 +907,11 @@ function showError(message) {
       border-radius: 20px;
       border: 3px solid var(--coral);
     ">
-      <h1 style="color: var(--coral); font-size: 3rem; margin-bottom: 1rem;">
-        ⚠️ Oops!
+      <div class="ckh-icon-circle creative" style="width: 64px; height: 64px; margin: 0 auto 1rem;">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="width: 30px; height: 30px;"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+      </div>
+      <h1 style="color: var(--coral); font-size: 2.5rem; margin-bottom: 1rem;">
+        Oops!
       </h1>
       <p style="font-size: 1.2rem; color: var(--text-gray); margin-bottom: 2rem;">
         ${message}
@@ -981,7 +1012,9 @@ function updateToggleAllBtn() {
   const anyClosed = Array.from(cards).some(
     (c) => !c.classList.contains("active"),
   );
-  btn.innerHTML = anyClosed ? "📂 Expand All" : "📁 Collapse All";
+  btn.innerHTML = anyClosed
+    ? '<svg class="ckh-inline-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="7 13 12 18 17 13"/><polyline points="7 6 12 11 17 6"/></svg> Expand All'
+    : '<svg class="ckh-inline-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="17 11 12 6 7 11"/><polyline points="17 18 12 13 7 18"/></svg> Collapse All';
 }
 
 /* ============================================
@@ -1003,7 +1036,7 @@ function toggleDetailBookmark() {
 
   const isSaved = window.ckhBookmarks.toggle(careerId);
   if (isSaved) {
-    if (window.showToast) window.showToast("Career saved to bookmarks! 🔖");
+    if (window.showToast) window.showToast("Career saved to bookmarks!");
   } else {
     if (window.showToast) window.showToast("Career removed from bookmarks");
   }

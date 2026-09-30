@@ -71,6 +71,8 @@ window.ckhBookmarks = {
     var list = this.get();
     var countEl = document.getElementById("bookmarkCount");
     if (countEl) countEl.textContent = list.length;
+    var bookmarkSvg =
+      '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16z"/></svg>';
 
     document.querySelectorAll(".bookmark-card-btn").forEach(function (btn) {
       var slug = btn.getAttribute("data-slug");
@@ -78,12 +80,12 @@ window.ckhBookmarks = {
         btn.classList.add("active");
         btn.setAttribute("aria-label", "Remove from bookmarks");
         btn.setAttribute("title", "Remove from bookmarks");
-        btn.innerHTML = "🔖";
+        btn.innerHTML = bookmarkSvg;
       } else {
         btn.classList.remove("active");
         btn.setAttribute("aria-label", "Save to bookmarks");
         btn.setAttribute("title", "Save to bookmarks");
-        btn.innerHTML = "🔖";
+        btn.innerHTML = bookmarkSvg;
       }
     });
 
@@ -93,10 +95,10 @@ window.ckhBookmarks = {
       var currentSlug = urlParams.get("career");
       if (currentSlug && list.includes(currentSlug)) {
         detailBtn.classList.add("active");
-        detailBtn.innerHTML = "🔖 Saved to Bookmarks";
+        detailBtn.innerHTML = bookmarkSvg + " Saved to Bookmarks";
       } else {
         detailBtn.classList.remove("active");
-        detailBtn.innerHTML = "🔖 Bookmark Career";
+        detailBtn.innerHTML = bookmarkSvg + " Bookmark Career";
       }
     }
   },
@@ -114,10 +116,14 @@ document.addEventListener("DOMContentLoaded", function () {
   function applyTheme(theme) {
     if (theme === "dark") {
       html.setAttribute("data-theme", "dark");
-      if (toggleBtn) toggleBtn.textContent = "☀️";
+      if (toggleBtn)
+        toggleBtn.innerHTML =
+          '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>';
     } else {
       html.removeAttribute("data-theme");
-      if (toggleBtn) toggleBtn.textContent = "🌙";
+      if (toggleBtn)
+        toggleBtn.innerHTML =
+          '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
     }
   }
 
@@ -211,14 +217,15 @@ document.addEventListener("DOMContentLoaded", function () {
         bookmarkBtn.setAttribute("data-slug", slug);
         bookmarkBtn.setAttribute("aria-label", "Save to bookmarks");
         bookmarkBtn.setAttribute("title", "Save to bookmarks");
-        bookmarkBtn.innerHTML = "🔖";
+        bookmarkBtn.innerHTML =
+          '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16z"/></svg>';
 
         bookmarkBtn.addEventListener("click", function (e) {
           e.preventDefault();
           e.stopPropagation();
           const isSaved = window.ckhBookmarks.toggle(slug);
           if (isSaved) {
-            window.showToast("Career saved to bookmarks! 🔖");
+            window.showToast("Career saved to bookmarks!");
           } else {
             window.showToast("Career removed from bookmarks");
           }
@@ -289,16 +296,20 @@ document.addEventListener("DOMContentLoaded", function () {
         if (visibleCount === 0) {
           noResults.style.display = "block";
           if (filterValue === "bookmarked") {
-            if (noResultsIcon) noResultsIcon.textContent = "🔖";
+            if (noResultsIcon)
+              noResultsIcon.innerHTML =
+                '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16z"/></svg>';
             if (noResultsHeading)
               noResultsHeading.textContent = "No Bookmarked Careers Yet";
             if (noResultsMsg) {
               noResultsMsg.innerHTML =
-                "You haven't bookmarked any careers yet! Tap the 🔖 bookmark icon on any career card to save it here for quick access.";
+                "You haven't bookmarked any careers yet! Tap the bookmark icon on any career card to save it here for quick access.";
             }
             if (suggestBtn) suggestBtn.style.display = "none";
           } else {
-            if (noResultsIcon) noResultsIcon.textContent = "🔍";
+            if (noResultsIcon)
+              noResultsIcon.innerHTML =
+                '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>';
             if (noResultsHeading)
               noResultsHeading.textContent = "No Hatke Careers Found";
             if (noResultsMsg) {
@@ -910,9 +921,11 @@ document.addEventListener("DOMContentLoaded", function () {
                 rawValue.length > 18
                   ? rawValue.substring(0, 18) + "..."
                   : rawValue;
+              const bulbSvg =
+                '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M15.09 14c.18-.98.65-1.74 1.41-2.5A4.65 4.65 0 0 0 18 8 6 6 0 0 0 6 8c0 1 .23 2.23 1.5 3.5A4.61 4.61 0 0 1 8.91 14"/></svg>';
               suggestBtn.innerHTML = rawValue
-                ? `<span>💡</span> Suggest "${safeCareerText.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")}"`
-                : `<span>💡</span> Suggest a Career`;
+                ? `${bulbSvg} Suggest "${safeCareerText.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")}"`
+                : `${bulbSvg} Suggest a Career`;
             }
           } else {
             noResults.style.display = "none";
@@ -1061,7 +1074,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const selected =
           questions[currentQuestion].querySelector("input:checked");
         if (!selected) {
-          alert("Please select an option before continuing 😊");
+          alert("Please select an option before continuing.");
           return;
         }
         if (currentQuestion < totalQuestions - 1) {
@@ -1139,7 +1152,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
       const resultMap = {
         creative: {
-          title: "You are a Creative Mind 🎨",
+          title: "You are a Creative Mind",
+          iconSvg:
+            '<svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0 0 20 2 2 0 0 0 2-2v-.5a1.5 1.5 0 0 1 1.5-1.5H17a5 5 0 0 0 5-5c0-5.52-4.48-11-10-11z"/><circle cx="7.5" cy="11.5" r="1.2"/><circle cx="10.5" cy="7.5" r="1.2"/><circle cx="15" cy="8.5" r="1.2"/></svg>',
           desc: "You thrive on imagination, aesthetics, and expression. You see possibilities where others see ordinary objects.",
           link: "creative",
           strengths: [
@@ -1167,7 +1182,9 @@ document.addEventListener("DOMContentLoaded", function () {
           ],
         },
         tech: {
-          title: "You are a Tech Innovator 💻",
+          title: "You are a Tech Innovator",
+          iconSvg:
+            '<svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M2 20h20"/><path d="m9.5 8-2 2 2 2"/><path d="m14.5 8 2 2-2 2"/><path d="m12.8 7.5-1.6 5"/></svg>',
           desc: "You love solving problems using technology, code, and systems. You turn complex challenges into smart solutions.",
           link: "tech",
           strengths: [
@@ -1195,7 +1212,9 @@ document.addEventListener("DOMContentLoaded", function () {
           ],
         },
         science: {
-          title: "You are a Science Explorer 🔬",
+          title: "You are a Science Explorer",
+          iconSvg:
+            '<svg viewBox="0 0 24 24"><path d="M10 2v7.31L5.12 18.1A2 2 0 0 0 6.87 21h10.26a2 2 0 0 0 1.75-2.9L14 9.31V2"/><path d="M8.5 2h7"/><path d="M7.5 15h9"/></svg>',
           desc: "You love discovering how the world works, asking 'why', and finding patterns in nature and data.",
           link: "science",
           strengths: [
@@ -1223,7 +1242,9 @@ document.addEventListener("DOMContentLoaded", function () {
           ],
         },
         business: {
-          title: "You are a Business Strategist 💰",
+          title: "You are a Business Strategist",
+          iconSvg:
+            '<svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><path d="M2 12h20"/><path d="M12 12v2"/></svg>',
           desc: "You think about growth, money, and smart decisions. You identify value, connect people, and build ventures.",
           link: "business",
           strengths: [
@@ -1251,7 +1272,9 @@ document.addEventListener("DOMContentLoaded", function () {
           ],
         },
         unique: {
-          title: "You are a Unique Trailblazer 🎭",
+          title: "You are a Unique Trailblazer",
+          iconSvg:
+            '<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg>',
           desc: "You love unexpected, inspiring, and unconventional paths. You follow your unique passions rather than standard career formulas.",
           link: "unique",
           strengths: [
@@ -1286,7 +1309,8 @@ document.addEventListener("DOMContentLoaded", function () {
       } catch (e) {}
       if (resultContent) {
         resultContent.innerHTML = `
-                <div class="result-badge">🎉 100% Career Personality Match</div>
+                <div class="quiz-result-icon ckh-icon-circle ${r.link}" aria-hidden="true">${r.iconSvg}</div>
+                <div class="result-badge">100% Career Personality Match</div>
                 <h3 class="result-title">${r.title}</h3>
                 <p class="result-desc">${r.desc}</p>
                 
@@ -1313,7 +1337,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 <div class="result-actions">
                   <a href="explore.html?category=${r.link}" class="result-primary-btn">Explore All ${r.link.charAt(0).toUpperCase() + r.link.slice(1)} Careers →</a>
-                  <button class="retake-btn" onclick="resetQuiz()">🔄 Retake Quiz</button>
+                  <button class="retake-btn" onclick="resetQuiz()"><svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"/></svg> Retake Quiz</button>
                 </div>
             `;
       }
@@ -1372,7 +1396,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (isLocalhost) {
       container.innerHTML = `
         <div style="display:flex; align-items:center; gap:12px; padding:12px 16px; border:2px dashed var(--accent); border-radius:12px; background:rgba(221,168,63,0.1); margin:0.5rem 0;">
-          <span style="font-size:1.4rem;">🛡️</span>
+          <span class="ckh-icon-circle business" style="width:36px;height:36px;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px;"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span>
           <div>
             <div style="font-size:0.92rem; font-weight:700; color:var(--primary);">Localhost Development Mode</div>
             <div style="font-size:0.82rem; color:var(--text-gray);">reCAPTCHA domain check bypassed for local testing</div>
@@ -1440,7 +1464,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (isLocalhost) {
       container.innerHTML = `
         <div style="display:flex; align-items:center; gap:12px; padding:12px 16px; border:2px dashed var(--accent); border-radius:12px; background:rgba(221,168,63,0.1); margin:0.5rem 0;">
-          <span style="font-size:1.4rem;">🛡️</span>
+          <span class="ckh-icon-circle business" style="width:36px;height:36px;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px;"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span>
           <div>
             <div style="font-size:0.92rem; font-weight:700; color:var(--primary);">Localhost Development Mode</div>
             <div style="font-size:0.82rem; color:var(--text-gray);">reCAPTCHA domain check bypassed for local testing</div>
@@ -1649,7 +1673,7 @@ document.addEventListener("DOMContentLoaded", function () {
     var rcBox = document.getElementById("recaptcha-contact");
     if (rcBox) {
       rcBox.innerHTML =
-        '<div style="display:inline-flex;align-items:center;justify-content:space-between;width:260px;padding:8px 12px;background:#f9f9f9;border:1px solid #d3d3d3;border-radius:4px;box-shadow:0 1px 2px rgba(0,0,0,0.05);"><div style="display:flex;align-items:center;gap:10px;"><div style="width:20px;height:20px;border:2px solid #c1c1c1;border-radius:2px;background:#fff;"></div><span style="font-family:Roboto,sans-serif;font-size:12px;color:#222;font-weight:500;">I\'m not a robot</span></div><div style="text-align:center;line-height:1.1;"><div style="font-size:14px;">🔄</div><div style="font-size:8px;color:#555;font-family:Roboto,sans-serif;">reCAPTCHA</div><div style="font-size:7px;color:#777;">Privacy - Terms</div></div></div>';
+        '<div style="display:inline-flex;align-items:center;justify-content:space-between;width:260px;padding:8px 12px;background:#f9f9f9;border:1px solid #d3d3d3;border-radius:4px;box-shadow:0 1px 2px rgba(0,0,0,0.05);"><div style="display:flex;align-items:center;gap:10px;"><div style="width:20px;height:20px;border:2px solid #c1c1c1;border-radius:2px;background:#fff;"></div><span style="font-family:Roboto,sans-serif;font-size:12px;color:#222;font-weight:500;">I\'m not a robot</span></div><div style="text-align:center;line-height:1.1;"><div style="display:flex;justify-content:center;color:#4285f4;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px;"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg></div><div style="font-size:8px;color:#555;font-family:Roboto,sans-serif;">reCAPTCHA</div><div style="font-size:7px;color:#777;">Privacy - Terms</div></div></div>';
     }
   }
 
@@ -1687,7 +1711,7 @@ document.addEventListener("DOMContentLoaded", function () {
       errorBox.style.cssText =
         "background:#ffe6e6;border:2px solid #c74b50;border-radius:8px;padding:15px;margin-bottom:20px;text-align:center;animation:shake 0.5s;";
       errorBox.innerHTML =
-        '<strong style="color:#c74b50;font-size:1rem;">⚠️ Please complete the "I\'m not a robot" verification before submitting.</strong>';
+        '<strong style="color:#c74b50;font-size:1rem;">Please complete the "I\'m not a robot" verification before submitting.</strong>';
       targetForm.insertBefore(errorBox, targetForm.firstChild);
       setTimeout(function () {
         errorBox.remove();

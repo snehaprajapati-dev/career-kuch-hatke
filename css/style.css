@@ -2497,4 +2497,451 @@ a.card-btn:hover {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.55);
 }
 
+/* ============================================
+   THEME-MATCHED CIRCULAR MONOLINE SVG ICON BADGES
+   ============================================ */
+.ckh-icon-circle {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border-radius: 50% !important;
+  background: rgba(103, 42, 63, 0.1);
+  color: var(--primary, #672a3f);
+  border: 1.5px solid rgba(103, 42, 63, 0.22);
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+}
+
+.ckh-icon-circle svg,
+.ckh-inline-svg {
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 1.9;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  display: block;
+  flex-shrink: 0;
+}
+
+.ckh-inline-svg {
+  display: inline-block;
+  vertical-align: -0.18em;
+}
+
+/* Category-tinted circular badges (Light Mode) */
+.ckh-icon-circle.creative,
+.category-badge.creative .emoji {
+  background: rgba(221, 168, 63, 0.18) !important;
+  color: #a47108 !important;
+  border: 1.5px solid rgba(221, 168, 63, 0.4) !important;
+}
+
+.ckh-icon-circle.tech,
+.category-badge.tech .emoji {
+  background: rgba(43, 71, 67, 0.14) !important;
+  color: #2b4743 !important;
+  border: 1.5px solid rgba(43, 71, 67, 0.32) !important;
+}
+
+.ckh-icon-circle.science,
+.category-badge.science .emoji {
+  background: rgba(103, 42, 63, 0.13) !important;
+  color: #672a3f !important;
+  border: 1.5px solid rgba(103, 42, 63, 0.3) !important;
+}
+
+.ckh-icon-circle.business,
+.category-badge.business .emoji {
+  background: rgba(218, 112, 115, 0.18) !important;
+  color: #b84b4e !important;
+  border: 1.5px solid rgba(218, 112, 115, 0.38) !important;
+}
+
+.ckh-icon-circle.unique,
+.category-badge.unique .emoji {
+  background: rgba(217, 70, 166, 0.14) !important;
+  color: #b83280 !important;
+  border: 1.5px solid rgba(217, 70, 166, 0.32) !important;
+}
+
+/* Category-tinted circular badges (Dark Mode) */
+[data-theme="dark"] .ckh-icon-circle {
+  background: rgba(255, 224, 160, 0.14);
+  color: #ffe0a0;
+  border-color: rgba(255, 224, 160, 0.32);
+}
+
+[data-theme="dark"] .ckh-icon-circle.creative,
+[data-theme="dark"] .category-badge.creative .emoji {
+  background: rgba(255, 224, 160, 0.16) !important;
+  color: #ffe0a0 !important;
+  border-color: rgba(255, 224, 160, 0.38) !important;
+}
+
+[data-theme="dark"] .ckh-icon-circle.tech,
+[data-theme="dark"] .category-badge.tech .emoji {
+  background: rgba(45, 212, 191, 0.16) !important;
+  color: #2dd4bf !important;
+  border-color: rgba(45, 212, 191, 0.38) !important;
+}
+
+[data-theme="dark"] .ckh-icon-circle.science,
+[data-theme="dark"] .category-badge.science .emoji {
+  background: rgba(192, 132, 252, 0.16) !important;
+  color: #c084fc !important;
+  border-color: rgba(192, 132, 252, 0.38) !important;
+}
+
+[data-theme="dark"] .ckh-icon-circle.business,
+[data-theme="dark"] .category-badge.business .emoji {
+  background: rgba(244, 114, 182, 0.16) !important;
+  color: #f472b6 !important;
+  border-color: rgba(244, 114, 182, 0.38) !important;
+}
+
+[data-theme="dark"] .ckh-icon-circle.unique,
+[data-theme="dark"] .category-badge.unique .emoji {
+  background: rgba(232, 121, 249, 0.16) !important;
+  color: #e879f9 !important;
+  border-color: rgba(232, 121, 249, 0.38) !important;
+}
+
+/* 1. Home Page 5 Category Cards */
+.category-card .emoji.ckh-icon-circle {
+  width: 64px !important;
+  height: 64px !important;
+  margin: 0 auto 1.15rem auto !important;
+  font-size: 1rem !important;
+}
+
+.category-card .emoji.ckh-icon-circle svg {
+  width: 28px;
+  height: 28px;
+}
+
+.category-card:hover .emoji.ckh-icon-circle {
+  transform: scale(1.08) translateY(-2px);
+  box-shadow: 0 6px 18px rgba(103, 42, 63, 0.16);
+}
+
+/* 2. Explore Page Career Cards & Category Badges */
+.category-badge {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 0.45rem !important;
+  padding: 0.26rem 0.8rem 0.26rem 0.3rem !important;
+}
+
+.category-badge .emoji {
+  width: 24px !important;
+  height: 24px !important;
+  border-radius: 50% !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-size: 0.8rem !important;
+  margin: 0 !important;
+  flex-shrink: 0;
+}
+
+.category-badge .emoji svg {
+  width: 13.5px;
+  height: 13.5px;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.bookmark-card-btn {
+  background: rgba(103, 42, 63, 0.08) !important;
+  border: 1.5px solid rgba(103, 42, 63, 0.2) !important;
+  color: var(--primary, #672a3f) !important;
+}
+
+.bookmark-card-btn svg {
+  width: 16px;
+  height: 16px;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.bookmark-card-btn.active {
+  color: #1a1130 !important;
+}
+
+.bookmark-card-btn.active svg {
+  fill: currentColor;
+}
+
+[data-theme="dark"] .bookmark-card-btn {
+  background: rgba(255, 224, 160, 0.1) !important;
+  border-color: rgba(255, 224, 160, 0.28) !important;
+  color: #ffe0a0 !important;
+}
+
+[data-theme="dark"] .bookmark-card-btn.active {
+  color: #1a1130 !important;
+}
+
+/* 3. Explore Page Filter Buttons */
+.filter-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 0.45rem !important;
+}
+
+.filter-btn svg {
+  width: 16px;
+  height: 16px;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  flex-shrink: 0;
+}
+
+/* 4. Contact Page Option Cards */
+.contact-option-card .option-icon.ckh-icon-circle {
+  width: 72px !important;
+  height: 72px !important;
+  margin: 0 auto 1.4rem auto !important;
+  font-size: 1rem !important;
+}
+
+.contact-option-card .option-icon.ckh-icon-circle svg {
+  width: 32px;
+  height: 32px;
+}
+
+.success-message .emoji.ckh-icon-circle {
+  width: 60px !important;
+  height: 60px !important;
+  margin: 0 auto 1rem auto !important;
+  background: rgba(40, 167, 69, 0.15) !important;
+  color: #1e7e34 !important;
+  border-color: rgba(40, 167, 69, 0.35) !important;
+}
+
+.success-message .emoji.ckh-icon-circle svg {
+  width: 28px;
+  height: 28px;
+}
+
+/* 5. About Page Solution & Future Vision Badges */
+.solution li {
+  padding-left: 3.9rem !important;
+}
+
+.future-vision li {
+  padding-left: 3.8rem !important;
+}
+
+.solution li .emoji.ckh-icon-circle,
+.future-vision li .emoji.ckh-icon-circle {
+  position: absolute !important;
+  left: 0.95rem !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  width: 32px !important;
+  height: 32px !important;
+  font-size: 0.9rem !important;
+  margin: 0 !important;
+}
+
+.solution li .emoji.ckh-icon-circle svg,
+.future-vision li .emoji.ckh-icon-circle svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* 6. Career Detail Quick Facts, Toolbar, & Subcards */
+.quick-facts .fact-label {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 0.45rem !important;
+}
+
+.quick-facts .fact-label .ckh-icon-circle {
+  width: 26px !important;
+  height: 26px !important;
+  background: rgba(221, 168, 63, 0.2) !important;
+  color: #ffe0a0 !important;
+  border: 1px solid rgba(221, 168, 63, 0.45) !important;
+}
+
+.quick-facts .fact-label .ckh-icon-circle svg {
+  width: 14px;
+  height: 14px;
+}
+
+.roadmap-toolbar .toolbar-btn,
+.share-card .share-btn,
+.script-box-footer button,
+.no-results-actions .no-results-btn,
+.retake-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 0.45rem !important;
+}
+
+.roadmap-toolbar .toolbar-btn svg,
+.share-card .share-btn svg,
+.script-box-footer button svg,
+.no-results-actions .no-results-btn svg,
+.retake-btn svg {
+  width: 16px;
+  height: 16px;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  flex-shrink: 0;
+}
+
+.no-results-icon.ckh-icon-circle {
+  width: 68px !important;
+  height: 68px !important;
+  margin: 0 auto 1.1rem auto !important;
+  font-size: 1rem !important;
+}
+
+.no-results-icon.ckh-icon-circle svg {
+  width: 30px;
+  height: 30px;
+}
+
+/* 7. Navbar Theme Toggle & Footer Connect Icons */
+.theme-toggle {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.theme-toggle svg {
+  width: 18px;
+  height: 18px;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.footer-section p {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+}
+
+.footer-section p .emoji.ckh-icon-circle {
+  width: 28px !important;
+  height: 28px !important;
+  background: rgba(221, 168, 63, 0.16) !important;
+  color: #ffe0a0 !important;
+  border: 1px solid rgba(221, 168, 63, 0.35) !important;
+  margin: 0 !important;
+}
+
+.footer-section p .emoji.ckh-icon-circle svg {
+  width: 14px;
+  height: 14px;
+}
+
+.footer-bottom .emoji-heart {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: rgba(218, 112, 115, 0.22);
+  color: #ff8a8d;
+  vertical-align: middle;
+  margin: 0 0.15rem;
+}
+
+.footer-bottom .emoji-heart svg {
+  width: 12px;
+  height: 12px;
+  stroke: currentColor;
+  fill: currentColor;
+  stroke-width: 1.5;
+}
+
+/* 8. Quiz Intro & Result Icon Circle */
+.quiz-intro-icon.ckh-icon-circle,
+.quiz-result-icon.ckh-icon-circle {
+  width: 64px !important;
+  height: 64px !important;
+  margin: 0 auto 1.15rem auto !important;
+}
+
+.quiz-intro-icon.ckh-icon-circle svg,
+.quiz-result-icon.ckh-icon-circle svg {
+  width: 28px;
+  height: 28px;
+}
+
+/* 9. Career Detail Inner Cards & Sidebar Icon Circles */
+.inst-icon.ckh-icon-circle,
+.reality-icon.ckh-icon-circle,
+.resource-category strong .ckh-icon-circle,
+.point-icon.ckh-icon-circle,
+.related-career-link strong .ckh-icon-circle {
+  width: 28px !important;
+  height: 28px !important;
+  font-size: 1rem !important;
+  margin-right: 0.45rem !important;
+  vertical-align: middle;
+}
+
+.inst-icon.ckh-icon-circle svg,
+.reality-icon.ckh-icon-circle svg,
+.resource-category strong .ckh-icon-circle svg,
+.point-icon.ckh-icon-circle svg,
+.related-career-link strong .ckh-icon-circle svg {
+  width: 15px;
+  height: 15px;
+}
+
+.parent-fear-emoji.ckh-icon-circle {
+  width: 44px !important;
+  height: 44px !important;
+  font-size: 1rem !important;
+  flex-shrink: 0;
+}
+
+.parent-fear-emoji.ckh-icon-circle svg {
+  width: 22px;
+  height: 22px;
+}
+
+.related-career-link strong {
+  display: flex;
+  align-items: center;
+}
+
+.resource-category strong {
+  display: inline-flex;
+  align-items: center;
+}
+
+.btn-copy-script,
+.btn-whatsapp-pitch {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
 /* END OF STYLESHEET */
