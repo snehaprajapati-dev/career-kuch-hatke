@@ -3,30 +3,125 @@
    ============================================ */
 
 .hero {
-  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+  background:
+    radial-gradient(
+      circle at 50% 24%,
+      rgba(221, 168, 63, 0.24) 0%,
+      rgba(221, 168, 63, 0.06) 35%,
+      transparent 65%
+    ),
+    linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
   color: var(--bg-white);
-  padding: 6rem 0;
+  padding: 6.6rem 0 5.5rem 0;
   text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before,
+.hero::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.hero::before {
+  width: 360px;
+  height: 360px;
+  top: -100px;
+  left: -80px;
+  background: radial-gradient(
+    circle,
+    rgba(221, 168, 63, 0.16) 0%,
+    transparent 70%
+  );
+}
+
+.hero::after {
+  width: 420px;
+  height: 420px;
+  bottom: -160px;
+  right: -100px;
+  background: radial-gradient(
+    circle,
+    rgba(255, 211, 219, 0.14) 0%,
+    transparent 70%
+  );
+}
+
+.hero .container {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.45rem 1.25rem;
+  margin-bottom: 1.25rem;
+  border-radius: 50px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(221, 168, 63, 0.55);
+  color: #ffe5a3;
+  font-family: "Montserrat Alternates", sans-serif;
+  font-size: 0.88rem;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+[data-theme="dark"] .hero-badge {
+  background: rgba(155, 89, 182, 0.18);
+  border-color: rgba(255, 224, 160, 0.55);
+  color: #ffe0a0;
+}
+
+.hero-badge-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #dda83f;
+  box-shadow: 0 0 8px #dda83f;
+  display: inline-block;
+  animation: heroPulseDot 2s infinite ease-in-out;
+}
+
+@keyframes heroPulseDot {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.35);
+    opacity: 0.65;
+  }
 }
 
 .hero h1 {
   font-size: 3rem;
   margin-bottom: 1rem;
   color: var(--bg-white);
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.18);
 }
 
 .hero h2 {
   font-size: 1.8rem;
   font-weight: 400;
   margin-bottom: 1.5rem;
-  opacity: 0.9;
+  opacity: 0.92;
   color: var(--bg-white);
 }
 
 .hero p {
   font-size: 1.1rem;
   margin-bottom: 2rem;
-  opacity: 0.85;
+  opacity: 0.88;
   color: var(--bg-white);
 }
 
@@ -191,4 +286,82 @@
   color: var(--text-dark);
   opacity: 0.7;
   font-style: italic;
+}
+
+/* Compact mode for full-page academic report screenshot */
+body[data-compact="true"] .hero {
+  padding: 5.1rem 0 1.25rem 0;
+}
+body[data-compact="true"] .hero-badge {
+  margin-bottom: 0.45rem;
+  padding: 0.25rem 0.95rem;
+  font-size: 0.76rem;
+}
+body[data-compact="true"] .hero h1 {
+  font-size: 2.1rem;
+  margin-bottom: 0.25rem;
+}
+body[data-compact="true"] .hero h2 {
+  font-size: 1.25rem;
+  margin-bottom: 0.45rem;
+}
+body[data-compact="true"] .hero p {
+  font-size: 0.9rem;
+  margin-bottom: 0.85rem;
+}
+body[data-compact="true"] .hero-buttons .btn {
+  padding: 0.55rem 1.4rem;
+  font-size: 0.9rem;
+}
+body[data-compact="true"] .quiz-cta {
+  padding: 1rem 1.5rem;
+}
+body[data-compact="true"] .quiz-cta h2 {
+  font-size: 1.45rem;
+  margin-bottom: 0.3rem;
+}
+body[data-compact="true"] .quiz-cta p {
+  font-size: 0.88rem;
+  margin-bottom: 0.65rem;
+}
+body[data-compact="true"] .quiz-cta .btn {
+  padding: 0.5rem 1.5rem;
+  font-size: 0.9rem;
+  margin-bottom: 0.3rem;
+}
+body[data-compact="true"] .stats,
+body[data-compact="true"] .categories {
+  padding: 1.1rem 0;
+}
+body[data-compact="true"] .stats h2,
+body[data-compact="true"] .categories h2 {
+  font-size: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+body[data-compact="true"] .stat-box {
+  padding: 0.9rem 0.8rem;
+}
+body[data-compact="true"] .stat-box h3 {
+  font-size: 1.9rem;
+  margin-bottom: 0.2rem;
+}
+body[data-compact="true"] .category-card {
+  padding: 0.85rem 0.7rem;
+}
+body[data-compact="true"] .category-card .emoji {
+  font-size: 1.75rem;
+  margin-bottom: 0.3rem;
+}
+body[data-compact="true"] .footer {
+  padding: 1rem 0 0 0;
+}
+body[data-compact="true"] .footer-intro {
+  padding-bottom: 0.6rem;
+  margin-bottom: 0.6rem;
+}
+body[data-compact="true"] .footer-content {
+  padding-bottom: 0.6rem;
+}
+body[data-compact="true"] .footer-bottom {
+  padding: 0.6rem 0;
 }

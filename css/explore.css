@@ -319,6 +319,21 @@ button.filter-btn[data-filter="unique"].active {
   z-index: 10;
 }
 
+@keyframes cardFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(14px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.career-card.card-animate-in {
+  animation: cardFadeIn 0.32s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
 .card-header {
   display: flex !important;
   justify-content: space-between !important;

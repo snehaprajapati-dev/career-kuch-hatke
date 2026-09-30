@@ -262,10 +262,19 @@ document.addEventListener("DOMContentLoaded", function () {
         if (isMatch) {
           card.style.removeProperty("display");
           card.classList.remove("is-hidden");
+          card.classList.remove("card-animate-in");
+          card.style.animationDelay = Math.min(visibleCount * 20, 180) + "ms";
+          void card.offsetWidth;
+          card.classList.add("card-animate-in");
+          card.onanimationend = function () {
+            card.classList.remove("card-animate-in");
+            card.style.animationDelay = "";
+          };
           visibleCount++;
         } else {
           card.style.setProperty("display", "none", "important");
           card.classList.add("is-hidden");
+          card.classList.remove("card-animate-in");
         }
       });
 
@@ -856,10 +865,19 @@ document.addEventListener("DOMContentLoaded", function () {
           ) {
             card.style.removeProperty("display");
             card.classList.remove("is-hidden");
+            card.classList.remove("card-animate-in");
+            card.style.animationDelay = Math.min(visibleCount * 20, 180) + "ms";
+            void card.offsetWidth;
+            card.classList.add("card-animate-in");
+            card.onanimationend = function () {
+              card.classList.remove("card-animate-in");
+              card.style.animationDelay = "";
+            };
             visibleCount++;
           } else {
             card.style.setProperty("display", "none", "important");
             card.classList.add("is-hidden");
+            card.classList.remove("card-animate-in");
           }
         });
         countSpan.textContent = visibleCount;
@@ -1682,5 +1700,58 @@ document.addEventListener("DOMContentLoaded", function () {
         targetSection.scrollIntoView({ behavior: "smooth", block: "start" });
       }, 100);
     }
+  }
+
+  /* ============================================
+   SMOOTH STAT COUNTER ANIMATION (Home & About Pages)
+   ============================================ */
+  const statHeadings = document.querySelectorAll(".stat-box h3");
+  if (
+    statHeadings.length > 0 &&
+    "IntersectionObserver" in window &&
+    !navigator.webdriver &&
+    urlParams.get("compact") !== "true"
+  ) {
+    const statObserver = new IntersectionObserver(
+      function (entries, observer) {
+        entries.forEach(function (entry) {
+          if (!entry.isIntersecting) return;
+          const el = entry.target;
+          observer.unobserve(el);
+
+          const originalText = (el.getAttribute("data-target-text") || el.textContent || "").trim();
+          const match = originalText.match(/^([^0-9]*)(\d+)(.*)$/);
+          if (!match) return;
+
+          const prefix = match[1] || "";
+          const targetVal = parseInt(match[2], 10);
+          const suffix = match[3] || "";
+          const duration = 1100;
+          const startTime = performance.now();
+
+          function updateCounter(now) {
+            const elapsed = now - startTime;
+            const progress = Math.min(elapsed / duration, 1);
+            const eased = 1 - Math.pow(1 - progress, 3);
+            const currentVal = Math.round(eased * targetVal);
+            el.textContent = prefix + currentVal + suffix;
+            if (progress < 1) {
+              requestAnimationFrame(updateCounter);
+            } else {
+              el.textContent = originalText;
+            }
+          }
+
+          el.textContent = prefix + "0" + suffix;
+          requestAnimationFrame(updateCounter);
+        });
+      },
+      { threshold: 0.35 },
+    );
+
+    statHeadings.forEach(function (h3) {
+      h3.setAttribute("data-target-text", h3.textContent.trim());
+      statObserver.observe(h3);
+    });
   }
 }); // Closes DOMContentLoaded
