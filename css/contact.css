@@ -572,13 +572,13 @@ body[data-compact="true"] .contact-option-card {
   }
 }
 
-/* Dark Mode Contact Option Card Badges - Navbar Yellow-Gold (#ffe0a0) Glow */
+/* Dark Mode Contact Option Card Badges - Dark Navbar (#0f0a1e / #1a1130) Background + Yellow (#ffe0a0) Glow */
 [data-theme="dark"] .contact-option-card .option-icon.ckh-icon-circle {
-  background: linear-gradient(135deg, #ffe0a0 0%, #ffd080 100%) !important;
-  color: #6c3483 !important;
-  border: 2px solid #dda83f !important;
+  background: linear-gradient(135deg, #1a1130 0%, #0f0a1e 100%) !important;
+  color: #ffe0a0 !important;
+  border: 2px solid #ffe0a0 !important;
   box-shadow:
-    0 0 24px rgba(255, 224, 160, 0.9),
-    0 6px 18px rgba(221, 168, 63, 0.45) !important;
+    0 0 22px rgba(255, 224, 160, 0.85),
+    0 6px 18px rgba(15, 10, 30, 0.35) !important;
 }
 
