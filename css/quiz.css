@@ -285,17 +285,17 @@
 }
 
 [data-theme="dark"] .btn-start {
-  background: linear-gradient(135deg, #9b59b6 0%, #672a3f 100%) !important;
+  background: #9b59b6 !important;
   border-color: #9b59b6 !important;
-  color: #ffffff !important;
-  box-shadow: 0 4px 15px rgba(155, 89, 182, 0.4);
+  color: #ede8f5 !important;
+  box-shadow: 0 4px 15px rgba(155, 89, 182, 0.35) !important;
 }
 
 [data-theme="dark"] .btn-start:hover {
-  background: linear-gradient(135deg, #b06cc9 0%, #7d334e 100%) !important;
-  border-color: #b06cc9 !important;
+  background: #6c3483 !important;
+  border-color: #6c3483 !important;
   color: #ffffff !important;
-  box-shadow: 0 6px 20px rgba(155, 89, 182, 0.6);
+  box-shadow: 0 6px 20px rgba(155, 89, 182, 0.5) !important;
 }
 
 [data-theme="dark"] .quiz-container {
@@ -408,14 +408,16 @@
 }
 
 [data-theme="dark"] #next-btn {
-  background: linear-gradient(135deg, #9b59b6 0%, #672a3f 100%) !important;
-  color: #ffffff !important;
-  box-shadow: 0 4px 15px rgba(155, 89, 182, 0.4) !important;
+  background: #9b59b6 !important;
+  border: 2px solid #9b59b6 !important;
+  color: #ede8f5 !important;
+  box-shadow: 0 4px 15px rgba(155, 89, 182, 0.35) !important;
 }
 
 [data-theme="dark"] #next-btn:hover {
-  background: linear-gradient(135deg, #b06cc9 0%, #7d334e 100%) !important;
-  box-shadow: 0 6px 20px rgba(155, 89, 182, 0.6) !important;
+  background: #6c3483 !important;
+  border-color: #6c3483 !important;
+  box-shadow: 0 6px 20px rgba(155, 89, 182, 0.5) !important;
   color: #ffffff !important;
 }
 
