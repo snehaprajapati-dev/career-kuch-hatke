@@ -1975,13 +1975,11 @@ body[data-compact="true"] .hero-content .category-badge {
   font-size: 0.68rem !important;
   margin-bottom: 0.15rem !important;
 }
-body[data-compact="true"] .hero-content .category-badge .ckh-icon-circle,
-body[data-compact="true"] .hero-content .category-badge .emoji {
-  width: 18px !important;
-  height: 18px !important;
+body[data-compact="true"] .hero-content .category-badge .ckh-icon-circle {
+  width: 20px !important;
+  height: 20px !important;
 }
-body[data-compact="true"] .hero-content .category-badge .ckh-icon-circle svg,
-body[data-compact="true"] .hero-content .category-badge .emoji svg {
+body[data-compact="true"] .hero-content .category-badge .ckh-icon-circle svg {
   width: 11px !important;
   height: 11px !important;
 }
@@ -2018,13 +2016,13 @@ body[data-compact="true"] .fact-value {
   font-size: 0.82rem !important;
 }
 body[data-compact="true"] .career-details {
-  padding: 0.45rem 0 !important;
+  padding: 0.35rem 0 !important;
 }
 body[data-compact="true"] .details-grid {
   gap: 1.2rem !important;
 }
 body[data-compact="true"] .main-content {
-  gap: 0.24rem !important;
+  gap: 0.22rem !important;
 }
 body[data-compact="true"] .roadmap-toolbar {
   padding: 0 !important;
@@ -2106,14 +2104,6 @@ body[data-compact="true"] .related-career-link strong {
   font-size: 0.8rem !important;
   margin-bottom: 0.08rem !important;
 }
-body[data-compact="true"] .related-career-link strong .ckh-icon-circle {
-  width: 20px !important;
-  height: 20px !important;
-}
-body[data-compact="true"] .related-career-link strong .ckh-icon-circle svg {
-  width: 11px !important;
-  height: 11px !important;
-}
 body[data-compact="true"] .related-career-link small {
   font-size: 0.7rem !important;
 }
@@ -2153,14 +2143,6 @@ body[data-compact="true"] .footer-section p {
   margin-bottom: 0.06rem !important;
   line-height: 1.2 !important;
   font-size: 0.68rem !important;
-}
-body[data-compact="true"] .footer-section p .emoji.ckh-icon-circle {
-  width: 18px !important;
-  height: 18px !important;
-}
-body[data-compact="true"] .footer-section p .emoji.ckh-icon-circle svg {
-  width: 10px !important;
-  height: 10px !important;
 }
 body[data-compact="true"] .footer-section ul li a,
 body[data-compact="true"] .footer-section p a {

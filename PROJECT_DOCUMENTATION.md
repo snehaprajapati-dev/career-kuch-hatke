@@ -67,7 +67,7 @@ Submitted in partial fulfillment of the requirements for the degree of
 | **1.0** | **Introduction to Website & Problem Statement**<br>_Executive summary, societal need, problem statement, and project objectives_                           | **Page 3**  |                     |
 | **2.0** | **Introduction to Website: Core Webpage Modules**<br>_Target audience and detailed breakdown of all 7 website modules_                                     | **Page 4**  |                     |
 | **3.0** | **Technologies Used & System Architecture**<br>_Client-server data flow diagram, technology stack table, and environment requirements_                     | **Page 5**  |                     |
-| **4.0** | **Technologies Used: Implementation of CSS (Why & How)**<br>_Responsive CSS Grid/Flexbox layouts, custom variables, SVG badges, and dark/light themes_     | **Page 6**  |                     |
+| **4.0** | **Technologies Used: Implementation of CSS (Why & How)**<br>_Responsive CSS Grid/Flexbox layouts, custom variables, theme-aware SVG badges, and dark/light themes_ | **Page 6**  |                     |
 | **5.0** | **Technologies Used: Implementation of PHP & MySQL Database**<br>_Backend form processing, XSS/SQL injection security, and database schema_                | **Page 7**  |                     |
 | **6.0** | **Web Hosting, CI/CD Deployment & System Testing**<br>_Local XAMPP setup, InfinityFree cloud hosting, GitHub Actions CI/CD, and QA matrix_                 | **Page 8**  |                     |
 | **7.0** | **Website Screenshots (Only 3 Core Modules)**<br>_Home page hero portal, dynamic career roadmap detail, and contact/suggestion portal_                     | **Page 9**  |                     |
@@ -195,6 +195,7 @@ Modern web applications demand an intuitive, visually engaging, and responsive i
 
 - **Responsive Multi-Column Grids:** Displaying 35 career options requires dynamic multi-column layouts on desktop that gracefully collapse into a single touch-friendly column on mobile devices.
 - **Equalized Card Heights:** In exploration grids, varying text length across careers causes uneven card heights. CSS Flexbox was implemented to ensure cards maintain identical vertical height across rows.
+- **Category-Tinted Scalable SVG Badges:** Replaced platform-dependent OS emojis with scalable monoline SVG icons enclosed in theme-aware circular containers (`.ckh-icon-circle`) for crisp, uniform rendering across all operating systems and viewports.
 - **Accessible Color Contrast & Theme Support:** Implementation of Dark and Light modes reduces eye strain during prolonged reading and respects user operating system preferences.
 - **Visual Affordance & Micro-Interactions:** Subtle hover states, smooth transitions, and glowing bookmark pills provide instant tactile feedback without cognitive overload.
 
@@ -204,27 +205,25 @@ The styling architecture follows modular separation across distinct CSS files:
 
 - **Global Design Tokens (`css/style.css`):** Defined using CSS Custom Properties (Variables) on the `:root` selector (e.g., `--bg-primary`, `--text-primary`, `--accent-purple`, `--card-border`) allowing instantaneous theme switching by toggling a single `data-theme="dark"` attribute on the root HTML element.
 - **Modular Component Styles:** Dedicated stylesheets isolate component boundaries: `explore.css` manages filters and card grids; `career-detail.css` styles roadmap accordions and the parent pitch box; `quiz.css` handles progress indicators.
+- **Theme-Aware Circular Badge Architecture:** Structured reusable `.ckh-icon-circle` CSS classes featuring category-specific tinting (gold, purple, cyan, blue), border accents, and smooth hover micro-transitions.
 - **Strict Card Filtering Rule:** To resolve card filtering conflicts where flex cards remained visible, a strict utility class was implemented: `.career-card.is-hidden { display: none !important; }`.
 
 ```css
+/* Theme-Aware Scalable Circular SVG Badges (css/style.css) */
+.ckh-icon-circle {
+  display: inline-flex !important; align-items: center !important; justify-content: center !important;
+  border-radius: 50% !important; background: rgba(103, 42, 63, 0.1); color: var(--primary, #672a3f);
+  border: 1.5px solid rgba(103, 42, 63, 0.22); transition: all 0.3s ease;
+}
+.ckh-icon-circle svg { stroke: currentColor; fill: none; stroke-width: 1.9; }
+
 /* Equal Height Flexbox Card Architecture (css/explore.css) */
 .career-card {
-  display: flex !important;
-  flex-direction: column;
-  height: 100%;
-  background: var(--bg-card);
-  border: 1px solid var(--border-color);
-  border-radius: 12px;
-  transition:
-    transform 0.2s ease,
-    box-shadow 0.2s ease;
+  display: flex !important; flex-direction: column; height: 100%;
+  background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 12px;
 }
-.career-card-content {
-  flex-grow: 1; /* Automatically expands to equalize card heights across rows */
-}
-.career-card.is-hidden {
-  display: none !important; /* Overrides flex display when card is filtered out */
-}
+.career-card-content { flex-grow: 1; /* Automatically equalizes heights */ }
+.career-card.is-hidden { display: none !important; }
 ```
 
 <!-- Running Footer: Department of Computer Science • S.Y. B.Sc. CS • Roll No. 89 • Page 6 of 10 -->
@@ -232,7 +231,7 @@ The styling architecture follows modular separation across distinct CSS files:
 
 <!-- ============================== PAGE 7 OF 10 ============================== -->
 
-### 5.0 Technologies Used: Implementation of PHP & Database
+### 5.0 Technologies Used: Implementation of PHP & MySQL Database
 
 #### 5.1 Why PHP and MySQL were Implemented
 

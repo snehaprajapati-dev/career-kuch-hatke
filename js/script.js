@@ -1667,8 +1667,7 @@ document.addEventListener("DOMContentLoaded", function () {
     showForm("contact");
   }
 
-  if (urlParams.get("compact") === "true" || urlParams.get("compact") === "1") {
-    document.documentElement.setAttribute("data-compact", "true");
+  if (urlParams.get("compact") === "true") {
     document.body.setAttribute("data-compact", "true");
     var rcBox = document.getElementById("recaptcha-contact");
     if (rcBox) {

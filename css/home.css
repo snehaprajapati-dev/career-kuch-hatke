@@ -277,95 +277,92 @@
 
 /* Compact mode for full-page academic report screenshot */
 body[data-compact="true"] .hero {
-  padding: 5.1rem 0 1.25rem 0;
+  padding: 4.55rem 0 0.95rem 0;
 }
 body[data-compact="true"] .hero-badge {
-  margin-bottom: 0.45rem;
-  padding: 0.25rem 0.95rem;
-  font-size: 0.76rem;
+  margin-bottom: 0.35rem;
+  padding: 0.2rem 0.85rem;
+  font-size: 0.74rem;
 }
 body[data-compact="true"] .hero h1 {
-  font-size: 2.1rem;
-  margin-bottom: 0.25rem;
+  font-size: 2.05rem;
+  margin-bottom: 0.2rem;
 }
 body[data-compact="true"] .hero h2 {
-  font-size: 1.25rem;
-  margin-bottom: 0.45rem;
+  font-size: 1.2rem;
+  margin-bottom: 0.38rem;
 }
 body[data-compact="true"] .hero p {
-  font-size: 0.9rem;
-  margin-bottom: 0.85rem;
+  font-size: 0.88rem;
+  margin-bottom: 0.7rem;
 }
 body[data-compact="true"] .hero-buttons .btn {
-  padding: 0.55rem 1.4rem;
-  font-size: 0.9rem;
+  padding: 0.5rem 1.35rem;
+  font-size: 0.88rem;
 }
 body[data-compact="true"] .quiz-cta {
-  padding: 1rem 1.5rem;
+  padding: 0.85rem 1.5rem;
 }
 body[data-compact="true"] .quiz-cta h2 {
-  font-size: 1.45rem;
-  margin-bottom: 0.3rem;
+  font-size: 1.4rem;
+  margin-bottom: 0.25rem;
 }
 body[data-compact="true"] .quiz-cta p {
-  font-size: 0.88rem;
-  margin-bottom: 0.65rem;
+  font-size: 0.85rem;
+  margin-bottom: 0.55rem;
 }
 body[data-compact="true"] .quiz-cta .btn {
-  padding: 0.5rem 1.5rem;
-  font-size: 0.9rem;
-  margin-bottom: 0.3rem;
+  padding: 0.45rem 1.4rem;
+  font-size: 0.88rem;
+  margin-bottom: 0.25rem;
 }
 body[data-compact="true"] .stats,
 body[data-compact="true"] .categories {
-  padding: 1.1rem 0;
+  padding: 0.95rem 0;
 }
 body[data-compact="true"] .stats h2,
 body[data-compact="true"] .categories h2 {
-  font-size: 1.5rem;
-  margin-bottom: 0.75rem;
+  font-size: 1.45rem;
+  margin-bottom: 0.65rem;
 }
 body[data-compact="true"] .stat-box {
-  padding: 0.9rem 0.8rem;
+  padding: 0.8rem 0.8rem;
 }
 body[data-compact="true"] .stat-box h3 {
-  font-size: 1.9rem;
-  margin-bottom: 0.2rem;
+  font-size: 1.85rem;
+  margin-bottom: 0.15rem;
 }
 body[data-compact="true"] .category-card {
-  padding: 0.85rem 0.7rem;
+  padding: 0.75rem 0.7rem;
 }
 body[data-compact="true"] .category-card .emoji {
   font-size: 1.75rem;
   margin-bottom: 0.3rem;
 }
 body[data-compact="true"] .category-card .emoji.ckh-icon-circle {
-  width: 50px !important;
-  height: 50px !important;
-  margin-bottom: 0.45rem !important;
-}
-body[data-compact="true"] .category-card .emoji.ckh-icon-circle svg {
-  width: 24px !important;
-  height: 24px !important;
+  width: 48px !important;
+  height: 48px !important;
+  margin-bottom: 0.35rem !important;
 }
 body[data-compact="true"] .footer {
-  padding: 1rem 0 0 0;
+  padding: 0.85rem 0 0 0 !important;
 }
 body[data-compact="true"] .footer-intro {
-  padding-bottom: 0.6rem;
-  margin-bottom: 0.6rem;
+  padding-bottom: 0.45rem !important;
+  margin-bottom: 0.45rem !important;
 }
-body[data-compact="true"] .footer-content {
-  padding-bottom: 0.6rem;
+body[data-compact="true"] .footer-columns {
+  padding-bottom: 0.45rem !important;
+  margin-bottom: 0 !important;
 }
-body[data-compact="true"] .footer-section p .emoji.ckh-icon-circle {
-  width: 22px !important;
-  height: 22px !important;
-}
-body[data-compact="true"] .footer-section p .emoji.ckh-icon-circle svg {
-  width: 12px !important;
-  height: 12px !important;
+body[data-compact="true"] .footer-section p,
+body[data-compact="true"] .footer-section ul li {
+  margin-bottom: 0.22rem !important;
 }
 body[data-compact="true"] .footer-bottom {
-  padding: 0.6rem 0;
+  padding: 0.45rem 0 !important;
+}
+body[data-compact="true"] .footer-bottom p {
+  margin-bottom: 0.12rem !important;
+  font-size: 0.72rem !important;
 }
