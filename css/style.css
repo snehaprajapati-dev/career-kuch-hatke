@@ -2574,37 +2574,69 @@ a.card-btn:hover {
 
 [data-theme="dark"] .ckh-icon-circle.creative,
 [data-theme="dark"] .category-badge.creative .emoji {
-  background: rgba(255, 224, 160, 0.16) !important;
+  background: rgba(255, 224, 160, 0.2) !important;
   color: #ffe0a0 !important;
-  border-color: rgba(255, 224, 160, 0.38) !important;
+  border-color: rgba(255, 224, 160, 0.45) !important;
 }
 
 [data-theme="dark"] .ckh-icon-circle.tech,
 [data-theme="dark"] .category-badge.tech .emoji {
-  background: rgba(45, 212, 191, 0.16) !important;
+  background: rgba(45, 212, 191, 0.2) !important;
   color: #2dd4bf !important;
-  border-color: rgba(45, 212, 191, 0.38) !important;
+  border-color: rgba(45, 212, 191, 0.45) !important;
 }
 
 [data-theme="dark"] .ckh-icon-circle.science,
 [data-theme="dark"] .category-badge.science .emoji {
-  background: rgba(192, 132, 252, 0.16) !important;
-  color: #c084fc !important;
-  border-color: rgba(192, 132, 252, 0.38) !important;
+  background: rgba(192, 132, 252, 0.22) !important;
+  color: #d8b4fe !important;
+  border-color: rgba(192, 132, 252, 0.48) !important;
 }
 
 [data-theme="dark"] .ckh-icon-circle.business,
 [data-theme="dark"] .category-badge.business .emoji {
-  background: rgba(244, 114, 182, 0.16) !important;
-  color: #f472b6 !important;
-  border-color: rgba(244, 114, 182, 0.38) !important;
+  background: rgba(244, 114, 182, 0.22) !important;
+  color: #f9a8d4 !important;
+  border-color: rgba(244, 114, 182, 0.48) !important;
 }
 
 [data-theme="dark"] .ckh-icon-circle.unique,
 [data-theme="dark"] .category-badge.unique .emoji {
-  background: rgba(232, 121, 249, 0.16) !important;
-  color: #e879f9 !important;
-  border-color: rgba(232, 121, 249, 0.38) !important;
+  background: rgba(232, 121, 249, 0.28) !important;
+  color: #fae8ff !important;
+  border: 1.5px solid #e879f9 !important;
+}
+
+/* Vibrant Category Pill Badges in Dark Mode */
+[data-theme="dark"] .category-badge.creative {
+  background-color: rgba(255, 224, 160, 0.14) !important;
+  color: #ffe0a0 !important;
+  border: 1px solid rgba(255, 224, 160, 0.5) !important;
+}
+
+[data-theme="dark"] .category-badge.tech {
+  background-color: rgba(45, 212, 191, 0.14) !important;
+  color: #5eead4 !important;
+  border: 1px solid rgba(45, 212, 191, 0.5) !important;
+}
+
+[data-theme="dark"] .category-badge.science {
+  background-color: rgba(192, 132, 252, 0.16) !important;
+  color: #d8b4fe !important;
+  border: 1px solid rgba(192, 132, 252, 0.55) !important;
+}
+
+[data-theme="dark"] .category-badge.business {
+  background-color: rgba(244, 114, 182, 0.16) !important;
+  color: #f9a8d4 !important;
+  border: 1px solid rgba(244, 114, 182, 0.55) !important;
+}
+
+[data-theme="dark"] .category-badge.unique {
+  background-color: rgba(217, 70, 239, 0.2) !important;
+  color: #f5d0fe !important;
+  border: 1px solid #e879f9 !important;
+  box-shadow: 0 2px 12px rgba(217, 70, 239, 0.18) !important;
 }
 
 /* 1. Home Page 5 Category Cards */
@@ -2719,6 +2751,14 @@ a.card-btn:hover {
 .contact-option-card .option-icon.ckh-icon-circle svg {
   width: 32px;
   height: 32px;
+}
+
+/* Fix Contact Option Card Badges in Dark Mode (white card with purple #9b59b6 theme) */
+[data-theme="dark"] .contact-option-card .option-icon.ckh-icon-circle {
+  background: rgba(155, 89, 182, 0.16) !important;
+  color: #8e44ad !important;
+  border: 2px solid rgba(155, 89, 182, 0.42) !important;
+  box-shadow: 0 6px 18px rgba(155, 89, 182, 0.18) !important;
 }
 
 .success-message .emoji.ckh-icon-circle {
@@ -2880,17 +2920,39 @@ a.card-btn:hover {
 }
 
 /* 8. Quiz Intro & Result Icon Circle */
-.quiz-intro-icon.ckh-icon-circle,
-.quiz-result-icon.ckh-icon-circle {
-  width: 64px !important;
-  height: 64px !important;
-  margin: 0 auto 1.15rem auto !important;
+.quiz-intro-icon.ckh-icon-circle {
+  display: flex !important;
+  width: 76px !important;
+  height: 76px !important;
+  margin: 0 auto 1.35rem auto !important;
+  background: rgba(255, 255, 255, 0.9) !important;
+  color: #672a3f !important;
+  border: 2px solid rgba(103, 42, 63, 0.25) !important;
+  box-shadow: 0 10px 26px rgba(103, 42, 63, 0.18) !important;
 }
 
-.quiz-intro-icon.ckh-icon-circle svg,
+.quiz-intro-icon.ckh-icon-circle svg {
+  width: 34px;
+  height: 34px;
+}
+
+[data-theme="dark"] .quiz-intro-icon.ckh-icon-circle {
+  background: rgba(155, 89, 182, 0.22) !important;
+  color: #ffe0a0 !important;
+  border: 2px solid rgba(255, 224, 160, 0.45) !important;
+  box-shadow: 0 10px 28px rgba(155, 89, 182, 0.35) !important;
+}
+
+.quiz-result-icon.ckh-icon-circle {
+  display: flex !important;
+  width: 72px !important;
+  height: 72px !important;
+  margin: 0 auto !important;
+}
+
 .quiz-result-icon.ckh-icon-circle svg {
-  width: 28px;
-  height: 28px;
+  width: 32px;
+  height: 32px;
 }
 
 /* 9. Career Detail Inner Cards & Sidebar Icon Circles */

@@ -1309,8 +1309,12 @@ document.addEventListener("DOMContentLoaded", function () {
       } catch (e) {}
       if (resultContent) {
         resultContent.innerHTML = `
-                <div class="quiz-result-icon ckh-icon-circle ${r.link}" aria-hidden="true">${r.iconSvg}</div>
-                <div class="result-badge">100% Career Personality Match</div>
+                <div class="quiz-result-icon-wrap" style="display: flex; justify-content: center; width: 100%; margin-bottom: 1rem;">
+                  <div class="quiz-result-icon ckh-icon-circle ${r.link}" aria-hidden="true">${r.iconSvg}</div>
+                </div>
+                <div class="result-badge-wrap" style="display: flex; justify-content: center; width: 100%;">
+                  <div class="result-badge">100% Career Personality Match</div>
+                </div>
                 <h3 class="result-title">${r.title}</h3>
                 <p class="result-desc">${r.desc}</p>
                 

@@ -7,50 +7,53 @@
    ============================================ */
 
 .quiz-intro {
-  min-height: 70vh;
+  min-height: 68vh;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 4rem 2rem;
-  background: linear-gradient(135deg, #dda83f 0%, #f2e9e1 100%);
-  color: var(--text-gray);
+  padding: 4.5rem 2rem;
+  background: linear-gradient(135deg, #e8bc5c 0%, #f5ece2 100%);
+  color: #2b4743;
 }
 
 .quiz-intro .container {
-  max-width: 700px;
+  max-width: 720px;
 }
 
 .quiz-intro h1 {
   font-size: 2.8rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.25rem;
   color: var(--secondary);
 }
 
 .quiz-intro p {
-  font-size: 1.1rem;
+  font-size: 1.15rem;
   line-height: 1.8;
-  margin-bottom: 2.5rem;
-  opacity: 0.95;
+  margin-bottom: 2.25rem;
+  color: #2f3e3b;
+  font-weight: 500;
 }
 
 .btn-start {
   background-color: var(--primary);
   color: var(--bg-white);
-  padding: 1rem 2.5rem;
+  padding: 1rem 2.6rem;
   font-size: 1.1rem;
-  border-radius: 8px;
-  font-weight: 600;
-  transition: all 0.3s;
+  border-radius: 10px;
+  font-weight: 700;
+  transition: all 0.3s ease;
   display: inline-block;
   margin-bottom: 1rem;
   border: 2px solid var(--primary);
+  box-shadow: 0 8px 22px rgba(103, 42, 63, 0.25);
 }
 
 .btn-start:hover {
   background-color: var(--bg-white);
   color: var(--primary);
-  transform: scale(1.05);
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 10px 26px rgba(103, 42, 63, 0.3);
 }
 
 /* Main quiz container */
