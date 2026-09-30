@@ -105,3 +105,31 @@
     margin-bottom: 1.1rem !important;
   }
 }
+
+/* ── 3. Compact Mode Overrides for Documentation Screenshots ── */
+body[data-compact="true"] .career-hero {
+  padding: 0.35rem 0 0.45rem 0 !important;
+  margin-top: 0 !important;
+}
+
+body[data-compact="true"] .career-hero .breadcrumb-nav,
+body[data-compact="true"] .career-hero .breadcrumb {
+  padding-top: 0 !important;
+  padding-bottom: 0.25rem !important;
+  margin-bottom: 0.25rem !important;
+  font-size: 0.76rem !important;
+}
+
+body[data-compact="true"] .page-header {
+  padding: 1.15rem 2rem 1.25rem 2rem !important;
+  margin-top: 0 !important;
+}
+
+body[data-compact="true"] .page-header .breadcrumb-nav,
+body[data-compact="true"] .page-header .breadcrumb {
+  padding-top: 0 !important;
+  padding-bottom: 0.45rem !important;
+  margin-bottom: 0.5rem !important;
+  font-size: 0.85rem !important;
+}
+
