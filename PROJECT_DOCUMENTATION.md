@@ -42,9 +42,10 @@ Submitted in partial fulfillment of the requirements for the degree of
 | **GitHub Source Repository** | https://github.com/snehaprajapati-dev/career-kuch-hatke   |
 
 | Subject Teacher / Project Guide | Head of the Department |
-| :-----------------------------: | :--------------------: |
+| **Place:** Vasai Road (West) | **Academic Year:** 2026 – 2027 |
+| :--------------------------- | -----------------------------: |
 
-**Place:** Vasai Road (West) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Academic Year:** 2026 – 2027 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Page 1 of 10**
+<p align="right"><small>Page 1 of 10</small></p>
 
 <div style="page-break-after: always;"></div>
 
