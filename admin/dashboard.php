@@ -25,8 +25,8 @@ $latestSuggestion = mysqli_fetch_assoc(mysqli_query($conn, "SELECT career_name, 
         if(s==='dark') document.documentElement.setAttribute('data-theme','dark');
     })();
     </script>
-    <link rel="stylesheet" href="../css/style.css?v=7.5">
-    <link rel="stylesheet" href="../css/admin.css?v=5.0">
+    <link rel="stylesheet" href="../css/style.css?v=8.0">
+    <link rel="stylesheet" href="../css/admin.css?v=6.0">
 </head>
 <body>
 
