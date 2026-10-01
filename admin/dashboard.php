@@ -25,8 +25,8 @@ $latestSuggestion = mysqli_fetch_assoc(mysqli_query($conn, "SELECT career_name, 
         if(s==='dark') document.documentElement.setAttribute('data-theme','dark');
     })();
     </script>
-    <link rel="stylesheet" href="../css/style.css?v=4.0">
-    <link rel="stylesheet" href="../css/admin.css?v=4.0">
+    <link rel="stylesheet" href="../css/style.css?v=7.5">
+    <link rel="stylesheet" href="../css/admin.css?v=5.0">
 </head>
 <body>
 
@@ -35,19 +35,29 @@ $latestSuggestion = mysqli_fetch_assoc(mysqli_query($conn, "SELECT career_name, 
 <div class="admin-container">
 
     <div class="admin-page-header">
-        <h1>📊 Admin Dashboard</h1>
+        <h1>
+            <span class="ckh-icon-circle business admin-header-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="9"/><rect x="14" y="3" width="7" height="5"/><rect x="14" y="12" width="7" height="9"/><rect x="3" y="16" width="7" height="5"/></svg>
+            </span>
+            <span>Admin Dashboard</span>
+        </h1>
         <p>Manage contacts, career suggestions, and admin activity.</p>
     </div>
 
     <div class="dashboard-welcome">
-        <h2>Welcome Back 👋</h2>
+        <h2>Welcome Back, Admin</h2>
         <p>Here's what's happening on Career Kuch Hatke today.</p>
     </div>
 
     <div class="admin-stats">
 
         <div class="stat-box">
-            <h3>📩 Contact Messages</h3>
+            <h3>
+                <span class="ckh-icon-circle tech stat-icon-badge" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                </span>
+                <span>Contact Messages</span>
+            </h3>
             <div class="stat-number"><?php echo $contactCount; ?></div>
             <p>Unread: <strong><?php echo $unreadCount; ?></strong></p>
             <div class="mini-stats">
@@ -57,11 +67,19 @@ $latestSuggestion = mysqli_fetch_assoc(mysqli_query($conn, "SELECT career_name, 
             <?php if ($latestContact): ?>
                 <div class="latest">Latest: <?php echo htmlspecialchars($latestContact['name']); ?> &mdash; <?php echo $latestContact['created_at']; ?></div>
             <?php endif; ?>
-            <a class="stat-box-link" href="contacts.php">📩 View Contact Messages</a>
+            <a class="stat-box-link" href="contacts.php">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                <span>View Contact Messages</span>
+            </a>
         </div>
 
         <div class="stat-box">
-            <h3>💡 Career Suggestions</h3>
+            <h3>
+                <span class="ckh-icon-circle creative stat-icon-badge" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/></svg>
+                </span>
+                <span>Career Suggestions</span>
+            </h3>
             <div class="stat-number"><?php echo $suggestionCount; ?></div>
             <p>Unread: <strong><?php echo $unreadSuggCount; ?></strong></p>
             <div class="mini-stats">
@@ -71,7 +89,10 @@ $latestSuggestion = mysqli_fetch_assoc(mysqli_query($conn, "SELECT career_name, 
             <?php if ($latestSuggestion): ?>
                 <div class="latest">Latest: <?php echo htmlspecialchars($latestSuggestion['career_name']); ?> &mdash; <?php echo $latestSuggestion['created_at']; ?></div>
             <?php endif; ?>
-            <a class="stat-box-link" href="suggestions.php">💡 View Career Suggestions</a>
+            <a class="stat-box-link" href="suggestions.php">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/></svg>
+                <span>View Career Suggestions</span>
+            </a>
         </div>
 
     </div>
