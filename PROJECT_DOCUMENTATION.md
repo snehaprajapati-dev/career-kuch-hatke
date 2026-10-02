@@ -59,16 +59,9 @@ Submitted in partial fulfillment of the requirements for the degree of
 ### ANNASAHEB VARTAK COLLEGE OF ARTS,
 ### KEDARNATH MALHOTRA COLLEGE OF COMMERCE,
 ### E. S. ANDRADES COLLEGE OF SCIENCE
+### VASAI ROAD (WEST)
 
-#### DEPARTMENT OF COMPUTER SCIENCE
-
-_(Affiliated to the University of Mumbai) • Vasai Road (West), Dist. Palghar_
-
----
-
-<p align="center">
-  <img src="favicon-512.png" alt="Vidyavardhini's College Emblem" width="75" height="75" />
-</p>
+<br>
 
 # CERTIFICATE
 
@@ -81,7 +74,7 @@ _(Affiliated to the University of Mumbai) • Vasai Road (West), Dist. Palghar_
 
 This is to certify that the work entered in this Journal is the work of:
 
-### **Shri / Kumari:** &nbsp; **Kumari Sneha Mahendra Prajapati**
+### **Shri / Kumari:** &nbsp; <u>**Kumari Sneha Mahendra Prajapati**</u>
 
 **of:** S.Y. B.Sc. CS &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **division:** — &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Roll No.:** 89
 
