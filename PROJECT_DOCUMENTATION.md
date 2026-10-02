@@ -1,10 +1,10 @@
 # ==============================================================================
 
-# STANDARD FIELD PROJECT DOCUMENTATION REPORT (STRICTLY 10 PAGES TOTAL)
+# STANDARD FIELD PROJECT DOCUMENTATION REPORT (STRICTLY 11 PAGES TOTAL)
 
 # ==============================================================================
 
-<!-- ============================== PAGE 1 OF 10: TITLE PAGE ============================== -->
+<!-- ============================== PAGE 1 OF 11: TITLE PAGE ============================== -->
 
 # VIDYAVARDHINI’S
 
@@ -38,18 +38,75 @@ Submitted in partial fulfillment of the requirements for the degree of
 | **Class & Semester**         | **S.Y. B.Sc. Computer Science (Semester III)**            |
 | **Institutional Roll No.**   | **89**                                                    |
 | **Course / Subject**         | **Field Project (FP)**                                    |
+| **Under the Guidance of**    | **Prof. Srimathi Narayanan (Head of Department)**         |
 | **Live Hosted Website**      | https://career-kuch-hatke.infinityfreeapp.com             |
 | **GitHub Source Repository** | https://github.com/snehaprajapati-dev/career-kuch-hatke   |
 
-| Subject Teacher / Project Guide | Head of the Department |
+| **Prof. Srimathi Narayanan** | **Prof. Srimathi Narayanan** |
+| :--------------------------- | ---------------------------: |
+| **Subject Teacher / Project Guide** | **Head of the Department** |
 | **Place:** Vasai Road (West) | **Academic Year:** 2026 – 2027 |
-| :--------------------------- | -----------------------------: |
 
-<p align="right"><small>Page 1 of 10</small></p>
+<p align="right"><small>Page 1 of 11</small></p>
 
+<!-- Running Footer: Department of Computer Science • S.Y. B.Sc. CS • Roll No. 89 • Page 1 of 11 -->
 <div style="page-break-after: always;"></div>
 
-<!-- ============================== PAGE 2 OF 10: INDEX ============================== -->
+<!-- ============================== PAGE 2 OF 11: CERTIFICATE ============================== -->
+
+# VIDYAVARDHINI’S
+
+### ANNASAHEB VARTAK COLLEGE OF ARTS,
+### KEDARNATH MALHOTRA COLLEGE OF COMMERCE,
+### E. S. ANDRADES COLLEGE OF SCIENCE
+
+#### DEPARTMENT OF COMPUTER SCIENCE
+
+_(Affiliated to the University of Mumbai) • Vasai Road (West), Dist. Palghar_
+
+---
+
+<p align="center">
+  <img src="favicon-512.png" alt="Vidyavardhini's College Emblem" width="75" height="75" />
+</p>
+
+# CERTIFICATE
+
+<br>
+
+| **Class:** S.Y. B.Sc. CS | **Year:** 2026 – 2027 |
+| :----------------------- | --------------------: |
+
+---
+
+This is to certify that the work entered in this Journal is the work of:
+
+### **Shri / Kumari:** &nbsp; **Kumari Sneha Mahendra Prajapati**
+
+**of:** S.Y. B.Sc. CS &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **division:** — &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Roll No.:** 89
+
+**Uni. Exam No.:** ________________________ has satisfactorily completed the required number of practical and worked for the 1st term / 2nd term / both the terms of the year **2026 – 2027** in the college laboratory as laid down by the university.
+
+<br><br>
+
+| `_______________________________` | `_______________________________` | `_______________________________` |
+| :---: | :---: | :---: |
+| **Head of the Department** | **External Examiner** | **Internal Examiner / Subject teacher** |
+| **(Prof. Srimathi Narayanan)** | | **(Prof. Srimathi Narayanan)** |
+
+<br>
+
+| **Date :** _____ / _____ / 20___ | **Department of:** Computer Science |
+| :------------------------------- | ----------------------------------: |
+
+<br>
+
+<p align="right"><small>Page 2 of 11</small></p>
+
+<!-- Running Footer: Department of Computer Science • S.Y. B.Sc. CS • Roll No. 89 • Page 2 of 11 -->
+<div style="page-break-after: always;"></div>
+
+<!-- ============================== PAGE 3 OF 11: INDEX ============================== -->
 
 # VIDYAVARDHINI’S
 
@@ -61,26 +118,29 @@ Submitted in partial fulfillment of the requirements for the degree of
 
 **Project Title:** CAREER KUCH HATKE &bull; **Candidate:** Sneha Prajapati (Roll No. 89)
 
-| Sr. No. | Topic / Section Title                                                                                                                                      |  Page No.   | Teacher's Signature |
-| :-----: | :--------------------------------------------------------------------------------------------------------------------------------------------------------- | :---------: | :-----------------: |
-|  **—**  | **Title Page & Project Overview**<br>_Official project cover page with website emblem, candidate metadata, and live deployment links_                      | **Page 1**  |                     |
-|  **—**  | **Project Index / Table of Contents**<br>_Section-wise index, page number mapping, student declaration, and faculty sign-off record_                       | **Page 2**  |                     |
-| **1.0** | **Introduction to Website & Problem Statement**<br>_Executive summary, societal need, problem statement, and project objectives_                           | **Page 3**  |                     |
-| **2.0** | **Introduction to Website: Core Webpage Modules**<br>_Target audience and detailed breakdown of all 7 website modules_                                     | **Page 4**  |                     |
-| **3.0** | **Technologies Used & System Architecture**<br>_Client-server data flow diagram, technology stack table, and environment requirements_                     | **Page 5**  |                     |
-| **4.0** | **Technologies Used: Implementation of CSS (Why & How)**<br>_Responsive CSS Grid/Flexbox layouts, custom variables, theme-aware SVG badges, and dark/light themes_ | **Page 6**  |                     |
-| **5.0** | **Technologies Used: Implementation of PHP & MySQL Database**<br>_Backend form processing, XSS/SQL injection security, and database schema_                | **Page 7**  |                     |
-| **6.0** | **Web Hosting, CI/CD Deployment & System Testing**<br>_Local XAMPP setup, InfinityFree cloud hosting, GitHub Actions CI/CD, and QA matrix_                 | **Page 8**  |                     |
-| **7.0** | **Website Screenshots (Only 3 Core Modules)**<br>_Home page hero portal, dynamic career roadmap detail, and contact/suggestion portal_                     | **Page 9**  |                     |
-| **8.0** | **References and Bibliography (with Conclusion & Scope)**<br>_Current limitations, future scope, academic conclusion, and bibliography citations_          | **Page 10** |                     |
+| Sr. No. | Topic / Section Title                                                                                                                                                |  Page No.   | Teacher's Signature |
+| :-----: | :------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :---------: | :-----------------: |
+|  **—**  | **Title Page & Project Overview**<br>_Official project cover page with website emblem, candidate metadata, and live deployment links_                                | **Page 1**  |                     |
+|  **—**  | **Official College Certificate**<br>_Bonafide certification signed by Head of Department, Project Guide, and Examiners_                                              | **Page 2**  |                     |
+|  **—**  | **Project Index / Table of Contents**<br>_Section-wise index, page number mapping, student declaration, and faculty sign-off record_                                 | **Page 3**  |                     |
+| **1.0** | **Introduction to Website & Problem Statement**<br>_Executive summary, societal need, problem statement, and project objectives_                                     | **Page 4**  |                     |
+| **2.0** | **Introduction to Website: Core Webpage Modules**<br>_Target audience and detailed breakdown of all 7 website modules_                                               | **Page 5**  |                     |
+| **3.0** | **Technologies Used & System Architecture**<br>_Client-server data flow diagram, technology stack table, and environment requirements_                               | **Page 6**  |                     |
+| **4.0** | **Technologies Used: Implementation of CSS (Why & How)**<br>_Responsive CSS Grid/Flexbox layouts, custom variables, theme-aware SVG badges, and dark/light themes_   | **Page 7**  |                     |
+| **5.0** | **Technologies Used: Implementation of PHP & MySQL Database**<br>_Backend form processing, XSS/SQL injection security, and database schema_                          | **Page 8**  |                     |
+| **6.0** | **Web Hosting, CI/CD Deployment & System Testing**<br>_Local XAMPP setup, InfinityFree cloud hosting, GitHub Actions CI/CD, and QA matrix_                           | **Page 9**  |                     |
+| **7.0** | **Website Screenshots (Only 3 Core Modules)**<br>_Home page hero portal, dynamic career roadmap detail, and contact/suggestion portal_                               | **Page 10** |                     |
+| **8.0** | **References and Bibliography (with Conclusion & Scope)**<br>_Current limitations, future scope, academic conclusion, and bibliography citations_                    | **Page 11** |                     |
 
-**Student Declaration:** I hereby declare that this project documentation report of 10 pages represents authentic academic work completed by me for the B.Sc. Computer Science Field Project curriculum (Academic Year 2026–2027).  
+**Student Declaration:** I hereby declare that this project documentation report of 11 pages represents authentic academic work completed by me for the B.Sc. Computer Science Field Project curriculum (Academic Year 2026–2027).  
 **Candidate Signature:** Sneha Prajapati (Roll No. 89)
 
-<!-- Running Footer: Department of Computer Science • S.Y. B.Sc. CS • Roll No. 89 • Page 2 of 10 -->
+<p align="right"><small>Page 3 of 11</small></p>
+
+<!-- Running Footer: Department of Computer Science • S.Y. B.Sc. CS • Roll No. 89 • Page 3 of 11 -->
 <div style="page-break-after: always;"></div>
 
-<!-- ============================== PAGE 3 OF 10 ============================== -->
+<!-- ============================== PAGE 4 OF 11 ============================== -->
 
 ### 1.0 Introduction to Website & Problem Statement
 
@@ -108,10 +168,12 @@ In the Indian educational system, over eighty percent of secondary and undergrad
 - **Full-Stack Form Processing:** Handle student feedback and community career suggestions through server-side PHP validation, sanitized database insertion, and an administrative review dashboard.
 - **Automated Production Deployment:** Establish continuous integration and deployment (CI/CD via GitHub Actions) to synchronize local developments directly with production Linux hosting.
 
-<!-- Running Footer: Department of Computer Science • S.Y. B.Sc. CS • Roll No. 89 • Page 3 of 10 -->
+<p align="right"><small>Page 4 of 11</small></p>
+
+<!-- Running Footer: Department of Computer Science • S.Y. B.Sc. CS • Roll No. 89 • Page 4 of 11 -->
 <div style="page-break-after: always;"></div>
 
-<!-- ============================== PAGE 4 OF 10 ============================== -->
+<!-- ============================== PAGE 5 OF 11 ============================== -->
 
 ### 2.0 Introduction to Website: Core Webpage Modules
 
@@ -131,10 +193,12 @@ The platform architecture comprises six distinct user-facing modules and a prote
 6. **Module 6 — Contact & Suggestion Portal (`contact.html`):** Dual-purpose communication portal allowing students to submit general inquiries and propose new emerging vocational paths for addition with client and server-side validation.
 7. **Module 7 — Administrative Management Portal (`admin/`):** Restricted back-office consisting of session-authenticated login (`login.php`), metrics dashboard (`dashboard.php`), submission review tables (`contacts.php`, `suggestions.php`), item deletion (`delete.php`), and CSV export for Excel analysis (`export.php`).
 
-<!-- Running Footer: Department of Computer Science • S.Y. B.Sc. CS • Roll No. 89 • Page 4 of 10 -->
+<p align="right"><small>Page 5 of 11</small></p>
+
+<!-- Running Footer: Department of Computer Science • S.Y. B.Sc. CS • Roll No. 89 • Page 5 of 11 -->
 <div style="page-break-after: always;"></div>
 
-<!-- ============================== PAGE 5 OF 10 ============================== -->
+<!-- ============================== PAGE 6 OF 11 ============================== -->
 
 ### 3.0 Technologies Used & System Architecture
 
@@ -183,10 +247,12 @@ The platform architecture comprises six distinct user-facing modules and a prote
 - **Operating System & Tooling:** Windows 11, Visual Studio Code, XAMPP v8.2.12 (Apache 2.4, MariaDB 10.4, PHP 8.2).
 - **Client Requirements:** Any modern standards-compliant web browser (Google Chrome 100+, Firefox 100+, Edge, Safari iOS).
 
-<!-- Running Footer: Department of Computer Science • S.Y. B.Sc. CS • Roll No. 89 • Page 5 of 10 -->
+<p align="right"><small>Page 6 of 11</small></p>
+
+<!-- Running Footer: Department of Computer Science • S.Y. B.Sc. CS • Roll No. 89 • Page 6 of 11 -->
 <div style="page-break-after: always;"></div>
 
-<!-- ============================== PAGE 6 OF 10 ============================== -->
+<!-- ============================== PAGE 7 OF 11 ============================== -->
 
 ### 4.0 Technologies Used: Implementation of CSS (Why & How)
 
@@ -227,10 +293,12 @@ The styling architecture follows modular separation across distinct CSS files:
 .career-card.is-hidden { display: none !important; }
 ```
 
-<!-- Running Footer: Department of Computer Science • S.Y. B.Sc. CS • Roll No. 89 • Page 6 of 10 -->
+<p align="right"><small>Page 7 of 11</small></p>
+
+<!-- Running Footer: Department of Computer Science • S.Y. B.Sc. CS • Roll No. 89 • Page 7 of 11 -->
 <div style="page-break-after: always;"></div>
 
-<!-- ============================== PAGE 7 OF 10 ============================== -->
+<!-- ============================== PAGE 8 OF 11 ============================== -->
 
 ### 5.0 Technologies Used: Implementation of PHP & MySQL Database
 
@@ -267,10 +335,12 @@ $stmt->bind_param("ssssss", $name, $email, $telephone, $subject, $i_am, $message
 if ($stmt->execute()) { header("Location: ../contact.html?success=contact"); }
 ```
 
-<!-- Running Footer: Department of Computer Science • S.Y. B.Sc. CS • Roll No. 89 • Page 7 of 10 -->
+<p align="right"><small>Page 8 of 11</small></p>
+
+<!-- Running Footer: Department of Computer Science • S.Y. B.Sc. CS • Roll No. 89 • Page 8 of 11 -->
 <div style="page-break-after: always;"></div>
 
-<!-- ============================== PAGE 8 OF 10 ============================== -->
+<!-- ============================== PAGE 9 OF 11 ============================== -->
 
 ### 6.0 Web Hosting, CI/CD Deployment & System Testing
 
@@ -307,10 +377,12 @@ jobs:
 | **Search, Filter & Bookmarks**  | Tested synonym search, category filter persistence across breadcrumbs, and `localStorage`. | **Passed:** Instant filtering and persistent saved bookmarks.           |
 | **Input Validation & Security** | Tested SQL injection and XSS payloads (`<script>`) in contact/suggestion forms.           | **Passed:** Inputs strictly sanitized via prepared statements.          |
 
-<!-- Running Footer: Department of Computer Science • S.Y. B.Sc. CS • Roll No. 89 • Page 8 of 10 -->
+<p align="right"><small>Page 9 of 11</small></p>
+
+<!-- Running Footer: Department of Computer Science • S.Y. B.Sc. CS • Roll No. 89 • Page 9 of 11 -->
 <div style="page-break-after: always;"></div>
 
-<!-- ============================== PAGE 9 OF 10 ============================== -->
+<!-- ============================== PAGE 10 OF 11 ============================== -->
 
 ### 7.0 Website Screenshots (Only 3 Core Modules)
 
@@ -331,10 +403,12 @@ Illustrates specialized career profile, 4-tier compensation metrics, educational
 Displays dual feedback channels for direct developer communication and student-driven career addition submissions.
 ![Figure 7.3: Contact & Suggestion Form](images/screenshot-contact.png)
 
-<!-- Running Footer: Department of Computer Science • S.Y. B.Sc. CS • Roll No. 89 • Page 9 of 10 -->
+<p align="right"><small>Page 10 of 11</small></p>
+
+<!-- Running Footer: Department of Computer Science • S.Y. B.Sc. CS • Roll No. 89 • Page 10 of 11 -->
 <div style="page-break-after: always;"></div>
 
-<!-- ============================== PAGE 10 OF 10 ============================== -->
+<!-- ============================== PAGE 11 OF 11 ============================== -->
 
 ### 8.0 References and Bibliography (with Conclusion & Future Scope)
 
@@ -357,4 +431,6 @@ The **Career Kuch Hatke** project successfully fulfills all academic specificati
 6. **Glassdoor India & AmbitionBox (2025–2026):** _Indian Industry Compensation & Salary Benchmark Reports for Emerging Technology, Design, Science, and Media Vocations._ Available at: `https://www.ambitionbox.com/`
 7. **University Grants Commission (UGC), AICTE & NSDC India:** _National Higher Education Directories, NID/IIT/FTII/NFSU Curriculum Handbooks, and Skill India Vocational Frameworks._ Available at: `https://www.ugc.gov.in/`
 
-<!-- Running Footer: Department of Computer Science • S.Y. B.Sc. CS • Roll No. 89 • Page 10 of 10 -->
+<p align="right"><small>Page 11 of 11</small></p>
+
+<!-- Running Footer: Department of Computer Science • S.Y. B.Sc. CS • Roll No. 89 • Page 11 of 11 -->
