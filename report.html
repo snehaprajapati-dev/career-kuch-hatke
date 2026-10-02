@@ -544,9 +544,31 @@
     <!-- Screen-Only Controls Bar -->
     <div class="controls-toolbar no-print">
       <span class="status-tag"
-        >Standard Field Project Documentation (Strictly 10 Pages Total)</span
+        >Standard Field Project Documentation (Strictly 11 Pages Total)</span
       >
-      <button class="primary-btn" onclick="window.print()">
+      <a
+        href="Career_Kuch_Hatke_Final_Report.pdf"
+        download="Career_Kuch_Hatke_Official_Report.pdf"
+        style="
+          background: #10b981;
+          color: #ffffff;
+          border: 1px solid #059669;
+          padding: 6px 13px;
+          border-radius: 4px;
+          font-weight: bold;
+          font-size: 8.5pt;
+          text-decoration: none;
+          display: inline-flex;
+          align-items: center;
+          gap: 5px;
+          cursor: pointer;
+        "
+        title="Download the official 11-page PDF without any browser URLs or dates"
+      >
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Download Clean PDF
+      </a>
+      <button class="primary-btn" onclick="printReport()">
         Print / Save PDF (Ctrl + P)
       </button>
       <button onclick="copyDocumentRichText()">
@@ -2086,6 +2108,13 @@ jobs:
               "Failed to copy plain text. Please select all and copy manually.",
             );
           });
+      }
+
+      function printReport() {
+        showToast("💡 Print Tip: In 'More settings', uncheck 'Headers and footers' to remove date & URL!");
+        setTimeout(function () {
+          window.print();
+        }, 500);
       }
     </script>
   </body>
