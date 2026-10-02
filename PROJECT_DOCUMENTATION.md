@@ -72,13 +72,7 @@ Submitted in partial fulfillment of the requirements for the degree of
 
 ---
 
-This is to certify that the work entered in this Journal is the work of:
-
-### **Shri / Kumari:** &nbsp; <u>**Kumari Sneha Mahendra Prajapati**</u>
-
-**of:** S.Y. B.Sc. CS &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **division:** — &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **Roll No.:** 89
-
-**Uni. Exam No.:** ________________________ has satisfactorily completed the required number of practical and worked for the 1st term / 2nd term / both the terms of the year **2026 – 2027** in the college laboratory as laid down by the university.
+This is to certify that the project work entitled **CAREER KUCH HATKE** entered in this report is the bonafide work of Kumari **Sneha Mahendra Prajapati** of class **S.Y. B.Sc. CS**, Division **—**, Institutional Roll No. **89**, University Exam No. ________________________, who has satisfactorily completed the required Field Project work in the college laboratory as prescribed by the University of Mumbai for Semester III during the academic year **2026 – 2027**.
 
 <br><br>
 
